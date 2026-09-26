@@ -1,0 +1,4087 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
+  <meta content="#121c1b" name="theme-color"/>
+  <meta content="高二（2）班：最后一节课。离线、单文件校园恐怖潜行游戏。" name="description"/>
+  <title>
+   高二（2）班：最后一节课
+  </title>
+  <style>
+   /* All artwork is drawn with HTML and CSS. No remote assets or libraries. */
+:root {
+  color-scheme: dark;
+  --ink: #d8e1d5;
+  --muted: #91a298;
+  --accent: #bed49e;
+  --danger: #e48c79;
+  --gold: #dacb98;
+  --panel: #14211f;
+  --line: rgba(193,213,187,.19);
+  font-family: "PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+}
+* {
+  box-sizing: border-box;
+}
+html,body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #080e0e;
+}
+body {
+  user-select: none;
+  -webkit-user-select: none;
+  overscroll-behavior: none;
+}
+button,input {
+  font: inherit;
+}
+button {
+  cursor: pointer;
+  color: inherit;
+  border: 0;
+  background: none;
+  touch-action: manipulation;
+}
+button:disabled {
+  cursor: default;
+  opacity: .37;
+}
+button:focus-visible,input:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 4px;
+}
+button:hover:not(:disabled) {
+  filter: brightness(1.15);
+}
+[hidden] {
+  display: none!important;
+}
+.serif {
+  font-family: "Songti SC","Noto Serif CJK SC","SimSun",serif;
+}
+.mono {
+  font-family: ui-monospace,"Cascadia Code",Consolas,monospace;
+  font-variant-numeric: tabular-nums;
+}
+.eyebrow {
+  font-size: 12px;
+  letter-spacing: 4px;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+.small {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+.tag {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  border: 1px solid var(--line);
+  padding: 6px 12px;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+.tag:before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  background: var(--accent);
+  border-radius: 50%;
+}
+#viewport {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(ellipse at center,#18221e,#060b0b 80%);
+}
+#stage {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 1600px;
+  height: 900px;
+  overflow: hidden;
+  transform-origin: center center;
+  background: #202e29;
+  isolation: isolate;
+  box-shadow: 0 0 90px #000;
+  color: var(--ink);
+}
+#room {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background: linear-gradient(180deg,#39443c 0%,#374138 34%,#2a3932 53%,#18231e 54%,#26312b 60%,#16221f 80%);
+  transition: filter 1s;
+  --focus-blur: 0px;
+  filter: blur(var(--focus-blur));
+}
+#room:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 118px;
+  height: 408px;
+  background: linear-gradient(90deg,rgba(146,171,137,.06) 1px,transparent 1px),linear-gradient(180deg,rgba(0,0,0,.11) 1px,transparent 1px);
+  background-size: 262px 100%,100% 88px;
+  box-shadow: inset 0 0 130px #0a18168c;
+}
+#room:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 25% 36%,transparent,#030b0955 80%),linear-gradient(180deg,#04100d55,transparent 24%,transparent 60%,#050d0be6);
+  pointer-events: none;
+}
+#stage.is-menu .student-head,#stage.is-menu .student-body {
+  visibility: hidden;
+}
+.ceiling {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 132px;
+  background: linear-gradient(172deg,#293530,#131d19);
+  clip-path: polygon(0 0,100% 0,100% 70%,0 100%);
+  border-bottom: 6px solid #1d2822;
+}
+.beam {
+  position: absolute;
+  top: 87px;
+  left: 0;
+  width: 1640px;
+  height: 10px;
+  background: #17221a;
+  transform: rotate(-2deg);
+}
+.lamp {
+  position: absolute;
+  top: 104px;
+  left: 640px;
+  width: 269px;
+  height: 8px;
+  background: #b7c7a1;
+  box-shadow: 0 0 15px #bddbab50,0 28px 80px 30px #b9cd9430;
+  transform: rotate(-2deg);
+}
+.lamp.second {
+  top: 47px;
+  left: 1188px;
+  width: 185px;
+  opacity: .7;
+}
+.window-wall {
+  position: absolute;
+  left: -45px;
+  top: 151px;
+  width: 384px;
+  height: 373px;
+  transform: skewY(5deg);
+  background: linear-gradient(135deg,#71867b,#233b37 75%);
+  border: 17px solid #24352e;
+  box-shadow: 0 0 45px #b5c9a612;
+}
+.window-wall:before {
+  content: "";
+  position: absolute;
+  inset: 12px;
+  background: linear-gradient(90deg,transparent 30%,#23312a 30%,#23312a 33%,transparent 33%,transparent 65%,#23312a 65%,#23312a 68%,transparent 68%),linear-gradient(180deg,transparent 47%,#23312a 47%,#23312a 50%,transparent 50%);
+}
+.window-wall:after {
+  content: "";
+  position: absolute;
+  inset: 25px;
+  background: linear-gradient(0deg,#112d24aa 0%,transparent 60%);
+  clip-path: polygon(0 55%,12% 34%,21% 58%,33% 17%,48% 49%,56% 34%,67% 51%,81% 21%,100% 48%,100% 100%,0 100%);
+}
+.curtain {
+  position: absolute;
+  left: 310px;
+  top: 135px;
+  width: 106px;
+  height: 413px;
+  transform: skewY(5deg);
+  background: repeating-linear-gradient(90deg,#223931 0px,#32473a 15px,#20342d 29px);
+  clip-path: polygon(0 0,100% 0,63% 67%,94% 100%,0 100%);
+  box-shadow: 12px 0 30px #0005;
+}
+.sunlight {
+  position: absolute;
+  left: 0;
+  top: 265px;
+  width: 900px;
+  height: 440px;
+  background: linear-gradient(135deg,#dae0b10e,transparent 65%);
+  clip-path: polygon(0 0,35% 8%,100% 80%,24% 100%);
+}
+#board {
+  position: absolute;
+  left: 505px;
+  top: 176px;
+  width: 718px;
+  height: 249px;
+  background: linear-gradient(100deg,#223e32,#254033 60%,#1f372d);
+  border: 10px solid #4c5040;
+  border-bottom: 14px solid #77735a;
+  box-shadow: 0 9px 20px #0004,inset 0 0 45px #15271d;
+  transform: rotate(-.4deg);
+  padding: 28px 36px;
+  color: #c5cfb7a8;
+  font-family: "KaiTi","STKaiti","SimSun",serif;
+}
+#board:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(9deg,transparent,transparent 12px,#d2d9bb03 13px,transparent 14px);
+}
+#boardTitle {
+  font-size: 27px;
+  letter-spacing: 8px;
+  border-bottom: 1px solid #bccdb130;
+  display: inline-block;
+  padding-bottom: 11px;
+}
+#boardText {
+  font-size: 21px;
+  letter-spacing: 3px;
+  margin-top: 17px;
+  white-space: pre-line;
+  line-height: 1.75;
+}
+#boardAside {
+  position: absolute;
+  right: 24px;
+  top: 27px;
+  font-size: 14px;
+  writing-mode: vertical-rl;
+  letter-spacing: 6px;
+  opacity: .5;
+}
+.chalk {
+  position: absolute;
+  bottom: -8px;
+  left: 70%;
+  width: 30px;
+  height: 5px;
+  background: #ccd5be;
+  border-radius: 2px;
+}
+.eraser {
+  position: absolute;
+  bottom: -8px;
+  left: 53%;
+  width: 55px;
+  height: 13px;
+  background: #182e26;
+  border-top: 5px solid #7d7a5e;
+}
+.wall-slogan {
+  position: absolute;
+  left: 650px;
+  top: 127px;
+  letter-spacing: 17px;
+  font-size: 16px;
+  color: #c0bca477;
+}
+#wallClock {
+  position: absolute;
+  left: 1260px;
+  top: 167px;
+  width: 69px;
+  height: 69px;
+  border: 5px solid #8b9280;
+  border-radius: 50%;
+  background: #b1b6a0;
+  box-shadow: 1px 3px 14px #0004;
+}
+#wallClock:before {
+  content: "12";
+  position: absolute;
+  top: 1px;
+  width: 100%;
+  font: 9px monospace;
+  text-align: center;
+  color: #3c473a;
+}
+#wallClock:after {
+  content: "6";
+  position: absolute;
+  bottom: 1px;
+  width: 100%;
+  font: 9px monospace;
+  text-align: center;
+  color: #3c473a;
+}
+.clock-hand {
+  position: absolute;
+  left: 28px;
+  top: 10px;
+  width: 2px;
+  height: 23px;
+  background: #2c3e34;
+  transform-origin: 1px 20px;
+}
+.clock-hand.hour {
+  top: 17px;
+  height: 16px;
+  width: 3px;
+  transform-origin: 1.5px 13px;
+}
+#rearDoor {
+  position: absolute;
+  left: 1367px;
+  top: 237px;
+  width: 161px;
+  height: 323px;
+  background: linear-gradient(90deg,#354538,#27372e);
+  border: 10px solid #192a23;
+  transform: skewY(-2deg);
+  box-shadow: 4px 4px 18px #07150bcc;
+}
+#rearDoor:before {
+  content: "高二 · 2 班";
+  position: absolute;
+  top: -32px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
+  letter-spacing: 4px;
+  color: #a1b69b99;
+}
+#rearGlass {
+  position: absolute;
+  top: 18px;
+  left: 21px;
+  width: 104px;
+  height: 135px;
+  overflow: hidden;
+  background: linear-gradient(130deg,#81958433,#0e211cd9 64%);
+  border: 5px solid #68755b;
+  box-shadow: inset 0 0 22px #0009;
+  transition: box-shadow .4s;
+}
+#rearGlass:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(114deg,transparent 21%,#b7caae14 22%,#a0b6a310 24%,transparent 25%,transparent 65%,#b1c4a317 66%,transparent 71%);
+}
+#doorShadow {
+  position: absolute;
+  left: 15px;
+  top: 32px;
+  width: 72px;
+  height: 130px;
+  opacity: 0;
+  transition: opacity .7s;
+}
+#doorShadow:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 17px;
+  width: 38px;
+  height: 48px;
+  background: #040c08;
+  border-radius: 42% 43% 45% 40%;
+}
+#doorShadow:after {
+  content: "";
+  position: absolute;
+  top: 42px;
+  width: 74px;
+  height: 92px;
+  background: #040c08;
+  border-radius: 40px 40px 2px 2px;
+}
+#doorShadow .eyes {
+  position: absolute;
+  left: 26px;
+  top: 19px;
+  width: 7px;
+  height: 2px;
+  background: #d3e4ae;
+  box-shadow: 15px 0 #d3e4ae;
+  z-index: 2;
+  opacity: .7;
+}
+#doorShadow.glasses .eyes {
+  width: 15px;
+  height: 7px;
+  left: 16px;
+  box-shadow: 20px 0 #d3e4ae;
+  opacity: .5;
+}
+#doorShadow.hand {
+  transform: rotate(14deg) translate(20px,30px) scale(.6);
+}
+#doorShadow.hand:before {
+  border-radius: 7px 12px 2px 2px;
+  transform: scaleY(1.7);
+}
+#doorHandle {
+  position: absolute;
+  right: 9px;
+  top: 193px;
+  width: 29px;
+  height: 6px;
+  background: #8c927b;
+  box-shadow: 0 2px 5px #000;
+  transform-origin: 90% 50%;
+}
+#rearDoor.watched #rearGlass {
+  box-shadow: 0 0 20px #afc79155,inset 0 0 22px #0008;
+}
+#rearDoor.moving #doorHandle {
+  animation: handle 1.4s ease-in-out 2;
+}
+.floor-lines {
+  position: absolute;
+  top: 490px;
+  left: 0;
+  width: 100%;
+  height: 220px;
+  opacity: .2;
+  background: repeating-linear-gradient(0deg,#71816a77 0 2px,transparent 2px 60px);
+  transform: perspective(250px) rotateX(28deg);
+}
+.lectern {
+  position: absolute;
+  left: 808px;
+  top: 427px;
+  width: 193px;
+  height: 83px;
+  transform: skewY(-1deg);
+  background: linear-gradient(90deg,#4a4936,#3c4432);
+  border-top: 12px solid #747057;
+  box-shadow: 0 13px 25px #0004;
+}
+.student {
+  position: absolute;
+  width: 156px;
+  height: 135px;
+  transform-origin: center bottom;
+}
+.student-head {
+  position: absolute;
+  width: 43px;
+  height: 48px;
+  left: 56px;
+  top: 1px;
+  border-radius: 44% 44% 35% 35%;
+  background: linear-gradient(100deg,#182820,#0c1915);
+  box-shadow: 0 0 5px #193124;
+}
+.student-body {
+  position: absolute;
+  left: 34px;
+  top: 44px;
+  width: 92px;
+  height: 69px;
+  background: linear-gradient(90deg,#1d302c,#233b34,#1b2c27);
+  border-radius: 29px 28px 3px 4px;
+  border-left: 5px solid #233b32;
+  border-right: 5px solid #263d32;
+}
+.student-body:before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 19px;
+  width: 44px;
+  height: 24px;
+  border-bottom: 2px solid #66857866;
+  transform: rotate(-2deg);
+}
+.student-desk {
+  position: absolute;
+  left: -8px;
+  top: 93px;
+  width: 180px;
+  height: 15px;
+  background: linear-gradient(0deg,#323c2d,#717455);
+  border-radius: 3px;
+  box-shadow: 0 9px 0 #243c30;
+}
+.student-chair {
+  position: absolute;
+  top: 100px;
+  left: 32px;
+  width: 100px;
+  height: 42px;
+  border-radius: 6px;
+  background: linear-gradient(0deg,#172820,#394b38);
+  border: 4px solid #253a2c;
+  box-shadow: 0 15px #14251d;
+}
+.student.is-still .student-head {
+  filter: brightness(.45);
+}
+#teacher {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100px;
+  height: 190px;
+  transform-origin: center bottom;
+  will-change: transform;
+  z-index: 4;
+  opacity: .88;
+}
+.teacher-head {
+  position: absolute;
+  top: 0;
+  left: 29px;
+  width: 42px;
+  height: 52px;
+  background: linear-gradient(100deg,#18271f,#0a1713);
+  border-radius: 46% 45% 38% 43%;
+  box-shadow: 0 -7px 0 #0b1913;
+}
+.teacher-hair {
+  position: absolute;
+  left: 23px;
+  top: -3px;
+  width: 53px;
+  height: 80px;
+  border-radius: 50% 50% 20% 20%;
+  background: #0c1914;
+  z-index: -1;
+}
+.teacher-body {
+  position: absolute;
+  left: 9px;
+  top: 50px;
+  width: 82px;
+  height: 112px;
+  background: linear-gradient(100deg,#18271f,#0b1813);
+  clip-path: polygon(26% 0,73% 0,90% 24%,100% 100%,0 100%,10% 23%);
+}
+.teacher-body:after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 30px;
+  width: 25px;
+  height: 23px;
+  background: #78817355;
+  clip-path: polygon(0 0,100% 0,50% 100%);
+}
+.teacher-leg {
+  position: absolute;
+  left: 26px;
+  top: 151px;
+  width: 17px;
+  height: 34px;
+  background: #0b1611;
+  box-shadow: 31px 0 #0b1611;
+}
+.teacher-shadow {
+  position: absolute;
+  left: -29px;
+  top: 178px;
+  width: 162px;
+  height: 17px;
+  border-radius: 50%;
+  background: #04120ca1;
+  filter: blur(5px);
+}
+#teacher.boss .teacher-body {
+  background: linear-gradient(100deg,#17231d,#07120e);
+}
+#teacher.boss .teacher-head:after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 21px;
+  width: 13px;
+  height: 4px;
+  border: 1px solid #a9b59655;
+  box-shadow: 17px 0 0 -1px #a9b59666;
+}
+#desk {
+  position: absolute;
+  left: -70px;
+  top: 580px;
+  width: 1740px;
+  height: 365px;
+  background: linear-gradient(180deg,#565c45 0%,#454f3d 15%,#293b31 42%,#14241f 65%,#10201c);
+  clip-path: polygon(13% 0,89% 0,100% 46%,100% 100%,0 100%,0 43%);
+  border-top: 4px solid #93927577;
+  box-shadow: 0 -30px 50px #0004;
+  z-index: 6;
+}
+#desk:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(2deg,transparent 0px,transparent 20px,#cbd7ad04 21px,transparent 22px);
+}
+.desk-scratch {
+  position: absolute;
+  left: 292px;
+  top: 15px;
+  font: 15px "KaiTi","SimSun",serif;
+  letter-spacing: 3px;
+  opacity: .25;
+  transform: rotate(-9deg);
+}
+#book {
+  position: absolute;
+  left: 562px;
+  top: 546px;
+  width: 420px;
+  height: 115px;
+  transform: perspective(600px) rotateX(34deg) rotate(-3deg);
+  z-index: 7;
+  display: flex;
+  filter: brightness(.77);
+}
+.book-page {
+  position: relative;
+  width: 50%;
+  background: linear-gradient(100deg,#c1c1a0,#dad5b0);
+  border: 1px solid #686e55;
+  box-shadow: 0 9px 1px #868970,0 12px 12px #07170d77;
+  padding: 18px 20px;
+}
+.book-page+ .book-page {
+  background: linear-gradient(90deg,#989f80,#c9c9a7 13%,#c7c6a3);
+}
+.book-page:after {
+  content: "";
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 14px;
+  height: 38px;
+  background: repeating-linear-gradient(0deg,#64735c60 0 1px,transparent 1px 9px);
+}
+#bookTitle {
+  font-family: "SimSun",serif;
+  font-size: 18px;
+  color: #334330;
+  letter-spacing: 6px;
+}
+.book-margin {
+  color: #657056;
+  font-size: 12px;
+  text-align: right;
+}
+.pen {
+  position: absolute;
+  left: 1030px;
+  top: 589px;
+  width: 118px;
+  height: 7px;
+  transform: rotate(-25deg);
+  background: linear-gradient(90deg,#bac6af 0%,#34463d 18%,#182c27 89%,#95a78b 90%);
+  z-index: 7;
+  box-shadow: 0 5px 7px #15251b;
+}
+.desk-note {
+  position: absolute;
+  left: 1166px;
+  top: 570px;
+  font: 17px "KaiTi","SimSun",serif;
+  color: #b8bb8b80;
+  transform: rotate(3deg);
+  z-index: 7;
+  line-height: 1.5;
+}
+#vignette {
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 0 0 120px 30px #0009;
+  z-index: 8;
+  pointer-events: none;
+}
+#grain {
+  position: absolute;
+  inset: 0;
+  opacity: .06;
+  z-index: 98;
+  pointer-events: none;
+  background: repeating-linear-gradient(0deg,transparent 0 2px,#d6e8c612 2px 3px);
+  mix-blend-mode: screen;
+}
+#effect {
+  position: absolute;
+  inset: 0;
+  z-index: 90;
+  pointer-events: none;
+}
+#stage.flicker #effect {
+  animation: flicker .58s ease-out;
+}
+#stage.shake #room {
+  animation: shake .35s;
+}
+#stage.low-focus #vignette {
+  box-shadow: inset 0 0 200px 80px #000b;
+}
+#stage.critical #vignette {
+  box-shadow: inset 0 0 130px 25px #631d2266;
+}
+#stage.extraordinary #board {
+  border-color: #858563;
+  box-shadow: 0 0 40px #b3c37922;
+}
+#stage.extraordinary .lamp {
+  background: #d8dfb1;
+}
+#topbar {
+  position: absolute;
+  left: 40px;
+  right: 40px;
+  top: 26px;
+  height: 41px;
+  z-index: 81;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 13px;
+  letter-spacing: 3px;
+  color: #bbcbb599;
+}
+.brand-emblem {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid #b5c4a64d;
+  transform: rotate(45deg);
+  font-size: 13px;
+}
+.brand-emblem span {
+  transform: rotate(-45deg);
+  font-family: Georgia,serif;
+  color: #d5dfc6;
+}
+.utility {
+  display: flex;
+  gap: 10px;
+}
+.utility button {
+  height: 36px;
+  padding: 0 13px;
+  border: 1px solid #b9caa42b;
+  background: #14241b66;
+  font-size: 12px;
+  letter-spacing: 1px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.utility button b {
+  font-size: 18px;
+  font-weight: 400;
+}
+.utility button:hover {
+  background: #b9caa419;
+}
+.utility button#fullscreenBtn {
+  min-width: 107px;
+  justify-content: center;
+}
+#menu {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  background: linear-gradient(90deg,#10221df7 0%,#10221ded 24%,#12251dad 43%,#0c191327 73%);
+}
+.menu-content {
+  position: absolute;
+  left: 112px;
+  top: 150px;
+  width: 630px;
+}
+.menu-kicker {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  margin-bottom: 29px;
+  color: #c5d2ae88;
+  font-size: 12px;
+  letter-spacing: 4px;
+}
+.menu-kicker:before {
+  content: "";
+  width: 38px;
+  height: 1px;
+  background: #a9bd89;
+}
+.menu-class {
+  font-size: 30px;
+  letter-spacing: 9px;
+  font-weight: 400;
+  margin: 0 0 17px;
+  color: #d1dcc3cc;
+}
+.menu-title {
+  font-size: 107px;
+  line-height: 1.22;
+  letter-spacing: 6px;
+  margin: 0;
+  font-weight: 500;
+  color: #d7e0c7;
+  text-shadow: 0 3px 35px #08191080;
+}
+.menu-title small {
+  display: block;
+  font-family: Georgia,serif;
+  font-size: 15px;
+  letter-spacing: 10px;
+  color: #97ad9099;
+  line-height: 3.5;
+  font-weight: 400;
+}
+.menu-rule {
+  margin: 20px 0 31px;
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  color: #b7c7aa;
+  letter-spacing: 2px;
+  font-size: 16px;
+}
+.menu-rule b {
+  font: 23px ui-monospace,monospace;
+  color: var(--gold);
+  font-weight: 400;
+}
+.start-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 392px;
+  padding: 19px 24px;
+  background: var(--accent);
+  color: #1c2d20;
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: 5px;
+}
+.start-button span {
+  font: 20px Georgia,serif;
+  letter-spacing: 0;
+}
+.quick-button {
+  margin-top: 12px;
+  padding: 17px 22px;
+  width: 392px;
+  border: 1px solid #c9d7b73b;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  letter-spacing: 3px;
+  font-size: 15px;
+}
+.quick-button small {
+  letter-spacing: 1px;
+  font-size: 11px;
+  color: #aabc9a;
+}
+.menu-links {
+  display: flex;
+  gap: 27px;
+  margin-top: 27px;
+}
+.menu-links button {
+  font-size: 13px;
+  color: #afc0a5;
+  letter-spacing: 2px;
+  padding: 5px 0;
+  border-bottom: 1px solid transparent;
+}
+.menu-links button:hover {
+  border-bottom-color: #afc0a5;
+}
+.menu-foot {
+  position: absolute;
+  left: 112px;
+  right: 54px;
+  bottom: 43px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  color: #93a88b7d;
+  line-height: 2;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+.menu-side {
+  position: absolute;
+  right: 59px;
+  bottom: 172px;
+  writing-mode: vertical-rl;
+  font: 16px "SimSun",serif;
+  letter-spacing: 9px;
+  color: #c3c9aa70;
+}
+.menu-index {
+  position: absolute;
+  right: 81px;
+  bottom: 211px;
+  font: 190px Georgia,serif;
+  line-height: 1;
+  color: #cad4b108;
+  -webkit-text-stroke: 1px #c7d6b31c;
+}
+.menu-memory {
+  margin-top: 13px;
+  min-height: 19px;
+  font-size: 12px;
+  color: #ddbd8e;
+}
+#hud {
+  position: absolute;
+  left: 42px;
+  right: 42px;
+  top: 92px;
+  height: 75px;
+  z-index: 15;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.time-block {
+  display: flex;
+  gap: 22px;
+  align-items: center;
+}
+.clock-digital {
+  font-size: 44px;
+  color: #d2dfc4;
+  line-height: 1.05;
+  letter-spacing: -2px;
+}
+.clock-meta {
+  font-size: 11px;
+  color: #a2b397;
+  letter-spacing: 2px;
+  margin-top: 6px;
+}
+.course-meta {
+  padding-left: 23px;
+  border-left: 1px solid var(--line);
+}
+#courseName {
+  font-size: 20px;
+  letter-spacing: 3px;
+}
+#teacherName {
+  font-size: 12px;
+  color: #aebba1;
+  letter-spacing: 2px;
+  margin-top: 8px;
+}
+.lesson-dots {
+  display: flex;
+  gap: 7px;
+  margin-top: 11px;
+}
+.lesson-dot {
+  width: 25px;
+  height: 3px;
+  background: #c1d3a522;
+}
+.lesson-dot.done {
+  background: #b8ca9e;
+}
+.lesson-dot.active {
+  background: #d6dfb5;
+  box-shadow: 0 0 9px #d6dfb533;
+}
+.suspicion-block {
+  width: 257px;
+  background: #11251bc9;
+  padding: 13px 16px;
+  border: 1px solid #d5e4bb26;
+  backdrop-filter: blur(8px);
+}
+.meter-title {
+  font-size: 12px;
+  letter-spacing: 3px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.meter-title b {
+  font: 20px ui-monospace,monospace;
+  letter-spacing: 1px;
+  font-weight: 400;
+}
+.bar {
+  height: 4px;
+  background: #afc39d1c;
+  overflow: hidden;
+  margin-top: 10px;
+}
+.bar i {
+  display: block;
+  height: 100%;
+  background: var(--accent);
+  width: 0;
+  transition: width .14s linear;
+}
+.bar.danger i {
+  background: var(--danger);
+}
+#suspicionHint {
+  margin-top: 6px;
+  font-size: 10px;
+  color: #a1b597;
+  letter-spacing: 2px;
+}
+#lessonProgress {
+  position: absolute;
+  top: 80px;
+  left: 42px;
+  right: 42px;
+  height: 1px;
+  z-index: 15;
+  background: #c6d4b112;
+}
+#lessonProgress i {
+  display: block;
+  height: 1px;
+  background: #d1deae77;
+  width: 0;
+}
+#objectives {
+  position: absolute;
+  left: 45px;
+  top: 403px;
+  width: 309px;
+  z-index: 10;
+  padding: 19px 18px;
+  border-left: 2px solid #9fb88677;
+  background: linear-gradient(90deg,#11251bd9,#11251b33);
+  font-size: 12px;
+  line-height: 2;
+  letter-spacing: 1px;
+}
+#objectives .eyebrow {
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: #b4c5a4;
+  margin-bottom: 9px;
+}
+#objectiveMain {
+  font-size: 16px;
+  color: #d0dabf;
+  margin-bottom: 4px;
+}
+.objective-line {
+  color: #a3b69a;
+}
+.objective-line span {
+  margin-right: 7px;
+  color: #d2ddbd;
+}
+#ambientCaption {
+  position: absolute;
+  left: 526px;
+  right: 450px;
+  top: 463px;
+  z-index: 12;
+  text-align: center;
+  color: #d0d9b8;
+  font-size: 13px;
+  letter-spacing: 3px;
+  text-shadow: 0 2px 8px #000;
+  pointer-events: none;
+}
+#extraBadge {
+  position: absolute;
+  left: 636px;
+  top: 444px;
+  padding: 6px 12px;
+  background: #bdca9255;
+  font-size: 11px;
+  letter-spacing: 3px;
+  z-index: 13;
+}
+#actionDock {
+  position: absolute;
+  left: 42px;
+  right: 42px;
+  top: 670px;
+  height: 65px;
+  z-index: 16;
+  display: flex;
+  gap: 10px;
+}
+.action {
+  flex: 1;
+  text-align: left;
+  background: #193126ee;
+  border: 1px solid #a6be8c28;
+  padding: 12px 17px;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  transition: background .15s,border-color .15s;
+}
+.action .icon {
+  font-size: 27px;
+  opacity: .75;
+  width: 34px;
+  text-align: center;
+}
+.action strong {
+  display: block;
+  font-size: 16px;
+  letter-spacing: 3px;
+  font-weight: 500;
+}
+.action small {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: #91aa89;
+  margin-top: 5px;
+}
+.action kbd {
+  margin-left: auto;
+  border: 1px solid #c6d7b52b;
+  color: #a8bd98;
+  font: 11px monospace;
+  padding: 5px 6px;
+}
+.action.active {
+  border-color: #bccf9a;
+  background: #b7ca9724;
+  box-shadow: inset 0 -2px #c2d3a1;
+}
+.action.active .icon {
+  color: #d3e1b8;
+  opacity: 1;
+}
+#resourceBar {
+  position: absolute;
+  left: 44px;
+  right: 44px;
+  top: 748px;
+  z-index: 16;
+  height: 27px;
+  display: flex;
+  gap: 29px;
+  align-items: center;
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: #a9be9b;
+}
+.resource {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.resource .bar {
+  margin: 0;
+  width: 116px;
+  height: 3px;
+}
+.resource b {
+  font: 12px monospace;
+  min-width: 23px;
+  font-weight: 400;
+  color: #d5dfc3;
+}
+#actionHint {
+  margin-left: auto;
+  color: #afc89b;
+  font-size: 11px;
+}
+.resource-divider {
+  height: 16px;
+  width: 1px;
+  background: var(--line);
+}
+#dialogue {
+  position: absolute;
+  left: 42px;
+  right: 42px;
+  bottom: 26px;
+  height: 93px;
+  z-index: 17;
+  border: 1px solid #b8c8a732;
+  background: linear-gradient(100deg,#13271fea,#13291ff2);
+  display: flex;
+  align-items: center;
+  padding: 19px 27px;
+  gap: 26px;
+  box-shadow: 0 6px 20px #06150d33;
+}
+#speakerWrap {
+  width: 151px;
+  flex-shrink: 0;
+  border-right: 1px solid #afc19838;
+  padding-right: 20px;
+}
+#speaker {
+  font-size: 17px;
+  color: #c9d9b3;
+  letter-spacing: 3px;
+}
+#speakerRole {
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: #8ca384;
+  margin-top: 7px;
+}
+#dialogueText {
+  font-size: 17px;
+  line-height: 1.7;
+  letter-spacing: 1px;
+  padding-right: 69px;
+  max-height: 67px;
+  overflow: hidden;
+}
+#dialogueNext {
+  position: absolute;
+  right: 20px;
+  bottom: 17px;
+  padding: 6px 0;
+  font-size: 10px;
+  color: #c3d5ae;
+  letter-spacing: 1px;
+}
+#dialogueNext .next-mark {
+  margin-left: 7px;
+  font-size: 11px;
+}
+.dialogue-blocking {
+  cursor: pointer;
+  border-color: #bccc9b88!important;
+}
+#dialogueAuto {
+  position: absolute;
+  right: 20px;
+  top: 13px;
+  color: #819778;
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+#phone {
+  position: absolute;
+  left: 1046px;
+  top: 370px;
+  width: 252px;
+  height: 284px;
+  z-index: 14;
+  background: #101b18;
+  border: 6px solid #344d3a;
+  border-radius: 25px;
+  box-shadow: 6px 12px 28px #000a;
+  transform: rotate(3deg);
+  padding: 11px 13px;
+  color: #d1e2c4;
+}
+.phone-top {
+  display: flex;
+  justify-content: space-between;
+  font: 11px ui-monospace,monospace;
+  margin-bottom: 11px;
+  color: #acc49c;
+}
+.phone-apps {
+  display: flex;
+  gap: 4px;
+  border-bottom: 1px solid #a6bd8d33;
+  padding-bottom: 7px;
+}
+.phone-apps button {
+  font-size: 11px;
+  padding: 6px 7px;
+  background: #9bb88712;
+  border-radius: 3px;
+}
+.phone-apps button.active {
+  background: #aecb8944;
+  color: #e0eccc;
+}
+#phoneContent {
+  height: 154px;
+  overflow: auto;
+  scrollbar-width: thin;
+  margin-top: 9px;
+  font-size: 12px;
+  line-height: 1.6;
+}
+#phoneContent .message {
+  padding: 5px 7px;
+  margin-bottom: 6px;
+  background: #78996720;
+  border-left: 2px solid #b7ce98;
+  font-size: 11px;
+}
+.phone-home {
+  font-size: 10px;
+  border: 1px solid #77916466;
+  width: 100%;
+  padding: 5px;
+  color: #bdd1a9;
+  margin-top: 5px;
+}
+.phone-time {
+  text-align: center;
+  font: 45px ui-monospace,monospace;
+  padding-top: 12px;
+  color: #e0e9c5;
+  letter-spacing: -2px;
+}
+.phone-time-sub {
+  text-align: center;
+  color: #9cb990;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+.video-card {
+  height: 82px;
+  background: radial-gradient(circle at 50% 65%,#bac487 0 14%,#627c53 15% 34%,#2b4730 35%);
+  display: grid;
+  place-items: center;
+  color: #edf3d7;
+  letter-spacing: 2px;
+  border-radius: 5px;
+}
+.phone-game {
+  display: flex;
+  gap: 6px;
+  margin: 7px 0;
+}
+.phone-game button {
+  flex: 1;
+  background: #adca8833;
+  border: 1px solid #abc79266;
+  font-size: 22px;
+  padding: 5px;
+}
+#cubePanel {
+  position: absolute;
+  left: 443px;
+  top: 498px;
+  width: 526px;
+  z-index: 14;
+  background: #142b20ef;
+  border: 1px solid #b2c89555;
+  padding: 14px 18px;
+  display: flex;
+  gap: 19px;
+  box-shadow: 0 7px 24px #08180b77;
+}
+.cube-drawing {
+  width: 82px;
+  height: 82px;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 3px;
+  padding: 4px;
+  background: #10251b;
+  transform: rotate(-6deg);
+  box-shadow: 5px 5px 0 #0a1a12;
+  flex-shrink: 0;
+}
+.cube-drawing i {
+  background: #bccb91;
+  border-radius: 2px;
+  box-shadow: inset -2px -2px #213c1f26;
+}
+.cube-drawing i:nth-child(2n) {
+  background: #d4b783;
+}
+.cube-drawing i:nth-child(3n) {
+  background: #8cae9b;
+}
+.cube-drawing i:nth-child(7) {
+  background: #c2937f;
+}
+.cube-info {
+  flex: 1;
+}
+.cube-title {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #d3dfba;
+}
+.cube-formula {
+  font: 22px monospace;
+  margin: 7px 0;
+  letter-spacing: 4px;
+}
+.cube-formula .done {
+  color: #dddfa7;
+}
+.cube-formula .pending {
+  color: #729066;
+}
+.cube-keys {
+  display: flex;
+  gap: 4px;
+}
+.cube-keys button {
+  padding: 5px 6px;
+  min-width: 30px;
+  border: 1px solid #b2c69b33;
+  font: 13px monospace;
+}
+.cube-keys button.needed {
+  border-color: #c1d09a;
+  color: #e1e8b9;
+}
+#cubeHint {
+  font-size: 10px;
+  color: #9fba8c;
+  margin-top: 6px;
+}
+#observePanel {
+  position: absolute;
+  left: 445px;
+  top: 530px;
+  width: 551px;
+  z-index: 14;
+  background: #142b20e6;
+  border: 1px solid #acc99555;
+  padding: 13px 17px;
+}
+#observePanel .observe-label {
+  font-size: 11px;
+  color: #a4be91;
+  letter-spacing: 2px;
+  margin-bottom: 9px;
+}
+.observe-targets {
+  display: flex;
+  gap: 6px;
+}
+.observe-targets button {
+  flex: 1;
+  border: 1px solid #a9c18c33;
+  font-size: 12px;
+  padding: 10px 7px;
+}
+.observe-targets button.active {
+  background: #b9cb942b;
+  border-color: #b7ca9c;
+}
+#challengeLayer {
+  position: absolute;
+  inset: 0;
+  z-index: 30;
+  pointer-events: none;
+  background: linear-gradient(180deg,transparent 20%,#06191055 75%,transparent 85%);
+}
+#challengeCard {
+  position: absolute;
+  left: 420px;
+  top: 227px;
+  width: 760px;
+  border: 1px solid #c0d0a36b;
+  background: linear-gradient(140deg,#182d23fa,#11251ffa);
+  box-shadow: 0 30px 100px #03100bad;
+  padding: 29px 36px 27px;
+  pointer-events: auto;
+}
+.challenge-kicker {
+  font-size: 11px;
+  letter-spacing: 4px;
+  color: var(--gold);
+  display: flex;
+  justify-content: space-between;
+}
+.challenge-title {
+  font-family: "Songti SC","SimSun",serif;
+  font-size: 36px;
+  font-weight: 400;
+  letter-spacing: 4px;
+  margin: 15px 0 10px;
+  line-height: 1.3;
+}
+.challenge-description {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #b9cbb0;
+  white-space: pre-line;
+}
+.challenge-timer {
+  height: 3px;
+  background: #a4be8a22;
+  margin: 20px 0;
+}
+.challenge-timer i {
+  display: block;
+  height: 100%;
+  background: var(--gold);
+  width: 100%;
+}
+.challenge-choices {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.choice-btn {
+  border: 1px solid #9bb78755;
+  background: #76965813;
+  padding: 15px 17px;
+  min-height: 51px;
+  text-align: left;
+  font-size: 15px;
+  line-height: 1.45;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.choice-btn kbd {
+  font: 12px monospace;
+  color: #91aa7f;
+  width: 16px;
+  flex-shrink: 0;
+}
+.choice-btn:hover {
+  background: #afc88924;
+}
+.challenge-footer {
+  color: #849f78;
+  font-size: 11px;
+  margin-top: 17px;
+  letter-spacing: 1px;
+}
+.qte-steps {
+  display: flex;
+  gap: 12px;
+}
+.qte-step {
+  flex: 1;
+  border: 1px solid #b0c78f44;
+  padding: 20px 9px;
+  text-align: center;
+  background: #26402c44;
+  font-size: 17px;
+}
+.qte-step b {
+  display: block;
+  font: 10px monospace;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+  color: #9db686;
+}
+.qte-step.current {
+  border-color: #d2dcb0;
+  box-shadow: inset 0 -3px #d2dcb0;
+}
+.qte-step.done {
+  opacity: .45;
+  background: #8ca86644;
+}
+.qte-step.done:after {
+  content: " ✓";
+  color: var(--accent);
+}
+.freeze-icon {
+  text-align: center;
+  font: 48px "SimSun",serif;
+  letter-spacing: 10px;
+  margin: 18px 0;
+  color: #c5d7ad;
+}
+.freeze-instruction {
+  text-align: center;
+  color: #a0b891;
+  font-size: 13px;
+}
+.number-grid {
+  display: grid;
+  grid-template-columns: repeat(8,1fr);
+  gap: 6px;
+}
+.number-grid button {
+  height: 36px;
+  font: 16px monospace;
+  border: 1px solid #a2bc853b;
+  background: #8baa6920;
+}
+.number-grid button.memory-flash {
+  animation: memory .95s forwards;
+}
+.sprint-btn {
+  width: 100%;
+  padding: 25px;
+  background: #b9d198;
+  color: #172d1d;
+  font-size: 24px;
+  letter-spacing: 10px;
+}
+.challenge-backdrop {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+#toastStack {
+  position: absolute;
+  right: 47px;
+  top: 385px;
+  width: 287px;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  z-index: 85;
+  pointer-events: none;
+}
+.toast {
+  padding: 12px 15px;
+  background: #182e23f2;
+  border-left: 2px solid #bbcd9b;
+  color: #d1dfbe;
+  box-shadow: 0 5px 18px #07150e44;
+  font-size: 12px;
+  line-height: 1.7;
+  letter-spacing: 1px;
+  animation: toast-in .25s ease-out;
+}
+.toast.warn {
+  border-left-color: var(--danger);
+  color: #e7bcaa;
+}
+#escapeScene {
+  position: absolute;
+  inset: 0;
+  z-index: 9;
+  background: linear-gradient(180deg,#111f1b,#26332b 50%,#0c1914 100%);
+  overflow: hidden;
+}
+.hall-end {
+  position: absolute;
+  left: 660px;
+  top: 260px;
+  width: 280px;
+  height: 260px;
+  background: linear-gradient(180deg,#192e22,#354a2e);
+  border: 13px solid #0b1a12;
+  box-shadow: 0 0 95px #bed59919;
+}
+.hall-left {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg,#16271f,#354330);
+  clip-path: polygon(0 0,42% 30%,42% 56%,0 95%);
+}
+.hall-right {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(270deg,#102018,#293b28);
+  clip-path: polygon(100% 0,58% 30%,58% 56%,100% 95%);
+}
+.hall-floor {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(0deg,#47503b33 0 2px,transparent 2px 43px),linear-gradient(0deg,#0b1b13,#35442c);
+  clip-path: polygon(0 95%,42% 56%,58% 56%,100% 95%,100% 100%,0 100%);
+}
+.hall-ceiling {
+  position: absolute;
+  inset: 0;
+  background: #0c1712;
+  clip-path: polygon(0 0,100% 0,58% 30%,42% 30%);
+}
+.hall-frame {
+  position: absolute;
+  inset: 97px 259px 180px;
+  border: 12px solid #70825c1a;
+  box-shadow: 0 0 0 110px #8aa76a04;
+}
+.exit-sign {
+  position: absolute;
+  top: 228px;
+  left: 728px;
+  width: 144px;
+  text-align: center;
+  background: #294c32;
+  border: 1px solid #668857;
+  color: #c4dea3;
+  font: 12px monospace;
+  letter-spacing: 3px;
+  padding: 7px;
+  box-shadow: 0 0 22px #a6c48019;
+}
+.hall-shadow {
+  position: absolute;
+  right: 179px;
+  top: 290px;
+  width: 84px;
+  height: 235px;
+  background: #030d07;
+  border-radius: 44% 44% 10% 10%;
+  filter: blur(2px);
+  opacity: .7;
+  transform: skewX(-8deg);
+}
+#escapeHud {
+  position: absolute;
+  top: 98px;
+  left: 476px;
+  width: 647px;
+  z-index: 12;
+  background: #0d2219df;
+  border: 1px solid #b6cb9344;
+  padding: 13px 22px;
+}
+.escape-route {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: #819d71;
+  margin-bottom: 13px;
+}
+.escape-route .passed {
+  color: #d3ddb5;
+}
+.escape-distance {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+.escape-distance .bar {
+  flex: 1;
+  margin: 0;
+}
+.escape-distance b {
+  font: 18px monospace;
+}
+#escape-location {
+  position: absolute;
+  left: 46px;
+  top: 280px;
+  writing-mode: vertical-rl;
+  font-family: "SimSun",serif;
+  font-size: 25px;
+  letter-spacing: 12px;
+  color: #adbf99;
+}
+#modal {
+  position: absolute;
+  inset: 0;
+  z-index: 70;
+  display: grid;
+  place-items: center;
+  background: #06130ddd;
+  backdrop-filter: blur(7px);
+}
+.modal-panel {
+  width: 834px;
+  max-height: 732px;
+  border: 1px solid #b6c99d4d;
+  background: linear-gradient(145deg,#1a3025,#10251c);
+  box-shadow: 0 30px 80px #0009;
+  display: flex;
+  flex-direction: column;
+  padding: 37px 42px;
+}
+.modal-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+.modal-top h2 {
+  font: 31px "Songti SC","SimSun",serif;
+  letter-spacing: 6px;
+  margin: 0;
+  font-weight: 400;
+}
+.modal-close {
+  width: 36px;
+  height: 36px;
+  border: 1px solid #abc28d44;
+  font: 24px monospace;
+  color: #b1c49c;
+}
+.modal-body {
+  overflow: auto;
+  max-height: 560px;
+  scrollbar-width: thin;
+  padding-right: 6px;
+}
+.modal-body p {
+  font-size: 15px;
+  line-height: 1.85;
+  color: #b6c8aa;
+  margin: 0 0 17px;
+}
+.modal-body h3 {
+  font-size: 14px;
+  letter-spacing: 3px;
+  color: #d0ddb9;
+  font-weight: 500;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 12px;
+  margin-top: 24px;
+}
+.modal-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 23px;
+}
+.solid-btn {
+  background: var(--accent);
+  color: #182c1e;
+  padding: 13px 21px;
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+.outline-btn {
+  border: 1px solid #b6cb9955;
+  padding: 12px 20px;
+  font-size: 14px;
+  color: #c6d7af;
+  letter-spacing: 2px;
+}
+.settings-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 15px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 15px;
+}
+.settings-row small {
+  display: block;
+  font-size: 11px;
+  color: #8fa980;
+  margin-top: 6px;
+  line-height: 1.6;
+}
+.settings-row input[type=range] {
+  width: 230px;
+  accent-color: #b9cc96;
+}
+.settings-row input[type=checkbox] {
+  width: 22px;
+  height: 22px;
+  accent-color: #b9cc96;
+}
+.settings-row output {
+  font: 13px monospace;
+  color: #adbf9a;
+  min-width: 43px;
+  text-align: right;
+}
+.settings-control {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.archive-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.archive-card {
+  padding: 19px;
+  border: 1px solid #a2ba8344;
+  background: #a1bc8410;
+  min-height: 125px;
+}
+.archive-card.locked {
+  opacity: .47;
+}
+.archive-card .ending-label {
+  font: 10px monospace;
+  letter-spacing: 2px;
+  color: #a7bd8e;
+}
+.archive-card h3 {
+  margin: 11px 0 8px;
+  padding: 0;
+  border: 0;
+  font-family: "SimSun",serif;
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+.archive-card p {
+  font-size: 11px;
+  line-height: 1.65;
+  margin: 0;
+}
+.stats-row {
+  display: flex;
+  gap: 20px;
+  border-top: 1px solid var(--line);
+  padding-top: 18px;
+  margin-top: 22px;
+  font-size: 12px;
+  color: #acc397;
+}
+.help-key {
+  display: inline-block;
+  min-width: 25px;
+  text-align: center;
+  padding: 2px 6px;
+  margin: 0 5px;
+  border: 1px solid #a9c68a55;
+  font: 12px monospace;
+  color: #d1dfb6;
+}
+.journal-entry {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+}
+.journal-entry b {
+  font-size: 13px;
+  color: #c7d8b0;
+  letter-spacing: 2px;
+}
+.journal-entry p {
+  font-size: 13px;
+  margin: 8px 0 0;
+}
+.break-stats {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 15px;
+  margin: 20px 0;
+}
+.break-stats div {
+  padding: 15px;
+  background: #a1bf7f14;
+  text-align: center;
+  font-size: 11px;
+  color: #a0b88d;
+}
+.break-stats b {
+  display: block;
+  font: 26px monospace;
+  color: #d3e0b7;
+  margin: 5px 0;
+}
+#ending {
+  position: absolute;
+  inset: 0;
+  z-index: 50;
+  background: radial-gradient(ellipse at 60% 42%,#2a3e2f,#091810 75%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#ending.bad {
+  background: radial-gradient(ellipse at 60% 42%,#332d24,#0c1510 75%);
+}
+.ending-decoration {
+  position: absolute;
+  right: 89px;
+  top: 87px;
+  bottom: 79px;
+  width: 338px;
+  border: 1px solid #b9cf9720;
+  transform: skewY(-2deg);
+  background: linear-gradient(135deg,#adc58b06,#040f0900);
+}
+.ending-decoration:before {
+  content: "";
+  position: absolute;
+  inset: 27px 30px;
+  border: 1px solid #afc98c14;
+  background: linear-gradient(115deg,transparent 20%,#bdd4a20a 21%,transparent 23%);
+}
+.ending-content {
+  position: relative;
+  width: 950px;
+}
+.ending-type {
+  font: 13px monospace;
+  color: #b8cc9e;
+  letter-spacing: 7px;
+  margin-bottom: 29px;
+}
+.ending-title {
+  font: 80px "Songti SC","SimSun",serif;
+  letter-spacing: 14px;
+  color: #dce3c6;
+  margin: 0 0 29px;
+  font-weight: 400;
+}
+.ending-prose {
+  font-size: 17px;
+  color: #b0c4a2;
+  line-height: 2;
+  letter-spacing: 2px;
+  white-space: pre-line;
+  max-width: 850px;
+}
+.ending-stats {
+  display: flex;
+  gap: 37px;
+  margin: 30px 0 29px;
+  border-top: 1px solid var(--line);
+  padding-top: 23px;
+  font-size: 11px;
+  color: #8fa87d;
+}
+.ending-stats b {
+  display: block;
+  font: 24px monospace;
+  color: #c8d9ab;
+  margin-top: 8px;
+}
+.ending-buttons {
+  display: flex;
+  gap: 13px;
+}
+.ending-note {
+  margin-top: 20px;
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: #819873;
+}
+#rotateHint {
+  position: fixed;
+  left: 14px;
+  right: 14px;
+  bottom: 20px;
+  z-index: 150;
+  text-align: center;
+  font-size: 13px;
+  color: #c3d8ae;
+  pointer-events: none;
+  display: none;
+}
+#srStatus {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+#storageWarning {
+  position: absolute;
+  left: 43px;
+  bottom: 6px;
+  font-size: 10px;
+  color: #d9ae89;
+  z-index: 100;
+  pointer-events: none;
+}
+@keyframes flicker {
+  0%,100% {
+    background: transparent;
+  }
+  25% {
+    background: #04120d99;
+  }
+  50% {
+    background: #9bad6c14;
+  }
+  72% {
+    background: #03100955;
+  }
+}
+@keyframes shake {
+  0%,100% {
+    margin-left: 0;
+  }
+  25% {
+    margin-left: 5px;
+  }
+  55% {
+    margin-left: -4px;
+  }
+  80% {
+    margin-left: 2px;
+  }
+}
+@keyframes handle {
+  0%,100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(26deg);
+  }
+}
+@keyframes toast-in {
+  from {
+    opacity: 0;
+    transform: translateX(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes memory {
+  0%,65% {
+    background: #bdd590;
+    color: #16301a;
+    box-shadow: 0 0 15px #c0df8a88;
+  }
+  100% {
+    background: #8baa6920;
+    color: inherit;
+    box-shadow: none;
+  }
+}
+@media(prefers-reduced-motion:reduce) {
+  *,*:before,*:after {
+    animation: none!important;
+    transition: none!important;
+  }
+}
+@media(orientation:portrait) and (max-width:900px) {
+  #rotateHint {
+    display: block;
+  }
+}
+body.no-motion *,body.no-motion *:before,body.no-motion *:after {
+  animation: none!important;
+  transition: none!important;
+}
+  </style>
+ </head>
+ <body>
+  <div id="viewport">
+   <main aria-label="高二（2）班：最后一节课" id="stage">
+    <div aria-hidden="true" id="room">
+     <div class="ceiling">
+     </div>
+     <div class="beam">
+     </div>
+     <div class="lamp">
+     </div>
+     <div class="lamp second">
+     </div>
+     <div class="window-wall">
+     </div>
+     <div class="curtain">
+     </div>
+     <div class="sunlight">
+     </div>
+     <div class="wall-slogan">
+      博 学 · 慎 思 · 明 辨 · 笃 行
+     </div>
+     <div id="board">
+      <div id="boardTitle">
+       最后一节课
+      </div>
+      <div id="boardText">
+       星期一　　值日生：————\n请保持安静。
+      </div>
+      <div id="boardAside">
+       距离放学还有很久
+      </div>
+      <i class="chalk">
+      </i>
+      <i class="eraser">
+      </i>
+     </div>
+     <div id="wallClock">
+      <i class="clock-hand hour" id="hourHand">
+      </i>
+      <i class="clock-hand" id="minuteHand">
+      </i>
+     </div>
+     <div id="rearDoor">
+      <div id="rearGlass">
+       <div id="doorShadow">
+        <i class="eyes">
+        </i>
+       </div>
+      </div>
+      <div id="doorHandle">
+      </div>
+     </div>
+     <div class="floor-lines">
+     </div>
+     <div class="lectern">
+     </div>
+     <div id="students">
+     </div>
+     <div hidden="" id="teacher">
+      <div class="teacher-hair">
+      </div>
+      <div class="teacher-head">
+      </div>
+      <div class="teacher-body">
+      </div>
+      <div class="teacher-leg">
+      </div>
+      <div class="teacher-shadow">
+      </div>
+     </div>
+     <div id="desk">
+      <span class="desk-scratch">
+       别回头，看反光。
+      </span>
+     </div>
+     <div id="book">
+      <div class="book-page">
+       <div id="bookTitle">
+        语　文
+       </div>
+      </div>
+      <div class="book-page">
+       <div class="book-margin">
+        高二（2）班 · 星期一
+       </div>
+      </div>
+     </div>
+     <div class="pen">
+     </div>
+     <div class="desk-note">
+      17:30
+      <br/>
+      才是放学。
+     </div>
+    </div>
+    <div hidden="" id="escapeScene">
+     <div class="hall-left">
+     </div>
+     <div class="hall-right">
+     </div>
+     <div class="hall-floor">
+     </div>
+     <div class="hall-ceiling">
+     </div>
+     <div class="hall-end">
+     </div>
+     <div class="hall-frame">
+     </div>
+     <div class="exit-sign">
+      安全出口 EXIT →
+     </div>
+     <div class="hall-shadow">
+     </div>
+     <div id="escape-location">
+      走廊
+     </div>
+    </div>
+    <div id="vignette">
+    </div>
+    <div id="effect">
+    </div>
+    <div id="grain">
+    </div>
+    <header id="topbar">
+     <div class="brand">
+      <span class="brand-emblem">
+       <span>
+        J
+       </span>
+      </span>
+      <span>
+       江城大学附属中学
+       <span style="opacity:.45">
+        /
+       </span>
+       高二（2）班
+      </span>
+     </div>
+     <nav aria-label="系统控制" class="utility">
+      <button hidden="" id="journalBtn" title="手记 N">
+       ▤ 手记
+      </button>
+      <button id="soundBtn" title="静音 M">
+       ♪ 声音
+      </button>
+      <button hidden="" id="pauseBtn" title="暂停 Esc">
+       Ⅱ 暂停
+      </button>
+      <button id="fullscreenBtn" title="切换全屏 Alt+Enter">
+       <b>
+        ⛶
+       </b>
+       <span>
+        全屏
+       </span>
+      </button>
+     </nav>
+    </header>
+    <section aria-label="主菜单" id="menu">
+     <div class="menu-content">
+      <div class="menu-kicker">
+       一个平常的星期一 / A MONDAY LIKE ANY OTHER
+      </div>
+      <h2 class="menu-class serif">
+       高二（2）班
+      </h2>
+      <h1 class="menu-title serif">
+       最后一节课
+       <small>
+        THE LAST CLASS
+       </small>
+      </h1>
+      <p class="menu-rule">
+       <b>
+        17:30
+       </b>
+       以前，不要相信任何一次下课铃。
+      </p>
+      <button class="start-button" id="startNormal">
+       开始这一天
+       <span>
+        ↗
+       </span>
+      </button>
+      <button class="quick-button" id="startQuick">
+       快速模式
+       <small>
+        10—15 MIN / 可重开本节
+       </small>
+      </button>
+      <div class="menu-links">
+       <button id="helpBtn">
+        游戏说明
+       </button>
+       <button id="settingsBtn">
+        设置
+       </button>
+       <button id="archiveBtn">
+        结局档案
+        <span id="archiveCount">
+         00 / 06
+        </span>
+       </button>
+      </div>
+      <div class="menu-memory" id="menuMemory">
+      </div>
+     </div>
+     <div class="menu-index">
+      02
+     </div>
+     <div class="menu-side">
+      有些东西，不需要回头，也能看到。
+     </div>
+     <footer class="menu-foot">
+      <span>
+       校园恐怖 · 潜行 · 多结局
+       <br/>
+       建议佩戴耳机　/　不含贴脸跳吓，可关闭闪烁与震动
+      </span>
+      <span>
+       单文件离线版　1.0
+       <br/>
+       HTML / CSS / JAVASCRIPT
+      </span>
+     </footer>
+    </section>
+    <section aria-label="课堂游戏界面" hidden="" id="gameUI">
+     <div id="lessonProgress">
+      <i>
+      </i>
+     </div>
+     <div id="hud">
+      <div class="time-block">
+       <div>
+        <div class="clock-digital mono" id="gameClock">
+         07:40
+        </div>
+        <div class="clock-meta">
+         星期一 · MONDAY
+        </div>
+       </div>
+       <div class="course-meta">
+        <div id="courseName">
+         第 1 节 · 语文
+        </div>
+        <div id="teacherName">
+         何凤临 / 守门人
+        </div>
+        <div class="lesson-dots" id="lessonDots">
+        </div>
+       </div>
+      </div>
+      <div class="suspicion-block">
+       <div class="meter-title">
+        <span>
+         怀疑值
+        </span>
+        <b id="suspicionValue">
+         00
+         <small>
+          / 100
+         </small>
+        </b>
+       </div>
+       <div class="bar" id="suspicionBar">
+        <i>
+        </i>
+       </div>
+       <div id="suspicionHint">
+        一切正常。至少现在是。
+       </div>
+      </div>
+     </div>
+     <aside id="objectives">
+      <div class="eyebrow">
+       TODAY'S RULE / 今日守则
+      </div>
+      <div id="objectiveMain">
+       坚持到真正的 17:30
+      </div>
+      <div class="objective-line" id="objectiveOne">
+       <span>
+        01
+       </span>
+       留意玻璃里的反光
+      </div>
+      <div class="objective-line" id="objectiveTwo">
+       <span>
+        02
+       </span>
+       不要让无聊耗尽专注
+      </div>
+      <div class="objective-line" id="objectiveThree">
+       <span>
+        03
+       </span>
+       空格：藏好 → 拿笔 → 看书
+      </div>
+     </aside>
+     <div id="ambientCaption">
+     </div>
+     <div hidden="" id="extraBadge">
+      EXTRAORDINARY MODE ·
+      <span id="extraTime">
+       60
+      </span>
+      s
+     </div>
+     <div hidden="" id="phone">
+      <div class="phone-top">
+       <span id="phoneSmallClock">
+        07:40
+       </span>
+       <span>
+        ▮▮▮　82%
+       </span>
+      </div>
+      <div class="phone-apps">
+       <button class="active" data-app="chat">
+        聊天
+       </button>
+       <button data-app="video">
+        视频
+       </button>
+       <button data-app="game">
+        游戏
+       </button>
+       <button data-app="time">
+        时间
+       </button>
+      </div>
+      <div id="phoneContent">
+      </div>
+      <button class="phone-home" id="phoneClose">
+       收好手机 / SPACE
+      </button>
+     </div>
+     <div hidden="" id="cubePanel">
+      <div class="cube-drawing" id="cubeDrawing">
+       <i>
+       </i>
+       <i>
+       </i>
+       <i>
+       </i>
+       <i>
+       </i>
+       <i>
+       </i>
+       <i>
+       </i>
+       <i>
+       </i>
+       <i>
+       </i>
+       <i>
+       </i>
+      </div>
+      <div class="cube-info">
+       <div class="cube-title">
+        简化 CFOP · 每组公式 +4%
+       </div>
+       <div class="cube-formula" id="cubeFormula">
+       </div>
+       <div class="cube-keys">
+        <button data-turn="R">
+         R
+        </button>
+        <button data-turn="U">
+         U
+        </button>
+        <button data-turn="R'">
+         R′
+        </button>
+        <button data-turn="U'">
+         U′
+        </button>
+        <button data-turn="F">
+         F
+        </button>
+        <button data-turn="L">
+         L
+        </button>
+        <button data-turn="D">
+         D
+        </button>
+        <button data-turn="B">
+         B
+        </button>
+       </div>
+       <div id="cubeHint">
+        Shift + 字母 = 逆转；公式 R U R′ U′
+       </div>
+      </div>
+     </div>
+     <div hidden="" id="observePanel">
+      <div class="observe-label">
+       观察 / 物理课注视老师可阻止其移动
+      </div>
+      <div class="observe-targets">
+       <button data-observe="board">
+        讲台
+       </button>
+       <button class="active" data-observe="teacher">
+        老师
+       </button>
+       <button data-observe="door">
+        后门
+       </button>
+       <button data-observe="window">
+        窗外
+       </button>
+       <button data-observe="mate">
+        同桌
+       </button>
+      </div>
+     </div>
+     <nav aria-label="课堂行动" id="actionDock">
+      <button class="action active" data-action="listen">
+       <span class="icon">
+        ▤
+       </span>
+       <span>
+        <strong>
+         听课
+        </strong>
+        <small>
+         安全 / 恢复专注
+        </small>
+       </span>
+       <kbd>
+        1
+       </kbd>
+      </button>
+      <button class="action" data-action="homework">
+       <span class="icon">
+        ✎
+       </span>
+       <span>
+        <strong>
+         其他作业
+        </strong>
+        <small>
+         低风险 / 累积进度
+        </small>
+       </span>
+       <kbd>
+        2
+       </kbd>
+      </button>
+      <button class="action" data-action="cube">
+       <span class="icon">
+        ▦
+       </span>
+       <span>
+        <strong>
+         魔方
+        </strong>
+        <small>
+         中风险 / 缓解无聊
+        </small>
+       </span>
+       <kbd>
+        3
+       </kbd>
+      </button>
+      <button class="action" data-action="phone">
+       <span class="icon">
+        ▯
+       </span>
+       <span>
+        <strong>
+         手机
+        </strong>
+        <small>
+         高风险 / 隐藏线索
+        </small>
+       </span>
+       <kbd>
+        4
+       </kbd>
+      </button>
+      <button class="action" data-action="observe">
+       <span class="icon">
+        ◎
+       </span>
+       <span>
+        <strong>
+         观察
+        </strong>
+        <small>
+         提前发现危险
+        </small>
+       </span>
+       <kbd>
+        5
+       </kbd>
+      </button>
+     </nav>
+     <div id="resourceBar">
+      <div class="resource">
+       专注
+       <div class="bar">
+        <i id="focusBar">
+        </i>
+       </div>
+       <b id="focusValue">
+        100
+       </b>
+      </div>
+      <div class="resource">
+       无聊
+       <div class="bar">
+        <i id="boredomBar">
+        </i>
+       </div>
+       <b id="boredomValue">
+        0
+       </b>
+      </div>
+      <span class="resource-divider">
+      </span>
+      <div class="resource">
+       作业
+       <b id="homeworkValue">
+        0%
+       </b>
+      </div>
+      <div class="resource">
+       魔方
+       <b id="cubeValue">
+        0%
+       </b>
+      </div>
+      <div class="resource" id="phoneRiskLabel">
+       手机风险
+       <b id="phoneRiskValue">
+        —
+       </b>
+      </div>
+      <span id="actionHint">
+       SPACE 紧急收起 · N 手记 · ESC 暂停
+      </span>
+     </div>
+    </section>
+    <section hidden="" id="escapeHud">
+     <div class="escape-route" id="escapeRoute">
+     </div>
+     <div class="escape-distance">
+      <span>
+       与脚步的距离
+      </span>
+      <div class="bar">
+       <i id="distanceBar">
+       </i>
+      </div>
+      <b id="distanceValue">
+       70
+      </b>
+     </div>
+    </section>
+    <section aria-label="角色对话" hidden="" id="dialogue">
+     <div id="speakerWrap">
+      <div id="speaker">
+       同桌
+      </div>
+      <div id="speakerRole">
+       DESKMATE
+      </div>
+     </div>
+     <div id="dialogueText">
+     </div>
+     <span id="dialogueAuto">
+      AUTO OFF
+     </span>
+     <button aria-label="继续对话" id="dialogueNext">
+      继续
+      <span class="next-mark">
+       ▸
+      </span>
+     </button>
+    </section>
+    <section aria-label="限时事件" hidden="" id="challengeLayer">
+     <div class="challenge-backdrop">
+     </div>
+     <div id="challengeCard">
+     </div>
+    </section>
+    <section aria-label="结局" hidden="" id="ending">
+     <div class="ending-decoration">
+     </div>
+     <div class="ending-content">
+      <div class="ending-type" id="endingType">
+      </div>
+      <h1 class="ending-title" id="endingTitle">
+      </h1>
+      <div class="ending-prose" id="endingProse">
+      </div>
+      <div class="ending-stats" id="endingStats">
+      </div>
+      <div class="ending-buttons" id="endingButtons">
+      </div>
+      <div class="ending-note" id="endingNote">
+      </div>
+     </div>
+    </section>
+    <section aria-labelledby="modalTitle" aria-modal="true" hidden="" id="modal" role="dialog">
+     <div class="modal-panel">
+      <div class="modal-top">
+       <h2 id="modalTitle">
+        暂停
+       </h2>
+       <button aria-label="关闭" class="modal-close" id="modalClose">
+        ×
+       </button>
+      </div>
+      <div class="modal-body" id="modalBody">
+      </div>
+     </div>
+    </section>
+    <div aria-live="polite" id="toastStack">
+    </div>
+    <div hidden="" id="storageWarning">
+     本地存储不可用：本次仍可完整游玩，但退出后记录不会保留。
+    </div>
+    <div aria-live="polite" id="srStatus">
+    </div>
+   </main>
+  </div>
+  <div id="rotateHint">
+   请将手机横过来，并点击右上角「全屏」获得更好的体验。
+  </div>
+  <noscript>
+   这个游戏需要启用 JavaScript。所有资源均已包含在本文件中，不需要网络。
+  </noscript>
+  <script>
+   'use strict';
+/*
+ * 高二（2）班：最后一节课 / THE LAST CLASS
+ * Single-file offline release 1.0 — all assets generated in CSS / Web Audio.
+ * Basis: supplied game design. Fictional school and characters.
+ * Timing reconciliation: lesson clocks interpolate over the stated timetable;
+ * breaks/lunch are skipped. Normal: 180×5+240 s; quick: 90×6 s,
+ * excluding blocking dialogue, challenges, breaks and the final escape.
+ * Game timing uses one RAF-driven clock; pause/hidden tabs never consume timers.
+ * No mid-run disk save. In-memory lesson checkpoints exist in quick mode only.
+ */
+(() => {
+    const $ = id => document.getElementById(id);
+    const $$ = selector => [...document.querySelectorAll(selector)];
+    const clamp = (v, lo = 0, hi = 100) => Math.max(lo, Math.min(hi, v));
+    const rnd = (a, b) => a + Math.random() * (b - a);
+    const pick = xs => xs[Math.floor(Math.random() * xs.length)];
+    const clone = x => JSON.parse(JSON.stringify(x));
+    const esc = x => String(x).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+    const shuffle = xs => { const a = [...xs]; for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+    } return a; };
+    const fmtTime = m => `${String(Math.floor(m / 60) % 24).padStart(2, '0')}:${String(Math.floor(m) % 60).padStart(2, '0')}`;
+    const fmtDuration = n => `${Math.floor(n / 60)}分${Math.floor(n % 60)}秒`;
+    const SAVE_KEY = 'last-class.offline.v1';
+    const testMode = new URLSearchParams(location.search).get('test') === '1';
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const DEFAULT_SAVE = { version: 1, endings: [], bestSurvival: 0, bestCube: 0, bestHomework: 0, attempts: 0, wins: 0, phoneRestricted: false, settings: { volume: .35, flicker: !reduced, shake: !reduced, textSpeed: 36, auto: false, quick: false } };
+    let storageOK = true;
+    function loadSave() { try {
+        const raw = JSON.parse(localStorage.getItem(SAVE_KEY) || 'null');
+        if (!raw || raw.version !== 1)
+            return clone(DEFAULT_SAVE);
+        const out = clone(DEFAULT_SAVE);
+        out.endings = Array.isArray(raw.endings) ? raw.endings.filter(x => ['true', 'phone', 'math', 'loop', 'cfop', 'unseen'].includes(x)) : [];
+        for (const k of ['bestSurvival', 'bestCube', 'bestHomework', 'attempts', 'wins'])
+            out[k] = clamp(Number(raw[k]) || 0, 0, 10000000);
+        out.phoneRestricted = raw.phoneRestricted === true;
+        for (const k of ['flicker', 'shake', 'auto', 'quick'])
+            if (typeof raw.settings?.[k] === 'boolean')
+                out.settings[k] = raw.settings[k];
+        out.settings.volume = clamp(Number(raw.settings?.volume ?? .35), 0, 1);
+        out.settings.textSpeed = clamp(Number(raw.settings?.textSpeed) || 36, 12, 90);
+        return out;
+    }
+    catch {
+        storageOK = false;
+        return clone(DEFAULT_SAVE);
+    } }
+    let save = loadSave();
+    function persist() { if (testMode)
+        return; try {
+        localStorage.setItem(SAVE_KEY, JSON.stringify(save));
+    }
+    catch {
+        storageOK = false;
+        $('storageWarning').hidden = false;
+    } }
+    if (!storageOK)
+        $('storageWarning').hidden = false;
+    const CLASSES = [
+        { id: 'chinese', subject: '语文', teacher: '何凤临', title: '守门人', duration: 180, start: 460, end: 505, speed: .82, awareness: .5, board: '玻璃的意义，不只是让你看见外面。\n请留意：反光、脚步、真正的时间。', rule: '看反光，不必回头', note: '后门的反光会提前暴露巡查。手机显示真实时间；数学课之前，黑板旁的钟可能不可靠。', intro: [['何凤临', '今天教室似乎比平时安静。'], ['何凤临', '有些东西，不需要回头，也能看到。玻璃的意义，不只是让你看见外面。'], ['同桌', '按 1—5 切换行动。危险时，连续按三次空格：藏好、拿笔、看书。手机不是必需品。']] },
+        { id: 'chemistry', subject: '化学', teacher: '李芳铃', title: '反应监视者', duration: 180, start: 520, end: 565, speed: 1.0, awareness: 1, board: '化学反应与实验现象\n镁条燃烧 → 耀眼白光 / 白色固体', rule: '安静下来时，先收起东西', note: '李芳铃突然停止讲课时会观察课桌。镁条燃烧发出耀眼白光，生成白色固体；二氧化碳使澄清石灰水变浑浊。', intro: [['李芳铃', '把与这节课无关的东西，收起来。'], ['同桌', '她走得慢，但随时会停。全班突然安静的时候，千万别拿着手机。'], ['李芳铃', '受着。']] },
+        { id: 'biology', subject: '生物', teacher: '王盈', title: '稳态观察者', duration: 180, start: 610, end: 655, speed: 1.02, awareness: 1.12, board: '神经调节 / 条件反射\n听到「不要动」：停止操作，保持两秒。', rule: '不要动。真的不要动', note: '“不要动”有 0.8 秒准备期，然后必须保持鼠标、触摸与键盘静止 2 秒。不要连续点击；按钮位置可能短暂交换。反射的结构基础是反射弧。', intro: [['王盈', '今天观察一个简单的条件反射。观察对象，是你们。'], ['同桌', '她说“不要动”之后，有 0.8 秒松开手，然后整整两秒别碰鼠标和键盘。'], ['王盈', '注意，不要让习惯替你做决定。']] },
+        { id: 'physics', subject: '物理', teacher: '戴贝贝', title: '相对运动', duration: 180, start: 840, end: 885, speed: 1.36, awareness: 1.3, board: '相对运动 / 惯性\n停止的脚步，不代表危险已经离开。', rule: '脚步停后，再等三秒', note: '观察老师时她停止移动，低头则继续。离开座位后的 3 秒仍危险，不要立刻打开手机。逃生时听见脚步停止，也要静止等待 3 秒。', intro: [['戴贝贝', '运动状态，可不是这么容易改变的。'], ['同桌', '选“观察 → 老师”就能盯住她。可你低头，她就会动。'], ['戴贝贝', '这么急？我离开之后，最好也再等三秒。']] },
+        { id: 'english', subject: '英语', teacher: '尹纱纱', title: 'EXTRAORDINARY', duration: 180, start: 900, end: 945, speed: 1.5, awareness: 1.35, board: 'GOOD → EXTRAORDINARY\nextraordinary / 非凡的，不寻常的', rule: '不是 Good，是 Extraordinary', note: '记住 Extraordinary。强化模式持续 60 秒：移动、怀疑增长 ×1.5，隐藏限时缩短。however 表示“然而”；过去完成时使用 had done。', intro: [['尹纱纱', '说 Good 太 low。说 extraordinary。高级。'], ['尹纱纱', '这才是江城实验中学的水平。'], ['同桌', '她为什么说了另一所学校的名字……先记住那个单词。']] },
+        { id: 'math', subject: '数学', teacher: '郭知昭', title: '1 / 56', duration: 240, start: 980, end: 1050, speed: 1.7, awareness: 1.7, board: '1 / 56\n每一个人的思考能力……', rule: '17:30 以前，不离开', note: 'f(x)=x² 时，f′(x)=2x。1/56 机关需要按题意计算编号，不是猜“1”。听课满 20 秒有短暂提示。班主任的第一遍下课铃是假的。', intro: [['郭知昭', '你们不要以为来到这里是屈才了。'], ['郭知昭', '你们每一个人的思考能力……都不及我的 1/56。'], ['同桌', '最后一节。记住：17:30 以前，不要相信任何一次下课铃。']] }
+    ];
+    const QUESTIONS = {
+        chinese: [{ text: '不必回头，也能发现后门的人影。应该看哪里？', choices: ['玻璃里的反光', '桌角的划痕', '自己的鞋尖', '黑板的题目'], answer: 0, explain: '何凤临：玻璃的意义，不只是让你看见外面。' }],
+        chemistry: [{ text: '镁条在空气中燃烧，通常能观察到什么？', choices: ['耀眼白光，生成白色固体', '绿色火焰，生成蓝色液体', '没有发光，产生黑色粉末', '生成大量红棕色气体'], answer: 0, explain: '镁燃烧发出耀眼白光，生成白色氧化镁。' }, { text: '通入二氧化碳，澄清石灰水会怎样？', choices: ['变成深蓝色', '变浑浊', '发出白光', '立即变成黑色'], answer: 1, explain: '二氧化碳使澄清石灰水变浑浊。' }],
+        biology: [{ text: '反射活动的结构基础是什么？', choices: ['反射弧', '突触小泡', '叶绿体', '血浆'], answer: 0, explain: '完成反射的结构基础是反射弧。' }, { text: '神经元之间主要通过什么结构传递信息？', choices: ['细胞壁', '突触', '液泡', '叶绿素'], answer: 1, explain: '神经元之间通过突触传递信息。' }],
+        physics: [{ text: '老师的脚步刚刚停了，最稳妥的做法是？', choices: ['立即拿出手机', '继续静止，至少再等三秒', '立刻向后转身', '追上去确认位置'], answer: 1, explain: '停止的脚步不等于危险结束。再等三秒。' }, { text: '物体保持原来运动状态的性质叫作什么？', choices: ['惯性', '压强', '浮力', '电阻'], answer: 0, explain: '惯性是物体保持原来运动状态的性质。' }],
+        english: [{ text: '“Good” 不够高级。她要你说的是？', choices: ['Ordinary', 'Extraordinary', 'Actually', 'Good enough'], answer: 1, explain: '说 extraordinary。高级。' }, { text: 'However 最常见的转折含义是？', choices: ['因此', '然而', '例如', '同时'], answer: 1, explain: 'However：然而。' }, { text: '过去完成时的基本构成是？', choices: ['will do', 'have doing', 'had done', 'be do'], answer: 2, explain: '过去完成时：had + 过去分词。' }],
+        math: [{ text: '已知 f(x) = x²，求 f′(2)。', choices: ['2', '4', '6', '8'], answer: 1, explain: 'f′(x)=2x，因此 f′(2)=4。' }, { text: '已知 f(x) = 3x + 1，求 f(2)。', choices: ['5', '6', '7', '8'], answer: 2, explain: '3×2+1=7。' }, { text: '等差数列 2，5，8，…… 的下一项是？', choices: ['10', '11', '12', '13'], answer: 1, explain: '公差为3，下一项是11。' }]
+    };
+    const ENDINGS = {
+        true: { type: 'TRUE END', title: '放学', prose: '17:42。手机终于只是一部手机。\n妈妈：「到哪了？」\n你：「刚放学。」\n你走进晚风里。这一次，身后没有脚步。', hint: '在真正的 17:30 离开，并逃出教学楼。' },
+        phone: { type: 'BAD END · 01', title: '电子设备管理', prose: '「第三次了。」\n第二天，你的桌上只剩下课本、作业和魔方。\n手机的位置，空得像从来没有放过任何东西。\n电子设备管理已生效。', hint: '手机被抓到三次。解锁后，新周目手机不可用。' },
+        math: { type: 'BAD END · 02', title: '思考能力', prose: '你连续两次没能给出正确的答案。\n黑板越来越远，周围的声音越来越小。\n最后，整个世界只剩下一个分数。\n1 / 56', hint: '数学 Boss 阶段连续两次答错或超时。' },
+        loop: { type: 'BAD END · 03', title: '永远的星期一', prose: '闹钟响了。\n07:40。星期一。\n后门玻璃里，有个人影。\n「你不是觉得自己很聪明吗？」', hint: '在最终逃生中被追上。' },
+        cfop: { type: 'SECRET END · 01', title: 'CFOP', prose: '你一整天都没有碰手机。\n最后一块色块归位，六面复原。魔方中央浮出四个字母：EXIT。\n后门第一次向外打开。\n门后不是走廊，是晚风。', hint: '全局不使用手机，并将魔方复原进度完成到 100%。' },
+        unseen: { type: 'SECRET END · 02', title: '从未被注意', prose: '你的每个答案都正确，每次低头都恰到好处。\n你收拾书包，走出教学楼。没有任何人叫住你。\n镜头回到空教室。\n后门玻璃里，仍然站着一个人。', hint: '全程怀疑值严格低于 20，所有问题回答正确。' }
+    };
+    const POSITIONS = [{ x: 842, y: 305, z: .81 }, { x: 578, y: 324, z: .92 }, { x: 1080, y: 338, z: 1.00 }, { x: 536, y: 380, z: 1.06 }, { x: 366, y: 405, z: 1.24 }, { x: 1218, y: 407, z: 1.24 }, { x: 1294, y: 367, z: 1.08 }, { x: 1380, y: 300, z: .85 }];
+    const ROLES = { '同桌': 'DESKMATE', '你': 'YOU', '广播': 'BROADCAST', '系统': 'SYSTEM', '何凤临': 'THE GATEKEEPER', '李芳铃': 'REACTION WATCHER', '王盈': 'HOMEOSTASIS', '戴贝贝': 'RELATIVE MOTION', '尹纱纱': 'EXTRAORDINARY', '郭知昭': '1 / 56', '李芙容': 'THE CHOSEN ONE' };
+    let S = null, checkpoint = null, challenge = null, script = null, modal = null, returnFocus = null;
+    let dialogue = { name: '同桌', text: '', shown: 0, hold: 0 }, eventQueue = [], notices = [], audio = null;
+    let uiClock = 0, lastFrame = performance.now(), renderAccumulator = 0, lastMutedVolume = .35;
+    let ambient = { text: '', until: 0 }, effectUntil = 0, phoneRenderKey = '', lastPointer = null;
+    // Audio begins only after the first user gesture. Oscillators are always stopped.
+    class Sound {
+        constructor() { const AC = window.AudioContext || window.webkitAudioContext; if (!AC)
+            throw new Error('Web Audio unavailable'); this.ctx = new AC(); this.master = this.ctx.createGain(); this.master.gain.value = save.settings.volume; this.master.connect(this.ctx.destination); }
+        resume() { if (this.ctx.state === 'suspended')
+            this.ctx.resume().catch(() => { }); }
+        volume(v) { this.master.gain.setTargetAtTime(v, this.ctx.currentTime, .04); }
+        tone(freq, duration = .12, level = .13, type = 'sine', delay = 0, endFreq) { if (!save.settings.volume)
+            return; const t = this.ctx.currentTime + delay, o = this.ctx.createOscillator(), g = this.ctx.createGain(); o.type = type; o.frequency.setValueAtTime(freq, t); if (endFreq)
+            o.frequency.exponentialRampToValueAtTime(endFreq, t + duration); g.gain.setValueAtTime(.0001, t); g.gain.exponentialRampToValueAtTime(Math.max(.001, level), t + .008); g.gain.exponentialRampToValueAtTime(.0001, t + duration); o.connect(g); g.connect(this.master); o.start(t); o.stop(t + duration + .02); o.onended = () => { o.disconnect(); g.disconnect(); }; }
+        play(kind, vol = 1) { if (!save.settings.volume || this.ctx.state !== 'running')
+            return; switch (kind) {
+            case 'click':
+                this.tone(750, .04, .04 * vol, 'sine', 0, 450);
+                break;
+            case 'step':
+                this.tone(93, .13, .22 * vol, 'triangle', 0, 43);
+                this.tone(240, .045, .035 * vol, 'sine');
+                break;
+            case 'door':
+                this.tone(160, .4, .08 * vol, 'triangle', 0, 67);
+                this.tone(850, .05, .04 * vol, 'sine', .15);
+                break;
+            case 'warn':
+                this.tone(330, .15, .12 * vol, 'sine');
+                this.tone(265, .18, .10 * vol, 'sine', .19);
+                break;
+            case 'heart':
+                this.tone(59, .14, .23 * vol, 'sine', 0, 35);
+                this.tone(65, .1, .16 * vol, 'sine', .21, 38);
+                break;
+            case 'bell':
+                [659, 523, 587, 392, 392, 587, 659, 523].forEach((n, i) => this.tone(n, .55, .065 * vol, 'sine', i * .3));
+                break;
+            case 'win':
+                [262, 330, 392, 523].forEach((n, i) => this.tone(n, 1.25, .07 * vol, 'sine', i * .34));
+                break;
+            case 'lose':
+                [165, 147, 110].forEach((n, i) => this.tone(n, .65, .07 * vol, 'triangle', i * .45));
+                break;
+            case 'vibrate':
+                this.tone(85, .17, .07 * vol, 'triangle');
+                this.tone(85, .17, .07 * vol, 'triangle', .25);
+                break;
+            case 'cube':
+                this.tone(480, .045, .05 * vol, 'triangle', 0, 220);
+                break;
+        } }
+    }
+    function initAudio() { try {
+        if (!audio)
+            audio = new Sound();
+        audio.resume();
+    }
+    catch { /* Silent mode remains fully playable via captions. */ } }
+    function sound(kind, vol) { if (audio)
+        audio.play(kind, vol); }
+    function caption(text, seconds = 2.5) { ambient = { text, until: uiClock + seconds }; $('ambientCaption').textContent = text; }
+    function toast(text, warn = false, seconds = 2.6) { const el = document.createElement('div'); el.className = 'toast' + (warn ? ' warn' : ''); el.textContent = text; $('toastStack').append(el); notices.push({ el, until: uiClock + seconds }); while (notices.length > 3)
+        notices.shift().el.remove(); $('srStatus').textContent = text; }
+    function fx(kind = 'flicker') { if ((kind === 'flicker' && !save.settings.flicker) || (kind === 'shake' && !save.settings.shake))
+        return; $('stage').classList.remove(kind); void $('stage').offsetWidth; $('stage').classList.add(kind); effectUntil = uiClock + .65; }
+    function say(name, text) { dialogue = { name, text, shown: 0, hold: 0 }; $('speaker').textContent = name; $('speakerRole').textContent = ROLES[name] || 'CLASSROOM'; $('dialogueText').textContent = ''; $('dialogue').hidden = false; }
+    function playScript(lines, done) { script = { lines: [...lines], index: 0, done }; say(lines[0][0], lines[0][1]); $('dialogue').classList.add('dialogue-blocking'); renderDialogue(); }
+    function advanceDialogue() { if (modal || !S || S.screen !== 'game')
+        return; if (dialogue.shown < dialogue.text.length) {
+        dialogue.shown = dialogue.text.length;
+        dialogue.hold = 0;
+        renderDialogue();
+        return;
+    } if (!script)
+        return; script.index++; if (script.index < script.lines.length) {
+        const [who, text] = script.lines[script.index];
+        say(who, text);
+    }
+    else {
+        const done = script.done;
+        script = null;
+        $('dialogue').classList.remove('dialogue-blocking');
+        if (done)
+            done();
+    } renderDialogue(); }
+    function renderDialogue() { $('dialogueText').textContent = dialogue.text.slice(0, Math.floor(dialogue.shown)); $('dialogueNext').hidden = !script && dialogue.shown >= dialogue.text.length; $('dialogueNext').innerHTML = (dialogue.shown < dialogue.text.length ? '显示全文' : '继续') + ' <span class="next-mark">▸</span>'; $('dialogueAuto').textContent = script ? (save.settings.auto ? 'AUTO ON' : '点击 / ENTER') : '实时课堂'; }
+    function makeState(mode) { return { screen: 'game', phase: 'INTRO', mode, classIndex: 0, elapsed: 0, duration: 180, t: 0, survival: 0, action: 'listen', observe: 'teacher', observeElapsed: 0, observeNoted: false, suspicion: 0, maxSuspicion: 0, focus: 100, boredom: 0, homework: 0, cube: 0, cubeStep: 0, cubeCool: 0, lastCubeTurn: -10, phoneApp: 'chat', phoneSeconds: 0, totalPhone: 0, phoneEver: false, phoneCaught: 0, caught: 0, listenSeconds: 0, questionRight: 0, questionWrong: 0, mathStreak: 0, dangerFails: 0, nextEvent: 40, nextDoor: 27, door: null, teacher: { x: 842, y: 305, z: .81, target: 0, wait: 4, step: 0, near: false, tailUntil: 0, hold: 0 }, dangerCooldown: 0, extraUntil: 0, shuffleUntil: 0, anomalyUntil: 0, heartTimer: 0, eventsDone: [], messages: ['班群：今天好像要巡查。', '同桌：留意后门玻璃的反光。'], journal: [], operationTimes: [], classStats: {}, distance: 70, escapeNode: 0, escapeStarted: false, phoneGameTarget: 0, phoneGameRewardAt: -10, breakRemaining: 0, escapeRoutePending: false, endingId: null }; }
+    function startGame(mode) { initAudio(); clearTransient(); $('stage').classList.remove('is-menu'); save.attempts++; persist(); S = makeState(mode); checkpoint = null; $('menu').hidden = true; $('ending').hidden = true; $('gameUI').hidden = false; $('dialogue').hidden = false; $('teacher').hidden = false; $('pauseBtn').hidden = false; $('journalBtn').hidden = false; $('escapeScene').hidden = true; $('escapeHud').hidden = true; enterClass(0); }
+    function clearTransient() { $$('.student').forEach(e => e.classList.remove('is-still')); challenge = null; script = null; eventQueue = []; modal = null; $('modal').hidden = true; $('challengeLayer').hidden = true; for (const n of notices)
+        n.el.remove(); notices = []; $('stage').classList.remove('extraordinary', 'low-focus', 'critical', 'shake', 'flicker'); $$('.action').forEach(e => e.style.order = ''); $('rearDoor').classList.remove('moving', 'watched'); $('doorShadow').style.opacity = '0'; $('extraBadge').hidden = true; phoneRenderKey = ''; ambient = { text: '', until: 0 }; }
+    function enterClass(index, fromCheckpoint = false) {
+        S.classIndex = index;
+        const c = CLASSES[index];
+        S.phase = 'INTRO';
+        S.elapsed = 0;
+        S.duration = S.mode === 'quick' ? 90 : c.duration;
+        S.action = 'listen';
+        S.phoneSeconds = 0;
+        S.cubeStep = 0;
+        S.mathStreak = 0;
+        S.eventsDone = [];
+        S.nextEvent = rnd(30, 50);
+        S.nextDoor = 25;
+        S.door = null;
+        S.teacher = { ...POSITIONS[0], target: 0, wait: 4, step: 0, near: false, tailUntil: 0, hold: 0 };
+        S.extraUntil = 0;
+        S.shuffleUntil = 0;
+        S.dangerCooldown = S.t + 8;
+        S.classStats = { caught: 0, right: 0, wrong: 0, phone: 0, cubeStart: S.cube, max: S.suspicion, focusStart: S.focus };
+        eventQueue = [];
+        challenge = null;
+        script = null;
+        if (!S.journal.some(j => j.title === c.subject))
+            S.journal.push({ title: c.subject, text: c.note });
+        if (!fromCheckpoint)
+            checkpoint = clone(S);
+        $('boardTitle').textContent = c.subject + ' / ' + c.title;
+        $('boardText').textContent = c.board;
+        $('boardAside').textContent = index === 5 ? '不要擅自离开教室' : '距离放学还有很久';
+        $('bookTitle').textContent = c.subject.split('').join('　');
+        $('teacher').classList.toggle('boss', index === 5);
+        $('teacher').hidden = false;
+        $('gameUI').hidden = false;
+        $('escapeScene').hidden = true;
+        $('escapeHud').hidden = true;
+        $('challengeLayer').hidden = true;
+        $('actionDock').hidden = false;
+        $('resourceBar').hidden = false;
+        $('objectives').hidden = false;
+        $('objectiveMain').textContent = c.rule;
+        updateActionUI();
+        renderUI();
+        sound('bell', .6);
+        const pre = index === 0 ? [['同桌', '07:39。快上课了。'], ['同桌', '手机震了一下。班群里有人说：今天好像要巡查。']] : [];
+        playScript([...pre, ...c.intro], () => { S.phase = 'CLASS'; say('你', '课开始了。先保持听课，观察危险，再决定要做什么。'); if (index === 0) {
+            showDoor(false, 4, 'shadow');
+            toast('教学：空格随时收起；危险时要连续完成三步。', false, 5);
+        } });
+    }
+    function returnMenu() { clearTransient(); $('stage').classList.add('is-menu'); S = null; $('gameUI').hidden = true; $('dialogue').hidden = true; $('teacher').hidden = true; $('ending').hidden = true; $('escapeScene').hidden = true; $('escapeHud').hidden = true; $('pauseBtn').hidden = true; $('journalBtn').hidden = true; $('menu').hidden = false; $('boardTitle').textContent = '最后一节课'; $('boardText').textContent = '星期一　　值日生：————\n请保持安静。'; $('boardAside').textContent = '17:30 以前，不要相信铃声'; $('bookTitle').textContent = '语　文'; $('room').style.setProperty('--focus-blur', '0px'); $('doorShadow').className = ''; $('doorShadow').style.opacity = '.65'; updateMenu(); }
+    function updateMenu() { $('archiveCount').textContent = String(save.endings.length).padStart(2, '0') + ' / 06'; $('menuMemory').textContent = save.phoneRestricted ? '电子设备管理已生效：本周目手机不可用。' : (save.bestSurvival ? '已记住的最长一天：' + fmtDuration(save.bestSurvival) : ''); $('startNormal').innerHTML = (save.settings.quick ? '开始快速模式' : '开始这一天') + ' <span>↗</span>'; updateSoundButton(); }
+    function currentTime() { if (!S)
+        return 460; if (S.phase === 'ESCAPE')
+        return 1050 + Math.min(12, (S.escapeNode + 1) * 1.6); if (S.phase === 'COMPLETE' || S.screen === 'ending')
+        return S.endingId === 'true' ? 1062 : 1050; const c = CLASSES[S.classIndex]; return c.start + (c.end - c.start) * clamp(S.elapsed / S.duration, 0, 1); }
+    function phoneAllowed() { return !save.phoneRestricted; }
+    function canAct() { return S?.screen === 'game' && S.phase === 'CLASS' && !script && !challenge && !modal; }
+    function addMessage(text) { if (!S)
+        return; S.messages.push(text); if (S.messages.length > 16)
+        S.messages.shift(); phoneRenderKey = ''; }
+    function addSuspicion(n, phoneBlame = null) { if (!S || S.screen !== 'game')
+        return; const boost = n > 0 && S.extraUntil > S.t ? 1.5 : 1; S.suspicion = clamp(S.suspicion + n * boost); S.maxSuspicion = Math.max(S.maxSuspicion, S.suspicion); S.classStats.max = Math.max(S.classStats.max || 0, S.suspicion); if (S.suspicion >= 100)
+        registerCaught(phoneBlame === null ? S.action === 'phone' : phoneBlame); }
+    function registerPhoneCaught() { S.phoneCaught++; toast(`手机被抓 ${S.phoneCaught} / 3`, true); if (S.phoneCaught >= 3) {
+        finishEnding('phone');
+        return true;
+    } return false; }
+    function registerCaught(isPhone) { if (isPhone && registerPhoneCaught())
+        return; S.caught++; S.classStats.caught++; if (S.caught >= 3) {
+        gameOver('你在干什么？', '第三次被发现。老师站在你面前，挡住了所有出口。');
+        return;
+    } S.suspicion = S.caught === 1 ? 60 : 75; S.maxSuspicion = 100; S.action = 'listen'; S.phoneSeconds = 0; S.dangerCooldown = S.t + 8; challenge = null; $('challengeLayer').hidden = true; updateActionUI(); sound('warn'); say(CLASSES[S.classIndex].teacher, S.caught === 1 ? '提醒一次。把东西收好。' : '最后一次警告。不要再让我看见。'); toast(`被发现 ${S.caught}/3 · 已切回课本`, true); }
+    function setAction(action) { if (!canAct())
+        return; if (action === 'phone' && !phoneAllowed()) {
+        toast('手机已被收走。可以使用魔方与观察。', true);
+        return;
+    } S.operationTimes.push(S.t); const old = S.action; S.action = action; if (action !== 'phone')
+        S.phoneSeconds = 0; if (action === 'phone') {
+        S.phoneEver = true;
+        S.phoneGameTarget = Math.floor(rnd(0, 3));
+        phoneRenderKey = '';
+    } if (action === 'observe') {
+        S.observeElapsed = 0;
+        S.observeNoted = false;
+    } updateActionUI(); sound('click'); if (action === 'phone' && old !== 'phone' && S.classIndex === 3 && S.teacher.tailUntil > S.t) {
+        caption('脚步停了。她却还没走远。', 3);
+        triggerDanger('这么急？惯性尚未结束。');
+    }
+    else if (action === 'phone' && S.door?.real && S.t - S.door.born > 1) {
+        toast('后门的目光还在。', true);
+    } }
+    function safeHide() { if (!S || modal || script)
+        return; if (challenge) {
+        if (challenge.type === 'hide')
+            resolveHide(challenge.step);
+        else if (challenge.type === 'sprint')
+            sprintTap();
+        return;
+    } if (S.phase === 'CLASS') {
+        S.action = 'listen';
+        S.phoneSeconds = 0;
+        S.cubeStep = 0;
+        updateActionUI();
+        caption('你把一切压进课本下面。', 1.7);
+        sound('click');
+    } }
+    function updateActionUI() { if (!S)
+        return; $$('.action').forEach(e => { e.classList.toggle('active', e.dataset.action === S.action); e.disabled = !!challenge || !!script || S.phase !== 'CLASS' || (e.dataset.action === 'phone' && !phoneAllowed()); }); $('phone').hidden = S.action !== 'phone' || !!challenge || !!script || S.phase !== 'CLASS'; $('cubePanel').hidden = S.action !== 'cube' || !!challenge || !!script || S.phase !== 'CLASS'; $('observePanel').hidden = S.action !== 'observe' || !!challenge || !!script || S.phase !== 'CLASS'; $('bookTitle').textContent = S.action === 'homework' ? '其他作业' : CLASSES[S.classIndex].subject.split('').join('　'); $('rearDoor').classList.toggle('watched', S.action === 'observe' && S.observe === 'door'); $$('[data-observe]').forEach(e => e.classList.toggle('active', e.dataset.observe === S.observe)); if (S.action === 'phone')
+        renderPhone(); if (S.action === 'cube')
+        renderCube(); }
+    function turnCube(turn) { if (!canAct() || S.action !== 'cube')
+        return; if (S.cube >= 100) {
+        toast('六面已经复原。不要忘记今天的约定：不碰手机。');
+        return;
+    } if (S.t < S.cubeCool) {
+        caption('停一拍，让手指记住公式。', 1);
+        return;
+    } if (S.t - S.lastCubeTurn < .10)
+        return; S.lastCubeTurn = S.t; S.operationTimes.push(S.t); const formula = ['R', 'U', "R'", "U'"]; if (turn === formula[S.cubeStep]) {
+        S.cubeStep++;
+        sound('cube');
+        if (S.cubeStep === 4) {
+            S.cubeStep = 0;
+            S.cube = clamp(S.cube + 4);
+            S.focus = clamp(S.focus + 15);
+            S.boredom = clamp(S.boredom - 10);
+            S.cubeCool = S.t + 2.2;
+            toast(`公式完成 · 魔方 ${S.cube}% · 专注 +15`);
+            if (S.cube === 100) {
+                save.bestCube = 100;
+                persist();
+                S.journal.push({ title: '六面归位', text: '魔方已复原。只要一整天不碰手机，最后一节课结束时或许会出现另一个出口。' });
+            }
+        }
+    }
+    else {
+        S.cubeStep = turn === 'R' ? 1 : 0;
+        S.boredom = clamp(S.boredom - 1);
+        caption('公式重置：R U R′ U′', 1.5);
+        sound('cube', .5);
+    } renderCube(); }
+    function renderCube() { if (!S)
+        return; const seq = ['R', 'U', 'R′', 'U′']; $('cubeFormula').innerHTML = seq.map((x, i) => `<span class="${i < S.cubeStep ? 'done' : 'pending'}">${x}</span>`).join(' '); $$('[data-turn]').forEach(e => e.classList.toggle('needed', e.dataset.turn === ['R', 'U', "R'", "U'"][S.cubeStep])); $('cubeDrawing').style.transform = `rotate(${S.cubeStep * 5 - 6}deg)`; if (S.cube >= 100)
+        $$('#cubeDrawing i').forEach(e => e.style.background = '#bed295');
+    else
+        $$(' #cubeDrawing i').forEach(e => e.style.background = ''); $('cubeHint').textContent = S.cube >= 100 ? '100% · 六面复原。等待真正的放学。' : (S.t < S.cubeCool ? '公式归位中……稍等片刻再转动' : 'Shift + 字母 = 逆转；公式 R U R′ U′'); }
+    function observe(target) { if (!canAct() || S.action !== 'observe')
+        return; S.observe = target; S.observeElapsed = 0; S.observeNoted = false; S.operationTimes.push(S.t); updateActionUI(); sound('click'); }
+    function observationResult() { const c = CLASSES[S.classIndex]; let text = ''; switch (S.observe) {
+        case 'board':
+            text = '黑板：' + c.board.replace('\n', '。');
+            break;
+        case 'teacher':
+            text = S.teacher.near ? '她站得很近。现在绝不是拿手机的时机。' : (S.classIndex === 3 ? '你看着她，她也一动不动。低头以后呢？' : '老师的剪影还在前方。下一次脚步可能来自另一边。');
+            break;
+        case 'door':
+            text = S.door ? (S.door.real ? '玻璃上有真实的眼镜反光。先不要使用手机。' : '人影没有倒影。可能只是你的错觉。') : '后门现在没有人。并不代表之后也没有。';
+            break;
+        case 'window':
+            text = S.classIndex >= 4 ? '窗外的天色和墙上的钟对不上。真正放学的时间是 17:30。' : '窗户倒映出走廊。安全出口的箭头是绿色的。';
+            break;
+        case 'mate':
+            text = S.teacher.near || S.door?.real ? '同桌在课本上划了两个字：别动。' : '同桌：写累了转转魔方。一直听课也会走神。';
+            break;
+    } say(S.observe === 'mate' ? '同桌' : '你', text); }
+    function renderPhone(force = false) { if (!S)
+        return; const key = S.phoneApp + '|' + S.messages.length + '|' + Math.floor(currentTime()) + '|' + S.phoneGameTarget; if (!force && key === phoneRenderKey)
+        return; phoneRenderKey = key; $$('[data-app]').forEach(e => e.classList.toggle('active', e.dataset.app === S.phoneApp)); const t = fmtTime(currentTime()); $('phoneSmallClock').textContent = t; switch (S.phoneApp) {
+        case 'chat':
+            $('phoneContent').innerHTML = S.messages.slice(-5).map(x => `<div class="message">${esc(x)}</div>`).join('');
+            $('phoneContent').scrollTop = 10000;
+            break;
+        case 'time':
+            $('phoneContent').innerHTML = `<div class="phone-time">${t}</div><div class="phone-time-sub">星期一 · 本机真实时间</div><p style="text-align:center;font-size:11px;color:#b8cc99">17:30 以前，不要离开。</p>`;
+            break;
+        case 'video':
+            $('phoneContent').innerHTML = '<div class="video-card">▶ 放学后的风</div><p style="font-size:11px;margin:8px 0">无聊快速下降。你听不清外面的脚步了。</p><button class="phone-home" data-phone-video="1">下一条短视频</button>';
+            break;
+        case 'game': {
+            const marks = ['△', '○', '◇'];
+            $('phoneContent').innerHTML = `<div style="font-size:11px">匹配符号：<b>${marks[S.phoneGameTarget]}</b></div><div class="phone-game">${marks.map((x, i) => `<button data-phone-match="${i}">${x}</button>`).join('')}</div><div style="font-size:10px;color:#9bb58a">答对恢复少量专注。别忘了抬头。</div>`;
+            break;
+        }
+    } }
+    // A single exclusive challenge plus a FIFO event queue prevents event collisions.
+    function enqueue(key, run) { if (!eventQueue.some(e => e.key === key))
+        eventQueue.push({ key, run }); }
+    function beginChallenge(data) { if (!S || S.screen !== 'game' || challenge || script)
+        return false; challenge = { elapsed: 0, ...data }; challenge.total = challenge.remaining ?? 0; S.action = 'listen'; S.phoneSeconds = 0; $('challengeLayer').hidden = false; updateActionUI(); renderChallenge(); return true; }
+    function closeChallenge() { const old = challenge; challenge = null; $('challengeLayer').hidden = true; updateActionUI(); return old; }
+    function renderChallenge() {
+        if (!challenge)
+            return;
+        const c = challenge;
+        const timer = c.remaining != null ? '<div class="challenge-timer"><i id="challengeTimer"></i></div>' : '';
+        let body = '', footer = '';
+        if (c.type === 'hide') {
+            body = '<div class="qte-steps">' + ['藏起来', '拿起笔', '看课本'].map((s, i) => `<button class="qte-step ${i < c.step ? 'done' : ''} ${i === c.step ? 'current' : ''}" data-hide-step="${i}" ${i !== c.step ? 'disabled' : ''}><b>0${i + 1} / SPACE</b>${s}</button>`).join('') + '</div>';
+            footer = '连续按三次空格，或依次点击三个按钮。按住不算。';
+        }
+        else if (c.type === 'freeze') {
+            body = '<div class="freeze-icon" id="freezeState">松开手</div><div class="freeze-instruction" id="freezeInstruction">准备期 0.8 秒 · 随后 2 秒不移动鼠标、不触摸、不按键</div>';
+            footer = '暂停键与系统控制不会被判定为动作。';
+        }
+        else if (c.type === 'wait') {
+            body = '<div class="freeze-icon" id="waitState">静候</div><div class="freeze-instruction">脚步刚刚停下。手离开所有操作，等待三秒。</div>';
+            footer = '物理课的最后一条守则。不要急着移动。';
+        }
+        else if (c.type === 'grid') {
+            body = '<div class="number-grid">' + c.numbers.map(n => `<button data-number="${n}" class="${c.hint && n === c.correct ? 'memory-flash' : ''}">${n}</button>`).join('') + '</div>';
+            footer = c.hint ? '你记得上课的内容。正确编号会短暂亮起。' : '看清题意，计算编号。只有一个答案。';
+        }
+        else if (c.type === 'sprint') {
+            body = `<button class="sprint-btn" id="sprintButton">冲出去 · <span id="sprintCount">0 / ${c.target}</span></button>`;
+            footer = '连续点击或逐次按空格。越过校门，不要回头。';
+        }
+        else if (c.type === 'break') {
+            const st = S.classStats;
+            body = `<div class="break-stats"><div>本节答对<b>${st.right}</b>问题</div><div>最高怀疑<b>${Math.round(st.max)}</b>/ 100</div><div>魔方进度<b>+${Math.round(S.cube - st.cubeStart)}%</b>本节</div></div><div class="small">手机使用 ${Math.round(st.phone)} 秒　·　被发现 ${st.caught} 次　·　休息恢复专注 +10</div>`;
+            footer = '三秒后自动开始下一节课。Esc 可以暂停。';
+        }
+        else {
+            body = '<div class="challenge-choices">' + (c.choices || []).map((x, i) => `<button class="choice-btn" data-choice="${i}"><kbd>${i + 1}</kbd>${esc(x)}</button>`).join('') + '</div>';
+            if (c.type === 'fakeBell')
+                body += `<button class="phone-home" data-check-clock="1" ${phoneAllowed() ? '' : 'disabled'} style="width:auto;padding:9px 17px;margin-top:13px">偷偷核对手机时间（计入手机使用）</button><span id="checkedClock" class="small" style="margin-left:14px"></span>`;
+            footer = c.type === 'route' ? '观察环境描述中的线索。走错 -20 距离，走对 +10。' : (c.type === 'fakeBell' ? '你可以选择继续坐着；无人要求你现在离开。' : '点击答案，或按对应数字键。');
+        }
+        $('challengeCard').style.top = c.type === 'grid' ? '170px' : '227px';
+        $('challengeCard').innerHTML = `<div class="challenge-kicker"><span>${esc(c.kicker || 'CLASSROOM EVENT')}</span><span id="challengeSeconds">${c.remaining != null ? c.remaining.toFixed(1) + 's' : ''}</span></div><h2 class="challenge-title">${esc(c.title || '')}</h2><div class="challenge-description">${esc(c.description || '')}</div>${timer}${body}<div class="challenge-footer">${footer}</div>`;
+    }
+    function triggerDanger(reason = '老师突然走到了你的课桌旁。', tutorial = false) { if (challenge || script || !S || S.phase !== 'CLASS')
+        return; const wasPhone = S.action === 'phone'; let time = tutorial ? 4 : (S.classIndex === 5 ? 1.5 : 2); if (S.extraUntil > S.t)
+        time *= .75; S.dangerCooldown = S.t + 11; caption('！！脚步就在桌边。', time + 1); sound('warn'); fx('shake'); beginChallenge({ type: 'hide', remaining: time, step: 0, wasPhone, tutorial, kicker: tutorial ? 'GUIDED PRACTICE / 安全演练' : '!! / IMMEDIATE DANGER', title: tutorial ? '先练习一次。' : '藏好。现在。', description: reason }); }
+    function resolveHide(step) { if (!challenge || challenge.type !== 'hide' || step !== challenge.step || modal)
+        return; challenge.step++; sound('click'); if (challenge.step === 3) {
+        closeChallenge();
+        S.dangerCooldown = S.t + 9;
+        addSuspicion(-3);
+        say(CLASSES[S.classIndex].teacher, '……继续。');
+        toast('你拿起了笔。她没有发现。');
+    }
+    else
+        renderChallenge(); }
+    function failHide() { const c = closeChallenge(); S.dangerFails++; if (c.tutorial) {
+        addSuspicion(8);
+        say('何凤临', '别急。这一次是练习：藏起来，拿笔，看书。');
+        toast('教学未完成 · 正式巡视前再记住三步。', true);
+        return;
+    } if (c.wasPhone && registerPhoneCaught())
+        return; addSuspicion(S.classIndex === 5 ? 48 : 36, false); if (S.screen !== 'game')
+        return; S.dangerCooldown = S.t + 9; say(CLASSES[S.classIndex].teacher, '你的手里，刚才是什么？'); toast('隐藏失败 · 怀疑显著上升。', true); sound('warn'); }
+    function askQuestion(subject, number = 0, onDone = null) { const bank = QUESTIONS[subject], q = bank[number % bank.length], indices = shuffle(q.choices.map((_, i) => i)); const seconds = (S.phase === 'ESCAPE' ? 11 : 6.5 + S.focus * .065); if (S.classIndex === 5 && S.phase === 'CLASS')
+        showDoor(true, seconds, 'glasses'); beginChallenge({ type: 'question', remaining: seconds, kicker: S.phase === 'ESCAPE' ? 'MEMORY / 课程回忆' : 'ROLL CALL / 突然点名', title: subject === 'math' ? '死亡点名' : '回答这道题。', description: q.text, choices: indices.map(i => q.choices[i]), correct: indices.indexOf(q.answer), explain: q.explain, math: subject === 'math', onDone }); sound('warn', .6); }
+    function recordAnswer(ok, isMath) { if (ok) {
+        S.questionRight++;
+        S.classStats.right++;
+        if (isMath)
+            S.mathStreak = 0;
+        addSuspicion(-6);
+        S.focus = clamp(S.focus + 4);
+    }
+    else {
+        S.questionWrong++;
+        S.classStats.wrong++;
+        if (isMath && S.phase === 'CLASS') {
+            S.mathStreak++;
+            if (S.mathStreak >= 2) {
+                finishEnding('math');
+                return false;
+            }
+        }
+        if (S.phase !== 'ESCAPE')
+            addSuspicion(isMath ? 19 : 14);
+        if (S.screen !== 'game')
+            return false;
+    } return true; }
+    function finishQuestion(index) { if (!challenge || !['question', 'grid'].includes(challenge.type))
+        return; const c = closeChallenge(), ok = index === c.correct; if (!recordAnswer(ok, c.math))
+        return; sound(ok ? 'click' : 'warn'); toast(ok ? '回答正确 · 怀疑下降' : (index === null ? '回答超时。' : '回答错误。'), !ok); say(c.math ? '郭知昭' : (S.phase === 'ESCAPE' ? '你' : CLASSES[S.classIndex].teacher), ok ? c.explain : '记住：' + c.explain); if (c.onDone)
+        c.onDone(ok); }
+    function startFreeze(onDone = null) { beginChallenge({ type: 'freeze', remaining: 2.8, grace: .8, freezeFor: 2, title: '不要动。', description: '现在，停止一切动作。', kicker: S.phase === 'ESCAPE' ? 'MEMORY / 生物' : 'CONDITIONED REFLEX / 条件反射', onDone }); sound('warn', .5); caption('教室安静得能听见自己的呼吸。', 3); }
+    function finishFreeze(ok) { if (!challenge || !['freeze', 'wait'].includes(challenge.type))
+        return; const c = closeChallenge(); if (S.phase === 'CLASS') {
+        if (ok) {
+            addSuspicion(-4);
+            S.focus = clamp(S.focus + 5);
+            toast('你保持了静止。');
+        }
+        else {
+            addSuspicion(17);
+            toast('她注意到了你的动作。', true);
+        }
+    }
+    else
+        toast(ok ? '脚步重新远去。' : '你的动作暴露了位置。', !ok); if (S.screen === 'game' && c.onDone)
+        c.onDone(ok); }
+    function interactionMotion(event) { if (!challenge || modal || script || !S)
+        return; if (!['freeze', 'wait'].includes(challenge.type))
+        return; if (event.target instanceof Element && event.target.closest('.utility,#modal'))
+        return; if (event.type === 'keydown' && ['Escape', 'Alt', 'Control', 'Meta', 'Shift'].includes(event.key))
+        return; if (event.type === 'keydown' && event.altKey && event.code === 'Enter')
+        return; const grace = challenge.type === 'freeze' ? .8 : .35; if (challenge.elapsed >= grace)
+        finishFreeze(false); }
+    function startGrid(onDone = null) { const variants = [{ q: '找到编号：7 × 8 − 13 = ？', n: 43, e: '7×8−13=43。正确编号是43。' }, { q: 'f(x)=x²。找到编号 f′(7)。', n: 14, e: 'f′(x)=2x，f′(7)=14。' }, { q: '找到编号：56 ÷ 2 + 7 = ？', n: 35, e: '56÷2+7=35。正确编号是35。' }]; const v = pick(variants); beginChallenge({ type: 'grid', remaining: S.phase === 'ESCAPE' ? 13 : 12 + S.focus * .035, title: '1 / 56', description: v.q, kicker: S.phase === 'ESCAPE' ? 'FINAL LOCK / 最后一道编号锁' : 'BOSS / 思考能力', numbers: shuffle(Array.from({ length: 56 }, (_, i) => i + 1)), correct: v.n, explain: v.e, math: true, hint: S.listenSeconds >= 20, onDone }); sound('warn'); }
+    function startFakeBell() { sound('bell'); fx('flicker'); beginChallenge({ type: 'fakeBell', remaining: 16, title: '下课了。是吗？', kicker: 'THE BELL / 第一遍铃声', description: "走廊里响起放学铃。没有一个同学起身。\n郭知昭仍然站在黑板前，静静看着你。", choices: ['离开教室', '继续坐着'] }); say('广播', '下课时间到了。请同学们……离开。'); }
+    function choose(index) {
+        if (!challenge || modal)
+            return;
+        const c = challenge;
+        if (c.type === 'question') {
+            finishQuestion(index);
+            return;
+        }
+        if (c.type === 'fakeBell') {
+            closeChallenge();
+            if (index === 0) {
+                gameOver('谁告诉你们下课了？', '那不是真正的 17:30。你相信了第一遍铃声。');
+            }
+            else {
+                addSuspicion(-4);
+                playScript([['你', '你把手放回课本上。铃声又响了几秒，忽然断了。'], ['郭知昭', '不错。']], () => say('你', '继续坐着。真正的放学时间，还没有到。'));
+            }
+            return;
+        }
+        if (c.type === 'route') {
+            resolveRoute(index === c.correct);
+            return;
+        }
+        if (c.type === 'pack') {
+            closeChallenge();
+            resolveDayEnd();
+            return;
+        }
+    }
+    function updateChallenge(dt) {
+        if (!challenge)
+            return;
+        const c = challenge;
+        c.elapsed += dt;
+        if (c.remaining != null)
+            c.remaining = Math.max(0, c.remaining - dt);
+        if (c.type === 'freeze') {
+            $('freezeState').textContent = c.elapsed < .8 ? '松开手' : '不要动';
+            $('freezeInstruction').textContent = c.elapsed < .8 ? '准备期 0.8 秒 · 松开鼠标与键盘' : `保持静止 · ${Math.max(0, c.remaining).toFixed(1)} 秒`;
+        }
+        if (c.type === 'sprint') {
+            $('sprintCount').textContent = `${c.taps} / ${c.target}`;
+            const m = c.taps < 6 ? 20 : c.taps < 12 ? 10 : 5;
+            $('challengeCard').querySelector('.challenge-description').textContent = `距离校门 ${m} 米。白光就在前面。`;
+        }
+        const bar = $('challengeTimer');
+        if (bar)
+            bar.style.width = `${clamp(c.remaining / c.total, 0, 1) * 100}%`;
+        if ($('challengeSeconds'))
+            $('challengeSeconds').textContent = c.remaining != null ? c.remaining.toFixed(1) + 's' : '';
+        if (c.remaining !== 0)
+            return;
+        switch (c.type) {
+            case 'hide':
+                failHide();
+                break;
+            case 'question':
+            case 'grid':
+                finishQuestion(null);
+                break;
+            case 'freeze':
+            case 'wait':
+                finishFreeze(true);
+                break;
+            case 'fakeBell':
+                choose(1);
+                break;
+            case 'route':
+                resolveRoute(false);
+                break;
+            case 'sprint':
+                closeChallenge();
+                finishEnding('loop');
+                break;
+            case 'break':
+                closeChallenge();
+                S.focus = clamp(S.focus + 10);
+                S.boredom = clamp(S.boredom - 12);
+                addSuspicion(-8);
+                enterClass(S.classIndex + 1);
+                break;
+        }
+    }
+    function showDoor(real = true, duration = 7, kind = 'shadow') { if (!S)
+        return; S.door = { real, born: S.t, until: S.t + duration, kind }; $('doorShadow').className = kind === 'glasses' ? 'glasses' : kind === 'hand' ? 'hand' : ''; $('doorShadow').style.opacity = real ? '.92' : '.5'; if (real) {
+        sound('door', .55);
+        caption('后门的把手轻轻转动。', 2.7);
+        $('rearDoor').classList.add('moving');
+        addMessage('同桌：后门！！先把手机收起来。');
+        toast('后门玻璃上，多了一道反光。', true, 3);
+    } }
+    function updateDoor(dt) { if (!S.door)
+        return; if (S.t >= S.door.until) {
+        S.door = null;
+        $('doorShadow').style.opacity = '0';
+        $('rearDoor').classList.remove('moving');
+        return;
+    } if (S.door.real && S.t - S.door.born > 1.8 && S.phase === 'CLASS' && !challenge) {
+        if (S.action === 'phone')
+            addSuspicion(10 * dt);
+        else if (S.action === 'cube')
+            addSuspicion(1.2 * dt);
+        else if (S.action === 'homework')
+            addSuspicion(.35 * dt);
+    } }
+    function chooseTeacherTarget() { const t = S.teacher, nearTargets = [4, 5, 6], normal = [0, 1, 2, 3, 7]; const p = .12 + S.suspicion * .004 + S.classIndex * .024; let target = Math.random() < p ? pick(nearTargets) : pick(normal); if (S.classIndex === 5 && Math.random() < .28)
+        target = Math.floor(rnd(0, 8)); if (target === t.target)
+        target = (target + 1) % POSITIONS.length; t.target = target; t.wait = rnd(3, 8) - Math.min(2, S.suspicion * .025); if (nearTargets.includes(target)) {
+        caption('哒。哒。脚步正沿过道靠近。', 3.5);
+        sound('step', .8);
+        addMessage('同桌：老师进过道了，小心。');
+    } }
+    function updateTeacher(dt) {
+        const t = S.teacher, c = CLASSES[S.classIndex];
+        if (t.hold > S.t)
+            return;
+        const watched = S.classIndex === 3 && S.action === 'observe' && S.observe === 'teacher';
+        if (watched)
+            return;
+        const dest = POSITIONS[t.target];
+        const boost = (S.extraUntil > S.t ? 1.5 : 1) * (S.classIndex === 5 ? (.85 + (Math.sin(S.t * 1.5) + 1) * .4) : 1);
+        const speed = c.speed * boost;
+        const dx = dest.x - t.x, dy = dest.y - t.y, dist = Math.hypot(dx, dy);
+        if (dist > 2) {
+            const f = Math.min(1, dt * 1.1 * speed);
+            t.x += dx * f;
+            t.y += dy * f;
+            t.z += (dest.z - t.z) * f;
+            t.step -= dt;
+            if (t.step <= 0) {
+                t.step = .65 / Math.max(.8, speed);
+                const loud = .3 + .6 * clamp((t.y - 300) / 130, 0, 1);
+                sound('step', S.action === 'phone' && S.phoneApp === 'video' ? loud * .35 : loud);
+                if (Math.random() < .45)
+                    caption('哒……哒……', .8);
+            }
+        }
+        else {
+            t.wait -= dt;
+            if (t.wait <= 0)
+                chooseTeacherTarget();
+        }
+        const near = (t.y > 388 && (t.x < 440 || t.x > 1150));
+        if (t.near && !near && S.classIndex === 3) {
+            t.tailUntil = S.t + 3;
+            caption('脚步似乎已经离开。再等三秒。', 3);
+        }
+        t.near = near;
+        if (near && S.t > S.dangerCooldown && ['phone', 'cube', 'homework'].includes(S.action)) {
+            triggerDanger('老师的影子，落在你摊开的课本上。');
+        }
+    }
+    function suddenWatch() { if (S.action === 'phone' || S.action === 'cube') {
+        caption('讲课声突然中断。全班静音。', 2.5);
+        triggerDanger('李芳铃停下了。她正在看你的手。');
+    }
+    else {
+        S.teacher.hold = S.t + 3;
+        caption('讲课声突然中断。你已经拿好了笔。', 3);
+        say('李芳铃', '受着。');
+        addSuspicion(-2);
+    } }
+    function scrambleButtons() { S.shuffleUntil = S.t + 5; const order = shuffle([0, 1, 2, 3, 4]); $$('.action').forEach((e, i) => e.style.order = order[i]); toast('神经调节：按钮位置交换 5 秒。数字快捷键不变。', true, 4); fx('flicker'); say('王盈', '习惯，还是判断？'); }
+    function triggerExtraordinary() { S.extraUntil = S.t + 60; toast('EXTRAORDINARY MODE · 60 秒', true, 5); say('尹纱纱', '高级。这才是你们应该有的反应速度。'); sound('warn'); fx('flicker'); }
+    function physicsVisit() { caption('哒。哒。哒。脚步停止了。', 3); S.teacher.target = 5; S.teacher.wait = 4; S.teacher.x = 1150; S.teacher.y = 370; S.teacher.z = 1.14; S.dangerCooldown = S.t + 2.5; S.teacher.tailUntil = S.t + 5; sound('step'); say('戴贝贝', '这么急？'); }
+    function scheduledEvents() {
+        const subject = CLASSES[S.classIndex].id;
+        const plans = {
+            chinese: [[.15, 'instruction', () => say('何凤临', '听课能降低怀疑，但一直听也会走神。写写作业、转转魔方，然后记得抬头。')], [.25, 'practice', () => triggerDanger('何凤临示意你练习：连续三次空格，也可以点三个按钮。', true)], [.46, 'doorlesson', () => showDoor(true, 7, 'glasses')], [.66, 'cnquestion', () => askQuestion('chinese')], [.87, 'cnclue', () => { say('同桌', '把今天的守则记好。按 N 可以随时查看手记，阅读时游戏会暂停。'); addMessage('何凤临：听见铃声也别急，先确认真正的时间。'); }]],
+            chemistry: [[.22, 'chemwatch', suddenWatch], [.43, 'chemq1', () => askQuestion('chemistry', 0)], [.67, 'chemwatch2', suddenWatch], [.84, 'chemq2', () => askQuestion('chemistry', 1)]],
+            biology: [[.22, 'biofreeze', () => startFreeze()], [.43, 'bioswap', scrambleButtons], [.65, 'bioq', () => askQuestion('biology', 0)], [.84, 'biofreeze2', () => startFreeze()]],
+            physics: [[.20, 'physvisit', physicsVisit], [.43, 'physq', () => askQuestion('physics', 0)], [.64, 'physvisit2', physicsVisit], [.85, 'physq2', () => askQuestion('physics', 1)]],
+            english: [[.16, 'engq1', () => askQuestion('english', 0)], [.31, 'engboost', triggerExtraordinary], [.65, 'engq2', () => askQuestion('english', 1)], [.86, 'engq3', () => askQuestion('english', 2)]],
+            math: [[.08, 'mathstage1', () => { say('郭知昭', '第一阶段。函数巡视。你们的每一个动作，都有定义域。'); caption('BOSS / 1 / 56', 4); }], [.28, 'mathq1', () => askQuestion('math', 0)], [.46, 'mathq2', () => askQuestion('math', 1)], [.65, 'mathgrid', () => startGrid()], [.84, 'fakebell', startFakeBell]]
+        };
+        for (const [fraction, key, run] of plans[subject])
+            if (S.elapsed >= S.duration * fraction && !S.eventsDone.includes(key)) {
+                S.eventsDone.push(key);
+                enqueue(key, run);
+            }
+    }
+    function randomEvent() { const event = Math.floor(rnd(0, 9)); switch (event) {
+        case 0:
+            showDoor(true, 6, 'glasses');
+            break;
+        case 1:
+            if (['phone', 'cube'].includes(S.action))
+                triggerDanger('老师突然回头。你听见粉笔放下的声音。');
+            else
+                say(CLASSES[S.classIndex].teacher, '保持安静。');
+            break;
+        case 2:
+            caption('全班的翻页声，在同一秒停了。', 3);
+            $$('.student').forEach(e => e.classList.add('is-still'));
+            S.stillUntil = S.t + 4;
+            fx('flicker');
+            break;
+        case 3:
+            sound('door');
+            $('rearDoor').classList.add('moving');
+            caption('门把手转了半圈，又停住。', 3);
+            S.handleUntil = S.t + 3;
+            break;
+        case 4:
+            say('广播', '请高二年级……滋……不要……');
+            sound('vibrate');
+            fx('flicker');
+            S.anomalyUntil = S.t + 6;
+            break;
+        case 5:
+            if (phoneAllowed()) {
+                sound('vibrate');
+                toast('口袋里，手机震了一下。');
+                addMessage('班群：刚才的铃声，是不是提前了？');
+            }
+            break;
+        case 6:
+            showDoor(false, 4, 'shadow');
+            say('你', '你眨了眨眼。后门似乎有人，又似乎没有。');
+            break;
+        case 7:
+            fx('flicker');
+            caption('日光灯暗了一瞬。', 2);
+            S.anomalyUntil = S.t + 5;
+            break;
+        case 8:
+            showDoor(false, 3, 'hand');
+            addMessage('同桌：你刚才看见那只手了吗？');
+            break;
+    } }
+    function updateClass(dt) {
+        S.elapsed = Math.min(S.duration, S.elapsed + dt);
+        S.survival += dt;
+        S.operationTimes = S.operationTimes.filter(t => S.t - t < 8);
+        S.totalPhone += S.action === 'phone' ? dt : 0;
+        S.classStats.phone += S.action === 'phone' ? dt : 0;
+        const boredomPenalty = S.boredom > 65 ? .25 + (S.boredom - 65) * .045 : 0;
+        switch (S.action) {
+            case 'listen':
+                S.listenSeconds += dt;
+                S.focus = clamp(S.focus + (.50 - boredomPenalty) * dt);
+                S.boredom = clamp(S.boredom + .68 * dt);
+                addSuspicion(-.65 * dt);
+                break;
+            case 'homework':
+                S.homework = clamp(S.homework + .27 * dt);
+                S.boredom = clamp(S.boredom - .36 * dt);
+                S.focus = clamp(S.focus - (.14 + boredomPenalty * .3) * dt);
+                addSuspicion(.025 * dt);
+                break;
+            case 'cube':
+                S.boredom = clamp(S.boredom - .7 * dt);
+                S.focus = clamp(S.focus + .06 * dt);
+                addSuspicion(.09 * dt);
+                break;
+            case 'phone':
+                S.phoneSeconds += dt;
+                S.boredom = clamp(S.boredom - (S.phoneApp === 'video' ? 2 : 1.2) * dt);
+                S.focus = clamp(S.focus - .60 * dt);
+                {
+                    const risk = S.phoneSeconds < 3 ? .25 : S.phoneSeconds < 6 ? .65 : S.phoneSeconds < 10 ? 1.2 : S.phoneSeconds < 15 ? 1.9 : 3;
+                    addSuspicion((risk + (S.phoneApp === 'video' ? .2 : 0)) * dt);
+                }
+                break;
+            case 'observe':
+                S.boredom = clamp(S.boredom - .25 * dt);
+                S.focus = clamp(S.focus - .06 * dt);
+                addSuspicion(-.16 * dt);
+                S.observeElapsed += dt;
+                if (S.observeElapsed > .85 && !S.observeNoted) {
+                    S.observeNoted = true;
+                    observationResult();
+                }
+                break;
+        }
+        if (S.screen !== 'game')
+            return;
+        updateDoor(dt);
+        if (S.screen !== 'game')
+            return;
+        scheduledEvents();
+        if (eventQueue.length) {
+            eventQueue.shift().run();
+            if (challenge || script || S.screen !== 'game')
+                return;
+        }
+        updateTeacher(dt);
+        if (challenge || S.screen !== 'game')
+            return;
+        if (S.elapsed >= S.nextDoor) {
+            S.nextDoor += 30;
+            const p = S.classIndex === 5 ? .45 : S.suspicion > 60 ? .35 : S.action === 'phone' ? .25 : .15;
+            if (Math.random() < p)
+                showDoor(true, 7, pick(['glasses', 'shadow', 'hand']));
+            else if (S.focus < 30 && Math.random() < .4)
+                showDoor(false, 4);
+        }
+        if (S.elapsed >= S.nextEvent) {
+            S.nextEvent += rnd(30, 90);
+            enqueue('random-' + Math.floor(S.elapsed), randomEvent);
+        }
+        if (S.shuffleUntil && S.t >= S.shuffleUntil) {
+            S.shuffleUntil = 0;
+            $$('.action').forEach(e => e.style.order = '');
+            toast('按钮位置已恢复。');
+        }
+        if (S.stillUntil && S.t > S.stillUntil) {
+            S.stillUntil = 0;
+            $$('.student').forEach(e => e.classList.remove('is-still'));
+        }
+        if (S.handleUntil && S.t > S.handleUntil) {
+            S.handleUntil = 0;
+            $('rearDoor').classList.remove('moving');
+        }
+        if (S.classIndex === 2 && S.operationTimes.length > 28 && S.t > S.dangerCooldown) {
+            S.dangerCooldown = S.t + 18;
+            enqueue('biofrequency', () => startFreeze());
+            S.operationTimes = [];
+        }
+        if (S.elapsed >= S.duration && !eventQueue.length && !challenge) {
+            if (S.classIndex < 5)
+                endClass();
+            else
+                completeDay();
+        }
+    }
+    function endClass() {
+        S.phase = 'BREAK';
+        S.action = 'listen';
+        S.door = null;
+        S.extraUntil = 0;
+        $('doorShadow').style.opacity = '0';
+        sound('bell', .6);
+        beginChallenge({ type: 'break', remaining: 3, kicker: 'LESSON COMPLETE / 课间', title: `第 ${S.classIndex + 1} 节结束`, description: `下一节：${CLASSES[S.classIndex + 1].subject} · ${CLASSES[S.classIndex + 1].teacher}
+课间与午间自动跳过。休息一下，再进入下一节课。` });
+    }
+    function completeDay() { S.phase = 'COMPLETE'; S.elapsed = S.duration; S.action = 'listen'; S.door = null; S.extraUntil = 0; eventQueue = []; $('doorShadow').style.opacity = '0'; updateActionUI(); sound('bell'); playScript([['你', '17:30。黑板旁的钟与真实的时间终于重合。'], ['何凤临', '放学了。这一次，是真的。'], ['你', 'DAY COMPLETE。你把笔放进笔袋，开始收拾书包。']], () => beginChallenge({ type: 'pack', kicker: '17:30 / DAY COMPLETE', title: '最后一节课，结束了。', description: "你已经坐过了六节课。\n但走出教室，并不等于走出这所学校。", choices: ['收拾书包，离开座位'] })); }
+    function resolveDayEnd() {
+        if (S.cube >= 100 && !S.phoneEver) {
+            finishEnding('cfop');
+            return;
+        }
+        if (S.maxSuspicion < 20 && S.questionWrong === 0 && S.questionRight > 0) {
+            finishEnding('unseen');
+            return;
+        }
+        playScript([['你', '你走出高二（2）班。走廊里的灯，一盏接一盏熄灭。'], ['李芙容', '你们……'], ['李芙容', '自诩为天之骄子。'], ['你', 'FINAL BOSS / 天之骄子。别跟着声音，跟着能看见的出口。']], startEscape);
+        fx('flicker');
+        sound('step');
+    }
+    // Escape routes, six subject memories and a final repeated-click sprint.
+    const ROUTES = [
+        { place: '走廊', description: "左边走廊没有窗户，也没有倒影。\n右侧的玻璃里，映着一块绿色安全出口牌。", choices: ['向左', '向右', '躲进教室', '继续下楼'], correct: 1 },
+        { place: '侧楼梯', description: "何凤临推开了侧楼梯的门。\n绿色箭头指向楼下；上方只有熄灭的灯。", choices: ['向左返回教室', '向右走上楼', '躲进空教室', '沿侧楼梯继续下楼'], correct: 3 },
+        { place: '实验室', description: "实验室里，一条白色地面引导线向左延伸。\n右门的玻璃没有反光，门后传来熟悉的声音。", choices: ['沿白线向左', '听着声音向右', '躲进储藏柜', '推开没有反光的门'], correct: 0 },
+        { place: '一楼走廊', description: "前面安全出口的指示牌写着「大厅 →」。\n身后的脚步开始变慢，像是正在等你转身。", choices: ['向左找脚步', '向右进入大厅', '躲进身后的教室', '走回楼上'], correct: 1 },
+        { place: '一楼大厅', description: "大厅正门的绿色 EXIT 标牌亮着。\n白线向左通往门厅；右侧只有一面照不出你的镜子。", choices: ['向左进入门厅', '向右靠近镜子', '回到实验室', '继续向地下走'], correct: 0 },
+        { place: '校门前厅', description: "玻璃上映出真正的晚霞。\n出口在右侧。门上还有一道写着 1/56 的编号锁。", choices: ['向左回教室', '向右走向校门', '躲在讲台后', '继续下楼'], correct: 1 }
+    ];
+    function startEscape() { S.phase = 'ESCAPE'; S.escapeStarted = true; S.escapeNode = 0; S.distance = 70; S.action = 'listen'; S.door = null; S.extraUntil = 0; S.teacher.hold = Infinity; eventQueue = []; $('gameUI').hidden = true; $('teacher').hidden = true; $('escapeScene').hidden = false; $('escapeHud').hidden = false; $('dialogue').hidden = false; S.journal.push({ title: '出口', text: '遵循可见的反光、绿色 EXIT 牌与地面引导线。走错扣20距离。走廊、侧楼梯、实验室、一楼大厅、门厅、校门。六科的守则仍然有效。' }); say('你', '脚步在身后。看清路标，别浪费时间。'); showRoute(); }
+    function showRoute() { if (S.screen !== 'game')
+        return; const r = ROUTES[S.escapeNode]; $('escape-location').textContent = r.place; $('escapeRoute').innerHTML = ROUTES.map((x, i) => `<span class="${i <= S.escapeNode ? 'passed' : ''}">${x.place}</span>`).join(''); beginChallenge({ type: 'route', remaining: 10, kicker: `ESCAPE / ${S.escapeNode + 1} OF 6`, title: r.place, description: r.description, choices: r.choices, correct: r.correct }); }
+    function changeDistance(delta) { S.distance = clamp(S.distance + delta); if (S.distance <= 0) {
+        finishEnding('loop');
+        return false;
+    } return true; }
+    function resolveRoute(ok) {
+        closeChallenge();
+        if (!changeDistance(ok ? 10 : -20))
+            return;
+        toast(ok ? '方向正确 · 距离 +10' : '走进死路，绕回原路 · 距离 -20', !ok);
+        const node = S.escapeNode;
+        const done = success => { if (!changeDistance(success ? 10 : -20))
+            return; nextEscapeNode(); };
+        switch (node) {
+            case 0:
+                askQuestion('chinese', 0, done);
+                break;
+            case 1:
+                playScript([['何凤临', '最后一道题，没有标准答案。'], ['何凤临', '走侧楼梯。记住，听到那句话就停下。'], ['王盈', '不要动。']], () => startFreeze(done));
+                break;
+            case 2:
+                say('李芳铃', '受着。');
+                askQuestion('chemistry', 0, done);
+                break;
+            case 3:
+                caption('哒。哒。……脚步停了。', 4);
+                sound('step');
+                beginChallenge({ type: 'wait', remaining: 3.35, kicker: 'MEMORY / 物理', title: '脚步停了。', description: '不要马上移动。再等三秒。', onDone: done });
+                break;
+            case 4:
+                askQuestion('english', 0, done);
+                break;
+            case 5:
+                startGrid(done);
+                break;
+        }
+    }
+    function nextEscapeNode() { S.escapeNode++; if (S.escapeNode >= ROUTES.length) {
+        startSprint();
+        return;
+    } if (S.escapeNode === 3)
+        fx('flicker'); showRoute(); }
+    function startSprint() { caption('校门正在缓缓打开。', 4); sound('door'); playScript([['李芙容', '你们自诩为天之骄子。'], ['你', '20 米。10 米。5 米。不要回头。']], () => beginChallenge({ type: 'sprint', remaining: 9, target: 18, taps: 0, lastTap: -10, kicker: 'LAST 20 METERS / 最终冲刺', title: '冲出去。', description: '距离校门 20 米。白光就在前面。' })); }
+    function sprintTap() { if (!challenge || challenge.type !== 'sprint' || modal)
+        return; if (S.t - challenge.lastTap < .075)
+        return; challenge.lastTap = S.t; challenge.taps++; sound('step', .35); if (challenge.taps >= challenge.target) {
+        closeChallenge();
+        finishEnding('true');
+    } }
+    function updateEscape(dt) { S.survival += dt; if (!changeDistance(-.70 * dt))
+        return; S.heartTimer -= dt; if (S.heartTimer <= 0) {
+        S.heartTimer = S.distance < 30 ? .6 : 1.15;
+        sound('heart', .65);
+        sound('step', .35);
+    } }
+    function storeRun() { if (!S)
+        return; save.bestSurvival = Math.max(save.bestSurvival, Math.floor(S.survival)); save.bestCube = Math.max(save.bestCube, Math.round(S.cube)); save.bestHomework = Math.max(save.bestHomework, Math.round(S.homework)); persist(); }
+    function finishEnding(id) { if (!S || S.screen !== 'game')
+        return; const e = ENDINGS[id]; S.endingId = id; storeRun(); if (!save.endings.includes(id))
+        save.endings.push(id); if (id === 'phone')
+        save.phoneRestricted = true; if (['true', 'cfop', 'unseen'].includes(id))
+        save.wins++; persist(); showEndingScreen(e, id); sound(['true', 'cfop', 'unseen'].includes(id) ? 'win' : 'lose'); }
+    function gameOver(title, prose) { if (!S || S.screen !== 'game')
+        return; S.endingId = 'gameover'; storeRun(); showEndingScreen({ type: 'GAME OVER', title, prose }, 'gameover'); sound('lose'); }
+    function showEndingScreen(e, id) { S.screen = 'ending'; S.action = 'listen'; challenge = null; script = null; eventQueue = []; modal = null; $('modal').hidden = true; $('challengeLayer').hidden = true; $('gameUI').hidden = true; $('dialogue').hidden = true; $('escapeHud').hidden = true; $('ending').hidden = false; $('pauseBtn').hidden = true; $('journalBtn').hidden = true; $('ending').classList.toggle('bad', ['phone', 'math', 'loop', 'gameover'].includes(id)); $('stage').classList.remove('extraordinary', 'critical', 'low-focus'); $('endingType').textContent = e.type; $('endingTitle').textContent = e.title; $('endingTitle').style.fontSize = e.title.length > 8 ? '54px' : '80px'; $('endingProse').textContent = e.prose; $('endingStats').innerHTML = `<div>生存时间<b>${fmtDuration(S.survival)}</b></div><div>最高怀疑<b>${Math.round(S.maxSuspicion)}</b></div><div>正确回答<b>${S.questionRight} / ${S.questionRight + S.questionWrong}</b></div><div>魔方复原<b>${S.cube}%</b></div><div>手机使用<b>${Math.round(S.totalPhone)}s</b></div>`; const retry = S.mode === 'quick' && checkpoint && ['gameover', 'phone', 'math', 'loop'].includes(id); $('endingButtons').innerHTML = (retry ? `<button class="solid-btn" data-end-action="retry">重开第 ${checkpoint.classIndex + 1} 节</button>` : '') + '<button class="' + (retry ? 'outline-btn' : 'solid-btn') + '" data-end-action="restart">重新开始一天</button><button class="outline-btn" data-end-action="menu">返回主菜单</button><button class="outline-btn" data-end-action="archive">结局档案</button>'; $('endingNote').textContent = id === 'gameover' ? '本次中途失败不计入六个结局。' + (S.mode === 'quick' ? '快速模式可从本节开头重新挑战。' : '普通模式重新开始一天。') : (id === 'phone' ? '此后周目手机不可用。清除本地存档可解除；已解锁结局也会一并清除。' : '结局已记录在本机 · ' + save.endings.length + ' / 6') + (testMode ? '（测试模式不会写入存档）' : ''); renderUI(); }
+    function retryLesson() { if (!checkpoint || S?.mode !== 'quick')
+        return; const snap = clone(checkpoint); clearTransient(); S = snap; S.screen = 'game'; $('ending').hidden = true; $('pauseBtn').hidden = false; $('journalBtn').hidden = false; $('dialogue').hidden = false; enterClass(S.classIndex, true); toast('已回到本节课开始。之前课程的成绩保留。'); }
+    // Pause / settings / archives. A small parent stack makes nested panels reversible.
+    function openModal(kind, parent = null) { if (!modal)
+        returnFocus = document.activeElement; modal = { kind, parent }; $('modal').hidden = false; renderModal(); $('modalClose').focus({ preventScroll: true }); }
+    function closeModal() { if (!modal)
+        return; const parent = modal.parent; if (parent) {
+        openModal(parent);
+        return;
+    } modal = null; $('modal').hidden = true; lastFrame = performance.now(); if (returnFocus instanceof HTMLElement && returnFocus.isConnected && !returnFocus.hidden)
+        returnFocus.focus({ preventScroll: true }); }
+    function renderModal() {
+        const kind = modal.kind;
+        const titles = { pause: '时间，暂停了', settings: '设置', help: '生存手册', archive: '结局档案', journal: '课桌手记', quit: '结束这一天？', reset: '清除所有记录？' };
+        $('modalTitle').textContent = titles[kind] || '手记';
+        let html = '';
+        if (kind === 'pause') {
+            html = `<p>走廊安静了。所有巡逻、限时答题与追逐都已暂停。</p><p class="small">${CLASSES[S.classIndex].subject} · ${CLASSES[S.classIndex].teacher}　/　${fmtTime(currentTime())}　/　${S.mode === 'quick' ? '快速模式' : '普通模式'}</p><div class="modal-actions"><button class="solid-btn" data-modal-action="resume">继续这一天</button><button class="outline-btn" data-modal-action="settings">设置</button><button class="outline-btn" data-modal-action="help">生存手册</button><button class="outline-btn" data-modal-action="quit">返回主菜单</button></div>`;
+        }
+        else if (kind === 'settings') {
+            const opts = save.settings;
+            html = `<p class="small">更改立即生效。快速模式只影响新的一天；当前周目不会被改动。</p><label class="settings-row"><span>音量<small>铃声、脚步、心跳、门声与操作音</small></span><span class="settings-control"><input aria-label="音量" type="range" min="0" max="100" value="${Math.round(opts.volume * 100)}" data-setting="volume"><output id="volumeOutput">${Math.round(opts.volume * 100)}%</output></span></label><label class="settings-row"><span>恐怖闪烁<small>仅事件触发的短暂明暗变化；敏感者建议关闭</small></span><input type="checkbox" data-setting="flicker" ${opts.flicker ? 'checked' : ''}></label><label class="settings-row"><span>屏幕震动<small>关闭后保留文字、阴影与声音提示</small></span><input type="checkbox" data-setting="shake" ${opts.shake ? 'checked' : ''}></label><label class="settings-row"><span>文字速度<small>点击对话框或按 Enter 可立即显示全文</small></span><span class="settings-control"><input aria-label="文字速度" type="range" min="12" max="90" value="${opts.textSpeed}" data-setting="textSpeed"><output id="textSpeedOutput">${opts.textSpeed}字/s</output></span></label><label class="settings-row"><span>剧情自动继续<small>文字显示完毕后留出阅读时间再继续</small></span><input type="checkbox" data-setting="auto" ${opts.auto ? 'checked' : ''}></label><label class="settings-row"><span>默认快速模式<small>新周目每节课 90 秒；允许重开本节</small></span><input type="checkbox" data-setting="quick" ${opts.quick ? 'checked' : ''}></label><div class="modal-actions"><button class="outline-btn" data-modal-action="fullscreen">⛶ 切换全屏</button><button class="outline-btn" data-modal-action="reset" ${S?.screen === 'game' ? 'disabled' : ''}>清除本地存档</button></div><p class="small" style="margin-top:14px">Alt + Enter 切换全屏。全屏受浏览器权限控制；被拒绝时可使用浏览器的 F11。${S?.screen === 'game' ? '清除记录只能在主菜单或结局页进行。' : ''}</p>`;
+        }
+        else if (kind === 'help') {
+            html = `<p>你是江城大学附属中学高二（2）班的一名学生。撑过六节课，在真正的 <b>17:30</b> 放学，再走出教学楼。游戏中的学校、人物与情节均为虚构。</p><h3>你的课桌</h3><p><span class="help-key">1</span>听课降低怀疑，但无聊会上升。<span class="help-key">2</span>写其他作业。<span class="help-key">3</span>玩魔方，以 <b>R U R′ U′</b> 完成公式；Shift + 字母表示逆转，完成一组后稍停 2.2 秒。<span class="help-key">4</span>手机：聊天、视频、小游戏、真实时间。<span class="help-key">5</span>观察讲台、老师、后门、窗外与同桌。作业和魔方不是普通通关的强制目标。</p><h3>先活下来</h3><p>平时 <span class="help-key">Space</span> 立即收好物品。危险事件出现时，连续三次空格或依次点击「藏起来 → 拿笔 → 看书」。不要按住空格。手机连续使用越久越危险；留意脚步、玻璃与同桌提醒，任何致命突袭前都有线索。静音时仍有画面与文字提示。</p><p>怀疑达到 100 会被发现：第一次降到 60，第二次降到 75，第三次失败。手机被抓三次进入独立坏结局，并影响后续周目。无聊超过 65 会持续消耗专注；低专注让画面模糊，答题时间变短。</p><h3>六节课，不是同一道题</h3><p>语文教你看反光。化学课留意突然的安静。生物课「不要动」有 0.8 秒准备，随后静止 2 秒，暂停与系统按键除外。物理课盯住老师可使她停止；脚步刚走后再等 3 秒。英语课进入 60 秒强化模式。数学课连续答错两题会失败，56 个编号中只有一个符合题意。<b>第一遍下课铃是假的。</b></p><h3>操作与记录</h3><p><span class="help-key">1—4</span>限时事件选项。<span class="help-key">Enter</span>剧情继续。<span class="help-key">Esc</span>暂停。<span class="help-key">N</span>手记。<span class="help-key">M</span>静音。<span class="help-key">Alt+Enter</span>全屏。切到其他标签或窗口自动暂停；回到页面后手动继续。</p><p>普通模式课堂约 19 分钟，加剧情、答题与逃生通常 20—35 分钟；快速模式通常 10—15 分钟。课间与午间跳过，不采用统一时间倍率。六个结局、最佳成绩与设置保存在此浏览器；不保存中途进度。快速模式仅在本次打开页面期间支持重开本节。</p><p class="small">手机端建议横屏；所有动作都有可点击按钮。不会请求摄像头、麦克风或网络权限。</p>`;
+        }
+        else if (kind === 'archive') {
+            html = '<p class="small">有些路，只有走过才会留下名字。已发现 ' + save.endings.length + ' / 6</p><div class="archive-grid">' + Object.entries(ENDINGS).map(([id, e]) => { const known = save.endings.includes(id); return `<div class="archive-card ${known ? '' : 'locked'}"><div class="ending-label">${known ? esc(e.type) : 'UNDISCOVERED / 未发现'}</div><h3>${known ? esc(e.title) : '??????'}</h3><p>${known ? esc(e.hint) : '这一页还没有被写下。'}</p></div>`; }).join('') + `</div><div class="stats-row"><span>开启 ${save.attempts} 天</span><span>成功离校 ${save.wins} 次</span><span>最长存活 ${fmtDuration(save.bestSurvival)}</span><span>魔方最高 ${save.bestCube}%</span></div>`;
+        }
+        else if (kind === 'journal') {
+            html = '<p class="small">所有限时事件与脚步已暂停。这里记录已经上过的课程，不会提前透露未知结局。</p>' + ((S?.journal || []).map(x => `<div class="journal-entry"><b>${esc(x.title)}</b><p>${esc(x.text)}</p></div>`).join('') || '<p>这一天还没有开始。</p>') + '<div class="journal-entry"><b>给自己</b><p>17:30 以前不要离开。手机不是必需品。无法专注时转转魔方，再把东西收好。</p></div>';
+        }
+        else if (kind === 'quit') {
+            html = '<p>本局进度不会保存。已经解锁的结局和设置不受影响。</p><div class="modal-actions"><button class="solid-btn" data-modal-action="confirmQuit">结束并返回</button><button class="outline-btn" data-modal-action="back">继续留下</button></div>';
+        }
+        else if (kind === 'reset') {
+            html = '<p>这将清除所有已解锁结局、最佳成绩、设置以及电子设备管理记录。操作不可撤销。</p><div class="modal-actions"><button class="solid-btn" data-modal-action="confirmReset">确认清除全部记录</button><button class="outline-btn" data-modal-action="back">取消</button></div>';
+        }
+        $('modalBody').innerHTML = html;
+    }
+    function modalAction(action) { switch (action) {
+        case 'resume':
+            modal = null;
+            $('modal').hidden = true;
+            lastFrame = performance.now();
+            break;
+        case 'settings':
+        case 'help':
+        case 'archive':
+        case 'journal':
+        case 'quit':
+        case 'reset':
+            openModal(action, modal?.kind || null);
+            break;
+        case 'back':
+            closeModal();
+            break;
+        case 'fullscreen':
+            toggleFullscreen();
+            break;
+        case 'confirmQuit':
+            storeRun();
+            returnMenu();
+            break;
+        case 'confirmReset':
+            save = clone(DEFAULT_SAVE);
+            persist();
+            if (audio)
+                audio.volume(save.settings.volume);
+            updateMenu();
+            openModal('settings');
+            toast('本地记录已清除。');
+            break;
+    } }
+    function settingChange(el) { const key = el.dataset.setting; if (!(key in save.settings))
+        return; if (key === 'volume') {
+        save.settings.volume = clamp(Number(el.value) / 100, 0, 1);
+        $('volumeOutput').textContent = el.value + '%';
+        if (save.settings.volume > 0)
+            lastMutedVolume = save.settings.volume;
+        if (audio)
+            audio.volume(save.settings.volume);
+        updateSoundButton();
+    }
+    else if (key === 'textSpeed') {
+        save.settings.textSpeed = clamp(Number(el.value), 12, 90);
+        $('textSpeedOutput').textContent = el.value + '字/s';
+    }
+    else
+        save.settings[key] = el.checked; persist(); updateMenu(); if (!save.settings.flicker)
+        $('stage').classList.remove('flicker'); if (!save.settings.shake)
+        $('stage').classList.remove('shake'); }
+    function updateSoundButton() { $('soundBtn').textContent = save.settings.volume > 0 ? '♪ 声音' : '♪ 静音'; $('soundBtn').setAttribute('aria-pressed', String(save.settings.volume === 0)); }
+    function toggleSound() { initAudio(); if (save.settings.volume) {
+        lastMutedVolume = save.settings.volume;
+        save.settings.volume = 0;
+    }
+    else
+        save.settings.volume = lastMutedVolume || .35; if (audio)
+        audio.volume(save.settings.volume); persist(); updateSoundButton(); if (modal?.kind === 'settings')
+        renderModal(); }
+    let wasFullscreen = false;
+    async function toggleFullscreen() { initAudio(); const root = document.documentElement; try {
+        if (document.fullscreenElement || document.webkitFullscreenElement) {
+            const exit = document.exitFullscreen || document.webkitExitFullscreen;
+            if (exit)
+                await exit.call(document);
+        }
+        else {
+            const request = root.requestFullscreen || root.webkitRequestFullscreen;
+            if (!request) {
+                toast('此浏览器不支持页面全屏；桌面端可尝试 F11。', true, 4);
+                return;
+            }
+            await request.call(root);
+        }
+    }
+    catch {
+        toast('全屏请求被浏览器阻止。请在独立浏览器标签打开，或使用 F11。', true, 5);
+    } resize(); }
+    function fullscreenChanged() { const full = !!(document.fullscreenElement || document.webkitFullscreenElement); $('fullscreenBtn').querySelector('span').textContent = full ? '退出全屏' : '全屏'; $('fullscreenBtn').setAttribute('aria-pressed', String(full)); if (wasFullscreen && !full && S?.screen === 'game' && !modal)
+        openModal('pause'); wasFullscreen = full; resize(); }
+    function resize() { const w = window.visualViewport?.width || window.innerWidth, h = window.visualViewport?.height || window.innerHeight; const scale = Math.min(w / 1600, h / 900); $('stage').style.transform = `translate(-50%,-50%) scale(${scale})`; }
+    function renderUI() { if (!S)
+        return; const c = CLASSES[S.classIndex], time = fmtTime(currentTime()); $('gameClock').textContent = S.anomalyUntil > S.t && S.classIndex >= 3 ? fmtTime(currentTime() - 3) : time; $('courseName').textContent = `第 ${S.classIndex + 1} 节 · ${c.subject}`; $('teacherName').textContent = c.teacher + ' / ' + c.title; $('lessonDots').innerHTML = CLASSES.map((_, i) => `<i class="lesson-dot ${i < S.classIndex ? 'done' : ''} ${i === S.classIndex ? 'active' : ''}"></i>`).join(''); $('lessonProgress').firstElementChild.style.width = (S.elapsed / S.duration * 100) + '%'; $('suspicionValue').innerHTML = String(Math.floor(S.suspicion)).padStart(2, '0') + ' <small>/ 100</small>'; $('suspicionBar').firstElementChild.style.width = S.suspicion + '%'; $('suspicionBar').classList.toggle('danger', S.suspicion >= 70); $('suspicionHint').textContent = S.suspicion < 30 ? '一切正常。至少现在是。' : S.suspicion < 50 ? '她开始注意到你。' : S.suspicion < 70 ? '巡视越来越频繁。' : S.suspicion < 90 ? '不要拿出任何多余的东西。' : '危险。她的目光没有离开。'; $('focusBar').style.width = S.focus + '%'; $('focusValue').textContent = Math.round(S.focus); $('boredomBar').style.width = S.boredom + '%'; $('boredomValue').textContent = Math.round(S.boredom); $('boredomBar').style.background = S.boredom > 65 ? 'var(--danger)' : ''; $('homeworkValue').textContent = Math.floor(S.homework) + '%'; $('cubeValue').textContent = S.cube + '%'; $('phoneRiskValue').textContent = !phoneAllowed() ? '已收走' : S.action !== 'phone' ? '—' : S.phoneSeconds < 3 ? '低' : S.phoneSeconds < 6 ? '小' : S.phoneSeconds < 10 ? '中' : S.phoneSeconds < 15 ? '高' : '极高'; $('phoneRiskValue').style.color = S.phoneSeconds >= 10 ? 'var(--danger)' : ''; $('actionHint').textContent = S.boredom > 65 ? '无聊正在消耗专注 · 换个行动' : S.action === 'phone' ? `已连续使用 ${S.phoneSeconds.toFixed(1)} 秒 · SPACE 收起` : S.action === 'cube' ? 'R U R′ U′ · Shift 逆转 · SPACE 收好' : 'SPACE 收好 · N 手记 · ESC 暂停'; const clock = S.anomalyUntil > S.t ? currentTime() - 3 : currentTime(); $('minuteHand').style.transform = `rotate(${clock % 60 * 6}deg)`; $('hourHand').style.transform = `rotate(${(clock / 60) % 12 * 30}deg)`; $('teacher').style.transform = `translate3d(${S.teacher.x}px,${S.teacher.y}px,0) scale(${S.teacher.z})`; $('stage').classList.toggle('low-focus', S.focus < 25); $('stage').classList.toggle('critical', S.suspicion > 85 && S.screen === 'game'); $('room').style.setProperty('--focus-blur', Math.max(0, (30 - S.focus) / 18).toFixed(2) + 'px'); const extra = S.extraUntil > S.t && S.phase === 'CLASS'; $('stage').classList.toggle('extraordinary', extra); $('extraBadge').hidden = !extra; $('extraTime').textContent = Math.max(0, Math.ceil(S.extraUntil - S.t)); if (S.action === 'phone')
+        renderPhone(); if (S.action === 'cube')
+        renderCube(); $('distanceBar').style.width = S.distance + '%'; $('distanceValue').textContent = Math.ceil(S.distance); updateActionUI(); }
+    function tick(dt) {
+        uiClock += dt;
+        for (let i = notices.length - 1; i >= 0; i--)
+            if (notices[i].until <= uiClock) {
+                notices[i].el.remove();
+                notices.splice(i, 1);
+            }
+        if (ambient.until < uiClock) {
+            $('ambientCaption').textContent = '';
+        }
+        if (effectUntil < uiClock)
+            $('stage').classList.remove('flicker', 'shake');
+        if (!S || S.screen !== 'game' || modal)
+            return;
+        if (dialogue.shown < dialogue.text.length)
+            dialogue.shown = Math.min(dialogue.text.length, dialogue.shown + save.settings.textSpeed * dt);
+        else
+            dialogue.hold += dt;
+        renderDialogue();
+        if (script) {
+            if (save.settings.auto && dialogue.hold > Math.max(1.2, dialogue.text.length * .038))
+                advanceDialogue();
+            return;
+        }
+        S.t += dt;
+        if (S.phase === 'ESCAPE') {
+            updateEscape(dt);
+            if (S.screen !== 'game')
+                return;
+        }
+        if (challenge) {
+            if (S.phase === 'CLASS')
+                S.survival += dt;
+            updateDoor(dt);
+            updateChallenge(dt);
+            return;
+        }
+        if (S.phase === 'CLASS') {
+            updateClass(dt);
+            if (S?.screen === 'game' && S.suspicion > 70) {
+                S.heartTimer -= dt;
+                if (S.heartTimer <= 0) {
+                    S.heartTimer = S.suspicion > 90 ? .65 : 1.35;
+                    sound('heart', .7);
+                }
+            }
+        }
+    }
+    function frame(now) { const dt = Math.min(.075, Math.max(0, (now - lastFrame) / 1000)); lastFrame = now; if (!document.hidden)
+        tick(dt); renderAccumulator += dt; if (renderAccumulator >= .075) {
+        renderAccumulator = 0;
+        renderUI();
+    } requestAnimationFrame(frame); }
+    // Controls: keyboard and pointer are equal first-class inputs.
+    $('startNormal').addEventListener('click', () => startGame(save.settings.quick ? 'quick' : 'normal'));
+    $('startQuick').addEventListener('click', () => startGame('quick'));
+    $('startNormal').addEventListener('pointerenter', () => { if (!S)
+        $('doorShadow').style.opacity = '0'; });
+    $('startNormal').addEventListener('pointerleave', () => { if (!S)
+        $('doorShadow').style.opacity = '.65'; });
+    $('helpBtn').addEventListener('click', () => openModal('help'));
+    $('settingsBtn').addEventListener('click', () => openModal('settings'));
+    $('archiveBtn').addEventListener('click', () => openModal('archive'));
+    $('pauseBtn').addEventListener('click', () => openModal('pause'));
+    $('journalBtn').addEventListener('click', () => openModal('journal'));
+    $('soundBtn').addEventListener('click', toggleSound);
+    $('fullscreenBtn').addEventListener('click', toggleFullscreen);
+    $('modalClose').addEventListener('click', closeModal);
+    $('dialogue').addEventListener('click', () => advanceDialogue());
+    $('phoneClose').addEventListener('click', safeHide);
+    $('modalBody').addEventListener('input', e => { if (e.target.dataset.setting)
+        settingChange(e.target); });
+    document.addEventListener('click', e => { const el = e.target.closest('button'); if (!el || el.disabled)
+        return; initAudio(); if (el.dataset.action)
+        setAction(el.dataset.action);
+    else if (el.dataset.turn)
+        turnCube(el.dataset.turn);
+    else if (el.dataset.observe)
+        observe(el.dataset.observe);
+    else if (el.dataset.app && canAct()) {
+        S.phoneApp = el.dataset.app;
+        renderPhone(true);
+        sound('click');
+    }
+    else if (el.dataset.phoneMatch != null && canAct() && S.action === 'phone') {
+        const match = Number(el.dataset.phoneMatch) === S.phoneGameTarget;
+        if (S.t - S.phoneGameRewardAt < 1.1)
+            return;
+        S.phoneGameRewardAt = S.t;
+        if (match) {
+            S.focus = clamp(S.focus + 3);
+            S.boredom = clamp(S.boredom - 4);
+            sound('click');
+        }
+        else
+            addSuspicion(1);
+        S.phoneGameTarget = Math.floor(rnd(0, 3));
+        renderPhone(true);
+    }
+    else if (el.dataset.phoneVideo && canAct()) {
+        S.boredom = clamp(S.boredom - 2);
+        addSuspicion(.7);
+        caption('视频里的放学铃，与你周围的重叠。', 2);
+        sound('vibrate', .3);
+    }
+    else if (el.dataset.hideStep != null)
+        resolveHide(Number(el.dataset.hideStep));
+    else if (el.dataset.choice != null)
+        choose(Number(el.dataset.choice));
+    else if (el.dataset.number != null && !modal)
+        finishQuestion(Number(el.dataset.number));
+    else if (el.id === 'sprintButton')
+        sprintTap();
+    else if (el.dataset.checkClock && challenge?.type === 'fakeBell' && phoneAllowed()) {
+        S.phoneEver = true;
+        S.totalPhone += 1;
+        S.classStats.phone += 1;
+        $('checkedClock').textContent = '真实时间：' + fmtTime(currentTime());
+        sound('vibrate', .4);
+    }
+    else if (el.dataset.modalAction)
+        modalAction(el.dataset.modalAction);
+    else if (el.dataset.endAction) {
+        const action = el.dataset.endAction;
+        if (action === 'menu')
+            returnMenu();
+        else if (action === 'restart')
+            startGame(S.mode);
+        else if (action === 'retry')
+            retryLesson();
+        else if (action === 'archive')
+            openModal('archive');
+    } });
+    document.addEventListener('pointerdown', e => { initAudio(); interactionMotion(e); }, true);
+    document.addEventListener('pointermove', e => { if (lastPointer && Math.hypot(e.clientX - lastPointer.x, e.clientY - lastPointer.y) > 2)
+        interactionMotion(e); lastPointer = { x: e.clientX, y: e.clientY }; }, { passive: true });
+    document.addEventListener('touchmove', interactionMotion, { passive: true });
+    document.addEventListener('wheel', interactionMotion, { passive: true });
+    document.addEventListener('keydown', e => {
+        if (e.altKey && e.code === 'Enter') {
+            e.preventDefault();
+            if (!e.repeat)
+                toggleFullscreen();
+            return;
+        }
+        if (['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement?.tagName) && e.key !== 'Escape')
+            return;
+        if (e.key === 'Escape') {
+            e.preventDefault();
+            if (e.repeat)
+                return;
+            if (modal)
+                closeModal();
+            else if (S?.screen === 'game')
+                openModal('pause');
+            return;
+        }
+        if (modal) {
+            if (e.key === 'Tab') {
+                const els = [...$('modal').querySelectorAll('button:not([disabled]),input:not([disabled])')];
+                if (!els.length)
+                    return;
+                const first = els[0], last = els.at(-1);
+                if (e.shiftKey && document.activeElement === first) {
+                    e.preventDefault();
+                    last.focus();
+                }
+                else if (!e.shiftKey && document.activeElement === last) {
+                    e.preventDefault();
+                    first.focus();
+                }
+            }
+            return;
+        }
+        if (e.code === 'KeyM' && !e.repeat) {
+            toggleSound();
+            return;
+        }
+        if (!S || S.screen !== 'game')
+            return;
+        if (e.code === 'KeyN' && !e.repeat) {
+            e.preventDefault();
+            openModal('journal');
+            return;
+        }
+        const wasImmobile = challenge && ['freeze', 'wait'].includes(challenge.type);
+        interactionMotion(e);
+        if (wasImmobile) {
+            e.preventDefault();
+            return;
+        }
+        if (e.repeat) {
+            if (e.code === 'Space')
+                e.preventDefault();
+            return;
+        }
+        if (script) {
+            if (['Enter', 'Space'].includes(e.code)) {
+                e.preventDefault();
+                advanceDialogue();
+            }
+            return;
+        }
+        if (e.code === 'Space') {
+            e.preventDefault();
+            safeHide();
+            return;
+        }
+        if (challenge) {
+            if (['question', 'route', 'fakeBell', 'pack'].includes(challenge.type) && /^[1-4]$/.test(e.key)) {
+                e.preventDefault();
+                const i = Number(e.key) - 1;
+                if (i < (challenge.choices?.length || 0))
+                    choose(i);
+            }
+            return;
+        }
+        if (/^[1-5]$/.test(e.key)) {
+            e.preventDefault();
+            setAction(['listen', 'homework', 'cube', 'phone', 'observe'][Number(e.key) - 1]);
+            return;
+        }
+        if (S.action === 'cube' && /^Key[URFLDB]$/.test(e.code)) {
+            e.preventDefault();
+            turnCube(e.code.slice(3) + (e.shiftKey ? "'" : ''));
+        }
+    });
+    // Releasing a held key/touch inside the grace period is safe; after it, release is movement too.
+    document.addEventListener('keyup', e => { if (!['Escape', 'Alt', 'Control', 'Shift', 'Meta', 'n', 'N', 'm', 'M'].includes(e.key))
+        interactionMotion(e); });
+    document.addEventListener('pointerup', interactionMotion, { passive: true });
+    document.addEventListener('visibilitychange', () => { if (document.hidden && S?.screen === 'game' && !modal)
+        openModal('pause'); lastFrame = performance.now(); });
+    window.addEventListener('blur', () => { if (S?.screen === 'game' && !modal)
+        openModal('pause'); });
+    window.addEventListener('pagehide', storeRun);
+    window.addEventListener('resize', resize);
+    window.visualViewport?.addEventListener('resize', resize);
+    document.addEventListener('fullscreenchange', fullscreenChanged);
+    document.addEventListener('webkitfullscreenchange', fullscreenChanged);
+    // The classroom is a layered DOM illustration rather than a raster image.
+    const seats = [{ x: 436, y: 403, s: .68 }, { x: 669, y: 420, s: .70 }, { x: 1044, y: 413, s: .74 }, { x: 1210, y: 428, s: .80 }, { x: 363, y: 468, s: .94 }, { x: 619, y: 487, s: 1.06 }, { x: 955, y: 479, s: 1.02 }, { x: 1195, y: 488, s: 1.11 }];
+    $('students').innerHTML = seats.map(p => `<div class="student" style="left:${p.x}px;top:${p.y}px;transform:scale(${p.s})"><div class="student-head"></div><div class="student-body"></div><div class="student-desk"></div><div class="student-chair"></div></div>`).join('');
+    resize();
+    returnMenu();
+    requestAnimationFrame(frame);
+    // Opt-in deterministic integration hooks, inactive during ordinary play. Test mode
+    // never persists achievements. They intentionally expose only this local game.
+    if (testMode)
+        window.__LAST_CLASS_TEST__ = { get state() { return S; }, get challenge() { return challenge; }, get script() { return script; }, get save() { return save; }, get modal() { return modal; }, start: startGame, tick(dt) { tick(dt); renderUI(); }, advance(dt) { tick(dt); }, finishDialogue() { let guard = 100; while (script && guard--) {
+                dialogue.shown = dialogue.text.length;
+                advanceDialogue();
+            } renderUI(); }, setAction, turnCube, observe, choose, number: finishQuestion, hide: resolveHide, freeze: startFreeze, grid: startGrid, question: askQuestion, danger: triggerDanger, fakeBell: startFakeBell, door: showDoor, complete: completeDay, escape: startEscape, sprint: sprintTap, ending: finishEnding, fail: gameOver, retry: retryLesson, menu: returnMenu, openModal, closeModal, render: renderUI, extra: triggerExtraordinary, scramble: scrambleButtons, lesson: enterClass, get queue() { return eventQueue; } };
+})();
+  </script>
+ <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495" integrity="sha512-iIg7k2xntmwu6/uSb5tpc/hySgZc4eoL31yB29W6tJFo2akwjPWcEqnCEdJvGexCL0KEQwVYv5BlowfhVz26hg==" data-cf-beacon='{"version":"2024.11.0","token":"7939e04a4baf43c8b86a560f74aac60e","spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>

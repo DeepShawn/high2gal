@@ -2242,6 +2242,43 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
 #wakeButton { padding:11px 18px; background:#bbcdc0; color:#1b342c; font-size:13px; letter-spacing:1px; }
 #stage.is-sleeping #room { filter:brightness(.52) saturate(.65) blur(var(--focus-blur,0px)); }
 #stage.is-sleeping #teacher { opacity:.70; }
+
+/* v2.2: difficulty selector, non-blocking challenge identity and achievements. */
+.difficulty-select { display:flex;align-items:center;justify-content:space-between;width:440px;padding:9px 12px;margin:12px 0 9px;border:1px solid #99b58470;background:#10271edb;color:#ced8b9;text-align:left;font-size:13px; }
+.difficulty-select span { font-size:11px;color:#9eae96; }
+#menu.has-save .difficulty-select { margin-top:8px; }
+#menu.has-save .menu-content { top:92px; }
+#menu.has-save .menu-title { font-size:84px; }
+#menu.has-save .menu-rule { margin-top:18px;margin-bottom:14px; }
+#menu.has-save .menu-links { margin-top:10px; }
+#difficultyHud { position:absolute;top:187px;right:45px;z-index:17;max-width:390px;padding:7px 11px;background:#10221be8;border-left:2px solid #a5bb8c;color:#bdcbb0;font-size:12px;pointer-events:none; }
+#difficultyHud.god { color:#f2b8a9;border-color:#e59982;background:#381d24e8; }
+.difficulty-grid { display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px; }
+.difficulty-card { position:relative;min-height:132px;padding:15px;text-align:left;border:1px solid #71876366;background:#12211cd9;color:#c4d0b7; }
+.difficulty-card.active { border:2px solid #c1d599;padding:14px;background:#253a298f; }
+.difficulty-card.god { border-color:#b8807466; }
+.difficulty-card.god.active { border-color:#e0a68c; }
+.difficulty-card strong { display:block;font-size:21px;font-weight:500;margin-bottom:7px; }
+.difficulty-card small { display:block;font-size:12px;line-height:1.7;color:#9daf98; }
+.difficulty-card.god small { color:#d1a797; }
+.difficulty-details { display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:14px 0;padding:14px;background:#071a135c;border:1px solid #738a5c40; }
+.difficulty-details b { display:block;font-size:17px;font-weight:500;margin-top:5px; }
+.difficulty-details span { font-size:11px;color:#aabda2; }
+.god-notice { border-left:3px solid #ba7f6b;padding:12px 15px;background:#48242665;color:#e1b5a4; }
+.achievement-toolbar { display:flex;gap:8px;flex-wrap:wrap;margin:14px 0; }
+.achievement-toolbar button { border:1px solid #73906466;padding:6px 12px;font-size:12px;color:#c4d0b7; }
+.achievement-toolbar button.active { background:#9daf732b;border-color:#b8c89f; }
+.achievement-grid { display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px; }
+.achievement-card { padding:14px;border:1px solid #60725570;background:#11221c;min-height:131px; }
+.achievement-card.unlocked { border-color:#adbc807a;background:#1c3024; }
+.achievement-card h3 { margin:6px 0!important;font-size:17px!important;font-weight:500; }
+.achievement-card p { font-size:12px!important;line-height:1.7!important;margin:0 0 10px!important;color:#aabca0; }
+.achievement-meta { font-size:10px;color:#afc490;display:flex;justify-content:space-between;gap:8px; }
+.achievement-track { height:3px;background:#a9bb931f;margin:8px 0; }
+.achievement-track i { display:block;height:100%;background:#c4d1a0; }
+.achievement-summary { display:flex;justify-content:space-between;align-items:baseline;gap:20px; }
+.achievement-summary strong { font-size:28px;font-weight:500;color:#c4d1a0; }
+.freeze-instruction { white-space:pre-line; }
   </style>
  </head>
  <body>
@@ -2384,6 +2421,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
      </div>
      <nav aria-label="系统控制" class="utility">
       <span id="saveIndicator" role="status" title="每 5 秒及关键操作后自动保存">自动存档已就绪</span>
+      <button id="achievementsBtn" title="成就档案">◇ 成就</button>
       <button id="savesBtn" title="存档与检查点">▣ 存档</button>
       <button hidden="" id="journalBtn" title="手记 N">
        ▤ 手记
@@ -2429,6 +2467,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
        <button id="continueGame" class="continue-button">继续游戏 <span>↗</span></button>
        <div id="continueMeta" class="continue-meta"></div>
       </section>
+      <button class="difficulty-select" id="difficultyBtn" aria-label="选择难度">难度：普通 <span>六档可选 · 修改</span></button>
       <button class="start-button" id="startNormal">
        开始这一天
        <span>
@@ -2471,7 +2510,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
        建议佩戴耳机　/　不含贴脸跳吓，可关闭闪烁与震动
       </span>
       <span>
-       单文件离线版　2.1
+       单文件离线版　2.2
        <br/>
        HTML / CSS / JAVASCRIPT
       </span>
@@ -2658,7 +2697,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
       <div class="desk-panel-heading"><span>A MOMENT OF REST / 伏桌小憩</span><span>巡逻不会暂停</span></div>
       <div class="desk-panel-title"><strong id="sleepPhase">浅眠 · 还能听见粉笔声</strong><span id="sleepCountdown">12.0s</span></div>
       <div class="desk-progress"><i id="sleepProgress"></i></div>
-      <p class="sleep-rules">专注 +2.4 / 秒 · 无聊 −1.2 / 秒。睡久了更容易引起怀疑。</p>
+      <p class="sleep-rules" id="sleepRules">专注与无聊按难度恢复，睡久了收益递减。</p>
       <div class="sleep-controls"><div class="sleep-durations" aria-label="小憩总时长">
        <button data-rest-seconds="6" aria-pressed="false">6秒</button><button data-rest-seconds="12" class="active" aria-pressed="true">12秒</button><button data-rest-seconds="18" aria-pressed="false">18秒</button>
       </div><button id="wakeButton">醒来 / SPACE · 7</button></div>
@@ -2875,6 +2914,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
     </section>
     <input id="importSaveFile" type="file" accept=".json,application/json" hidden aria-label="导入存档文件"/>
     <div id="resumeBanner" hidden role="status"></div>
+    <div id="difficultyHud" hidden></div>
     <div aria-live="polite" id="toastStack">
     </div>
     <div hidden="" id="storageWarning">
@@ -2894,7 +2934,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
    'use strict';
 /*
  * 高二（2）班：最后一节课 / THE LAST CLASS
- * Single-file offline release 2.1 — all assets generated in CSS / Web Audio.
+ * Single-file offline release 2.2 — all assets generated in CSS / Web Audio.
  * Basis: supplied game design. Fictional school and characters.
  * Timing reconciliation: lesson clocks interpolate over the stated timetable;
  * breaks/lunch are skipped. Normal: 180×5+240 s; quick: 90×6 s,
@@ -2925,10 +2965,27 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
     const BACKUP_KEY = PROGRESS_KEY + '.backup';
     const ENDING_IDS = ['true','phone','math','loop','cfop','unseen','falsebell','homework','companion','truth','gatekeeper','mirror'];
     const ENDING_COUNT = ENDING_IDS.length;
+    // Difficulty changes mechanics, never the lesson calendar. A run owns its
+    // difficulty; changing the menu selection cannot alter an existing save.
+    const DIFFICULTIES = Object.freeze(Object.fromEntries([
+        ['easy','简单',0,.65,1.25,.80,1.35,1.50,1.30,.65,.70,1.15,1.20,80,14,35,1.8,1.1,2,24],
+        ['normal','普通',1,1,1,1,1,1,1,1,1,1,1,75,18,45,1.4,1.4,1,18],
+        ['hard','困难',2,1.22,.95,1.14,.85,.88,.88,1.20,1.15,.92,.95,70,20,50,1.3,1.5,1,18],
+        ['hell','地狱',3,1.50,.85,1.28,.72,.76,.78,1.40,1.30,.85,.90,65,22,55,1.15,1.65,1,18],
+        ['extreme','极限',4,1.80,.78,1.45,.62,.64,.68,1.65,1.50,.80,.85,60,24,60,1.0,1.8,1,18],
+        ['god','神级',5,2.25,.65,1.68,.50,.55,.58,2.0,1.80,.70,.75,55,26,60,1.0,1.8,1,18]
+    ].map(([id,label,rank,risk,recover,patrol,interval,react,answer,drain,loss,gain,reward,distance,sprint,extra,grace,hold,forgiveness,jitter]) =>
+        [id,Object.freeze({id,label,rank,risk,recover,patrol,interval,react,answer,drain,loss,gain,reward,distance,sprint,extra,grace,hold,forgiveness,jitter})])));
+    const DIFFICULTY_IDS = Object.keys(DIFFICULTIES);
+    const GOD_LIMIT = 180;
+    const CLEAR_ENDINGS = ['true','cfop','unseen','homework','companion','truth'];
+    const ACHIEVEMENT_IDS = ['lesson1','lessons6','hide1','hide10','reflex','note1','note5','nap30','cube100','work100','clues6','answers10','cleanClear','quickClear','noPhone',
+        ...DIFFICULTY_IDS.filter(x=>x!=='god').map(x=>'clear_'+x),'god60','god120','god180','allEndings',...ENDING_IDS.map(x=>'end_'+x)];
+    function rules(st=S) { return DIFFICULTIES[st?.difficulty] || DIFFICULTIES.normal; }
     const testMode = new URLSearchParams(location.search).get('test') === '1';
     const persistenceEnabled = !testMode || new URLSearchParams(location.search).get('persist') === '1';
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const DEFAULT_SAVE = { version: 1, endings: [], bestSurvival: 0, bestCube: 0, bestHomework: 0, attempts: 0, wins: 0, phoneRestricted: false, settings: { volume: .35, flicker: !reduced, shake: !reduced, textSpeed: 36, auto: false, quick: false, endingHints: false } };
+    const DEFAULT_SAVE = { version: 1, endings: [], bestSurvival: 0, bestCube: 0, bestHomework: 0, attempts: 0, wins: 0, phoneRestricted: false, achievements: {}, achievementProgress: {}, godBest: 0, settings: { difficulty: 'normal', volume: .35, flicker: !reduced, shake: !reduced, textSpeed: 36, auto: false, quick: false, endingHints: false } };
     let storageOK = true;
     function normalizeProfile(raw) {
         const out = clone(DEFAULT_SAVE);
@@ -2937,6 +2994,15 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         for (const k of ['bestSurvival', 'bestCube', 'bestHomework', 'attempts', 'wins'])
             out[k] = clamp(Number(raw[k]) || 0, 0, 10000000);
         out.phoneRestricted = raw.phoneRestricted === true;
+        out.godBest = clamp(Number(raw.godBest)||0,0,GOD_LIMIT);
+        for (const id of ACHIEVEMENT_IDS) {
+            const a=raw.achievements?.[id];
+            if(a && typeof a.at==='number' && Number.isFinite(a.at) && a.at>0 && a.at<1e15)
+                out.achievements[id]={at:a.at,difficulty:DIFFICULTY_IDS.includes(a.difficulty)?a.difficulty:'normal',mode:a.mode==='quick'?'quick':'normal'};
+            const v=raw.achievementProgress?.[id];
+            if(typeof v==='number'&&Number.isFinite(v)&&v>=0&&v<=1e7) out.achievementProgress[id]=v;
+        }
+        if(DIFFICULTY_IDS.includes(raw.settings?.difficulty)) out.settings.difficulty=raw.settings.difficulty;
         for (const k of ['flicker', 'shake', 'auto', 'quick', 'endingHints'])
             if (typeof raw.settings?.[k] === 'boolean') out.settings[k] = raw.settings[k];
         const vol = Number(raw.settings?.volume ?? .35);
@@ -2962,9 +3028,9 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
     const CLASSES = [
         { id: 'chinese', subject: '语文', teacher: '何凤临', title: '守门人', duration: 180, start: 460, end: 505, speed: .82, awareness: .5, board: '玻璃的意义，不只是让你看见外面。\n请留意：反光、脚步、真正的时间。', rule: '看反光，不必回头', note: '后门的反光会提前暴露巡查。手机显示真实时间；数学课之前，黑板旁的钟可能不可靠。', intro: [['何凤临', '今天教室似乎比平时安静。'], ['何凤临', '有些东西，不需要回头，也能看到。玻璃的意义，不只是让你看见外面。'], ['同桌', '按 1—7 切换行动，6传纸条、7睡觉。危险时，连续按三次空格：藏好、拿笔、看书。手机不是必需品。']] },
         { id: 'chemistry', subject: '化学', teacher: '李芳铃', title: '反应监视者', duration: 180, start: 520, end: 565, speed: 1.0, awareness: 1, board: '化学反应与实验现象\n镁条燃烧 → 耀眼白光 / 白色固体', rule: '安静下来时，先收起东西', note: '李芳铃突然停止讲课时会观察课桌。镁条燃烧发出耀眼白光，生成白色固体；二氧化碳使澄清石灰水变浑浊。', intro: [['李芳铃', '把与这节课无关的东西，收起来。'], ['同桌', '她走得慢，但随时会停。全班突然安静的时候，千万别拿着手机。'], ['李芳铃', '受着。']] },
-        { id: 'biology', subject: '生物', teacher: '王盈', title: '稳态观察者', duration: 180, start: 610, end: 655, speed: 1.02, awareness: 1.12, board: '神经调节 / 条件反射\n听到「不要动」：停止操作，保持两秒。', rule: '不要动。真的不要动', note: '“不要动”有 0.8 秒准备期，然后必须保持鼠标、触摸与键盘静止 2 秒。不要连续点击；按钮位置可能短暂交换。反射的结构基础是反射弧。', intro: [['王盈', '今天观察一个简单的条件反射。观察对象，是你们。'], ['同桌', '她说“不要动”之后，有 0.8 秒松开手，然后整整两秒别碰鼠标和键盘。'], ['王盈', '注意，不要让习惯替你做决定。']] },
+        { id: 'biology', subject: '生物', teacher: '王盈', title: '稳态观察者', duration: 180, start: 610, end: 655, speed: 1.02, awareness: 1.12, board: '神经调节 / 条件反射\n听到「不要动」：先准备，再保持静止。', rule: '不要动。真的不要动', note: '“不要动”会按难度留出准备期，再保持静止。普通为准备1.4秒、静止1.4秒，容错一次；轻微鼠标抖动、松键和长按重复不判失误。反射的结构基础是反射弧。', intro: [['王盈', '今天观察一个简单的条件反射。观察对象，是你们。'], ['同桌', '她说“不要动”后，先看准备倒计时，再停手。轻微抖动和松开按键不算失误，第一次明显动作也有缓冲。'], ['王盈', '注意，不要让习惯替你做决定。']] },
         { id: 'physics', subject: '物理', teacher: '戴贝贝', title: '相对运动', duration: 180, start: 840, end: 885, speed: 1.36, awareness: 1.3, board: '相对运动 / 惯性\n停止的脚步，不代表危险已经离开。', rule: '脚步停后，再等三秒', note: '观察老师时她停止移动，低头则继续。离开座位后的 3 秒仍危险，不要立刻打开手机。逃生时听见脚步停止，也要静止等待 3 秒。', intro: [['戴贝贝', '运动状态，可不是这么容易改变的。'], ['同桌', '选“观察 → 老师”就能盯住她。可你低头，她就会动。'], ['戴贝贝', '这么急？我离开之后，最好也再等三秒。']] },
-        { id: 'english', subject: '英语', teacher: '尹纱纱', title: 'EXTRAORDINARY', duration: 180, start: 900, end: 945, speed: 1.5, awareness: 1.35, board: 'GOOD → EXTRAORDINARY\nextraordinary / 非凡的，不寻常的', rule: '不是 Good，是 Extraordinary', note: '记住 Extraordinary。强化模式持续 60 秒：移动、怀疑增长 ×1.5，隐藏限时缩短。however 表示“然而”；过去完成时使用 had done。', intro: [['尹纱纱', '说 Good 太 low。说 extraordinary。高级。'], ['尹纱纱', '这才是江城实验中学的水平。'], ['同桌', '她为什么说了另一所学校的名字……先记住那个单词。']] },
+        { id: 'english', subject: '英语', teacher: '尹纱纱', title: 'EXTRAORDINARY', duration: 180, start: 900, end: 945, speed: 1.5, awareness: 1.35, board: 'GOOD → EXTRAORDINARY\nextraordinary / 非凡的，不寻常的', rule: '不是 Good，是 Extraordinary', note: '记住 Extraordinary。强化模式按难度持续35—60秒（普通45秒）：移动×1.35、怀疑增长×1.25，隐藏限时缩短15%。however 表示“然而”；过去完成时使用 had done。', intro: [['尹纱纱', '说 Good 太 low。说 extraordinary。高级。'], ['尹纱纱', '这才是江城实验中学的水平。'], ['同桌', '她为什么说了另一所学校的名字……先记住那个单词。']] },
         { id: 'math', subject: '数学', teacher: '郭知昭', title: '1 / 56', duration: 240, start: 980, end: 1050, speed: 1.7, awareness: 1.7, board: '1 / 56\n每一个人的思考能力……', rule: '17:30 以前，不离开', note: 'f(x)=x² 时，f′(x)=2x。1/56 机关需要按题意计算编号，不是猜“1”。听课满 20 秒有短暂提示。班主任的第一遍下课铃是假的。', intro: [['郭知昭', '你们不要以为来到这里是屈才了。'], ['郭知昭', '你们每一个人的思考能力……都不及我的 1/56。'], ['同桌', '最后一节。记住：17:30 以前，不要相信任何一次下课铃。']] }
     ];
     const QUESTIONS = {
@@ -3019,6 +3085,148 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
     let loadedFromBackup = false, corruptProgress = false, diskConflict = false;
     const tabId = Date.now().toString(36) + '-' + Math.random().toString(36).slice(2,10);
     let diskRevision = null;
+    // v2.2 — one declarative balance table, immutable run identity, and
+    // monotonic profile achievements (never sum a restored run twice).
+    function makeRunStats() { return {hides:0,cleanReflex:0,completedLessons:[]}; }
+    function cubeCooldown() { return [2.8,3.2,3.4,3.6,3.8,3.8][rules().rank]; }
+    function mergeAchievementProfile(dst,src) {
+        for(const id of ACHIEVEMENT_IDS) {
+            const a=src.achievements[id],b=dst.achievements[id];
+            if(a&&(!b||a.at<b.at)) dst.achievements[id]=clone(a);
+            dst.achievementProgress[id]=Math.max(dst.achievementProgress[id]||0,src.achievementProgress[id]||0);
+        }
+        dst.godBest=Math.max(dst.godBest||0,src.godBest||0);
+    }
+    function migrateBalanceSnapshot(snap) {
+        const st=snap?.state;
+        if(!st||Object.hasOwn(st,'balanceVersion')) return;
+        st.balanceVersion=2;st.difficulty='normal';st.phoneHeat=Math.min(45,st.phoneSeconds||0);
+        st.godElapsed=0;st.godWarned=false;st.reflexNextAt=(st.t||0)+35;st.reflexExtraCount=0;
+        st.runStats=makeRunStats();
+        const count=['COMPLETE','ESCAPE'].includes(st.phase)?6:st.classIndex;
+        st.runStats.completedLessons=Array.from({length:Math.max(0,Math.min(6,count||0))},(_,i)=>i);
+        if(st.rest) {st.rest.fatigue=Math.min(60,st.rest.elapsed||0);st.rest.cooldownUntil=0;}
+        const c=snap.challenge;
+        if(c?.type==='freeze') {
+            // Preserve consumed time in an interrupted old challenge. New
+            // attempts use the new timing, but old remaining time is not reset.
+            c.baseGrace=c.grace??.8;c.slips=0;c.allowance=1;c.lastMotionAt=-10;c.motionAnchor=null;
+        }
+    }
+    function validateBalanceState(st,c,num) {
+        assertValid(st.balanceVersion===2&&DIFFICULTY_IDS.includes(st.difficulty),'难度或平衡规则版本无效');
+        assertValid(num(st.godElapsed,0,GOD_LIMIT)&&typeof st.godWarned==='boolean','神级计时无效');
+        assertValid(st.difficulty==='god'||st.godElapsed===0,'普通周目包含神级计时');
+        assertValid(num(st.phoneHeat,0,45)&&num(st.reflexNextAt)&&Number.isInteger(st.reflexExtraCount)&&st.reflexExtraCount>=0&&st.reflexExtraCount<=1,'风险或反射记录无效');
+        assertValid(num(st.rest.fatigue,0,60)&&num(st.rest.cooldownUntil),'小憩疲劳或冷却无效');
+        const r=st.runStats;
+        assertValid(r&&['hides','cleanReflex'].every(k=>num(r[k])&&Number.isInteger(r[k])),'成就计数无效');
+        assertValid(Array.isArray(r.completedLessons)&&r.completedLessons.length<=6&&new Set(r.completedLessons).size===r.completedLessons.length&&r.completedLessons.every(x=>Number.isInteger(x)&&x>=0&&x<6),'完成课程记录无效');
+        if(c?.type==='freeze') {
+            assertValid(num(c.grace,0,200)&&num(c.baseGrace,0,5)&&num(c.freezeFor,.1,5),'静止计时无效');
+            assertValid(Number.isInteger(c.allowance)&&c.allowance>=1&&c.allowance<=2&&Number.isInteger(c.slips)&&c.slips>=0&&c.slips<=c.allowance&&num(c.lastMotionAt,-100,200),'静止容错记录无效');
+            assertValid(c.motionAnchor===null||(c.motionAnchor&&num(c.motionAnchor.x,-1e7,1e7)&&num(c.motionAnchor.y,-1e7,1e7)),'静止指针记录无效');
+        }
+    }
+    const ACHIEVEMENTS = [
+        {id:'lesson1',name:'第一声真铃',desc:'在一个周目中完成第一节课。',group:'课堂',target:1},
+        {id:'lessons6',name:'熬到17:30',desc:'在一个周目中完成全部六节课。',group:'课堂',target:6},
+        {id:'hide1',name:'手比影子快',desc:'成功完成一次正式三步隐藏；教学演练不计。',group:'课堂',target:1},
+        {id:'hide10',name:'课桌生存专家',desc:'在一个周目中成功完成10次正式三步隐藏。',group:'课堂',target:10},
+        {id:'reflex',name:'稳住呼吸',desc:'一次条件反射中未消耗容错，成功保持静止。',group:'课堂',target:1},
+        {id:'note1',name:'纸角上的朋友',desc:'成功收到第一张回条；中断不计。',group:'课堂',target:1},
+        {id:'note5',name:'纸条通信员',desc:'在一个周目中成功收到5张回条。',group:'课堂',target:5},
+        {id:'nap30',name:'课间梦游者',desc:'在一个周目中实际小憩累计30秒；暂停和离线不计。',group:'课堂',target:30},
+        {id:'cube100',name:'六面归位',desc:'在一个周目中将魔方完成到100%。',group:'课堂',target:100},
+        {id:'work100',name:'今天事今天毕',desc:'在一个周目中把其他作业完成到100%。',group:'课堂',target:100},
+        {id:'clues6',name:'反光调查员',desc:'在一个周目中收齐六节课的调查线索。',group:'课堂',target:6},
+        {id:'answers10',name:'十题不失手',desc:'在一个周目中累计答对10题，且当时没有答错记录。',group:'课堂',target:10},
+        {id:'cleanClear',name:'干净的课本',desc:'达成成功离校结局，且本次记录线中零被发现、零隐藏失败、零错题。允许检查点重试，不是铁人模式。',group:'挑战',target:1},
+        {id:'quickClear',name:'短暂而完整的一天',desc:'在快速流程中达成任一成功离校结局（神级除外）。',group:'挑战',target:1},
+        {id:'noPhone',name:'不用屏幕也能出去',desc:'整个周目不使用手机，达成任一成功离校结局。',group:'挑战',target:1},
+        ...DIFFICULTY_IDS.filter(id=>id!=='god').map(id=>({id:'clear_'+id,name:DIFFICULTIES[id].label+'毕业证',desc:'在'+DIFFICULTIES[id].label+'难度达成任一成功离校结局；标准或快速流程均可，不代替其他难度证书。',group:'挑战',target:1})),
+        {id:'god60',name:'与不可能对坐',desc:'神级单次记录线实际坚持60秒。不要求通关。',group:'挑战',target:60},
+        {id:'god120',name:'神明也在等铃',desc:'神级单次记录线实际坚持120秒。不要求通关。',group:'挑战',target:120},
+        {id:'god180',name:'闭环的见证者',desc:'神级坚持到180秒闭环终结。它是挑战成就，不是通关。',group:'挑战',target:180},
+        {id:'allEndings',name:'写完这本手记',desc:'收集原有全部12个结局。神级没有必需的通关结局。',group:'结局',target:12},
+        ...ENDING_IDS.map((id,i)=>({id:'end_'+id,name:ENDINGS[id].title,desc:'解锁结局《'+ENDINGS[id].title+'》。',group:'结局',target:1,ending:id,number:i+1}))
+    ];
+    let achievementFilter='all';
+    function achievementMetrics(endingId=null) {
+        const st=S, clear=!!st&&st.difficulty!=='god'&&CLEAR_ENDINGS.includes(endingId);
+        const rs=st?.runStats;
+        const m={lesson1:rs?.completedLessons.includes(0)?1:0,lessons6:rs?.completedLessons.length||0,
+            hide1:rs?.hides||0,hide10:rs?.hides||0,reflex:rs?.cleanReflex||0,
+            note1:st?.notes.sent||0,note5:st?.notes.sent||0,nap30:st?.rest.total||0,
+            cube100:st?.cube||0,work100:st?.homework||0,clues6:st?.evidence.length||0,
+            answers10:st&&st.questionWrong===0?st.questionRight:0,
+            cleanClear:clear&&st.caught===0&&st.dangerFails===0&&st.questionWrong===0?1:0,
+            quickClear:clear&&st.mode==='quick'?1:0,noPhone:clear&&!st.phoneEver?1:0,
+            allEndings:save.endings.length};
+        for(const id of DIFFICULTY_IDS.filter(id=>id!=='god')) m['clear_'+id]=clear&&st.difficulty===id?1:0;
+        for(const id of ['god60','god120','god180']) m[id]=st?.difficulty==='god'?st.godElapsed:0;
+        for(const id of ENDING_IDS) m['end_'+id]=save.endings.includes(id)?1:0;
+        return m;
+    }
+    function checkAchievements(endingId=null) {
+        const m=achievementMetrics(endingId);let changed=false;
+        if(S?.difficulty==='god') save.godBest=Math.max(save.godBest,Math.min(GOD_LIMIT,S.godElapsed));
+        for(const a of ACHIEVEMENTS) {
+            const v=clamp(m[a.id]||0,0,a.target);
+            save.achievementProgress[a.id]=Math.max(save.achievementProgress[a.id]||0,v);
+            if(!save.achievements[a.id]&&v>=a.target) {
+                save.achievements[a.id]={at:Date.now(),difficulty:S?.difficulty||'normal',mode:S?.mode||'normal'};
+                changed=true;
+                if(S?.screen==='game') toast('成就解锁 · '+a.name,false,4);
+            }
+        }
+        if(changed) {persist();requestAutoSave();}
+    }
+    function markLessonComplete() {
+        if(!S.runStats.completedLessons.includes(S.classIndex)) S.runStats.completedLessons.push(S.classIndex);
+        checkAchievements();
+    }
+    function godDefeat(reason='clock') {
+        if(!S||S.screen!=='game'||S.difficulty!=='god') return;
+        const text=reason==='clock'?'第七声铃响了。你已经坚持了180秒。\n所有出口同时回到高二（2）班。神级闭环结束，没有通关路径。':'你推开了出口，却看见同一间教室。\n在神级规则中，普通离校、隐藏出口和接过钥匙都无法打破闭环。';
+        gameOver('神级闭环',text+'\n本次挑战：'+S.godElapsed.toFixed(1)+'秒。成就、最好成绩和检查点已保留。');
+    }
+    function updateDifficultyMenu() {
+        const r=DIFFICULTIES[save.settings.difficulty];
+        $('difficultyBtn').innerHTML='难度：'+r.label+' <span>'+(r.id==='god'?'不可通关 · 生存挑战':'六档可选 · 修改')+'</span>';
+        $('achievementsBtn').textContent='◇ 成就 '+Object.keys(save.achievements).length+'/'+ACHIEVEMENTS.length;
+    }
+    function renderDifficultyHud() {
+        $('achievementsBtn').textContent='◇ 成就 '+Object.keys(save.achievements).length+'/'+ACHIEVEMENTS.length;
+        const el=$('difficultyHud');el.hidden=!S||S.screen!=='game';if(el.hidden)return;
+        const r=rules();el.classList.toggle('god',r.id==='god');
+        el.textContent=r.label+'难度 · '+(S.mode==='quick'?'快速流程':'标准流程')+(r.id==='god'?' · 无法通关 / 闭环 '+Math.max(0,GOD_LIMIT-S.godElapsed).toFixed(1)+'s':' · 本局固定');
+    }
+    function difficultyStartNotice(id) {
+        const r=DIFFICULTIES[id]||DIFFICULTIES.normal;
+        return `<div class="${id==='god'?'god-notice':'save-summary'}"><strong>${r.label}难度${id==='god'?' · 不可通关挑战':''}</strong><p>${id==='god'?'有效课堂和逃生时间达到180秒必败；所有非失败结局出口也会转为神级闭环。暂停、剧情和离线不扣时间。可解锁60/120/180秒挑战成就，但不计成功通关。':'难度在新周目开始时固定。改变下局选择不会影响已有存档与检查点。'}</p></div>`;
+    }
+    function renderDifficultyModal() {
+        const r=DIFFICULTIES[save.settings.difficulty];
+        const tag=['更多反应时间，风险较低。','调整后的标准生存体验。','巡逻更快，错误代价更大。','时间紧，必须管理资源。','仍有出口，操作窗口很短。','无法通关。180秒必败挑战。'];
+        return `<p>标准 / 快速决定流程长度，难度决定规则强度。选择只用于新的一天。${S?.screen==='game'?'当前周目固定为<b>'+rules().label+'</b>，读档不会改变。':''}</p>
+        <div class="difficulty-grid">${Object.values(DIFFICULTIES).map(d=>`<button class="difficulty-card ${d.id===r.id?'active':''} ${d.id==='god'?'god':''}" data-difficulty="${d.id}" aria-pressed="${d.id===r.id}"><strong>${d.label}${d.id===r.id?' · 已选':''}</strong><small>${tag[d.rank]}<br>怀疑 ×${d.risk} / 巡逻 ×${d.patrol}<br>反应 ×${d.react} / 答题 ×${d.answer}</small></button>`).join('')}</div>
+        <div class="difficulty-details"><span>普通巡视反应<b>${(2.4*r.react).toFixed(2)}秒</b></span><span>静止准备 / 保持<b>${r.grace} / ${r.hold}秒</b></span><span>静止容错<b>${r.forgiveness}次</b></span><span>恢复 / 作业效率<b>×${r.reward}</b></span></div>
+        <div class="modal-actions"><button class="solid-btn" data-modal-action="back">使用此选择，返回</button></div>
+        <p class="${r.id==='god'?'god-notice':'small'}">${r.id==='god'?'神级明确不可通关：180秒有效游玩后闭环终结，所有非失败出口均被封锁。可保存、重试及获得生存成就。':'本局难度不会随选择改变。数学巡视基础时间较短；英语强化另缩短15%。六档均保留中断保存和检查点重试。'}</p>`;
+    }
+    function renderAchievements() {
+        const current=achievementMetrics(S?.endingId),count=Object.keys(save.achievements).length;
+        const filtered=ACHIEVEMENTS.filter(a=>achievementFilter==='all'||achievementFilter==='unlocked'&&save.achievements[a.id]||achievementFilter==='locked'&&!save.achievements[a.id]||a.group===achievementFilter);
+        return `<div class="achievement-summary"><strong>${count} / ${ACHIEVEMENTS.length}</strong><span class="small">神级最好坚持 ${save.godBest.toFixed(1)} / ${GOD_LIMIT}秒</span></div><p>已解锁成就跨周目保留，随备份导出/导入。条形显示历史单局最高进度；回档不会把同一段操作重复相加。普通玩法指标迁移后继续统计，旧结局自动补发对应成就。</p>
+        <div class="achievement-toolbar">${[['all','全部'],['unlocked','已解锁'],['locked','未解锁'],['课堂','课堂'],['挑战','挑战'],['结局','结局']].map(([id,label])=>`<button data-achievement-filter="${id}" class="${achievementFilter===id?'active':''}">${label}</button>`).join('')}</div>
+        <div class="achievement-grid">${filtered.map(a=>{
+            const record=save.achievements[a.id],secret=a.ending&&!record&&!save.settings.endingHints;
+            const best=record?a.target:Math.min(a.target,save.achievementProgress[a.id]||0),now=Math.min(a.target,current[a.id]||0);
+            return `<article class="achievement-card ${record?'unlocked':''}"><div class="achievement-meta"><span>${a.group} / ${record?'已解锁':'未解锁'}</span><span>${best%1?best.toFixed(1):best} / ${a.target}</span></div><h3>${secret?'未发现的结局 '+String(a.number).padStart(2,'0'):esc(a.name)}</h3><p>${secret?'找到一个尚未记录的结局。具体提示可在设置中开启。':esc(a.desc)}</p><div class="achievement-track"><i style="width:${100*best/a.target}%"></i></div><div class="small">${record?esc(formatDate(record.at)):S?'当前记录：'+(now%1?now.toFixed(1):now)+' / '+a.target:'还没有完成这个里程碑。'}</div></article>`;
+        }).join('')||'<p>这一页暂时没有成就。</p>'}</div>`;
+    }
+
     // v2.1: desk activities use the same paused simulation clock as the class.
     // No setTimeout, callback serialization, or rewards before delivery.
     const ACTIONS = ['listen','homework','cube','phone','observe','note','sleep'];
@@ -3027,7 +3235,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         bond: {label:'放学一起走', text:'真正放学的时候，我们一起走吧。', focus:4, boredom:8},
         lesson: {label:'借一下笔记', text:'刚才的重点是什么？借我补一下。', focus:8, boredom:6}
     };
-    const NOTE_SECONDS = 5, NOTE_COOLDOWN = 8, WATCH_SECONDS = 25;
+    const NOTE_SECONDS = 5, NOTE_COOLDOWN = 10, WATCH_SECONDS = 25;
     const CUBE_FORMULA = ['R','U',"R'","U'"];
     const CUBE_QUEUE_LIMIT = 8;
     function makeNotesState() {
@@ -3035,7 +3243,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
             history:[],warnedDoorBorn:-1,warnedNear:false};
     }
     function makeRestState() {
-        return {elapsed:0,duration:12,total:0,sessions:0,interrupted:0,dreamSeen:false};
+        return {elapsed:0,duration:12,total:0,sessions:0,interrupted:0,dreamSeen:false,fatigue:0,cooldownUntil:0};
     }
     function migrateDeskState(st) {
         // Only a genuinely older snapshot is upgraded. Malformed new fields
@@ -3089,7 +3297,10 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
             S.notes.draft=null; S.notes.interrupted++;
             if (reason!=='lesson') caption('纸条还没送到。你先把它夹进了课本，没有获得回条奖励。',2.6);
         }
-        if (S.action==='sleep' && reason!=='complete') S.rest.interrupted++;
+        if (S.action==='sleep') {
+            if(reason!=='complete') S.rest.interrupted++;
+            S.rest.cooldownUntil=S.t+8;
+        }
         // Inputs buffered during cube recovery must never execute behind a
         // different activity, after a danger prompt, or after a lesson change.
         S.cubeQueue=[];
@@ -3112,7 +3323,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         // Clear the draft before granting rewards, preventing re-entry or a
         // restored finished draft from granting a second reward.
         S.notes.draft=null; S.notes.sent++; S.notes.cooldownUntil=S.t+NOTE_COOLDOWN;
-        S.focus=clamp(S.focus+spec.focus); S.boredom=clamp(S.boredom-spec.boredom);
+        S.focus=clamp(S.focus+spec.focus*rules().reward); S.boredom=clamp(S.boredom-spec.boredom);
         let text;
         if(topic==='lookout') {
             S.notes.watchUntil=S.t+WATCH_SECONDS;
@@ -3125,7 +3336,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         S.notes.history.push({topic,text,lesson:S.classIndex,at:S.t});
         if(S.notes.history.length>12) S.notes.history.shift();
         say('同桌',text); sound('paper');
-        toast(`收到回条 · 专注 +${spec.focus} · 无聊 −${spec.boredom}`);
+        checkAchievements(); toast(`收到回条 · 专注 +${(spec.focus*rules().reward).toFixed(1)} · 无聊 −${spec.boredom}`);
         renderNote(); requestAutoSave();
     }
     function updateNotes(dt) {
@@ -3188,8 +3399,12 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
     function updateSleep(dt) {
         const r=S.rest, used=Math.min(dt,Math.max(0,r.duration-r.elapsed));
         r.elapsed+=used; r.total+=used;
-        S.focus=clamp(S.focus+2.4*used); S.boredom=clamp(S.boredom-1.2*used);
-        addSuspicion((r.elapsed>4?.80:.32)*used,false);
+        const deep=r.fatigue>=12;
+        r.fatigue=Math.min(60,r.fatigue+used);
+        S.focus=clamp(S.focus+1.7*rules().reward*(deep?.55:1)*used);
+        S.boredom=clamp(S.boredom-.85*(deep?.65:1)*used);
+        addSuspicion((r.fatigue>4?.90:.38)*used,false);
+        checkAchievements();
         if(S.screen!=='game'||S.action!=='sleep') return;
         if(r.elapsed>=7&&!r.dreamSeen) {
             r.dreamSeen=true;
@@ -3202,8 +3417,9 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
     function renderSleep() {
         if(!S) return;
         const r=S.rest;
+        $('sleepRules').textContent=`当前每秒：专注 +${(1.7*rules().reward*(r.fatigue>=12?.55:1)).toFixed(2)} · 无聊 −${(r.fatigue>=12?.85*.65:.85).toFixed(2)}。疲劳 ${r.fatigue.toFixed(1)} / 12 · 醒后8秒才可再睡。`;
         $('sleepCountdown').textContent=Math.max(0,r.duration-r.elapsed).toFixed(1)+'s';
-        $('sleepPhase').textContent=r.elapsed<4?'浅眠 · 还能听见粉笔声':'睡意渐深 · 更容易被老师注意';
+        $('sleepPhase').textContent=r.fatigue<4?'浅眠 · 还能听见粉笔声':r.fatigue>=12?'疲劳累积 · 恢复收益降低，仍有风险':'睡意渐深 · 更容易被老师注意';
         $('sleepProgress').style.width=clamp(r.elapsed/r.duration*100)+'%';
         $$('[data-rest-seconds]').forEach(el=>{
             const active=Number(el.dataset.restSeconds)===r.duration;
@@ -3234,17 +3450,18 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         if(turn===CUBE_FORMULA[S.cubeStep]) {
             S.cubeStep++; sound('cube'); S.cubeInputInfo='已接收 '+S.cubeLastInput;
             if(S.cubeStep===4) {
-                S.cubeStep=0; S.cube=clamp(S.cube+4); S.focus=clamp(S.focus+15);
-                S.boredom=clamp(S.boredom-10); S.cubeCool=S.t+2.2;
+                S.cubeStep=0; S.cube=clamp(S.cube+4); S.focus=clamp(S.focus+9*rules().reward);
+                S.boredom=clamp(S.boredom-7); S.cubeCool=S.t+cubeCooldown();
+                checkAchievements();
                 S.cubeInputInfo='公式完成 · 进度 +4%';
-                toast(`公式完成 · 魔方 ${S.cube}% · 专注 +15`);
+                toast(`公式完成 · 魔方 ${S.cube}% · 专注 +${(9*rules().reward).toFixed(1)}`);
                 if(S.cube===100) {
                     S.cubeQueue=[]; save.bestCube=100;persist();
                     S.journal.push({title:'六面归位',text:'魔方已复原。只要一整天不碰手机，最后一节课结束时或许会出现另一个出口。'});
                 }
             }
         } else {
-            S.cubeStep=turn==='R'?1:0; S.boredom=clamp(S.boredom-1);
+            S.cubeStep=turn==='R'?1:0; // Incorrect moves do not farm free boredom recovery.
             S.cubeInputInfo='已接收 '+S.cubeLastInput+' · 公式重新开始';
             caption('公式重置：R U R′ U′',1.5); sound('cube',.5);
         }
@@ -3280,7 +3497,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
                 if (changeDistance(ok ? 10 : -20)) nextEscapeNode();
                 return;
             case 'showSprint':
-                beginChallenge({type:'sprint',remaining:9,target:18,taps:0,lastTap:-10,kicker:'LAST 20 METERS / 最终冲刺',title:S.companion ? '一起冲出去。' : '冲出去。',description:'距离校门20米。白光就在前面。'});
+                beginChallenge({type:'sprint',remaining:Math.max(6,10*rules().answer),target:rules().sprint,taps:0,lastTap:-10,kicker:'LAST 20 METERS / 最终冲刺',title:S.companion ? '一起冲出去。' : '冲出去。',description:'距离校门20米。白光就在前面。'});
                 return;
             case 'finishTruth': finishEnding('truth'); return;
             case 'finishHomework': finishEnding('homework'); return;
@@ -3298,7 +3515,9 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
             case 'chemwatch': case 'chemwatch2': suddenWatch(); break;
             case 'chemq1': askQuestion('chemistry',0); break;
             case 'chemq2': askQuestion('chemistry',1); break;
-            case 'biofreeze': case 'biofreeze2': case 'biofrequency': startFreeze(); break;
+            case 'biofreeze': case 'biofreeze2': case 'biofrequency':
+                if(id==='biofreeze2'&&rules().rank<2) break;
+                startFreeze(); break;
             case 'bioswap': scrambleButtons(); break;
             case 'bioq': askQuestion('biology',0); break;
             case 'physvisit': case 'physvisit2': physicsVisit(); break;
@@ -3329,7 +3548,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
             say('你',clue.text);
             toast(`发现调查线索 · ${S.evidence.length} / 6`,false,4);
         }
-        requestAutoSave();
+        checkAchievements(); requestAutoSave();
     }
     function investigationJournal() {
         if (!S) return '<p>这一天还没有开始。</p>';
@@ -3365,7 +3584,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
     // Save format v2: full resumable snapshots + independent retry history.
     // No eval(), Function(), callback source strings, network or permissions.
     // ---------------------------------------------------------------------
-    let snapshotSerial = 0, pendingNewMode = 'normal', saveTicket = 0;
+    let snapshotSerial = 0, pendingNewMode = 'normal', pendingDifficulty = 'normal', saveTicket = 0;
     function formatDate(ms) {
         try { return new Date(ms).toLocaleString('zh-CN',{hour12:false}); }
         catch { return '记录时间未知'; }
@@ -3373,7 +3592,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
     function snapshotSummary(snap) {
         const st=snap.state;
         const place=st.phase==='ESCAPE' ? '逃生 · '+(ROUTES[st.escapeNode]?.place || '最终冲刺') : `第 ${st.classIndex+1} 节 · ${CLASSES[st.classIndex].subject}`;
-        return place+' / '+(st.mode==='quick' ? '快速' : '普通')+' / '+(snap.challenge?.title || (snap.script ? '剧情对话' : st.phase==='COMPLETE' ? '真放学' : '课堂 '+Math.floor(st.elapsed)+'秒'));
+        return place+' / '+rules(st).label+'难度 · '+(st.mode==='quick' ? '快速流程' : '标准流程')+' / '+(snap.challenge?.title || (snap.script ? '剧情对话' : st.phase==='COMPLETE' ? '真放学' : '课堂 '+Math.floor(st.elapsed)+'秒'));
     }
     function captureSnapshot(label='自动记录') {
         if (!S || S.screen!=='game') return null;
@@ -3452,6 +3671,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         assertValid(snap && snap.version===2,'不支持的进度版本');
         const st=snap.state, c=snap.challenge, d=snap.dialogue, scriptData=snap.script;
         migrateDeskState(st);
+        migrateBalanceSnapshot(snap);
         const num=(n,lo=0,hi=10000000)=>typeof n==='number' && Number.isFinite(n) && n>=lo && n<=hi;
         assertValid(st && st.screen==='game' && ['INTRO','CLASS','BREAK','COMPLETE','ESCAPE'].includes(st.phase),'进度不在可恢复阶段');
         assertValid(['normal','quick'].includes(st.mode) && Number.isInteger(st.classIndex) && st.classIndex>=0 && st.classIndex<6,'课程信息无效');
@@ -3463,6 +3683,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         for(const key of ['suspicion','maxSuspicion','focus','boredom','homework','cube','distance']) assertValid(num(st[key],0,100),'资源数值无效');
         assertValid(ACTIONS.includes(st.action),'行动无效');
         validateDeskState(st,num);
+        validateBalanceState(st,c,num);
         assertValid(['board','teacher','door','window','mate'].includes(st.observe) && ['chat','video','time','game'].includes(st.phoneApp),'界面状态无效');
         const base=makeState(st.mode);
         for(const [key,value] of Object.entries(base)) {
@@ -3498,7 +3719,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
             if(['question','route'].includes(c.type)) assertValid(Number.isInteger(c.correct)&&c.correct>=0&&c.correct<c.choices.length,'答案无效');
             if(c.type==='grid') assertValid(Array.isArray(c.numbers)&&c.numbers.length===56&&new Set(c.numbers).size===56&&c.numbers.every(n=>Number.isInteger(n)&&n>=1&&n<=56)&&c.numbers.includes(c.correct),'编号机关无效');
             if(c.type==='hide') assertValid(Number.isInteger(c.step)&&c.step>=0&&c.step<3,'隐藏步骤无效');
-            if(c.type==='sprint') assertValid(Number.isInteger(c.taps)&&c.taps>=0&&c.taps<c.target&&c.target===18&&num(c.lastTap,-100,1e7),'冲刺状态无效');
+            if(c.type==='sprint') assertValid(Number.isInteger(c.taps)&&c.taps>=0&&c.taps<c.target&&Number.isInteger(c.target)&&c.target>=10&&c.target<=30&&num(c.lastTap,-100,1e7),'冲刺状态无效');
         }
         assertValid(!(c&&scriptData),'事件与剧情不能同时运行');
         assertValid(!(c||scriptData)||(!st.notes.draft&&!st.cubeQueue.length&&st.action!=='sleep'),'被事件打断的桌面活动未清理');
@@ -3515,6 +3736,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         const snaps=[p.latest,p.lesson,p.branch,p.manual,...p.checkpoints].filter(Boolean);
         assertValid(snaps.length>0,'存档没有可恢复的内容');
         for(const snap of snaps) {validateSnapshot(snap);assertValid(snap.state.runId===p.runId,'记录不属于同一周目');}
+        assertValid(new Set(snaps.map(x=>x.state.difficulty)).size===1,'同一周目的难度不一致');
         return p;
     }
     function decodeEnvelope(raw) {
@@ -3544,6 +3766,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
                     save.endings=[...new Set([...save.endings,...recovered.endings])];
                     for(const k of ['bestSurvival','bestCube','bestHomework','attempts','wins']) save[k]=Math.max(save[k],recovered[k]);
                     save.phoneRestricted=save.phoneRestricted||recovered.phoneRestricted;
+                    mergeAchievementProfile(save,recovered);
                 }
                 setSaveStatus(isBackup ? '已找到备份记录' : data.progress ? '已有可继续的记录' : '自动存档已就绪','saved');
                 return data.progress;
@@ -3647,7 +3870,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         if(challenge) {
             if($('challengeTimer')) $('challengeTimer').style.width=(challenge.total?challenge.remaining/challenge.total*100:100)+'%';
             if(challenge.type==='sprint') $('sprintCount').textContent=`${challenge.taps} / ${challenge.target}`;
-            if(challenge.type==='freeze') {$('freezeState').textContent=challenge.elapsed<.8?'松开手':'不要动';$('freezeInstruction').textContent='记录中剩余 '+challenge.remaining.toFixed(1)+' 秒';}
+            if(challenge.type==='freeze') renderFreezeState();
         }
         modal={kind:'recovery',parent:null,source};$('modal').hidden=false;renderModal();$('modalClose').focus({preventScroll:true});
         restoring=false;
@@ -3657,6 +3880,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
     function startRecoveryGrace() {
         if(S?.screen!=='game') return;
         recoveryGrace=2;
+        if(challenge&&['freeze','wait'].includes(challenge.type)) challenge.motionAnchor=null;
         $('resumeBanner').hidden=false;$('resumeBanner').textContent='准备继续 · 2.0 秒';
         lastFrame=performance.now();lastPointer=null;
         initAudio();
@@ -3683,9 +3907,9 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
                 ${saveRows()}<p class="small" style="margin-top:16px">存档属于此浏览器、此地址。无痕窗口、清理数据、移动本地HTML或更换设备可能影响记录。导出JSON可以迁移；不会上传到服务器。</p>`;
         }
         if(kind==='recovery') return `<div class="save-summary"><strong>${esc(snapshotSummary({state:S,script,challenge}))}</strong><small>数值、老师位置、剧情行数、选项、已消耗的倒计时与调查线索已经恢复。</small></div><p>${challenge?.remaining!=null?'当前事件剩余 '+challenge.remaining.toFixed(1)+' 秒。':''}游戏正在暂停。点击继续后会留出2秒准备时间；没有离线扣时。</p><div class="modal-actions"><button class="solid-btn" data-modal-action="resume">准备好了，继续</button><button class="outline-btn" data-modal-action="saves">换一个记录点</button><button class="outline-btn" data-modal-action="quit">保存并返回菜单</button></div>`;
-        if(kind==='loadConfirm') return `<p>读取后回到下列记录。已解锁的结局和最佳成绩保留；当前未另存的过程将被替换。</p><div class="save-summary"><strong>${esc(selectedSnapshot?.label||'记录')}</strong><small>${selectedSnapshot?esc(snapshotSummary(selectedSnapshot)):''}<br>${selectedSnapshot?esc(formatDate(selectedSnapshot.savedAt)):''}</small></div><div class="modal-actions"><button class="solid-btn" data-modal-action="confirmLoad">读取并暂停</button><button class="outline-btn" data-modal-action="back">取消</button></div>`;
-        if(kind==='newGame') return `<p>新的一天会替换当前周目的自动记录、手动存档与检查点。已解锁的结局和设置保留。</p><p class="small">需要留住旧周目时，请先导出备份。</p><div class="modal-actions"><button class="solid-btn" data-modal-action="confirmNewGame">开始新的一天</button><button class="outline-btn" data-modal-action="export">先导出备份</button><button class="outline-btn" data-modal-action="back">取消</button></div>`;
-        if(kind==='importConfirm') return `<p>已通过格式和校验检查。导入会替换当前进度；结局档案与最佳成绩会合并保留。</p><div class="save-summary"><strong>${pendingImport?.progress?.latest?esc(snapshotSummary(pendingImport.progress.latest)):'只包含结局与设置'}</strong><small>文件中的结局 ${pendingImport?.profile?.endings?.length||0} / ${ENDING_COUNT}</small></div><div class="modal-actions"><button class="solid-btn" data-modal-action="confirmImport">确认导入</button><button class="outline-btn" data-modal-action="back">取消</button></div>`;
+        if(kind==='loadConfirm') return `<p>读取后回到下列记录。已解锁的结局、成就和最佳成绩保留；当前未另存的过程将被替换。</p><div class="save-summary"><strong>${esc(selectedSnapshot?.label||'记录')}</strong><small>${selectedSnapshot?esc(snapshotSummary(selectedSnapshot)):''}<br>${selectedSnapshot?esc(formatDate(selectedSnapshot.savedAt)):''}</small></div><div class="modal-actions"><button class="solid-btn" data-modal-action="confirmLoad">读取并暂停</button><button class="outline-btn" data-modal-action="back">取消</button></div>`;
+        if(kind==='newGame') return `${difficultyStartNotice(pendingDifficulty)}<p>新的一天会替换当前周目的自动记录、手动存档与检查点。已解锁的结局、成就和设置保留。</p><p class="small">需要留住旧周目时，请先导出备份。</p><div class="modal-actions"><button class="solid-btn" data-modal-action="confirmNewGame">开始新的一天</button><button class="outline-btn" data-modal-action="export">先导出备份</button><button class="outline-btn" data-modal-action="back">取消</button></div>`;
+        if(kind==='importConfirm') return `<p>已通过格式和校验检查。导入会替换当前进度；结局档案、成就和最佳成绩会合并保留。</p><div class="save-summary"><strong>${pendingImport?.progress?.latest?esc(snapshotSummary(pendingImport.progress.latest)):'只包含结局与设置'}</strong><small>文件中的结局 ${pendingImport?.profile?.endings?.length||0} / ${ENDING_COUNT}</small></div><div class="modal-actions"><button class="solid-btn" data-modal-action="confirmImport">确认导入</button><button class="outline-btn" data-modal-action="back">取消</button></div>`;
         if(kind==='conflict') return `<p>同一浏览器的另一个游戏页面更新了存档。本页已经暂停，并停止写入，避免互相覆盖。</p><p class="small">可以先导出本页进度，再读取另一页的记录。导出不会覆盖另一页。</p><div class="modal-actions"><button class="solid-btn" data-modal-action="loadExternal">读取另一页记录</button><button class="outline-btn" data-modal-action="export">导出本页备份</button><button class="outline-btn" data-modal-action="takeOver">保留本页，接管存档</button></div>`;
         return '';
     }
@@ -3698,9 +3922,10 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         selectedSnapshot=clone(snap);openModal('loadConfirm','saves');
     }
     function requestNewGame(mode) {
-        pendingNewMode=mode;
+        pendingNewMode=mode; pendingDifficulty=save.settings.difficulty;
         if(progress||corruptProgress||diskConflict) openModal('newGame');
-        else startGame(mode);
+        else if(pendingDifficulty==='god') openModal('godConfirm');
+        else startGame(mode,pendingDifficulty);
     }
     function clearProgress() {
         progress=null;checkpoint=null;selectedSnapshot=null;pendingImport=null;
@@ -3742,8 +3967,10 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         save.endings=[...new Set([...previous.endings,...incoming.endings])];
         for(const k of ['bestSurvival','bestCube','bestHomework','attempts','wins']) save[k]=Math.max(previous[k],incoming[k]);
         save.phoneRestricted=previous.phoneRestricted||incoming.phoneRestricted;
+        mergeAchievementProfile(save,previous);
         clearTransient();S=null;
         progress=clone(data.progress);checkpoint=progress?.lesson||null;diskConflict=false;
+        checkAchievements();
         persist();writeProgress(true);returnMenu();
         if(audio) audio.volume(save.settings.volume);
         toast(storageOK?'备份已导入。点击继续游戏，或进入存档选择记录点。':'备份已导入内存；本地写入仍不可用，请保留JSON备份。',!storageOK,6);
@@ -3763,7 +3990,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
             case 'confirmLoad': if(selectedSnapshot) {const snap=selectedSnapshot;selectedSnapshot=null;restoreSnapshot(snap);}return true;
             case 'confirmNewGame':
                 try {diskRevision=localStorage.getItem(PROGRESS_KEY);}catch{}
-                diskConflict=false;startGame(pendingNewMode);return true;
+                diskConflict=false;startGame(pendingNewMode,pendingDifficulty);return true;
             case 'confirmImport': if(pendingImport){const data=pendingImport;pendingImport=null;applyImport(data);}return true;
             case 'loadExternal':
                 clearTransient();S=null;diskConflict=false;progress=loadProgress();returnMenu();
@@ -3870,12 +4097,12 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
             dispatchContinuation(done);
     } renderDialogue(); requestAutoSave(); }
     function renderDialogue() { $('dialogueText').textContent = dialogue.text.slice(0, Math.floor(dialogue.shown)); $('dialogueNext').hidden = !script && dialogue.shown >= dialogue.text.length; $('dialogueNext').innerHTML = (dialogue.shown < dialogue.text.length ? '显示全文' : '继续') + ' <span class="next-mark">▸</span>'; $('dialogueAuto').textContent = script ? (save.settings.auto ? 'AUTO ON' : '点击 / ENTER') : '实时课堂'; }
-    function makeState(mode) { return { screen: 'game', phase: 'INTRO', mode, classIndex: 0, elapsed: 0, duration: 180, t: 0, survival: 0, action: 'listen', observe: 'teacher', observeElapsed: 0, observeNoted: false, suspicion: 0, maxSuspicion: 0, focus: 100, boredom: 0, homework: 0, cube: 0, cubeStep: 0, cubeCool: 0, lastCubeTurn: -10, phoneApp: 'chat', phoneSeconds: 0, totalPhone: 0, phoneEver: false, phoneCaught: 0, caught: 0, listenSeconds: 0, questionRight: 0, questionWrong: 0, mathStreak: 0, dangerFails: 0, nextEvent: 40, nextDoor: 27, door: null, teacher: { x: 842, y: 305, z: .81, target: 0, wait: 4, step: 0, near: false, tailUntil: 0, hold: 0 }, dangerCooldown: 0, extraUntil: 0, shuffleUntil: 0, anomalyUntil: 0, heartTimer: 0, eventsDone: [], messages: ['班群：今天好像要巡查。', '同桌：留意后门玻璃的反光。'], journal: [], operationTimes: [], classStats: {}, distance: 70, escapeNode: 0, escapeStarted: false, phoneGameTarget: 0, phoneGameRewardAt: -10, breakRemaining: 0, escapeRoutePending: false, endingId: null, evidence: [], bondLessons: [], companion: false, mirrorChoices: 0, actionOrder: [0,1,2,3,4,5,6], mechanicsVersion:1, notes:makeNotesState(), rest:makeRestState(), cubeQueue:[], cubeLastInput:'', cubeInputInfo:'', runPhoneRestricted: save.phoneRestricted, runId: Date.now().toString(36) + '-' + Math.random().toString(36).slice(2,10) }; }
-    function startGame(mode) {
+    function makeState(mode, difficulty='normal') { return { balanceVersion:2, difficulty:DIFFICULTY_IDS.includes(difficulty)?difficulty:'normal', godElapsed:0, godWarned:false, phoneHeat:0, reflexNextAt:0, reflexExtraCount:0, runStats:makeRunStats(), screen: 'game', phase: 'INTRO', mode, classIndex: 0, elapsed: 0, duration: 180, t: 0, survival: 0, action: 'listen', observe: 'teacher', observeElapsed: 0, observeNoted: false, suspicion: 0, maxSuspicion: 0, focus: 100, boredom: 0, homework: 0, cube: 0, cubeStep: 0, cubeCool: 0, lastCubeTurn: -10, phoneApp: 'chat', phoneSeconds: 0, totalPhone: 0, phoneEver: false, phoneCaught: 0, caught: 0, listenSeconds: 0, questionRight: 0, questionWrong: 0, mathStreak: 0, dangerFails: 0, nextEvent: 40, nextDoor: 27, door: null, teacher: { x: 842, y: 305, z: .81, target: 0, wait: 4, step: 0, near: false, tailUntil: 0, hold: 0 }, dangerCooldown: 0, extraUntil: 0, shuffleUntil: 0, anomalyUntil: 0, heartTimer: 0, eventsDone: [], messages: ['班群：今天好像要巡查。', '同桌：留意后门玻璃的反光。'], journal: [], operationTimes: [], classStats: {}, distance: 70, escapeNode: 0, escapeStarted: false, phoneGameTarget: 0, phoneGameRewardAt: -10, breakRemaining: 0, escapeRoutePending: false, endingId: null, evidence: [], bondLessons: [], companion: false, mirrorChoices: 0, actionOrder: [0,1,2,3,4,5,6], mechanicsVersion:1, notes:makeNotesState(), rest:makeRestState(), cubeQueue:[], cubeLastInput:'', cubeInputInfo:'', runPhoneRestricted: save.phoneRestricted, runId: Date.now().toString(36) + '-' + Math.random().toString(36).slice(2,10) }; }
+    function startGame(mode, difficulty=save.settings.difficulty) {
         initAudio(); clearTransient();
         $('stage').classList.remove('is-menu');
         save.attempts++; persist();
-        S = makeState(mode === 'quick' ? 'quick' : 'normal');
+        S = makeState(mode === 'quick' ? 'quick' : 'normal', difficulty);
         checkpoint = null;
         progress = { version:2, runId:S.runId, status:'active', latest:null, checkpoints:[], lesson:null, branch:null, manual:null, ending:null };
         autosaveDue = 0; checkpointDue = 0; diskConflict = false;
@@ -3889,8 +4116,9 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         n.el.remove(); notices = []; $('stage').classList.remove('extraordinary', 'low-focus', 'critical', 'shake', 'flicker'); $$('.action').forEach(e => e.style.order = ''); $('rearDoor').classList.remove('moving', 'watched'); $('doorShadow').style.opacity = '0'; $('extraBadge').hidden = true; phoneRenderKey = ''; ambient = { text: '', until: 0 }; }
     function enterClass(index, fromCheckpoint = false) {
         cancelDeskActivity('lesson');
-        S.notes.watchUntil=0; S.notes.warnedNear=false; S.notes.warnedDoorBorn=-1;
-        S.rest.elapsed=0;
+        S.notes.cooldownUntil=0; S.notes.watchUntil=0; S.notes.warnedNear=false; S.notes.warnedDoorBorn=-1;
+        S.rest.elapsed=0; S.rest.fatigue=0; S.rest.cooldownUntil=0;
+        S.phoneHeat=0; S.reflexExtraCount=0; S.reflexNextAt=S.t+35;
         S.classIndex = index;
         const c = CLASSES[index];
         S.phase = 'INTRO';
@@ -3901,8 +4129,8 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         S.cubeStep = 0;
         S.mathStreak = 0;
         S.eventsDone = [];
-        S.nextEvent = rnd(30, 50);
-        S.nextDoor = 25;
+        S.nextEvent = rnd(30, 50)*rules().interval;
+        S.nextDoor = 25*rules().interval;
         S.door = null;
         S.teacher = { ...POSITIONS[0], target: 0, wait: 4, step: 0, near: false, tailUntil: 0, hold: 0 };
         S.extraUntil = 0;
@@ -3938,8 +4166,9 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         rememberCheckpoint(`第 ${index+1} 节 · ${c.subject}开始`, 'lesson');
         autoSave('课程开始');
     }
-    function returnMenu() { if (S?.screen === 'game') autoSave('返回主菜单'); clearTransient(); $('stage').classList.add('is-menu'); S = null; $('gameUI').hidden = true; $('dialogue').hidden = true; $('teacher').hidden = true; $('ending').hidden = true; $('escapeScene').hidden = true; $('escapeHud').hidden = true; $('pauseBtn').hidden = true; $('journalBtn').hidden = true; $('menu').hidden = false; $('boardTitle').textContent = '最后一节课'; $('boardText').textContent = '星期一　　值日生：————\n请保持安静。'; $('boardAside').textContent = '17:30 以前，不要相信铃声'; $('bookTitle').textContent = '语　文'; $('room').style.setProperty('--focus-blur', '0px'); $('doorShadow').className = ''; $('doorShadow').style.opacity = '.65'; updateMenu(); }
+    function returnMenu() { $('difficultyHud').hidden=true; if (S?.screen === 'game') autoSave('返回主菜单'); clearTransient(); $('stage').classList.add('is-menu'); S = null; $('gameUI').hidden = true; $('dialogue').hidden = true; $('teacher').hidden = true; $('ending').hidden = true; $('escapeScene').hidden = true; $('escapeHud').hidden = true; $('pauseBtn').hidden = true; $('journalBtn').hidden = true; $('menu').hidden = false; $('boardTitle').textContent = '最后一节课'; $('boardText').textContent = '星期一　　值日生：————\n请保持安静。'; $('boardAside').textContent = '17:30 以前，不要相信铃声'; $('bookTitle').textContent = '语　文'; $('room').style.setProperty('--focus-blur', '0px'); $('doorShadow').className = ''; $('doorShadow').style.opacity = '.65'; updateMenu(); }
     function updateMenu() {
+        updateDifficultyMenu();
         $('archiveCount').textContent = String(save.endings.length).padStart(2,'0')+' / '+String(ENDING_COUNT).padStart(2,'0');
         $('menuMemory').textContent = save.phoneRestricted ? '新的一天：手机不可用。已有周目的读档不受影响。' : (save.bestSurvival ? '已记住的最长一天：'+fmtDuration(save.bestSurvival) : '');
         $('startNormal').innerHTML = (save.settings.quick ? '开始新的一天 · 快速' : '开始新的一天')+' <span>↗</span>';
@@ -3963,7 +4192,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         return; S.messages.push(text); if (S.messages.length > 16)
         S.messages.shift(); phoneRenderKey = ''; }
     function addSuspicion(n, phoneBlame = null) { if (!S || S.screen !== 'game')
-        return; const boost = n > 0 && S.extraUntil > S.t ? 1.5 : 1; S.suspicion = clamp(S.suspicion + n * boost); S.maxSuspicion = Math.max(S.maxSuspicion, S.suspicion); S.classStats.max = Math.max(S.classStats.max || 0, S.suspicion); if (S.suspicion >= 100)
+        return; const boost = n>0 ? rules().risk*(S.extraUntil>S.t?1.25:1) : rules().recover; S.suspicion = clamp(S.suspicion + n * boost); S.maxSuspicion = Math.max(S.maxSuspicion, S.suspicion); S.classStats.max = Math.max(S.classStats.max || 0, S.suspicion); if (S.suspicion >= 100)
         registerCaught(phoneBlame === null ? S.action === 'phone' : phoneBlame); }
     function registerPhoneCaught() { S.phoneCaught++; toast(`手机被抓 ${S.phoneCaught} / 3`, true); if (S.phoneCaught >= 3) {
         finishEnding('phone');
@@ -3978,6 +4207,8 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         if(!canAct()||!ACTIONS.includes(action)) return;
         if(action==='phone'&&!phoneAllowed()) {toast('手机已被收走。纸条、魔方与观察仍可使用。',true);return;}
         if(action==='sleep'&&S.action==='sleep') {wakeSleep();return;}
+        if(action==='sleep'&&S.t<S.rest.cooldownUntil) {toast(`刚醒来，${(S.rest.cooldownUntil-S.t).toFixed(1)} 秒后再小憩。`);return;}
+        if(action===S.action) return;
         const old=S.action;
         if(old!==action) cancelDeskActivity('switch');
         S.action=action; S.operationTimes.push(S.t);
@@ -4124,15 +4355,15 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
             footer = '连续按三次空格，或依次点击三个按钮。按住不算。';
         }
         else if (c.type === 'freeze') {
-            body = '<div class="freeze-icon" id="freezeState">松开手</div><div class="freeze-instruction" id="freezeInstruction">准备期 0.8 秒 · 随后 2 秒不移动鼠标、不触摸、不按键</div>';
-            footer = '暂停键与系统控制不会被判定为动作。';
+            body = '<div class="freeze-icon" id="freezeState">松开手</div><div class="freeze-instruction" id="freezeInstruction">准备中</div>';
+            footer = '轻微抖动、松键、长按重复及系统控制不计失误；明显动作会消耗容错。';
         }
         else if (c.type === 'wait') {
             body = '<div class="freeze-icon" id="waitState">静候</div><div class="freeze-instruction">脚步刚刚停下。手离开所有操作，等待三秒。</div>';
             footer = '物理课的最后一条守则。不要急着移动。';
         }
         else if (c.type === 'grid') {
-            body = '<div class="number-grid">' + c.numbers.map(n => `<button data-number="${n}" class="${c.hint && c.elapsed < 1.5 && n === c.correct ? 'memory-flash' : ''}">${n}</button>`).join('') + '</div>';
+            body = '<div class="number-grid">' + c.numbers.map(n => `<button data-number="${n}" class="${c.hint && c.elapsed < (c.hintDuration??1.5) && n === c.correct ? 'memory-flash' : ''}">${n}</button>`).join('') + '</div>';
             footer = c.hint ? '你记得上课的内容。正确编号会短暂亮起。' : '看清题意，计算编号。只有一个答案。';
         }
         else if (c.type === 'sprint') {
@@ -4148,16 +4379,18 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
             body = '<div class="challenge-choices">' + (c.choices || []).map((x, i) => `<button class="choice-btn" data-choice="${i}" ${c.locks?.[i] ? 'disabled' : ''}><kbd>${i + 1}</kbd><span class="choice-copy">${esc(x)}${c.locks?.[i] ? '<small>'+esc(c.locks[i])+'</small>' : ''}</span></button>`).join('') + '</div>';
             if (c.type === 'fakeBell')
                 body += `<button class="phone-home" data-check-clock="1" ${phoneAllowed() ? '' : 'disabled'} style="width:auto;padding:9px 17px;margin-top:13px">偷偷核对手机时间（计入手机使用）</button><span id="checkedClock" class="small" style="margin-left:14px"></span>`;
-            footer = c.type === 'route' ? '观察环境描述中的线索。走错 -20 距离，走对 +10。' : (c.type === 'fakeBell' ? '你可以选择继续坐着；无人要求你现在离开。' : '点击答案，或按对应数字键。');
+            footer = c.type === 'route' ? `观察环境描述中的线索。走错 -${(20*rules().loss).toFixed(0)} 距离，走对 +${(10*rules().gain).toFixed(1)}。` : (c.type === 'fakeBell' ? '你可以选择继续坐着；无人要求你现在离开。' : '点击答案，或按对应数字键。');
         }
         $('challengeCard').style.top = ['grid','pack','endingRoutes'].includes(c.type) ? '160px' : '227px';
         $('challengeCard').innerHTML = `<div class="challenge-kicker"><span>${esc(c.kicker || 'CLASSROOM EVENT')}</span><span id="challengeSeconds">${c.remaining != null ? c.remaining.toFixed(1) + 's' : ''}</span></div><h2 class="challenge-title">${esc(c.title || '')}</h2><div class="challenge-description">${esc(c.description || '')}</div>${timer}${body}<div class="challenge-footer">${footer}</div>`;
+        if(c.type==='freeze') renderFreezeState();
     }
     function triggerDanger(reason='老师突然走到了你的课桌旁。',tutorial=false) {
         if(challenge||script||!S||S.phase!=='CLASS') return;
         const wasPhone=S.action==='phone',wasSleep=S.action==='sleep',wasNote=S.action==='note';
-        let time=tutorial?4:S.classIndex===5?1.5:2;
-        if(S.extraUntil>S.t) time*=.75;
+        let time=tutorial?4:(S.classIndex===5?1.9:2.4)*rules().react;
+        if(S.extraUntil>S.t&&!tutorial) time*=.85;
+        time=Math.max(.85,time);
         S.dangerCooldown=S.t+11;
         caption(wasSleep?'！！有人敲响了你的课桌。':'！！脚步就在桌边。',time+1);
         sound('warn');fx('shake');
@@ -4168,7 +4401,8 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
     }
     function resolveHide(step) { if (!challenge || challenge.type !== 'hide' || step !== challenge.step || modal || recoveryGrace > 0)
         return; challenge.step++; requestAutoSave(); sound('click'); if (challenge.step === 3) {
-        closeChallenge();
+        const completed=closeChallenge();
+        if(!completed.tutorial) { S.runStats.hides++; checkAchievements(); }
         S.dangerCooldown = S.t + 9;
         addSuspicion(-3);
         say(CLASSES[S.classIndex].teacher, '……继续。');
@@ -4184,7 +4418,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
     } if (c.wasPhone && registerPhoneCaught())
         return; addSuspicion(S.classIndex === 5 ? 48 : 36, false); if (S.screen !== 'game')
         return; S.dangerCooldown = S.t + 9; say(CLASSES[S.classIndex].teacher, c.wasSleep?'上课睡觉？坐直，看黑板。':c.wasNote?'刚才传的是什么？拿出来。':'你的手里，刚才是什么？'); toast(c.wasSleep?'没能及时醒来 · 怀疑显著上升。':'隐藏失败 · 怀疑显著上升。', true); sound('warn'); }
-    function askQuestion(subject, number = 0, onDone = null) { const bank = QUESTIONS[subject], q = bank[number % bank.length], indices = shuffle(q.choices.map((_, i) => i)); const seconds = (S.phase === 'ESCAPE' ? 11 : 6.5 + S.focus * .065); if (S.classIndex === 5 && S.phase === 'CLASS')
+    function askQuestion(subject, number = 0, onDone = null) { const bank = QUESTIONS[subject], q = bank[number % bank.length], indices = shuffle(q.choices.map((_, i) => i)); const seconds = Math.max(5,(S.phase === 'ESCAPE' ? 12 : 8 + S.focus * .055)*rules().answer); if (S.classIndex === 5 && S.phase === 'CLASS')
         showDoor(true, seconds, 'glasses'); beginChallenge({ type: 'question', remaining: seconds, kicker: S.phase === 'ESCAPE' ? 'MEMORY / 课程回忆' : 'ROLL CALL / 突然点名', title: subject === 'math' ? '死亡点名' : '回答这道题。', description: q.text, choices: indices.map(i => q.choices[i]), correct: indices.indexOf(q.answer), explain: q.explain, math: subject === 'math', onDone }); sound('warn', .6); }
     function recordAnswer(ok, isMath) { if (ok) {
         S.questionRight++;
@@ -4208,35 +4442,74 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
             addSuspicion(isMath ? 19 : 14);
         if (S.screen !== 'game')
             return false;
-    } return true; }
+    } checkAchievements(); return true; }
     function finishQuestion(index) { if (modal || recoveryGrace > 0 || !challenge || !['question', 'grid'].includes(challenge.type))
         return; const c = closeChallenge(), ok = index === c.correct; if (!recordAnswer(ok, c.math))
         return; sound(ok ? 'click' : 'warn'); toast(ok ? '回答正确 · 怀疑下降' : (index === null ? '回答超时。' : '回答错误。'), !ok); say(c.math ? '郭知昭' : (S.phase === 'ESCAPE' ? '你' : CLASSES[S.classIndex].teacher), ok ? c.explain : '记住：' + c.explain); if (c.onDone)
         dispatchContinuation(c.onDone, ok); }
-    function startFreeze(onDone = null) { beginChallenge({ type: 'freeze', remaining: 2.8, grace: .8, freezeFor: 2, title: '不要动。', description: '现在，停止一切动作。', kicker: S.phase === 'ESCAPE' ? 'MEMORY / 生物' : 'CONDITIONED REFLEX / 条件反射', onDone }); sound('warn', .5); caption('教室安静得能听见自己的呼吸。', 3); }
-    function finishFreeze(ok) { if (!challenge || !['freeze', 'wait'].includes(challenge.type))
-        return; const c = closeChallenge(); if (S.phase === 'CLASS') {
-        if (ok) {
-            addSuspicion(-4);
-            S.focus = clamp(S.focus + 5);
-            toast('你保持了静止。');
-        }
-        else {
-            addSuspicion(17);
-            toast('她注意到了你的动作。', true);
-        }
+    function startFreeze(onDone=null) {
+        const r=rules();
+        if(!beginChallenge({type:'freeze',remaining:r.grace+r.hold,grace:r.grace,baseGrace:r.grace,freezeFor:r.hold,
+            slips:0,allowance:r.forgiveness,lastMotionAt:-10,motionAnchor:null,title:'不要动。',description:'先松开手，准备结束后保持静止。',
+            kicker:S.phase==='ESCAPE'?'MEMORY / 生物':'CONDITIONED REFLEX / 条件反射',onDone})) return;
+        if(S.phase==='CLASS') S.reflexNextAt=S.t+75;
+        sound('warn',.5);caption('教室安静了。你有时间松开手。',3);
     }
-    else
-        toast(ok ? '脚步重新远去。' : '你的动作暴露了位置。', !ok); if (S.screen === 'game' && c.onDone)
-        dispatchContinuation(c.onDone, ok); }
-    function interactionMotion(event) { if (!challenge || modal || script || !S || recoveryGrace > 0)
-        return; if (!['freeze', 'wait'].includes(challenge.type))
-        return; if (event.target instanceof Element && event.target.closest('.utility,#modal'))
-        return; if (event.type === 'keydown' && ['Escape', 'Alt', 'Control', 'Meta', 'Shift'].includes(event.key))
-        return; if (event.type === 'keydown' && event.altKey && event.code === 'Enter')
-        return; const grace = challenge.type === 'freeze' ? .8 : .35; if (challenge.elapsed >= grace)
-        finishFreeze(false); }
-    function startGrid(onDone = null) { const variants = [{ q: '找到编号：7 × 8 − 13 = ？', n: 43, e: '7×8−13=43。正确编号是43。' }, { q: 'f(x)=x²。找到编号 f′(7)。', n: 14, e: 'f′(x)=2x，f′(7)=14。' }, { q: '找到编号：56 ÷ 2 + 7 = ？', n: 35, e: '56÷2+7=35。正确编号是35。' }]; const v = pick(variants); beginChallenge({ type: 'grid', remaining: S.phase === 'ESCAPE' ? 13 : 12 + S.focus * .035, title: '1 / 56', description: v.q, kicker: S.phase === 'ESCAPE' ? 'FINAL LOCK / 最后一道编号锁' : 'BOSS / 思考能力', numbers: shuffle(Array.from({ length: 56 }, (_, i) => i + 1)), correct: v.n, explain: v.e, math: true, hint: S.listenSeconds >= 20, onDone }); sound('warn'); }
+    function renderFreezeState() {
+        const c=challenge;if(c?.type!=='freeze'||!$('freezeState'))return;
+        const preparing=c.elapsed<c.grace;
+        $('freezeState').textContent=preparing?'松开手':'保持静止';
+        $('freezeInstruction').textContent=(preparing?`准备 ${(c.grace-c.elapsed).toFixed(1)} 秒 · 松键不算失误`:`保持静止 · ${c.remaining.toFixed(1)} 秒`)+
+            `\n剩余容错 ${c.allowance-c.slips} 次 · 轻微抖动不计 · 明显动作后需重新静止`;
+    }
+    function finishFreeze(ok) {
+        if(!challenge||!['freeze','wait'].includes(challenge.type)) return;
+        const c=closeChallenge();
+        if(c.type==='freeze'&&ok&&(c.slips||0)===0) {S.runStats.cleanReflex++;checkAchievements();}
+        if(S.phase==='CLASS') {
+            if(ok) {addSuspicion(-2);S.focus=clamp(S.focus+3*rules().reward);toast('你保持了静止。');}
+            else {addSuspicion(c.type==='freeze'?8:12);toast('她注意到了你的动作 · 已降低单次惩罚。',true);}
+        } else toast(ok?'脚步重新远去。':'你的动作暴露了位置。',!ok);
+        if(S.screen==='game'&&c.onDone) {
+            // Biology recall also receives a smaller failure loss than a
+            // wrong route; physics keeps its full three-second wait rule.
+            if(c.type==='freeze'&&!ok&&c.onDone==='escapeMemoryDone') {
+                if(changeDistance(-10)) nextEscapeNode();
+            } else dispatchContinuation(c.onDone,ok);
+        }
+        requestAutoSave();
+    }
+    function interactionMotion(event) {
+        const c=challenge;
+        if(!c||modal||script||!S||recoveryGrace>0||!['freeze','wait'].includes(c.type)) return;
+        const target=event.target instanceof Element?event.target:null;
+        if(event.type!=='keydown'&&target?.closest('.utility,#modal,#resumeBanner')) {c.motionAnchor=null;return;}
+        // Key releases and pointer releases are the act of stopping, not new
+        // activity. Ignore OS shortcuts, IME composition, and autorepeat.
+        if(['keyup','pointerup','touchend'].includes(event.type)||event.repeat||event.isComposing||event.ctrlKey||event.metaKey||event.altKey) return;
+        if(event.type==='keydown'&&(['Escape','Alt','Control','Meta','Shift','CapsLock','Tab','F11','F12'].includes(event.key)||['KeyN','KeyM','Escape','Tab'].includes(normalizedKeyCode(event)))) return;
+        const grace=c.type==='freeze'?c.grace:.35;
+        if(c.elapsed<grace) {c.motionAnchor=null;return;}
+        if(event.type==='pointermove') {
+            const point={x:event.clientX,y:event.clientY};
+            if(!Number.isFinite(point.x)||!Number.isFinite(point.y)) return;
+            if(!c.motionAnchor) {c.motionAnchor=point;return;}
+            const scale=Math.min((window.visualViewport?.width||innerWidth)/1600,(window.visualViewport?.height||innerHeight)/900);
+            const threshold=Math.max(8,rules().jitter*scale);
+            if(Math.hypot(point.x-c.motionAnchor.x,point.y-c.motionAnchor.y)<threshold) return;
+            c.motionAnchor=point;
+        } else if(event.type==='wheel'&&Math.abs(event.deltaX||0)+Math.abs(event.deltaY||0)<20) return;
+        if(c.type==='wait') {finishFreeze(false);return;}
+        if(c.elapsed-c.lastMotionAt<.35) return;
+        c.lastMotionAt=c.elapsed;
+        if(c.slips<c.allowance) {
+            c.slips++;
+            c.grace=c.elapsed+.35;c.remaining=c.freezeFor+.35;c.total=c.elapsed+c.remaining;c.motionAnchor=null;
+            renderFreezeState();sound('paper');toast('动作已缓冲 · 再松开手，重新保持静止。',false,2.5);
+            requestAutoSave();
+        } else finishFreeze(false);
+    }
+    function startGrid(onDone = null) { const variants = [{ q: '找到编号：7 × 8 − 13 = ？', n: 43, e: '7×8−13=43。正确编号是43。' }, { q: 'f(x)=x²。找到编号 f′(7)。', n: 14, e: 'f′(x)=2x，f′(7)=14。' }, { q: '找到编号：56 ÷ 2 + 7 = ？', n: 35, e: '56÷2+7=35。正确编号是35。' }]; const v = pick(variants); beginChallenge({ type: 'grid', remaining: Math.max(6,(S.phase === 'ESCAPE' ? 14 : 14 + S.focus * .03)*rules().answer), hintDuration:1.8*rules().answer, title: '1 / 56', description: v.q, kicker: S.phase === 'ESCAPE' ? 'FINAL LOCK / 最后一道编号锁' : 'BOSS / 思考能力', numbers: shuffle(Array.from({ length: 56 }, (_, i) => i + 1)), correct: v.n, explain: v.e, math: true, hint: S.listenSeconds >= 20, onDone }); sound('warn'); }
     function startFakeBell() { sound('bell'); fx('flicker'); beginChallenge({ type: 'fakeBell', remaining: 16, title: '下课了。是吗？', kicker: 'THE BELL / 第一遍铃声', description: "走廊里响起放学铃。没有一个同学起身。\n郭知昭仍然站在黑板前，静静看着你。", choices: ['离开教室', '继续坐着'] }); say('广播', '下课时间到了。请同学们……离开。'); }
     function choose(index) {
         if (!challenge || modal || recoveryGrace > 0) return;
@@ -4291,8 +4564,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         if (c.remaining != null)
             c.remaining = Math.max(0, c.remaining - dt);
         if (c.type === 'freeze') {
-            $('freezeState').textContent = c.elapsed < .8 ? '松开手' : '不要动';
-            $('freezeInstruction').textContent = c.elapsed < .8 ? '准备期 0.8 秒 · 松开鼠标与键盘' : `保持静止 · ${Math.max(0, c.remaining).toFixed(1)} 秒`;
+            renderFreezeState();
         }
         if (c.type === 'sprint') {
             $('sprintCount').textContent = `${c.taps} / ${c.target}`;
@@ -4363,9 +4635,9 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         else if (S.action === 'sleep')
             addSuspicion(1.0 * dt,false);
     } }
-    function chooseTeacherTarget() { const t = S.teacher, nearTargets = [4, 5, 6], normal = [0, 1, 2, 3, 7]; const p = .12 + S.suspicion * .004 + S.classIndex * .024; let target = Math.random() < p ? pick(nearTargets) : pick(normal); if (S.classIndex === 5 && Math.random() < .28)
+    function chooseTeacherTarget() { const t = S.teacher, nearTargets = [4, 5, 6], normal = [0, 1, 2, 3, 7]; const p = clamp((.12 + S.suspicion * .004 + S.classIndex * .024)*rules().patrol,0,.88); let target = Math.random() < p ? pick(nearTargets) : pick(normal); if (S.classIndex === 5 && Math.random() < .28)
         target = Math.floor(rnd(0, 8)); if (target === t.target)
-        target = (target + 1) % POSITIONS.length; t.target = target; t.wait = rnd(3, 8) - Math.min(2, S.suspicion * .025); if (nearTargets.includes(target)) {
+        target = (target + 1) % POSITIONS.length; t.target = target; t.wait = Math.max(1.5,(rnd(3, 8) - Math.min(2, S.suspicion * .025))*rules().interval); if (nearTargets.includes(target)) {
         caption('哒。哒。脚步正沿过道靠近。', 3.5);
         sound('step', .8);
         addMessage('同桌：老师进过道了，小心。');
@@ -4378,8 +4650,8 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         if (watched)
             return;
         const dest = POSITIONS[t.target];
-        const boost = (S.extraUntil > S.t ? 1.5 : 1) * (S.classIndex === 5 ? (.85 + (Math.sin(S.t * 1.5) + 1) * .4) : 1);
-        const speed = c.speed * boost;
+        const boost = (S.extraUntil > S.t ? 1.35 : 1) * (S.classIndex === 5 ? (.85 + (Math.sin(S.t * 1.5) + 1) * .4) : 1);
+        const speed = c.speed * boost * rules().patrol;
         const dx = dest.x - t.x, dy = dest.y - t.y, dist = Math.hypot(dx, dy);
         if (dist > 2) {
             const f = Math.min(1, dt * 1.1 * speed);
@@ -4421,7 +4693,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         addSuspicion(-2);
     } }
     function scrambleButtons() { S.shuffleUntil = S.t + 5; const order = shuffle(ACTIONS.map((_,i)=>i)); S.actionOrder = order; $$('.action').forEach((e, i) => e.style.order = order[i]); toast('神经调节：按钮位置交换 5 秒。数字快捷键不变。', true, 4); fx('flicker'); say('王盈', '习惯，还是判断？'); }
-    function triggerExtraordinary() { S.extraUntil = S.t + 60; toast('EXTRAORDINARY MODE · 60 秒', true, 5); say('尹纱纱', '高级。这才是你们应该有的反应速度。'); sound('warn'); fx('flicker'); }
+    function triggerExtraordinary() { const seconds=rules().extra; S.extraUntil=S.t+seconds; toast(`EXTRAORDINARY MODE · ${seconds} 秒`,true,5); say('尹纱纱','高级。这才是你们应该有的反应速度。'); sound('warn');fx('flicker'); }
     function physicsVisit() { caption('哒。哒。哒。脚步停止了。', 3); S.teacher.target = 5; S.teacher.wait = 4; S.teacher.x = 1150; S.teacher.y = 370; S.teacher.z = 1.14; S.dangerCooldown = S.t + 2.5; S.teacher.tailUntil = S.t + 5; sound('step'); say('戴贝贝', '这么急？'); }
     function scheduledEvents() {
         for (const [fraction, key] of LESSON_EVENTS[CLASSES[S.classIndex].id]) {
@@ -4486,6 +4758,8 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         S.operationTimes = S.operationTimes.filter(t => S.t - t < 8);
         S.totalPhone += S.action === 'phone' ? dt : 0;
         S.classStats.phone += S.action === 'phone' ? dt : 0;
+        if(S.action!=='phone') S.phoneHeat=Math.max(0,S.phoneHeat-.75*dt);
+        if(S.action!=='sleep') S.rest.fatigue=Math.max(0,S.rest.fatigue-.45*dt);
         const boredomPenalty = S.boredom > 65 ? .25 + (S.boredom - 65) * .045 : 0;
         switch (S.action) {
             case 'listen':
@@ -4495,23 +4769,23 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
                 addSuspicion(-.65 * dt);
                 break;
             case 'homework':
-                S.homework = clamp(S.homework + .27 * dt);
+                S.homework = clamp(S.homework + .30 * (S.mode==='quick'?1140/540:1) * rules().reward * dt);
                 S.boredom = clamp(S.boredom - .36 * dt);
                 S.focus = clamp(S.focus - (.14 + boredomPenalty * .3) * dt);
                 addSuspicion(.025 * dt);
                 break;
             case 'cube':
                 updateCubeQueue();
-                S.boredom = clamp(S.boredom - .7 * dt);
-                S.focus = clamp(S.focus + .06 * dt);
+                S.boredom = clamp(S.boredom - (S.t-S.lastCubeTurn<3?.6:.20)*dt);
+                // Idle cube holding is not passive focus regeneration.
                 addSuspicion(.09 * dt);
                 break;
             case 'phone':
-                S.phoneSeconds += dt;
+                S.phoneSeconds += dt; S.phoneHeat=Math.min(45,S.phoneHeat+dt);
                 S.boredom = clamp(S.boredom - (S.phoneApp === 'video' ? 2 : 1.2) * dt);
                 S.focus = clamp(S.focus - .60 * dt);
                 {
-                    const risk = S.phoneSeconds < 3 ? .25 : S.phoneSeconds < 6 ? .65 : S.phoneSeconds < 10 ? 1.2 : S.phoneSeconds < 15 ? 1.9 : 3;
+                    const risk = S.phoneHeat < 3 ? .25 : S.phoneHeat < 6 ? .65 : S.phoneHeat < 10 ? 1.2 : S.phoneHeat < 15 ? 1.9 : 3;
                     addSuspicion((risk + (S.phoneApp === 'video' ? .2 : 0)) * dt);
                 }
                 break;
@@ -4522,8 +4796,8 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
                 updateSleep(dt);
                 break;
             case 'observe':
-                S.boredom = clamp(S.boredom - .25 * dt);
-                S.focus = clamp(S.focus - .06 * dt);
+                S.boredom = clamp(S.boredom + (S.observeElapsed>8?.08:-.2)*dt);
+                S.focus = clamp(S.focus - .10 * dt);
                 addSuspicion(-.16 * dt);
                 S.observeElapsed += dt;
                 if (S.observeElapsed > .85 && !S.observeNoted) {
@@ -4549,15 +4823,15 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         if (challenge || S.screen !== 'game')
             return;
         if (S.elapsed >= S.nextDoor) {
-            S.nextDoor += 30;
+            S.nextDoor += 30*rules().interval;
             const p = S.classIndex === 5 ? .45 : S.suspicion > 60 ? .35 : S.action === 'phone' ? .25 : .15;
-            if (Math.random() < p)
+            if (Math.random() < Math.min(.9,p*rules().patrol))
                 showDoor(true, 7, pick(['glasses', 'shadow', 'hand']));
             else if (S.focus < 30 && Math.random() < .4)
                 showDoor(false, 4);
         }
         if (S.elapsed >= S.nextEvent) {
-            S.nextEvent += rnd(30, 90);
+            S.nextEvent += rnd(30, 90)*rules().interval;
             enqueue('random-' + Math.floor(S.elapsed), 'random');
         }
         if (S.shuffleUntil && S.t >= S.shuffleUntil) {
@@ -4573,8 +4847,8 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
             S.handleUntil = 0;
             $('rearDoor').classList.remove('moving');
         }
-        if (S.classIndex === 2 && S.operationTimes.length > 28 && S.t > S.dangerCooldown) {
-            S.dangerCooldown = S.t + 18;
+        if (S.classIndex === 2 && rules().rank>=2 && S.operationTimes.length > 52 && S.t > S.reflexNextAt && S.reflexExtraCount<1) {
+            S.reflexNextAt=S.t+75; S.reflexExtraCount++;
             enqueue('biofrequency', 'biofrequency');
             S.operationTimes = [];
         }
@@ -4587,6 +4861,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
     }
     function endClass() {
         cancelDeskActivity('lesson');
+        markLessonComplete();
         S.phase = 'BREAK';
         S.action = 'listen';
         S.door = null;
@@ -4598,6 +4873,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
     }
     function completeDay() {
         cancelDeskActivity('lesson');
+        markLessonComplete();
         S.phase = 'COMPLETE'; S.elapsed = S.duration; S.action = 'listen';
         S.door = null; S.extraUntil = 0; eventQueue = [];
         $('doorShadow').style.opacity = '0'; updateActionUI(); sound('bell');
@@ -4620,10 +4896,10 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         { place: '一楼大厅', description: "大厅正门的绿色 EXIT 标牌亮着。\n白线向左通往门厅；右侧只有一面照不出你的镜子。", choices: ['向左进入门厅', '向右靠近镜子', '回到实验室', '继续向地下走'], correct: 0 },
         { place: '校门前厅', description: "玻璃上映出真正的晚霞。\n出口在右侧。门上还有一道写着 1/56 的编号锁。", choices: ['向左回教室', '向右走向校门', '躲在讲台后', '继续下楼'], correct: 1 }
     ];
-    function startEscape() { cancelDeskActivity('event'); S.phase = 'ESCAPE'; S.escapeStarted = true; S.escapeNode = 0; S.distance = 70; S.action = 'listen'; S.door = null; S.extraUntil = 0; S.teacher.hold = S.t + 86400; eventQueue = []; $('gameUI').hidden = true; $('teacher').hidden = true; $('escapeScene').hidden = false; $('escapeHud').hidden = false; $('dialogue').hidden = false; S.journal.push({ title: '出口', text: '遵循可见的反光、绿色 EXIT 牌与地面引导线。走错扣20距离。走廊、侧楼梯、实验室、一楼大厅、门厅、校门。六科的守则仍然有效。' }); say('你', '脚步在身后。看清路标，别浪费时间。'); showRoute(); }
+    function startEscape() { cancelDeskActivity('event'); S.phase = 'ESCAPE'; S.escapeStarted = true; S.escapeNode = 0; S.distance = rules().distance; S.action = 'listen'; S.door = null; S.extraUntil = 0; S.teacher.hold = S.t + 86400; eventQueue = []; $('gameUI').hidden = true; $('teacher').hidden = true; $('escapeScene').hidden = false; $('escapeHud').hidden = false; $('dialogue').hidden = false; S.journal.push({ title: '出口', text: '遵循可见的反光、绿色 EXIT 牌与地面引导线。走错按难度扣除距离，路线面板会显示数值。走廊、侧楼梯、实验室、一楼大厅、门厅、校门。六科的守则仍然有效。' }); say('你', '脚步在身后。看清路标，别浪费时间。'); showRoute(); }
     function showRoute() { if (S.screen !== 'game')
-        return; const r = ROUTES[S.escapeNode]; $('escape-location').textContent = r.place; $('escapeRoute').innerHTML = ROUTES.map((x, i) => `<span class="${i <= S.escapeNode ? 'passed' : ''}">${x.place}</span>`).join(''); beginChallenge({ type: 'route', remaining: 10, kicker: `ESCAPE / ${S.escapeNode + 1} OF 6`, title: r.place, description: r.description, choices: r.choices, correct: r.correct }); }
-    function changeDistance(delta) { S.distance = clamp(S.distance + delta); if (S.distance <= 0) {
+        return; const r = ROUTES[S.escapeNode]; $('escape-location').textContent = r.place; $('escapeRoute').innerHTML = ROUTES.map((x, i) => `<span class="${i <= S.escapeNode ? 'passed' : ''}">${x.place}</span>`).join(''); beginChallenge({ type: 'route', remaining: Math.max(5,10*rules().answer), kicker: `ESCAPE / ${S.escapeNode + 1} OF 6`, title: r.place, description: r.description, choices: r.choices, correct: r.correct }); }
+    function changeDistance(delta) { S.distance = clamp(S.distance + delta*(delta<0?rules().loss:rules().gain)); if (S.distance <= 0) {
         finishEnding('loop');
         return false;
     } return true; }
@@ -4637,7 +4913,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         }
         if (!changeDistance(ok ? 10 : -20))
             return;
-        toast(ok ? '方向正确 · 距离 +10' : '走进死路，绕回原路 · 距离 -20', !ok);
+        toast(ok ? `方向正确 · 距离 +${(10*rules().gain).toFixed(1)}` : `绕回原路 · 距离 -${(20*rules().loss).toFixed(0)}`, !ok);
         const node = S.escapeNode;
         const done = 'escapeMemoryDone';
         switch (node) {
@@ -4680,22 +4956,24 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         closeChallenge();
         finishEnding(S.companion ? 'companion' : 'true');
     } }
-    function updateEscape(dt) { S.survival += dt; if (!changeDistance(-.70 * dt))
+    function updateEscape(dt) { S.survival += dt; if (!changeDistance(-.60 * rules().drain / rules().loss * dt))
         return; S.heartTimer -= dt; if (S.heartTimer <= 0) {
         S.heartTimer = S.distance < 30 ? .6 : 1.15;
         sound('heart', .65);
         sound('step', .35);
     } }
     function storeRun() { if (!S)
-        return; save.bestSurvival = Math.max(save.bestSurvival, Math.floor(S.survival)); save.bestCube = Math.max(save.bestCube, Math.round(S.cube)); save.bestHomework = Math.max(save.bestHomework, Math.round(S.homework)); persist(); }
+        return; checkAchievements(); save.bestSurvival = Math.max(save.bestSurvival, Math.floor(S.survival)); save.bestCube = Math.max(save.bestCube, Math.round(S.cube)); save.bestHomework = Math.max(save.bestHomework, Math.round(S.homework)); persist(); }
     function finishEnding(id) {
         if (!S || S.screen !== 'game' || !ENDINGS[id]) return;
         const e = ENDINGS[id];
+        if(S.difficulty==='god'&&!e.type.startsWith('BAD')) { godDefeat('exit'); return; }
         S.endingId = id; storeRun();
         const isNew = !save.endings.includes(id);
         if (isNew) save.endings.push(id);
         if (id === 'phone') save.phoneRestricted = true;
-        if (['true','cfop','unseen','homework','companion','truth'].includes(id)) save.wins++;
+        if (CLEAR_ENDINGS.includes(id)) save.wins++;
+        checkAchievements(id);
         persist();
         if (progress) {
             progress.status = e.type.startsWith('BAD') ? 'failed' : 'completed';
@@ -4712,6 +4990,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         writeProgress(); sound('lose');
     }
     function showEndingScreen(e,id) {
+        checkAchievements(id);
         cancelDeskActivity('ending'); S.screen = 'ending'; S.action = 'listen'; challenge = null; script = null; eventQueue = []; modal = null;
         pendingSave = false; recoveryGrace = 0; $('resumeBanner').hidden = true;
         $('modal').hidden = true; $('challengeLayer').hidden = true; $('gameUI').hidden = true;
@@ -4723,15 +5002,16 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         $('endingTitle').textContent = e.title;
         $('endingTitle').style.fontSize = e.title.length > 8 ? '54px' : '80px';
         $('endingProse').textContent = e.prose;
-        $('endingStats').innerHTML = `<div>生存时间<b>${fmtDuration(S.survival)}</b></div><div>最高怀疑<b>${Math.round(S.maxSuspicion)}</b></div><div>正确回答<b>${S.questionRight} / ${S.questionRight+S.questionWrong}</b></div><div>魔方复原<b>${S.cube}%</b></div><div>调查线索<b>${S.evidence.length} / 6</b></div>`;
+        $('endingStats').innerHTML = `<div>生存时间<b>${fmtDuration(S.survival)}</b></div><div>最高怀疑<b>${Math.round(S.maxSuspicion)}</b></div><div>正确回答<b>${S.questionRight} / ${S.questionRight+S.questionWrong}</b></div><div>魔方复原<b>${S.cube}%</b></div><div>调查线索<b>${S.evidence.length} / 6</b></div><div>难度 / 成就<b>${rules().label} / ${Object.keys(save.achievements).length}</b></div>`;
         const latest = progress?.checkpoints?.[0];
         const failed = id==='gameover'||e.type.startsWith('BAD');
         $('endingButtons').innerHTML = (latest ? `<button class="solid-btn" data-end-action="checkpoint">${failed ? '从最近检查点重新出发' : '回到最近记录点'}</button>` : '')
           +(progress?.branch ? '<button class="outline-btn" data-end-action="branch">回到放学分歧</button>' : '')
-          +'<button class="outline-btn" data-end-action="saves">选择其他存档</button><button class="outline-btn" data-end-action="restart">重新开始一天</button><button class="outline-btn" data-end-action="menu">返回主菜单</button><button class="outline-btn" data-end-action="archive">结局档案</button>';
+          +'<button class="outline-btn" data-end-action="saves">选择其他存档</button><button class="outline-btn" data-end-action="restart">重新开始一天</button><button class="outline-btn" data-end-action="menu">返回主菜单</button><button class="outline-btn" data-end-action="archive">结局档案</button><button class="outline-btn" data-end-action="achievements">成就</button>';
         $('endingNote').textContent = (id==='gameover' ? '这次失败不计入结局档案。' : `已记录 ${save.endings.length} / ${ENDING_COUNT} 个结局。`)
           +(latest ? '最近检查点：'+latest.label+'。已解锁结局不会因读档丢失。' : '')
           +(id==='phone' ? '手机管理只影响新的一天；重试当前周目使用记录点当时的状态。' : '普通与快速模式均可重试。')
+          +(S.difficulty==='god'?'神级是必败生存挑战，不记成功通关；成就与最好存活秒数仍保留。':'')
           +(!storageOK ? '本地写入失败，请导出备份。' : '');
         renderUI();
     }
@@ -4749,19 +5029,22 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         returnFocus.focus({ preventScroll: true }); }
     function renderModal() {
         const kind = modal.kind;
-        const titles = { pause: '时间，暂停了', settings: '设置', help: '生存手册', archive: '结局档案', journal: '课桌手记', quit: '结束这一天？', reset: '清除所有记录？', saves:'存档与检查点', recovery:'记录已经接上', loadConfirm:'回到这条记录？', newGame:'开始新的一天？', importConfirm:'导入这份记录？', conflict:'另一页更新了记录' };
+        const titles = { difficulty:'选择难度',achievements:'成就档案',godConfirm:'神级：没有通关出口',pause: '时间，暂停了', settings: '设置', help: '生存手册', archive: '结局档案', journal: '课桌手记', quit: '结束这一天？', reset: '清除所有记录？', saves:'存档与检查点', recovery:'记录已经接上', loadConfirm:'回到这条记录？', newGame:'开始新的一天？', importConfirm:'导入这份记录？', conflict:'另一页更新了记录' };
         $('modalTitle').textContent = titles[kind] || '手记';
         let html = '';
-        if (['saves','recovery','loadConfirm','newGame','importConfirm','conflict'].includes(kind)) { html = renderSaveModal(kind); }
+        if(kind==='difficulty') html=renderDifficultyModal();
+        else if(kind==='achievements') html=renderAchievements();
+        else if(kind==='godConfirm') html=difficultyStartNotice('god')+'<div class="modal-actions"><button class="solid-btn" data-modal-action="confirmNewGame">明白，开始必败挑战</button><button class="outline-btn" data-modal-action="back">取消</button></div>';
+        else if (['saves','recovery','loadConfirm','newGame','importConfirm','conflict'].includes(kind)) { html = renderSaveModal(kind); }
         else if (kind === 'pause') {
-            html = `<p>走廊安静了。所有巡逻、限时答题与追逐都已暂停。</p><p class="small">${CLASSES[S.classIndex].subject} · ${CLASSES[S.classIndex].teacher}　/　${fmtTime(currentTime())}　/　${S.mode === 'quick' ? '快速模式' : '普通模式'}</p><div class="modal-actions"><button class="solid-btn" data-modal-action="resume">继续这一天</button><button class="outline-btn" data-modal-action="saves">存档 / 读档</button><button class="outline-btn" data-modal-action="settings">设置</button><button class="outline-btn" data-modal-action="help">生存手册</button><button class="outline-btn" data-modal-action="quit">返回主菜单</button></div>`;
+            html = `<p>走廊安静了。所有巡逻、限时答题与追逐都已暂停。</p><p class="small">${CLASSES[S.classIndex].subject} · ${CLASSES[S.classIndex].teacher}　/　${fmtTime(currentTime())}　/　${S.mode === 'quick' ? '快速流程' : '标准流程'} · ${rules().label}难度（本局固定）</p><div class="modal-actions"><button class="solid-btn" data-modal-action="resume">继续这一天</button><button class="outline-btn" data-modal-action="saves">存档 / 读档</button><button class="outline-btn" data-modal-action="settings">设置</button><button class="outline-btn" data-modal-action="achievements">成就</button><button class="outline-btn" data-modal-action="help">生存手册</button><button class="outline-btn" data-modal-action="quit">返回主菜单</button></div>`;
         }
         else if (kind === 'settings') {
             const opts = save.settings;
-            html = `<p class="small">更改立即生效。快速模式只影响新的一天；当前周目不会被改动。</p><label class="settings-row"><span>音量<small>铃声、脚步、心跳、门声与操作音</small></span><span class="settings-control"><input aria-label="音量" type="range" min="0" max="100" value="${Math.round(opts.volume * 100)}" data-setting="volume"><output id="volumeOutput">${Math.round(opts.volume * 100)}%</output></span></label><label class="settings-row"><span>恐怖闪烁<small>仅事件触发的短暂明暗变化；敏感者建议关闭</small></span><input type="checkbox" data-setting="flicker" ${opts.flicker ? 'checked' : ''}></label><label class="settings-row"><span>屏幕震动<small>关闭后保留文字、阴影与声音提示</small></span><input type="checkbox" data-setting="shake" ${opts.shake ? 'checked' : ''}></label><label class="settings-row"><span>文字速度<small>点击对话框或按 Enter 可立即显示全文</small></span><span class="settings-control"><input aria-label="文字速度" type="range" min="12" max="90" value="${opts.textSpeed}" data-setting="textSpeed"><output id="textSpeedOutput">${opts.textSpeed}字/s</output></span></label><label class="settings-row"><span>剧情自动继续<small>文字显示完毕后留出阅读时间再继续</small></span><input type="checkbox" data-setting="auto" ${opts.auto ? 'checked' : ''}></label><label class="settings-row"><span>默认快速模式<small>新周目每节课 90 秒；两种模式都支持记录点重试</small></span><input type="checkbox" data-setting="quick" ${opts.quick ? 'checked' : ''}></label><label class="settings-row"><span>显示未解锁结局的线索<small>可选剧透：在结局档案中显示达成条件</small></span><input type="checkbox" data-setting="endingHints" ${opts.endingHints ? 'checked' : ''}></label><div class="modal-actions"><button class="outline-btn" data-modal-action="fullscreen">⛶ 切换全屏</button><button class="outline-btn" data-modal-action="reset" ${S?.screen === 'game' ? 'disabled' : ''}>清除本地存档</button></div><p class="small" style="margin-top:14px">Alt + Enter 切换全屏。全屏受浏览器权限控制；被拒绝时可使用浏览器的 F11。${S?.screen === 'game' ? '清除记录只能在主菜单或结局页进行。' : ''}</p>`;
+            html = `<p class="small">声音与视觉设置立即生效。流程速度和难度只影响新的一天；读档始终使用记录中的难度。</p><div class="modal-actions"><button class="outline-btn" data-modal-action="difficulty">下一局难度：${DIFFICULTIES[opts.difficulty].label}</button><button class="outline-btn" data-modal-action="achievements">成就档案</button></div><label class="settings-row"><span>音量<small>铃声、脚步、心跳、门声与操作音</small></span><span class="settings-control"><input aria-label="音量" type="range" min="0" max="100" value="${Math.round(opts.volume * 100)}" data-setting="volume"><output id="volumeOutput">${Math.round(opts.volume * 100)}%</output></span></label><label class="settings-row"><span>恐怖闪烁<small>仅事件触发的短暂明暗变化；敏感者建议关闭</small></span><input type="checkbox" data-setting="flicker" ${opts.flicker ? 'checked' : ''}></label><label class="settings-row"><span>屏幕震动<small>关闭后保留文字、阴影与声音提示</small></span><input type="checkbox" data-setting="shake" ${opts.shake ? 'checked' : ''}></label><label class="settings-row"><span>文字速度<small>点击对话框或按 Enter 可立即显示全文</small></span><span class="settings-control"><input aria-label="文字速度" type="range" min="12" max="90" value="${opts.textSpeed}" data-setting="textSpeed"><output id="textSpeedOutput">${opts.textSpeed}字/s</output></span></label><label class="settings-row"><span>剧情自动继续<small>文字显示完毕后留出阅读时间再继续</small></span><input type="checkbox" data-setting="auto" ${opts.auto ? 'checked' : ''}></label><label class="settings-row"><span>默认快速模式<small>新周目每节课 90 秒；两种模式都支持记录点重试</small></span><input type="checkbox" data-setting="quick" ${opts.quick ? 'checked' : ''}></label><label class="settings-row"><span>显示未解锁结局的线索<small>可选剧透：在结局档案中显示达成条件</small></span><input type="checkbox" data-setting="endingHints" ${opts.endingHints ? 'checked' : ''}></label><div class="modal-actions"><button class="outline-btn" data-modal-action="fullscreen">⛶ 切换全屏</button><button class="outline-btn" data-modal-action="reset" ${S?.screen === 'game' ? 'disabled' : ''}>清除本地存档</button></div><p class="small" style="margin-top:14px">Alt + Enter 切换全屏。全屏受浏览器权限控制；被拒绝时可使用浏览器的 F11。${S?.screen === 'game' ? '清除记录只能在主菜单或结局页进行。' : ''}</p>`;
         }
         else if (kind === 'help') {
-            html = `<p>你是江城大学附属中学高二（2）班的一名学生。撑过六节课，在真正的 <b>17:30</b> 放学，再走出教学楼。游戏中的学校、人物与情节均为虚构。</p><h3>你的课桌</h3><p><span class="help-key">1</span>听课降低怀疑，但无聊会上升。<span class="help-key">2</span>写其他作业。<span class="help-key">3</span>玩魔方，以 <b>R U R′ U′</b> 完成公式；Shift + 字母表示逆转，完成一组后稍停 2.2 秒。<span class="help-key">4</span>手机：聊天、视频、小游戏、真实时间。<span class="help-key">5</span>观察讲台、老师、后门、窗外与同桌。作业和魔方不是普通通关的强制目标。</p><h3>先活下来</h3><p>平时 <span class="help-key">Space</span> 立即收好物品。危险事件出现时，连续三次空格或依次点击「藏起来 → 拿笔 → 看书」。不要按住空格。手机连续使用越久越危险；留意脚步、玻璃与同桌提醒，任何致命突袭前都有线索。静音时仍有画面与文字提示。</p><p>怀疑达到 100 会被发现：第一次降到 60，第二次降到 75，第三次失败。手机被抓三次进入独立坏结局，并影响后续周目。无聊超过 65 会持续消耗专注；低专注让画面模糊，答题时间变短。</p><h3>六节课，不是同一道题</h3><p>语文教你看反光。化学课留意突然的安静。生物课「不要动」有 0.8 秒准备，随后静止 2 秒，暂停与系统按键除外。物理课盯住老师可使她停止；脚步刚走后再等 3 秒。英语课进入 60 秒强化模式。数学课连续答错两题会失败，56 个编号中只有一个符合题意。<b>第一遍下课铃是假的。</b></p><h3>操作与记录</h3><p><span class="help-key">1—4</span>限时事件选项。<span class="help-key">Enter</span>剧情继续。<span class="help-key">Esc</span>暂停。<span class="help-key">N</span>手记。<span class="help-key">M</span>静音。<span class="help-key">Alt+Enter</span>全屏。切到其他标签或窗口自动暂停；回到页面后手动继续。</p><p>普通模式课堂约 19 分钟，加剧情、答题与逃生通常 20—35 分钟；快速模式通常 10—15 分钟。课间与午间跳过，不采用统一时间倍率。共12个结局。每5秒、关键操作及页面中断时保存完整进度。两种模式都支持从最新检查点重试，也可以在「存档」中选择本节开头、放学分歧或较早的检查点。读档后先暂停，继续时留有2秒准备期。</p><h3>传纸条与睡觉</h3><p><span class="help-key">6</span>打开纸条，按A请同桌望风、S约好放学同行、D借课堂笔记。写纸条、递出和等待回条共需5秒；巡逻不会暂停。收到回条后才获得奖励，再等8秒才能传下一张。切换行动、危险或点名会中止尚未送达的纸条。成功的同行纸条与观察同桌共用本节互动次数；不会代替调查线索。</p><p><span class="help-key">7</span>伏桌小憩，可选6/12/18秒。每秒专注+2.4、无聊−1.2，但会累积怀疑，4秒后风险更高。按空格、再次按7或点击「醒来」可立即起身。老师靠近会触发「醒来→坐直→看课本」三步反应；不要把睡觉当成暂停。</p><h3>魔方输入</h3><p>先按3打开魔方。公式为 R → U → Shift+R → Shift+U，也可按 R → U → Q → E；Q对应R′，E对应U′。左右Shift均可，CapsLock不会改变方向。每次按键松开后再按，长按不连发。组间2.2秒归位期间可预输入最多8步；面板会显示已接收的动作和倒计时。切换行动或遇到危险会清空尚未执行的动作。所有六个面的正转和逆转都有按钮；若输入法拦截组合键，请切英文输入或点击按钮。</p><h3>调查与同桌</h3><p>每节课都有一条可通过观察发现的线索，手记会提示调查位置。至少在三节不同课程中观察同桌或成功传递同行纸条，可以在17:30选择同行。作业100%、六条线索以及是否接过钥匙，都能打开新的结局。普通离校路线和原有六个结局仍然保留。</p><h3>存档说明</h3><p>自动记录与安全检查点相互独立，失败不会覆盖重试点。网页关闭、刷新、切到后台会尝试立即保存；突发断电或强制结束进程可能只保留最近一次成功写入。浏览器禁用存储时请使用「导出备份」。移动本地HTML、换浏览器或清理网站数据前也建议导出。导入/导出均在本机进行，不上传任何内容。</p><p class="small">手机端建议横屏；所有动作都有可点击按钮。不会请求摄像头、麦克风或网络权限。</p>`;
+            html = `<p>你是江城大学附属中学高二（2）班的一名学生。撑过六节课，在真正的 <b>17:30</b> 放学，再走出教学楼。游戏中的学校、人物与情节均为虚构。</p><h3>你的课桌</h3><p><span class="help-key">1</span>听课降低怀疑，但无聊会上升。<span class="help-key">2</span>写其他作业。<span class="help-key">3</span>玩魔方，以 <b>R U R′ U′</b> 完成公式；Shift + 字母表示逆转，完成一组后按难度归位2.8—3.8秒，可缓存下一组输入。<span class="help-key">4</span>手机：聊天、视频、小游戏、真实时间。<span class="help-key">5</span>观察讲台、老师、后门、窗外与同桌。作业和魔方不是普通通关的强制目标。</p><h3>先活下来</h3><p>平时 <span class="help-key">Space</span> 立即收好物品。危险事件出现时，连续三次空格或依次点击「藏起来 → 拿笔 → 看书」。不要按住空格。手机连续使用越久越危险；留意脚步、玻璃与同桌提醒，任何致命突袭前都有线索。静音时仍有画面与文字提示。</p><p>怀疑达到 100 会被发现：第一次降到 60，第二次降到 75，第三次失败。手机被抓三次进入独立坏结局，并影响后续周目。无聊超过 65 会持续消耗专注；低专注让画面模糊，答题时间变短。</p><h3>六节课，不是同一道题</h3><p>语文教你看反光。化学课留意突然的安静。生物课「不要动」普通难度准备1.4秒、静止1.4秒，明显动作容错一次；轻微抖动、松键和长按重复不算失误。简单额外容错两次。第一次失误后重新保持静止，失败基础怀疑从17降到8。物理课盯住老师可使她停止；脚步刚走后再等 3 秒。英语课按难度强化35—60秒，普通45秒。数学课连续答错两题会失败，56 个编号中只有一个符合题意。<b>第一遍下课铃是假的。</b></p><h3>操作与记录</h3><p><span class="help-key">1—4</span>限时事件选项。<span class="help-key">Enter</span>剧情继续。<span class="help-key">Esc</span>暂停。<span class="help-key">N</span>手记。<span class="help-key">M</span>静音。<span class="help-key">Alt+Enter</span>全屏。切到其他标签或窗口自动暂停；回到页面后手动继续。</p><p>普通模式课堂约 19 分钟，加剧情、答题与逃生通常 20—35 分钟；快速模式通常 10—15 分钟。课间与午间跳过，不采用统一时间倍率。共12个结局。每5秒、关键操作及页面中断时保存完整进度。两种模式都支持从最新检查点重试，也可以在「存档」中选择本节开头、放学分歧或较早的检查点。读档后先暂停，继续时留有2秒准备期。</p><h3>传纸条与睡觉</h3><p><span class="help-key">6</span>打开纸条，按A请同桌望风、S约好放学同行、D借课堂笔记。写纸条、递出和等待回条共需5秒；巡逻不会暂停。收到回条后才获得奖励，再等10秒才能传下一张。切换行动、危险或点名会中止尚未送达的纸条。成功的同行纸条与观察同桌共用本节互动次数；不会代替调查线索。</p><p><span class="help-key">7</span>伏桌小憩，可选6/12/18秒。普通难度每秒专注+1.7、无聊−0.85；连续积累小憩疲劳超过12秒后收益降低，醒来8秒后才可再睡，清醒时疲劳缓慢恢复。风险不会靠瞬间醒来重置。按空格、再次按7或点击「醒来」可立即起身。老师靠近会触发「醒来→坐直→看课本」三步反应；不要把睡觉当成暂停。</p><h3>魔方输入</h3><p>先按3打开魔方。公式为 R → U → Shift+R → Shift+U，也可按 R → U → Q → E；Q对应R′，E对应U′。左右Shift均可，CapsLock不会改变方向。每次按键松开后再按，长按不连发。组间2.8—3.8秒归位期间可预输入最多8步；面板会显示已接收的动作和倒计时。切换行动或遇到危险会清空尚未执行的动作。所有六个面的正转和逆转都有按钮；若输入法拦截组合键，请切英文输入或点击按钮。</p><h3>调查与同桌</h3><p>每节课都有一条可通过观察发现的线索，手记会提示调查位置。至少在三节不同课程中观察同桌或成功传递同行纸条，可以在17:30选择同行。作业100%、六条线索以及是否接过钥匙，都能打开新的结局。普通离校路线和原有六个结局仍然保留。</p><h3>存档说明</h3><p>自动记录与安全检查点相互独立，失败不会覆盖重试点。网页关闭、刷新、切到后台会尝试立即保存；突发断电或强制结束进程可能只保留最近一次成功写入。浏览器禁用存储时请使用「导出备份」。移动本地HTML、换浏览器或清理网站数据前也建议导出。导入/导出均在本机进行，不上传任何内容。</p><h3>六档难度与成就</h3><p>主菜单「难度」选择简单、普通、困难、地狱、极限或神级。标准/快速是流程长度，不是难度。读档与重试不改难度；旧存档默认普通。神级明确不可通关，有180秒有效游玩上限并拦截所有成功/替代出口；暂停、剧情和离线不消耗该计时。成就共36项，按单局里程碑或结局解锁；回档不丢已解锁成就，不靠重复读档累加次数。神级成就不要求通关，集齐全部结局也不需要神级通关。</p><h3>平衡提示</h3><p>魔方每组进度仍为4%，普通专注+9、无聊−7；乱转不再降无聊。手机风险热度在收起后每秒下降0.75，不靠切换瞬间清零。作业普通每秒+0.30%，快速流程有总课时补偿；难度会影响恢复和作业效率。观察同一处超过8秒后无聊略有上升，无法长期作为无成本静止策略。</p><p class="small">手机端建议横屏；所有动作都有可点击按钮。不会请求摄像头、麦克风或网络权限。</p>`;
         }
         else if (kind === 'archive') {
             html = '<p class="small">有些路，只有走过才会留下名字。已发现 ' + save.endings.length + ' / '+ENDING_COUNT+'</p><div class="archive-grid">' + Object.entries(ENDINGS).map(([id, e]) => { const known = save.endings.includes(id); return `<div class="archive-card ${known ? '' : 'locked'}"><div class="ending-label">${known ? esc(e.type) : 'UNDISCOVERED / 未发现'}</div><h3>${known ? esc(e.title) : '??????'}</h3><p>${known || save.settings.endingHints ? esc(e.hint) : '这一页还没有被写下。可在设置中开启线索提示。'}</p></div>`; }).join('') + `</div><div class="stats-row"><span>开启 ${save.attempts} 天</span><span>成功离校 ${save.wins} 次</span><span>最长存活 ${fmtDuration(save.bestSurvival)}</span><span>魔方最高 ${save.bestCube}%</span></div>`;
@@ -4773,7 +5056,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
             html = '<p>当前进度将被保存。下次从主菜单「继续上次游戏」接着玩，所有倒计时不会在离线期间流逝。</p><div class="modal-actions"><button class="solid-btn" data-modal-action="confirmQuit">保存并返回</button><button class="outline-btn" data-modal-action="back">继续留下</button></div>';
         }
         else if (kind === 'reset') {
-            html = '<p>这将清除当前进度、所有检查点、手动存档、已解锁结局、最佳成绩、设置以及电子设备管理记录。操作不可撤销。</p><div class="modal-actions"><button class="solid-btn" data-modal-action="confirmReset">确认清除全部记录</button><button class="outline-btn" data-modal-action="back">取消</button></div>';
+            html = '<p>这将清除当前进度、所有检查点、手动存档、已解锁结局、成就和成就进度、最佳成绩、设置以及电子设备管理记录。操作不可撤销。</p><div class="modal-actions"><button class="solid-btn" data-modal-action="confirmReset">确认清除全部记录</button><button class="outline-btn" data-modal-action="back">取消</button></div>';
         }
         $('modalBody').innerHTML = html;
     }
@@ -4784,6 +5067,8 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
             startRecoveryGrace();
             lastFrame = performance.now();
             break;
+        case 'difficulty':
+        case 'achievements':
         case 'saves':
         case 'settings':
         case 'help':
@@ -4863,8 +5148,8 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
     function fullscreenChanged() { const full = !!(document.fullscreenElement || document.webkitFullscreenElement); $('fullscreenBtn').querySelector('span').textContent = full ? '退出全屏' : '全屏'; $('fullscreenBtn').setAttribute('aria-pressed', String(full)); if (wasFullscreen && !full && S?.screen === 'game' && !modal)
         openModal('pause'); wasFullscreen = full; resize(); }
     function resize() { const w = window.visualViewport?.width || window.innerWidth, h = window.visualViewport?.height || window.innerHeight; const scale = Math.min(w / 1600, h / 900); $('stage').style.transform = `translate(-50%,-50%) scale(${scale})`; }
-    function renderUI() { if (!S)
-        return; const c = CLASSES[S.classIndex], time = fmtTime(currentTime()); $('gameClock').textContent = S.anomalyUntil > S.t && S.classIndex >= 3 ? fmtTime(currentTime() - 3) : time; $('courseName').textContent = `第 ${S.classIndex + 1} 节 · ${c.subject}`; $('teacherName').textContent = c.teacher + ' / ' + c.title; $('lessonDots').innerHTML = CLASSES.map((_, i) => `<i class="lesson-dot ${i < S.classIndex ? 'done' : ''} ${i === S.classIndex ? 'active' : ''}"></i>`).join(''); $('lessonProgress').firstElementChild.style.width = (S.elapsed / S.duration * 100) + '%'; $('suspicionValue').innerHTML = String(Math.floor(S.suspicion)).padStart(2, '0') + ' <small>/ 100</small>'; $('suspicionBar').firstElementChild.style.width = S.suspicion + '%'; $('suspicionBar').classList.toggle('danger', S.suspicion >= 70); $('suspicionHint').textContent = S.suspicion < 30 ? '一切正常。至少现在是。' : S.suspicion < 50 ? '她开始注意到你。' : S.suspicion < 70 ? '巡视越来越频繁。' : S.suspicion < 90 ? '不要拿出任何多余的东西。' : '危险。她的目光没有离开。'; $('focusBar').style.width = S.focus + '%'; $('focusValue').textContent = Math.round(S.focus); $('boredomBar').style.width = S.boredom + '%'; $('boredomValue').textContent = Math.round(S.boredom); $('boredomBar').style.background = S.boredom > 65 ? 'var(--danger)' : ''; $('homeworkValue').textContent = Math.floor(S.homework) + '%'; $('cubeValue').textContent = S.cube + '%'; $('phoneRiskValue').textContent = !phoneAllowed() ? '已收走' : S.action !== 'phone' ? '—' : S.phoneSeconds < 3 ? '低' : S.phoneSeconds < 6 ? '小' : S.phoneSeconds < 10 ? '中' : S.phoneSeconds < 15 ? '高' : '极高'; $('phoneRiskValue').style.color = S.phoneSeconds >= 10 ? 'var(--danger)' : ''; $('actionHint').textContent = S.action==='note'?'A/S/D 选话题 · SPACE 收好纸条':S.action==='sleep'?'SPACE 或7 醒来 · 小憩不暂停巡逻': S.boredom > 65 ? '无聊正在消耗专注 · 换个行动' : S.action === 'phone' ? `已连续使用 ${S.phoneSeconds.toFixed(1)} 秒 · SPACE 收起` : S.action === 'cube' ? 'R U R′ U′ · Q=R′ / E=U′ · SPACE 收好' : 'SPACE 收好 · N 手记 · ESC 暂停'; const clock = S.anomalyUntil > S.t ? currentTime() - 3 : currentTime(); $('minuteHand').style.transform = `rotate(${clock % 60 * 6}deg)`; $('hourHand').style.transform = `rotate(${(clock / 60) % 12 * 30}deg)`; $('teacher').style.transform = `translate3d(${S.teacher.x}px,${S.teacher.y}px,0) scale(${S.teacher.z})`; $('stage').classList.toggle('low-focus', S.focus < 25); $('stage').classList.toggle('critical', S.suspicion > 85 && S.screen === 'game'); $('room').style.setProperty('--focus-blur', Math.max(0, (30 - S.focus) / 18).toFixed(2) + 'px'); const extra = S.extraUntil > S.t && S.phase === 'CLASS'; $('stage').classList.toggle('extraordinary', extra); $('extraBadge').hidden = !extra; $('extraTime').textContent = Math.max(0, Math.ceil(S.extraUntil - S.t)); if (S.action === 'phone')
+    function renderUI() { renderDifficultyHud(); if (!S)
+        return; const c = CLASSES[S.classIndex], time = fmtTime(currentTime()); $('gameClock').textContent = S.anomalyUntil > S.t && S.classIndex >= 3 ? fmtTime(currentTime() - 3) : time; $('courseName').textContent = `第 ${S.classIndex + 1} 节 · ${c.subject}`; $('teacherName').textContent = c.teacher + ' / ' + c.title; $('lessonDots').innerHTML = CLASSES.map((_, i) => `<i class="lesson-dot ${i < S.classIndex ? 'done' : ''} ${i === S.classIndex ? 'active' : ''}"></i>`).join(''); $('lessonProgress').firstElementChild.style.width = (S.elapsed / S.duration * 100) + '%'; $('suspicionValue').innerHTML = String(Math.floor(S.suspicion)).padStart(2, '0') + ' <small>/ 100</small>'; $('suspicionBar').firstElementChild.style.width = S.suspicion + '%'; $('suspicionBar').classList.toggle('danger', S.suspicion >= 70); $('suspicionHint').textContent = S.suspicion < 30 ? '一切正常。至少现在是。' : S.suspicion < 50 ? '她开始注意到你。' : S.suspicion < 70 ? '巡视越来越频繁。' : S.suspicion < 90 ? '不要拿出任何多余的东西。' : '危险。她的目光没有离开。'; $('focusBar').style.width = S.focus + '%'; $('focusValue').textContent = Math.round(S.focus); $('boredomBar').style.width = S.boredom + '%'; $('boredomValue').textContent = Math.round(S.boredom); $('boredomBar').style.background = S.boredom > 65 ? 'var(--danger)' : ''; $('homeworkValue').textContent = Math.floor(S.homework) + '%'; $('cubeValue').textContent = S.cube + '%'; $('phoneRiskValue').textContent = !phoneAllowed() ? '已收走' : S.action !== 'phone' ? '—' : S.phoneHeat < 3 ? '低' : S.phoneHeat < 6 ? '小' : S.phoneHeat < 10 ? '中' : S.phoneHeat < 15 ? '高' : '极高'; $('phoneRiskValue').style.color = S.phoneHeat >= 10 ? 'var(--danger)' : ''; $('actionHint').textContent = S.action==='note'?'A/S/D 选话题 · SPACE 收好纸条':S.action==='sleep'?'SPACE 或7 醒来 · 小憩不暂停巡逻': S.boredom > 65 ? '无聊正在消耗专注 · 换个行动' : S.action === 'phone' ? `使用 ${S.phoneSeconds.toFixed(1)}秒 · 热度 ${S.phoneHeat.toFixed(1)} · 收起后渐降` : S.action === 'cube' ? 'R U R′ U′ · Q=R′ / E=U′ · SPACE 收好' : 'SPACE 收好 · N 手记 · ESC 暂停'; const clock = S.anomalyUntil > S.t ? currentTime() - 3 : currentTime(); $('minuteHand').style.transform = `rotate(${clock % 60 * 6}deg)`; $('hourHand').style.transform = `rotate(${(clock / 60) % 12 * 30}deg)`; $('teacher').style.transform = `translate3d(${S.teacher.x}px,${S.teacher.y}px,0) scale(${S.teacher.z})`; $('stage').classList.toggle('low-focus', S.focus < 25); $('stage').classList.toggle('critical', S.suspicion > 85 && S.screen === 'game'); $('room').style.setProperty('--focus-blur', Math.max(0, (30 - S.focus) / 18).toFixed(2) + 'px'); const extra = S.extraUntil > S.t && S.phase === 'CLASS'; $('stage').classList.toggle('extraordinary', extra); $('extraBadge').hidden = !extra; $('extraTime').textContent = Math.max(0, Math.ceil(S.extraUntil - S.t)); if (S.action === 'phone')
         renderPhone(); if (S.action === 'cube')
         renderCube(); $('distanceBar').style.width = S.distance + '%'; $('distanceValue').textContent = Math.ceil(S.distance); updateActionUI(); }
     function tick(dt) {
@@ -4900,6 +5185,16 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
                 advanceDialogue();
             return;
         }
+        if(S.difficulty==='god'&&['CLASS','ESCAPE'].includes(S.phase)) {
+            dt=Math.min(dt,Math.max(0,GOD_LIMIT-S.godElapsed));
+            S.godElapsed=Math.min(GOD_LIMIT,S.godElapsed+dt);
+            if(S.godElapsed>=GOD_LIMIT-1e-7) {
+                S.godElapsed=GOD_LIMIT; S.survival+=dt; S.t+=dt;
+                checkAchievements(); godDefeat('clock'); return;
+            }
+            if(!S.godWarned&&S.godElapsed>=150) {S.godWarned=true;toast('神级闭环还剩30秒。没有出口。',true,5);}
+        }
+        checkAchievements();
         S.t += dt;
         if (S.phase === 'ESCAPE') {
             updateEscape(dt);
@@ -4937,6 +5232,8 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
     $('startNormal').addEventListener('pointerleave', () => { if (!S)
         $('doorShadow').style.opacity = '.65'; });
     $('continueGame').addEventListener('click', () => { const snap = getContinueSnapshot(); if (snap) restoreSnapshot(snap,'上次记录'); });
+    $('difficultyBtn').addEventListener('click',()=>openModal('difficulty'));
+    $('achievementsBtn').addEventListener('click',()=>openModal('achievements',modal?.kind||null));
     $('savesBtn').addEventListener('click', () => openModal('saves', modal?.kind || null));
     $('importSaveFile').addEventListener('change', importSaveFile);
     $('helpBtn').addEventListener('click', () => openModal('help'));
@@ -4954,7 +5251,11 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
     $('modalBody').addEventListener('input', e => { if (e.target.dataset.setting)
         settingChange(e.target); });
     document.addEventListener('click', e => { const el = e.target.closest('button'); if (!el || el.disabled)
-        return; initAudio(); requestAutoSave(); if (el.dataset.action)
+        return; initAudio(); requestAutoSave(); if(el.dataset.difficulty) {
+        if(!DIFFICULTY_IDS.includes(el.dataset.difficulty)) return;
+        save.settings.difficulty=el.dataset.difficulty;persist();updateMenu();renderModal();
+    } else if(el.dataset.achievementFilter) { achievementFilter=el.dataset.achievementFilter;renderModal(); }
+    else if (el.dataset.action)
         setAction(el.dataset.action);
     else if (el.dataset.turn)
         turnCube(el.dataset.turn);
@@ -4971,12 +5272,12 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
     }
     else if (el.dataset.phoneMatch != null && canAct() && S.action === 'phone') {
         const match = Number(el.dataset.phoneMatch) === S.phoneGameTarget;
-        if (S.t - S.phoneGameRewardAt < 1.1)
+        if (S.t - S.phoneGameRewardAt < 1.8)
             return;
         S.phoneGameRewardAt = S.t;
         if (match) {
-            S.focus = clamp(S.focus + 3);
-            S.boredom = clamp(S.boredom - 4);
+            S.focus = clamp(S.focus + 2*rules().reward);
+            S.boredom = clamp(S.boredom - 3);
             sound('click');
         }
         else
@@ -5013,19 +5314,20 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         const action = el.dataset.endAction;
         if (action === 'menu')
             returnMenu();
-        else if (action === 'restart')
-            requestNewGame(S.mode);
+        else if (action === 'restart') {
+            save.settings.difficulty=S.difficulty;persist();requestNewGame(S.mode);
+        }
         else if (action === 'retry') retryLesson();
         else if (action === 'checkpoint' && progress?.checkpoints[0]) restoreSnapshot(progress.checkpoints[0],'最近检查点');
         else if (action === 'branch' && progress?.branch) restoreSnapshot(progress.branch,'放学分歧');
         else if (action === 'saves') openModal('saves');
         else if (action === 'archive')
             openModal('archive');
+        else if(action==='achievements') openModal('achievements');
     } });
     document.addEventListener('pointerdown', e => { initAudio(); interactionMotion(e); }, true);
-    document.addEventListener('pointermove', e => { if (lastPointer && Math.hypot(e.clientX - lastPointer.x, e.clientY - lastPointer.y) > 2)
-        interactionMotion(e); lastPointer = { x: e.clientX, y: e.clientY }; }, { passive: true });
-    document.addEventListener('touchmove', interactionMotion, { passive: true });
+    document.addEventListener('pointermove', interactionMotion, { passive: true });
+    // Modern Pointer Events cover mouse, pen and touch exactly once; no duplicate touchmove penalties.
     document.addEventListener('wheel', interactionMotion, { passive: true });
     document.addEventListener('keydown', e => {
         const code=normalizedKeyCode(e);
@@ -5121,6 +5423,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
     $('students').innerHTML = seats.map(p => `<div class="student" style="left:${p.x}px;top:${p.y}px;transform:scale(${p.s})"><div class="student-head"></div><div class="student-body"></div><div class="student-desk"></div><div class="student-chair"></div></div>`).join('');
     progress = loadProgress();
     if (progress?.lesson) checkpoint = progress.lesson;
+    checkAchievements();
     resize();
     returnMenu();
     if (loadedFromBackup) toast('主记录异常，已找到上一份有效备份。请进入存档查看。',true,6);
@@ -5130,12 +5433,11 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
     // Opt-in deterministic integration hooks, inactive during ordinary play. Test mode
     // never persists achievements. They intentionally expose only this local game.
     if (testMode)
-        window.__LAST_CLASS_TEST__ = { startNote, wakeSleep, chooseRestDuration, safeHide, cubeTurnFromKey, normalizedKeyCode, get state() { return S; }, get progress() { return progress; }, get dialogue() { return dialogue; }, get recoveryGrace() { return recoveryGrace; }, get conflict() { return diskConflict; }, autoSave, writeProgress, captureSnapshot, rememberCheckpoint, restore:restoreSnapshot, continueGame(){const s=getContinueSnapshot();if(s)restoreSnapshot(s);}, retryCheckpoint(){if(progress?.checkpoints[0])restoreSnapshot(progress.checkpoints[0]);}, resume(){modalAction('resume');recoveryGrace=0;$('resumeBanner').hidden=true;}, exportData:buildExport, validateImport, applyImport, dispatchEvent, collectObservation, showPack, showEndingRoutes, resolveRoute, get endings(){return ENDINGS;}, get challenge() { return challenge; }, get script() { return script; }, get save() { return save; }, get modal() { return modal; }, start: startGame, tick(dt) { tick(dt); renderUI(); }, advance(dt) { tick(dt); }, finishDialogue() { let guard = 100; while (script && guard--) {
+        window.__LAST_CLASS_TEST__ = { rules, difficulties:DIFFICULTIES, achievements:ACHIEVEMENTS, checkAchievements, interactionMotion, finishFreeze, cubeCooldown, addSuspicion, godDefeat, validateSnapshot, markLessonComplete, startNote, wakeSleep, chooseRestDuration, safeHide, cubeTurnFromKey, normalizedKeyCode, get state() { return S; }, get progress() { return progress; }, get dialogue() { return dialogue; }, get recoveryGrace() { return recoveryGrace; }, get conflict() { return diskConflict; }, autoSave, writeProgress, captureSnapshot, rememberCheckpoint, restore:restoreSnapshot, continueGame(){const s=getContinueSnapshot();if(s)restoreSnapshot(s);}, retryCheckpoint(){if(progress?.checkpoints[0])restoreSnapshot(progress.checkpoints[0]);}, resume(){modalAction('resume');recoveryGrace=0;$('resumeBanner').hidden=true;}, exportData:buildExport, validateImport, applyImport, dispatchEvent, collectObservation, showPack, showEndingRoutes, resolveRoute, get endings(){return ENDINGS;}, get challenge() { return challenge; }, get script() { return script; }, get save() { return save; }, get modal() { return modal; }, start: startGame, tick(dt) { tick(dt); renderUI(); }, advance(dt) { tick(dt); }, finishDialogue() { let guard = 100; while (script && guard--) {
                 dialogue.shown = dialogue.text.length;
                 advanceDialogue();
             } renderUI(); }, setAction, turnCube, observe, choose, number: finishQuestion, hide: resolveHide, freeze: startFreeze, grid: startGrid, question: askQuestion, danger: triggerDanger, fakeBell: startFakeBell, door: showDoor, complete: completeDay, escape: startEscape, sprint: sprintTap, ending: finishEnding, fail: gameOver, retry: retryLesson, menu: returnMenu, openModal, closeModal, render: renderUI, extra: triggerExtraordinary, scramble: scrambleButtons, lesson: enterClass, get queue() { return eventQueue; } };
 })();
   </script>
- <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495" integrity="sha512-iIg7k2xntmwu6/uSb5tpc/hySgZc4eoL31yB29W6tJFo2akwjPWcEqnCEdJvGexCL0KEQwVYv5BlowfhVz26hg==" data-cf-beacon='{"version":"2024.11.0","token":"7939e04a4baf43c8b86a560f74aac60e","spa":2}' crossorigin="anonymous"></script>
-</body>
+ </body>
 </html>

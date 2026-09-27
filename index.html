@@ -2279,6 +2279,98 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
 .achievement-summary { display:flex;justify-content:space-between;align-items:baseline;gap:20px; }
 .achievement-summary strong { font-size:28px;font-weight:500;color:#c4d1a0; }
 .freeze-instruction { white-space:pre-line; }
+
+/* v2.3: unscaled, one-row reflex input. No images or external font files. */
+#stage.reflex-active { overflow:visible; }
+.reflex-active #toastStack { display:none; }
+#challengeLayer.reflex-layer {
+  inset:auto;left:50%;top:50%;width:var(--reflex-vw,1600px);height:var(--reflex-vh,900px);
+  transform:translate(-50%,-50%) scale(var(--reflex-inverse,1));
+  transform-origin:center;background:rgba(5,17,13,.76);pointer-events:auto;
+  display:grid;place-items:center;padding:14px;
+}
+#challengeCard.reflex-card {
+  position:relative;left:auto;top:auto!important;width:min(720px,100%);max-height:calc(var(--reflex-vh,900px) - 28px);
+  padding:22px 26px;overflow:auto;overscroll-behavior:contain;touch-action:pan-y;
+  border-color:#aec49b8c;
+}
+.reflex-card .challenge-title { font-size:27px;letter-spacing:2px;margin:10px 0; }
+.reflex-card .challenge-kicker { font-size:10px;letter-spacing:1.5px;gap:12px; }
+.reflex-card .challenge-description { font-size:14px;line-height:1.65; }
+.reflex-card .challenge-timer { margin:13px 0; }
+.reflex-status { display:flex;justify-content:space-between;align-items:center;gap:8px;margin:10px 0 12px;font-size:13px; }
+.reflex-status strong { color:var(--gold);font-weight:500; }
+#reflexProgress { color:var(--muted);font-variant-numeric:tabular-nums; }
+.reflex-buttons { display:grid;grid-template-columns:repeat(var(--reflex-count),minmax(0,1fr));gap:10px;direction:ltr; }
+.reflex-button { position:relative;min-width:0;min-height:82px;border:1px solid #a5c38a80;background:#314a35;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:12px 2px;
+  touch-action:manipulation;-webkit-tap-highlight-color:transparent; }
+.reflex-button b { font:500 32px/1.1 ui-monospace,monospace; }
+.reflex-button kbd { font-family:inherit;font-size:11px;line-height:1.2;color:#c3cfb4; }
+.reflex-button.done { background:#263c2b;color:#a3b893;border-color:#89a27260; }
+.reflex-button.current { box-shadow:inset 0 -3px var(--gold); }
+.reflex-check { position:absolute;right:5px;top:3px;display:none;font-size:12px; }
+.reflex-button.done .reflex-check { display:inline; }
+.reflex-button.mistake { border-color:var(--danger);box-shadow:inset 0 0 0 1px var(--danger); }
+.reflex-prompt-label { margin:18px 0 8px;font-size:12px;color:#afc69a; }
+.reflex-sequence { display:flex;gap:8px;direction:ltr; }
+.reflex-sequence span { flex:1;min-width:0;border:1px solid #9bb28744;background:#192e24;text-align:center;padding:7px 2px;position:relative; }
+.reflex-sequence b { display:block;font:500 25px/1.1 ui-monospace,monospace; }
+.reflex-sequence small { display:block;font-size:9px;opacity:.6;margin-top:3px; }
+.reflex-sequence .current { border-color:var(--gold);box-shadow:inset 0 -2px var(--gold);color:var(--gold); }
+.reflex-sequence .done { opacity:.5; }
+.reflex-sequence .done small::after { content:' ✓'; }
+.reflex-feedback { min-height:20px;font-size:12px;line-height:1.6;color:#c3d3b3;margin:12px 0 8px; }
+.reflex-bottom { display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:11px;color:var(--muted); }
+.reflex-tools { display:flex;gap:6px;flex-shrink:0; }
+.reflex-pause { border:1px solid #9fbb8c50;padding:8px 12px;min-height:40px;white-space:nowrap; }
+.reflex-card .challenge-footer { margin-top:12px;line-height:1.5;font-size:11px;letter-spacing:0; }
+/* Keep pause/recovery usable over the full-viewport puzzle on portrait phones. */
+.reflex-active #modal { inset:auto;left:50%;top:50%;width:var(--reflex-vw);height:var(--reflex-vh);
+  transform:translate(-50%,-50%) scale(var(--reflex-inverse));padding:14px; }
+.reflex-active #modal .modal-panel { width:min(740px,100%);max-height:calc(var(--reflex-vh) - 28px);padding:22px; }
+.reflex-active #resumeBanner { z-index:79;top:450px;transform:translate(-50%,-50%) scale(var(--reflex-inverse));max-width:calc(var(--reflex-vw) - 30px);white-space:nowrap;font-size:14px; }
+@media (max-width:600px) {
+  #challengeLayer.reflex-layer { padding:8px; }
+  #challengeCard.reflex-card { padding:14px 12px;max-height:calc(var(--reflex-vh) - 16px); }
+  .reflex-card .challenge-title { font-size:22px; }
+  .reflex-card .challenge-description { font-size:12px; }
+  .reflex-buttons { gap:6px; }
+  .reflex-button { min-height:72px; }
+  .reflex-button b { font-size:29px; }
+  .reflex-sequence { gap:5px; }
+  .reflex-sequence b { font-size:23px; }
+  .reflex-bottom { align-items:flex-start; }
+  .reflex-pause { min-height:44px; }
+  .reflex-active #topbar { display:none; }
+  .reflex-active .modal-top h2 { font-size:24px; }
+  .reflex-active .modal-body { font-size:14px; }
+}
+@media (max-height:500px) and (min-width:601px) {
+  #challengeCard.reflex-card { padding:10px 22px; }
+  .reflex-card .challenge-title { font-size:22px;margin:6px 0; }
+  .reflex-card .challenge-description { font-size:12px; }
+  .reflex-card .challenge-timer { margin:8px 0; }
+  .reflex-status { margin:5px 0 8px; }
+  .reflex-button { min-height:58px;padding:6px 2px; }
+  .reflex-button b { font-size:27px; }
+  .reflex-prompt-label { margin:8px 0 5px; }
+  .reflex-sequence span { padding:4px 2px; }
+  .reflex-sequence b { font-size:21px; }
+  .reflex-feedback { margin:6px 0 4px; }
+  .reflex-pause { min-height:44px;padding:6px 12px; }
+  .reflex-active #topbar { display:none; }
+  .reflex-card .challenge-footer { display:none; }
+  .reflex-card .challenge-footer { margin-top:6px; }
+}
+
+@media (max-width:359px) {
+  #challengeCard.reflex-card { padding-left:6px;padding-right:6px; }
+  .reflex-buttons { gap:4px; }
+  .reflex-card .challenge-kicker { font-size:9px;letter-spacing:.5px; }
+  .reflex-bottom { gap:4px; }
+  .reflex-pause { padding-left:8px;padding-right:8px; }
+}
   </style>
  </head>
  <body>
@@ -2510,7 +2602,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
        建议佩戴耳机　/　不含贴脸跳吓，可关闭闪烁与震动
       </span>
       <span>
-       单文件离线版　2.2
+       单文件离线版　2.3
        <br/>
        HTML / CSS / JAVASCRIPT
       </span>
@@ -2934,7 +3026,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
    'use strict';
 /*
  * 高二（2）班：最后一节课 / THE LAST CLASS
- * Single-file offline release 2.2 — all assets generated in CSS / Web Audio.
+ * Single-file offline release 2.3 — all assets generated in CSS / Web Audio.
  * Basis: supplied game design. Fictional school and characters.
  * Timing reconciliation: lesson clocks interpolate over the stated timetable;
  * breaks/lunch are skipped. Normal: 180×5+240 s; quick: 90×6 s,
@@ -2968,15 +3060,17 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
     // Difficulty changes mechanics, never the lesson calendar. A run owns its
     // difficulty; changing the menu selection cannot alter an existing save.
     const DIFFICULTIES = Object.freeze(Object.fromEntries([
-        ['easy','简单',0,.65,1.25,.80,1.35,1.50,1.30,.65,.70,1.15,1.20,80,14,35,1.8,1.1,2,24],
-        ['normal','普通',1,1,1,1,1,1,1,1,1,1,1,75,18,45,1.4,1.4,1,18],
-        ['hard','困难',2,1.22,.95,1.14,.85,.88,.88,1.20,1.15,.92,.95,70,20,50,1.3,1.5,1,18],
-        ['hell','地狱',3,1.50,.85,1.28,.72,.76,.78,1.40,1.30,.85,.90,65,22,55,1.15,1.65,1,18],
-        ['extreme','极限',4,1.80,.78,1.45,.62,.64,.68,1.65,1.50,.80,.85,60,24,60,1.0,1.8,1,18],
-        ['god','神级',5,2.25,.65,1.68,.50,.55,.58,2.0,1.80,.70,.75,55,26,60,1.0,1.8,1,18]
-    ].map(([id,label,rank,risk,recover,patrol,interval,react,answer,drain,loss,gain,reward,distance,sprint,extra,grace,hold,forgiveness,jitter]) =>
-        [id,Object.freeze({id,label,rank,risk,recover,patrol,interval,react,answer,drain,loss,gain,reward,distance,sprint,extra,grace,hold,forgiveness,jitter})])));
+        ['easy','简单',0,.65,1.25,.80,1.35,1.50,1.30,.65,.70,1.15,1.20,80,14,35,3,3.0,2,24],
+        ['normal','普通',1,1,1,1,1,1,1,1,1,1,1,75,18,45,4,4.4,1,18],
+        ['hard','困难',2,1.22,.95,1.14,.85,.88,.88,1.20,1.15,.92,.95,70,20,50,5,5.0,1,18],
+        ['hell','地狱',3,1.50,.85,1.28,.72,.76,.78,1.40,1.30,.85,.90,65,22,55,5,4.4,1,18],
+        ['extreme','极限',4,1.80,.78,1.45,.62,.64,.68,1.65,1.50,.80,.85,60,24,60,6,5.0,1,18],
+        ['god','神级',5,2.25,.65,1.68,.50,.55,.58,2.0,1.80,.70,.75,55,26,60,6,4.4,1,18]
+    ].map(([id,label,rank,risk,recover,patrol,interval,react,answer,drain,loss,gain,reward,distance,sprint,extra,reflexCount,reflexTime,forgiveness,jitter]) =>
+        [id,Object.freeze({id,label,rank,risk,recover,patrol,interval,react,answer,drain,loss,gain,reward,distance,sprint,extra,reflexCount,reflexTime,forgiveness,jitter})])));
     const DIFFICULTY_IDS = Object.keys(DIFFICULTIES);
+    const REFLEX_PREP = .6;
+    const REFLEX_PENALTIES = Object.freeze([0,.35,.40,.45,.50,.55]);
     const GOD_LIMIT = 180;
     const CLEAR_ENDINGS = ['true','cfop','unseen','homework','companion','truth'];
     const ACHIEVEMENT_IDS = ['lesson1','lessons6','hide1','hide10','reflex','note1','note5','nap30','cube100','work100','clues6','answers10','cleanClear','quickClear','noPhone',
@@ -3028,7 +3122,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
     const CLASSES = [
         { id: 'chinese', subject: '语文', teacher: '何凤临', title: '守门人', duration: 180, start: 460, end: 505, speed: .82, awareness: .5, board: '玻璃的意义，不只是让你看见外面。\n请留意：反光、脚步、真正的时间。', rule: '看反光，不必回头', note: '后门的反光会提前暴露巡查。手机显示真实时间；数学课之前，黑板旁的钟可能不可靠。', intro: [['何凤临', '今天教室似乎比平时安静。'], ['何凤临', '有些东西，不需要回头，也能看到。玻璃的意义，不只是让你看见外面。'], ['同桌', '按 1—7 切换行动，6传纸条、7睡觉。危险时，连续按三次空格：藏好、拿笔、看书。手机不是必需品。']] },
         { id: 'chemistry', subject: '化学', teacher: '李芳铃', title: '反应监视者', duration: 180, start: 520, end: 565, speed: 1.0, awareness: 1, board: '化学反应与实验现象\n镁条燃烧 → 耀眼白光 / 白色固体', rule: '安静下来时，先收起东西', note: '李芳铃突然停止讲课时会观察课桌。镁条燃烧发出耀眼白光，生成白色固体；二氧化碳使澄清石灰水变浑浊。', intro: [['李芳铃', '把与这节课无关的东西，收起来。'], ['同桌', '她走得慢，但随时会停。全班突然安静的时候，千万别拿着手机。'], ['李芳铃', '受着。']] },
-        { id: 'biology', subject: '生物', teacher: '王盈', title: '稳态观察者', duration: 180, start: 610, end: 655, speed: 1.02, awareness: 1.12, board: '神经调节 / 条件反射\n听到「不要动」：先准备，再保持静止。', rule: '不要动。真的不要动', note: '“不要动”会按难度留出准备期，再保持静止。普通为准备1.4秒、静止1.4秒，容错一次；轻微鼠标抖动、松键和长按重复不判失误。反射的结构基础是反射弧。', intro: [['王盈', '今天观察一个简单的条件反射。观察对象，是你们。'], ['同桌', '她说“不要动”后，先看准备倒计时，再停手。轻微抖动和松开按键不算失误，第一次明显动作也有缓冲。'], ['王盈', '注意，不要让习惯替你做决定。']] },
+        { id: 'biology', subject: '生物', teacher: '王盈', title: '稳态观察者', duration: 180, start: 610, end: 655, speed: 1.02, awareness: 1.12, board: '神经调节 / 条件反射\n看清下方顺序，再点对应数字。', rule: '看提示，按顺序，不抢按', note: '条件反射改为顺序挑战：简单逐次按三次空格；其余难度为4/5/5/6/6个随机数字按钮。看下方数字提示，触屏点对应数字，键盘按该按钮从左到右的位置键1—6。统一准备0.6秒，再开始操作；一次误按只扣少量时间，不重置步骤。反射的结构基础是反射弧。', intro: [['王盈', '今天观察一个简单的条件反射。观察对象，是你们。'], ['同桌', '先看下方提示，再点上方同样的数字。键盘按的是按钮的位置，不是它的大字。简单难度只要逐次按三次空格。'], ['王盈', '注意，不要让习惯替你做决定。']] },
         { id: 'physics', subject: '物理', teacher: '戴贝贝', title: '相对运动', duration: 180, start: 840, end: 885, speed: 1.36, awareness: 1.3, board: '相对运动 / 惯性\n停止的脚步，不代表危险已经离开。', rule: '脚步停后，再等三秒', note: '观察老师时她停止移动，低头则继续。离开座位后的 3 秒仍危险，不要立刻打开手机。逃生时听见脚步停止，也要静止等待 3 秒。', intro: [['戴贝贝', '运动状态，可不是这么容易改变的。'], ['同桌', '选“观察 → 老师”就能盯住她。可你低头，她就会动。'], ['戴贝贝', '这么急？我离开之后，最好也再等三秒。']] },
         { id: 'english', subject: '英语', teacher: '尹纱纱', title: 'EXTRAORDINARY', duration: 180, start: 900, end: 945, speed: 1.5, awareness: 1.35, board: 'GOOD → EXTRAORDINARY\nextraordinary / 非凡的，不寻常的', rule: '不是 Good，是 Extraordinary', note: '记住 Extraordinary。强化模式按难度持续35—60秒（普通45秒）：移动×1.35、怀疑增长×1.25，隐藏限时缩短15%。however 表示“然而”；过去完成时使用 had done。', intro: [['尹纱纱', '说 Good 太 low。说 extraordinary。高级。'], ['尹纱纱', '这才是江城实验中学的水平。'], ['同桌', '她为什么说了另一所学校的名字……先记住那个单词。']] },
         { id: 'math', subject: '数学', teacher: '郭知昭', title: '1 / 56', duration: 240, start: 980, end: 1050, speed: 1.7, awareness: 1.7, board: '1 / 56\n每一个人的思考能力……', rule: '17:30 以前，不离开', note: 'f(x)=x² 时，f′(x)=2x。1/56 机关需要按题意计算编号，不是猜“1”。听课满 20 秒有短暂提示。班主任的第一遍下课铃是假的。', intro: [['郭知昭', '你们不要以为来到这里是屈才了。'], ['郭知昭', '你们每一个人的思考能力……都不及我的 1/56。'], ['同桌', '最后一节。记住：17:30 以前，不要相信任何一次下课铃。']] }
@@ -3059,7 +3153,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
     const EVIDENCE = [
         {target:'door', where:'后门', title:'多出来的倒影', text:'玻璃里有第57张课桌，真实的教室里却没有。'},
         {target:'board', where:'讲台', title:'擦不掉的归字', text:'化学公式被擦掉后，粉笔灰在黑板上留下了一个「归」字。'},
-        {target:'mate', where:'同桌', title:'重复的两秒', text:'同桌的笔记写着：我们不是第一次听到「不要动」。'},
+        {target:'mate', where:'同桌', title:'重复的顺序', text:'同桌的笔记写着：数字每次换位，提示却总在下方。我们不是第一次做这道题。'},
         {target:'teacher', where:'老师', title:'逆行的脚步', text:'老师停住时，玻璃中的脚步仍然向昨天走去。'},
         {target:'window', where:'窗外', title:'没有落下的太阳', text:'钟在走，窗外的太阳却停在同一个位置。玻璃里才有晚霞。'},
         {target:'board', where:'讲台', title:'被划掉的名字', text:'1/56下方有个被划掉的名字。那是上一位守门人。'}
@@ -3122,18 +3216,15 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         const r=st.runStats;
         assertValid(r&&['hides','cleanReflex'].every(k=>num(r[k])&&Number.isInteger(r[k])),'成就计数无效');
         assertValid(Array.isArray(r.completedLessons)&&r.completedLessons.length<=6&&new Set(r.completedLessons).size===r.completedLessons.length&&r.completedLessons.every(x=>Number.isInteger(x)&&x>=0&&x<6),'完成课程记录无效');
-        if(c?.type==='freeze') {
-            assertValid(num(c.grace,0,200)&&num(c.baseGrace,0,5)&&num(c.freezeFor,.1,5),'静止计时无效');
-            assertValid(Number.isInteger(c.allowance)&&c.allowance>=1&&c.allowance<=2&&Number.isInteger(c.slips)&&c.slips>=0&&c.slips<=c.allowance&&num(c.lastMotionAt,-100,200),'静止容错记录无效');
-            assertValid(c.motionAnchor===null||(c.motionAnchor&&num(c.motionAnchor.x,-1e7,1e7)&&num(c.motionAnchor.y,-1e7,1e7)),'静止指针记录无效');
-        }
+        if(c?.type==='freeze') validateReflexChallenge(st,c,num);
     }
+
     const ACHIEVEMENTS = [
         {id:'lesson1',name:'第一声真铃',desc:'在一个周目中完成第一节课。',group:'课堂',target:1},
         {id:'lessons6',name:'熬到17:30',desc:'在一个周目中完成全部六节课。',group:'课堂',target:6},
         {id:'hide1',name:'手比影子快',desc:'成功完成一次正式三步隐藏；教学演练不计。',group:'课堂',target:1},
         {id:'hide10',name:'课桌生存专家',desc:'在一个周目中成功完成10次正式三步隐藏。',group:'课堂',target:10},
-        {id:'reflex',name:'稳住呼吸',desc:'一次条件反射中未消耗容错，成功保持静止。',group:'课堂',target:1},
+        {id:'reflex',name:'反应有序',desc:'零误按完成一次条件反射；简单难度三次空格也计入。旧版“稳住呼吸”解锁记录保留。',group:'课堂',target:1},
         {id:'note1',name:'纸角上的朋友',desc:'成功收到第一张回条；中断不计。',group:'课堂',target:1},
         {id:'note5',name:'纸条通信员',desc:'在一个周目中成功收到5张回条。',group:'课堂',target:5},
         {id:'nap30',name:'课间梦游者',desc:'在一个周目中实际小憩累计30秒；暂停和离线不计。',group:'课堂',target:30},
@@ -3210,10 +3301,10 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         const r=DIFFICULTIES[save.settings.difficulty];
         const tag=['更多反应时间，风险较低。','调整后的标准生存体验。','巡逻更快，错误代价更大。','时间紧，必须管理资源。','仍有出口，操作窗口很短。','无法通关。180秒必败挑战。'];
         return `<p>标准 / 快速决定流程长度，难度决定规则强度。选择只用于新的一天。${S?.screen==='game'?'当前周目固定为<b>'+rules().label+'</b>，读档不会改变。':''}</p>
-        <div class="difficulty-grid">${Object.values(DIFFICULTIES).map(d=>`<button class="difficulty-card ${d.id===r.id?'active':''} ${d.id==='god'?'god':''}" data-difficulty="${d.id}" aria-pressed="${d.id===r.id}"><strong>${d.label}${d.id===r.id?' · 已选':''}</strong><small>${tag[d.rank]}<br>怀疑 ×${d.risk} / 巡逻 ×${d.patrol}<br>反应 ×${d.react} / 答题 ×${d.answer}</small></button>`).join('')}</div>
-        <div class="difficulty-details"><span>普通巡视反应<b>${(2.4*r.react).toFixed(2)}秒</b></span><span>静止准备 / 保持<b>${r.grace} / ${r.hold}秒</b></span><span>静止容错<b>${r.forgiveness}次</b></span><span>恢复 / 作业效率<b>×${r.reward}</b></span></div>
+        <div class="difficulty-grid">${Object.values(DIFFICULTIES).map(d=>`<button class="difficulty-card ${d.id===r.id?'active':''} ${d.id==='god'?'god':''}" data-difficulty="${d.id}" aria-pressed="${d.id===r.id}"><strong>${d.label}${d.id===r.id?' · 已选':''}</strong><small>${tag[d.rank]}<br>怀疑 ×${d.risk} / 巡逻 ×${d.patrol}<br>隐藏 ×${d.react} / 答题 ×${d.answer}<br>反射 ${d.id==='easy'?'3次空格':d.reflexCount+'个数字'} · 操作${d.reflexTime.toFixed(1)}秒</small></button>`).join('')}</div>
+        <div class="difficulty-details"><span>普通巡视反应<b>${(2.4*r.react).toFixed(2)}秒</b></span><span>条件反射<b>${r.id==='easy'?'3次空格':r.reflexCount+'个数字'}</b></span><span>准备 / 操作<b>${REFLEX_PREP.toFixed(1)} / ${r.reflexTime.toFixed(1)}秒</b></span><span>恢复 / 作业效率<b>×${r.reward}</b></span></div>
         <div class="modal-actions"><button class="solid-btn" data-modal-action="back">使用此选择，返回</button></div>
-        <p class="${r.id==='god'?'god-notice':'small'}">${r.id==='god'?'神级明确不可通关：180秒有效游玩后闭环终结，所有非失败出口均被封锁。可保存、重试及获得生存成就。':'本局难度不会随选择改变。数学巡视基础时间较短；英语强化另缩短15%。六档均保留中断保存和检查点重试。'}</p>`;
+        <p class="${r.id==='god'?'god-notice':'small'}">${r.id==='god'?'神级明确不可通关：180秒有效游玩后闭环终结，所有非失败出口均被封锁。可保存、重试及获得生存成就。':'本局难度不会随选择改变。数字反射另有0.6秒准备，不受低专注或英语强化再次缩时；一次误按扣0.35—0.55秒。数学巡视基础时间较短；英语强化另缩短隐藏时间15%。六档均保留中断保存和检查点重试。'}</p>`;
     }
     function renderAchievements() {
         const current=achievementMetrics(S?.endingId),count=Object.keys(save.achievements).length;
@@ -3672,6 +3763,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         const st=snap.state, c=snap.challenge, d=snap.dialogue, scriptData=snap.script;
         migrateDeskState(st);
         migrateBalanceSnapshot(snap);
+        migrateReflexSnapshot(snap);
         const num=(n,lo=0,hi=10000000)=>typeof n==='number' && Number.isFinite(n) && n>=lo && n<=hi;
         assertValid(st && st.screen==='game' && ['INTRO','CLASS','BREAK','COMPLETE','ESCAPE'].includes(st.phase),'进度不在可恢复阶段');
         assertValid(['normal','quick'].includes(st.mode) && Number.isInteger(st.classIndex) && st.classIndex>=0 && st.classIndex<6,'课程信息无效');
@@ -3880,8 +3972,9 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
     function startRecoveryGrace() {
         if(S?.screen!=='game') return;
         recoveryGrace=2;
-        if(challenge&&['freeze','wait'].includes(challenge.type)) challenge.motionAnchor=null;
+        if(challenge?.type==='wait') challenge.motionAnchor=null;
         $('resumeBanner').hidden=false;$('resumeBanner').textContent='准备继续 · 2.0 秒';
+        if(challenge?.type==='freeze')renderFreezeState();
         lastFrame=performance.now();lastPointer=null;
         initAudio();
     }
@@ -4112,7 +4205,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         $('escapeScene').hidden = true; $('escapeHud').hidden = true;
         enterClass(0);
     }
-    function clearTransient() { $('stage').classList.remove('is-sleeping'); recoveryGrace = 0; pendingSave = false; saveTicket++; $('resumeBanner').hidden = true; $('dialogue').classList.remove('dialogue-blocking'); $$('.student').forEach(e => e.classList.remove('is-still')); challenge = null; script = null; eventQueue = []; modal = null; $('modal').hidden = true; $('challengeLayer').hidden = true; for (const n of notices)
+    function clearTransient() { $('stage').classList.remove('is-sleeping','reflex-active'); $('challengeLayer').classList.remove('reflex-layer'); $('challengeCard').classList.remove('reflex-card'); $('rotateHint').hidden=false; recoveryGrace = 0; pendingSave = false; saveTicket++; $('resumeBanner').hidden = true; $('dialogue').classList.remove('dialogue-blocking'); $$('.student').forEach(e => e.classList.remove('is-still')); challenge = null; script = null; eventQueue = []; modal = null; $('modal').hidden = true; $('challengeLayer').hidden = true; for (const n of notices)
         n.el.remove(); notices = []; $('stage').classList.remove('extraordinary', 'low-focus', 'critical', 'shake', 'flicker'); $$('.action').forEach(e => e.style.order = ''); $('rearDoor').classList.remove('moving', 'watched'); $('doorShadow').style.opacity = '0'; $('extraBadge').hidden = true; phoneRenderKey = ''; ambient = { text: '', until: 0 }; }
     function enterClass(index, fromCheckpoint = false) {
         cancelDeskActivity('lesson');
@@ -4224,7 +4317,8 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
     function safeHide() {
         if(!S||S.screen!=='game'||modal||script||recoveryGrace>0) return;
         if(challenge) {
-            if(challenge.type==='hide') resolveHide(challenge.step);
+            if(challenge.type==='freeze'&&challenge.mode==='space') reflexInput(challenge.step);
+            else if(challenge.type==='hide') resolveHide(challenge.step);
             else if(challenge.type==='sprint') sprintTap();
             return;
         }
@@ -4343,11 +4437,12 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         requestAutoSave();
         return true;
     }
-    function closeChallenge() { const old = challenge; challenge = null; $('challengeLayer').hidden = true; updateActionUI(); requestAutoSave(); return old; }
+    function closeChallenge() { const old = challenge; challenge = null; syncReflexLayout(); $('challengeLayer').hidden = true; updateActionUI(); requestAutoSave(); return old; }
     function renderChallenge() {
         if (!challenge)
             return;
         const c = challenge;
+        syncReflexLayout();
         const timer = c.remaining != null ? '<div class="challenge-timer"><i id="challengeTimer"></i></div>' : '';
         let body = '', footer = '';
         if (c.type === 'hide') {
@@ -4355,8 +4450,8 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
             footer = '连续按三次空格，或依次点击三个按钮。按住不算。';
         }
         else if (c.type === 'freeze') {
-            body = '<div class="freeze-icon" id="freezeState">松开手</div><div class="freeze-instruction" id="freezeInstruction">准备中</div>';
-            footer = '轻微抖动、松键、长按重复及系统控制不计失误；明显动作会消耗容错。';
+            body = renderReflexBody(c);
+            footer = '提示从左到右读；完成项打勾。位置不会中途变化，读档也不会重抽。';
         }
         else if (c.type === 'wait') {
             body = '<div class="freeze-icon" id="waitState">静候</div><div class="freeze-instruction">脚步刚刚停下。手离开所有操作，等待三秒。</div>';
@@ -4447,33 +4542,128 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         return; const c = closeChallenge(), ok = index === c.correct; if (!recordAnswer(ok, c.math))
         return; sound(ok ? 'click' : 'warn'); toast(ok ? '回答正确 · 怀疑下降' : (index === null ? '回答超时。' : '回答错误。'), !ok); say(c.math ? '郭知昭' : (S.phase === 'ESCAPE' ? '你' : CLASSES[S.classIndex].teacher), ok ? c.explain : '记住：' + c.explain); if (c.onDone)
         dispatchContinuation(c.onDone, ok); }
+    // v2.3: "freeze" is kept ONLY as a serialization/event identifier.
+    // Biology is now a permutation sequence. Physics alone still uses "wait".
+    function createReflexChallenge(st,onDone=null,random=Math.random) {
+        const r=rules(st), count=r.reflexCount;
+        const permutation=()=>{
+            const a=Array.from({length:count},(_,i)=>i+1);
+            for(let i=a.length-1;i>0;i--) {
+                const j=Math.floor(random()*(i+1));[a[i],a[j]]=[a[j],a[i]];
+            }
+            return a;
+        };
+        const easy=r.id==='easy', window=r.reflexTime;
+        return {type:'freeze',reflexVersion:1,mode:easy?'space':'sequence',count,
+            layout:easy?[1,2,3]:permutation(),sequence:easy?[1,2,3]:permutation(),
+            step:0,slips:0,allowance:easy?0:1,penalty:REFLEX_PENALTIES[r.rank],
+            grace:REFLEX_PREP,window,elapsed:0,remaining:REFLEX_PREP+window,total:REFLEX_PREP+window,
+            lastSlot:-1,feedback:'',feedbackUntil:0,
+            title:easy?'抬头。拿笔。看书。':'看清顺序，再行动。',
+            description:easy?'逐次按三次空格，或依次点击三个按钮。按住不算。':'下方提示数字顺序：触屏点相同数字；键盘按按钮左起的位置键。',
+            kicker:st.phase==='ESCAPE'?'MEMORY / 生物':'CONDITIONED REFLEX / 条件反射',onDone};
+    }
+    function migrateReflexSnapshot(snap) {
+        const c=snap.challenge;
+        if(c?.type!=='freeze'||Object.hasOwn(c,'reflexVersion')) return;
+        // An old stillness event cannot be meaningfully resumed as a sequence.
+        // Grant this ONE converted task a full window. Seed from the snapshot,
+        // so repeated migration of the same legacy backup never rerolls it.
+        let seed=parseInt(checksum(String(snap.id)+'|'+snap.state.runId),16)>>>0;
+        const random=()=>{seed=(Math.imul(seed,1664525)+1013904223)>>>0;return seed/4294967296;};
+        const next=createReflexChallenge(snap.state,c.onDone??null,random);
+        for(const k of Object.keys(c)) delete c[k];
+        Object.assign(c,next);
+    }
+    function validateReflexChallenge(st,c,num) {
+        const r=rules(st),easy=r.id==='easy';
+        assertValid(c.reflexVersion===1&&c.mode===(easy?'space':'sequence')&&c.count===r.reflexCount,'反射模式或按钮数无效');
+        const permutation=a=>Array.isArray(a)&&a.length===c.count&&new Set(a).size===c.count&&a.every(n=>Number.isInteger(n)&&n>=1&&n<=c.count);
+        assertValid(permutation(c.layout)&&permutation(c.sequence),'反射排列或提示无效');
+        if(easy) assertValid(c.layout.join('')==='123'&&c.sequence.join('')==='123','简单反射步骤无效');
+        assertValid(Number.isInteger(c.step)&&c.step>=0&&c.step<c.count,'反射步骤无效');
+        assertValid(c.grace===REFLEX_PREP&&c.window===r.reflexTime&&Math.abs(c.total-c.grace-c.window)<1e-7,'反射限时与难度不符');
+        assertValid(c.allowance===(easy?0:1)&&Number.isInteger(c.slips)&&c.slips>=0&&c.slips<=c.allowance&&c.penalty===REFLEX_PENALTIES[r.rank],'反射容错记录无效');
+        assertValid(Number.isInteger(c.lastSlot)&&c.lastSlot>=-1&&c.lastSlot<c.count&&typeof c.feedback==='string'&&c.feedback.length<=180&&num(c.feedbackUntil,0,200),'反射反馈无效');
+    }
     function startFreeze(onDone=null) {
-        const r=rules();
-        if(!beginChallenge({type:'freeze',remaining:r.grace+r.hold,grace:r.grace,baseGrace:r.grace,freezeFor:r.hold,
-            slips:0,allowance:r.forgiveness,lastMotionAt:-10,motionAnchor:null,title:'不要动。',description:'先松开手，准备结束后保持静止。',
-            kicker:S.phase==='ESCAPE'?'MEMORY / 生物':'CONDITIONED REFLEX / 条件反射',onDone})) return;
+        if(!S||!beginChallenge(createReflexChallenge(S,onDone))) return;
         if(S.phase==='CLASS') S.reflexNextAt=S.t+75;
-        sound('warn',.5);caption('教室安静了。你有时间松开手。',3);
+        sound('warn',.5);
+        caption(rules().id==='easy'?'先看准备提示，再逐次按三次空格。':'数字换了位置。先看下方顺序。',2.8);
+    }
+    function renderReflexBody(c) {
+        const easy=c.mode==='space';
+        return `<div class="reflex-status"><strong id="reflexState"></strong><span id="reflexProgress"></span></div>
+            <div class="reflex-buttons" style="--reflex-count:${c.count}" role="group" aria-label="${easy?'简单反射三个步骤':'随机数字按钮；小字为键盘位置'}">${c.layout.map((n,i)=>
+                `<button type="button" class="reflex-button" data-reflex-slot="${i}" aria-label="${easy?'步骤'+(i+1):'数字'+n+'，左起第'+(i+1)+'位，按键'+(i+1)}"><b>${easy?['抬头','拿笔','看书'][i]:n}</b><kbd>${easy?'SPACE':'键 '+(i+1)}</kbd><span class="reflex-check" aria-hidden="true">✓</span></button>`).join('')}</div>
+            <div class="reflex-prompt-label">${easy?'按顺序完成 · SPACE × 3':'下方提示 · 依次找到这些数字'}</div>
+            <div class="reflex-sequence" role="list" aria-label="${easy?'三个空格':c.sequence.join('，')}">${c.sequence.map((n,i)=>`<span role="listitem" data-reflex-prompt="${i}"><b>${easy?'空格':n}</b><small>${i+1}</small></span>`).join('')}</div>
+            <p id="reflexFeedback" class="reflex-feedback" aria-live="polite"></p>
+            <div class="reflex-bottom"><span id="reflexAllowance"></span><span class="reflex-tools"><button type="button" class="reflex-pause" data-reflex-fullscreen="1">全屏</button><button type="button" class="reflex-pause" data-reflex-pause="1">暂停 / Esc</button></span></div>`;
+    }
+    function syncReflexLayout() {
+        const active=challenge?.type==='freeze';
+        $('stage').classList.toggle('reflex-active',active);
+        $('rotateHint').hidden=active;
+        $('challengeLayer').classList.toggle('reflex-layer',active);
+        $('challengeCard').classList.toggle('reflex-card',active);
     }
     function renderFreezeState() {
-        const c=challenge;if(c?.type!=='freeze'||!$('freezeState'))return;
-        const preparing=c.elapsed<c.grace;
-        $('freezeState').textContent=preparing?'松开手':'保持静止';
-        $('freezeInstruction').textContent=(preparing?`准备 ${(c.grace-c.elapsed).toFixed(1)} 秒 · 松键不算失误`:`保持静止 · ${c.remaining.toFixed(1)} 秒`)+
-            `\n剩余容错 ${c.allowance-c.slips} 次 · 轻微抖动不计 · 明显动作后需重新静止`;
+        const c=challenge;if(c?.type!=='freeze'||!$('reflexState'))return;
+        const preparing=c.elapsed<c.grace,blocked=preparing||recoveryGrace>0||!!modal;
+        $('reflexState').textContent=recoveryGrace>0?'恢复准备中':preparing?`准备 ${(c.grace-c.elapsed).toFixed(1)} 秒`:'按下方提示操作';
+        $('reflexProgress').textContent=`${c.step} / ${c.count} 已完成`;
+        $$('[data-reflex-slot]').forEach((el,i)=>{
+            const done=c.sequence.slice(0,c.step).includes(c.layout[i]);
+            el.disabled=blocked||(c.mode==='space'&&i!==c.step);
+            el.classList.toggle('done',done);
+            el.classList.toggle('current',c.mode==='space'&&i===c.step&&!preparing);
+            el.classList.toggle('mistake',c.lastSlot===i&&c.feedbackUntil>c.elapsed);
+        });
+        $$('[data-reflex-prompt]').forEach((el,i)=>{
+            el.classList.toggle('done',i<c.step);el.classList.toggle('current',i===c.step);
+            if(i===c.step)el.setAttribute('aria-current','step');else el.removeAttribute('aria-current');
+        });
+        const feedback=c.feedbackUntil>c.elapsed?c.feedback:preparing?'准备期不接收输入，不扣容错。':
+            c.mode==='space'?'按一下、松开，再按下一下。':'触屏看大数字；键盘看小字“键 1—'+c.count+'”。';
+        if($('reflexFeedback').textContent!==feedback) $('reflexFeedback').textContent=feedback;
+        $('reflexAllowance').textContent=c.mode==='space'?'移动鼠标不判错 · 按住不连发':`剩余容错 ${c.allowance-c.slips} 次 · 误按扣 ${c.penalty.toFixed(2)} 秒`;
+        const actionRemaining=Math.min(c.window,c.remaining);
+        if($('challengeTimer')) $('challengeTimer').style.width=(preparing?100:Math.max(0,actionRemaining/c.window)*100)+'%';
+        if($('challengeSeconds')) $('challengeSeconds').textContent=preparing?`准备 ${(c.grace-c.elapsed).toFixed(1)}s`:`${actionRemaining.toFixed(1)}s`;
+    }
+    function reflexInput(slot) {
+        const c=challenge;
+        if(c?.type!=='freeze'||modal||script||recoveryGrace>0||c.elapsed<c.grace||!S||S.screen!=='game')return false;
+        if(!Number.isInteger(slot)||slot<0||slot>=c.count)return false;
+        if(c.remaining<=0){finishFreeze(false);return false;}
+        if(c.layout[slot]!==c.sequence[c.step]) {
+            if(c.slips>=c.allowance){finishFreeze(false);return false;}
+            c.slips++;c.remaining=Math.max(0,c.remaining-c.penalty);
+            c.lastSlot=slot;c.feedback=`按错了 · 扣 ${c.penalty.toFixed(2)} 秒，已完成步骤保留`;c.feedbackUntil=c.elapsed+1.1;
+            sound('paper');requestAutoSave();
+            if(c.remaining<=0)finishFreeze(false);else renderFreezeState();
+            return false;
+        }
+        c.step++;c.lastSlot=-1;c.feedback='';c.feedbackUntil=0;
+        sound('click');requestAutoSave();
+        if(c.step===c.count)finishFreeze(true);else renderFreezeState();
+        return true;
     }
     function finishFreeze(ok) {
         if(!challenge||!['freeze','wait'].includes(challenge.type)) return;
-        const c=closeChallenge();
-        if(c.type==='freeze'&&ok&&(c.slips||0)===0) {S.runStats.cleanReflex++;checkAchievements();}
+        const c=closeChallenge(),sequence=c.type==='freeze';
+        if(sequence&&ok&&(c.slips||0)===0) {S.runStats.cleanReflex++;checkAchievements();}
         if(S.phase==='CLASS') {
-            if(ok) {addSuspicion(-2);S.focus=clamp(S.focus+3*rules().reward);toast('你保持了静止。');}
-            else {addSuspicion(c.type==='freeze'?8:12);toast('她注意到了你的动作 · 已降低单次惩罚。',true);}
-        } else toast(ok?'脚步重新远去。':'你的动作暴露了位置。',!ok);
+            // Time in a number puzzle is not a chance for the teacher to chain
+            // an unavoidable close-range attack on its final click.
+            if(sequence){S.dangerCooldown=Math.max(S.dangerCooldown,S.t+2);S.teacher.hold=Math.max(S.teacher.hold,S.t+2);}
+            if(ok) {addSuspicion(-2);S.focus=clamp(S.focus+3*rules().reward);toast(sequence?'顺序正确 · 反应完成。':'你保持了静止。');}
+            else {addSuspicion(sequence?8:12);toast(sequence?'顺序错误或超时 · 怀疑上升。':'她注意到了你的动作。',true);}
+        } else toast(sequence?(ok?'顺序正确，脚步重新远去。':'反应失败，位置暴露。'):(ok?'脚步重新远去。':'你的动作暴露了位置。'),!ok);
         if(S.screen==='game'&&c.onDone) {
-            // Biology recall also receives a smaller failure loss than a
-            // wrong route; physics keeps its full three-second wait rule.
-            if(c.type==='freeze'&&!ok&&c.onDone==='escapeMemoryDone') {
+            if(sequence&&!ok&&c.onDone==='escapeMemoryDone') {
                 if(changeDistance(-10)) nextEscapeNode();
             } else dispatchContinuation(c.onDone,ok);
         }
@@ -4481,33 +4671,23 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
     }
     function interactionMotion(event) {
         const c=challenge;
-        if(!c||modal||script||!S||recoveryGrace>0||!['freeze','wait'].includes(c.type)) return;
+        // Biology requires action; pointer movement must never fail it.
+        // The distinct physics wait is intentionally unchanged.
+        if(!c||modal||script||!S||recoveryGrace>0||c.type!=='wait') return;
         const target=event.target instanceof Element?event.target:null;
         if(event.type!=='keydown'&&target?.closest('.utility,#modal,#resumeBanner')) {c.motionAnchor=null;return;}
-        // Key releases and pointer releases are the act of stopping, not new
-        // activity. Ignore OS shortcuts, IME composition, and autorepeat.
         if(['keyup','pointerup','touchend'].includes(event.type)||event.repeat||event.isComposing||event.ctrlKey||event.metaKey||event.altKey) return;
         if(event.type==='keydown'&&(['Escape','Alt','Control','Meta','Shift','CapsLock','Tab','F11','F12'].includes(event.key)||['KeyN','KeyM','Escape','Tab'].includes(normalizedKeyCode(event)))) return;
-        const grace=c.type==='freeze'?c.grace:.35;
-        if(c.elapsed<grace) {c.motionAnchor=null;return;}
+        if(c.elapsed<.35) {c.motionAnchor=null;return;}
         if(event.type==='pointermove') {
             const point={x:event.clientX,y:event.clientY};
             if(!Number.isFinite(point.x)||!Number.isFinite(point.y)) return;
             if(!c.motionAnchor) {c.motionAnchor=point;return;}
             const scale=Math.min((window.visualViewport?.width||innerWidth)/1600,(window.visualViewport?.height||innerHeight)/900);
-            const threshold=Math.max(8,rules().jitter*scale);
-            if(Math.hypot(point.x-c.motionAnchor.x,point.y-c.motionAnchor.y)<threshold) return;
+            if(Math.hypot(point.x-c.motionAnchor.x,point.y-c.motionAnchor.y)<Math.max(8,rules().jitter*scale)) return;
             c.motionAnchor=point;
         } else if(event.type==='wheel'&&Math.abs(event.deltaX||0)+Math.abs(event.deltaY||0)<20) return;
-        if(c.type==='wait') {finishFreeze(false);return;}
-        if(c.elapsed-c.lastMotionAt<.35) return;
-        c.lastMotionAt=c.elapsed;
-        if(c.slips<c.allowance) {
-            c.slips++;
-            c.grace=c.elapsed+.35;c.remaining=c.freezeFor+.35;c.total=c.elapsed+c.remaining;c.motionAnchor=null;
-            renderFreezeState();sound('paper');toast('动作已缓冲 · 再松开手，重新保持静止。',false,2.5);
-            requestAutoSave();
-        } else finishFreeze(false);
+        finishFreeze(false);
     }
     function startGrid(onDone = null) { const variants = [{ q: '找到编号：7 × 8 − 13 = ？', n: 43, e: '7×8−13=43。正确编号是43。' }, { q: 'f(x)=x²。找到编号 f′(7)。', n: 14, e: 'f′(x)=2x，f′(7)=14。' }, { q: '找到编号：56 ÷ 2 + 7 = ？', n: 35, e: '56÷2+7=35。正确编号是35。' }]; const v = pick(variants); beginChallenge({ type: 'grid', remaining: Math.max(6,(S.phase === 'ESCAPE' ? 14 : 14 + S.focus * .03)*rules().answer), hintDuration:1.8*rules().answer, title: '1 / 56', description: v.q, kicker: S.phase === 'ESCAPE' ? 'FINAL LOCK / 最后一道编号锁' : 'BOSS / 思考能力', numbers: shuffle(Array.from({ length: 56 }, (_, i) => i + 1)), correct: v.n, explain: v.e, math: true, hint: S.listenSeconds >= 20, onDone }); sound('warn'); }
     function startFakeBell() { sound('bell'); fx('flicker'); beginChallenge({ type: 'fakeBell', remaining: 16, title: '下课了。是吗？', kicker: 'THE BELL / 第一遍铃声', description: "走廊里响起放学铃。没有一个同学起身。\n郭知昭仍然站在黑板前，静静看着你。", choices: ['离开教室', '继续坐着'] }); say('广播', '下课时间到了。请同学们……离开。'); }
@@ -4572,9 +4752,9 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
             $('challengeCard').querySelector('.challenge-description').textContent = `距离校门 ${m} 米。白光就在前面。`;
         }
         const bar = $('challengeTimer');
-        if (bar)
+        if (bar && c.type!=='freeze')
             bar.style.width = `${clamp(c.remaining / c.total, 0, 1) * 100}%`;
-        if ($('challengeSeconds'))
+        if ($('challengeSeconds') && c.type!=='freeze')
             $('challengeSeconds').textContent = c.remaining != null ? c.remaining.toFixed(1) + 's' : '';
         if (c.remaining !== 0)
             return;
@@ -4587,6 +4767,8 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
                 finishQuestion(null);
                 break;
             case 'freeze':
+                finishFreeze(false);
+                break;
             case 'wait':
                 finishFreeze(true);
                 break;
@@ -4921,7 +5103,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
                 askQuestion('chinese', 0, done);
                 break;
             case 1:
-                playScript([['何凤临', '最后一道题，没有标准答案。'], ['何凤临', '走侧楼梯。记住，听到那句话就停下。'], ['王盈', '不要动。']], 'escapeFreeze');
+                playScript([['何凤临', '最后一道题，没有标准答案。'], ['何凤临', '走侧楼梯。记住，先看提示，再按顺序。'], ['王盈', '不要让习惯替你做决定。']], 'escapeFreeze');
                 break;
             case 2:
                 say('李芳铃', '受着。');
@@ -4956,7 +5138,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         closeChallenge();
         finishEnding(S.companion ? 'companion' : 'true');
     } }
-    function updateEscape(dt) { S.survival += dt; if (!changeDistance(-.60 * rules().drain / rules().loss * dt))
+    function updateEscape(dt) { S.survival += dt; const reflex=challenge?.type==='freeze'; const exposure=reflex ? Math.max(0,(challenge.elapsed+dt)-Math.max(challenge.elapsed,challenge.grace))*.5 : dt; if (!changeDistance(-.60 * rules().drain / rules().loss * exposure))
         return; S.heartTimer -= dt; if (S.heartTimer <= 0) {
         S.heartTimer = S.distance < 30 ? .6 : 1.15;
         sound('heart', .65);
@@ -5044,7 +5226,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
             html = `<p class="small">声音与视觉设置立即生效。流程速度和难度只影响新的一天；读档始终使用记录中的难度。</p><div class="modal-actions"><button class="outline-btn" data-modal-action="difficulty">下一局难度：${DIFFICULTIES[opts.difficulty].label}</button><button class="outline-btn" data-modal-action="achievements">成就档案</button></div><label class="settings-row"><span>音量<small>铃声、脚步、心跳、门声与操作音</small></span><span class="settings-control"><input aria-label="音量" type="range" min="0" max="100" value="${Math.round(opts.volume * 100)}" data-setting="volume"><output id="volumeOutput">${Math.round(opts.volume * 100)}%</output></span></label><label class="settings-row"><span>恐怖闪烁<small>仅事件触发的短暂明暗变化；敏感者建议关闭</small></span><input type="checkbox" data-setting="flicker" ${opts.flicker ? 'checked' : ''}></label><label class="settings-row"><span>屏幕震动<small>关闭后保留文字、阴影与声音提示</small></span><input type="checkbox" data-setting="shake" ${opts.shake ? 'checked' : ''}></label><label class="settings-row"><span>文字速度<small>点击对话框或按 Enter 可立即显示全文</small></span><span class="settings-control"><input aria-label="文字速度" type="range" min="12" max="90" value="${opts.textSpeed}" data-setting="textSpeed"><output id="textSpeedOutput">${opts.textSpeed}字/s</output></span></label><label class="settings-row"><span>剧情自动继续<small>文字显示完毕后留出阅读时间再继续</small></span><input type="checkbox" data-setting="auto" ${opts.auto ? 'checked' : ''}></label><label class="settings-row"><span>默认快速模式<small>新周目每节课 90 秒；两种模式都支持记录点重试</small></span><input type="checkbox" data-setting="quick" ${opts.quick ? 'checked' : ''}></label><label class="settings-row"><span>显示未解锁结局的线索<small>可选剧透：在结局档案中显示达成条件</small></span><input type="checkbox" data-setting="endingHints" ${opts.endingHints ? 'checked' : ''}></label><div class="modal-actions"><button class="outline-btn" data-modal-action="fullscreen">⛶ 切换全屏</button><button class="outline-btn" data-modal-action="reset" ${S?.screen === 'game' ? 'disabled' : ''}>清除本地存档</button></div><p class="small" style="margin-top:14px">Alt + Enter 切换全屏。全屏受浏览器权限控制；被拒绝时可使用浏览器的 F11。${S?.screen === 'game' ? '清除记录只能在主菜单或结局页进行。' : ''}</p>`;
         }
         else if (kind === 'help') {
-            html = `<p>你是江城大学附属中学高二（2）班的一名学生。撑过六节课，在真正的 <b>17:30</b> 放学，再走出教学楼。游戏中的学校、人物与情节均为虚构。</p><h3>你的课桌</h3><p><span class="help-key">1</span>听课降低怀疑，但无聊会上升。<span class="help-key">2</span>写其他作业。<span class="help-key">3</span>玩魔方，以 <b>R U R′ U′</b> 完成公式；Shift + 字母表示逆转，完成一组后按难度归位2.8—3.8秒，可缓存下一组输入。<span class="help-key">4</span>手机：聊天、视频、小游戏、真实时间。<span class="help-key">5</span>观察讲台、老师、后门、窗外与同桌。作业和魔方不是普通通关的强制目标。</p><h3>先活下来</h3><p>平时 <span class="help-key">Space</span> 立即收好物品。危险事件出现时，连续三次空格或依次点击「藏起来 → 拿笔 → 看书」。不要按住空格。手机连续使用越久越危险；留意脚步、玻璃与同桌提醒，任何致命突袭前都有线索。静音时仍有画面与文字提示。</p><p>怀疑达到 100 会被发现：第一次降到 60，第二次降到 75，第三次失败。手机被抓三次进入独立坏结局，并影响后续周目。无聊超过 65 会持续消耗专注；低专注让画面模糊，答题时间变短。</p><h3>六节课，不是同一道题</h3><p>语文教你看反光。化学课留意突然的安静。生物课「不要动」普通难度准备1.4秒、静止1.4秒，明显动作容错一次；轻微抖动、松键和长按重复不算失误。简单额外容错两次。第一次失误后重新保持静止，失败基础怀疑从17降到8。物理课盯住老师可使她停止；脚步刚走后再等 3 秒。英语课按难度强化35—60秒，普通45秒。数学课连续答错两题会失败，56 个编号中只有一个符合题意。<b>第一遍下课铃是假的。</b></p><h3>操作与记录</h3><p><span class="help-key">1—4</span>限时事件选项。<span class="help-key">Enter</span>剧情继续。<span class="help-key">Esc</span>暂停。<span class="help-key">N</span>手记。<span class="help-key">M</span>静音。<span class="help-key">Alt+Enter</span>全屏。切到其他标签或窗口自动暂停；回到页面后手动继续。</p><p>普通模式课堂约 19 分钟，加剧情、答题与逃生通常 20—35 分钟；快速模式通常 10—15 分钟。课间与午间跳过，不采用统一时间倍率。共12个结局。每5秒、关键操作及页面中断时保存完整进度。两种模式都支持从最新检查点重试，也可以在「存档」中选择本节开头、放学分歧或较早的检查点。读档后先暂停，继续时留有2秒准备期。</p><h3>传纸条与睡觉</h3><p><span class="help-key">6</span>打开纸条，按A请同桌望风、S约好放学同行、D借课堂笔记。写纸条、递出和等待回条共需5秒；巡逻不会暂停。收到回条后才获得奖励，再等10秒才能传下一张。切换行动、危险或点名会中止尚未送达的纸条。成功的同行纸条与观察同桌共用本节互动次数；不会代替调查线索。</p><p><span class="help-key">7</span>伏桌小憩，可选6/12/18秒。普通难度每秒专注+1.7、无聊−0.85；连续积累小憩疲劳超过12秒后收益降低，醒来8秒后才可再睡，清醒时疲劳缓慢恢复。风险不会靠瞬间醒来重置。按空格、再次按7或点击「醒来」可立即起身。老师靠近会触发「醒来→坐直→看课本」三步反应；不要把睡觉当成暂停。</p><h3>魔方输入</h3><p>先按3打开魔方。公式为 R → U → Shift+R → Shift+U，也可按 R → U → Q → E；Q对应R′，E对应U′。左右Shift均可，CapsLock不会改变方向。每次按键松开后再按，长按不连发。组间2.8—3.8秒归位期间可预输入最多8步；面板会显示已接收的动作和倒计时。切换行动或遇到危险会清空尚未执行的动作。所有六个面的正转和逆转都有按钮；若输入法拦截组合键，请切英文输入或点击按钮。</p><h3>调查与同桌</h3><p>每节课都有一条可通过观察发现的线索，手记会提示调查位置。至少在三节不同课程中观察同桌或成功传递同行纸条，可以在17:30选择同行。作业100%、六条线索以及是否接过钥匙，都能打开新的结局。普通离校路线和原有六个结局仍然保留。</p><h3>存档说明</h3><p>自动记录与安全检查点相互独立，失败不会覆盖重试点。网页关闭、刷新、切到后台会尝试立即保存；突发断电或强制结束进程可能只保留最近一次成功写入。浏览器禁用存储时请使用「导出备份」。移动本地HTML、换浏览器或清理网站数据前也建议导出。导入/导出均在本机进行，不上传任何内容。</p><h3>六档难度与成就</h3><p>主菜单「难度」选择简单、普通、困难、地狱、极限或神级。标准/快速是流程长度，不是难度。读档与重试不改难度；旧存档默认普通。神级明确不可通关，有180秒有效游玩上限并拦截所有成功/替代出口；暂停、剧情和离线不消耗该计时。成就共36项，按单局里程碑或结局解锁；回档不丢已解锁成就，不靠重复读档累加次数。神级成就不要求通关，集齐全部结局也不需要神级通关。</p><h3>平衡提示</h3><p>魔方每组进度仍为4%，普通专注+9、无聊−7；乱转不再降无聊。手机风险热度在收起后每秒下降0.75，不靠切换瞬间清零。作业普通每秒+0.30%，快速流程有总课时补偿；难度会影响恢复和作业效率。观察同一处超过8秒后无聊略有上升，无法长期作为无成本静止策略。</p><p class="small">手机端建议横屏；所有动作都有可点击按钮。不会请求摄像头、麦克风或网络权限。</p>`;
+            html = `<p>你是江城大学附属中学高二（2）班的一名学生。撑过六节课，在真正的 <b>17:30</b> 放学，再走出教学楼。游戏中的学校、人物与情节均为虚构。</p><h3>你的课桌</h3><p><span class="help-key">1</span>听课降低怀疑，但无聊会上升。<span class="help-key">2</span>写其他作业。<span class="help-key">3</span>玩魔方，以 <b>R U R′ U′</b> 完成公式；Shift + 字母表示逆转，完成一组后按难度归位2.8—3.8秒，可缓存下一组输入。<span class="help-key">4</span>手机：聊天、视频、小游戏、真实时间。<span class="help-key">5</span>观察讲台、老师、后门、窗外与同桌。作业和魔方不是普通通关的强制目标。</p><h3>先活下来</h3><p>平时 <span class="help-key">Space</span> 立即收好物品。危险事件出现时，连续三次空格或依次点击「藏起来 → 拿笔 → 看书」。不要按住空格。手机连续使用越久越危险；留意脚步、玻璃与同桌提醒，任何致命突袭前都有线索。静音时仍有画面与文字提示。</p><p>怀疑达到 100 会被发现：第一次降到 60，第二次降到 75，第三次失败。手机被抓三次进入独立坏结局，并影响后续周目。无聊超过 65 会持续消耗专注；低专注让画面模糊，答题时间变短。</p><h3>六节课，不是同一道题</h3><p>语文教你看反光。化学课留意突然的安静。生物课「条件反射」先给0.6秒准备。简单逐次按三次空格；普通/困难/地狱/极限/神级分别有4/5/5/6/6个随机数字按钮，操作时间4.4/5.0/4.4/5.0/4.4秒。下方提示的是数字：触屏点上方相同数字；键盘按其左起位置键1—6（每个按钮的小字也会标出）。普通以上保留一次误按容错，只扣0.35—0.55秒；正确步骤不清零。无关按键和鼠标移动不会判错，长按不会连发。课堂失败基础怀疑仍为8；完成后留2秒巡视缓冲。物理课盯住老师可使她停止；脚步刚走后再等 3 秒。英语课按难度强化35—60秒，普通45秒。数学课连续答错两题会失败，56 个编号中只有一个符合题意。<b>第一遍下课铃是假的。</b></p><h3>操作与记录</h3><p><span class="help-key">1—4</span>限时事件选项。<span class="help-key">Enter</span>剧情继续。<span class="help-key">Esc</span>暂停。<span class="help-key">N</span>手记。<span class="help-key">M</span>静音。<span class="help-key">Alt+Enter</span>全屏。切到其他标签或窗口自动暂停；回到页面后手动继续。</p><p>普通模式课堂约 19 分钟，加剧情、答题与逃生通常 20—35 分钟；快速模式通常 10—15 分钟。课间与午间跳过，不采用统一时间倍率。共12个结局。每5秒、关键操作及页面中断时保存完整进度。两种模式都支持从最新检查点重试，也可以在「存档」中选择本节开头、放学分歧或较早的检查点。读档后先暂停，继续时留有2秒准备期。</p><h3>传纸条与睡觉</h3><p><span class="help-key">6</span>打开纸条，按A请同桌望风、S约好放学同行、D借课堂笔记。写纸条、递出和等待回条共需5秒；巡逻不会暂停。收到回条后才获得奖励，再等10秒才能传下一张。切换行动、危险或点名会中止尚未送达的纸条。成功的同行纸条与观察同桌共用本节互动次数；不会代替调查线索。</p><p><span class="help-key">7</span>伏桌小憩，可选6/12/18秒。普通难度每秒专注+1.7、无聊−0.85；连续积累小憩疲劳超过12秒后收益降低，醒来8秒后才可再睡，清醒时疲劳缓慢恢复。风险不会靠瞬间醒来重置。按空格、再次按7或点击「醒来」可立即起身。老师靠近会触发「醒来→坐直→看课本」三步反应；不要把睡觉当成暂停。</p><h3>魔方输入</h3><p>先按3打开魔方。公式为 R → U → Shift+R → Shift+U，也可按 R → U → Q → E；Q对应R′，E对应U′。左右Shift均可，CapsLock不会改变方向。每次按键松开后再按，长按不连发。组间2.8—3.8秒归位期间可预输入最多8步；面板会显示已接收的动作和倒计时。切换行动或遇到危险会清空尚未执行的动作。所有六个面的正转和逆转都有按钮；若输入法拦截组合键，请切英文输入或点击按钮。</p><h3>调查与同桌</h3><p>每节课都有一条可通过观察发现的线索，手记会提示调查位置。至少在三节不同课程中观察同桌或成功传递同行纸条，可以在17:30选择同行。作业100%、六条线索以及是否接过钥匙，都能打开新的结局。普通离校路线和原有六个结局仍然保留。</p><h3>存档说明</h3><p>自动记录与安全检查点相互独立，失败不会覆盖重试点。网页关闭、刷新、切到后台会尝试立即保存；突发断电或强制结束进程可能只保留最近一次成功写入。浏览器禁用存储时请使用「导出备份」。移动本地HTML、换浏览器或清理网站数据前也建议导出。导入/导出均在本机进行，不上传任何内容。</p><h3>六档难度与成就</h3><p>主菜单「难度」选择简单、普通、困难、地狱、极限或神级。标准/快速是流程长度，不是难度。读档与重试不改难度；旧存档默认普通。神级明确不可通关，有180秒有效游玩上限并拦截所有成功/替代出口；暂停、剧情和离线不消耗该计时。成就共36项，按单局里程碑或结局解锁；回档不丢已解锁成就，不靠重复读档累加次数。神级成就不要求通关，集齐全部结局也不需要神级通关。</p><h3>平衡提示</h3><p>魔方每组进度仍为4%，普通专注+9、无聊−7；乱转不再降无聊。手机风险热度在收起后每秒下降0.75，不靠切换瞬间清零。作业普通每秒+0.30%，快速流程有总课时补偿；难度会影响恢复和作业效率。观察同一处超过8秒后无聊略有上升，无法长期作为无成本静止策略。</p><p class="small">手机端建议横屏；所有动作都有可点击按钮。不会请求摄像头、麦克风或网络权限。</p>`;
         }
         else if (kind === 'archive') {
             html = '<p class="small">有些路，只有走过才会留下名字。已发现 ' + save.endings.length + ' / '+ENDING_COUNT+'</p><div class="archive-grid">' + Object.entries(ENDINGS).map(([id, e]) => { const known = save.endings.includes(id); return `<div class="archive-card ${known ? '' : 'locked'}"><div class="ending-label">${known ? esc(e.type) : 'UNDISCOVERED / 未发现'}</div><h3>${known ? esc(e.title) : '??????'}</h3><p>${known || save.settings.endingHints ? esc(e.hint) : '这一页还没有被写下。可在设置中开启线索提示。'}</p></div>`; }).join('') + `</div><div class="stats-row"><span>开启 ${save.attempts} 天</span><span>成功离校 ${save.wins} 次</span><span>最长存活 ${fmtDuration(save.bestSurvival)}</span><span>魔方最高 ${save.bestCube}%</span></div>`;
@@ -5144,10 +5326,10 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
     }
     catch {
         toast('全屏请求被浏览器阻止。请在独立浏览器标签打开，或使用 F11。', true, 5);
-    } resize(); }
-    function fullscreenChanged() { const full = !!(document.fullscreenElement || document.webkitFullscreenElement); $('fullscreenBtn').querySelector('span').textContent = full ? '退出全屏' : '全屏'; $('fullscreenBtn').setAttribute('aria-pressed', String(full)); if (wasFullscreen && !full && S?.screen === 'game' && !modal)
+    } fullscreenChanged(); }
+    function fullscreenChanged() { const full = !!(document.fullscreenElement || document.webkitFullscreenElement); const local=document.querySelector('[data-reflex-fullscreen]'); if(local){local.textContent=full?'退出全屏':'全屏';local.setAttribute('aria-pressed',String(full));} $('fullscreenBtn').querySelector('span').textContent = full ? '退出全屏' : '全屏'; $('fullscreenBtn').setAttribute('aria-pressed', String(full)); if (wasFullscreen && !full && S?.screen === 'game' && !modal)
         openModal('pause'); wasFullscreen = full; resize(); }
-    function resize() { const w = window.visualViewport?.width || window.innerWidth, h = window.visualViewport?.height || window.innerHeight; const scale = Math.min(w / 1600, h / 900); $('stage').style.transform = `translate(-50%,-50%) scale(${scale})`; }
+    function resize() { const w = window.visualViewport?.width || window.innerWidth, h = window.visualViewport?.height || window.innerHeight; const scale = Math.min(w / 1600, h / 900); $('stage').style.transform = `translate(-50%,-50%) scale(${scale})`; $('stage').style.setProperty('--reflex-inverse',String(1/scale)); $('stage').style.setProperty('--reflex-vw',w+'px'); $('stage').style.setProperty('--reflex-vh',h+'px'); }
     function renderUI() { renderDifficultyHud(); if (!S)
         return; const c = CLASSES[S.classIndex], time = fmtTime(currentTime()); $('gameClock').textContent = S.anomalyUntil > S.t && S.classIndex >= 3 ? fmtTime(currentTime() - 3) : time; $('courseName').textContent = `第 ${S.classIndex + 1} 节 · ${c.subject}`; $('teacherName').textContent = c.teacher + ' / ' + c.title; $('lessonDots').innerHTML = CLASSES.map((_, i) => `<i class="lesson-dot ${i < S.classIndex ? 'done' : ''} ${i === S.classIndex ? 'active' : ''}"></i>`).join(''); $('lessonProgress').firstElementChild.style.width = (S.elapsed / S.duration * 100) + '%'; $('suspicionValue').innerHTML = String(Math.floor(S.suspicion)).padStart(2, '0') + ' <small>/ 100</small>'; $('suspicionBar').firstElementChild.style.width = S.suspicion + '%'; $('suspicionBar').classList.toggle('danger', S.suspicion >= 70); $('suspicionHint').textContent = S.suspicion < 30 ? '一切正常。至少现在是。' : S.suspicion < 50 ? '她开始注意到你。' : S.suspicion < 70 ? '巡视越来越频繁。' : S.suspicion < 90 ? '不要拿出任何多余的东西。' : '危险。她的目光没有离开。'; $('focusBar').style.width = S.focus + '%'; $('focusValue').textContent = Math.round(S.focus); $('boredomBar').style.width = S.boredom + '%'; $('boredomValue').textContent = Math.round(S.boredom); $('boredomBar').style.background = S.boredom > 65 ? 'var(--danger)' : ''; $('homeworkValue').textContent = Math.floor(S.homework) + '%'; $('cubeValue').textContent = S.cube + '%'; $('phoneRiskValue').textContent = !phoneAllowed() ? '已收走' : S.action !== 'phone' ? '—' : S.phoneHeat < 3 ? '低' : S.phoneHeat < 6 ? '小' : S.phoneHeat < 10 ? '中' : S.phoneHeat < 15 ? '高' : '极高'; $('phoneRiskValue').style.color = S.phoneHeat >= 10 ? 'var(--danger)' : ''; $('actionHint').textContent = S.action==='note'?'A/S/D 选话题 · SPACE 收好纸条':S.action==='sleep'?'SPACE 或7 醒来 · 小憩不暂停巡逻': S.boredom > 65 ? '无聊正在消耗专注 · 换个行动' : S.action === 'phone' ? `使用 ${S.phoneSeconds.toFixed(1)}秒 · 热度 ${S.phoneHeat.toFixed(1)} · 收起后渐降` : S.action === 'cube' ? 'R U R′ U′ · Q=R′ / E=U′ · SPACE 收好' : 'SPACE 收好 · N 手记 · ESC 暂停'; const clock = S.anomalyUntil > S.t ? currentTime() - 3 : currentTime(); $('minuteHand').style.transform = `rotate(${clock % 60 * 6}deg)`; $('hourHand').style.transform = `rotate(${(clock / 60) % 12 * 30}deg)`; $('teacher').style.transform = `translate3d(${S.teacher.x}px,${S.teacher.y}px,0) scale(${S.teacher.z})`; $('stage').classList.toggle('low-focus', S.focus < 25); $('stage').classList.toggle('critical', S.suspicion > 85 && S.screen === 'game'); $('room').style.setProperty('--focus-blur', Math.max(0, (30 - S.focus) / 18).toFixed(2) + 'px'); const extra = S.extraUntil > S.t && S.phase === 'CLASS'; $('stage').classList.toggle('extraordinary', extra); $('extraBadge').hidden = !extra; $('extraTime').textContent = Math.max(0, Math.ceil(S.extraUntil - S.t)); if (S.action === 'phone')
         renderPhone(); if (S.action === 'cube')
@@ -5170,6 +5352,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
             recoveryGrace = Math.max(0,recoveryGrace-dt);
             $('resumeBanner').hidden = recoveryGrace <= 0;
             $('resumeBanner').textContent = '准备继续 · '+recoveryGrace.toFixed(1)+' 秒';
+            if(challenge?.type==='freeze')renderFreezeState();
             return;
         }
         autosaveDue += dt; checkpointDue += dt;
@@ -5291,6 +5474,12 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         caption('视频里的放学铃，与你周围的重叠。', 2);
         sound('vibrate', .3);
     }
+    else if (el.dataset.reflexSlot != null)
+        reflexInput(Number(el.dataset.reflexSlot));
+    else if (el.dataset.reflexFullscreen && challenge?.type==='freeze' && !modal)
+        toggleFullscreen();
+    else if (el.dataset.reflexPause && challenge?.type==='freeze' && !modal)
+        openModal('pause');
     else if (el.dataset.hideStep != null)
         resolveHide(Number(el.dataset.hideStep));
     else if (el.dataset.choice != null)
@@ -5362,7 +5551,22 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         if(!S||S.screen!=='game') return;
         if(code==='KeyN'){e.preventDefault();if(!e.repeat)openModal('journal');return;}
         if(['Shift','Control','Alt','Meta'].includes(e.key)) return;
-        const wasImmobile=challenge&&['freeze','wait'].includes(challenge.type);
+        if(challenge?.type==='freeze') {
+            const c=challenge;
+            const position=!e.shiftKey&&/^(Digit|Numpad)[1-6]$/.test(code)?Number(code.slice(-1))-1:null;
+            // Every digit is reserved to this popup, never to phone/sleep/etc.
+            if(/^(Digit|Numpad)[0-9]$/.test(code)||code==='Space') {
+                e.preventDefault();if(e.repeat)return;
+                if(c.mode==='space'&&code==='Space')reflexInput(c.step);
+                else if(c.mode==='sequence'&&position!==null)reflexInput(position);
+            } else if(code==='Enter') {
+                // Accessible focused-button activation; prevent long-press
+                // synthetic clicks and activation of stale background controls.
+                if(e.repeat||!target?.closest('[data-reflex-slot],[data-reflex-pause],[data-reflex-fullscreen]'))e.preventDefault();
+            }
+            return;
+        }
+        const wasImmobile=challenge?.type==='wait';
         interactionMotion(e);
         if(wasImmobile){e.preventDefault();return;}
         // Autorepeat is the only per-key debounce. Distinct rapid presses must
@@ -5391,7 +5595,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
             if(topic){e.preventDefault();startNote(topic);}
         }
     });
-    // System shortcuts and composition releases cannot fail a freeze challenge.
+    // Key releases never count as new reflex presses or physics motion.
     document.addEventListener('keyup', e => {
         const code=normalizedKeyCode(e);
         if(e.ctrlKey||e.metaKey||e.altKey||e.isComposing||e.keyCode===229||
@@ -5433,7 +5637,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
     // Opt-in deterministic integration hooks, inactive during ordinary play. Test mode
     // never persists achievements. They intentionally expose only this local game.
     if (testMode)
-        window.__LAST_CLASS_TEST__ = { rules, difficulties:DIFFICULTIES, achievements:ACHIEVEMENTS, checkAchievements, interactionMotion, finishFreeze, cubeCooldown, addSuspicion, godDefeat, validateSnapshot, markLessonComplete, startNote, wakeSleep, chooseRestDuration, safeHide, cubeTurnFromKey, normalizedKeyCode, get state() { return S; }, get progress() { return progress; }, get dialogue() { return dialogue; }, get recoveryGrace() { return recoveryGrace; }, get conflict() { return diskConflict; }, autoSave, writeProgress, captureSnapshot, rememberCheckpoint, restore:restoreSnapshot, continueGame(){const s=getContinueSnapshot();if(s)restoreSnapshot(s);}, retryCheckpoint(){if(progress?.checkpoints[0])restoreSnapshot(progress.checkpoints[0]);}, resume(){modalAction('resume');recoveryGrace=0;$('resumeBanner').hidden=true;}, exportData:buildExport, validateImport, applyImport, dispatchEvent, collectObservation, showPack, showEndingRoutes, resolveRoute, get endings(){return ENDINGS;}, get challenge() { return challenge; }, get script() { return script; }, get save() { return save; }, get modal() { return modal; }, start: startGame, tick(dt) { tick(dt); renderUI(); }, advance(dt) { tick(dt); }, finishDialogue() { let guard = 100; while (script && guard--) {
+        window.__LAST_CLASS_TEST__ = { reflexInput, createReflexChallenge, renderChallenge, dispatchContinuation, rules, difficulties:DIFFICULTIES, achievements:ACHIEVEMENTS, checkAchievements, interactionMotion, finishFreeze, cubeCooldown, addSuspicion, godDefeat, validateSnapshot, markLessonComplete, startNote, wakeSleep, chooseRestDuration, safeHide, cubeTurnFromKey, normalizedKeyCode, get state() { return S; }, get progress() { return progress; }, get dialogue() { return dialogue; }, get recoveryGrace() { return recoveryGrace; }, get conflict() { return diskConflict; }, autoSave, writeProgress, captureSnapshot, rememberCheckpoint, restore:restoreSnapshot, continueGame(){const s=getContinueSnapshot();if(s)restoreSnapshot(s);}, retryCheckpoint(){if(progress?.checkpoints[0])restoreSnapshot(progress.checkpoints[0]);}, resume(){modalAction('resume');recoveryGrace=0;$('resumeBanner').hidden=true;if(challenge?.type==='freeze')renderFreezeState();}, exportData:buildExport, validateImport, applyImport, dispatchEvent, collectObservation, showPack, showEndingRoutes, resolveRoute, get endings(){return ENDINGS;}, get challenge() { return challenge; }, get script() { return script; }, get save() { return save; }, get modal() { return modal; }, start: startGame, tick(dt) { tick(dt); renderUI(); }, advance(dt) { tick(dt); }, finishDialogue() { let guard = 100; while (script && guard--) {
                 dialogue.shown = dialogue.text.length;
                 advanceDialogue();
             } renderUI(); }, setAction, turnCube, observe, choose, number: finishQuestion, hide: resolveHide, freeze: startFreeze, grid: startGrid, question: askQuestion, danger: triggerDanger, fakeBell: startFakeBell, door: showDoor, complete: completeDay, escape: startEscape, sprint: sprintTap, ending: finishEnding, fail: gameOver, retry: retryLesson, menu: returnMenu, openModal, closeModal, render: renderUI, extra: triggerExtraordinary, scramble: scrambleButtons, lesson: enterClass, get queue() { return eventQueue; } };

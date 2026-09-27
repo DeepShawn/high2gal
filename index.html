@@ -2196,6 +2196,52 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
 #challengeCard { max-height:590px; overflow:auto; scrollbar-width:thin; }
 .archive-card .ending-label { letter-spacing:2px; }
 .ending-note { line-height:1.8; max-width:960px; }
+
+/* v2.1 — seven actions, paper notes, sleep, and explicit cube input feedback. */
+#actionDock .action { min-width:0; gap:8px; padding:11px 12px; }
+#actionDock .action .icon { font-size:23px; width:27px; flex-shrink:0; }
+#actionDock .action .sleep-icon { font:italic 21px Georgia,serif; }
+#actionDock .action strong { font-size:14px; letter-spacing:1.5px; white-space:nowrap; }
+#actionDock .action small { letter-spacing:0; font-size:10px; white-space:nowrap; }
+#actionDock .action kbd { padding:4px 5px; }
+#cubePanel { top:438px; left:424px; width:636px; padding:15px 19px; }
+#cubePanel .cube-drawing { margin-top:16px; width:90px; height:90px; }
+.cube-keys { display:grid; grid-template-columns:repeat(6,minmax(34px,1fr)); gap:5px; }
+.cube-keys button { padding:6px; }
+.cube-keys button.needed { background:#b8ce9122; }
+#cubeInputStatus { font-size:11px; line-height:1.5; min-height:17px; color:#d5ddb9; margin-top:8px; }
+#cubeHint { min-height:25px; line-height:1.45; font-size:11px; }
+#friendSignal { position:absolute; top:599px; left:44px; width:334px; padding:10px 12px; z-index:14; font-size:12px; line-height:1.6; border-left:2px solid #a8c08c; background:#142b20e8; color:#d4dec2; }
+#notePanel,#sleepPanel { position:absolute; top:413px; left:422px; width:658px; padding:16px 20px; z-index:14; box-shadow:0 10px 32px #06140970; }
+#notePanel { color:#263827; border:1px solid #c8c8a5; background:repeating-linear-gradient(0deg,transparent 0px,transparent 23px,#657c4920 24px),#d6d8bb; }
+#notePanel::before { content:''; position:absolute; width:94px; height:14px; background:#a9b98c90; left:266px; top:-8px; transform:rotate(-3deg); pointer-events:none; }
+.desk-panel-heading { display:flex; justify-content:space-between; align-items:center; gap:12px; font-size:10px; letter-spacing:1.5px; }
+.desk-small-button { color:inherit; border:1px solid #49624460; padding:4px 8px; font-size:10px; }
+.desk-panel-title { display:flex; justify-content:space-between; gap:12px; align-items:baseline; margin-top:12px; }
+.desk-panel-title strong { font-weight:500; font-size:18px; letter-spacing:1px; }
+.desk-panel-title>span { font:17px monospace; white-space:nowrap; }
+.desk-progress { height:3px; background:#54734430; margin:10px 0; overflow:hidden; }
+.desk-progress i { display:block; width:0; height:100%; background:#557549; }
+.note-reply { font-size:12px; line-height:1.7; height:51px; overflow:auto; padding-right:4px; }
+.note-options { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-top:12px; }
+.note-options button { text-align:left; padding:9px 10px; border:1px solid #425e4750; background:#ecedda70; color:#263827; font-size:13px; }
+.note-options button.selected { border-color:#324d35; background:#b6c89c; }
+.note-options button:disabled { opacity:.52; cursor:not-allowed; }
+.note-options kbd { font:10px monospace; border:1px solid #5c704770; padding:1px 4px; margin-right:2px; }
+.note-options small { display:block; font-size:10px; margin-top:5px; opacity:.8; }
+#sleepPanel { top:420px; background:linear-gradient(130deg,#192c2dfa,#142225fa); color:#cbdad3; border:1px solid #9cafb466; }
+#sleepPanel .desk-panel-heading { color:#8fa6aa; letter-spacing:1px; }
+#sleepPanel .desk-progress { background:#b0cdd120; }
+#sleepProgress { background:#9bb7be; }
+.sleep-rules,.sleep-footer { font-size:12px; line-height:1.7; margin:10px 0; color:#a5bdb8; }
+.sleep-footer { font-size:11px; margin-bottom:0; }
+.sleep-controls { display:flex; align-items:center; justify-content:space-between; margin-top:15px; gap:20px; }
+.sleep-durations { display:flex; gap:7px; }
+.sleep-durations button { padding:8px 13px; border:1px solid #9cafb450; color:#a7bfbb; font-size:12px; }
+.sleep-durations button.active { background:#a6c0b825; color:#d2ded4; border-color:#afc7bc; }
+#wakeButton { padding:11px 18px; background:#bbcdc0; color:#1b342c; font-size:13px; letter-spacing:1px; }
+#stage.is-sleeping #room { filter:brightness(.52) saturate(.65) blur(var(--focus-blur,0px)); }
+#stage.is-sleeping #teacher { opacity:.70; }
   </style>
  </head>
  <body>
@@ -2425,7 +2471,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
        建议佩戴耳机　/　不含贴脸跳吓，可关闭闪烁与震动
       </span>
       <span>
-       单文件离线版　2.0
+       单文件离线版　2.1
        <br/>
        HTML / CSS / JAVASCRIPT
       </span>
@@ -2569,35 +2615,9 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
        </div>
        <div class="cube-formula" id="cubeFormula">
        </div>
-       <div class="cube-keys">
-        <button data-turn="R">
-         R
-        </button>
-        <button data-turn="U">
-         U
-        </button>
-        <button data-turn="R'">
-         R′
-        </button>
-        <button data-turn="U'">
-         U′
-        </button>
-        <button data-turn="F">
-         F
-        </button>
-        <button data-turn="L">
-         L
-        </button>
-        <button data-turn="D">
-         D
-        </button>
-        <button data-turn="B">
-         B
-        </button>
-       </div>
-       <div id="cubeHint">
-        Shift + 字母 = 逆转；公式 R U R′ U′
-       </div>
+       <div class="cube-keys" aria-label="魔方正转与逆转"><button data-turn="R" title="R" aria-label="转动 R，R" aria-keyshortcuts="R">R</button><button data-turn="U" title="U" aria-label="转动 U，U" aria-keyshortcuts="U">U</button><button data-turn="R'" title="Shift+R / Q" aria-label="转动 R′，Shift+R / Q" aria-keyshortcuts="Shift+R">R′</button><button data-turn="U'" title="Shift+U / E" aria-label="转动 U′，Shift+U / E" aria-keyshortcuts="Shift+U">U′</button><button data-turn="F" title="F" aria-label="转动 F，F" aria-keyshortcuts="F">F</button><button data-turn="F'" title="Shift+F" aria-label="转动 F′，Shift+F" aria-keyshortcuts="Shift+F">F′</button><button data-turn="L" title="L" aria-label="转动 L，L" aria-keyshortcuts="L">L</button><button data-turn="L'" title="Shift+L" aria-label="转动 L′，Shift+L" aria-keyshortcuts="Shift+L">L′</button><button data-turn="D" title="D" aria-label="转动 D，D" aria-keyshortcuts="D">D</button><button data-turn="D'" title="Shift+D" aria-label="转动 D′，Shift+D" aria-keyshortcuts="Shift+D">D′</button><button data-turn="B" title="B" aria-label="转动 B，B" aria-keyshortcuts="B">B</button><button data-turn="B'" title="Shift+B" aria-label="转动 B′，Shift+B" aria-keyshortcuts="Shift+B">B′</button></div>
+       <div id="cubeInputStatus" role="status" aria-live="polite">等待输入 · R U R′ U′</div>
+       <div id="cubeHint">Shift + 字母逆转；也可用 R → U → Q → E。</div>
       </div>
      </div>
      <div hidden="" id="observePanel">
@@ -2622,6 +2642,28 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
        </button>
       </div>
      </div>
+     <div id="friendSignal" hidden></div>
+     <section id="notePanel" hidden aria-label="传纸条">
+      <div class="desk-panel-heading"><span>FOLDED WORDS / 课桌之间</span><button id="noteClose" class="desk-small-button">收好 / SPACE</button></div>
+      <div class="desk-panel-title"><strong id="notePhase">选一个话题，再递出去</strong><span id="noteSeconds">5.0s</span></div>
+      <div class="desk-progress"><i id="noteProgress"></i></div>
+      <div id="noteReply" class="note-reply" aria-live="polite"></div>
+      <div class="note-options">
+       <button data-note-topic="lookout" aria-keyshortcuts="A"><kbd>A</kbd> 帮我望风<small>收到后留意危险25秒</small></button>
+       <button data-note-topic="bond" aria-keyshortcuts="S"><kbd>S</kbd> 放学一起走<small>计入本节的同行约定</small></button>
+       <button data-note-topic="lesson" aria-keyshortcuts="D"><kbd>D</kbd> 借一下笔记<small>补重点 / 专注 +8</small></button>
+      </div>
+     </section>
+     <section id="sleepPanel" hidden aria-label="伏桌小憩">
+      <div class="desk-panel-heading"><span>A MOMENT OF REST / 伏桌小憩</span><span>巡逻不会暂停</span></div>
+      <div class="desk-panel-title"><strong id="sleepPhase">浅眠 · 还能听见粉笔声</strong><span id="sleepCountdown">12.0s</span></div>
+      <div class="desk-progress"><i id="sleepProgress"></i></div>
+      <p class="sleep-rules">专注 +2.4 / 秒 · 无聊 −1.2 / 秒。睡久了更容易引起怀疑。</p>
+      <div class="sleep-controls"><div class="sleep-durations" aria-label="小憩总时长">
+       <button data-rest-seconds="6" aria-pressed="false">6秒</button><button data-rest-seconds="12" class="active" aria-pressed="true">12秒</button><button data-rest-seconds="18" aria-pressed="false">18秒</button>
+      </div><button id="wakeButton">醒来 / SPACE · 7</button></div>
+      <p class="sleep-footer">老师靠近时：醒来 → 坐直 → 看课本。危险、点名和下课都会中断小憩。</p>
+     </section>
      <nav aria-label="课堂行动" id="actionDock">
       <button class="action active" data-action="listen">
        <span class="icon">
@@ -2702,6 +2744,12 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
        <kbd>
         5
        </kbd>
+      </button>
+      <button class="action" data-action="note" aria-keyshortcuts="6">
+       <span class="icon" aria-hidden="true">✉</span><span><strong>传纸条</strong><small>交换消息 / 同桌约定</small></span><kbd>6</kbd>
+      </button>
+      <button class="action" data-action="sleep" aria-keyshortcuts="7">
+       <span class="icon sleep-icon" aria-hidden="true">Zz</span><span><strong>睡觉</strong><small>恢复专注 / 留意脚步</small></span><kbd>7</kbd>
       </button>
      </nav>
      <div id="resourceBar">
@@ -2846,7 +2894,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
    'use strict';
 /*
  * 高二（2）班：最后一节课 / THE LAST CLASS
- * Single-file offline release 2.0 — all assets generated in CSS / Web Audio.
+ * Single-file offline release 2.1 — all assets generated in CSS / Web Audio.
  * Basis: supplied game design. Fictional school and characters.
  * Timing reconciliation: lesson clocks interpolate over the stated timetable;
  * breaks/lunch are skipped. Normal: 180×5+240 s; quick: 90×6 s,
@@ -2854,6 +2902,8 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
  * Game timing uses one RAF-driven clock; pause/hidden tabs never consume timers.
  * v2: serializable continuations, full mid-run snapshots, safe checkpoints,
  * dual localStorage records, manual import/export, 12 reachable endings.
+ * v2.1: lossless rapid cube input, buffered cooldown, paper notes and naps.
+ * v2 progress snapshots are migrated in place; localStorage keys stay stable.
  * A snapshot NEVER contains callbacks, DOM nodes or wall-clock game timers.
  */
 (() => {
@@ -2910,7 +2960,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
     if (!storageOK)
         $('storageWarning').hidden = false;
     const CLASSES = [
-        { id: 'chinese', subject: '语文', teacher: '何凤临', title: '守门人', duration: 180, start: 460, end: 505, speed: .82, awareness: .5, board: '玻璃的意义，不只是让你看见外面。\n请留意：反光、脚步、真正的时间。', rule: '看反光，不必回头', note: '后门的反光会提前暴露巡查。手机显示真实时间；数学课之前，黑板旁的钟可能不可靠。', intro: [['何凤临', '今天教室似乎比平时安静。'], ['何凤临', '有些东西，不需要回头，也能看到。玻璃的意义，不只是让你看见外面。'], ['同桌', '按 1—5 切换行动。危险时，连续按三次空格：藏好、拿笔、看书。手机不是必需品。']] },
+        { id: 'chinese', subject: '语文', teacher: '何凤临', title: '守门人', duration: 180, start: 460, end: 505, speed: .82, awareness: .5, board: '玻璃的意义，不只是让你看见外面。\n请留意：反光、脚步、真正的时间。', rule: '看反光，不必回头', note: '后门的反光会提前暴露巡查。手机显示真实时间；数学课之前，黑板旁的钟可能不可靠。', intro: [['何凤临', '今天教室似乎比平时安静。'], ['何凤临', '有些东西，不需要回头，也能看到。玻璃的意义，不只是让你看见外面。'], ['同桌', '按 1—7 切换行动，6传纸条、7睡觉。危险时，连续按三次空格：藏好、拿笔、看书。手机不是必需品。']] },
         { id: 'chemistry', subject: '化学', teacher: '李芳铃', title: '反应监视者', duration: 180, start: 520, end: 565, speed: 1.0, awareness: 1, board: '化学反应与实验现象\n镁条燃烧 → 耀眼白光 / 白色固体', rule: '安静下来时，先收起东西', note: '李芳铃突然停止讲课时会观察课桌。镁条燃烧发出耀眼白光，生成白色固体；二氧化碳使澄清石灰水变浑浊。', intro: [['李芳铃', '把与这节课无关的东西，收起来。'], ['同桌', '她走得慢，但随时会停。全班突然安静的时候，千万别拿着手机。'], ['李芳铃', '受着。']] },
         { id: 'biology', subject: '生物', teacher: '王盈', title: '稳态观察者', duration: 180, start: 610, end: 655, speed: 1.02, awareness: 1.12, board: '神经调节 / 条件反射\n听到「不要动」：停止操作，保持两秒。', rule: '不要动。真的不要动', note: '“不要动”有 0.8 秒准备期，然后必须保持鼠标、触摸与键盘静止 2 秒。不要连续点击；按钮位置可能短暂交换。反射的结构基础是反射弧。', intro: [['王盈', '今天观察一个简单的条件反射。观察对象，是你们。'], ['同桌', '她说“不要动”之后，有 0.8 秒松开手，然后整整两秒别碰鼠标和键盘。'], ['王盈', '注意，不要让习惯替你做决定。']] },
         { id: 'physics', subject: '物理', teacher: '戴贝贝', title: '相对运动', duration: 180, start: 840, end: 885, speed: 1.36, awareness: 1.3, board: '相对运动 / 惯性\n停止的脚步，不代表危险已经离开。', rule: '脚步停后，再等三秒', note: '观察老师时她停止移动，低头则继续。离开座位后的 3 秒仍危险，不要立刻打开手机。逃生时听见脚步停止，也要静止等待 3 秒。', intro: [['戴贝贝', '运动状态，可不是这么容易改变的。'], ['同桌', '选“观察 → 老师”就能盯住她。可你低头，她就会动。'], ['戴贝贝', '这么急？我离开之后，最好也再等三秒。']] },
@@ -2934,7 +2984,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         unseen: { type: 'SECRET END · 02', title: '从未被注意', prose: '你的每个答案都正确，每次低头都恰到好处。\n你收拾书包，走出教学楼。没有任何人叫住你。\n镜头回到空教室。\n后门玻璃里，仍然站着一个人。', hint: '全程怀疑值严格低于 20，所有问题回答正确。' },
         falsebell: { type:'BAD END · 04', title:'提前离席', prose:'你站起来的那一刻，铃声停了。\n「谁告诉你们下课了？」\n门外还是教室，教室外还是教室。\n那只钟，永远差一声真正的铃。', hint:'数学课的第一次铃声响起时，选择离开教室。' },
         homework: { type:'GOOD END · 01', title:'交卷之后', prose:'你把最后一页作业放到讲台上。\n何凤临在右下角写下一个字：归。\n「你完成的，不只是今天的作业。」\n走廊重新有了下课的声音。你跟着人群，走向真实的黄昏。', hint:'作业完成到100%。真放学后选择「把今天的事做个了结」→交上全部作业。' },
-        companion: { type:'GOOD END · 02', title:'一个也不能少', prose:'校门要关了。你没有松开同桌的手。\n17:42。两个人的影子，一起落在校外的路面上。\n「明天还坐一起吗？」\n你第一次认真地回答：明天见。', hint:'至少在三节不同的课里观察同桌。真放学后选择同行，并完成最终逃生和冲刺。' },
+        companion: { type:'GOOD END · 02', title:'一个也不能少', prose:'校门要关了。你没有松开同桌的手。\n17:42。两个人的影子，一起落在校外的路面上。\n「明天还坐一起吗？」\n你第一次认真地回答：明天见。', hint:'至少在三节不同的课里观察同桌或成功传递「放学一起走」。真放学后选择同行，并完成最终逃生和冲刺。' },
         truth: { type:'SECRET END · 03', title:'玻璃之外', prose:'六片反光拼在一起，照出了教室原来的样子。\n第57张课桌上，没有姓名，只有「旁观者」三个字。\n你没有坐下。你把自己的名字写在了出口。\n玻璃碎成一场无声的雨。星期二，终于到来了。', hint:'收齐六节课的调查线索。真放学后选择「把今天的事做个了结」→推开玻璃。' },
         gatekeeper: { type:'ALTERNATE END', title:'下一位守门人', prose:'你接过钥匙，却没有走向校门。\n「总要有人告诉下一班学生，哪一声铃是真的。」\n何凤临的剪影慢慢淡去。玻璃里，留下了你的轮廓。\n07:39。你对新来的同学说：快上课了。', hint:'收集至少三条调查线索。真放学后选择「把今天的事做个了结」→接过钥匙，并确认留下。' },
         mirror: { type:'BAD END · 05', title:'第57个座位', prose:'你第二次走向没有倒影的门。\n门后的教室有57张课桌，每个座位上，都坐着低头的你。\n黑板上的分母，被悄悄改掉了。\n「这次，终于到齐了。」', hint:'逃生中两次选择没有反光的走廊、门或镜子。注意环境中的警告。' }
@@ -2969,6 +3019,245 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
     let loadedFromBackup = false, corruptProgress = false, diskConflict = false;
     const tabId = Date.now().toString(36) + '-' + Math.random().toString(36).slice(2,10);
     let diskRevision = null;
+    // v2.1: desk activities use the same paused simulation clock as the class.
+    // No setTimeout, callback serialization, or rewards before delivery.
+    const ACTIONS = ['listen','homework','cube','phone','observe','note','sleep'];
+    const NOTE_TOPICS = {
+        lookout: {label:'帮我望风', text:'帮我留意一下老师和后门。', focus:3, boredom:5},
+        bond: {label:'放学一起走', text:'真正放学的时候，我们一起走吧。', focus:4, boredom:8},
+        lesson: {label:'借一下笔记', text:'刚才的重点是什么？借我补一下。', focus:8, boredom:6}
+    };
+    const NOTE_SECONDS = 5, NOTE_COOLDOWN = 8, WATCH_SECONDS = 25;
+    const CUBE_FORMULA = ['R','U',"R'","U'"];
+    const CUBE_QUEUE_LIMIT = 8;
+    function makeNotesState() {
+        return {draft:null,cooldownUntil:0,watchUntil:0,sent:0,interrupted:0,
+            history:[],warnedDoorBorn:-1,warnedNear:false};
+    }
+    function makeRestState() {
+        return {elapsed:0,duration:12,total:0,sessions:0,interrupted:0,dreamSeen:false};
+    }
+    function migrateDeskState(st) {
+        // Only a genuinely older snapshot is upgraded. Malformed new fields
+        // are rejected by validation instead of silently replaced.
+        if (!st || Object.hasOwn(st,'mechanicsVersion')) return;
+        st.mechanicsVersion = 1;
+        st.notes = makeNotesState(); st.rest = makeRestState();
+        st.cubeQueue = []; st.cubeLastInput = ''; st.cubeInputInfo = '';
+        if (Array.isArray(st.actionOrder) && st.actionOrder.length === 5 &&
+            new Set(st.actionOrder).size === 5 &&
+            st.actionOrder.every(n=>Number.isInteger(n)&&n>=0&&n<5))
+            st.actionOrder.push(5,6);
+    }
+    function validateDeskState(st, num) {
+        assertValid(st.mechanicsVersion === 1,'不支持的课堂玩法版本');
+        const n=st.notes, r=st.rest;
+        assertValid(n && r,'缺少纸条或小憩记录');
+        for (const k of ['cooldownUntil','watchUntil','sent','interrupted'])
+            assertValid(num(n[k]),'纸条记录无效：'+k);
+        assertValid(Number.isInteger(n.sent)&&Number.isInteger(n.interrupted),'纸条计数无效');
+        assertValid(num(n.warnedDoorBorn,-1,1e7)&&typeof n.warnedNear==='boolean','望风状态无效');
+        assertValid(Array.isArray(n.history)&&n.history.length<=12,'纸条历史过长');
+        assertValid(n.history.every(x=>x&&Number.isInteger(x.lesson)&&x.lesson>=0&&x.lesson<6&&
+            Object.hasOwn(NOTE_TOPICS,x.topic)&&typeof x.text==='string'&&x.text.length<=1000&&num(x.at)), '纸条历史无效');
+        if (n.draft !== null) {
+            assertValid(n.draft && Object.hasOwn(NOTE_TOPICS,n.draft.topic)&&
+                num(n.draft.elapsed,0,NOTE_SECONDS)&&st.action==='note'&&st.phase==='CLASS','传递中的纸条无效');
+        }
+        for (const k of ['elapsed','total','sessions','interrupted'])
+            assertValid(num(r[k]),'睡觉记录无效：'+k);
+        assertValid([6,12,18].includes(r.duration)&&r.elapsed<=18.001&&
+            Number.isInteger(r.sessions)&&Number.isInteger(r.interrupted)&&typeof r.dreamSeen==='boolean','小憩状态无效');
+        assertValid(st.action!=='sleep'||st.phase==='CLASS','睡觉阶段无效');
+        assertValid(Array.isArray(st.cubeQueue)&&st.cubeQueue.length<=CUBE_QUEUE_LIMIT&&
+            st.cubeQueue.every(x=>typeof x==='string'&&/^[URFLDB]'?$/.test(x)), '魔方输入队列无效');
+        assertValid(!st.cubeQueue.length||st.action==='cube','魔方待输入动作与当前行动不匹配');
+        for(const k of ['cubeLastInput','cubeInputInfo'])
+            assertValid(typeof st[k]==='string'&&st[k].length<=180,'魔方输入反馈无效');
+    }
+    function noteBond() {
+        const i=S.classIndex;
+        if (S.bondLessons.includes(i)) return false;
+        S.bondLessons.push(i);
+        toast(`同桌记住了你的回应 · ${Math.min(3,S.bondLessons.length)} / 3 节课`);
+        if (S.bondLessons.length===3) addMessage('同桌：等放学的时候，我们一起走吧。');
+        return true;
+    }
+    function cancelDeskActivity(reason='switch') {
+        if (!S) return;
+        if (S.notes.draft) {
+            S.notes.draft=null; S.notes.interrupted++;
+            if (reason!=='lesson') caption('纸条还没送到。你先把它夹进了课本，没有获得回条奖励。',2.6);
+        }
+        if (S.action==='sleep' && reason!=='complete') S.rest.interrupted++;
+        // Inputs buffered during cube recovery must never execute behind a
+        // different activity, after a danger prompt, or after a lesson change.
+        S.cubeQueue=[];
+        $('stage').classList.remove('is-sleeping');
+    }
+    function startNote(topic) {
+        if (!canAct()||S.action!=='note'||!Object.hasOwn(NOTE_TOPICS,topic)) return;
+        if (S.notes.draft) {caption('纸条还在路上。空格可以中止并收好。',2);return;}
+        if (S.t<S.notes.cooldownUntil) {
+            caption(`同桌还在抄板书。${(S.notes.cooldownUntil-S.t).toFixed(1)} 秒后再传。`,2);return;
+        }
+        S.notes.draft={topic,elapsed:0}; S.operationTimes.push(S.t);
+        say('你',NOTE_TOPICS[topic].text);
+        sound('paper'); renderNote(); requestAutoSave();
+    }
+    function deliverNote() {
+        const draft=S.notes.draft;
+        if (!draft||S.action!=='note'||S.screen!=='game') return;
+        const topic=draft.topic, spec=NOTE_TOPICS[topic];
+        // Clear the draft before granting rewards, preventing re-entry or a
+        // restored finished draft from granting a second reward.
+        S.notes.draft=null; S.notes.sent++; S.notes.cooldownUntil=S.t+NOTE_COOLDOWN;
+        S.focus=clamp(S.focus+spec.focus); S.boredom=clamp(S.boredom-spec.boredom);
+        let text;
+        if(topic==='lookout') {
+            S.notes.watchUntil=S.t+WATCH_SECONDS;
+            S.notes.warnedDoorBorn=-1; S.notes.warnedNear=false;
+            text='我替你盯25秒。看到后门反光或老师靠近，我会敲桌提醒你；危险时仍要自己收好东西。';
+        } else if(topic==='bond') {
+            const first=noteBond();
+            text=first?'记住了，等真正的17:30，我们一起走。别把我忘在这里。':'这节课已经约好了。我们等真正的铃声，不急着走。';
+        } else text=CLASSES[S.classIndex].note;
+        S.notes.history.push({topic,text,lesson:S.classIndex,at:S.t});
+        if(S.notes.history.length>12) S.notes.history.shift();
+        say('同桌',text); sound('paper');
+        toast(`收到回条 · 专注 +${spec.focus} · 无聊 −${spec.boredom}`);
+        renderNote(); requestAutoSave();
+    }
+    function updateNotes(dt) {
+        const n=S.notes;
+        S.focus=clamp(S.focus-.08*dt); S.boredom=clamp(S.boredom-.32*dt);
+        addSuspicion((n.draft?.elapsed >= 1.6 ? .72 : .18)*dt,false);
+        if (S.screen!=='game'||S.action!=='note'||!n.draft) return;
+        n.draft.elapsed=Math.min(NOTE_SECONDS,n.draft.elapsed+dt);
+        if(n.draft.elapsed>=NOTE_SECONDS) deliverNote();
+    }
+    function updateMateWatch() {
+        const n=S.notes;
+        if(n.watchUntil<=S.t) return;
+        if(S.door?.real && n.warnedDoorBorn!==S.door.born) {
+            n.warnedDoorBorn=S.door.born;
+            caption('同桌轻敲了两下桌子：后门！',3.2);
+            toast('纸条约定 · 同桌提醒：后门有人，先收好。',true,3.2);
+            sound('paper'); requestAutoSave();
+        }
+        if(S.teacher.near && !n.warnedNear) {
+            n.warnedNear=true;
+            caption('同桌碰了一下你的手肘：老师就在旁边。',3);
+        } else if(!S.teacher.near) n.warnedNear=false;
+    }
+    function renderNote() {
+        if(!S) return;
+        const n=S.notes,d=n.draft,remaining=Math.max(0,n.cooldownUntil-S.t);
+        $('notePhase').textContent=d ? (d.elapsed<1.6?'写好并折起':d.elapsed<3.2?'悄悄传向同桌':'等待同桌回条') :
+            remaining>0?'同桌正在抄板书':'选一个话题，再递出去';
+        $('noteSeconds').textContent=d?`${(NOTE_SECONDS-d.elapsed).toFixed(1)}s`:remaining>0?`${remaining.toFixed(1)}s`:`已送达 ${n.sent} 张`;
+        $('noteProgress').style.width=(d?d.elapsed/NOTE_SECONDS*100:remaining>0?(1-remaining/NOTE_COOLDOWN)*100:0)+'%';
+        const last=n.history.at(-1);
+        $('noteReply').textContent=d?'纸条还在路上。切换行动或按空格会取消；课堂和巡逻不会暂停。':
+            last?`同桌的回条：${last.text}`:'纸角被折了两次。传递需要5秒；确认老师不在身边，再把话写下。';
+        $$('[data-note-topic]').forEach(el=>{
+            el.disabled=!canAct()||!!d||remaining>0;
+            el.classList.toggle('selected',d?.topic===el.dataset.noteTopic);
+        });
+    }
+    function startSleep() {
+        S.rest.elapsed=0; S.rest.sessions++;
+        say('你','只趴一会儿。脚步、点名和铃声，都还会继续。');
+        caption('你把额头靠在手臂上。空格或再次按7可以醒来。',3);
+    }
+    function wakeSleep(reason='manual') {
+        if(!S||S.action!=='sleep') return;
+        const seconds=S.rest.elapsed;
+        cancelDeskActivity(reason==='complete'?'complete':'wake');
+        S.action='listen'; S.phoneSeconds=0;
+        updateActionUI();
+        caption(reason==='complete'?`你从小憩中醒来 · 已休息 ${seconds.toFixed(1)} 秒。`:'你抬起头，重新看向课本。',2.5);
+        sound('paper'); requestAutoSave();
+    }
+    function chooseRestDuration(seconds) {
+        if(!canAct()||S.action!=='sleep'||![6,12,18].includes(seconds)) return;
+        S.rest.duration=seconds; S.operationTimes.push(S.t);
+        if(S.rest.elapsed>=seconds) wakeSleep('complete');
+        else {renderSleep();requestAutoSave();}
+    }
+    function updateSleep(dt) {
+        const r=S.rest, used=Math.min(dt,Math.max(0,r.duration-r.elapsed));
+        r.elapsed+=used; r.total+=used;
+        S.focus=clamp(S.focus+2.4*used); S.boredom=clamp(S.boredom-1.2*used);
+        addSuspicion((r.elapsed>4?.80:.32)*used,false);
+        if(S.screen!=='game'||S.action!=='sleep') return;
+        if(r.elapsed>=7&&!r.dreamSeen) {
+            r.dreamSeen=true;
+            S.journal.push({title:'伏桌时的梦',text:'梦里多出一张课桌。纸条上写着：别跟着铃声，跟着真正的时间。醒来后，桌数又变回了56。'});
+            say('你','梦里，第57张课桌上有张纸条。上面写着：别跟着铃声。');
+            requestAutoSave();
+        }
+        if(r.elapsed>=r.duration) wakeSleep('complete');
+    }
+    function renderSleep() {
+        if(!S) return;
+        const r=S.rest;
+        $('sleepCountdown').textContent=Math.max(0,r.duration-r.elapsed).toFixed(1)+'s';
+        $('sleepPhase').textContent=r.elapsed<4?'浅眠 · 还能听见粉笔声':'睡意渐深 · 更容易被老师注意';
+        $('sleepProgress').style.width=clamp(r.elapsed/r.duration*100)+'%';
+        $$('[data-rest-seconds]').forEach(el=>{
+            const active=Number(el.dataset.restSeconds)===r.duration;
+            el.classList.toggle('active',active);el.setAttribute('aria-pressed',String(active));
+        });
+    }
+    function deskJournal() {
+        if(!S) return '';
+        const n=S.notes,r=S.rest;
+        return `<div class="journal-entry"><b>课桌记录 / 纸条与小憩</b><p>成功传递 ${n.sent} 张 · 中断 ${n.interrupted} 次 · 小憩 ${r.sessions} 次 / ${r.total.toFixed(1)} 秒。<br>在不同课程中观察同桌或成功传递「放学一起走」，均可计入同行约定；同一节课只计一次。</p></div>`+
+            n.history.slice().reverse().map(x=>`<div class="journal-entry"><b>纸条 / ${CLASSES[x.lesson].subject} · ${esc(NOTE_TOPICS[x.topic].label)}</b><p>${esc(x.text)}</p></div>`).join('');
+    }
+    function normalizedKeyCode(e) {
+        if(e.code && e.code!=='Unidentified') return e.code;
+        if(/^[a-z]$/i.test(e.key||'')) return 'Key'+e.key.toUpperCase();
+        if(/^[0-9]$/.test(e.key||'')) return 'Digit'+e.key;
+        return ({' ':'Space',Spacebar:'Space',Enter:'Enter',Escape:'Escape',Esc:'Escape',Tab:'Tab'})[e.key]||'';
+    }
+    function cubeTurnFromKey(e) {
+        if(e.ctrlKey||e.metaKey||e.altKey||e.isComposing||e.keyCode===229) return null;
+        const code=normalizedKeyCode(e);
+        if(code==='KeyQ') return "R'";
+        if(code==='KeyE') return "U'";
+        return /^Key[URFLDB]$/.test(code)?code.slice(3)+(e.shiftKey?"'":''):null;
+    }
+    function applyCubeTurn(turn) {
+        S.lastCubeTurn=S.t; S.cubeLastInput=turn.replace("'",'′');
+        if(turn===CUBE_FORMULA[S.cubeStep]) {
+            S.cubeStep++; sound('cube'); S.cubeInputInfo='已接收 '+S.cubeLastInput;
+            if(S.cubeStep===4) {
+                S.cubeStep=0; S.cube=clamp(S.cube+4); S.focus=clamp(S.focus+15);
+                S.boredom=clamp(S.boredom-10); S.cubeCool=S.t+2.2;
+                S.cubeInputInfo='公式完成 · 进度 +4%';
+                toast(`公式完成 · 魔方 ${S.cube}% · 专注 +15`);
+                if(S.cube===100) {
+                    S.cubeQueue=[]; save.bestCube=100;persist();
+                    S.journal.push({title:'六面归位',text:'魔方已复原。只要一整天不碰手机，最后一节课结束时或许会出现另一个出口。'});
+                }
+            }
+        } else {
+            S.cubeStep=turn==='R'?1:0; S.boredom=clamp(S.boredom-1);
+            S.cubeInputInfo='已接收 '+S.cubeLastInput+' · 公式重新开始';
+            caption('公式重置：R U R′ U′',1.5); sound('cube',.5);
+        }
+    }
+    function updateCubeQueue() {
+        if(!S||S.action!=='cube'||!canAct()) return;
+        let changed=false;
+        while(S.cubeQueue.length&&S.t>=S.cubeCool&&S.cube<100) {
+            applyCubeTurn(S.cubeQueue.shift());changed=true;
+        }
+        if(changed){renderCube();requestAutoSave();}
+    }
+
     // ---------------------------------------------------------------------
     // v2 gameplay branches. Every continuation is an ID, never serialized JS.
     // ---------------------------------------------------------------------
@@ -3032,11 +3321,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
     function collectObservation() {
         if (!S || S.phase !== 'CLASS') return;
         const i = S.classIndex;
-        if (S.observe === 'mate' && !S.bondLessons.includes(i)) {
-            S.bondLessons.push(i);
-            toast(`同桌记住了你的回应 · ${S.bondLessons.length} / 3 节课`);
-            if (S.bondLessons.length === 3) addMessage('同桌：等放学的时候，我们一起走吧。');
-        }
+        if (S.observe==='mate') noteBond();
         if (S.observe === EVIDENCE[i].target && !S.evidence.includes(i)) {
             S.evidence.push(i);
             const clue = EVIDENCE[i];
@@ -3053,13 +3338,13 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
             +'<div class="evidence-grid">'+EVIDENCE.map((e,i)=>{
                 const known=evidence.includes(i), reached=i<=S.classIndex;
                 return `<div class="evidence-card"><b>${i+1}. ${CLASSES[i].subject} · ${known ? esc(e.title) : '尚未发现'}</b><p>${known ? esc(e.text) : reached ? '调查方向：观察'+esc(e.where)+'。' : '还没有上到这节课。'}</p></div>`;
-            }).join('')+'</div><p class="small">至少在三节不同课程里观察同桌，可在真放学后选择同行。作业与调查线索将开启不同选择；不是主线通关的必需条件。</p>';
+            }).join('')+'</div><p class="small">至少在三节不同课程里观察同桌或成功传递「放学一起走」，可在真放学后选择同行。作业与调查线索将开启不同选择；不是主线通关的必需条件。</p>';
     }
     function showPack() {
         beginChallenge({type:'pack',kicker:'17:30 / DAY COMPLETE',title:'这次，你想怎样离开？',
             description:`六节课已经结束。作业 ${Math.floor(S.homework)}%，线索 ${S.evidence.length}/6。\n独自离开保留原有隐藏结局；也可以选择新的故事。`,
             choices:['独自离开，走向走廊','等一等同桌，一起离开','把今天的事做个了结'],
-            locks:[null,S.bondLessons.length<3 ? `还需在 ${3-S.bondLessons.length} 节不同课程里观察同桌` : null,null]});
+            locks:[null,S.bondLessons.length<3 ? `还需在 ${3-S.bondLessons.length} 节不同课程里观察同桌或传递同行纸条` : null,null]});
     }
     function showEndingRoutes() {
         beginChallenge({type:'endingRoutes',kicker:'OTHER ENDINGS / 另一种答案',title:'还有未完成的事。',
@@ -3166,6 +3451,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
     function validateSnapshot(snap) {
         assertValid(snap && snap.version===2,'不支持的进度版本');
         const st=snap.state, c=snap.challenge, d=snap.dialogue, scriptData=snap.script;
+        migrateDeskState(st);
         const num=(n,lo=0,hi=10000000)=>typeof n==='number' && Number.isFinite(n) && n>=lo && n<=hi;
         assertValid(st && st.screen==='game' && ['INTRO','CLASS','BREAK','COMPLETE','ESCAPE'].includes(st.phase),'进度不在可恢复阶段');
         assertValid(['normal','quick'].includes(st.mode) && Number.isInteger(st.classIndex) && st.classIndex>=0 && st.classIndex<6,'课程信息无效');
@@ -3175,7 +3461,8 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         assertValid(st.duration>0 && st.elapsed<=st.duration+.001 && Number.isInteger(st.escapeNode) && st.escapeNode<=6 && Number.isInteger(st.cubeStep) && st.cubeStep<=3,'阶段进度越界');
         assertValid(st.caught<=3 && st.phoneCaught<=3,'被发现次数无效');
         for(const key of ['suspicion','maxSuspicion','focus','boredom','homework','cube','distance']) assertValid(num(st[key],0,100),'资源数值无效');
-        assertValid(['listen','homework','cube','phone','observe'].includes(st.action),'行动无效');
+        assertValid(ACTIONS.includes(st.action),'行动无效');
+        validateDeskState(st,num);
         assertValid(['board','teacher','door','window','mate'].includes(st.observe) && ['chat','video','time','game'].includes(st.phoneApp),'界面状态无效');
         const base=makeState(st.mode);
         for(const [key,value] of Object.entries(base)) {
@@ -3187,7 +3474,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         assertValid(st.classStats && ['caught','right','wrong','phone','cubeStart','max','focusStart'].every(k=>num(st.classStats[k])),'课堂统计无效');
         for(const k of ['eventsDone','messages','journal','operationTimes','evidence','bondLessons','actionOrder']) assertValid(Array.isArray(st[k]) && st[k].length<=200,'数组字段无效：'+k);
         for(const k of ['evidence','bondLessons']) assertValid(new Set(st[k]).size===st[k].length && st[k].every(i=>Number.isInteger(i)&&i>=0&&i<6),'线索记录无效');
-        assertValid(st.actionOrder.length===5 && new Set(st.actionOrder).size===5 && st.actionOrder.every(i=>Number.isInteger(i)&&i>=0&&i<5),'按钮顺序无效');
+        assertValid(st.actionOrder.length===ACTIONS.length && new Set(st.actionOrder).size===ACTIONS.length && st.actionOrder.every(i=>Number.isInteger(i)&&i>=0&&i<ACTIONS.length),'按钮顺序无效');
         assertValid(st.eventsDone.every(x=>EVENT_IDS.includes(x)),'课程事件记录无效');
         assertValid(st.messages.every(x=>typeof x==='string') && st.journal.every(x=>x&&typeof x.title==='string'&&typeof x.text==='string'),'手记或聊天记录无效');
         assertValid(st.operationTimes.every(t=>num(t)),'操作时间记录无效');
@@ -3214,6 +3501,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
             if(c.type==='sprint') assertValid(Number.isInteger(c.taps)&&c.taps>=0&&c.taps<c.target&&c.target===18&&num(c.lastTap,-100,1e7),'冲刺状态无效');
         }
         assertValid(!(c&&scriptData),'事件与剧情不能同时运行');
+        assertValid(!(c||scriptData)||(!st.notes.draft&&!st.cubeQueue.length&&st.action!=='sleep'),'被事件打断的桌面活动未清理');
         assertValid(st.phase!=='INTRO'||!!scriptData,'开场剧情缺失');
         assertValid(st.phase!=='BREAK'||c?.type==='break','课间记录缺失');
         assertValid(!['COMPLETE','ESCAPE'].includes(st.phase)||!!scriptData||!!c,'阶段后续内容缺失');
@@ -3539,6 +3827,10 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
                 this.tone(85, .17, .07 * vol, 'triangle');
                 this.tone(85, .17, .07 * vol, 'triangle', .25);
                 break;
+            case 'paper':
+                this.tone(920,.045,.035*vol,'triangle',0,240);
+                this.tone(640,.07,.025*vol,'triangle',.04,170);
+                break;
             case 'cube':
                 this.tone(480, .045, .05 * vol, 'triangle', 0, 220);
                 break;
@@ -3558,7 +3850,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
     function fx(kind = 'flicker') { if ((kind === 'flicker' && !save.settings.flicker) || (kind === 'shake' && !save.settings.shake))
         return; $('stage').classList.remove(kind); void $('stage').offsetWidth; $('stage').classList.add(kind); effectUntil = uiClock + .65; }
     function say(name, text) { dialogue = { name, text, shown: 0, hold: 0 }; $('speaker').textContent = name; $('speakerRole').textContent = ROLES[name] || 'CLASSROOM'; $('dialogueText').textContent = ''; $('dialogue').hidden = false; }
-    function playScript(lines, done = null) { script = { lines: [...lines], index: 0, done }; say(lines[0][0], lines[0][1]); $('dialogue').classList.add('dialogue-blocking'); renderDialogue(); requestAutoSave(); }
+    function playScript(lines, done = null) { if(S){cancelDeskActivity('event');S.action='listen';S.phoneSeconds=0;} script = { lines: [...lines], index: 0, done }; say(lines[0][0], lines[0][1]); $('dialogue').classList.add('dialogue-blocking'); renderDialogue(); requestAutoSave(); }
     function advanceDialogue() { if (modal || recoveryGrace > 0 || !S || S.screen !== 'game')
         return; if (dialogue.shown < dialogue.text.length) {
         dialogue.shown = dialogue.text.length;
@@ -3578,7 +3870,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
             dispatchContinuation(done);
     } renderDialogue(); requestAutoSave(); }
     function renderDialogue() { $('dialogueText').textContent = dialogue.text.slice(0, Math.floor(dialogue.shown)); $('dialogueNext').hidden = !script && dialogue.shown >= dialogue.text.length; $('dialogueNext').innerHTML = (dialogue.shown < dialogue.text.length ? '显示全文' : '继续') + ' <span class="next-mark">▸</span>'; $('dialogueAuto').textContent = script ? (save.settings.auto ? 'AUTO ON' : '点击 / ENTER') : '实时课堂'; }
-    function makeState(mode) { return { screen: 'game', phase: 'INTRO', mode, classIndex: 0, elapsed: 0, duration: 180, t: 0, survival: 0, action: 'listen', observe: 'teacher', observeElapsed: 0, observeNoted: false, suspicion: 0, maxSuspicion: 0, focus: 100, boredom: 0, homework: 0, cube: 0, cubeStep: 0, cubeCool: 0, lastCubeTurn: -10, phoneApp: 'chat', phoneSeconds: 0, totalPhone: 0, phoneEver: false, phoneCaught: 0, caught: 0, listenSeconds: 0, questionRight: 0, questionWrong: 0, mathStreak: 0, dangerFails: 0, nextEvent: 40, nextDoor: 27, door: null, teacher: { x: 842, y: 305, z: .81, target: 0, wait: 4, step: 0, near: false, tailUntil: 0, hold: 0 }, dangerCooldown: 0, extraUntil: 0, shuffleUntil: 0, anomalyUntil: 0, heartTimer: 0, eventsDone: [], messages: ['班群：今天好像要巡查。', '同桌：留意后门玻璃的反光。'], journal: [], operationTimes: [], classStats: {}, distance: 70, escapeNode: 0, escapeStarted: false, phoneGameTarget: 0, phoneGameRewardAt: -10, breakRemaining: 0, escapeRoutePending: false, endingId: null, evidence: [], bondLessons: [], companion: false, mirrorChoices: 0, actionOrder: [0,1,2,3,4], runPhoneRestricted: save.phoneRestricted, runId: Date.now().toString(36) + '-' + Math.random().toString(36).slice(2,10) }; }
+    function makeState(mode) { return { screen: 'game', phase: 'INTRO', mode, classIndex: 0, elapsed: 0, duration: 180, t: 0, survival: 0, action: 'listen', observe: 'teacher', observeElapsed: 0, observeNoted: false, suspicion: 0, maxSuspicion: 0, focus: 100, boredom: 0, homework: 0, cube: 0, cubeStep: 0, cubeCool: 0, lastCubeTurn: -10, phoneApp: 'chat', phoneSeconds: 0, totalPhone: 0, phoneEver: false, phoneCaught: 0, caught: 0, listenSeconds: 0, questionRight: 0, questionWrong: 0, mathStreak: 0, dangerFails: 0, nextEvent: 40, nextDoor: 27, door: null, teacher: { x: 842, y: 305, z: .81, target: 0, wait: 4, step: 0, near: false, tailUntil: 0, hold: 0 }, dangerCooldown: 0, extraUntil: 0, shuffleUntil: 0, anomalyUntil: 0, heartTimer: 0, eventsDone: [], messages: ['班群：今天好像要巡查。', '同桌：留意后门玻璃的反光。'], journal: [], operationTimes: [], classStats: {}, distance: 70, escapeNode: 0, escapeStarted: false, phoneGameTarget: 0, phoneGameRewardAt: -10, breakRemaining: 0, escapeRoutePending: false, endingId: null, evidence: [], bondLessons: [], companion: false, mirrorChoices: 0, actionOrder: [0,1,2,3,4,5,6], mechanicsVersion:1, notes:makeNotesState(), rest:makeRestState(), cubeQueue:[], cubeLastInput:'', cubeInputInfo:'', runPhoneRestricted: save.phoneRestricted, runId: Date.now().toString(36) + '-' + Math.random().toString(36).slice(2,10) }; }
     function startGame(mode) {
         initAudio(); clearTransient();
         $('stage').classList.remove('is-menu');
@@ -3593,9 +3885,12 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         $('escapeScene').hidden = true; $('escapeHud').hidden = true;
         enterClass(0);
     }
-    function clearTransient() { recoveryGrace = 0; pendingSave = false; saveTicket++; $('resumeBanner').hidden = true; $('dialogue').classList.remove('dialogue-blocking'); $$('.student').forEach(e => e.classList.remove('is-still')); challenge = null; script = null; eventQueue = []; modal = null; $('modal').hidden = true; $('challengeLayer').hidden = true; for (const n of notices)
+    function clearTransient() { $('stage').classList.remove('is-sleeping'); recoveryGrace = 0; pendingSave = false; saveTicket++; $('resumeBanner').hidden = true; $('dialogue').classList.remove('dialogue-blocking'); $$('.student').forEach(e => e.classList.remove('is-still')); challenge = null; script = null; eventQueue = []; modal = null; $('modal').hidden = true; $('challengeLayer').hidden = true; for (const n of notices)
         n.el.remove(); notices = []; $('stage').classList.remove('extraordinary', 'low-focus', 'critical', 'shake', 'flicker'); $$('.action').forEach(e => e.style.order = ''); $('rearDoor').classList.remove('moving', 'watched'); $('doorShadow').style.opacity = '0'; $('extraBadge').hidden = true; phoneRenderKey = ''; ambient = { text: '', until: 0 }; }
     function enterClass(index, fromCheckpoint = false) {
+        cancelDeskActivity('lesson');
+        S.notes.watchUntil=0; S.notes.warnedNear=false; S.notes.warnedDoorBorn=-1;
+        S.rest.elapsed=0;
         S.classIndex = index;
         const c = CLASSES[index];
         S.phase = 'INTRO';
@@ -3638,7 +3933,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         renderUI();
         sound('bell', .6);
         const pre = index === 0 ? [['同桌', '07:39。快上课了。'], ['同桌', '手机震了一下。班群里有人说：今天好像要巡查。']] : [];
-        S.actionOrder = [0,1,2,3,4];
+        S.actionOrder = ACTIONS.map((_,i)=>i);
         playScript([...pre, ...c.intro], 'classReady');
         rememberCheckpoint(`第 ${index+1} 节 · ${c.subject}开始`, 'lesson');
         autoSave('课程开始');
@@ -3678,81 +3973,91 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         return; S.caught++; S.classStats.caught++; if (S.caught >= 3) {
         gameOver('你在干什么？', '第三次被发现。老师站在你面前，挡住了所有出口。');
         return;
-    } S.suspicion = S.caught === 1 ? 60 : 75; S.maxSuspicion = 100; S.action = 'listen'; S.phoneSeconds = 0; S.dangerCooldown = S.t + 8; challenge = null; $('challengeLayer').hidden = true; updateActionUI(); sound('warn'); say(CLASSES[S.classIndex].teacher, S.caught === 1 ? '提醒一次。把东西收好。' : '最后一次警告。不要再让我看见。'); toast(`被发现 ${S.caught}/3 · 已切回课本`, true); }
-    function setAction(action) { if (!canAct())
-        return; if (action === 'phone' && !phoneAllowed()) {
-        toast('手机已被收走。可以使用魔方与观察。', true);
-        return;
-    } S.operationTimes.push(S.t); const old = S.action; S.action = action; if (action !== 'phone')
-        S.phoneSeconds = 0; if (action === 'phone') {
-        S.phoneEver = true;
-        S.phoneGameTarget = Math.floor(rnd(0, 3));
-        phoneRenderKey = '';
-    } if (action === 'observe') {
-        S.observeElapsed = 0;
-        S.observeNoted = false;
-    } updateActionUI(); sound('click'); if (action === 'phone' && old !== 'phone' && S.classIndex === 3 && S.teacher.tailUntil > S.t) {
-        caption('脚步停了。她却还没走远。', 3);
-        triggerDanger('这么急？惯性尚未结束。');
+    } S.suspicion = S.caught === 1 ? 60 : 75; S.maxSuspicion = 100; cancelDeskActivity('caught'); S.action = 'listen'; S.phoneSeconds = 0; S.dangerCooldown = S.t + 8; challenge = null; $('challengeLayer').hidden = true; updateActionUI(); sound('warn'); say(CLASSES[S.classIndex].teacher, S.caught === 1 ? '提醒一次。把东西收好。' : '最后一次警告。不要再让我看见。'); toast(`被发现 ${S.caught}/3 · 已切回课本`, true); }
+    function setAction(action) {
+        if(!canAct()||!ACTIONS.includes(action)) return;
+        if(action==='phone'&&!phoneAllowed()) {toast('手机已被收走。纸条、魔方与观察仍可使用。',true);return;}
+        if(action==='sleep'&&S.action==='sleep') {wakeSleep();return;}
+        const old=S.action;
+        if(old!==action) cancelDeskActivity('switch');
+        S.action=action; S.operationTimes.push(S.t);
+        if(action!=='phone') S.phoneSeconds=0;
+        if(action==='phone') {S.phoneEver=true;S.phoneGameTarget=Math.floor(rnd(0,3));phoneRenderKey='';}
+        if(action==='observe') {S.observeElapsed=0;S.observeNoted=false;}
+        if(action==='sleep') startSleep();
+        updateActionUI(); sound('click'); requestAutoSave();
+        if(action==='phone'&&old!=='phone'&&S.classIndex===3&&S.teacher.tailUntil>S.t) {
+            caption('脚步停了。她却还没走远。',3);triggerDanger('这么急？惯性尚未结束。');
+        } else if(action==='phone'&&S.door?.real&&S.t-S.door.born>1) toast('后门的目光还在。',true);
     }
-    else if (action === 'phone' && S.door?.real && S.t - S.door.born > 1) {
-        toast('后门的目光还在。', true);
-    } }
-    function safeHide() { if (!S || modal || script || recoveryGrace > 0)
-        return; if (challenge) {
-        if (challenge.type === 'hide')
-            resolveHide(challenge.step);
-        else if (challenge.type === 'sprint')
-            sprintTap();
-        return;
-    } if (S.phase === 'CLASS') {
-        S.action = 'listen';
-        S.phoneSeconds = 0;
-        S.cubeStep = 0;
+    function safeHide() {
+        if(!S||S.screen!=='game'||modal||script||recoveryGrace>0) return;
+        if(challenge) {
+            if(challenge.type==='hide') resolveHide(challenge.step);
+            else if(challenge.type==='sprint') sprintTap();
+            return;
+        }
+        if(S.phase!=='CLASS') return;
+        if(S.action==='sleep') {wakeSleep();return;}
+        const hadDraft=!!S.notes.draft;
+        cancelDeskActivity('hide'); S.action='listen';S.phoneSeconds=0;S.cubeStep=0;
         updateActionUI();
-        caption('你把一切压进课本下面。', 1.7);
-        sound('click');
-    } }
-    function updateActionUI() { if (!S)
-        return; $$('.action').forEach(e => { e.classList.toggle('active', e.dataset.action === S.action); e.disabled = !!challenge || !!script || S.phase !== 'CLASS' || (e.dataset.action === 'phone' && !phoneAllowed()); }); $('phone').hidden = S.action !== 'phone' || !!challenge || !!script || S.phase !== 'CLASS'; $('cubePanel').hidden = S.action !== 'cube' || !!challenge || !!script || S.phase !== 'CLASS'; $('observePanel').hidden = S.action !== 'observe' || !!challenge || !!script || S.phase !== 'CLASS'; $('bookTitle').textContent = S.action === 'homework' ? '其他作业' : CLASSES[S.classIndex].subject.split('').join('　'); $('rearDoor').classList.toggle('watched', S.action === 'observe' && S.observe === 'door'); $$('[data-observe]').forEach(e => e.classList.toggle('active', e.dataset.observe === S.observe)); if (S.action === 'phone')
-        renderPhone(); if (S.action === 'cube')
-        renderCube(); }
-    function turnCube(turn) { if (!canAct() || S.action !== 'cube')
-        return; if (S.cube >= 100) {
-        toast('六面已经复原。不要忘记今天的约定：不碰手机。');
-        return;
-    } if (S.t < S.cubeCool) {
-        caption('停一拍，让手指记住公式。', 1);
-        return;
-    } if (S.t - S.lastCubeTurn < .10)
-        return; S.lastCubeTurn = S.t; S.operationTimes.push(S.t); const formula = ['R', 'U', "R'", "U'"]; if (turn === formula[S.cubeStep]) {
-        S.cubeStep++;
-        sound('cube');
-        if (S.cubeStep === 4) {
-            S.cubeStep = 0;
-            S.cube = clamp(S.cube + 4);
-            S.focus = clamp(S.focus + 15);
-            S.boredom = clamp(S.boredom - 10);
-            S.cubeCool = S.t + 2.2;
-            toast(`公式完成 · 魔方 ${S.cube}% · 专注 +15`);
-            if (S.cube === 100) {
-                save.bestCube = 100;
-                persist();
-                S.journal.push({ title: '六面归位', text: '魔方已复原。只要一整天不碰手机，最后一节课结束时或许会出现另一个出口。' });
-            }
+        if(!hadDraft) caption('你把一切压进课本下面。',1.7);
+        sound('click');requestAutoSave();
+    }
+    function updateActionUI() {
+        if(!S) return;
+        const active=S.screen==='game'&&S.phase==='CLASS'&&!challenge&&!script;
+        $$('.action').forEach(e=>{
+            e.classList.toggle('active',e.dataset.action===S.action);
+            e.setAttribute('aria-pressed',String(e.dataset.action===S.action));
+            e.disabled=!active||(e.dataset.action==='phone'&&!phoneAllowed());
+        });
+        for(const [id,action] of [['phone','phone'],['cubePanel','cube'],['observePanel','observe'],['notePanel','note'],['sleepPanel','sleep']])
+            $(id).hidden=!active||S.action!==action;
+        $('stage').classList.toggle('is-sleeping',active&&S.action==='sleep');
+        $('bookTitle').textContent=S.action==='homework'?'其他作业':CLASSES[S.classIndex].subject.split('').join('　');
+        $('rearDoor').classList.toggle('watched',active&&S.action==='observe'&&S.observe==='door');
+        $$('[data-observe]').forEach(e=>e.classList.toggle('active',e.dataset.observe===S.observe));
+        $('friendSignal').hidden=!active||S.notes.watchUntil<=S.t;
+        if(!$('friendSignal').hidden) $('friendSignal').textContent=`同桌望风 · 还剩 ${Math.ceil(S.notes.watchUntil-S.t)} 秒`+
+            (S.door?.real?'\n后门有反光，先收好。':S.teacher.near?'\n老师就在旁边，先停手。':'\n危险时仍要完成三步反应。');
+        if(active) {
+            if(S.action==='phone') renderPhone();
+            if(S.action==='cube') renderCube();
+            if(S.action==='note') renderNote();
+            if(S.action==='sleep') renderSleep();
         }
     }
-    else {
-        S.cubeStep = turn === 'R' ? 1 : 0;
-        S.boredom = clamp(S.boredom - 1);
-        caption('公式重置：R U R′ U′', 1.5);
-        sound('cube', .5);
-    } renderCube(); }
-    function renderCube() { if (!S)
-        return; const seq = ['R', 'U', 'R′', 'U′']; $('cubeFormula').innerHTML = seq.map((x, i) => `<span class="${i < S.cubeStep ? 'done' : 'pending'}">${x}</span>`).join(' '); $$('[data-turn]').forEach(e => e.classList.toggle('needed', e.dataset.turn === ['R', 'U', "R'", "U'"][S.cubeStep])); $('cubeDrawing').style.transform = `rotate(${S.cubeStep * 5 - 6}deg)`; if (S.cube >= 100)
-        $$('#cubeDrawing i').forEach(e => e.style.background = '#bed295');
-    else
-        $$(' #cubeDrawing i').forEach(e => e.style.background = ''); $('cubeHint').textContent = S.cube >= 100 ? '100% · 六面复原。等待真正的放学。' : (S.t < S.cubeCool ? '公式归位中……稍等片刻再转动' : 'Shift + 字母 = 逆转；公式 R U R′ U′'); }
+    function turnCube(turn) {
+        if(!canAct()||S.action!=='cube'||typeof turn!=='string') return false;
+        turn=turn.toUpperCase().replace(/[′’]/g,"'");
+        if(!/^[URFLDB]'?$/.test(turn)) return false;
+        if(S.cube>=100) {toast('六面已经复原。可以收好魔方，等待真正放学。');return false;}
+        S.operationTimes.push(S.t);
+        if(S.t<S.cubeCool||S.cubeQueue.length) {
+            if(S.cubeQueue.length>=CUBE_QUEUE_LIMIT) {
+                S.cubeInputInfo='输入队列已满（8步）· 等待归位后再按';
+                caption(S.cubeInputInfo,2);renderCube();return false;
+            }
+            S.cubeQueue.push(turn);S.cubeLastInput=turn.replace("'",'′');
+            S.cubeInputInfo='已排队 '+S.cubeLastInput+' · 不必重复按';
+            updateCubeQueue();
+        } else applyCubeTurn(turn);
+        renderCube();requestAutoSave();return true;
+    }
+    function renderCube() {
+        if(!S) return;
+        $('cubeFormula').innerHTML=CUBE_FORMULA.map((x,i)=>`<span class="${i<S.cubeStep?'done':'pending'}">${x.replace("'",'′')}</span>`).join(' ');
+        $$('[data-turn]').forEach(e=>e.classList.toggle('needed',S.cube<100&&e.dataset.turn===CUBE_FORMULA[S.cubeStep]));
+        $('cubeDrawing').style.transform=`rotate(${S.cubeStep*5-6}deg)`;
+        $$('#cubeDrawing i').forEach(e=>e.style.background=S.cube>=100?'#bed295':'');
+        $('cubeInputStatus').textContent=S.cubeInputInfo||'等待输入 · R U R′ U′';
+        const wait=Math.max(0,S.cubeCool-S.t),queued=S.cubeQueue.map(x=>x.replace("'",'′')).join(' ');
+        $('cubeHint').textContent=S.cube>=100?'100% · 六面复原。等待真正的放学。':
+            wait>0?`归位 ${wait.toFixed(1)}s · ${queued?'已接收：'+queued:'可提前输入下一组，最多8步'}`:
+            'Shift+字母逆转；也可按 R → U → Q → E。空格收好。';
+    }
     function observe(target) { if (!canAct() || S.action !== 'observe')
         return; S.observe = target; S.observeElapsed = 0; S.observeNoted = false; S.operationTimes.push(S.t); updateActionUI(); sound('click'); }
     function observationResult() { const c = CLASSES[S.classIndex]; let text = ''; switch (S.observe) {
@@ -3797,6 +4102,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         if (!S || S.screen !== 'game' || challenge || script) return false;
         challenge = {elapsed:0, ...data};
         challenge.total = challenge.remaining ?? 0;
+        cancelDeskActivity('event');
         S.action = 'listen'; S.phoneSeconds = 0;
         $('challengeLayer').hidden = false; updateActionUI(); renderChallenge();
         if (!restoring && !['hide','break'].includes(challenge.type)) {
@@ -3814,7 +4120,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         const timer = c.remaining != null ? '<div class="challenge-timer"><i id="challengeTimer"></i></div>' : '';
         let body = '', footer = '';
         if (c.type === 'hide') {
-            body = '<div class="qte-steps">' + ['藏起来', '拿起笔', '看课本'].map((s, i) => `<button class="qte-step ${i < c.step ? 'done' : ''} ${i === c.step ? 'current' : ''}" data-hide-step="${i}" ${i !== c.step ? 'disabled' : ''}><b>0${i + 1} / SPACE</b>${s}</button>`).join('') + '</div>';
+            body = '<div class="qte-steps">' + (c.wasSleep?['醒过来','坐直拿笔','看课本']:['藏起来', '拿起笔', '看课本']).map((s, i) => `<button class="qte-step ${i < c.step ? 'done' : ''} ${i === c.step ? 'current' : ''}" data-hide-step="${i}" ${i !== c.step ? 'disabled' : ''}><b>0${i + 1} / SPACE</b>${s}</button>`).join('') + '</div>';
             footer = '连续按三次空格，或依次点击三个按钮。按住不算。';
         }
         else if (c.type === 'freeze') {
@@ -3847,11 +4153,21 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         $('challengeCard').style.top = ['grid','pack','endingRoutes'].includes(c.type) ? '160px' : '227px';
         $('challengeCard').innerHTML = `<div class="challenge-kicker"><span>${esc(c.kicker || 'CLASSROOM EVENT')}</span><span id="challengeSeconds">${c.remaining != null ? c.remaining.toFixed(1) + 's' : ''}</span></div><h2 class="challenge-title">${esc(c.title || '')}</h2><div class="challenge-description">${esc(c.description || '')}</div>${timer}${body}<div class="challenge-footer">${footer}</div>`;
     }
-    function triggerDanger(reason = '老师突然走到了你的课桌旁。', tutorial = false) { if (challenge || script || !S || S.phase !== 'CLASS')
-        return; const wasPhone = S.action === 'phone'; let time = tutorial ? 4 : (S.classIndex === 5 ? 1.5 : 2); if (S.extraUntil > S.t)
-        time *= .75; S.dangerCooldown = S.t + 11; caption('！！脚步就在桌边。', time + 1); sound('warn'); fx('shake'); beginChallenge({ type: 'hide', remaining: time, step: 0, wasPhone, tutorial, kicker: tutorial ? 'GUIDED PRACTICE / 安全演练' : '!! / IMMEDIATE DANGER', title: tutorial ? '先练习一次。' : '藏好。现在。', description: reason }); }
+    function triggerDanger(reason='老师突然走到了你的课桌旁。',tutorial=false) {
+        if(challenge||script||!S||S.phase!=='CLASS') return;
+        const wasPhone=S.action==='phone',wasSleep=S.action==='sleep',wasNote=S.action==='note';
+        let time=tutorial?4:S.classIndex===5?1.5:2;
+        if(S.extraUntil>S.t) time*=.75;
+        S.dangerCooldown=S.t+11;
+        caption(wasSleep?'！！有人敲响了你的课桌。':'！！脚步就在桌边。',time+1);
+        sound('warn');fx('shake');
+        beginChallenge({type:'hide',remaining:time,step:0,wasPhone,wasSleep,wasNote,tutorial,
+            kicker:tutorial?'GUIDED PRACTICE / 安全演练':wasSleep?'WAKE UP / 老师就在身边':'!! / IMMEDIATE DANGER',
+            title:tutorial?'先练习一次。':wasSleep?'醒醒。抬起头。':'藏好。现在。',
+            description:wasSleep?'有人在桌边敲了两下。连续三次空格：醒来、坐直、看课本。':wasNote?'影子落在纸角上。纸条传递已中止，现在先把它藏好。':reason});
+    }
     function resolveHide(step) { if (!challenge || challenge.type !== 'hide' || step !== challenge.step || modal || recoveryGrace > 0)
-        return; challenge.step++; sound('click'); if (challenge.step === 3) {
+        return; challenge.step++; requestAutoSave(); sound('click'); if (challenge.step === 3) {
         closeChallenge();
         S.dangerCooldown = S.t + 9;
         addSuspicion(-3);
@@ -3867,7 +4183,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         return;
     } if (c.wasPhone && registerPhoneCaught())
         return; addSuspicion(S.classIndex === 5 ? 48 : 36, false); if (S.screen !== 'game')
-        return; S.dangerCooldown = S.t + 9; say(CLASSES[S.classIndex].teacher, '你的手里，刚才是什么？'); toast('隐藏失败 · 怀疑显著上升。', true); sound('warn'); }
+        return; S.dangerCooldown = S.t + 9; say(CLASSES[S.classIndex].teacher, c.wasSleep?'上课睡觉？坐直，看黑板。':c.wasNote?'刚才传的是什么？拿出来。':'你的手里，刚才是什么？'); toast(c.wasSleep?'没能及时醒来 · 怀疑显著上升。':'隐藏失败 · 怀疑显著上升。', true); sound('warn'); }
     function askQuestion(subject, number = 0, onDone = null) { const bank = QUESTIONS[subject], q = bank[number % bank.length], indices = shuffle(q.choices.map((_, i) => i)); const seconds = (S.phase === 'ESCAPE' ? 11 : 6.5 + S.focus * .065); if (S.classIndex === 5 && S.phase === 'CLASS')
         showDoor(true, seconds, 'glasses'); beginChallenge({ type: 'question', remaining: seconds, kicker: S.phase === 'ESCAPE' ? 'MEMORY / 课程回忆' : 'ROLL CALL / 突然点名', title: subject === 'math' ? '死亡点名' : '回答这道题。', description: q.text, choices: indices.map(i => q.choices[i]), correct: indices.indexOf(q.answer), explain: q.explain, math: subject === 'math', onDone }); sound('warn', .6); }
     function recordAnswer(ok, isMath) { if (ok) {
@@ -4042,6 +4358,10 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
             addSuspicion(1.2 * dt);
         else if (S.action === 'homework')
             addSuspicion(.35 * dt);
+        else if (S.action === 'note')
+            addSuspicion(1.7 * dt,false);
+        else if (S.action === 'sleep')
+            addSuspicion(1.0 * dt,false);
     } }
     function chooseTeacherTarget() { const t = S.teacher, nearTargets = [4, 5, 6], normal = [0, 1, 2, 3, 7]; const p = .12 + S.suspicion * .004 + S.classIndex * .024; let target = Math.random() < p ? pick(nearTargets) : pick(normal); if (S.classIndex === 5 && Math.random() < .28)
         target = Math.floor(rnd(0, 8)); if (target === t.target)
@@ -4070,7 +4390,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
             if (t.step <= 0) {
                 t.step = .65 / Math.max(.8, speed);
                 const loud = .3 + .6 * clamp((t.y - 300) / 130, 0, 1);
-                sound('step', S.action === 'phone' && S.phoneApp === 'video' ? loud * .35 : loud);
+                sound('step', S.action === 'phone' && S.phoneApp === 'video' ? loud * .35 : S.action==='sleep'?loud*.55:loud);
                 if (Math.random() < .45)
                     caption('哒……哒……', .8);
             }
@@ -4086,11 +4406,11 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
             caption('脚步似乎已经离开。再等三秒。', 3);
         }
         t.near = near;
-        if (near && S.t > S.dangerCooldown && ['phone', 'cube', 'homework'].includes(S.action)) {
+        if (near && S.t > S.dangerCooldown && ['phone','cube','homework','note','sleep'].includes(S.action)) {
             triggerDanger('老师的影子，落在你摊开的课本上。');
         }
     }
-    function suddenWatch() { if (S.action === 'phone' || S.action === 'cube') {
+    function suddenWatch() { if (['phone','cube','note','sleep'].includes(S.action)) {
         caption('讲课声突然中断。全班静音。', 2.5);
         triggerDanger('李芳铃停下了。她正在看你的手。');
     }
@@ -4100,7 +4420,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         say('李芳铃', '受着。');
         addSuspicion(-2);
     } }
-    function scrambleButtons() { S.shuffleUntil = S.t + 5; const order = shuffle([0, 1, 2, 3, 4]); S.actionOrder = order; $$('.action').forEach((e, i) => e.style.order = order[i]); toast('神经调节：按钮位置交换 5 秒。数字快捷键不变。', true, 4); fx('flicker'); say('王盈', '习惯，还是判断？'); }
+    function scrambleButtons() { S.shuffleUntil = S.t + 5; const order = shuffle(ACTIONS.map((_,i)=>i)); S.actionOrder = order; $$('.action').forEach((e, i) => e.style.order = order[i]); toast('神经调节：按钮位置交换 5 秒。数字快捷键不变。', true, 4); fx('flicker'); say('王盈', '习惯，还是判断？'); }
     function triggerExtraordinary() { S.extraUntil = S.t + 60; toast('EXTRAORDINARY MODE · 60 秒', true, 5); say('尹纱纱', '高级。这才是你们应该有的反应速度。'); sound('warn'); fx('flicker'); }
     function physicsVisit() { caption('哒。哒。哒。脚步停止了。', 3); S.teacher.target = 5; S.teacher.wait = 4; S.teacher.x = 1150; S.teacher.y = 370; S.teacher.z = 1.14; S.dangerCooldown = S.t + 2.5; S.teacher.tailUntil = S.t + 5; sound('step'); say('戴贝贝', '这么急？'); }
     function scheduledEvents() {
@@ -4116,7 +4436,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
             showDoor(true, 6, 'glasses');
             break;
         case 1:
-            if (['phone', 'cube'].includes(S.action))
+            if (['phone','cube','note','sleep'].includes(S.action))
                 triggerDanger('老师突然回头。你听见粉笔放下的声音。');
             else
                 say(CLASSES[S.classIndex].teacher, '保持安静。');
@@ -4181,6 +4501,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
                 addSuspicion(.025 * dt);
                 break;
             case 'cube':
+                updateCubeQueue();
                 S.boredom = clamp(S.boredom - .7 * dt);
                 S.focus = clamp(S.focus + .06 * dt);
                 addSuspicion(.09 * dt);
@@ -4193,6 +4514,12 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
                     const risk = S.phoneSeconds < 3 ? .25 : S.phoneSeconds < 6 ? .65 : S.phoneSeconds < 10 ? 1.2 : S.phoneSeconds < 15 ? 1.9 : 3;
                     addSuspicion((risk + (S.phoneApp === 'video' ? .2 : 0)) * dt);
                 }
+                break;
+            case 'note':
+                updateNotes(dt);
+                break;
+            case 'sleep':
+                updateSleep(dt);
                 break;
             case 'observe':
                 S.boredom = clamp(S.boredom - .25 * dt);
@@ -4208,6 +4535,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         if (S.screen !== 'game')
             return;
         updateDoor(dt);
+        updateMateWatch();
         if (S.screen !== 'game')
             return;
         scheduledEvents();
@@ -4217,6 +4545,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
                 return;
         }
         updateTeacher(dt);
+        updateMateWatch();
         if (challenge || S.screen !== 'game')
             return;
         if (S.elapsed >= S.nextDoor) {
@@ -4257,6 +4586,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         }
     }
     function endClass() {
+        cancelDeskActivity('lesson');
         S.phase = 'BREAK';
         S.action = 'listen';
         S.door = null;
@@ -4267,6 +4597,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
 课间与午间自动跳过。休息一下，再进入下一节课。` });
     }
     function completeDay() {
+        cancelDeskActivity('lesson');
         S.phase = 'COMPLETE'; S.elapsed = S.duration; S.action = 'listen';
         S.door = null; S.extraUntil = 0; eventQueue = [];
         $('doorShadow').style.opacity = '0'; updateActionUI(); sound('bell');
@@ -4289,7 +4620,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         { place: '一楼大厅', description: "大厅正门的绿色 EXIT 标牌亮着。\n白线向左通往门厅；右侧只有一面照不出你的镜子。", choices: ['向左进入门厅', '向右靠近镜子', '回到实验室', '继续向地下走'], correct: 0 },
         { place: '校门前厅', description: "玻璃上映出真正的晚霞。\n出口在右侧。门上还有一道写着 1/56 的编号锁。", choices: ['向左回教室', '向右走向校门', '躲在讲台后', '继续下楼'], correct: 1 }
     ];
-    function startEscape() { S.phase = 'ESCAPE'; S.escapeStarted = true; S.escapeNode = 0; S.distance = 70; S.action = 'listen'; S.door = null; S.extraUntil = 0; S.teacher.hold = S.t + 86400; eventQueue = []; $('gameUI').hidden = true; $('teacher').hidden = true; $('escapeScene').hidden = false; $('escapeHud').hidden = false; $('dialogue').hidden = false; S.journal.push({ title: '出口', text: '遵循可见的反光、绿色 EXIT 牌与地面引导线。走错扣20距离。走廊、侧楼梯、实验室、一楼大厅、门厅、校门。六科的守则仍然有效。' }); say('你', '脚步在身后。看清路标，别浪费时间。'); showRoute(); }
+    function startEscape() { cancelDeskActivity('event'); S.phase = 'ESCAPE'; S.escapeStarted = true; S.escapeNode = 0; S.distance = 70; S.action = 'listen'; S.door = null; S.extraUntil = 0; S.teacher.hold = S.t + 86400; eventQueue = []; $('gameUI').hidden = true; $('teacher').hidden = true; $('escapeScene').hidden = false; $('escapeHud').hidden = false; $('dialogue').hidden = false; S.journal.push({ title: '出口', text: '遵循可见的反光、绿色 EXIT 牌与地面引导线。走错扣20距离。走廊、侧楼梯、实验室、一楼大厅、门厅、校门。六科的守则仍然有效。' }); say('你', '脚步在身后。看清路标，别浪费时间。'); showRoute(); }
     function showRoute() { if (S.screen !== 'game')
         return; const r = ROUTES[S.escapeNode]; $('escape-location').textContent = r.place; $('escapeRoute').innerHTML = ROUTES.map((x, i) => `<span class="${i <= S.escapeNode ? 'passed' : ''}">${x.place}</span>`).join(''); beginChallenge({ type: 'route', remaining: 10, kicker: `ESCAPE / ${S.escapeNode + 1} OF 6`, title: r.place, description: r.description, choices: r.choices, correct: r.correct }); }
     function changeDistance(delta) { S.distance = clamp(S.distance + delta); if (S.distance <= 0) {
@@ -4381,7 +4712,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         writeProgress(); sound('lose');
     }
     function showEndingScreen(e,id) {
-        S.screen = 'ending'; S.action = 'listen'; challenge = null; script = null; eventQueue = []; modal = null;
+        cancelDeskActivity('ending'); S.screen = 'ending'; S.action = 'listen'; challenge = null; script = null; eventQueue = []; modal = null;
         pendingSave = false; recoveryGrace = 0; $('resumeBanner').hidden = true;
         $('modal').hidden = true; $('challengeLayer').hidden = true; $('gameUI').hidden = true;
         $('dialogue').hidden = true; $('escapeHud').hidden = true; $('ending').hidden = false;
@@ -4430,13 +4761,13 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
             html = `<p class="small">更改立即生效。快速模式只影响新的一天；当前周目不会被改动。</p><label class="settings-row"><span>音量<small>铃声、脚步、心跳、门声与操作音</small></span><span class="settings-control"><input aria-label="音量" type="range" min="0" max="100" value="${Math.round(opts.volume * 100)}" data-setting="volume"><output id="volumeOutput">${Math.round(opts.volume * 100)}%</output></span></label><label class="settings-row"><span>恐怖闪烁<small>仅事件触发的短暂明暗变化；敏感者建议关闭</small></span><input type="checkbox" data-setting="flicker" ${opts.flicker ? 'checked' : ''}></label><label class="settings-row"><span>屏幕震动<small>关闭后保留文字、阴影与声音提示</small></span><input type="checkbox" data-setting="shake" ${opts.shake ? 'checked' : ''}></label><label class="settings-row"><span>文字速度<small>点击对话框或按 Enter 可立即显示全文</small></span><span class="settings-control"><input aria-label="文字速度" type="range" min="12" max="90" value="${opts.textSpeed}" data-setting="textSpeed"><output id="textSpeedOutput">${opts.textSpeed}字/s</output></span></label><label class="settings-row"><span>剧情自动继续<small>文字显示完毕后留出阅读时间再继续</small></span><input type="checkbox" data-setting="auto" ${opts.auto ? 'checked' : ''}></label><label class="settings-row"><span>默认快速模式<small>新周目每节课 90 秒；两种模式都支持记录点重试</small></span><input type="checkbox" data-setting="quick" ${opts.quick ? 'checked' : ''}></label><label class="settings-row"><span>显示未解锁结局的线索<small>可选剧透：在结局档案中显示达成条件</small></span><input type="checkbox" data-setting="endingHints" ${opts.endingHints ? 'checked' : ''}></label><div class="modal-actions"><button class="outline-btn" data-modal-action="fullscreen">⛶ 切换全屏</button><button class="outline-btn" data-modal-action="reset" ${S?.screen === 'game' ? 'disabled' : ''}>清除本地存档</button></div><p class="small" style="margin-top:14px">Alt + Enter 切换全屏。全屏受浏览器权限控制；被拒绝时可使用浏览器的 F11。${S?.screen === 'game' ? '清除记录只能在主菜单或结局页进行。' : ''}</p>`;
         }
         else if (kind === 'help') {
-            html = `<p>你是江城大学附属中学高二（2）班的一名学生。撑过六节课，在真正的 <b>17:30</b> 放学，再走出教学楼。游戏中的学校、人物与情节均为虚构。</p><h3>你的课桌</h3><p><span class="help-key">1</span>听课降低怀疑，但无聊会上升。<span class="help-key">2</span>写其他作业。<span class="help-key">3</span>玩魔方，以 <b>R U R′ U′</b> 完成公式；Shift + 字母表示逆转，完成一组后稍停 2.2 秒。<span class="help-key">4</span>手机：聊天、视频、小游戏、真实时间。<span class="help-key">5</span>观察讲台、老师、后门、窗外与同桌。作业和魔方不是普通通关的强制目标。</p><h3>先活下来</h3><p>平时 <span class="help-key">Space</span> 立即收好物品。危险事件出现时，连续三次空格或依次点击「藏起来 → 拿笔 → 看书」。不要按住空格。手机连续使用越久越危险；留意脚步、玻璃与同桌提醒，任何致命突袭前都有线索。静音时仍有画面与文字提示。</p><p>怀疑达到 100 会被发现：第一次降到 60，第二次降到 75，第三次失败。手机被抓三次进入独立坏结局，并影响后续周目。无聊超过 65 会持续消耗专注；低专注让画面模糊，答题时间变短。</p><h3>六节课，不是同一道题</h3><p>语文教你看反光。化学课留意突然的安静。生物课「不要动」有 0.8 秒准备，随后静止 2 秒，暂停与系统按键除外。物理课盯住老师可使她停止；脚步刚走后再等 3 秒。英语课进入 60 秒强化模式。数学课连续答错两题会失败，56 个编号中只有一个符合题意。<b>第一遍下课铃是假的。</b></p><h3>操作与记录</h3><p><span class="help-key">1—4</span>限时事件选项。<span class="help-key">Enter</span>剧情继续。<span class="help-key">Esc</span>暂停。<span class="help-key">N</span>手记。<span class="help-key">M</span>静音。<span class="help-key">Alt+Enter</span>全屏。切到其他标签或窗口自动暂停；回到页面后手动继续。</p><p>普通模式课堂约 19 分钟，加剧情、答题与逃生通常 20—35 分钟；快速模式通常 10—15 分钟。课间与午间跳过，不采用统一时间倍率。共12个结局。每5秒、关键操作及页面中断时保存完整进度。两种模式都支持从最新检查点重试，也可以在「存档」中选择本节开头、放学分歧或较早的检查点。读档后先暂停，继续时留有2秒准备期。</p><h3>调查与同桌</h3><p>每节课都有一条可通过观察发现的线索，手记会提示调查位置。至少在三节不同课程中观察同桌，可以在17:30选择同行。作业100%、六条线索以及是否接过钥匙，都能打开新的结局。普通离校路线和原有六个结局仍然保留。</p><h3>存档说明</h3><p>自动记录与安全检查点相互独立，失败不会覆盖重试点。网页关闭、刷新、切到后台会尝试立即保存；突发断电或强制结束进程可能只保留最近一次成功写入。浏览器禁用存储时请使用「导出备份」。移动本地HTML、换浏览器或清理网站数据前也建议导出。导入/导出均在本机进行，不上传任何内容。</p><p class="small">手机端建议横屏；所有动作都有可点击按钮。不会请求摄像头、麦克风或网络权限。</p>`;
+            html = `<p>你是江城大学附属中学高二（2）班的一名学生。撑过六节课，在真正的 <b>17:30</b> 放学，再走出教学楼。游戏中的学校、人物与情节均为虚构。</p><h3>你的课桌</h3><p><span class="help-key">1</span>听课降低怀疑，但无聊会上升。<span class="help-key">2</span>写其他作业。<span class="help-key">3</span>玩魔方，以 <b>R U R′ U′</b> 完成公式；Shift + 字母表示逆转，完成一组后稍停 2.2 秒。<span class="help-key">4</span>手机：聊天、视频、小游戏、真实时间。<span class="help-key">5</span>观察讲台、老师、后门、窗外与同桌。作业和魔方不是普通通关的强制目标。</p><h3>先活下来</h3><p>平时 <span class="help-key">Space</span> 立即收好物品。危险事件出现时，连续三次空格或依次点击「藏起来 → 拿笔 → 看书」。不要按住空格。手机连续使用越久越危险；留意脚步、玻璃与同桌提醒，任何致命突袭前都有线索。静音时仍有画面与文字提示。</p><p>怀疑达到 100 会被发现：第一次降到 60，第二次降到 75，第三次失败。手机被抓三次进入独立坏结局，并影响后续周目。无聊超过 65 会持续消耗专注；低专注让画面模糊，答题时间变短。</p><h3>六节课，不是同一道题</h3><p>语文教你看反光。化学课留意突然的安静。生物课「不要动」有 0.8 秒准备，随后静止 2 秒，暂停与系统按键除外。物理课盯住老师可使她停止；脚步刚走后再等 3 秒。英语课进入 60 秒强化模式。数学课连续答错两题会失败，56 个编号中只有一个符合题意。<b>第一遍下课铃是假的。</b></p><h3>操作与记录</h3><p><span class="help-key">1—4</span>限时事件选项。<span class="help-key">Enter</span>剧情继续。<span class="help-key">Esc</span>暂停。<span class="help-key">N</span>手记。<span class="help-key">M</span>静音。<span class="help-key">Alt+Enter</span>全屏。切到其他标签或窗口自动暂停；回到页面后手动继续。</p><p>普通模式课堂约 19 分钟，加剧情、答题与逃生通常 20—35 分钟；快速模式通常 10—15 分钟。课间与午间跳过，不采用统一时间倍率。共12个结局。每5秒、关键操作及页面中断时保存完整进度。两种模式都支持从最新检查点重试，也可以在「存档」中选择本节开头、放学分歧或较早的检查点。读档后先暂停，继续时留有2秒准备期。</p><h3>传纸条与睡觉</h3><p><span class="help-key">6</span>打开纸条，按A请同桌望风、S约好放学同行、D借课堂笔记。写纸条、递出和等待回条共需5秒；巡逻不会暂停。收到回条后才获得奖励，再等8秒才能传下一张。切换行动、危险或点名会中止尚未送达的纸条。成功的同行纸条与观察同桌共用本节互动次数；不会代替调查线索。</p><p><span class="help-key">7</span>伏桌小憩，可选6/12/18秒。每秒专注+2.4、无聊−1.2，但会累积怀疑，4秒后风险更高。按空格、再次按7或点击「醒来」可立即起身。老师靠近会触发「醒来→坐直→看课本」三步反应；不要把睡觉当成暂停。</p><h3>魔方输入</h3><p>先按3打开魔方。公式为 R → U → Shift+R → Shift+U，也可按 R → U → Q → E；Q对应R′，E对应U′。左右Shift均可，CapsLock不会改变方向。每次按键松开后再按，长按不连发。组间2.2秒归位期间可预输入最多8步；面板会显示已接收的动作和倒计时。切换行动或遇到危险会清空尚未执行的动作。所有六个面的正转和逆转都有按钮；若输入法拦截组合键，请切英文输入或点击按钮。</p><h3>调查与同桌</h3><p>每节课都有一条可通过观察发现的线索，手记会提示调查位置。至少在三节不同课程中观察同桌或成功传递同行纸条，可以在17:30选择同行。作业100%、六条线索以及是否接过钥匙，都能打开新的结局。普通离校路线和原有六个结局仍然保留。</p><h3>存档说明</h3><p>自动记录与安全检查点相互独立，失败不会覆盖重试点。网页关闭、刷新、切到后台会尝试立即保存；突发断电或强制结束进程可能只保留最近一次成功写入。浏览器禁用存储时请使用「导出备份」。移动本地HTML、换浏览器或清理网站数据前也建议导出。导入/导出均在本机进行，不上传任何内容。</p><p class="small">手机端建议横屏；所有动作都有可点击按钮。不会请求摄像头、麦克风或网络权限。</p>`;
         }
         else if (kind === 'archive') {
             html = '<p class="small">有些路，只有走过才会留下名字。已发现 ' + save.endings.length + ' / '+ENDING_COUNT+'</p><div class="archive-grid">' + Object.entries(ENDINGS).map(([id, e]) => { const known = save.endings.includes(id); return `<div class="archive-card ${known ? '' : 'locked'}"><div class="ending-label">${known ? esc(e.type) : 'UNDISCOVERED / 未发现'}</div><h3>${known ? esc(e.title) : '??????'}</h3><p>${known || save.settings.endingHints ? esc(e.hint) : '这一页还没有被写下。可在设置中开启线索提示。'}</p></div>`; }).join('') + `</div><div class="stats-row"><span>开启 ${save.attempts} 天</span><span>成功离校 ${save.wins} 次</span><span>最长存活 ${fmtDuration(save.bestSurvival)}</span><span>魔方最高 ${save.bestCube}%</span></div>`;
         }
         else if (kind === 'journal') {
-            html = investigationJournal() + '<p class="small">所有限时事件与脚步已暂停。以下为已上过的课程。</p>' + ((S?.journal || []).map(x => `<div class="journal-entry"><b>${esc(x.title)}</b><p>${esc(x.text)}</p></div>`).join('') || '<p>这一天还没有开始。</p>') + '<div class="journal-entry"><b>给自己</b><p>17:30 以前不要离开。手机不是必需品。无法专注时转转魔方，再把东西收好。</p></div>';
+            html = investigationJournal() + deskJournal() + '<p class="small">所有限时事件与脚步已暂停。以下为已上过的课程。</p>' + ((S?.journal || []).map(x => `<div class="journal-entry"><b>${esc(x.title)}</b><p>${esc(x.text)}</p></div>`).join('') || '<p>这一天还没有开始。</p>') + '<div class="journal-entry"><b>给自己</b><p>17:30 以前不要离开。手机不是必需品。无法专注时转转魔方，再把东西收好。</p></div>';
         }
         else if (kind === 'quit') {
             html = '<p>当前进度将被保存。下次从主菜单「继续上次游戏」接着玩，所有倒计时不会在离线期间流逝。</p><div class="modal-actions"><button class="solid-btn" data-modal-action="confirmQuit">保存并返回</button><button class="outline-btn" data-modal-action="back">继续留下</button></div>';
@@ -4533,7 +4864,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         openModal('pause'); wasFullscreen = full; resize(); }
     function resize() { const w = window.visualViewport?.width || window.innerWidth, h = window.visualViewport?.height || window.innerHeight; const scale = Math.min(w / 1600, h / 900); $('stage').style.transform = `translate(-50%,-50%) scale(${scale})`; }
     function renderUI() { if (!S)
-        return; const c = CLASSES[S.classIndex], time = fmtTime(currentTime()); $('gameClock').textContent = S.anomalyUntil > S.t && S.classIndex >= 3 ? fmtTime(currentTime() - 3) : time; $('courseName').textContent = `第 ${S.classIndex + 1} 节 · ${c.subject}`; $('teacherName').textContent = c.teacher + ' / ' + c.title; $('lessonDots').innerHTML = CLASSES.map((_, i) => `<i class="lesson-dot ${i < S.classIndex ? 'done' : ''} ${i === S.classIndex ? 'active' : ''}"></i>`).join(''); $('lessonProgress').firstElementChild.style.width = (S.elapsed / S.duration * 100) + '%'; $('suspicionValue').innerHTML = String(Math.floor(S.suspicion)).padStart(2, '0') + ' <small>/ 100</small>'; $('suspicionBar').firstElementChild.style.width = S.suspicion + '%'; $('suspicionBar').classList.toggle('danger', S.suspicion >= 70); $('suspicionHint').textContent = S.suspicion < 30 ? '一切正常。至少现在是。' : S.suspicion < 50 ? '她开始注意到你。' : S.suspicion < 70 ? '巡视越来越频繁。' : S.suspicion < 90 ? '不要拿出任何多余的东西。' : '危险。她的目光没有离开。'; $('focusBar').style.width = S.focus + '%'; $('focusValue').textContent = Math.round(S.focus); $('boredomBar').style.width = S.boredom + '%'; $('boredomValue').textContent = Math.round(S.boredom); $('boredomBar').style.background = S.boredom > 65 ? 'var(--danger)' : ''; $('homeworkValue').textContent = Math.floor(S.homework) + '%'; $('cubeValue').textContent = S.cube + '%'; $('phoneRiskValue').textContent = !phoneAllowed() ? '已收走' : S.action !== 'phone' ? '—' : S.phoneSeconds < 3 ? '低' : S.phoneSeconds < 6 ? '小' : S.phoneSeconds < 10 ? '中' : S.phoneSeconds < 15 ? '高' : '极高'; $('phoneRiskValue').style.color = S.phoneSeconds >= 10 ? 'var(--danger)' : ''; $('actionHint').textContent = S.boredom > 65 ? '无聊正在消耗专注 · 换个行动' : S.action === 'phone' ? `已连续使用 ${S.phoneSeconds.toFixed(1)} 秒 · SPACE 收起` : S.action === 'cube' ? 'R U R′ U′ · Shift 逆转 · SPACE 收好' : 'SPACE 收好 · N 手记 · ESC 暂停'; const clock = S.anomalyUntil > S.t ? currentTime() - 3 : currentTime(); $('minuteHand').style.transform = `rotate(${clock % 60 * 6}deg)`; $('hourHand').style.transform = `rotate(${(clock / 60) % 12 * 30}deg)`; $('teacher').style.transform = `translate3d(${S.teacher.x}px,${S.teacher.y}px,0) scale(${S.teacher.z})`; $('stage').classList.toggle('low-focus', S.focus < 25); $('stage').classList.toggle('critical', S.suspicion > 85 && S.screen === 'game'); $('room').style.setProperty('--focus-blur', Math.max(0, (30 - S.focus) / 18).toFixed(2) + 'px'); const extra = S.extraUntil > S.t && S.phase === 'CLASS'; $('stage').classList.toggle('extraordinary', extra); $('extraBadge').hidden = !extra; $('extraTime').textContent = Math.max(0, Math.ceil(S.extraUntil - S.t)); if (S.action === 'phone')
+        return; const c = CLASSES[S.classIndex], time = fmtTime(currentTime()); $('gameClock').textContent = S.anomalyUntil > S.t && S.classIndex >= 3 ? fmtTime(currentTime() - 3) : time; $('courseName').textContent = `第 ${S.classIndex + 1} 节 · ${c.subject}`; $('teacherName').textContent = c.teacher + ' / ' + c.title; $('lessonDots').innerHTML = CLASSES.map((_, i) => `<i class="lesson-dot ${i < S.classIndex ? 'done' : ''} ${i === S.classIndex ? 'active' : ''}"></i>`).join(''); $('lessonProgress').firstElementChild.style.width = (S.elapsed / S.duration * 100) + '%'; $('suspicionValue').innerHTML = String(Math.floor(S.suspicion)).padStart(2, '0') + ' <small>/ 100</small>'; $('suspicionBar').firstElementChild.style.width = S.suspicion + '%'; $('suspicionBar').classList.toggle('danger', S.suspicion >= 70); $('suspicionHint').textContent = S.suspicion < 30 ? '一切正常。至少现在是。' : S.suspicion < 50 ? '她开始注意到你。' : S.suspicion < 70 ? '巡视越来越频繁。' : S.suspicion < 90 ? '不要拿出任何多余的东西。' : '危险。她的目光没有离开。'; $('focusBar').style.width = S.focus + '%'; $('focusValue').textContent = Math.round(S.focus); $('boredomBar').style.width = S.boredom + '%'; $('boredomValue').textContent = Math.round(S.boredom); $('boredomBar').style.background = S.boredom > 65 ? 'var(--danger)' : ''; $('homeworkValue').textContent = Math.floor(S.homework) + '%'; $('cubeValue').textContent = S.cube + '%'; $('phoneRiskValue').textContent = !phoneAllowed() ? '已收走' : S.action !== 'phone' ? '—' : S.phoneSeconds < 3 ? '低' : S.phoneSeconds < 6 ? '小' : S.phoneSeconds < 10 ? '中' : S.phoneSeconds < 15 ? '高' : '极高'; $('phoneRiskValue').style.color = S.phoneSeconds >= 10 ? 'var(--danger)' : ''; $('actionHint').textContent = S.action==='note'?'A/S/D 选话题 · SPACE 收好纸条':S.action==='sleep'?'SPACE 或7 醒来 · 小憩不暂停巡逻': S.boredom > 65 ? '无聊正在消耗专注 · 换个行动' : S.action === 'phone' ? `已连续使用 ${S.phoneSeconds.toFixed(1)} 秒 · SPACE 收起` : S.action === 'cube' ? 'R U R′ U′ · Q=R′ / E=U′ · SPACE 收好' : 'SPACE 收好 · N 手记 · ESC 暂停'; const clock = S.anomalyUntil > S.t ? currentTime() - 3 : currentTime(); $('minuteHand').style.transform = `rotate(${clock % 60 * 6}deg)`; $('hourHand').style.transform = `rotate(${(clock / 60) % 12 * 30}deg)`; $('teacher').style.transform = `translate3d(${S.teacher.x}px,${S.teacher.y}px,0) scale(${S.teacher.z})`; $('stage').classList.toggle('low-focus', S.focus < 25); $('stage').classList.toggle('critical', S.suspicion > 85 && S.screen === 'game'); $('room').style.setProperty('--focus-blur', Math.max(0, (30 - S.focus) / 18).toFixed(2) + 'px'); const extra = S.extraUntil > S.t && S.phase === 'CLASS'; $('stage').classList.toggle('extraordinary', extra); $('extraBadge').hidden = !extra; $('extraTime').textContent = Math.max(0, Math.ceil(S.extraUntil - S.t)); if (S.action === 'phone')
         renderPhone(); if (S.action === 'cube')
         renderCube(); $('distanceBar').style.width = S.distance + '%'; $('distanceValue').textContent = Math.ceil(S.distance); updateActionUI(); }
     function tick(dt) {
@@ -4618,6 +4949,8 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
     $('modalClose').addEventListener('click', closeModal);
     $('dialogue').addEventListener('click', () => advanceDialogue());
     $('phoneClose').addEventListener('click', safeHide);
+    $('noteClose').addEventListener('click',safeHide);
+    $('wakeButton').addEventListener('click',()=>{if(canAct())wakeSleep();});
     $('modalBody').addEventListener('input', e => { if (e.target.dataset.setting)
         settingChange(e.target); });
     document.addEventListener('click', e => { const el = e.target.closest('button'); if (!el || el.disabled)
@@ -4625,6 +4958,10 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         setAction(el.dataset.action);
     else if (el.dataset.turn)
         turnCube(el.dataset.turn);
+    else if (el.dataset.noteTopic)
+        startNote(el.dataset.noteTopic);
+    else if (el.dataset.restSeconds)
+        chooseRestDuration(Number(el.dataset.restSeconds));
     else if (el.dataset.observe)
         observe(el.dataset.observe);
     else if (el.dataset.app && canAct()) {
@@ -4691,99 +5028,76 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
     document.addEventListener('touchmove', interactionMotion, { passive: true });
     document.addEventListener('wheel', interactionMotion, { passive: true });
     document.addEventListener('keydown', e => {
-        if (e.ctrlKey || e.metaKey) return; // Browser refresh, copy and save shortcuts remain native.
-        requestAutoSave();
-        if (e.altKey && e.code === 'Enter') {
-            e.preventDefault();
-            if (!e.repeat)
-                toggleFullscreen();
+        const code=normalizedKeyCode(e);
+        // Leave browser/OS combinations and text composition alone. Do not
+        // interpret CapsLock as inverse turns; only a real Shift modifier is.
+        if(e.ctrlKey||e.metaKey) return;
+        if(e.altKey) {
+            if(code==='Enter'){e.preventDefault();if(!e.repeat)toggleFullscreen();}
             return;
         }
-        if (['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement?.tagName) && e.key !== 'Escape')
-            return;
-        if (e.key === 'Escape') {
-            e.preventDefault();
-            if (e.repeat)
-                return;
-            if (modal)
-                closeModal();
-            else if (S?.screen === 'game')
-                openModal('pause');
+        const target=e.target instanceof Element?e.target:null;
+        const editing=target?.closest('input,textarea,select,[contenteditable]:not([contenteditable="false"])');
+        if(editing&&code!=='Escape') return;
+        if(e.isComposing||e.keyCode===229) {
+            if(S?.action==='cube'&&!modal){S.cubeInputInfo='输入法正在组合文字 · 请切英文输入或点击转动按钮';renderCube();}
             return;
         }
-        if (modal) {
-            if (e.key === 'Tab') {
-                const els = [...$('modal').querySelectorAll('button:not([disabled]),input:not([disabled])')];
-                if (!els.length)
-                    return;
-                const first = els[0], last = els.at(-1);
-                if (e.shiftKey && document.activeElement === first) {
-                    e.preventDefault();
-                    last.focus();
-                }
-                else if (!e.shiftKey && document.activeElement === last) {
-                    e.preventDefault();
-                    first.focus();
-                }
+        if(code==='Escape') {
+            e.preventDefault();if(e.repeat)return;
+            if(modal)closeModal();else if(S?.screen==='game')openModal('pause');return;
+        }
+        if(modal) {
+            if(code==='Tab') {
+                const els=[...$('modal').querySelectorAll('button:not([disabled]),input:not([disabled]),textarea:not([disabled]),select:not([disabled])')];
+                if(!els.length)return;
+                if(e.shiftKey&&document.activeElement===els[0]){e.preventDefault();els.at(-1).focus();}
+                else if(!e.shiftKey&&document.activeElement===els.at(-1)){e.preventDefault();els[0].focus();}
             }
             return;
         }
-        if (e.code === 'KeyM' && !e.repeat) {
-            toggleSound();
-            return;
-        }
-        if (!S || S.screen !== 'game')
-            return;
-        if (e.code === 'KeyN' && !e.repeat) {
-            e.preventDefault();
-            openModal('journal');
-            return;
-        }
-        const wasImmobile = challenge && ['freeze', 'wait'].includes(challenge.type);
+        if(code==='KeyM'){if(!e.repeat)toggleSound();return;}
+        if(!S||S.screen!=='game') return;
+        if(code==='KeyN'){e.preventDefault();if(!e.repeat)openModal('journal');return;}
+        if(['Shift','Control','Alt','Meta'].includes(e.key)) return;
+        const wasImmobile=challenge&&['freeze','wait'].includes(challenge.type);
         interactionMotion(e);
-        if (wasImmobile) {
-            e.preventDefault();
+        if(wasImmobile){e.preventDefault();return;}
+        // Autorepeat is the only per-key debounce. Distinct rapid presses must
+        // all reach the formula, even within a single simulation frame.
+        if(e.repeat){if(['Space','Enter'].includes(code))e.preventDefault();return;}
+        if(script) {
+            if(['Enter','Space'].includes(code)){e.preventDefault();advanceDialogue();}
             return;
         }
-        if (e.repeat) {
-            if (e.code === 'Space')
-                e.preventDefault();
-            return;
-        }
-        if (script) {
-            if (['Enter', 'Space'].includes(e.code)) {
-                e.preventDefault();
-                advanceDialogue();
+        if(code==='Space'){e.preventDefault();safeHide();return;}
+        const digit=!e.shiftKey&&/^(Digit|Numpad)[1-7]$/.test(code)?Number(code.slice(-1)):null;
+        if(challenge) {
+            if(['question','route','fakeBell','pack','endingRoutes','gatekeeper'].includes(challenge.type)&&digit&&digit<=4){
+                e.preventDefault();choose(digit-1);
             }
             return;
         }
-        if (e.code === 'Space') {
-            e.preventDefault();
-            safeHide();
-            return;
-        }
-        if (challenge) {
-            if (['question', 'route', 'fakeBell', 'pack', 'endingRoutes', 'gatekeeper'].includes(challenge.type) && /^[1-4]$/.test(e.key)) {
-                e.preventDefault();
-                const i = Number(e.key) - 1;
-                if (i < (challenge.choices?.length || 0))
-                    choose(i);
-            }
-            return;
-        }
-        if (/^[1-5]$/.test(e.key)) {
-            e.preventDefault();
-            setAction(['listen', 'homework', 'cube', 'phone', 'observe'][Number(e.key) - 1]);
-            return;
-        }
-        if (S.action === 'cube' && /^Key[URFLDB]$/.test(e.code)) {
-            e.preventDefault();
-            turnCube(e.code.slice(3) + (e.shiftKey ? "'" : ''));
+        if(!canAct()) return;
+        if(digit){e.preventDefault();setAction(ACTIONS[digit-1]);return;}
+        if(code==='Enter'){e.preventDefault();advanceDialogue();return;}
+        if(S.action==='cube') {
+            const turn=cubeTurnFromKey(e);
+            if(turn){e.preventDefault();turnCube(turn);}
+        } else if(S.action==='note') {
+            const topic=({KeyA:'lookout',KeyS:'bond',KeyD:'lesson'})[code];
+            if(topic){e.preventDefault();startNote(topic);}
         }
     });
-    // Releasing a held key/touch inside the grace period is safe; after it, release is movement too.
-    document.addEventListener('keyup', e => { if (!['Escape', 'Alt', 'Control', 'Shift', 'Meta', 'n', 'N', 'm', 'M'].includes(e.key))
-        interactionMotion(e); });
+    // System shortcuts and composition releases cannot fail a freeze challenge.
+    document.addEventListener('keyup', e => {
+        const code=normalizedKeyCode(e);
+        if(e.ctrlKey||e.metaKey||e.altKey||e.isComposing||e.keyCode===229||
+            ['Shift','Control','Alt','Meta','Escape'].includes(e.key)||['KeyN','KeyM','Escape'].includes(code))return;
+        const target=e.target instanceof Element?e.target:null;
+        if(target?.closest('input,textarea,select,[contenteditable]:not([contenteditable="false"])'))return;
+        interactionMotion(e);
+    });
     document.addEventListener('pointerup', interactionMotion, { passive: true });
     function interruptPage(reason) {
         if (S?.screen === 'game') {
@@ -4816,7 +5130,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
     // Opt-in deterministic integration hooks, inactive during ordinary play. Test mode
     // never persists achievements. They intentionally expose only this local game.
     if (testMode)
-        window.__LAST_CLASS_TEST__ = { get state() { return S; }, get progress() { return progress; }, get dialogue() { return dialogue; }, get recoveryGrace() { return recoveryGrace; }, get conflict() { return diskConflict; }, autoSave, writeProgress, captureSnapshot, rememberCheckpoint, restore:restoreSnapshot, continueGame(){const s=getContinueSnapshot();if(s)restoreSnapshot(s);}, retryCheckpoint(){if(progress?.checkpoints[0])restoreSnapshot(progress.checkpoints[0]);}, resume(){modalAction('resume');recoveryGrace=0;$('resumeBanner').hidden=true;}, exportData:buildExport, validateImport, applyImport, dispatchEvent, collectObservation, showPack, showEndingRoutes, resolveRoute, get endings(){return ENDINGS;}, get challenge() { return challenge; }, get script() { return script; }, get save() { return save; }, get modal() { return modal; }, start: startGame, tick(dt) { tick(dt); renderUI(); }, advance(dt) { tick(dt); }, finishDialogue() { let guard = 100; while (script && guard--) {
+        window.__LAST_CLASS_TEST__ = { startNote, wakeSleep, chooseRestDuration, safeHide, cubeTurnFromKey, normalizedKeyCode, get state() { return S; }, get progress() { return progress; }, get dialogue() { return dialogue; }, get recoveryGrace() { return recoveryGrace; }, get conflict() { return diskConflict; }, autoSave, writeProgress, captureSnapshot, rememberCheckpoint, restore:restoreSnapshot, continueGame(){const s=getContinueSnapshot();if(s)restoreSnapshot(s);}, retryCheckpoint(){if(progress?.checkpoints[0])restoreSnapshot(progress.checkpoints[0]);}, resume(){modalAction('resume');recoveryGrace=0;$('resumeBanner').hidden=true;}, exportData:buildExport, validateImport, applyImport, dispatchEvent, collectObservation, showPack, showEndingRoutes, resolveRoute, get endings(){return ENDINGS;}, get challenge() { return challenge; }, get script() { return script; }, get save() { return save; }, get modal() { return modal; }, start: startGame, tick(dt) { tick(dt); renderUI(); }, advance(dt) { tick(dt); }, finishDialogue() { let guard = 100; while (script && guard--) {
                 dialogue.shown = dialogue.text.length;
                 advanceDialogue();
             } renderUI(); }, setAction, turnCube, observe, choose, number: finishQuestion, hide: resolveHide, freeze: startFreeze, grid: startGrid, question: askQuestion, danger: triggerDanger, fakeBell: startFakeBell, door: showDoor, complete: completeDay, escape: startEscape, sprint: sprintTap, ending: finishEnding, fail: gameOver, retry: retryLesson, menu: returnMenu, openModal, closeModal, render: renderUI, extra: triggerExtraordinary, scramble: scrambleButtons, lesson: enterClass, get queue() { return eventQueue; } };

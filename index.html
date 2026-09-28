@@ -5,7 +5,7 @@
   <meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
   <meta content="#121c1b" name="theme-color"/>
   <meta content="高二（2）班：最后一节课。离线、单文件校园恐怖潜行游戏。" name="description"/>
-  <title>高二（2）班：最后一节课 · v3.7.1 数学课堂语录</title>
+  <title>高二（2）班：最后一节课 · v3.8 题目分级与计时</title>
   <style>
    /* All artwork is drawn with HTML and CSS. No remote assets or libraries. */
 :root {
@@ -2804,6 +2804,40 @@ body.tutorial-open36 #rotateHint{display:none!important}
 .settings37 .settings-row{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:12px 0;border-bottom:1px solid #9ba38840}.settings37 small{display:block;font-size:12px;line-height:1.7;color:#c2cbb9;font-weight:400;max-width:540px}.settings37 input{width:22px;height:22px;flex-shrink:0}.settings37 button{min-height:44px;margin:6px 6px 6px 0}
 @media(max-width:1000px){#propDock37{top:395px;left:50%;right:auto;width:calc(var(--reflex-vw,100vw) - 26px);transform:translateX(-50%) scale(var(--reflex-inverse,1));transform-origin:top center;justify-content:center;max-width:650px;padding:5px;gap:5px;font-size:11px}#propDock37 button{min-height:44px;padding:7px}#propState37{display:none}#mirror37{left:1280px;top:470px}.evidence-frame37{height:155px}.settings37{padding:10px}.settings37 .settings-row{gap:10px}}
 
+/* v3.8: readable, viewport-sized academic cards, independent of classroom scale. */
+#stage.graded-active38 #challengeLayer{inset:auto;left:50%;top:50%;width:var(--reflex-vw);height:var(--reflex-vh);transform:translate(-50%,-50%) scale(var(--reflex-inverse));transform-origin:center;display:grid;place-items:center;padding:14px;background:#081713e8;z-index:40;}
+#stage.graded-active38 #challengeLayer[hidden]{display:none;}
+#stage.graded-active38 #challengeCard{position:relative;inset:auto!important;transform:none;width:min(760px,100%);max-height:calc(var(--reflex-vh) - 28px);padding:22px 26px;overflow:auto;box-sizing:border-box;scrollbar-width:thin;}
+#stage.graded-active38 .challenge-title{font-size:25px;margin:10px 0;}
+#stage.graded-active38 .challenge-description{font-size:15px;line-height:1.7;overflow-wrap:anywhere;margin-bottom:12px;}
+#stage.graded-active38 .challenge-choices{gap:9px;}
+#stage.graded-active38 .choice-btn{min-height:50px;font-size:14px;line-height:1.5;padding:12px;}
+#stage.graded-active38 .challenge-kicker{position:sticky;top:-22px;background:#14271feb;z-index:2;padding:9px 0;font-size:11px;}
+#stage.graded-active38 #challengeSeconds{font-size:18px;white-space:nowrap;font-variant-numeric:tabular-nums;}
+.question-timing38{background:#233b30;border-left:3px solid #c9ca92;padding:10px 12px;margin:10px 0 14px;font-size:12px;color:#d2ddc7;}
+.question-timing38>div{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;}
+.question-timing38 b{font-size:13px;font-weight:600;color:#e4e9ce;}
+.question-timing38 summary{cursor:pointer;margin-top:7px;line-height:1.6;min-height:25px;}
+.question-timing38 p{font-size:12px;line-height:1.7;margin:7px 0;}
+.question-tools38{display:flex;justify-content:flex-end;gap:8px;margin-top:12px;position:sticky;bottom:-22px;background:#12251fed;padding:8px 0;}
+.question-tools38 button{min-height:44px;padding:8px 15px;font-size:13px;color:#d9e4cd;border:1px solid #637862;background:#1c3127;}
+#stage.graded-active38 .number-grid button{min-height:44px;font-size:16px;}
+#stage.graded-active38 #resumeBanner{top:450px;z-index:79;transform:translate(-50%,-50%) scale(var(--reflex-inverse));max-width:calc(var(--reflex-vw) - 24px);font-size:14px;white-space:nowrap;}
+@media(max-width:520px){
+ #stage.graded-active38 #challengeLayer{padding:7px;}
+ #stage.graded-active38 #challengeCard{max-height:calc(var(--reflex-vh) - 14px);padding:15px 12px;}
+ #stage.graded-active38 .challenge-title{font-size:21px;}
+ #stage.graded-active38 .challenge-description{font-size:14px;}
+ #stage.graded-active38 .challenge-choices{grid-template-columns:1fr;}
+ #stage.graded-active38 .challenge-kicker{top:-15px;}
+ #stage.graded-active38 .number-grid{grid-template-columns:repeat(7,minmax(0,1fr));gap:4px;}
+ #stage.graded-active38 .number-grid button{padding:4px;}
+ .question-tools38{bottom:-15px;}.question-tools38 button{padding:8px 12px;}
+ .question-timing38{padding:9px 10px;}
+}
+@media(max-height:520px){#stage.graded-active38 #challengeCard{padding:12px 18px;}.question-timing38{margin:7px 0;padding:7px 10px;}.question-tools38{bottom:-12px;}}
+@media(max-width:1100px){#stage.graded-active38 #topbar{visibility:hidden;pointer-events:none;}}
+
   </style>
  </head>
  <body>
@@ -3699,211 +3733,351 @@ body.tutorial-open36 #rotateHint{display:none!important}
     "q": "f(x)=x²，找到编号 f′(2)。",
     "n": 4,
     "e": "f′(x)=2x，f′(2)=4。",
-    "topic": "导数"
+    "topic": "导数",
+    "id38": "grid-001",
+    "grade38": 2,
+    "normalSeconds38": 25,
+    "grading38": "先求x²的导数，再代入指定自变量。 56选一另留6秒寻找编号，不把视觉搜索伪装成学科难度。"
   },
   {
     "q": "f(x)=x²，找到编号 f′(3)。",
     "n": 6,
     "e": "f′(x)=2x，f′(3)=6。",
-    "topic": "导数"
+    "topic": "导数",
+    "id38": "grid-002",
+    "grade38": 2,
+    "normalSeconds38": 25,
+    "grading38": "先求x²的导数，再代入指定自变量。 56选一另留6秒寻找编号，不把视觉搜索伪装成学科难度。"
   },
   {
     "q": "f(x)=x²，找到编号 f′(4)。",
     "n": 8,
     "e": "f′(x)=2x，f′(4)=8。",
-    "topic": "导数"
+    "topic": "导数",
+    "id38": "grid-003",
+    "grade38": 2,
+    "normalSeconds38": 25,
+    "grading38": "先求x²的导数，再代入指定自变量。 56选一另留6秒寻找编号，不把视觉搜索伪装成学科难度。"
   },
   {
     "q": "f(x)=x²，找到编号 f′(5)。",
     "n": 10,
     "e": "f′(x)=2x，f′(5)=10。",
-    "topic": "导数"
+    "topic": "导数",
+    "id38": "grid-004",
+    "grade38": 2,
+    "normalSeconds38": 25,
+    "grading38": "先求x²的导数，再代入指定自变量。 56选一另留6秒寻找编号，不把视觉搜索伪装成学科难度。"
   },
   {
     "q": "f(x)=x²，找到编号 f′(6)。",
     "n": 12,
     "e": "f′(x)=2x，f′(6)=12。",
-    "topic": "导数"
+    "topic": "导数",
+    "id38": "grid-005",
+    "grade38": 2,
+    "normalSeconds38": 25,
+    "grading38": "先求x²的导数，再代入指定自变量。 56选一另留6秒寻找编号，不把视觉搜索伪装成学科难度。"
   },
   {
     "q": "f(x)=x²，找到编号 f′(7)。",
     "n": 14,
     "e": "f′(x)=2x，f′(7)=14。",
-    "topic": "导数"
+    "topic": "导数",
+    "id38": "grid-006",
+    "grade38": 2,
+    "normalSeconds38": 25,
+    "grading38": "先求x²的导数，再代入指定自变量。 56选一另留6秒寻找编号，不把视觉搜索伪装成学科难度。"
   },
   {
     "q": "f(x)=x²，找到编号 f′(8)。",
     "n": 16,
     "e": "f′(x)=2x，f′(8)=16。",
-    "topic": "导数"
+    "topic": "导数",
+    "id38": "grid-007",
+    "grade38": 2,
+    "normalSeconds38": 25,
+    "grading38": "先求x²的导数，再代入指定自变量。 56选一另留6秒寻找编号，不把视觉搜索伪装成学科难度。"
   },
   {
     "q": "f(x)=x²，找到编号 f′(9)。",
     "n": 18,
     "e": "f′(x)=2x，f′(9)=18。",
-    "topic": "导数"
+    "topic": "导数",
+    "id38": "grid-008",
+    "grade38": 2,
+    "normalSeconds38": 25,
+    "grading38": "先求x²的导数，再代入指定自变量。 56选一另留6秒寻找编号，不把视觉搜索伪装成学科难度。"
   },
   {
     "q": "f(x)=x²，找到编号 f′(10)。",
     "n": 20,
     "e": "f′(x)=2x，f′(10)=20。",
-    "topic": "导数"
+    "topic": "导数",
+    "id38": "grid-009",
+    "grade38": 2,
+    "normalSeconds38": 25,
+    "grading38": "先求x²的导数，再代入指定自变量。 56选一另留6秒寻找编号，不把视觉搜索伪装成学科难度。"
   },
   {
     "q": "f(x)=x²，找到编号 f′(11)。",
     "n": 22,
     "e": "f′(x)=2x，f′(11)=22。",
-    "topic": "导数"
+    "topic": "导数",
+    "id38": "grid-010",
+    "grade38": 2,
+    "normalSeconds38": 25,
+    "grading38": "先求x²的导数，再代入指定自变量。 56选一另留6秒寻找编号，不把视觉搜索伪装成学科难度。"
   },
   {
     "q": "f(x)=x²，找到编号 f′(12)。",
     "n": 24,
     "e": "f′(x)=2x，f′(12)=24。",
-    "topic": "导数"
+    "topic": "导数",
+    "id38": "grid-011",
+    "grade38": 2,
+    "normalSeconds38": 25,
+    "grading38": "先求x²的导数，再代入指定自变量。 56选一另留6秒寻找编号，不把视觉搜索伪装成学科难度。"
   },
   {
     "q": "f(x)=x²，找到编号 f′(13)。",
     "n": 26,
     "e": "f′(x)=2x，f′(13)=26。",
-    "topic": "导数"
+    "topic": "导数",
+    "id38": "grid-012",
+    "grade38": 2,
+    "normalSeconds38": 25,
+    "grading38": "先求x²的导数，再代入指定自变量。 56选一另留6秒寻找编号，不把视觉搜索伪装成学科难度。"
   },
   {
     "q": "f(x)=x²，找到编号 f′(14)。",
     "n": 28,
     "e": "f′(x)=2x，f′(14)=28。",
-    "topic": "导数"
+    "topic": "导数",
+    "id38": "grid-013",
+    "grade38": 2,
+    "normalSeconds38": 25,
+    "grading38": "先求x²的导数，再代入指定自变量。 56选一另留6秒寻找编号，不把视觉搜索伪装成学科难度。"
   },
   {
     "q": "等差数列a₁=2，公差3。找到编号 a3。",
     "n": 8,
     "e": "a3=2+(3−1)×3=8。",
-    "topic": "数列"
+    "topic": "数列",
+    "id38": "grid-014",
+    "grade38": 2,
+    "normalSeconds38": 25,
+    "grading38": "用等差数列通项公式代入项数和公差。 56选一另留6秒寻找编号，不把视觉搜索伪装成学科难度。"
   },
   {
     "q": "等差数列a₁=2，公差3。找到编号 a4。",
     "n": 11,
     "e": "a4=2+(4−1)×3=11。",
-    "topic": "数列"
+    "topic": "数列",
+    "id38": "grid-015",
+    "grade38": 2,
+    "normalSeconds38": 25,
+    "grading38": "用等差数列通项公式代入项数和公差。 56选一另留6秒寻找编号，不把视觉搜索伪装成学科难度。"
   },
   {
     "q": "等差数列a₁=2，公差3。找到编号 a5。",
     "n": 14,
     "e": "a5=2+(5−1)×3=14。",
-    "topic": "数列"
+    "topic": "数列",
+    "id38": "grid-016",
+    "grade38": 2,
+    "normalSeconds38": 25,
+    "grading38": "用等差数列通项公式代入项数和公差。 56选一另留6秒寻找编号，不把视觉搜索伪装成学科难度。"
   },
   {
     "q": "等差数列a₁=2，公差3。找到编号 a6。",
     "n": 17,
     "e": "a6=2+(6−1)×3=17。",
-    "topic": "数列"
+    "topic": "数列",
+    "id38": "grid-017",
+    "grade38": 2,
+    "normalSeconds38": 25,
+    "grading38": "用等差数列通项公式代入项数和公差。 56选一另留6秒寻找编号，不把视觉搜索伪装成学科难度。"
   },
   {
     "q": "等差数列a₁=2，公差3。找到编号 a7。",
     "n": 20,
     "e": "a7=2+(7−1)×3=20。",
-    "topic": "数列"
+    "topic": "数列",
+    "id38": "grid-018",
+    "grade38": 2,
+    "normalSeconds38": 25,
+    "grading38": "用等差数列通项公式代入项数和公差。 56选一另留6秒寻找编号，不把视觉搜索伪装成学科难度。"
   },
   {
     "q": "等差数列a₁=2，公差3。找到编号 a8。",
     "n": 23,
     "e": "a8=2+(8−1)×3=23。",
-    "topic": "数列"
+    "topic": "数列",
+    "id38": "grid-019",
+    "grade38": 2,
+    "normalSeconds38": 25,
+    "grading38": "用等差数列通项公式代入项数和公差。 56选一另留6秒寻找编号，不把视觉搜索伪装成学科难度。"
   },
   {
     "q": "等差数列a₁=2，公差3。找到编号 a9。",
     "n": 26,
     "e": "a9=2+(9−1)×3=26。",
-    "topic": "数列"
+    "topic": "数列",
+    "id38": "grid-020",
+    "grade38": 2,
+    "normalSeconds38": 25,
+    "grading38": "用等差数列通项公式代入项数和公差。 56选一另留6秒寻找编号，不把视觉搜索伪装成学科难度。"
   },
   {
     "q": "等差数列a₁=2，公差3。找到编号 a10。",
     "n": 29,
     "e": "a10=2+(10−1)×3=29。",
-    "topic": "数列"
+    "topic": "数列",
+    "id38": "grid-021",
+    "grade38": 2,
+    "normalSeconds38": 25,
+    "grading38": "用等差数列通项公式代入项数和公差。 56选一另留6秒寻找编号，不把视觉搜索伪装成学科难度。"
   },
   {
     "q": "等差数列a₁=2，公差3。找到编号 a11。",
     "n": 32,
     "e": "a11=2+(11−1)×3=32。",
-    "topic": "数列"
+    "topic": "数列",
+    "id38": "grid-022",
+    "grade38": 2,
+    "normalSeconds38": 25,
+    "grading38": "用等差数列通项公式代入项数和公差。 56选一另留6秒寻找编号，不把视觉搜索伪装成学科难度。"
   },
   {
     "q": "从4人中选2人，不计顺序。找到选法数量对应的编号。",
     "n": 6,
     "e": "C(4,2)=4×3/2=6。",
-    "topic": "组合"
+    "topic": "组合",
+    "id38": "grid-023",
+    "grade38": 2,
+    "normalSeconds38": 25,
+    "grading38": "辨认不计顺序的二人选取，再计算组合数。 56选一另留6秒寻找编号，不把视觉搜索伪装成学科难度。"
   },
   {
     "q": "从5人中选2人，不计顺序。找到选法数量对应的编号。",
     "n": 10,
     "e": "C(5,2)=5×4/2=10。",
-    "topic": "组合"
+    "topic": "组合",
+    "id38": "grid-024",
+    "grade38": 2,
+    "normalSeconds38": 25,
+    "grading38": "辨认不计顺序的二人选取，再计算组合数。 56选一另留6秒寻找编号，不把视觉搜索伪装成学科难度。"
   },
   {
     "q": "从6人中选2人，不计顺序。找到选法数量对应的编号。",
     "n": 15,
     "e": "C(6,2)=6×5/2=15。",
-    "topic": "组合"
+    "topic": "组合",
+    "id38": "grid-025",
+    "grade38": 2,
+    "normalSeconds38": 25,
+    "grading38": "辨认不计顺序的二人选取，再计算组合数。 56选一另留6秒寻找编号，不把视觉搜索伪装成学科难度。"
   },
   {
     "q": "从7人中选2人，不计顺序。找到选法数量对应的编号。",
     "n": 21,
     "e": "C(7,2)=7×6/2=21。",
-    "topic": "组合"
+    "topic": "组合",
+    "id38": "grid-026",
+    "grade38": 2,
+    "normalSeconds38": 25,
+    "grading38": "辨认不计顺序的二人选取，再计算组合数。 56选一另留6秒寻找编号，不把视觉搜索伪装成学科难度。"
   },
   {
     "q": "从8人中选2人，不计顺序。找到选法数量对应的编号。",
     "n": 28,
     "e": "C(8,2)=8×7/2=28。",
-    "topic": "组合"
+    "topic": "组合",
+    "id38": "grid-027",
+    "grade38": 2,
+    "normalSeconds38": 25,
+    "grading38": "辨认不计顺序的二人选取，再计算组合数。 56选一另留6秒寻找编号，不把视觉搜索伪装成学科难度。"
   },
   {
     "q": "从9人中选2人，不计顺序。找到选法数量对应的编号。",
     "n": 36,
     "e": "C(9,2)=9×8/2=36。",
-    "topic": "组合"
+    "topic": "组合",
+    "id38": "grid-028",
+    "grade38": 2,
+    "normalSeconds38": 25,
+    "grading38": "辨认不计顺序的二人选取，再计算组合数。 56选一另留6秒寻找编号，不把视觉搜索伪装成学科难度。"
   },
   {
     "q": "从10人中选2人，不计顺序。找到选法数量对应的编号。",
     "n": 45,
     "e": "C(10,2)=10×9/2=45。",
-    "topic": "组合"
+    "topic": "组合",
+    "id38": "grid-029",
+    "grade38": 2,
+    "normalSeconds38": 25,
+    "grading38": "辨认不计顺序的二人选取，再计算组合数。 56选一另留6秒寻找编号，不把视觉搜索伪装成学科难度。"
   },
   {
     "q": "从11人中选2人，不计顺序。找到选法数量对应的编号。",
     "n": 55,
     "e": "C(11,2)=11×10/2=55。",
-    "topic": "组合"
+    "topic": "组合",
+    "id38": "grid-030",
+    "grade38": 2,
+    "normalSeconds38": 25,
+    "grading38": "辨认不计顺序的二人选取，再计算组合数。 56选一另留6秒寻找编号，不把视觉搜索伪装成学科难度。"
   },
   {
     "q": "向量a=(2,1)，b=(2,3)。找到数量积a·b对应的编号。",
     "n": 7,
     "e": "a·b=2×2+1×3=7。",
-    "topic": "平面向量"
+    "topic": "平面向量",
+    "id38": "grid-031",
+    "grade38": 2,
+    "normalSeconds38": 25,
+    "grading38": "用坐标数量积公式计算两项乘积之和。 56选一另留6秒寻找编号，不把视觉搜索伪装成学科难度。"
   },
   {
     "q": "向量a=(3,1)，b=(2,3)。找到数量积a·b对应的编号。",
     "n": 9,
     "e": "a·b=3×2+1×3=9。",
-    "topic": "平面向量"
+    "topic": "平面向量",
+    "id38": "grid-032",
+    "grade38": 2,
+    "normalSeconds38": 25,
+    "grading38": "用坐标数量积公式计算两项乘积之和。 56选一另留6秒寻找编号，不把视觉搜索伪装成学科难度。"
   },
   {
     "q": "向量a=(4,1)，b=(2,3)。找到数量积a·b对应的编号。",
     "n": 11,
     "e": "a·b=4×2+1×3=11。",
-    "topic": "平面向量"
+    "topic": "平面向量",
+    "id38": "grid-033",
+    "grade38": 2,
+    "normalSeconds38": 25,
+    "grading38": "用坐标数量积公式计算两项乘积之和。 56选一另留6秒寻找编号，不把视觉搜索伪装成学科难度。"
   },
   {
     "q": "向量a=(5,1)，b=(2,3)。找到数量积a·b对应的编号。",
     "n": 13,
     "e": "a·b=5×2+1×3=13。",
-    "topic": "平面向量"
+    "topic": "平面向量",
+    "id38": "grid-034",
+    "grade38": 2,
+    "normalSeconds38": 25,
+    "grading38": "用坐标数量积公式计算两项乘积之和。 56选一另留6秒寻找编号，不把视觉搜索伪装成学科难度。"
   },
   {
     "q": "向量a=(6,1)，b=(2,3)。找到数量积a·b对应的编号。",
     "n": 15,
     "e": "a·b=6×2+1×3=15。",
-    "topic": "平面向量"
+    "topic": "平面向量",
+    "id38": "grid-035",
+    "grade38": 2,
+    "normalSeconds38": 25,
+    "grading38": "用坐标数量积公式计算两项乘积之和。 56选一另留6秒寻找编号，不把视觉搜索伪装成学科难度。"
   }
 ];
     const ENDING_IDS = ['true','phone','math','loop','cfop','unseen','falsebell','homework','companion','truth','gatekeeper','mirror','chessMaster','officeTruth','parentHome','sports','bagPhone','officeLoop','doorRoster','lastStone','alliesTogether','calmExit','chessDraw','weekClear','homeSafe','homeCaught',...Object.keys(V34_ENDINGS),...Object.keys(V37_ENDINGS)];
@@ -4069,7 +4243,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 0,
       "explain": "没有镜子时需要主动回头；门把手与文字预警仍然存在。",
       "topic37": "校园阅读",
-      "id37": "chinese-001"
+      "id37": "chinese-001",
+      "grade38": 1,
+      "normalSeconds38": 15,
+      "grading38": "直接提取已讲解的观察操作。"
     },
     {
       "text": "播报说“下节课是化学课”，应重点准备什么？",
@@ -4082,7 +4259,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 3,
       "explain": "阅读播报并完成教师明确要求的任务。",
       "topic37": "信息提取",
-      "id37": "chinese-002"
+      "id37": "chinese-002",
+      "grade38": 1,
+      "normalSeconds38": 15,
+      "grading38": "从课堂播报提取准备要求。"
     },
     {
       "text": "“真正的铃声以前不要离开”一句强调什么？",
@@ -4095,7 +4275,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 2,
       "explain": "句子强调辨认真正放学，而非无限留校。",
       "topic37": "语句理解",
-      "id37": "chinese-003"
+      "id37": "chinese-003",
+      "grade38": 1,
+      "normalSeconds38": 15,
+      "grading38": "辨认句子强调的时间核实要求。"
     },
     {
       "text": "“一个影子留在玻璃里”在本游戏语境中主要营造？",
@@ -4108,7 +4291,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 1,
       "explain": "反常的影子营造悬疑气氛。",
       "topic37": "氛围分析",
-      "id37": "chinese-004"
+      "id37": "chinese-004",
+      "grade38": 1,
+      "normalSeconds38": 15,
+      "grading38": "辨认反常影像营造的叙述氛围。"
     },
     {
       "text": "阅读家长消息时，区分“记录”与“评价”的做法是？",
@@ -4121,7 +4307,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 0,
       "explain": "具体记录与角色评价不同，先核对发生了什么。",
       "topic37": "信息辨析",
-      "id37": "chinese-005"
+      "id37": "chinese-005",
+      "grade38": 1,
+      "normalSeconds38": 15,
+      "grading38": "区分事件记录与主观评价，选项已给出直接做法。"
     }
   ],
   "chemistry": [
@@ -4136,7 +4325,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 0,
       "explain": "催化剂同等加快正逆反应，不改变该温度下的平衡常数和组成。",
       "topic37": "化学平衡",
-      "id37": "chemistry-001"
+      "id37": "chemistry-001",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "应用催化剂与平衡组成的关系，排除速率和平衡混淆。"
     },
     {
       "text": "对于放热的可逆反应，升高温度会使平衡怎样移动？",
@@ -4149,7 +4341,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 3,
       "explain": "升温有利于吸热方向。",
       "topic37": "平衡移动",
-      "id37": "chemistry-002"
+      "id37": "chemistry-002",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "辨认放热正反应与吸热逆反应，应用平衡移动规律。"
     },
     {
       "text": "在恒温恒容密闭容器中，对达到平衡的气体反应充入不反应的稀有气体，平衡通常怎样？",
@@ -4162,7 +4357,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 2,
       "explain": "各反应气体浓度未变，平衡不移动。",
       "topic37": "化学平衡",
-      "id37": "chemistry-003"
+      "id37": "chemistry-003",
+      "grade38": 3,
+      "normalSeconds38": 40,
+      "grading38": "同时辨认恒温、恒容及惰性气体条件，区分总压与反应物浓度。"
     },
     {
       "text": "反应 2Fe³⁺＋Cu → 2Fe²⁺＋Cu²⁺ 中，氧化剂是？",
@@ -4175,7 +4373,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 1,
       "explain": "Fe³⁺得电子被还原，是氧化剂。",
       "topic37": "氧化还原",
-      "id37": "chemistry-004"
+      "id37": "chemistry-004",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "比较铁、铜的化合价变化，识别得到电子的一方。"
     },
     {
       "text": "锌铜原电池中，以稀硫酸为电解质，锌电极发生什么反应？",
@@ -4188,7 +4389,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 0,
       "explain": "锌为负极，失电子发生氧化反应。",
       "topic37": "电化学",
-      "id37": "chemistry-005"
+      "id37": "chemistry-005",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "从锌铜原电池工作过程辨认氧化半反应。"
     },
     {
       "text": "电解精炼铜时，粗铜作为哪一极？",
@@ -4201,7 +4405,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 3,
       "explain": "粗铜作阳极溶解，纯铜作阴极析出铜。",
       "topic37": "电化学",
-      "id37": "chemistry-006"
+      "id37": "chemistry-006",
+      "grade38": 1,
+      "normalSeconds38": 15,
+      "grading38": "回忆铜电解精炼的电极设置。"
     },
     {
       "text": "25 ℃，1.0×10⁻³ mol/L的盐酸（忽略水电离）pH约为？",
@@ -4214,7 +4421,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 2,
       "explain": "强酸近似完全电离，pH＝−lg[H⁺]＝3。",
       "topic37": "酸碱平衡",
-      "id37": "chemistry-007"
+      "id37": "chemistry-007",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "由强酸浓度直接求氢离子浓度的负对数。"
     },
     {
       "text": "25 ℃，某水溶液pH＝9，则[OH⁻]约为多少？",
@@ -4227,7 +4437,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 1,
       "explain": "25 ℃时pH＋pOH＝14，pOH＝5。",
       "topic37": "水的电离",
-      "id37": "chemistry-008"
+      "id37": "chemistry-008",
+      "grade38": 3,
+      "normalSeconds38": 40,
+      "grading38": "先由pH求pOH，再将指数转换为氢氧根浓度。"
     },
     {
       "text": "醋酸钠水溶液常温下呈碱性的主要原因是？",
@@ -4240,7 +4453,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 0,
       "explain": "弱酸根水解使溶液呈碱性。",
       "topic37": "盐类水解",
-      "id37": "chemistry-009"
+      "id37": "chemistry-009",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "把阴离子水解与溶液碱性联系起来。"
     },
     {
       "text": "向AgCl沉淀与水的平衡体系加入NaCl，溶解平衡主要怎样移动？",
@@ -4253,7 +4469,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 3,
       "explain": "加入共同离子Cl⁻使溶解平衡向沉淀方向移动。",
       "topic37": "沉淀溶解平衡",
-      "id37": "chemistry-010"
+      "id37": "chemistry-010",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "用同离子效应判断沉淀溶解平衡的移动方向。"
     },
     {
       "text": "能证明苯不是普通碳碳双键交替结构的典型性质是？",
@@ -4266,7 +4485,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 2,
       "explain": "苯环有独特的稳定结构，不表现普通烯烃的溴水加成性质。",
       "topic37": "有机化学",
-      "id37": "chemistry-011"
+      "id37": "chemistry-011",
+      "grade38": 3,
+      "normalSeconds38": 40,
+      "grading38": "结合苯结构与溴水反应特征，区分性质证据和结构结论。"
     },
     {
       "text": "乙烯使溴的四氯化碳溶液褪色，主要反应类型为？",
@@ -4279,7 +4501,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 1,
       "explain": "碳碳双键断开其中一个键，与溴加成。",
       "topic37": "有机反应类型",
-      "id37": "chemistry-012"
+      "id37": "chemistry-012",
+      "grade38": 1,
+      "normalSeconds38": 15,
+      "grading38": "识记乙烯与溴的反应类型。"
     },
     {
       "text": "乙醇与乙酸在一定条件下生成乙酸乙酯，属于？",
@@ -4292,7 +4517,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 0,
       "explain": "醇与羧酸反应形成酯和水。",
       "topic37": "有机化学",
-      "id37": "chemistry-013"
+      "id37": "chemistry-013",
+      "grade38": 1,
+      "normalSeconds38": 15,
+      "grading38": "识记醇与羧酸生成酯的反应类型。"
     },
     {
       "text": "聚乙烯的单体是？",
@@ -4305,7 +4533,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 3,
       "explain": "乙烯经加聚反应生成聚乙烯。",
       "topic37": "高分子",
-      "id37": "chemistry-014"
+      "id37": "chemistry-014",
+      "grade38": 1,
+      "normalSeconds38": 15,
+      "grading38": "识记聚乙烯的单体。"
     },
     {
       "text": "同温同压下，相同体积的理想气体一定具有相同的？",
@@ -4318,7 +4549,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 2,
       "explain": "阿伏加德罗定律：同温同压同体积气体分子数相同。",
       "topic37": "物质的量",
-      "id37": "chemistry-015"
+      "id37": "chemistry-015",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "在同温同压和相同体积条件下应用阿伏加德罗定律。"
     },
     {
       "text": "实验室配制一定物质的量浓度溶液，定容时仰视刻度线，最终浓度通常？",
@@ -4331,7 +4565,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 1,
       "explain": "仰视定容会使液体体积偏大，溶质一定时浓度偏低。",
       "topic37": "定量实验",
-      "id37": "chemistry-016"
+      "id37": "chemistry-016",
+      "grade38": 3,
+      "normalSeconds38": 40,
+      "grading38": "由仰视导致的实际体积变化，推导浓度误差方向。"
     },
     {
       "text": "在硫酸酸化的条件下，检验Fe²⁺可利用它的什么性质？",
@@ -4344,7 +4581,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 0,
       "explain": "Fe²⁺有还原性，可被酸性高锰酸钾氧化。",
       "topic37": "离子检验",
-      "id37": "chemistry-017"
+      "id37": "chemistry-017",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "把亚铁离子的还原性与酸性高锰酸钾检验联系起来。"
     },
     {
       "text": "NH₄Cl与足量NaOH混合加热，生成的特征气体是？",
@@ -4357,7 +4597,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 3,
       "explain": "NH₄⁺＋OH⁻在加热时生成NH₃和水。",
       "topic37": "氮及其化合物",
-      "id37": "chemistry-018"
+      "id37": "chemistry-018",
+      "grade38": 1,
+      "normalSeconds38": 15,
+      "grading38": "识记铵盐与强碱加热的产物。"
     },
     {
       "text": "下列离子在强酸性溶液中可以大量存在的是？",
@@ -4370,7 +4613,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 2,
       "explain": "碳酸根、碳酸氢根和氢氧根都会与H⁺反应。",
       "topic37": "离子共存",
-      "id37": "chemistry-019"
+      "id37": "chemistry-019",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "按强酸环境排除不能大量共存的离子。"
     },
     {
       "text": "可用作硅半导体材料的物质是？",
@@ -4383,7 +4629,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 1,
       "explain": "单质硅是常用半导体；二氧化硅不等同于单质硅。",
       "topic37": "无机材料",
-      "id37": "chemistry-020"
+      "id37": "chemistry-020",
+      "grade38": 1,
+      "normalSeconds38": 15,
+      "grading38": "识记半导体材料的常见物质。"
     },
     {
       "text": "N₂＋3H₂ ⇌ 2NH₃，恒温压缩容器体积，平衡倾向于？",
@@ -4396,7 +4645,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 0,
       "explain": "增压有利于气体物质的量减小的一侧。",
       "topic37": "化学平衡",
-      "id37": "chemistry-021"
+      "id37": "chemistry-021",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "数出反应两侧气体计量数，再判断压缩对平衡的影响。"
     },
     {
       "text": "反应速率v(A)＝0.2 mol/(L·s)，2A→B，则按B表示的生成速率是？",
@@ -4409,7 +4661,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 3,
       "explain": "速率比等于化学计量数比，v(A):v(B)=2:1。",
       "topic37": "化学反应速率",
-      "id37": "chemistry-022"
+      "id37": "chemistry-022",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "按化学计量数之比换算反应速率。"
     },
     {
       "text": "基态钠原子最外层电子数是？",
@@ -4422,7 +4677,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 2,
       "explain": "钠原子电子排布为2、8、1。",
       "topic37": "原子结构",
-      "id37": "chemistry-023"
+      "id37": "chemistry-023",
+      "grade38": 1,
+      "normalSeconds38": 15,
+      "grading38": "识记钠的最外层电子数。"
     },
     {
       "text": "同周期主族元素从左到右，一般而言原子半径？",
@@ -4435,7 +4693,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 1,
       "explain": "同周期核电荷数增加，通常原子半径减小。",
       "topic37": "元素周期律",
-      "id37": "chemistry-024"
+      "id37": "chemistry-024",
+      "grade38": 1,
+      "normalSeconds38": 15,
+      "grading38": "识记同周期原子半径的一般变化规律。"
     },
     {
       "text": "将4 g NaOH（摩尔质量40 g/mol）溶解并定容至1.00 L，物质的量浓度为？",
@@ -4448,7 +4709,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 0,
       "explain": "n=m/M=0.10 mol，c=n/V=0.10 mol/L。",
       "topic37": "溶液浓度",
-      "id37": "chemistry-025"
+      "id37": "chemistry-025",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "采用c=m/(MV)，代入质量、摩尔质量和体积做简单换算。"
     },
     {
       "text": "将8 g NaOH（摩尔质量40 g/mol）溶解并定容至1.00 L，物质的量浓度为？",
@@ -4461,7 +4725,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 3,
       "explain": "n=m/M=0.20 mol，c=n/V=0.20 mol/L。",
       "topic37": "溶液浓度",
-      "id37": "chemistry-026"
+      "id37": "chemistry-026",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "采用c=m/(MV)，代入质量、摩尔质量和体积做简单换算。"
     },
     {
       "text": "将12 g NaOH（摩尔质量40 g/mol）溶解并定容至1.00 L，物质的量浓度为？",
@@ -4474,7 +4741,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 2,
       "explain": "n=m/M=0.30 mol，c=n/V=0.30 mol/L。",
       "topic37": "溶液浓度",
-      "id37": "chemistry-027"
+      "id37": "chemistry-027",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "采用c=m/(MV)，代入质量、摩尔质量和体积做简单换算。"
     },
     {
       "text": "将16 g NaOH（摩尔质量40 g/mol）溶解并定容至1.00 L，物质的量浓度为？",
@@ -4487,7 +4757,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 1,
       "explain": "n=m/M=0.40 mol，c=n/V=0.40 mol/L。",
       "topic37": "溶液浓度",
-      "id37": "chemistry-028"
+      "id37": "chemistry-028",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "采用c=m/(MV)，代入质量、摩尔质量和体积做简单换算。"
     },
     {
       "text": "将20 g NaOH（摩尔质量40 g/mol）溶解并定容至1.00 L，物质的量浓度为？",
@@ -4500,7 +4773,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 0,
       "explain": "n=m/M=0.50 mol，c=n/V=0.50 mol/L。",
       "topic37": "溶液浓度",
-      "id37": "chemistry-029"
+      "id37": "chemistry-029",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "采用c=m/(MV)，代入质量、摩尔质量和体积做简单换算。"
     },
     {
       "text": "将24 g NaOH（摩尔质量40 g/mol）溶解并定容至1.00 L，物质的量浓度为？",
@@ -4513,7 +4789,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 3,
       "explain": "n=m/M=0.60 mol，c=n/V=0.60 mol/L。",
       "topic37": "溶液浓度",
-      "id37": "chemistry-030"
+      "id37": "chemistry-030",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "采用c=m/(MV)，代入质量、摩尔质量和体积做简单换算。"
     }
   ],
   "biology": [
@@ -4528,7 +4807,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 0,
       "explain": "动作电位期间Na⁺内流，膜内由负变正。",
       "topic37": "神经调节",
-      "id37": "biology-001"
+      "id37": "biology-001",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "根据动作电位形成过程判断膜内电位的变化。"
     },
     {
       "text": "突触处信号一般单向传递，主要因为？",
@@ -4541,7 +4823,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 3,
       "explain": "释放部位与受体分布使突触传递具有方向性。",
       "topic37": "神经调节",
-      "id37": "biology-002"
+      "id37": "biology-002",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "将递质的释放位置与受体位置联系到单向传递。"
     },
     {
       "text": "人体剧烈运动时，维持血浆pH相对稳定的重要因素是？",
@@ -4554,7 +4839,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 2,
       "explain": "血浆的缓冲体系参与维持酸碱平衡。",
       "topic37": "稳态",
-      "id37": "biology-003"
+      "id37": "biology-003",
+      "grade38": 1,
+      "normalSeconds38": 15,
+      "grading38": "识记血浆缓冲体系的作用。"
     },
     {
       "text": "血糖升高时，通常哪一种激素分泌增加？",
@@ -4567,7 +4855,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 1,
       "explain": "胰岛素促进葡萄糖摄取、利用和储存。",
       "topic37": "激素调节",
-      "id37": "biology-004"
+      "id37": "biology-004",
+      "grade38": 1,
+      "normalSeconds38": 15,
+      "grading38": "识记血糖升高时的主要调节激素。"
     },
     {
       "text": "抗利尿激素分泌增加，会使肾小管和集合管？",
@@ -4580,7 +4871,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 0,
       "explain": "抗利尿激素促进水重吸收，使尿量减少。",
       "topic37": "水盐平衡",
-      "id37": "biology-005"
+      "id37": "biology-005",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "应用抗利尿激素与肾脏水重吸收的对应关系。"
     },
     {
       "text": "抗体主要由哪类细胞分泌？",
@@ -4593,7 +4887,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 3,
       "explain": "B细胞分化形成的浆细胞可分泌抗体。",
       "topic37": "免疫调节",
-      "id37": "biology-006"
+      "id37": "biology-006",
+      "grade38": 1,
+      "normalSeconds38": 15,
+      "grading38": "识记抗体的主要分泌细胞。"
     },
     {
       "text": "有氧呼吸中，葡萄糖分解为丙酮酸主要发生在？",
@@ -4606,7 +4903,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 2,
       "explain": "糖酵解发生在细胞质基质。",
       "topic37": "细胞呼吸",
-      "id37": "biology-007"
+      "id37": "biology-007",
+      "grade38": 1,
+      "normalSeconds38": 15,
+      "grading38": "识记糖酵解发生的细胞部位。"
     },
     {
       "text": "真核细胞有氧呼吸中，产生大量ATP的阶段主要发生在？",
@@ -4619,7 +4919,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 1,
       "explain": "电子传递链和氧化磷酸化发生在线粒体内膜。",
       "topic37": "细胞呼吸",
-      "id37": "biology-008"
+      "id37": "biology-008",
+      "grade38": 1,
+      "normalSeconds38": 15,
+      "grading38": "识记有氧呼吸大量ATP生成阶段的部位。"
     },
     {
       "text": "光合作用释放的氧气直接来自？",
@@ -4632,7 +4935,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 0,
       "explain": "光反应中水的光解产生氧气。",
       "topic37": "光合作用",
-      "id37": "biology-009"
+      "id37": "biology-009",
+      "grade38": 1,
+      "normalSeconds38": 15,
+      "grading38": "识记光合作用释放氧的来源。"
     },
     {
       "text": "光合作用暗反应中，CO₂的固定首先与哪类物质结合？",
@@ -4645,7 +4951,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 3,
       "explain": "CO₂与C₅化合物结合，形成C₃化合物。",
       "topic37": "光合作用",
-      "id37": "biology-010"
+      "id37": "biology-010",
+      "grade38": 1,
+      "normalSeconds38": 15,
+      "grading38": "识记CO₂固定的受体。"
     },
     {
       "text": "酶降低化学反应活化能，但不会改变？",
@@ -4658,7 +4967,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 2,
       "explain": "酶为催化剂，不改变反应平衡。",
       "topic37": "酶",
-      "id37": "biology-011"
+      "id37": "biology-011",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "区分酶对活化能与平衡位置的影响。"
     },
     {
       "text": "动物细胞吸收K⁺，逆浓度梯度并消耗能量，属于？",
@@ -4671,7 +4983,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 1,
       "explain": "主动运输可逆浓度梯度，需要载体和能量。",
       "topic37": "物质运输",
-      "id37": "biology-012"
+      "id37": "biology-012",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "从逆浓度梯度和耗能条件判断运输类型。"
     },
     {
       "text": "高等植物细胞有丝分裂末期，细胞板逐渐形成什么？",
@@ -4684,7 +4999,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 0,
       "explain": "细胞板向四周扩展形成新的细胞壁。",
       "topic37": "细胞增殖",
-      "id37": "biology-013"
+      "id37": "biology-013",
+      "grade38": 1,
+      "normalSeconds38": 15,
+      "grading38": "识记植物细胞板的形成结果。"
     },
     {
       "text": "同源染色体分离发生于减数分裂的哪一时期？",
@@ -4697,7 +5015,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 3,
       "explain": "减数第一次分裂后期同源染色体分离。",
       "topic37": "减数分裂",
-      "id37": "biology-014"
+      "id37": "biology-014",
+      "grade38": 1,
+      "normalSeconds38": 15,
+      "grading38": "识记减数分裂同源染色体分离时期。"
     },
     {
       "text": "DNA半保留复制后，每个子代DNA分子一般含？",
@@ -4710,7 +5031,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 2,
       "explain": "半保留复制保留一条亲代链，合成一条新链。",
       "topic37": "DNA复制",
-      "id37": "biology-015"
+      "id37": "biology-015",
+      "grade38": 1,
+      "normalSeconds38": 15,
+      "grading38": "识记半保留复制中的新旧链组合。"
     },
     {
       "text": "以DNA的一条链为模板合成RNA的过程叫？",
@@ -4723,7 +5047,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 1,
       "explain": "转录以DNA为模板合成RNA。",
       "topic37": "基因表达",
-      "id37": "biology-016"
+      "id37": "biology-016",
+      "grade38": 1,
+      "normalSeconds38": 15,
+      "grading38": "识记转录的模板与产物。"
     },
     {
       "text": "密码子位于哪种分子上？",
@@ -4736,7 +5063,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 0,
       "explain": "mRNA上三个相邻碱基构成一个密码子。",
       "topic37": "基因表达",
-      "id37": "biology-017"
+      "id37": "biology-017",
+      "grade38": 1,
+      "normalSeconds38": 15,
+      "grading38": "识记密码子所在分子。"
     },
     {
       "text": "若某双链DNA中A占20%，则G占多少？",
@@ -4749,7 +5079,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 3,
       "explain": "A=T=20%，G+C=60%，G=C=30%。",
       "topic37": "DNA结构",
-      "id37": "biology-018"
+      "id37": "biology-018",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "利用双链互补比例，计算剩余碱基的比例。"
     },
     {
       "text": "Aa与Aa杂交，完全显性且不考虑致死，子代显性性状比例是？",
@@ -4762,7 +5095,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 2,
       "explain": "基因型1AA:2Aa:1aa，显性性状占3/4。",
       "topic37": "分离定律",
-      "id37": "biology-019"
+      "id37": "biology-019",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "用一对等位基因杂交的组合判断显性性状比例。"
     },
     {
       "text": "两对独立遗传基因AaBb个体产生AB配子的概率是？",
@@ -4775,7 +5111,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 1,
       "explain": "两对等位基因独立分离，概率为1/2×1/2。",
       "topic37": "自由组合定律",
-      "id37": "biology-020"
+      "id37": "biology-020",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "把两对独立分离的配子概率相乘。"
     },
     {
       "text": "现代生物进化理论认为，生物进化的基本单位是？",
@@ -4788,7 +5127,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 0,
       "explain": "种群基因频率的改变体现生物进化。",
       "topic37": "进化",
-      "id37": "biology-021"
+      "id37": "biology-021",
+      "grade38": 1,
+      "normalSeconds38": 15,
+      "grading38": "识记进化的基本单位。"
     },
     {
       "text": "调查草地中某双子叶植物种群密度，常采用？",
@@ -4801,7 +5143,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 3,
       "explain": "植物活动范围小，适宜随机取样调查。",
       "topic37": "种群调查",
-      "id37": "biology-022"
+      "id37": "biology-022",
+      "grade38": 1,
+      "normalSeconds38": 15,
+      "grading38": "识记适合植物种群密度的调查方法。"
     },
     {
       "text": "生态系统能量流动的基本特点是？",
@@ -4814,7 +5159,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 2,
       "explain": "能量沿食物链流动，并不断以热能形式散失。",
       "topic37": "生态系统",
-      "id37": "biology-023"
+      "id37": "biology-023",
+      "grade38": 1,
+      "normalSeconds38": 15,
+      "grading38": "识记能量流动的两项特征。"
     },
     {
       "text": "生态系统碳循环中，无机环境中的碳主要以何种形式参与光合作用？",
@@ -4827,7 +5175,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 1,
       "explain": "生产者利用CO₂合成有机物。",
       "topic37": "物质循环",
-      "id37": "biology-024"
+      "id37": "biology-024",
+      "grade38": 1,
+      "normalSeconds38": 15,
+      "grading38": "识记光合作用吸收碳的形式。"
     },
     {
       "text": "过高温度导致多数酶活性下降，主要原因是？",
@@ -4840,7 +5191,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 0,
       "explain": "高温可使蛋白质变性，破坏活性所需结构。",
       "topic37": "酶",
-      "id37": "biology-025"
+      "id37": "biology-025",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "将温度过高与酶空间结构改变联系起来。"
     },
     {
       "text": "限制酶与DNA连接酶主要作用于DNA的哪一种键？",
@@ -4853,7 +5207,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 3,
       "explain": "限制酶切割、连接酶连接DNA骨架中的磷酸二酯键。",
       "topic37": "基因工程",
-      "id37": "biology-026"
+      "id37": "biology-026",
+      "grade38": 1,
+      "normalSeconds38": 15,
+      "grading38": "识记两种工具酶作用的化学键。"
     },
     {
       "text": "动物细胞培养中，接触抑制是指？",
@@ -4866,7 +5223,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 2,
       "explain": "正常细胞密集接触可抑制继续分裂。",
       "topic37": "细胞工程",
-      "id37": "biology-027"
+      "id37": "biology-027",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "理解细胞相互接触与分裂抑制的含义。"
     },
     {
       "text": "植物生长素在单侧光下引起茎向光生长，主要因为？",
@@ -4879,7 +5239,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 1,
       "explain": "背光侧生长素较多，促进茎细胞伸长更明显。",
       "topic37": "植物激素",
-      "id37": "biology-028"
+      "id37": "biology-028",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "把两侧生长速率差异与向光弯曲联系起来。"
     },
     {
       "text": "内环境不包括下列哪一项？",
@@ -4892,7 +5255,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 0,
       "explain": "内环境是细胞外液，不包含细胞内液。",
       "topic37": "稳态",
-      "id37": "biology-029"
+      "id37": "biology-029",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "辨认内环境的边界，排除细胞内液。"
     },
     {
       "text": "基因突变通常指DNA分子中什么改变？",
@@ -4905,7 +5271,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 3,
       "explain": "基因突变涉及DNA碱基序列的改变。",
       "topic37": "遗传变异",
-      "id37": "biology-030"
+      "id37": "biology-030",
+      "grade38": 1,
+      "normalSeconds38": 15,
+      "grading38": "识记基因突变的碱基层面变化。"
     }
   ],
   "physics": [
@@ -4920,7 +5289,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 0,
       "explain": "向心力改变速度方向，指向圆心。",
       "topic37": "圆周运动",
-      "id37": "physics-001"
+      "id37": "physics-001",
+      "grade38": 1,
+      "normalSeconds38": 15,
+      "grading38": "识记向心力相对圆心的方向。"
     },
     {
       "text": "只受重力的物体在下落时，忽略空气阻力，其机械能？",
@@ -4933,7 +5305,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 3,
       "explain": "只有重力做功时，机械能守恒。",
       "topic37": "机械能守恒",
-      "id37": "physics-002"
+      "id37": "physics-002",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "由只有重力做功判断机械能是否守恒。"
     },
     {
       "text": "物体所受合外力的冲量等于？",
@@ -4946,7 +5321,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 2,
       "explain": "动量定理：合外力冲量等于动量变化。",
       "topic37": "动量",
-      "id37": "physics-003"
+      "id37": "physics-003",
+      "grade38": 1,
+      "normalSeconds38": 15,
+      "grading38": "识记动量定理的基本表述。"
     },
     {
       "text": "电场强度的定义式E＝F/q中，q指什么？",
@@ -4959,7 +5337,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 1,
       "explain": "用小的正试探电荷所受电场力与电荷量之比定义E。",
       "topic37": "静电场",
-      "id37": "physics-004"
+      "id37": "physics-004",
+      "grade38": 1,
+      "normalSeconds38": 15,
+      "grading38": "识记场强定义式中试探电荷的意义。"
     },
     {
       "text": "匀强电场中沿电场线方向移动正电荷，其电势能通常？",
@@ -4972,7 +5353,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 0,
       "explain": "正电荷沿电场方向，电场力做正功，电势能减小。",
       "topic37": "电势能",
-      "id37": "physics-005"
+      "id37": "physics-005",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "结合正电荷受力和移动方向判断电势能变化。"
     },
     {
       "text": "带电粒子仅受匀强磁场洛伦兹力做圆周运动，动能？",
@@ -4985,7 +5369,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 3,
       "explain": "磁场力始终垂直速度，不做功。",
       "topic37": "磁场",
-      "id37": "physics-006"
+      "id37": "physics-006",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "应用洛伦兹力不做功判断动能变化。"
     },
     {
       "text": "楞次定律中，感应电流的效果总是？",
@@ -4998,7 +5385,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 2,
       "explain": "阻碍的是变化，不是原磁场。",
       "topic37": "电磁感应",
-      "id37": "physics-007"
+      "id37": "physics-007",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "辨认楞次定律中所阻碍的是磁通量的变化。"
     },
     {
       "text": "简谐运动物体经过平衡位置时，速度大小与加速度分别？",
@@ -5011,7 +5401,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 1,
       "explain": "平衡位置回复力为零、速度最大。",
       "topic37": "振动",
-      "id37": "physics-008"
+      "id37": "physics-008",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "从简谐运动位置判断速度与加速度。"
     },
     {
       "text": "双缝干涉实验中，其他条件不变，光波长增加，条纹间距？",
@@ -5024,7 +5417,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 0,
       "explain": "条纹间距Δx=Lλ/d，与波长成正比。",
       "topic37": "光的干涉",
-      "id37": "physics-009"
+      "id37": "physics-009",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "利用条纹间距与波长的正比关系。"
     },
     {
       "text": "发生光电效应需入射光的频率满足？",
@@ -5037,7 +5433,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 3,
       "explain": "光子能量需足够克服逸出功。",
       "topic37": "光电效应",
-      "id37": "physics-010"
+      "id37": "physics-010",
+      "grade38": 1,
+      "normalSeconds38": 15,
+      "grading38": "识记光电效应的截止频率条件。"
     },
     {
       "text": "理想气体在体积不变时，热力学温度升为原来2倍，压强变为？",
@@ -5050,7 +5449,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 2,
       "explain": "一定质量气体等容变化有p/T不变。",
       "topic37": "气体实验定律",
-      "id37": "physics-011"
+      "id37": "physics-011",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "在体积固定条件下使用p/T不变。"
     },
     {
       "text": "天然放射性元素半衰期主要由什么决定？",
@@ -5063,7 +5465,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 1,
       "explain": "普通外界条件基本不改变原子核衰变的半衰期。",
       "topic37": "原子核",
-      "id37": "physics-012"
+      "id37": "physics-012",
+      "grade38": 1,
+      "normalSeconds38": 15,
+      "grading38": "识记半衰期主要由核自身决定。"
     },
     {
       "text": "理想变压器原副线圈匝数比2:1，原电压220 V，副电压为？",
@@ -5076,7 +5481,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 0,
       "explain": "理想变压器电压比等于匝数比。",
       "topic37": "交流电",
-      "id37": "physics-013"
+      "id37": "physics-013",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "按理想变压器电压比和匝数比求值。"
     },
     {
       "text": "一个孤立系统发生碰撞，若合外力可忽略，什么量守恒？",
@@ -5089,7 +5497,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 3,
       "explain": "系统合外力可忽略时，总动量守恒。",
       "topic37": "碰撞",
-      "id37": "physics-014"
+      "id37": "physics-014",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "根据合外力条件判断碰撞系统的守恒量。"
     },
     {
       "text": "电容器充电后与电源断开，极板间距增大且忽略边缘效应，电容？",
@@ -5102,7 +5513,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 2,
       "explain": "平行板电容C=εS/d，间距增大使电容减小。",
       "topic37": "电容器",
-      "id37": "physics-015"
+      "id37": "physics-015",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "辨认平行板电容与极板距离的反比关系。"
     },
     {
       "text": "卫星绕地球做匀速圆周运动，轨道半径增大时速度？",
@@ -5115,7 +5529,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 1,
       "explain": "v=√(GM/r)，半径越大，速度越小。",
       "topic37": "万有引力",
-      "id37": "physics-016"
+      "id37": "physics-016",
+      "grade38": 3,
+      "normalSeconds38": 40,
+      "grading38": "由万有引力提供向心力，建立速度与轨道半径的关系。"
     },
     {
       "text": "电流通过纯电阻消耗的电能主要转化为？",
@@ -5128,7 +5545,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 0,
       "explain": "纯电阻将电能转化为内能，遵循焦耳定律。",
       "topic37": "电路",
-      "id37": "physics-017"
+      "id37": "physics-017",
+      "grade38": 1,
+      "normalSeconds38": 15,
+      "grading38": "识记纯电阻的能量转化。"
     },
     {
       "text": "质点作匀加速直线运动，速度—时间图像的斜率表示？",
@@ -5141,7 +5561,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 3,
       "explain": "v-t图线斜率Δv/Δt为加速度。",
       "topic37": "运动图像",
-      "id37": "physics-018"
+      "id37": "physics-018",
+      "grade38": 1,
+      "normalSeconds38": 15,
+      "grading38": "识记速度—时间图像斜率的意义。"
     },
     {
       "text": "质量2 kg的物体在水平面仅受合力6 N，求加速度大小。",
@@ -5154,7 +5577,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 2,
       "explain": "a=F/m=6/2=3 m/s²。",
       "topic37": "牛顿第二定律",
-      "id37": "physics-019"
+      "id37": "physics-019",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "用a=F/m直接代入已给出的合力和质量。"
     },
     {
       "text": "质量3 kg的物体在水平面仅受合力9 N，求加速度大小。",
@@ -5167,7 +5593,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 1,
       "explain": "a=F/m=9/3=3 m/s²。",
       "topic37": "牛顿第二定律",
-      "id37": "physics-020"
+      "id37": "physics-020",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "用a=F/m直接代入已给出的合力和质量。"
     },
     {
       "text": "质量4 kg的物体在水平面仅受合力12 N，求加速度大小。",
@@ -5180,7 +5609,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 0,
       "explain": "a=F/m=12/4=3 m/s²。",
       "topic37": "牛顿第二定律",
-      "id37": "physics-021"
+      "id37": "physics-021",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "用a=F/m直接代入已给出的合力和质量。"
     },
     {
       "text": "质量5 kg的物体在水平面仅受合力15 N，求加速度大小。",
@@ -5193,7 +5625,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 3,
       "explain": "a=F/m=15/5=3 m/s²。",
       "topic37": "牛顿第二定律",
-      "id37": "physics-022"
+      "id37": "physics-022",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "用a=F/m直接代入已给出的合力和质量。"
     },
     {
       "text": "质量6 kg的物体在水平面仅受合力18 N，求加速度大小。",
@@ -5206,7 +5641,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 2,
       "explain": "a=F/m=18/6=3 m/s²。",
       "topic37": "牛顿第二定律",
-      "id37": "physics-023"
+      "id37": "physics-023",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "用a=F/m直接代入已给出的合力和质量。"
     },
     {
       "text": "质量8 kg的物体在水平面仅受合力24 N，求加速度大小。",
@@ -5219,7 +5657,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 1,
       "explain": "a=F/m=24/8=3 m/s²。",
       "topic37": "牛顿第二定律",
-      "id37": "physics-024"
+      "id37": "physics-024",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "用a=F/m直接代入已给出的合力和质量。"
     },
     {
       "text": "一纯电阻R=2 Ω，通过恒定电流2 A，电功率为？",
@@ -5232,7 +5673,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 0,
       "explain": "P=I²R=4×2=8 W。",
       "topic37": "电功率",
-      "id37": "physics-025"
+      "id37": "physics-025",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "选用P=I²R，先平方电流再乘电阻。"
     },
     {
       "text": "一纯电阻R=4 Ω，通过恒定电流2 A，电功率为？",
@@ -5245,7 +5689,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 3,
       "explain": "P=I²R=4×4=16 W。",
       "topic37": "电功率",
-      "id37": "physics-026"
+      "id37": "physics-026",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "选用P=I²R，先平方电流再乘电阻。"
     },
     {
       "text": "一纯电阻R=5 Ω，通过恒定电流2 A，电功率为？",
@@ -5258,7 +5705,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 2,
       "explain": "P=I²R=4×5=20 W。",
       "topic37": "电功率",
-      "id37": "physics-027"
+      "id37": "physics-027",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "选用P=I²R，先平方电流再乘电阻。"
     },
     {
       "text": "一纯电阻R=8 Ω，通过恒定电流2 A，电功率为？",
@@ -5271,7 +5721,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 1,
       "explain": "P=I²R=4×8=32 W。",
       "topic37": "电功率",
-      "id37": "physics-028"
+      "id37": "physics-028",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "选用P=I²R，先平方电流再乘电阻。"
     },
     {
       "text": "一纯电阻R=10 Ω，通过恒定电流2 A，电功率为？",
@@ -5284,7 +5737,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 0,
       "explain": "P=I²R=4×10=40 W。",
       "topic37": "电功率",
-      "id37": "physics-029"
+      "id37": "physics-029",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "选用P=I²R，先平方电流再乘电阻。"
     },
     {
       "text": "一纯电阻R=20 Ω，通过恒定电流2 A，电功率为？",
@@ -5297,7 +5753,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 3,
       "explain": "P=I²R=4×20=80 W。",
       "topic37": "电功率",
-      "id37": "physics-030"
+      "id37": "physics-030",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "选用P=I²R，先平方电流再乘电阻。"
     }
   ],
   "english": [
@@ -5312,7 +5771,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 0,
       "explain": "过去某时之前已经完成，用过去完成时had begun。",
       "topic37": "过去完成时",
-      "id37": "english-001"
+      "id37": "english-001",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "结合过去时间参照判断动作先后及过去完成时。"
     },
     {
       "text": "This is the book _____ I bought yesterday.",
@@ -5325,7 +5787,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 3,
       "explain": "先行词为物，关系代词that作bought的宾语。",
       "topic37": "定语从句",
-      "id37": "english-002"
+      "id37": "english-002",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "辨认定语从句中缺少的宾语。"
     },
     {
       "text": "The girl _____ father is a doctor is my classmate.",
@@ -5338,7 +5803,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 2,
       "explain": "whose引导定语从句并作father的定语。",
       "topic37": "定语从句",
-      "id37": "english-003"
+      "id37": "english-003",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "辨认先行词与father之间的所属关系。"
     },
     {
       "text": "It was in the library _____ I met her.",
@@ -5351,7 +5819,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 1,
       "explain": "It was...that...是强调句型。",
       "topic37": "强调句",
-      "id37": "english-004"
+      "id37": "english-004",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "识别It was…that强调句框架。"
     },
     {
       "text": "Only then _____ how important the advice was.",
@@ -5364,7 +5835,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 0,
       "explain": "Only＋状语置于句首，主句部分倒装。",
       "topic37": "倒装",
-      "id37": "english-005"
+      "id37": "english-005",
+      "grade38": 3,
+      "normalSeconds38": 40,
+      "grading38": "辨认Only置前引发的部分倒装，并同时判断过去时。"
     },
     {
       "text": "If I were you, I _____ the truth.",
@@ -5377,7 +5851,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 3,
       "explain": "与现在事实相反的假设，主句用would＋动词原形。",
       "topic37": "虚拟语气",
-      "id37": "english-006"
+      "id37": "english-006",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "根据If I were you使用与现在相反的虚拟主句。"
     },
     {
       "text": "I suggest that he _____ on time.",
@@ -5390,7 +5867,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 2,
       "explain": "suggest表示建议，从句用should＋原形，should可省略。",
       "topic37": "虚拟语气",
-      "id37": "english-007"
+      "id37": "english-007",
+      "grade38": 3,
+      "normalSeconds38": 40,
+      "grading38": "识别suggest表示建议及从句虚拟语气，避开时态和人称干扰。"
     },
     {
       "text": "_____ from the top of the hill, the city looks beautiful.",
@@ -5403,7 +5883,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 1,
       "explain": "城市是被看，过去分词作状语。",
       "topic37": "非谓语动词",
-      "id37": "english-008"
+      "id37": "english-008",
+      "grade38": 3,
+      "normalSeconds38": 40,
+      "grading38": "根据主语与see的被动关系选择分词，排除悬垂修饰。"
     },
     {
       "text": "_____ the task, she went home.",
@@ -5416,7 +5899,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 0,
       "explain": "先完成任务再回家，使用完成式现在分词。",
       "topic37": "非谓语动词",
-      "id37": "english-009"
+      "id37": "english-009",
+      "grade38": 3,
+      "normalSeconds38": 40,
+      "grading38": "同时判断分词动作的先后关系与主动关系。"
     },
     {
       "text": "The problem _____ tomorrow is important.",
@@ -5429,7 +5915,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 3,
       "explain": "将要被讨论，用不定式的被动形式。",
       "topic37": "非谓语动词",
-      "id37": "english-010"
+      "id37": "english-010",
+      "grade38": 3,
+      "normalSeconds38": 40,
+      "grading38": "同时判断将来时间与被动关系，选择不定式被动式。"
     },
     {
       "text": "Neither the teacher nor the students _____ late today.",
@@ -5442,7 +5931,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 2,
       "explain": "neither...nor...遵循就近一致，students对应are。",
       "topic37": "主谓一致",
-      "id37": "english-011"
+      "id37": "english-011",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "应用neither…nor结构的就近一致。"
     },
     {
       "text": "A number of students _____ taking part in the activity.",
@@ -5455,7 +5947,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 1,
       "explain": "a number of后接复数名词，谓语用复数。",
       "topic37": "主谓一致",
-      "id37": "english-012"
+      "id37": "english-012",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "辨认a number of与复数谓语的搭配。"
     },
     {
       "text": "The number of students in our class _____ fifty.",
@@ -5468,7 +5963,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 0,
       "explain": "the number of...作主语时谓语用单数。",
       "topic37": "主谓一致",
-      "id37": "english-013"
+      "id37": "english-013",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "辨认the number作主语时的单数谓语。"
     },
     {
       "text": "He has lived here _____ 2020.",
@@ -5481,7 +5979,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 3,
       "explain": "since接过去时间点，常与现在完成时连用。",
       "topic37": "时态",
-      "id37": "english-014"
+      "id37": "english-014",
+      "grade38": 1,
+      "normalSeconds38": 15,
+      "grading38": "识记since与起始年份的搭配。"
     },
     {
       "text": "The bridge _____ at this time last year.",
@@ -5494,7 +5995,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 2,
       "explain": "过去某时正在被建，用过去进行时的被动语态。",
       "topic37": "被动语态",
-      "id37": "english-015"
+      "id37": "english-015",
+      "grade38": 3,
+      "normalSeconds38": 40,
+      "grading38": "结合过去进行时间标志与桥梁受事关系，构造进行时被动。"
     },
     {
       "text": "You _____ have told me earlier; now it is too late.",
@@ -5507,7 +6011,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 1,
       "explain": "should have done表示本该做却未做。",
       "topic37": "情态动词",
-      "id37": "english-016"
+      "id37": "english-016",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "根据已错过时机的语境选择过去本应做的表达。"
     },
     {
       "text": "He looks tired. He _____ have stayed up last night.",
@@ -5520,7 +6027,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 0,
       "explain": "may have done表示对过去情况的可能推测。",
       "topic37": "情态动词",
-      "id37": "english-017"
+      "id37": "english-017",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "根据疲劳的线索表达对过去行为的可能推测。"
     },
     {
       "text": "_____ matters most is your attitude.",
@@ -5533,7 +6043,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 3,
       "explain": "What引导主语从句并在从句中作主语。",
       "topic37": "名词性从句",
-      "id37": "english-018"
+      "id37": "english-018",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "辨认名词性从句缺少的主语成分。"
     },
     {
       "text": "The news _____ our team won the game made us happy.",
@@ -5546,7 +6059,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 2,
       "explain": "that引导同位语从句，解释news的内容。",
       "topic37": "同位语从句",
-      "id37": "english-019"
+      "id37": "english-019",
+      "grade38": 3,
+      "normalSeconds38": 40,
+      "grading38": "区分同位语从句和定语从句，判断连接词是否作成分。"
     },
     {
       "text": "_____ it rains tomorrow, we will stay indoors.",
@@ -5559,7 +6075,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 1,
       "explain": "If引导条件状语从句，从句用一般现在时表将来。",
       "topic37": "状语从句",
-      "id37": "english-020"
+      "id37": "english-020",
+      "grade38": 1,
+      "normalSeconds38": 15,
+      "grading38": "识记条件从句的常用连词。"
     },
     {
       "text": "He kept working _____ he was very tired.",
@@ -5572,7 +6091,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 0,
       "explain": "although引导让步状语从句。",
       "topic37": "让步状语从句",
-      "id37": "english-021"
+      "id37": "english-021",
+      "grade38": 1,
+      "normalSeconds38": 15,
+      "grading38": "识记让步关系的常用连词。"
     },
     {
       "text": "The harder you work, _____ progress you will make.",
@@ -5585,7 +6107,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 3,
       "explain": "the＋比较级..., the＋比较级...表示越……越……。",
       "topic37": "比较结构",
-      "id37": "english-022"
+      "id37": "english-022",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "应用the＋比较级联动结构。"
     },
     {
       "text": "The word \"extraordinary\" is closest in meaning to _____.",
@@ -5598,7 +6123,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 2,
       "explain": "extraordinary意为非凡的、不同寻常的。",
       "topic37": "高中词汇",
-      "id37": "english-023"
+      "id37": "english-023",
+      "grade38": 1,
+      "normalSeconds38": 15,
+      "grading38": "识记extraordinary的近义词。"
     },
     {
       "text": "In \"She rejected the offer\", \"rejected\" means _____.",
@@ -5611,7 +6139,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 1,
       "explain": "reject在此表示拒绝。",
       "topic37": "语境词义",
-      "id37": "english-024"
+      "id37": "english-024",
+      "grade38": 1,
+      "normalSeconds38": 15,
+      "grading38": "根据短语辨认rejected的常见词义。"
     },
     {
       "text": "He was _____ in the experiment and forgot the time.",
@@ -5624,7 +6155,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 0,
       "explain": "be absorbed in意为专心于。",
       "topic37": "固定搭配",
-      "id37": "english-025"
+      "id37": "english-025",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "使用be absorbed in的固定搭配。"
     },
     {
       "text": "I look forward to _____ from you.",
@@ -5637,7 +6171,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 3,
       "explain": "look forward to中的to为介词，后接动名词。",
       "topic37": "固定搭配",
-      "id37": "english-026"
+      "id37": "english-026",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "辨认look forward to中的to为介词。"
     },
     {
       "text": "The teacher had the students _____ the paragraph again.",
@@ -5650,7 +6187,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 2,
       "explain": "have sb do sth表示让某人做某事。",
       "topic37": "使役结构",
-      "id37": "english-027"
+      "id37": "english-027",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "使用have＋宾语＋动词原形的使役结构。"
     },
     {
       "text": "Read: \"The survey found a link between exercise and higher grades, but the researchers warned that family support might influence both.\" What is the most reasonable conclusion?",
@@ -5663,7 +6203,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 1,
       "explain": "原文只报告关联并提出共同影响因素，不能据此断定因果关系。",
       "topic37": "阅读理解：区分相关与因果",
-      "id37": "english-028"
+      "id37": "english-028",
+      "grade38": 4,
+      "normalSeconds38": 60,
+      "grading38": "阅读全文与选项，区分相关性、共同影响因素和因果结论。"
     },
     {
       "text": "Read: \"Although extending library hours would increase costs, it would give working students access to books. The committee therefore proposed a trial.\" Why is a trial suggested?",
@@ -5676,7 +6219,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 0,
       "explain": "Although引出让步，therefore给出试行建议；应同时理解成本与潜在收益。",
       "topic37": "阅读理解：让步关系与作者意图",
-      "id37": "english-029"
+      "id37": "english-029",
+      "grade38": 4,
+      "normalSeconds38": 60,
+      "grading38": "整合让步、成本、受益群体与试行决定，概括决策理由。"
     },
     {
       "text": "Read: \"The author mentions an unsuccessful experiment before describing how the method was improved.\" What is the likely purpose of this structure?",
@@ -5689,7 +6235,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 3,
       "explain": "先失败、后改进的结构用于表现从问题中学习和改进的方法。",
       "topic37": "阅读理解：篇章结构与写作目的",
-      "id37": "english-030"
+      "id37": "english-030",
+      "grade38": 4,
+      "normalSeconds38": 60,
+      "grading38": "理解失败例子与后续改进的篇章联系，推断组织目的。"
     }
   ],
   "math": [
@@ -5704,7 +6253,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 0,
       "explain": "自然对数真数必须大于0。",
       "topic37": "函数",
-      "id37": "math-001"
+      "id37": "math-001",
+      "grade38": 1,
+      "normalSeconds38": 15,
+      "grading38": "识记对数函数真数必须为正。"
     },
     {
       "text": "已知向量a=(1,2)，b=(3,−1)，则a·b等于？",
@@ -5717,7 +6269,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 3,
       "explain": "数量积为1×3＋2×(−1)=1。",
       "topic37": "平面向量",
-      "id37": "math-002"
+      "id37": "math-002",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "用坐标数量积公式计算两项乘积之和。"
     },
     {
       "text": "椭圆x²/25＋y²/9＝1的焦距为？",
@@ -5730,7 +6285,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 2,
       "explain": "c²=a²−b²=16，c=4，焦距2c=8。",
       "topic37": "圆锥曲线",
-      "id37": "math-003"
+      "id37": "math-003",
+      "grade38": 3,
+      "normalSeconds38": 40,
+      "grading38": "识别a²和b²，求c，再区分半焦距c与焦距2c。"
     },
     {
       "text": "抛物线y²=8x的焦点坐标是？",
@@ -5743,7 +6301,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 1,
       "explain": "y²=2px，p=4，焦点(p/2,0)=(2,0)。",
       "topic37": "圆锥曲线",
-      "id37": "math-004"
+      "id37": "math-004",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "将标准方程的系数与焦点公式对应。"
     },
     {
       "text": "函数f(x)=x³的导函数为？",
@@ -5756,7 +6317,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 0,
       "explain": "幂函数求导：(xⁿ)′=nxⁿ⁻¹。",
       "topic37": "导数",
-      "id37": "math-005"
+      "id37": "math-005",
+      "grade38": 1,
+      "normalSeconds38": 15,
+      "grading38": "识记幂函数的求导公式。"
     },
     {
       "text": "函数f(x)=eˣ的导函数为？",
@@ -5769,7 +6333,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 3,
       "explain": "指数函数eˣ的导函数仍为eˣ。",
       "topic37": "导数",
-      "id37": "math-006"
+      "id37": "math-006",
+      "grade38": 1,
+      "normalSeconds38": 15,
+      "grading38": "识记指数函数eˣ的导数。"
     },
     {
       "text": "若sin α=3/5且α为锐角，则cos α为？",
@@ -5782,7 +6349,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 2,
       "explain": "由sin²α＋cos²α=1，锐角余弦取正值。",
       "topic37": "三角函数",
-      "id37": "math-007"
+      "id37": "math-007",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "结合锐角条件和平方关系确定正根。"
     },
     {
       "text": "复数(1+i)²等于？",
@@ -5795,7 +6365,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 1,
       "explain": "展开得1+2i+i²=2i。",
       "topic37": "复数",
-      "id37": "math-008"
+      "id37": "math-008",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "展开平方并用i²=-1化简。"
     },
     {
       "text": "从5名同学中选2人组成小组，共有多少种选法？",
@@ -5808,7 +6381,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 0,
       "explain": "组合数C(5,2)=5×4/2=10。",
       "topic37": "组合",
-      "id37": "math-009"
+      "id37": "math-009",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "辨认不计顺序选取，计算组合数。"
     },
     {
       "text": "一枚均匀硬币抛两次，恰好一次正面朝上的概率？",
@@ -5821,7 +6397,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 3,
       "explain": "四种等可能结果，恰好一次正面有两种。",
       "topic37": "概率",
-      "id37": "math-010"
+      "id37": "math-010",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "枚举或利用二项模型计算两次抛硬币的概率。"
     },
     {
       "text": "事件A、B独立，P(A)=0.5，P(B)=0.4，则P(AB)=？",
@@ -5834,7 +6413,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 2,
       "explain": "独立事件同时发生概率为乘积。",
       "topic37": "独立事件",
-      "id37": "math-011"
+      "id37": "math-011",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "应用独立事件乘法公式。"
     },
     {
       "text": "若随机变量X服从二项分布B(10,0.3)，则E(X)=？",
@@ -5847,7 +6429,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 1,
       "explain": "二项分布期望为np=10×0.3。",
       "topic37": "随机变量",
-      "id37": "math-012"
+      "id37": "math-012",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "应用二项分布期望np。"
     },
     {
       "text": "等差数列首项1、公差2，则前10项和为？",
@@ -5860,7 +6445,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 0,
       "explain": "S₁₀=10×1+10×9×2/2=100。",
       "topic37": "数列",
-      "id37": "math-013"
+      "id37": "math-013",
+      "grade38": 3,
+      "normalSeconds38": 40,
+      "grading38": "先确定项数和末项或直接选用等差数列求和公式，再计算。"
     },
     {
       "text": "等比数列首项2、公比3，则第4项是？",
@@ -5873,7 +6461,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 3,
       "explain": "a₄=2×3³=54。",
       "topic37": "数列",
-      "id37": "math-014"
+      "id37": "math-014",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "应用等比数列通项公式，辨认指数是项数减一。"
     },
     {
       "text": "直线y=2x+1与y=−x+4的交点为？",
@@ -5886,7 +6477,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 2,
       "explain": "联立2x+1=−x+4，x=1，y=3。",
       "topic37": "解析几何",
-      "id37": "math-015"
+      "id37": "math-015",
+      "grade38": 3,
+      "normalSeconds38": 40,
+      "grading38": "联立两条直线方程，先求横坐标再代回纵坐标。"
     },
     {
       "text": "若x>0，则x+1/x的最小值为？",
@@ -5899,7 +6493,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 1,
       "explain": "基本不等式给出x+1/x≥2，x=1时取等。",
       "topic37": "不等式",
-      "id37": "math-016"
+      "id37": "math-016",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "应用基本不等式并核对取等条件。"
     },
     {
       "text": "命题“若a>b，则a²>b²”的逆否命题是？",
@@ -5912,7 +6509,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 0,
       "explain": "逆否命题为否定结论推出否定条件；原命题本身并非恒真。",
       "topic37": "逻辑",
-      "id37": "math-017"
+      "id37": "math-017",
+      "grade38": 3,
+      "normalSeconds38": 40,
+      "grading38": "先否定结论与条件，再交换位置写出逆否命题。"
     },
     {
       "text": "集合A={1,2,3}，B={2,3,4}，则A∩B为？",
@@ -5925,7 +6525,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 3,
       "explain": "交集由同时属于两个集合的元素组成。",
       "topic37": "集合",
-      "id37": "math-018"
+      "id37": "math-018",
+      "grade38": 1,
+      "normalSeconds38": 15,
+      "grading38": "从给定有限集合中取公共元素。"
     },
     {
       "text": "已知f(x)=x²−2x，求f′(2)。",
@@ -5938,7 +6541,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 2,
       "explain": "f′(x)=2x−2，代入x=2得2。",
       "topic37": "导数",
-      "id37": "math-019"
+      "id37": "math-019",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "先对二次式求导，再把指定自变量代入。"
     },
     {
       "text": "已知f(x)=x²−3x，求f′(3)。",
@@ -5951,7 +6557,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 1,
       "explain": "f′(x)=2x−3，代入x=3得3。",
       "topic37": "导数",
-      "id37": "math-020"
+      "id37": "math-020",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "先对二次式求导，再把指定自变量代入。"
     },
     {
       "text": "已知f(x)=x²−4x，求f′(4)。",
@@ -5964,7 +6573,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 0,
       "explain": "f′(x)=2x−4，代入x=4得4。",
       "topic37": "导数",
-      "id37": "math-021"
+      "id37": "math-021",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "先对二次式求导，再把指定自变量代入。"
     },
     {
       "text": "已知f(x)=x²−5x，求f′(5)。",
@@ -5977,7 +6589,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 3,
       "explain": "f′(x)=2x−5，代入x=5得5。",
       "topic37": "导数",
-      "id37": "math-022"
+      "id37": "math-022",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "先对二次式求导，再把指定自变量代入。"
     },
     {
       "text": "已知f(x)=x²−6x，求f′(6)。",
@@ -5990,7 +6605,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 2,
       "explain": "f′(x)=2x−6，代入x=6得6。",
       "topic37": "导数",
-      "id37": "math-023"
+      "id37": "math-023",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "先对二次式求导，再把指定自变量代入。"
     },
     {
       "text": "已知f(x)=x²−7x，求f′(7)。",
@@ -6003,7 +6621,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 1,
       "explain": "f′(x)=2x−7，代入x=7得7。",
       "topic37": "导数",
-      "id37": "math-024"
+      "id37": "math-024",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "先对二次式求导，再把指定自变量代入。"
     },
     {
       "text": "已知f(x)=x²−8x，求f′(8)。",
@@ -6016,7 +6637,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 0,
       "explain": "f′(x)=2x−8，代入x=8得8。",
       "topic37": "导数",
-      "id37": "math-025"
+      "id37": "math-025",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "先对二次式求导，再把指定自变量代入。"
     },
     {
       "text": "已知f(x)=x²−9x，求f′(9)。",
@@ -6029,7 +6653,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 3,
       "explain": "f′(x)=2x−9，代入x=9得9。",
       "topic37": "导数",
-      "id37": "math-026"
+      "id37": "math-026",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "先对二次式求导，再把指定自变量代入。"
     },
     {
       "text": "已知f(x)=x²−10x，求f′(10)。",
@@ -6042,7 +6669,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 2,
       "explain": "f′(x)=2x−10，代入x=10得10。",
       "topic37": "导数",
-      "id37": "math-027"
+      "id37": "math-027",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "先对二次式求导，再把指定自变量代入。"
     },
     {
       "text": "等差数列a₁=3，公差d=2，求a2。",
@@ -6055,7 +6685,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 1,
       "explain": "aₙ=a₁+(n−1)d=3+(2−1)×2=5。",
       "topic37": "等差数列",
-      "id37": "math-028"
+      "id37": "math-028",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "用aₙ=a₁+(n−1)d，辨认项数与公差后代入。"
     },
     {
       "text": "等差数列a₁=3，公差d=2，求a3。",
@@ -6068,7 +6701,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 0,
       "explain": "aₙ=a₁+(n−1)d=3+(3−1)×2=7。",
       "topic37": "等差数列",
-      "id37": "math-029"
+      "id37": "math-029",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "用aₙ=a₁+(n−1)d，辨认项数与公差后代入。"
     },
     {
       "text": "等差数列a₁=3，公差d=2，求a4。",
@@ -6081,7 +6717,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 3,
       "explain": "aₙ=a₁+(n−1)d=3+(4−1)×2=9。",
       "topic37": "等差数列",
-      "id37": "math-030"
+      "id37": "math-030",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "用aₙ=a₁+(n−1)d，辨认项数与公差后代入。"
     },
     {
       "text": "等差数列a₁=3，公差d=2，求a5。",
@@ -6094,7 +6733,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 2,
       "explain": "aₙ=a₁+(n−1)d=3+(5−1)×2=11。",
       "topic37": "等差数列",
-      "id37": "math-031"
+      "id37": "math-031",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "用aₙ=a₁+(n−1)d，辨认项数与公差后代入。"
     },
     {
       "text": "等差数列a₁=3，公差d=2，求a6。",
@@ -6107,7 +6749,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 1,
       "explain": "aₙ=a₁+(n−1)d=3+(6−1)×2=13。",
       "topic37": "等差数列",
-      "id37": "math-032"
+      "id37": "math-032",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "用aₙ=a₁+(n−1)d，辨认项数与公差后代入。"
     },
     {
       "text": "等差数列a₁=3，公差d=2，求a7。",
@@ -6120,7 +6765,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 0,
       "explain": "aₙ=a₁+(n−1)d=3+(7−1)×2=15。",
       "topic37": "等差数列",
-      "id37": "math-033"
+      "id37": "math-033",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "用aₙ=a₁+(n−1)d，辨认项数与公差后代入。"
     },
     {
       "text": "等差数列a₁=3，公差d=2，求a8。",
@@ -6133,7 +6781,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 3,
       "explain": "aₙ=a₁+(n−1)d=3+(8−1)×2=17。",
       "topic37": "等差数列",
-      "id37": "math-034"
+      "id37": "math-034",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "用aₙ=a₁+(n−1)d，辨认项数与公差后代入。"
     },
     {
       "text": "等差数列a₁=3，公差d=2，求a9。",
@@ -6146,7 +6797,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 2,
       "explain": "aₙ=a₁+(n−1)d=3+(9−1)×2=19。",
       "topic37": "等差数列",
-      "id37": "math-035"
+      "id37": "math-035",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "用aₙ=a₁+(n−1)d，辨认项数与公差后代入。"
     },
     {
       "text": "等差数列a₁=3，公差d=2，求a10。",
@@ -6159,7 +6813,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
       "answer": 1,
       "explain": "aₙ=a₁+(n−1)d=3+(10−1)×2=21。",
       "topic37": "等差数列",
-      "id37": "math-036"
+      "id37": "math-036",
+      "grade38": 2,
+      "normalSeconds38": 25,
+      "grading38": "用aₙ=a₁+(n−1)d，辨认项数与公差后代入。"
     }
   ]
 };
@@ -7583,8 +8240,8 @@ body.tutorial-open36 #rotateHint{display:none!important}
         if(S.screen!=='game')return;S.dangerCooldown=S.t+10;S.teacher.hold=Math.max(S.teacher.hold,S.t+2);
         say(CLASSES[S.classIndex].teacher,c.wasSleep?'醒一醒，坐直看黑板。':'刚才在做什么？先把课本打开。');toast('快速反应失败 · 怀疑上升。',true);sound('warn');requestAutoSave();
     }
-    function askQuestion(subject, number = 0, onDone = null) { const bank = QUESTIONS[subject], q = bank[number % bank.length], indices = shuffle(q.choices.map((_, i) => i)); const seconds = Math.max(5,(S.phase === 'ESCAPE' ? 12 : 8 + S.focus * .055)*rules().answer); if (S.classIndex === 5 && S.phase === 'CLASS' && Math.random()<.12)
-        showDoor(true, Math.min(10,seconds), 'glasses'); beginChallenge({ type: 'question', remaining: seconds, kicker: S.phase === 'ESCAPE' ? 'MEMORY / 课程回忆' : 'ROLL CALL / 突然点名', title: subject === 'math' ? '死亡点名' : '回答这道题。', description: q.text, choices: indices.map(i => q.choices[i]), correct: indices.indexOf(q.answer), explain: q.explain, math: subject === 'math', onDone }); sound('warn', .6); }
+    function askQuestion(subject, number = 0, onDone = null) { const bank = QUESTIONS[subject], q = bank[number % bank.length], indices = shuffle(q.choices.map((_, i) => i)); const timing38=makeQuestionTiming38(q.id37,S,isExam35()?'exam':S.phase==='ESCAPE'?'memory':'oral'), seconds=timing38.total; if (S.classIndex === 5 && S.phase === 'CLASS' && Math.random()<.12)
+        showDoor(true, Math.min(10,seconds), 'glasses'); beginChallenge({ type: 'question', questionId38:q.id37, timing38, remaining: seconds, kicker: S.phase === 'ESCAPE' ? 'MEMORY / 课程回忆' : 'ROLL CALL / 突然点名', title: subject === 'math' ? '死亡点名' : '回答这道题。', description: q.text, choices: indices.map(i => q.choices[i]), correct: indices.indexOf(q.answer), explain: q.explain, math: subject === 'math', onDone }); sound('warn', .6); }
     function recordAnswer(ok, isMath) { if (ok) {
         S.questionRight++;
         S.classStats.right++;
@@ -8133,7 +8790,7 @@ body.tutorial-open36 #rotateHint{display:none!important}
     ];
     function startEscape() { cancelDeskActivity('event'); S.phase = 'ESCAPE'; S.escapeStarted = true; S.escapeNode = 0; S.distance = rules().distance; S.action = 'listen'; S.door = null; S.extraUntil = 0; S.teacher.hold = S.t + 86400; eventQueue = []; $('gameUI').hidden = true; $('teacher').hidden = true; $('escapeScene').hidden = false; $('escapeHud').hidden = false; $('dialogue').hidden = false; S.journal.push({ title: '出口', text: '遵循可见的反光、绿色 EXIT 牌与地面引导线。走错按难度扣除距离，路线面板会显示数值。走廊、侧楼梯、实验室、一楼大厅、门厅、校门。六科的守则仍然有效。' }); say('你', '脚步在身后。看清路标，别浪费时间。'); showRoute(); }
     function showRoute() { if (S.screen !== 'game')
-        return; const r = ROUTES[S.escapeNode]; $('escape-location').textContent = r.place; $('escapeRoute').innerHTML = ROUTES.map((x, i) => `<span class="${i <= S.escapeNode ? 'passed' : ''}">${x.place}</span>`).join(''); beginChallenge({ type: 'route', remaining: Math.max(5,10*rules().answer), kicker: `ESCAPE / ${S.escapeNode + 1} OF 6`, title: r.place, description: r.description, choices: r.choices, correct: r.correct }); }
+        return; const r = ROUTES[S.escapeNode]; $('escape-location').textContent = r.place; $('escapeRoute').innerHTML = ROUTES.map((x, i) => `<span class="${i <= S.escapeNode ? 'passed' : ''}">${x.place}</span>`).join(''); const timing38=makeQuestionTiming38('route-'+String(S.escapeNode+1).padStart(3,'0'),S,'route'); beginChallenge({ type: 'route', questionId38:timing38.id,timing38,remaining:timing38.total, kicker: `ESCAPE / ${S.escapeNode + 1} OF 6`, title: r.place, description: r.description, choices: r.choices, correct: r.correct }); }
     function changeDistance(delta) { S.distance = clamp(S.distance + delta*(delta<0?rules().loss:rules().gain)); if (S.distance <= 0) {
         finishEnding('loop');
         return false;
@@ -8191,7 +8848,7 @@ body.tutorial-open36 #rotateHint{display:none!important}
         closeChallenge();
         finishEnding(S.companion ? 'companion' : 'true');
     } }
-    function updateEscape(dt) { S.survival += dt; const reflex=challenge?.type==='freeze'; const exposure=reflex ? Math.max(0,(challenge.elapsed+dt)-Math.max(challenge.elapsed,challenge.grace))*.5 : dt; if (!changeDistance(-.60 * rules().drain / rules().loss * exposure))
+    function updateEscape(dt) { S.survival += dt; const reflex=challenge?.type==='freeze'; const exposure=reflex ? Math.max(0,(challenge.elapsed+dt)-Math.max(challenge.elapsed,challenge.grace))*.5 : questionExposure38(challenge,dt); if (!changeDistance(-.60 * rules().drain / rules().loss * exposure))
         return; S.heartTimer -= dt; if (S.heartTimer <= 0) {
         S.heartTimer = S.distance < 30 ? .6 : 1.15;
         sound('heart', .65);
@@ -8286,7 +8943,7 @@ body.tutorial-open36 #rotateHint{display:none!important}
             html = `<p class="small">声音与视觉设置立即生效。流程速度和难度只影响新的一天；读档始终使用记录中的难度。</p><div class="modal-actions"><button class="outline-btn" data-modal-action="difficulty">下一局难度：${DIFFICULTIES[opts.difficulty].label}</button><button class="outline-btn" data-modal-action="achievements">成就档案</button></div><label class="settings-row"><span>音量<small>铃声、脚步、心跳、门声与操作音</small></span><span class="settings-control"><input aria-label="音量" type="range" min="0" max="100" value="${Math.round(opts.volume * 100)}" data-setting="volume"><output id="volumeOutput">${Math.round(opts.volume * 100)}%</output></span></label><label class="settings-row"><span>恐怖模式 · 校园与归家<small>默认关闭；增加校园倒影、卧室暗影和低声回响。不改变倒计时或主音量，不强制闪烁。</small></span><input type="checkbox" data-setting="fearMode" ${opts.fearMode ? 'checked' : ''}></label><label class="settings-row"><span>恐怖闪烁<small>仅事件触发的短暂明暗变化；敏感者建议关闭</small></span><input type="checkbox" data-setting="flicker" ${opts.flicker ? 'checked' : ''}></label><label class="settings-row"><span>屏幕震动<small>关闭后保留文字、阴影与声音提示</small></span><input type="checkbox" data-setting="shake" ${opts.shake ? 'checked' : ''}></label><label class="settings-row"><span>文字速度<small>点击对话框或按 Enter 可立即显示全文</small></span><span class="settings-control"><input aria-label="文字速度" type="range" min="12" max="90" value="${opts.textSpeed}" data-setting="textSpeed"><output id="textSpeedOutput">${opts.textSpeed}字/s</output></span></label><label class="settings-row"><span>剧情自动继续<small>文字显示完毕后留出阅读时间再继续</small></span><input type="checkbox" data-setting="auto" ${opts.auto ? 'checked' : ''}></label><label class="settings-row"><span>默认快速模式<small>缩短各阶段：新课表学科75秒、数学90秒、晚自习75/85秒、自由阶段12—40秒；两种模式均支持重试</small></span><input type="checkbox" data-setting="quick" ${opts.quick ? 'checked' : ''}></label><label class="settings-row"><span>显示未解锁结局的线索<small>可选剧透：在结局档案中显示达成条件</small></span><input type="checkbox" data-setting="endingHints" ${opts.endingHints ? 'checked' : ''}></label><div class="modal-actions"><button class="outline-btn" data-modal-action="fullscreen">⛶ 切换全屏</button><button class="outline-btn" data-modal-action="reset" ${S?.screen === 'game' ? 'disabled' : ''}>清除本地存档</button></div><p class="small" style="margin-top:14px">Alt + Enter 切换全屏。全屏受浏览器权限控制；被拒绝时可使用浏览器的 F11。${S?.screen === 'game' ? '清除记录只能在主菜单或结局页进行。' : ''}</p>`;
         }
         else if (kind === 'help') {
-            html = campusHelp()+`<p>你是江城大学附属中学高二（2）班的一名学生。撑过六门学科、体育和两节晚自习，在真正的 <b>21:40</b> 放学，再走出教学楼。游戏中的学校、人物与情节均为虚构。</p><h3>你的课桌</h3><p><span class="help-key">1</span>听课降低怀疑，但无聊会上升。<span class="help-key">2</span>写其他作业。<span class="help-key">3</span>玩魔方，以 <b>R U R′ U′</b> 完成公式；Shift + 字母表示逆转，完成一组后按难度归位2.8—3.8秒，可缓存下一组输入。<span class="help-key">4</span>手机：聊天、视频、小游戏、真实时间。<span class="help-key">5</span>观察讲台、老师、后门、窗外与同桌。作业和魔方不是普通通关的强制目标。</p><h3>先活下来</h3><p>平时 <span class="help-key">Space</span> 立即收好物品。危险事件出现时完成「快速反应」：简单两次空格，普通三次空格；困难、地狱、极限、神级依次为3、4、5、6个数字按钮。不要长按。手机连续使用越久越危险；留意脚步、玻璃与同桌提醒，任何致命突袭前都有线索。静音时仍有画面与文字提示。</p><p>怀疑达到 100 会被发现：第一次降到 60，第二次降到 75，第三次失败。手机被抓三次进入独立坏结局，并影响后续周目。无聊超过 65 会持续消耗专注；低专注让画面模糊，答题时间变短。</p><h3>六门学科，不是同一道题</h3><p>语文教你看反光。化学课留意突然的安静。生物课「条件反射」恢复松手静止：普通难度准备1.4秒，再静止1.4秒；允许一次明显动作，之后给0.35秒重新松手缓冲。轻微鼠标抖动、松键和系统操作不算失误；请勿点击棋盘或桌面。快速反应是另一种危急操作，触屏按大数字、键盘按按钮左起位置，按照下方提示顺序完成。具体难度、时间和容错见上方说明。课堂静止失败基础怀疑为8；完成后留2秒巡视缓冲。物理课戴蓓蓓固定在讲台，对讲话敏感；被确认后站后排至本节下课。逃生静候三秒仍保留。英语课按难度强化35—60秒，普通45秒。数学课连续答错两题会失败，56 个编号中只有一个符合题意。<b>第一遍下课铃是假的。</b></p><h3>操作与记录</h3><p><span class="help-key">1—4</span>限时事件选项。<span class="help-key">Enter</span>剧情继续。<span class="help-key">Esc</span>暂停。<span class="help-key">N</span>手记。<span class="help-key">M</span>静音。<span class="help-key">Alt+Enter</span>全屏。切到其他标签或窗口自动暂停；回到页面后手动继续。</p><p>新课表标准模式固定活动约30—33分钟，快速模式约15—17分钟（具体随体育与重复科目略有变化）；另加剧情、答题、棋局操作与逃生时间，也可提前结束部分自由阶段。课间过渡自动快进，体育、午餐、午休和晚餐实际游玩，不采用统一时间倍率。共${ENDING_COUNT}个结局。每5秒、关键操作及页面中断时保存完整进度。两种模式都支持从最新检查点重试，也可以在「存档」中选择本节开头、放学分歧或较早的检查点。读档后先暂停，继续时留有2秒准备期。</p><h3>传纸条与睡觉</h3><p><span class="help-key">6</span>打开纸条，按A请同桌望风、S约好放学同行、D借课堂笔记。写纸条、递出和等待回条共需5秒；巡逻不会暂停。收到回条后才获得奖励，再等10秒才能传下一张。切换行动、危险或点名会中止尚未送达的纸条。成功的同行纸条与观察同桌共用本节互动次数；不会代替调查线索。</p><p><span class="help-key">7</span>伏桌小憩，可选6/12/18秒。普通难度每秒专注+1.7、无聊−0.85；连续积累小憩疲劳超过12秒后收益降低，醒来8秒后才可再睡，清醒时疲劳缓慢恢复。风险不会靠瞬间醒来重置。按空格、再次按7或点击「醒来」可立即起身。老师靠近会触发当前难度的快速反应；不要把睡觉当成暂停。</p><h3>魔方输入</h3><p>先按3打开魔方。公式为 R → U → Shift+R → Shift+U，也可按 R → U → Q → E；Q对应R′，E对应U′。左右Shift均可，CapsLock不会改变方向。每次按键松开后再按，长按不连发。组间2.8—3.8秒归位期间可预输入最多8步；面板会显示已接收的动作和倒计时。切换行动或遇到危险会清空尚未执行的动作。所有六个面的正转和逆转都有按钮；若输入法拦截组合键，请切英文输入或点击按钮。</p><h3>调查与同桌</h3><p>每节课都有一条可通过观察发现的线索，手记会提示调查位置。至少在三节不同课程中观察同桌或成功传递同行纸条，可以在21:40选择同行。作业100%、六条线索以及是否接过钥匙，都能打开新的结局。普通离校路线和原有十二个结局仍然保留。</p><h3>存档说明</h3><p>自动记录与安全检查点相互独立，失败不会覆盖重试点。网页关闭、刷新、切到后台会尝试立即保存；突发断电或强制结束进程可能只保留最近一次成功写入。浏览器禁用存储时请使用「导出备份」。移动本地HTML、换浏览器或清理网站数据前也建议导出。导入/导出均在本机进行，不上传任何内容。</p><h3>六档难度与成就</h3><p>主菜单「难度」选择简单、普通、困难、地狱、极限或神级。标准/快速是流程长度，不是难度。读档与重试不改难度；旧存档默认普通。神级明确不可通关，有180秒有效游玩上限并拦截所有成功/替代出口；暂停、剧情和离线不消耗该计时。成就共${ACHIEVEMENTS.length}项，按单局里程碑或结局解锁；回档不丢已解锁成就，不靠重复读档累加次数。神级成就不要求通关，集齐全部结局也不需要神级通关。</p><h3>平衡提示</h3><p>魔方每组进度仍为4%，普通专注+9、无聊−7；乱转不再降无聊。手机风险热度在收起后每秒下降0.75，不靠切换瞬间清零。作业普通每秒+0.30%，快速流程有总课时补偿；难度会影响恢复和作业效率。观察同一处超过8秒后无聊略有上升，无法长期作为无成本静止策略。</p><p class="small">手机端建议横屏；所有动作都有可点击按钮。不会请求摄像头、麦克风或网络权限。</p>`;
+            html = campusHelp()+`<p>你是江城大学附属中学高二（2）班的一名学生。撑过六门学科、体育和两节晚自习，在真正的 <b>21:40</b> 放学，再走出教学楼。游戏中的学校、人物与情节均为虚构。</p><h3>你的课桌</h3><p><span class="help-key">1</span>听课降低怀疑，但无聊会上升。<span class="help-key">2</span>写其他作业。<span class="help-key">3</span>玩魔方，以 <b>R U R′ U′</b> 完成公式；Shift + 字母表示逆转，完成一组后按难度归位2.8—3.8秒，可缓存下一组输入。<span class="help-key">4</span>手机：聊天、视频、小游戏、真实时间。<span class="help-key">5</span>观察讲台、老师、后门、窗外与同桌。作业和魔方不是普通通关的强制目标。</p><h3>先活下来</h3><p>平时 <span class="help-key">Space</span> 立即收好物品。危险事件出现时完成「快速反应」：简单两次空格，普通三次空格；困难、地狱、极限、神级依次为3、4、5、6个数字按钮。不要长按。手机连续使用越久越危险；留意脚步、玻璃与同桌提醒，任何致命突袭前都有线索。静音时仍有画面与文字提示。</p><p>怀疑达到 100 会被发现：第一次降到 60，第二次降到 75，第三次失败。手机被抓三次进入独立坏结局，并影响后续周目。无聊超过 65 会持续消耗专注；低专注仍会影响视野；知识题时限只由题目等级、场景补时与答题倍率决定。</p><h3>六门学科，不是同一道题</h3><p>语文教你看反光。化学课留意突然的安静。生物课「条件反射」恢复松手静止：普通难度准备1.4秒，再静止1.4秒；允许一次明显动作，之后给0.35秒重新松手缓冲。轻微鼠标抖动、松键和系统操作不算失误；请勿点击棋盘或桌面。快速反应是另一种危急操作，触屏按大数字、键盘按按钮左起位置，按照下方提示顺序完成。具体难度、时间和容错见上方说明。课堂静止失败基础怀疑为8；完成后留2秒巡视缓冲。物理课戴蓓蓓固定在讲台，对讲话敏感；被确认后站后排至本节下课。逃生静候三秒仍保留。英语课按难度强化35—60秒，普通45秒。数学课连续答错两题会失败，56 个编号中只有一个符合题意。<b>第一遍下课铃是假的。</b></p><h3>操作与记录</h3><p><span class="help-key">1—4</span>限时事件选项。<span class="help-key">Enter</span>剧情继续。<span class="help-key">Esc</span>暂停。<span class="help-key">N</span>手记。<span class="help-key">M</span>静音。<span class="help-key">Alt+Enter</span>全屏。切到其他标签或窗口自动暂停；回到页面后手动继续。</p><p>新课表标准模式固定活动约30—33分钟，快速模式约15—17分钟（具体随体育与重复科目略有变化）；另加剧情、答题、棋局操作与逃生时间，也可提前结束部分自由阶段。课间过渡自动快进，体育、午餐、午休和晚餐实际游玩，不采用统一时间倍率。共${ENDING_COUNT}个结局。每5秒、关键操作及页面中断时保存完整进度。两种模式都支持从最新检查点重试，也可以在「存档」中选择本节开头、放学分歧或较早的检查点。读档后先暂停，继续时留有2秒准备期。</p><h3>传纸条与睡觉</h3><p><span class="help-key">6</span>打开纸条，按A请同桌望风、S约好放学同行、D借课堂笔记。写纸条、递出和等待回条共需5秒；巡逻不会暂停。收到回条后才获得奖励，再等10秒才能传下一张。切换行动、危险或点名会中止尚未送达的纸条。成功的同行纸条与观察同桌共用本节互动次数；不会代替调查线索。</p><p><span class="help-key">7</span>伏桌小憩，可选6/12/18秒。普通难度每秒专注+1.7、无聊−0.85；连续积累小憩疲劳超过12秒后收益降低，醒来8秒后才可再睡，清醒时疲劳缓慢恢复。风险不会靠瞬间醒来重置。按空格、再次按7或点击「醒来」可立即起身。老师靠近会触发当前难度的快速反应；不要把睡觉当成暂停。</p><h3>魔方输入</h3><p>先按3打开魔方。公式为 R → U → Shift+R → Shift+U，也可按 R → U → Q → E；Q对应R′，E对应U′。左右Shift均可，CapsLock不会改变方向。每次按键松开后再按，长按不连发。组间2.8—3.8秒归位期间可预输入最多8步；面板会显示已接收的动作和倒计时。切换行动或遇到危险会清空尚未执行的动作。所有六个面的正转和逆转都有按钮；若输入法拦截组合键，请切英文输入或点击按钮。</p><h3>调查与同桌</h3><p>每节课都有一条可通过观察发现的线索，手记会提示调查位置。至少在三节不同课程中观察同桌或成功传递同行纸条，可以在21:40选择同行。作业100%、六条线索以及是否接过钥匙，都能打开新的结局。普通离校路线和原有十二个结局仍然保留。</p><h3>存档说明</h3><p>自动记录与安全检查点相互独立，失败不会覆盖重试点。网页关闭、刷新、切到后台会尝试立即保存；突发断电或强制结束进程可能只保留最近一次成功写入。浏览器禁用存储时请使用「导出备份」。移动本地HTML、换浏览器或清理网站数据前也建议导出。导入/导出均在本机进行，不上传任何内容。</p><h3>六档难度与成就</h3><p>主菜单「难度」选择简单、普通、困难、地狱、极限或神级。标准/快速是流程长度，不是难度。读档与重试不改难度；旧存档默认普通。神级明确不可通关，有180秒有效游玩上限并拦截所有成功/替代出口；暂停、剧情和离线不消耗该计时。成就共${ACHIEVEMENTS.length}项，按单局里程碑或结局解锁；回档不丢已解锁成就，不靠重复读档累加次数。神级成就不要求通关，集齐全部结局也不需要神级通关。</p><h3>平衡提示</h3><p>魔方每组进度仍为4%，普通专注+9、无聊−7；乱转不再降无聊。手机风险热度在收起后每秒下降0.75，不靠切换瞬间清零。作业普通每秒+0.30%，快速流程有总课时补偿；难度会影响恢复和作业效率。观察同一处超过8秒后无聊略有上升，无法长期作为无成本静止策略。</p><p class="small">手机端建议横屏；所有动作都有可点击按钮。不会请求摄像头、麦克风或网络权限。</p>`;
         }
         else if (kind === 'archive') {
             html = '<p class="small">有些路，只有走过才会留下名字。已发现 ' + save.endings.length + ' / '+ENDING_COUNT+'</p><div class="archive-grid">' + Object.entries(ENDINGS).map(([id, e]) => { const known = save.endings.includes(id); return `<div class="archive-card ${known ? '' : 'locked'}"><div class="ending-label">${known ? esc(e.type) : 'UNDISCOVERED / 未发现'}</div><h3>${known ? esc(e.title) : '??????'}</h3><p>${known || save.settings.endingHints ? esc(e.hint) : '这一页还没有被写下。可在设置中开启线索提示。'}</p></div>`; }).join('') + `</div><div class="stats-row"><span>开启 ${save.attempts} 天</span><span>成功离校 ${save.wins} 次</span><span>最长存活 ${fmtDuration(save.bestSurvival)}</span><span>魔方最高 ${save.bestCube}%</span></div>`;
@@ -10141,7 +10798,7 @@ body.tutorial-open36 #rotateHint{display:none!important}
     askQuestion=function(subject,number=0,onDone=null){BASE34.askQuestion(subject,number,onDone);const c=challenge;if(c?.type!=='question')return;
         c.subject34=subject;
         if(subject==='chemistry'&&S.phase==='CLASS'){c.hearing34=random34()<.48?2+Math.floor(random34()*2):1;c.heard34=0;
-            if(c.hearing34>1){c.remaining+=1.5*(c.hearing34-1);c.total=c.remaining;c.description+='\n老师这次可能没听清：正确选项需要逐次回应'+c.hearing34+'次。每次结果有明确提示。';}renderChallenge();}
+            if(c.hearing34>1){applyQuestionTiming38(c,S,'oral');c.description+='\n老师这次可能没听清：正确选项需要逐次回应'+c.hearing34+'次。每次结果有明确提示。';}renderChallenge();}
     };
     finishQuestion=function(index){if(modal||recoveryGrace>0||!challenge||!['question','grid'].includes(challenge.type))return;
         const c=challenge,ok=index===c.correct;
@@ -10598,10 +11255,10 @@ body.tutorial-open36 #rotateHint{display:none!important}
     beginChallenge=function(data){if(isExam35()&&data.type==='question')data={...data,test34:true,exam35:true,void35:false,examHint35:null};return BASE35.beginChallenge(data);};
     askQuestion=function(subject,number=0,onDone=null){const exam=isExam35();BASE35.askQuestion(subject,number,onDone);
         if(!exam||challenge?.type!=='question')return;const c=challenge;
-        if(c.hearing34>1){c.remaining-=1.5*(c.hearing34-1);c.description=c.description.split('\n老师这次可能没听清：')[0];}
+        if(c.hearing34>1)c.description=c.description.split('\n老师这次可能没听清：')[0];
         delete c.hearing34;delete c.heard34;c.math=false;c.exam35=true;c.test34=true;
         // Reading and the two optional actions share one deadline. No action pauses it.
-        c.remaining=Math.max(10,Math.min(24,c.remaining+2));c.total=c.remaining;pinExamTeacher35();renderChallenge();
+        applyQuestionTiming38(c,S,'exam');pinExamTeacher35();renderChallenge();
     };
     function examSuspicion35(amount){S.suspicion=clamp(S.suspicion+amount,0,99);S.maxSuspicion=Math.max(S.maxSuspicion,S.suspicion);S.classStats.max=Math.max(S.classStats.max,S.suspicion);}
     function stopExamTask35(feedback='已经停止，继续独立作答。'){const e=S?.v35?.exam;if(!e?.task)return false;e.task=null;e.cooldown=e.clock+.35;e.feedback=feedback;renderExamLive35();requestAutoSave();return true;}
@@ -10759,6 +11416,7 @@ body.tutorial-open36 #rotateHint{display:none!important}
         {id:'rapid',label:'快速反应：该动',title:'危险靠近时，完成隐藏。',practice:'rapid'},
         {id:'still',label:'条件反射：别动',title:'看到“不要动”，就松开手。',practice:'still'},
         {id:'exam',label:'提问与正式考试',title:'上方答题，下方才是冒险。',practice:'exam'},
+        {id:'question38',label:'题目等级与用时',title:'先按题目留时间，再乘游戏难度。'},
         {id:'campus',label:'课表与校园事务',title:'先处理老师明确要求的事。'},
         {id:'leisure',label:'魔方与国际象棋',title:'课间练手，上课要看风险。',practice:'cube'},
         {id:'friends',label:'同学与班长',title:'同学会帮忙，但不会替你通关。'},
@@ -10798,7 +11456,7 @@ body.tutorial-open36 #rotateHint{display:none!important}
     function tutorialCopy36(id){
         switch(id){
         case 'start':return `<p>你在一间不太对劲的教室里。目标不是把所有娱乐按钮都点一遍，而是<b>管理好状态、应对检查，撑到真正的21:40，再完成离校流程</b>。</p><div class="learn-cards36"><div class="learn-card36"><span>01 / 校园</span><strong>先体验单日</strong><p>新玩家可从“简单＋快速模式”熟悉操作。这里不会替你更改正式难度。</p></div><div class="learn-card36"><span>02 / 全周</span><strong>七天与七晚</strong><p>每天成功离校后自动进入归家；完成当晚才能继续次日。整周会逐日增压。</p></div><div class="learn-card36"><span>03 / 归家</span><strong>可独立练一晚</strong><p>在卧室间歇使用手机，父母检查时藏好、装睡，等待真正离开。</p></div></div><h3>第一局只记住三件事</h3><p>先留意脚步和文字预警；危险时收好物品；看清弹框标题再动手。<b>“快速反应”要操作，“条件反射”要静止。</b></p>${tutorialCallout36('“标准／快速”控制流程长短，不是难度。神级是明确不可通关的生存挑战，不适合作为第一次体验。')}<h3>教程怎样使用</h3><p>左侧目录可以自由跳转，底部“已读，下一章”记录阅读进度。带练习的章节可以反复尝试，失败没有处罚。练习记录与正式成就分开，不会改变你的课表、棋局、周目或存档。</p><p>游戏中打开教程会暂停当前课堂、考试或归家；关闭后回到原场景，继续时保留2秒准备缓冲。切到后台后，练习也会暂停，需要手动继续。</p>`;
-        case 'desk':return `<div class="learn-cards36"><div class="learn-card36"><span>怀疑 / 0—100</span><strong>越低越稳妥</strong><p>违规行为、巡视和答错会推高怀疑。达到100会被发现；手机另有被抓记录。</p></div><div class="learn-card36"><span>专注 / 0—100</span><strong>别等到见底</strong><p>过低会模糊视野，部分答题时间变短。听课、休息等可以恢复。</p></div><div class="learn-card36"><span>无聊 / 0—100</span><strong>不能只听一整天</strong><p>长时间听课会累积无聊；超过65开始消耗专注。选择安全时机换行动。</p></div></div>${tutorialTable36(['按键','课桌行动','要记住什么'],[['1','听课','通常降低怀疑，但会积累无聊。'],['2','作业／本节习题','看清按钮名称；讲授课写其他作业和做本节习题不是一回事。'],['3／4／5','魔方／手机／观察','观察讲台、老师与后门；手机连续使用会累积热度。'],['6／7／8／9','纸条／睡觉／国际象棋／讲话','课堂时间仍继续，切换面板不等于暂停。'],['V','校园事务','作业、卫生、玩具、班长互动等按场景开放。'],['空格','平时收好物品','危险弹框出现时改按该弹框的要求。']])}<p>触屏直接点击同名按钮。听课不是绝对安全，老师也可能点名；睡觉不是暂停，英语点名后本节会禁止继续睡。</p>${tutorialCallout36('练习顺序：打开模拟手机 → 按空格或“收好” → 观察后门。下面所有数值都是示例，不是正式游戏数据。')}`;
+        case 'desk':return `<div class="learn-cards36"><div class="learn-card36"><span>怀疑 / 0—100</span><strong>越低越稳妥</strong><p>违规行为、巡视和答错会推高怀疑。达到100会被发现；手机另有被抓记录。</p></div><div class="learn-card36"><span>专注 / 0—100</span><strong>别等到见底</strong><p>过低会模糊视野，但不再额外缩短知识题时限。听课、休息等可以恢复。</p></div><div class="learn-card36"><span>无聊 / 0—100</span><strong>不能只听一整天</strong><p>长时间听课会累积无聊；超过65开始消耗专注。选择安全时机换行动。</p></div></div>${tutorialTable36(['按键','课桌行动','要记住什么'],[['1','听课','通常降低怀疑，但会积累无聊。'],['2','作业／本节习题','看清按钮名称；讲授课写其他作业和做本节习题不是一回事。'],['3／4／5','魔方／手机／观察','观察讲台、老师与后门；手机连续使用会累积热度。'],['6／7／8／9','纸条／睡觉／国际象棋／讲话','课堂时间仍继续，切换面板不等于暂停。'],['V','校园事务','作业、卫生、玩具、班长互动等按场景开放。'],['空格','平时收好物品','危险弹框出现时改按该弹框的要求。']])}<p>触屏直接点击同名按钮。听课不是绝对安全，老师也可能点名；睡觉不是暂停，英语点名后本节会禁止继续睡。</p>${tutorialCallout36('练习顺序：打开模拟手机 → 按空格或“收好” → 观察后门。下面所有数值都是示例，不是正式游戏数据。')}`;
         case 'rapid':return `<p>老师靠近、发现你低头或夜间家长开门时，可能需要<b>快速反应</b>。全部步骤完成才算成功；长按按键不会自动连做。</p>${tutorialTable36(['难度','课堂操作','基础时间'],DIFFICULTY_IDS.map(id=>{const r=DIFFICULTIES[id];return [r.label,r.rapidCount+(r.rank<2?'次空格':'个数字'),r.rapidTime.toFixed(1)+'秒'];}))}<p>表内是课堂基础操作时间，另有0.4秒准备；数学、英语强化和归家使用各自修正，<b>实际以弹框倒计时为准</b>。</p><h3>数字：触屏按内容，键盘按位置</h3>${tutorialTable36(['看见的内容','例子'],[['上方按钮（从左到右）','3　1　5　2　4'],['每个按钮的位置键','1　2　3　4　5'],['下方目标顺序','4　2　5　1　3'],['触屏依次点击大数字','4　2　5　1　3'],['键盘依次按位置键','5　4　3　2　1']])}<p>数字题允许一次误按，会扣少量时间但保留已完成步骤；再次误按或超时失败。正式课堂失败基础怀疑为一般课堂+36、数学+48，再按规则修正。</p>${tutorialCallout36('先用“不限时”熟悉映射，再勾选“按课堂时间练习”。这里选的难度只影响练习，绝不改变正式周目。')}`;
         case 'still':return `<p>生物课的<b>条件反射</b>与上一章相反：先松开鼠标、键盘和触屏，再保持静止。不要看见弹框就连续按空格。</p><div class="learn-cards36"><div class="learn-card36"><span>普通 / 准备</span><strong>1.4秒松手</strong><p>准备时的松手动作不判错。</p></div><div class="learn-card36"><span>普通 / 静止</span><strong>连续1.4秒</strong><p>不要点击或大幅移动指针。</p></div><div class="learn-card36"><span>普通 / 容错</span><strong>一次明显误动</strong><p>第一次给0.35秒重新松手，再静止；第二次失败。</p></div></div><p>轻微鼠标抖动、松键、松手指、长按自动重复和暂停等系统操作不算明显误动。物理的“静候三秒”是另一项独立要求，也要按提示等待。</p>${tutorialCallout36('下面练习使用普通难度的准备与静止时间。点“开始练习”后把手松开；也可用“模拟误动”亲自看看容错过程。')}`;
         case 'exam':return `<h3>先分清口头提问和笔试</h3><p>口头点名通常用数字1—4或点击答案。化学口头题有时没听清，需要根据计数重复回应；未答出可能罚站。<b>正式考试不使用重复回应规则。</b></p><p>两节同科连堂的第二节会有三题课堂测试。考试中所有老师都坐在讲台；普通课桌动作隐藏，只出现<b>看别人的答案</b>与<b>传小抄</b>。这两项是冒险选项，不是通关要求，<b>直接选上方答案即可独立作答</b>。</p>${tutorialTable36(['考试按键','作用'],[['1—4','提交上方的卷面答案。'],['A／S','看别人的答案／传小抄；再次按同键可停止。'],['空格','立即中止未完成的冒险动作。'],['Esc／N','暂停／手记；系统功能不受考试动作限制。']])}<p>监考老师可能停下翻页、看向你。预警时停止可以避免本次确认；确认后本题作废。本周目累计三次独立确认会发出一条游戏内家长消息，全周跨天累计，不会真实发送。</p>${tutorialCallout36('练习可以直接答题。主动尝试冒险按钮时，本练习固定演示一次“0.8秒预警 → 1.8秒确认”，帮助你练停止；正式游戏是概率事件。')}`;
@@ -11157,7 +11815,8 @@ body.tutorial-open36 #rotateHint{display:none!important}
       if(S.t<v.mirror.cooldown){toast('先想想刚才的题，'+Math.ceil(v.mirror.cooldown-S.t)+'秒后再试。');return false;}
       if(S.v34.allies.wang.mode==='sleep'){toast('体委睡着了。等他醒来，或下一个课间再问。');return false;}
       const idx=deckDraw37('physics'),q=QUESTIONS.physics[idx],order=shuffle([0,1,2,3]);v.mirror.attempts++;
-      const ok=beginChallenge({type:'question',mirror37:true,remaining:24,title:'王梓锐的条件',kicker:'PROP / 反光镜',description:'“压力，阿妈忒拉斯。帮我解开这道高中物理题，镜子就给你。”\n'+q.text,choices:order.map(i=>q.choices[i]),correct:order.indexOf(q.answer),explain:q.explain,math:false,onDone:null});
+      const timing38=makeQuestionTiming38(q.id37,S,'mirror');
+      const ok=beginChallenge({type:'question',mirror37:true,questionId38:q.id37,timing38,remaining:timing38.total,title:'王梓锐的条件',kicker:'PROP / 反光镜',description:'“压力，阿妈忒拉斯。帮我解开这道高中物理题，镜子就给你。”\n'+q.text,choices:order.map(i=>q.choices[i]),correct:order.indexOf(q.answer),explain:q.explain,math:false,onDone:null});
       if(ok){say('王梓锐','不是猜密码，算明白再给我答案。答错可以下次再来。');requestAutoSave();}return !!ok;
     }
     function turnBack37(){if(!canAct()||S.phase!=='CLASS'||isExam35())return false;const v=ensure37();
@@ -11207,10 +11866,9 @@ body.tutorial-open36 #rotateHint{display:none!important}
     askQuestion=function(subject,number=0,onDone=null){if(!S||challenge||script||!QUESTIONS[subject])return;
       const idx=deckDraw37(subject),q=QUESTIONS[subject][idx];BASE37.askQuestion(subject,idx,onDone);
       if(challenge?.type==='question'){challenge.qid37=q.id37;challenge.topic37=q.topic37;challenge.subject37=subject;
-        // New questions require reading; avoid unfair stacking with shorter high-rank budgets.
-        const floor=subject==='english'?11:10;const extra=Math.min(3,Math.max(0,(q.text.length-32)/40));
-        challenge.remaining=Math.max(challenge.remaining,floor+extra);challenge.total=challenge.remaining;
-        ensure37().drawn.push(q.id37);if(S.v37.drawn.length>1000)S.v37.drawn.shift();renderChallenge();requestAutoSave();}
+        // v3.8: one difficulty multiplier, after all normal-mode allowances.
+        applyQuestionTiming38(challenge,S,challenge.exam35?'exam':S.phase==='ESCAPE'?'memory':'oral');
+        ensure37().drawn.push(q.id37);if(S.v37.drawn.length>1000)S.v37.drawn.shift();renderChallenge();rememberCheckpoint(challenge.title,'event');requestAutoSave();}
     };
     finishQuestion=function(index){const c=challenge;if(!c||modal||recoveryGrace>0)return;
       if(c.mirror37){const ok=index===c.correct;closeChallenge();const v=ensure37();if(ok){v.mirror.owned=true;v.mirror.source='earned';count37('mirrorGet37');say('王梓锐','答对了。'+c.explain+' 反光镜给你；看见不代表安全，记得及时收好物品。');}
@@ -11221,8 +11879,8 @@ body.tutorial-open36 #rotateHint{display:none!important}
       const result=BASE37.finishQuestion(index);checkAchievements();return result;
     };
     function learningGlow37(st=S){const m=ensure37(st).math;return clamp((m.listened/Math.max(1,m.active))*Math.min(1,m.listened/30),0,1);}
-    startGrid=function(onDone=null){if(!S||challenge||script)return false;const v=GRID_BANK37[Math.floor(random37()*GRID_BANK37.length)],g=learningGlow37();
-      return beginChallenge({type:'grid',remaining:Math.max(12,(S.phase==='ESCAPE'?16:16+S.focus*.03)*rules().answer),hintDuration:3.2,title:'1 / 56',description:v.q,kicker:'SENIOR HIGH MATH / '+v.topic,numbers:shuffle(Array.from({length:56},(_,i)=>i+1)),correct:v.n,explain:v.e,math:true,hint:g>0,glow37:g,onDone});};
+    startGrid=function(onDone=null){if(!S||challenge||script)return false;const v=GRID_BANK37[Math.floor(random37()*GRID_BANK37.length)],g=learningGlow37(),timing38=makeQuestionTiming38(v.id38,S,'grid');
+      return beginChallenge({type:'grid',questionId38:v.id38,timing38,remaining:timing38.total,hintDuration:3.2,title:'1 / 56',description:v.q,kicker:'SENIOR HIGH MATH / '+v.topic,numbers:shuffle(Array.from({length:56},(_,i)=>i+1)),correct:v.n,explain:v.e,math:true,hint:g>0,glow37:g,onDone});};
     function renderGlow37(){const c=challenge;if(c?.type!=='grid')return;const s=(c.glow37??0)*Math.max(0,1-c.elapsed/3.2);
       $$('[data-number]').forEach(b=>{b.classList.remove('memory-flash');const on=Number(b.dataset.number)===c.correct&&s>0;b.style.boxShadow=on?`0 0 ${4+24*s}px rgba(235,222,158,${s.toFixed(3)}), inset 0 0 ${2+14*s}px rgba(235,222,158,${(s*.65).toFixed(3)})`:'';b.style.background=on?`rgba(223,204,123,${(s*.64).toFixed(3)})`:'';b.style.borderColor=on?`rgba(249,232,172,${s.toFixed(3)})`:'';});
     }
@@ -11389,6 +12047,145 @@ body.tutorial-open36 #rotateHint{display:none!important}
       if(id==='knowledge37')return `<h3>课堂问题现在来自高中知识</h3><p>除语文的校园阅读外，数学、物理、化学、生物、英语共有156道高中学科题，含知识点与解析。普通题按存档中的洗牌题堆抽取，耗尽再重复；每节核心学科新增提问增加为4次机会。</p><p>另有35道56选一高中数学题。提示只在56按钮题中出现：实际数学听课时间越长、听课比例越高，正确按钮的光越强；3.2秒内渐弱。其他课、暂停、答题与教程不能增加这项听课记录。</p><h3>两位校长与办公室影像</h3><p>程今容慢慢讲话，支持跳过逐字显示；徐亥会追加明确卫生要求。郭梓晁的记录先在训话后播放，一张照片是静止画面，录像要看完3秒才能确认，存档保留进度。全是游戏生成的示意影像，不使用摄像头。</p><h3>朗读默认关闭</h3><p>设置可开启对话语音。本机中文语音可用时才播报；未安装则继续显示文字，不阻塞剧情。暂停、切出页面、下一句或关闭开关会停止旧朗读。语音不用于答题，也不需要麦克风。</p>`;
       return BASE37.tutorialCopy36(id);};
 
+    // =====================================================================
+    // v3.8 — explicit, authored question grades and one timing calculation.
+    // The academic grade is independent of the selected survival difficulty.
+    // Runtime has no network / third-party dependencies. Bank text is unchanged.
+    // =====================================================================
+    const QUESTION_GRADES38=Object.freeze({
+      1:Object.freeze({label:'基础识记',seconds:15,description:'直接识别概念、事实、公式或明确的信息。'}),
+      2:Object.freeze({label:'单步应用',seconds:25,description:'使用一条主要知识链，做代入、简单转换或局部语境判断。'}),
+      3:Object.freeze({label:'多步辨析',seconds:40,description:'同时处理多个条件、易混概念，或完成多步计算与推理。'}),
+      4:Object.freeze({label:'阅读综合',seconds:60,description:'读完短文与选项，整合信息并判断逻辑、意图或结构。'})
+    });
+    const QUESTION_BONUS38=Object.freeze({oral:0,exam:3,memory:0,grid:6,mirror:4,route:0});
+    const QUESTION_CONTEXT38=Object.freeze({oral:'课堂提问',exam:'正式考试核对',memory:'逃生学科回忆',grid:'56个编号查找',mirror:'体委任务引导',route:'路线阅读'});
+    const QUESTION_CATALOG38=Object.freeze([
+      ...Object.entries(QUESTIONS).flatMap(([subject,bank])=>bank.map(q=>Object.freeze({
+        id:q.id37,subject,kind:'choice',text:q.text,choices:q.choices,answer:q.answer,
+        explanation:q.explain,topic:q.topic37,grade:q.grade38,normal:q.normalSeconds38,reason:q.grading38
+      }))),
+      ...GRID_BANK37.map(q=>Object.freeze({id:q.id38,subject:'math',kind:'grid',text:q.q,answer:q.n,
+        explanation:q.e,topic:q.topic,grade:q.grade38,normal:q.normalSeconds38,reason:q.grading38})),
+      ...ROUTES.map((q,i)=>Object.freeze({id:'route-'+String(i+1).padStart(3,'0'),subject:'route',kind:'route',
+        text:q.description,choices:q.choices,answer:q.correct,explanation:'按描述中的出口和路线线索选择。',topic:q.place,
+        grade:[2,1,2,1,1,1][i],normal:QUESTION_GRADES38[[2,1,2,1,1,1][i]].seconds,
+        reason:[
+          '综合窗户、倒影与安全出口标志，识别可行方向。','直接提取绿色箭头明确指出的方向。',
+          '比较地面引导线与声音、异常玻璃等干扰线索。','直接提取大厅箭头指向。',
+          '直接提取白线与EXIT指示信息。','直接提取出口在右侧的信息。'
+        ][i]}))
+    ]);
+    const QUESTION_INDEX38=new Map(QUESTION_CATALOG38.map(q=>[q.id,q]));
+    if(QUESTION_INDEX38.size!==QUESTION_CATALOG38.length||QUESTION_CATALOG38.some(q=>
+      !QUESTION_GRADES38[q.grade]||q.normal!==QUESTION_GRADES38[q.grade].seconds||!q.reason))
+      throw new Error('题库分级缺失、重复或基准用时无效。');
+    const roundTime38=n=>Math.round((n+Number.EPSILON)*10)/10;
+    function questionRow38(c){
+      if(!c||!['question','grid','route'].includes(c.type))return null;
+      const id=c.questionId38||c.qid37;
+      if(id&&QUESTION_INDEX38.has(id))return QUESTION_INDEX38.get(id);
+      // Legacy snapshots are recognized by their saved prompt, not by the next deck draw.
+      const kind=c.type==='question'?'choice':c.type;
+      return QUESTION_CATALOG38.find(q=>q.kind===kind&&typeof c.description==='string'&&c.description.includes(q.text))||null;
+    }
+    function questionContext38(c,st=S){
+      return c.type==='grid'?'grid':c.type==='route'?'route':c.mirror37?'mirror':c.exam35?'exam':st?.phase==='ESCAPE'?'memory':'oral';
+    }
+    function makeQuestionTiming38(id,st=S,context='oral',repeat=1){
+      const q=QUESTION_INDEX38.get(id);
+      if(!q||!Object.hasOwn(QUESTION_BONUS38,context))throw new Error('未知题目或计时场景：'+id);
+      const multiplier=rules(st).answer;
+      if(!Number.isFinite(multiplier)||multiplier<=0)throw new Error('答题时间倍率无效');
+      const responses=context==='oral'&&q.subject==='chemistry'?Math.max(1,Math.min(3,Math.floor(repeat)||1)):1;
+      const bonus=QUESTION_BONUS38[context],hearing=1.5*(responses-1);
+      const total=roundTime38((q.normal+bonus+hearing)*multiplier);
+      return {version:1,legacy:false,id:q.id,grade:q.grade,normal:q.normal,context,bonus,
+        responses,hearing,multiplier,total};
+    }
+    function applyQuestionTiming38(c,st=S,context=questionContext38(c,st)){
+      const q=questionRow38(c);if(!q||c.timing38?.legacy)return c;
+      const t=makeQuestionTiming38(q.id,st,context,c.hearing34||1);
+      c.questionId38=q.id;c.timing38=t;c.total=t.total;
+      c.remaining=Math.max(0,t.total-(c.elapsed||0));return c;
+    }
+    function questionExposure38(c,dt){
+      // Preserve the actual game/survival clock. Only spread natural pursuit over
+      // the reading window so a longer question is not a hidden death sentence.
+      if(!c?.timing38||c.timing38.legacy||!['question','grid','route'].includes(c.type))return dt;
+      const cap=c.type==='grid'?8:c.type==='route'?4:6;
+      return Math.min(dt,Math.max(0,c.remaining))*Math.min(1,cap/(.60*c.total));
+    }
+    function validateTiming38(snap){
+      const c=snap?.challenge;if(!c||!['question','grid','route'].includes(c.type))return snap;
+      const q=questionRow38(c);
+      if(!c.timing38){
+        // Do NOT reset/regrade a partly answered old question. Its original
+        // total, elapsed time, choices and remaining time remain authoritative.
+        c.timing38={version:1,legacy:true,id:q?.id||'legacy',grade:q?.grade||0,
+          normal:q?.normal||0,context:'legacy',bonus:0,responses:1,hearing:0,multiplier:1,total:c.total};
+        if(q)c.questionId38=q.id;
+        return snap;
+      }
+      const t=c.timing38;
+      assertValid(t&&t.version===1&&typeof t.legacy==='boolean','题目计时版本无效');
+      assertValid(Number.isFinite(t.total)&&t.total>0&&t.total<=200&&Math.abs(c.total-t.total)<1e-7,'题目原始时限不一致');
+      if(t.legacy){
+        assertValid(t.context==='legacy'&&(t.id==='legacy'&&!q||q&&t.id===q.id&&t.grade===q.grade&&t.normal===q.normal),'旧题计时标识无效');
+        return snap;
+      }
+      assertValid(q&&c.questionId38===q.id&&t.id===q.id&&t.grade===q.grade&&t.normal===q.normal,'题号、等级与题库不一致');
+      assertValid(t.context===questionContext38(c,snap.state),'答题场景与时限不一致');
+      const wanted=makeQuestionTiming38(q.id,snap.state,t.context,c.hearing34||1);
+      for(const key of ['bonus','responses','hearing','multiplier','total'])
+        assertValid(typeof t[key]==='number'&&Number.isFinite(t[key])&&Math.abs(t[key]-wanted[key])<1e-7,'答题计时公式不一致：'+key);
+      assertValid(c.remaining>=0&&c.remaining<=t.total+.001,'答题剩余时间越界');
+      return snap;
+    }
+    const BASE38={validateSnapshot,renderChallenge,renderUI,renderModal,modalAction,tutorialCopy36,closeChallenge,clearTransient};
+    validateSnapshot=function(snap){BASE38.validateSnapshot(snap);return validateTiming38(snap);};
+    function timingFormula38(t){
+      if(t.legacy)return '旧档本题保留 '+t.total.toFixed(1)+' 秒原始时限；下一题使用分级计时。';
+      const add=t.bonus+t.hearing,raw=t.normal+add;
+      const context=add?'（'+t.normal+' + '+add+'）':String(t.normal);
+      return context+'秒 × '+Number(t.multiplier.toFixed(4))+' = '+t.total.toFixed(1)+'秒';
+    }
+    function timingPanel38(c){
+      const t=c.timing38;if(!t)return '';
+      const label=t.grade?'L'+t.grade+' · '+QUESTION_GRADES38[t.grade].label:'历史题目';
+      const parts=t.legacy?'保留导入时的题目、选项、已用和剩余时间，不补时、不重抽。':
+        '普通基准 '+t.normal+' 秒'+(t.bonus?'；'+QUESTION_CONTEXT38[t.context]+' +'+t.bonus+' 秒':'')+
+        (t.hearing?'；共回应'+t.responses+'次，额外 +'+t.hearing+' 秒':'')+
+        '。以上相加后只乘一次答题倍率，四舍五入到0.1秒。快速课时、低专注、英语强化和真实模式不再重复缩时。';
+      return `<section class="question-timing38" aria-label="本题等级与计时"><div><b>${label}</b><span>本题时限 ${t.total.toFixed(1)} 秒${t.legacy?' · 旧记录':''}</span></div><details><summary>${esc(timingFormula38(t))}</summary><p>${esc(parts)}</p><p>题号 ${esc(t.id)}。暂停、教程、离线与读档准备期不扣答题时间；关闭说明本身不会重置计时。</p></details></section>`;
+    }
+    function syncQuestionLayout38(){
+      const active=S?.screen==='game'&&!!challenge&&['question','grid','route'].includes(challenge.type);
+      $('stage').classList.toggle('graded-active38',active);$('stage').classList.toggle('graded-grid38',active&&challenge.type==='grid');
+      if(active)$('rotateHint').hidden=true;
+    }
+    renderChallenge=function(){BASE38.renderChallenge();syncQuestionLayout38();const c=challenge;if(!c?.timing38)return;
+      const card=$('challengeCard');card.querySelector('.challenge-description')?.insertAdjacentHTML('beforebegin',timingPanel38(c));
+      if(!c.exam35)card.insertAdjacentHTML('beforeend','<nav class="question-tools38" aria-label="答题系统控制"><button type="button" data-tutorial-open36="question38">计时教程</button><button type="button" data-reflex-pause="1">暂停 / Esc</button><button type="button" data-reflex-fullscreen="1">全屏</button></nav>');
+    };
+    renderUI=function(){BASE38.renderUI();syncQuestionLayout38();};
+    closeChallenge=function(){const c=BASE38.closeChallenge();syncQuestionLayout38();return c;};
+    clearTransient=function(...args){const result=BASE38.clearTransient(...args);$('stage').classList.remove('graded-active38','graded-grid38');return result;};
+    function gradeTable38(){return `<table class="timetable"><thead><tr><th>题目等级</th><th>分级依据</th><th>普通基准</th></tr></thead><tbody>${Object.entries(QUESTION_GRADES38).map(([n,g])=>`<tr><td>L${n} ${g.label}</td><td>${g.description}</td><td>${g.seconds}秒</td></tr>`).join('')}</tbody></table>`;}
+    function factorTable38(){return `<table class="timetable"><thead><tr><th>游戏难度</th><th>答题时间乘数</th><th>L2 25秒题</th></tr></thead><tbody>${Object.values(DIFFICULTIES).map(d=>`<tr><td>${d.label}</td><td>×${d.answer.toFixed(2)}</td><td>${roundTime38(25*d.answer).toFixed(1)}秒</td></tr>`).join('')}</tbody></table>`;}
+    function renderQuestionRules38(){
+      const n=QUESTION_CATALOG38.filter(q=>q.kind!=='route').length;
+      return `<p><b>题目等级 ≠ 游戏难度。</b>已逐条标注 ${n} 条原题（161道四选一、35道56选一），另为6条逃生路线阅读分级。题干、答案和原有无重复题堆不变，不按游戏难度删除题目。</p>${gradeTable38()}<h3>统一时限公式</h3><p><b>本题时限＝（普通基准＋场景补时＋重复回应补时）× 当前答题时间倍率</b>，最后四舍五入到0.1秒。使用的是答题专用乘数，不是怀疑、巡逻或快速反应倍率；不需要再除一次。</p>${factorTable38()}<p>正式考试每题另加3秒检查选项；56选一另加6秒找编号；体委任务另加4秒读引导。化学口头提问每多回应一次加1.5秒。补时全部在乘倍率之前加入，不累乘。</p><p>七日挑战沿用起始档至相邻上一级的线性增压：普通起步的答题倍率为1.00、0.98、0.96、0.94、0.92、0.90、0.88。本题生成时固定倍率；暂停、恢复、屏幕尺寸和临时设置不改变本题。</p><p>答题中的自然追击另作阅读保护：新计时的路线、学科回忆、56选一每题完整时限，分别至多自然消耗4、6、8点距离，再乘追击倍率。答错的距离损失、快速反应、条件反射、最终冲刺及神级闭环不变。</p><p>旧存档中途题保留原时限，下一题再启用新规则。等级与秒数是本游戏的初始设计值，不是考试机构标准；尚未完成真人答题速度标定。</p>`;
+    }
+    renderModal=function(){BASE38.renderModal();if(!modal)return;
+      if(modal.kind==='questionRules38'){$('modalTitle').textContent='题目分级与答题时间';$('modalBody').innerHTML=renderQuestionRules38();}
+      if(modal.kind==='settings')$('modalBody').insertAdjacentHTML('afterbegin','<section class="settings37"><h3>题目与计时 · v3.8</h3><p>按每题等级分配普通时限，再应用答题倍率。正式游戏不叠加快速课时或低专注缩时。</p><button class="outline-btn" data-modal-action="questionRules38">查看题目分级与时间表</button></section>');
+      if(modal.kind==='help')$('modalBody').insertAdjacentHTML('afterbegin','<h3>v3.8 题目分级计时</h3><p>当前四档题目普通基准为15／25／40／60秒。每道题上方会标注等级和实际时限；展开可以查看计算方式。</p>');
+    };
+    modalAction=function(a){if(a==='questionRules38'){openModal('questionRules38',modal?.kind||'settings');return;}return BASE38.modalAction(a);};
+    tutorialCopy36=function(id){if(id==='question38')return renderQuestionRules38();const content=BASE38.tutorialCopy36(id);
+      return id==='knowledge37'?'<p><b>v3.8补充：</b>全部题目已按等级分配时间。请先读“题目等级与用时”章节，不再按题型一律给十几秒。</p>'+content:content;};
+
     // The classroom is a layered DOM illustration rather than a raster image.
     const seats = [{ x: 436, y: 403, s: .68 }, { x: 669, y: 420, s: .70 }, { x: 1044, y: 413, s: .74 }, { x: 1210, y: 428, s: .80 }, { x: 363, y: 468, s: .94 }, { x: 619, y: 487, s: 1.06 }, { x: 955, y: 479, s: 1.02 }, { x: 1195, y: 488, s: 1.11 }];
     $('students').innerHTML = seats.map(p => `<div class="student" style="left:${p.x}px;top:${p.y}px;transform:scale(${p.s})"><div class="student-head"></div><div class="student-body"></div><div class="student-desk"></div><div class="student-chair"></div></div>`).join('');
@@ -11424,6 +12221,11 @@ if(testMode)Object.assign(window.__LAST_CLASS_TEST__,{
   get achievementIDs37(){return ACHIEVEMENT_IDS;},get clearEndings37(){return CLEAR_ENDINGS;}
 });
 
+if(testMode)Object.assign(window.__LAST_CLASS_TEST__,{
+  questionCatalog38:QUESTION_CATALOG38,questionGrades38:QUESTION_GRADES38,makeQuestionTiming38,
+  applyQuestionTiming38,questionExposure38,validateTiming38,renderQuestionRules38,
+  showRoute,updateEscape,changeDistance,tutorialCopy36
+});
 })();
   </script>
  </body>

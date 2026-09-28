@@ -1,0 +1,3613 @@
+{
+  "catalog": [
+    {
+      "id": "chinese-001",
+      "subject": "chinese",
+      "kind": "choice",
+      "text": "教室里没有反光镜时，想确认后门应该怎样做？",
+      "choices": [
+        "收好物品后回头观察",
+        "一直盯着没有镜子的桌角",
+        "同时开手机看后门",
+        "把幻影当作处分"
+      ],
+      "answer": 0,
+      "explanation": "没有镜子时需要主动回头；门把手与文字预警仍然存在。",
+      "topic": "校园阅读",
+      "grade": 1,
+      "normal": 15,
+      "reason": "直接提取已讲解的观察操作。"
+    },
+    {
+      "id": "chinese-002",
+      "subject": "chinese",
+      "kind": "choice",
+      "text": "播报说“下节课是化学课”，应重点准备什么？",
+      "choices": [
+        "继续把手机放在桌面",
+        "只等待同学提醒",
+        "不看任何课堂要求",
+        "本节课本与需要订正的作业"
+      ],
+      "answer": 3,
+      "explanation": "阅读播报并完成教师明确要求的任务。",
+      "topic": "信息提取",
+      "grade": 1,
+      "normal": 15,
+      "reason": "从课堂播报提取准备要求。"
+    },
+    {
+      "id": "chinese-003",
+      "subject": "chinese",
+      "kind": "choice",
+      "text": "“真正的铃声以前不要离开”一句强调什么？",
+      "choices": [
+        "必须永远留校",
+        "忽略所有时间信息",
+        "核实离校时间",
+        "任意铃声都可以离开"
+      ],
+      "answer": 2,
+      "explanation": "句子强调辨认真正放学，而非无限留校。",
+      "topic": "语句理解",
+      "grade": 1,
+      "normal": 15,
+      "reason": "辨认句子强调的时间核实要求。"
+    },
+    {
+      "id": "chinese-004",
+      "subject": "chinese",
+      "kind": "choice",
+      "text": "“一个影子留在玻璃里”在本游戏语境中主要营造？",
+      "choices": [
+        "统计图表",
+        "不安与悬疑",
+        "欢庆气氛",
+        "体育竞赛气氛"
+      ],
+      "answer": 1,
+      "explanation": "反常的影子营造悬疑气氛。",
+      "topic": "氛围分析",
+      "grade": 1,
+      "normal": 15,
+      "reason": "辨认反常影像营造的叙述氛围。"
+    },
+    {
+      "id": "chinese-005",
+      "subject": "chinese",
+      "kind": "choice",
+      "text": "阅读家长消息时，区分“记录”与“评价”的做法是？",
+      "choices": [
+        "先核对事件、时间与行为",
+        "把一句评价当作全部事实",
+        "跳过具体事件",
+        "只看最刺眼的词"
+      ],
+      "answer": 0,
+      "explanation": "具体记录与角色评价不同，先核对发生了什么。",
+      "topic": "信息辨析",
+      "grade": 1,
+      "normal": 15,
+      "reason": "区分事件记录与主观评价，选项已给出直接做法。"
+    },
+    {
+      "id": "chemistry-001",
+      "subject": "chemistry",
+      "kind": "choice",
+      "text": "在相同温度下，催化剂对已达平衡的可逆反应有什么影响？",
+      "choices": [
+        "不改变平衡组成",
+        "使平衡向正反应方向移动",
+        "增大平衡常数",
+        "只加快正反应速率"
+      ],
+      "answer": 0,
+      "explanation": "催化剂同等加快正逆反应，不改变该温度下的平衡常数和组成。",
+      "topic": "化学平衡",
+      "grade": 2,
+      "normal": 25,
+      "reason": "应用催化剂与平衡组成的关系，排除速率和平衡混淆。"
+    },
+    {
+      "id": "chemistry-002",
+      "subject": "chemistry",
+      "kind": "choice",
+      "text": "对于放热的可逆反应，升高温度会使平衡怎样移动？",
+      "choices": [
+        "向放热方向移动",
+        "一定不移动",
+        "停止反应",
+        "向吸热的逆反应方向移动"
+      ],
+      "answer": 3,
+      "explanation": "升温有利于吸热方向。",
+      "topic": "平衡移动",
+      "grade": 2,
+      "normal": 25,
+      "reason": "辨认放热正反应与吸热逆反应，应用平衡移动规律。"
+    },
+    {
+      "id": "chemistry-003",
+      "subject": "chemistry",
+      "kind": "choice",
+      "text": "在恒温恒容密闭容器中，对达到平衡的气体反应充入不反应的稀有气体，平衡通常怎样？",
+      "choices": [
+        "一定逆向移动",
+        "平衡常数减小",
+        "不移动",
+        "一定正向移动"
+      ],
+      "answer": 2,
+      "explanation": "各反应气体浓度未变，平衡不移动。",
+      "topic": "化学平衡",
+      "grade": 3,
+      "normal": 40,
+      "reason": "同时辨认恒温、恒容及惰性气体条件，区分总压与反应物浓度。"
+    },
+    {
+      "id": "chemistry-004",
+      "subject": "chemistry",
+      "kind": "choice",
+      "text": "反应 2Fe³⁺＋Cu → 2Fe²⁺＋Cu²⁺ 中，氧化剂是？",
+      "choices": [
+        "Cu²⁺",
+        "Fe³⁺",
+        "Cu",
+        "Fe²⁺"
+      ],
+      "answer": 1,
+      "explanation": "Fe³⁺得电子被还原，是氧化剂。",
+      "topic": "氧化还原",
+      "grade": 2,
+      "normal": 25,
+      "reason": "比较铁、铜的化合价变化，识别得到电子的一方。"
+    },
+    {
+      "id": "chemistry-005",
+      "subject": "chemistry",
+      "kind": "choice",
+      "text": "锌铜原电池中，以稀硫酸为电解质，锌电极发生什么反应？",
+      "choices": [
+        "Zn → Zn²⁺＋2e⁻",
+        "Zn²⁺＋2e⁻ → Zn",
+        "2H⁺＋2e⁻ → H₂",
+        "Cu → Cu²⁺＋2e⁻"
+      ],
+      "answer": 0,
+      "explanation": "锌为负极，失电子发生氧化反应。",
+      "topic": "电化学",
+      "grade": 2,
+      "normal": 25,
+      "reason": "从锌铜原电池工作过程辨认氧化半反应。"
+    },
+    {
+      "id": "chemistry-006",
+      "subject": "chemistry",
+      "kind": "choice",
+      "text": "电解精炼铜时，粗铜作为哪一极？",
+      "choices": [
+        "阴极",
+        "盐桥",
+        "两极均可",
+        "阳极"
+      ],
+      "answer": 3,
+      "explanation": "粗铜作阳极溶解，纯铜作阴极析出铜。",
+      "topic": "电化学",
+      "grade": 1,
+      "normal": 15,
+      "reason": "回忆铜电解精炼的电极设置。"
+    },
+    {
+      "id": "chemistry-007",
+      "subject": "chemistry",
+      "kind": "choice",
+      "text": "25 ℃，1.0×10⁻³ mol/L的盐酸（忽略水电离）pH约为？",
+      "choices": [
+        "1",
+        "7",
+        "3",
+        "11"
+      ],
+      "answer": 2,
+      "explanation": "强酸近似完全电离，pH＝−lg[H⁺]＝3。",
+      "topic": "酸碱平衡",
+      "grade": 2,
+      "normal": 25,
+      "reason": "由强酸浓度直接求氢离子浓度的负对数。"
+    },
+    {
+      "id": "chemistry-008",
+      "subject": "chemistry",
+      "kind": "choice",
+      "text": "25 ℃，某水溶液pH＝9，则[OH⁻]约为多少？",
+      "choices": [
+        "1.0×10⁻⁷ mol/L",
+        "1.0×10⁻⁵ mol/L",
+        "1.0×10⁻⁹ mol/L",
+        "1.0×10⁻³ mol/L"
+      ],
+      "answer": 1,
+      "explanation": "25 ℃时pH＋pOH＝14，pOH＝5。",
+      "topic": "水的电离",
+      "grade": 3,
+      "normal": 40,
+      "reason": "先由pH求pOH，再将指数转换为氢氧根浓度。"
+    },
+    {
+      "id": "chemistry-009",
+      "subject": "chemistry",
+      "kind": "choice",
+      "text": "醋酸钠水溶液常温下呈碱性的主要原因是？",
+      "choices": [
+        "CH₃COO⁻水解产生OH⁻",
+        "Na⁺水解产生OH⁻",
+        "醋酸钠是强碱",
+        "钠离子消耗水"
+      ],
+      "answer": 0,
+      "explanation": "弱酸根水解使溶液呈碱性。",
+      "topic": "盐类水解",
+      "grade": 2,
+      "normal": 25,
+      "reason": "把阴离子水解与溶液碱性联系起来。"
+    },
+    {
+      "id": "chemistry-010",
+      "subject": "chemistry",
+      "kind": "choice",
+      "text": "向AgCl沉淀与水的平衡体系加入NaCl，溶解平衡主要怎样移动？",
+      "choices": [
+        "向AgCl溶解方向移动",
+        "不移动",
+        "AgCl完全变成银",
+        "向形成AgCl沉淀方向移动"
+      ],
+      "answer": 3,
+      "explanation": "加入共同离子Cl⁻使溶解平衡向沉淀方向移动。",
+      "topic": "沉淀溶解平衡",
+      "grade": 2,
+      "normal": 25,
+      "reason": "用同离子效应判断沉淀溶解平衡的移动方向。"
+    },
+    {
+      "id": "chemistry-011",
+      "subject": "chemistry",
+      "kind": "choice",
+      "text": "能证明苯不是普通碳碳双键交替结构的典型性质是？",
+      "choices": [
+        "苯是液体",
+        "苯可以燃烧",
+        "通常不与溴水发生加成反应",
+        "苯含碳元素"
+      ],
+      "answer": 2,
+      "explanation": "苯环有独特的稳定结构，不表现普通烯烃的溴水加成性质。",
+      "topic": "有机化学",
+      "grade": 3,
+      "normal": 40,
+      "reason": "结合苯结构与溴水反应特征，区分性质证据和结构结论。"
+    },
+    {
+      "id": "chemistry-012",
+      "subject": "chemistry",
+      "kind": "choice",
+      "text": "乙烯使溴的四氯化碳溶液褪色，主要反应类型为？",
+      "choices": [
+        "中和反应",
+        "加成反应",
+        "取代反应",
+        "酯化反应"
+      ],
+      "answer": 1,
+      "explanation": "碳碳双键断开其中一个键，与溴加成。",
+      "topic": "有机反应类型",
+      "grade": 1,
+      "normal": 15,
+      "reason": "识记乙烯与溴的反应类型。"
+    },
+    {
+      "id": "chemistry-013",
+      "subject": "chemistry",
+      "kind": "choice",
+      "text": "乙醇与乙酸在一定条件下生成乙酸乙酯，属于？",
+      "choices": [
+        "酯化反应",
+        "裂化反应",
+        "置换反应",
+        "加聚反应"
+      ],
+      "answer": 0,
+      "explanation": "醇与羧酸反应形成酯和水。",
+      "topic": "有机化学",
+      "grade": 1,
+      "normal": 15,
+      "reason": "识记醇与羧酸生成酯的反应类型。"
+    },
+    {
+      "id": "chemistry-014",
+      "subject": "chemistry",
+      "kind": "choice",
+      "text": "聚乙烯的单体是？",
+      "choices": [
+        "CH₃CH₃",
+        "CH≡CH",
+        "CH₃OH",
+        "CH₂＝CH₂"
+      ],
+      "answer": 3,
+      "explanation": "乙烯经加聚反应生成聚乙烯。",
+      "topic": "高分子",
+      "grade": 1,
+      "normal": 15,
+      "reason": "识记聚乙烯的单体。"
+    },
+    {
+      "id": "chemistry-015",
+      "subject": "chemistry",
+      "kind": "choice",
+      "text": "同温同压下，相同体积的理想气体一定具有相同的？",
+      "choices": [
+        "密度",
+        "原子数",
+        "分子数",
+        "质量"
+      ],
+      "answer": 2,
+      "explanation": "阿伏加德罗定律：同温同压同体积气体分子数相同。",
+      "topic": "物质的量",
+      "grade": 2,
+      "normal": 25,
+      "reason": "在同温同压和相同体积条件下应用阿伏加德罗定律。"
+    },
+    {
+      "id": "chemistry-016",
+      "subject": "chemistry",
+      "kind": "choice",
+      "text": "实验室配制一定物质的量浓度溶液，定容时仰视刻度线，最终浓度通常？",
+      "choices": [
+        "无法溶解",
+        "偏低",
+        "偏高",
+        "一定不变"
+      ],
+      "answer": 1,
+      "explanation": "仰视定容会使液体体积偏大，溶质一定时浓度偏低。",
+      "topic": "定量实验",
+      "grade": 3,
+      "normal": 40,
+      "reason": "由仰视导致的实际体积变化，推导浓度误差方向。"
+    },
+    {
+      "id": "chemistry-017",
+      "subject": "chemistry",
+      "kind": "choice",
+      "text": "在硫酸酸化的条件下，检验Fe²⁺可利用它的什么性质？",
+      "choices": [
+        "能使酸性KMnO₄溶液褪色",
+        "必然析出金属铁",
+        "能产生蓝色火焰",
+        "与水生成氧气"
+      ],
+      "answer": 0,
+      "explanation": "Fe²⁺有还原性，可被酸性高锰酸钾氧化。",
+      "topic": "离子检验",
+      "grade": 2,
+      "normal": 25,
+      "reason": "把亚铁离子的还原性与酸性高锰酸钾检验联系起来。"
+    },
+    {
+      "id": "chemistry-018",
+      "subject": "chemistry",
+      "kind": "choice",
+      "text": "NH₄Cl与足量NaOH混合加热，生成的特征气体是？",
+      "choices": [
+        "HCl",
+        "NO₂",
+        "SO₂",
+        "NH₃"
+      ],
+      "answer": 3,
+      "explanation": "NH₄⁺＋OH⁻在加热时生成NH₃和水。",
+      "topic": "氮及其化合物",
+      "grade": 1,
+      "normal": 15,
+      "reason": "识记铵盐与强碱加热的产物。"
+    },
+    {
+      "id": "chemistry-019",
+      "subject": "chemistry",
+      "kind": "choice",
+      "text": "下列离子在强酸性溶液中可以大量存在的是？",
+      "choices": [
+        "HCO₃⁻",
+        "OH⁻",
+        "Na⁺",
+        "CO₃²⁻"
+      ],
+      "answer": 2,
+      "explanation": "碳酸根、碳酸氢根和氢氧根都会与H⁺反应。",
+      "topic": "离子共存",
+      "grade": 2,
+      "normal": 25,
+      "reason": "按强酸环境排除不能大量共存的离子。"
+    },
+    {
+      "id": "chemistry-020",
+      "subject": "chemistry",
+      "kind": "choice",
+      "text": "可用作硅半导体材料的物质是？",
+      "choices": [
+        "氯化钠",
+        "单质硅",
+        "二氧化硅",
+        "碳酸钙"
+      ],
+      "answer": 1,
+      "explanation": "单质硅是常用半导体；二氧化硅不等同于单质硅。",
+      "topic": "无机材料",
+      "grade": 1,
+      "normal": 15,
+      "reason": "识记半导体材料的常见物质。"
+    },
+    {
+      "id": "chemistry-021",
+      "subject": "chemistry",
+      "kind": "choice",
+      "text": "N₂＋3H₂ ⇌ 2NH₃，恒温压缩容器体积，平衡倾向于？",
+      "choices": [
+        "向生成NH₃方向移动",
+        "向生成N₂方向移动",
+        "完全不移动",
+        "使平衡常数变大"
+      ],
+      "answer": 0,
+      "explanation": "增压有利于气体物质的量减小的一侧。",
+      "topic": "化学平衡",
+      "grade": 2,
+      "normal": 25,
+      "reason": "数出反应两侧气体计量数，再判断压缩对平衡的影响。"
+    },
+    {
+      "id": "chemistry-022",
+      "subject": "chemistry",
+      "kind": "choice",
+      "text": "反应速率v(A)＝0.2 mol/(L·s)，2A→B，则按B表示的生成速率是？",
+      "choices": [
+        "0.2 mol/(L·s)",
+        "0.4 mol/(L·s)",
+        "2 mol/(L·s)",
+        "0.1 mol/(L·s)"
+      ],
+      "answer": 3,
+      "explanation": "速率比等于化学计量数比，v(A):v(B)=2:1。",
+      "topic": "化学反应速率",
+      "grade": 2,
+      "normal": 25,
+      "reason": "按化学计量数之比换算反应速率。"
+    },
+    {
+      "id": "chemistry-023",
+      "subject": "chemistry",
+      "kind": "choice",
+      "text": "基态钠原子最外层电子数是？",
+      "choices": [
+        "7",
+        "8",
+        "1",
+        "2"
+      ],
+      "answer": 2,
+      "explanation": "钠原子电子排布为2、8、1。",
+      "topic": "原子结构",
+      "grade": 1,
+      "normal": 15,
+      "reason": "识记钠的最外层电子数。"
+    },
+    {
+      "id": "chemistry-024",
+      "subject": "chemistry",
+      "kind": "choice",
+      "text": "同周期主族元素从左到右，一般而言原子半径？",
+      "choices": [
+        "完全无规律",
+        "逐渐减小",
+        "逐渐增大",
+        "始终不变"
+      ],
+      "answer": 1,
+      "explanation": "同周期核电荷数增加，通常原子半径减小。",
+      "topic": "元素周期律",
+      "grade": 1,
+      "normal": 15,
+      "reason": "识记同周期原子半径的一般变化规律。"
+    },
+    {
+      "id": "chemistry-025",
+      "subject": "chemistry",
+      "kind": "choice",
+      "text": "将4 g NaOH（摩尔质量40 g/mol）溶解并定容至1.00 L，物质的量浓度为？",
+      "choices": [
+        "0.10 mol/L",
+        "1.00 mol/L",
+        "0.01 mol/L",
+        "4.00 mol/L"
+      ],
+      "answer": 0,
+      "explanation": "n=m/M=0.10 mol，c=n/V=0.10 mol/L。",
+      "topic": "溶液浓度",
+      "grade": 2,
+      "normal": 25,
+      "reason": "采用c=m/(MV)，代入质量、摩尔质量和体积做简单换算。"
+    },
+    {
+      "id": "chemistry-026",
+      "subject": "chemistry",
+      "kind": "choice",
+      "text": "将8 g NaOH（摩尔质量40 g/mol）溶解并定容至1.00 L，物质的量浓度为？",
+      "choices": [
+        "2.00 mol/L",
+        "0.02 mol/L",
+        "8.00 mol/L",
+        "0.20 mol/L"
+      ],
+      "answer": 3,
+      "explanation": "n=m/M=0.20 mol，c=n/V=0.20 mol/L。",
+      "topic": "溶液浓度",
+      "grade": 2,
+      "normal": 25,
+      "reason": "采用c=m/(MV)，代入质量、摩尔质量和体积做简单换算。"
+    },
+    {
+      "id": "chemistry-027",
+      "subject": "chemistry",
+      "kind": "choice",
+      "text": "将12 g NaOH（摩尔质量40 g/mol）溶解并定容至1.00 L，物质的量浓度为？",
+      "choices": [
+        "0.03 mol/L",
+        "12.00 mol/L",
+        "0.30 mol/L",
+        "3.00 mol/L"
+      ],
+      "answer": 2,
+      "explanation": "n=m/M=0.30 mol，c=n/V=0.30 mol/L。",
+      "topic": "溶液浓度",
+      "grade": 2,
+      "normal": 25,
+      "reason": "采用c=m/(MV)，代入质量、摩尔质量和体积做简单换算。"
+    },
+    {
+      "id": "chemistry-028",
+      "subject": "chemistry",
+      "kind": "choice",
+      "text": "将16 g NaOH（摩尔质量40 g/mol）溶解并定容至1.00 L，物质的量浓度为？",
+      "choices": [
+        "16.00 mol/L",
+        "0.40 mol/L",
+        "4.00 mol/L",
+        "0.04 mol/L"
+      ],
+      "answer": 1,
+      "explanation": "n=m/M=0.40 mol，c=n/V=0.40 mol/L。",
+      "topic": "溶液浓度",
+      "grade": 2,
+      "normal": 25,
+      "reason": "采用c=m/(MV)，代入质量、摩尔质量和体积做简单换算。"
+    },
+    {
+      "id": "chemistry-029",
+      "subject": "chemistry",
+      "kind": "choice",
+      "text": "将20 g NaOH（摩尔质量40 g/mol）溶解并定容至1.00 L，物质的量浓度为？",
+      "choices": [
+        "0.50 mol/L",
+        "5.00 mol/L",
+        "0.05 mol/L",
+        "20.00 mol/L"
+      ],
+      "answer": 0,
+      "explanation": "n=m/M=0.50 mol，c=n/V=0.50 mol/L。",
+      "topic": "溶液浓度",
+      "grade": 2,
+      "normal": 25,
+      "reason": "采用c=m/(MV)，代入质量、摩尔质量和体积做简单换算。"
+    },
+    {
+      "id": "chemistry-030",
+      "subject": "chemistry",
+      "kind": "choice",
+      "text": "将24 g NaOH（摩尔质量40 g/mol）溶解并定容至1.00 L，物质的量浓度为？",
+      "choices": [
+        "6.00 mol/L",
+        "0.06 mol/L",
+        "24.00 mol/L",
+        "0.60 mol/L"
+      ],
+      "answer": 3,
+      "explanation": "n=m/M=0.60 mol，c=n/V=0.60 mol/L。",
+      "topic": "溶液浓度",
+      "grade": 2,
+      "normal": 25,
+      "reason": "采用c=m/(MV)，代入质量、摩尔质量和体积做简单换算。"
+    },
+    {
+      "id": "biology-001",
+      "subject": "biology",
+      "kind": "choice",
+      "text": "神经元受到适宜刺激产生动作电位时，膜内电位主要怎样变化？",
+      "choices": [
+        "由负变正",
+        "由正变负",
+        "始终为负",
+        "始终为零"
+      ],
+      "answer": 0,
+      "explanation": "动作电位期间Na⁺内流，膜内由负变正。",
+      "topic": "神经调节",
+      "grade": 2,
+      "normal": 25,
+      "reason": "根据动作电位形成过程判断膜内电位的变化。"
+    },
+    {
+      "id": "biology-002",
+      "subject": "biology",
+      "kind": "choice",
+      "text": "突触处信号一般单向传递，主要因为？",
+      "choices": [
+        "电流只能单向流动",
+        "突触后膜没有蛋白质",
+        "突触前膜没有离子通道",
+        "递质由突触前膜释放并作用于突触后膜受体"
+      ],
+      "answer": 3,
+      "explanation": "释放部位与受体分布使突触传递具有方向性。",
+      "topic": "神经调节",
+      "grade": 2,
+      "normal": 25,
+      "reason": "将递质的释放位置与受体位置联系到单向传递。"
+    },
+    {
+      "id": "biology-003",
+      "subject": "biology",
+      "kind": "choice",
+      "text": "人体剧烈运动时，维持血浆pH相对稳定的重要因素是？",
+      "choices": [
+        "淀粉",
+        "纤维素",
+        "缓冲物质",
+        "叶绿素"
+      ],
+      "answer": 2,
+      "explanation": "血浆的缓冲体系参与维持酸碱平衡。",
+      "topic": "稳态",
+      "grade": 1,
+      "normal": 15,
+      "reason": "识记血浆缓冲体系的作用。"
+    },
+    {
+      "id": "biology-004",
+      "subject": "biology",
+      "kind": "choice",
+      "text": "血糖升高时，通常哪一种激素分泌增加？",
+      "choices": [
+        "性激素",
+        "胰岛素",
+        "胰高血糖素",
+        "促甲状腺激素释放激素"
+      ],
+      "answer": 1,
+      "explanation": "胰岛素促进葡萄糖摄取、利用和储存。",
+      "topic": "激素调节",
+      "grade": 1,
+      "normal": 15,
+      "reason": "识记血糖升高时的主要调节激素。"
+    },
+    {
+      "id": "biology-005",
+      "subject": "biology",
+      "kind": "choice",
+      "text": "抗利尿激素分泌增加，会使肾小管和集合管？",
+      "choices": [
+        "对水的重吸收增加",
+        "对水的重吸收减少",
+        "停止过滤所有物质",
+        "将葡萄糖合成为淀粉"
+      ],
+      "answer": 0,
+      "explanation": "抗利尿激素促进水重吸收，使尿量减少。",
+      "topic": "水盐平衡",
+      "grade": 2,
+      "normal": 25,
+      "reason": "应用抗利尿激素与肾脏水重吸收的对应关系。"
+    },
+    {
+      "id": "biology-006",
+      "subject": "biology",
+      "kind": "choice",
+      "text": "抗体主要由哪类细胞分泌？",
+      "choices": [
+        "吞噬细胞",
+        "红细胞",
+        "辅助性T细胞",
+        "浆细胞"
+      ],
+      "answer": 3,
+      "explanation": "B细胞分化形成的浆细胞可分泌抗体。",
+      "topic": "免疫调节",
+      "grade": 1,
+      "normal": 15,
+      "reason": "识记抗体的主要分泌细胞。"
+    },
+    {
+      "id": "biology-007",
+      "subject": "biology",
+      "kind": "choice",
+      "text": "有氧呼吸中，葡萄糖分解为丙酮酸主要发生在？",
+      "choices": [
+        "叶绿体基质",
+        "细胞核",
+        "细胞质基质",
+        "线粒体内膜"
+      ],
+      "answer": 2,
+      "explanation": "糖酵解发生在细胞质基质。",
+      "topic": "细胞呼吸",
+      "grade": 1,
+      "normal": 15,
+      "reason": "识记糖酵解发生的细胞部位。"
+    },
+    {
+      "id": "biology-008",
+      "subject": "biology",
+      "kind": "choice",
+      "text": "真核细胞有氧呼吸中，产生大量ATP的阶段主要发生在？",
+      "choices": [
+        "细胞壁",
+        "线粒体内膜",
+        "核仁",
+        "高尔基体"
+      ],
+      "answer": 1,
+      "explanation": "电子传递链和氧化磷酸化发生在线粒体内膜。",
+      "topic": "细胞呼吸",
+      "grade": 1,
+      "normal": 15,
+      "reason": "识记有氧呼吸大量ATP生成阶段的部位。"
+    },
+    {
+      "id": "biology-009",
+      "subject": "biology",
+      "kind": "choice",
+      "text": "光合作用释放的氧气直接来自？",
+      "choices": [
+        "水",
+        "二氧化碳",
+        "葡萄糖",
+        "叶绿素"
+      ],
+      "answer": 0,
+      "explanation": "光反应中水的光解产生氧气。",
+      "topic": "光合作用",
+      "grade": 1,
+      "normal": 15,
+      "reason": "识记光合作用释放氧的来源。"
+    },
+    {
+      "id": "biology-010",
+      "subject": "biology",
+      "kind": "choice",
+      "text": "光合作用暗反应中，CO₂的固定首先与哪类物质结合？",
+      "choices": [
+        "C₃化合物",
+        "ATP",
+        "氧气",
+        "C₅化合物"
+      ],
+      "answer": 3,
+      "explanation": "CO₂与C₅化合物结合，形成C₃化合物。",
+      "topic": "光合作用",
+      "grade": 1,
+      "normal": 15,
+      "reason": "识记CO₂固定的受体。"
+    },
+    {
+      "id": "biology-011",
+      "subject": "biology",
+      "kind": "choice",
+      "text": "酶降低化学反应活化能，但不会改变？",
+      "choices": [
+        "达到平衡所需时间",
+        "活化分子比例",
+        "反应的平衡位置",
+        "反应速率"
+      ],
+      "answer": 2,
+      "explanation": "酶为催化剂，不改变反应平衡。",
+      "topic": "酶",
+      "grade": 2,
+      "normal": 25,
+      "reason": "区分酶对活化能与平衡位置的影响。"
+    },
+    {
+      "id": "biology-012",
+      "subject": "biology",
+      "kind": "choice",
+      "text": "动物细胞吸收K⁺，逆浓度梯度并消耗能量，属于？",
+      "choices": [
+        "胞吐",
+        "主动运输",
+        "自由扩散",
+        "协助扩散"
+      ],
+      "answer": 1,
+      "explanation": "主动运输可逆浓度梯度，需要载体和能量。",
+      "topic": "物质运输",
+      "grade": 2,
+      "normal": 25,
+      "reason": "从逆浓度梯度和耗能条件判断运输类型。"
+    },
+    {
+      "id": "biology-013",
+      "subject": "biology",
+      "kind": "choice",
+      "text": "高等植物细胞有丝分裂末期，细胞板逐渐形成什么？",
+      "choices": [
+        "新的细胞壁",
+        "染色体",
+        "核糖体",
+        "中心体"
+      ],
+      "answer": 0,
+      "explanation": "细胞板向四周扩展形成新的细胞壁。",
+      "topic": "细胞增殖",
+      "grade": 1,
+      "normal": 15,
+      "reason": "识记植物细胞板的形成结果。"
+    },
+    {
+      "id": "biology-014",
+      "subject": "biology",
+      "kind": "choice",
+      "text": "同源染色体分离发生于减数分裂的哪一时期？",
+      "choices": [
+        "减数第一次分裂前期",
+        "减数第二次分裂后期",
+        "间期",
+        "减数第一次分裂后期"
+      ],
+      "answer": 3,
+      "explanation": "减数第一次分裂后期同源染色体分离。",
+      "topic": "减数分裂",
+      "grade": 1,
+      "normal": 15,
+      "reason": "识记减数分裂同源染色体分离时期。"
+    },
+    {
+      "id": "biology-015",
+      "subject": "biology",
+      "kind": "choice",
+      "text": "DNA半保留复制后，每个子代DNA分子一般含？",
+      "choices": [
+        "两条新链",
+        "三条核苷酸链",
+        "一条旧链和一条新链",
+        "两条旧链"
+      ],
+      "answer": 2,
+      "explanation": "半保留复制保留一条亲代链，合成一条新链。",
+      "topic": "DNA复制",
+      "grade": 1,
+      "normal": 15,
+      "reason": "识记半保留复制中的新旧链组合。"
+    },
+    {
+      "id": "biology-016",
+      "subject": "biology",
+      "kind": "choice",
+      "text": "以DNA的一条链为模板合成RNA的过程叫？",
+      "choices": [
+        "复制",
+        "转录",
+        "翻译",
+        "逆转录"
+      ],
+      "answer": 1,
+      "explanation": "转录以DNA为模板合成RNA。",
+      "topic": "基因表达",
+      "grade": 1,
+      "normal": 15,
+      "reason": "识记转录的模板与产物。"
+    },
+    {
+      "id": "biology-017",
+      "subject": "biology",
+      "kind": "choice",
+      "text": "密码子位于哪种分子上？",
+      "choices": [
+        "mRNA",
+        "DNA",
+        "蛋白质",
+        "磷脂"
+      ],
+      "answer": 0,
+      "explanation": "mRNA上三个相邻碱基构成一个密码子。",
+      "topic": "基因表达",
+      "grade": 1,
+      "normal": 15,
+      "reason": "识记密码子所在分子。"
+    },
+    {
+      "id": "biology-018",
+      "subject": "biology",
+      "kind": "choice",
+      "text": "若某双链DNA中A占20%，则G占多少？",
+      "choices": [
+        "20%",
+        "40%",
+        "60%",
+        "30%"
+      ],
+      "answer": 3,
+      "explanation": "A=T=20%，G+C=60%，G=C=30%。",
+      "topic": "DNA结构",
+      "grade": 2,
+      "normal": 25,
+      "reason": "利用双链互补比例，计算剩余碱基的比例。"
+    },
+    {
+      "id": "biology-019",
+      "subject": "biology",
+      "kind": "choice",
+      "text": "Aa与Aa杂交，完全显性且不考虑致死，子代显性性状比例是？",
+      "choices": [
+        "1/2",
+        "1",
+        "3/4",
+        "1/4"
+      ],
+      "answer": 2,
+      "explanation": "基因型1AA:2Aa:1aa，显性性状占3/4。",
+      "topic": "分离定律",
+      "grade": 2,
+      "normal": 25,
+      "reason": "用一对等位基因杂交的组合判断显性性状比例。"
+    },
+    {
+      "id": "biology-020",
+      "subject": "biology",
+      "kind": "choice",
+      "text": "两对独立遗传基因AaBb个体产生AB配子的概率是？",
+      "choices": [
+        "1/8",
+        "1/4",
+        "1/2",
+        "3/4"
+      ],
+      "answer": 1,
+      "explanation": "两对等位基因独立分离，概率为1/2×1/2。",
+      "topic": "自由组合定律",
+      "grade": 2,
+      "normal": 25,
+      "reason": "把两对独立分离的配子概率相乘。"
+    },
+    {
+      "id": "biology-021",
+      "subject": "biology",
+      "kind": "choice",
+      "text": "现代生物进化理论认为，生物进化的基本单位是？",
+      "choices": [
+        "种群",
+        "个体",
+        "群落",
+        "生态系统"
+      ],
+      "answer": 0,
+      "explanation": "种群基因频率的改变体现生物进化。",
+      "topic": "进化",
+      "grade": 1,
+      "normal": 15,
+      "reason": "识记进化的基本单位。"
+    },
+    {
+      "id": "biology-022",
+      "subject": "biology",
+      "kind": "choice",
+      "text": "调查草地中某双子叶植物种群密度，常采用？",
+      "choices": [
+        "标记重捕法",
+        "电泳法",
+        "离心法",
+        "样方法"
+      ],
+      "answer": 3,
+      "explanation": "植物活动范围小，适宜随机取样调查。",
+      "topic": "种群调查",
+      "grade": 1,
+      "normal": 15,
+      "reason": "识记适合植物种群密度的调查方法。"
+    },
+    {
+      "id": "biology-023",
+      "subject": "biology",
+      "kind": "choice",
+      "text": "生态系统能量流动的基本特点是？",
+      "choices": [
+        "双向流动、能量守恒于各营养级",
+        "可被生产者无限循环利用",
+        "单向流动、逐级递减",
+        "循环流动、逐级增加"
+      ],
+      "answer": 2,
+      "explanation": "能量沿食物链流动，并不断以热能形式散失。",
+      "topic": "生态系统",
+      "grade": 1,
+      "normal": 15,
+      "reason": "识记能量流动的两项特征。"
+    },
+    {
+      "id": "biology-024",
+      "subject": "biology",
+      "kind": "choice",
+      "text": "生态系统碳循环中，无机环境中的碳主要以何种形式参与光合作用？",
+      "choices": [
+        "纤维素",
+        "二氧化碳",
+        "蛋白质",
+        "脂肪"
+      ],
+      "answer": 1,
+      "explanation": "生产者利用CO₂合成有机物。",
+      "topic": "物质循环",
+      "grade": 1,
+      "normal": 15,
+      "reason": "识记光合作用吸收碳的形式。"
+    },
+    {
+      "id": "biology-025",
+      "subject": "biology",
+      "kind": "choice",
+      "text": "过高温度导致多数酶活性下降，主要原因是？",
+      "choices": [
+        "空间结构遭到破坏",
+        "酶全部变成DNA",
+        "底物分子数一定为零",
+        "酶的元素组成全部改变"
+      ],
+      "answer": 0,
+      "explanation": "高温可使蛋白质变性，破坏活性所需结构。",
+      "topic": "酶",
+      "grade": 2,
+      "normal": 25,
+      "reason": "将温度过高与酶空间结构改变联系起来。"
+    },
+    {
+      "id": "biology-026",
+      "subject": "biology",
+      "kind": "choice",
+      "text": "限制酶与DNA连接酶主要作用于DNA的哪一种键？",
+      "choices": [
+        "肽键",
+        "碱基间的氢键",
+        "二硫键",
+        "磷酸二酯键"
+      ],
+      "answer": 3,
+      "explanation": "限制酶切割、连接酶连接DNA骨架中的磷酸二酯键。",
+      "topic": "基因工程",
+      "grade": 1,
+      "normal": 15,
+      "reason": "识记两种工具酶作用的化学键。"
+    },
+    {
+      "id": "biology-027",
+      "subject": "biology",
+      "kind": "choice",
+      "text": "动物细胞培养中，接触抑制是指？",
+      "choices": [
+        "所有细胞永远不再分裂",
+        "细胞融合形成组织",
+        "细胞相互接触后分裂受到抑制",
+        "细胞接触空气立即死亡"
+      ],
+      "answer": 2,
+      "explanation": "正常细胞密集接触可抑制继续分裂。",
+      "topic": "细胞工程",
+      "grade": 2,
+      "normal": 25,
+      "reason": "理解细胞相互接触与分裂抑制的含义。"
+    },
+    {
+      "id": "biology-028",
+      "subject": "biology",
+      "kind": "choice",
+      "text": "植物生长素在单侧光下引起茎向光生长，主要因为？",
+      "choices": [
+        "光直接把茎拉弯",
+        "背光侧生长较快",
+        "向光侧细胞全部死亡",
+        "背光侧停止生长"
+      ],
+      "answer": 1,
+      "explanation": "背光侧生长素较多，促进茎细胞伸长更明显。",
+      "topic": "植物激素",
+      "grade": 2,
+      "normal": 25,
+      "reason": "把两侧生长速率差异与向光弯曲联系起来。"
+    },
+    {
+      "id": "biology-029",
+      "subject": "biology",
+      "kind": "choice",
+      "text": "内环境不包括下列哪一项？",
+      "choices": [
+        "细胞内液",
+        "组织液",
+        "血浆",
+        "淋巴液"
+      ],
+      "answer": 0,
+      "explanation": "内环境是细胞外液，不包含细胞内液。",
+      "topic": "稳态",
+      "grade": 2,
+      "normal": 25,
+      "reason": "辨认内环境的边界，排除细胞内液。"
+    },
+    {
+      "id": "biology-030",
+      "subject": "biology",
+      "kind": "choice",
+      "text": "基因突变通常指DNA分子中什么改变？",
+      "choices": [
+        "所有基因都整体交换",
+        "蛋白质直接变为DNA",
+        "细胞数量必然增加",
+        "碱基的增添、缺失或替换"
+      ],
+      "answer": 3,
+      "explanation": "基因突变涉及DNA碱基序列的改变。",
+      "topic": "遗传变异",
+      "grade": 1,
+      "normal": 15,
+      "reason": "识记基因突变的碱基层面变化。"
+    },
+    {
+      "id": "physics-001",
+      "subject": "physics",
+      "kind": "choice",
+      "text": "匀速圆周运动中，向心力的方向是？",
+      "choices": [
+        "始终指向圆心",
+        "始终与速度同向",
+        "始终与速度反向",
+        "始终竖直向下"
+      ],
+      "answer": 0,
+      "explanation": "向心力改变速度方向，指向圆心。",
+      "topic": "圆周运动",
+      "grade": 1,
+      "normal": 15,
+      "reason": "识记向心力相对圆心的方向。"
+    },
+    {
+      "id": "physics-002",
+      "subject": "physics",
+      "kind": "choice",
+      "text": "只受重力的物体在下落时，忽略空气阻力，其机械能？",
+      "choices": [
+        "逐渐增大",
+        "逐渐减小",
+        "必为零",
+        "保持不变"
+      ],
+      "answer": 3,
+      "explanation": "只有重力做功时，机械能守恒。",
+      "topic": "机械能守恒",
+      "grade": 2,
+      "normal": 25,
+      "reason": "由只有重力做功判断机械能是否守恒。"
+    },
+    {
+      "id": "physics-003",
+      "subject": "physics",
+      "kind": "choice",
+      "text": "物体所受合外力的冲量等于？",
+      "choices": [
+        "位移的变化量",
+        "速度的大小",
+        "动量的变化量",
+        "动能的变化量"
+      ],
+      "answer": 2,
+      "explanation": "动量定理：合外力冲量等于动量变化。",
+      "topic": "动量",
+      "grade": 1,
+      "normal": 15,
+      "reason": "识记动量定理的基本表述。"
+    },
+    {
+      "id": "physics-004",
+      "subject": "physics",
+      "kind": "choice",
+      "text": "电场强度的定义式E＝F/q中，q指什么？",
+      "choices": [
+        "电场能量",
+        "正试探电荷的电荷量",
+        "场源电荷到该点的距离",
+        "该点电势"
+      ],
+      "answer": 1,
+      "explanation": "用小的正试探电荷所受电场力与电荷量之比定义E。",
+      "topic": "静电场",
+      "grade": 1,
+      "normal": 15,
+      "reason": "识记场强定义式中试探电荷的意义。"
+    },
+    {
+      "id": "physics-005",
+      "subject": "physics",
+      "kind": "choice",
+      "text": "匀强电场中沿电场线方向移动正电荷，其电势能通常？",
+      "choices": [
+        "减小",
+        "增大",
+        "不变",
+        "无法定义"
+      ],
+      "answer": 0,
+      "explanation": "正电荷沿电场方向，电场力做正功，电势能减小。",
+      "topic": "电势能",
+      "grade": 2,
+      "normal": 25,
+      "reason": "结合正电荷受力和移动方向判断电势能变化。"
+    },
+    {
+      "id": "physics-006",
+      "subject": "physics",
+      "kind": "choice",
+      "text": "带电粒子仅受匀强磁场洛伦兹力做圆周运动，动能？",
+      "choices": [
+        "持续增大",
+        "持续减小",
+        "先增大后减小",
+        "不变"
+      ],
+      "answer": 3,
+      "explanation": "磁场力始终垂直速度，不做功。",
+      "topic": "磁场",
+      "grade": 2,
+      "normal": 25,
+      "reason": "应用洛伦兹力不做功判断动能变化。"
+    },
+    {
+      "id": "physics-007",
+      "subject": "physics",
+      "kind": "choice",
+      "text": "楞次定律中，感应电流的效果总是？",
+      "choices": [
+        "使原磁场立即消失",
+        "使磁通量变化永远为零",
+        "阻碍引起它的磁通量变化",
+        "阻止磁通量存在"
+      ],
+      "answer": 2,
+      "explanation": "阻碍的是变化，不是原磁场。",
+      "topic": "电磁感应",
+      "grade": 2,
+      "normal": 25,
+      "reason": "辨认楞次定律中所阻碍的是磁通量的变化。"
+    },
+    {
+      "id": "physics-008",
+      "subject": "physics",
+      "kind": "choice",
+      "text": "简谐运动物体经过平衡位置时，速度大小与加速度分别？",
+      "choices": [
+        "二者均为零",
+        "速度最大，加速度为零",
+        "速度为零，加速度最大",
+        "二者均最大"
+      ],
+      "answer": 1,
+      "explanation": "平衡位置回复力为零、速度最大。",
+      "topic": "振动",
+      "grade": 2,
+      "normal": 25,
+      "reason": "从简谐运动位置判断速度与加速度。"
+    },
+    {
+      "id": "physics-009",
+      "subject": "physics",
+      "kind": "choice",
+      "text": "双缝干涉实验中，其他条件不变，光波长增加，条纹间距？",
+      "choices": [
+        "增大",
+        "减小",
+        "不变",
+        "必然为零"
+      ],
+      "answer": 0,
+      "explanation": "条纹间距Δx=Lλ/d，与波长成正比。",
+      "topic": "光的干涉",
+      "grade": 2,
+      "normal": 25,
+      "reason": "利用条纹间距与波长的正比关系。"
+    },
+    {
+      "id": "physics-010",
+      "subject": "physics",
+      "kind": "choice",
+      "text": "发生光电效应需入射光的频率满足？",
+      "choices": [
+        "只要光足够强",
+        "一定为可见光",
+        "小于任意频率",
+        "不小于金属截止频率"
+      ],
+      "answer": 3,
+      "explanation": "光子能量需足够克服逸出功。",
+      "topic": "光电效应",
+      "grade": 1,
+      "normal": 15,
+      "reason": "识记光电效应的截止频率条件。"
+    },
+    {
+      "id": "physics-011",
+      "subject": "physics",
+      "kind": "choice",
+      "text": "理想气体在体积不变时，热力学温度升为原来2倍，压强变为？",
+      "choices": [
+        "4倍",
+        "不变",
+        "2倍",
+        "1/2倍"
+      ],
+      "answer": 2,
+      "explanation": "一定质量气体等容变化有p/T不变。",
+      "topic": "气体实验定律",
+      "grade": 2,
+      "normal": 25,
+      "reason": "在体积固定条件下使用p/T不变。"
+    },
+    {
+      "id": "physics-012",
+      "subject": "physics",
+      "kind": "choice",
+      "text": "天然放射性元素半衰期主要由什么决定？",
+      "choices": [
+        "物质的化学状态",
+        "原子核自身性质",
+        "外界温度",
+        "外界压强"
+      ],
+      "answer": 1,
+      "explanation": "普通外界条件基本不改变原子核衰变的半衰期。",
+      "topic": "原子核",
+      "grade": 1,
+      "normal": 15,
+      "reason": "识记半衰期主要由核自身决定。"
+    },
+    {
+      "id": "physics-013",
+      "subject": "physics",
+      "kind": "choice",
+      "text": "理想变压器原副线圈匝数比2:1，原电压220 V，副电压为？",
+      "choices": [
+        "110 V",
+        "440 V",
+        "220 V",
+        "55 V"
+      ],
+      "answer": 0,
+      "explanation": "理想变压器电压比等于匝数比。",
+      "topic": "交流电",
+      "grade": 2,
+      "normal": 25,
+      "reason": "按理想变压器电压比和匝数比求值。"
+    },
+    {
+      "id": "physics-014",
+      "subject": "physics",
+      "kind": "choice",
+      "text": "一个孤立系统发生碰撞，若合外力可忽略，什么量守恒？",
+      "choices": [
+        "每个物体的动能",
+        "每个物体的速度",
+        "每个物体的机械能",
+        "总动量"
+      ],
+      "answer": 3,
+      "explanation": "系统合外力可忽略时，总动量守恒。",
+      "topic": "碰撞",
+      "grade": 2,
+      "normal": 25,
+      "reason": "根据合外力条件判断碰撞系统的守恒量。"
+    },
+    {
+      "id": "physics-015",
+      "subject": "physics",
+      "kind": "choice",
+      "text": "电容器充电后与电源断开，极板间距增大且忽略边缘效应，电容？",
+      "choices": [
+        "不变",
+        "变为负值",
+        "减小",
+        "增大"
+      ],
+      "answer": 2,
+      "explanation": "平行板电容C=εS/d，间距增大使电容减小。",
+      "topic": "电容器",
+      "grade": 2,
+      "normal": 25,
+      "reason": "辨认平行板电容与极板距离的反比关系。"
+    },
+    {
+      "id": "physics-016",
+      "subject": "physics",
+      "kind": "choice",
+      "text": "卫星绕地球做匀速圆周运动，轨道半径增大时速度？",
+      "choices": [
+        "方向固定不变",
+        "减小",
+        "增大",
+        "不变"
+      ],
+      "answer": 1,
+      "explanation": "v=√(GM/r)，半径越大，速度越小。",
+      "topic": "万有引力",
+      "grade": 3,
+      "normal": 40,
+      "reason": "由万有引力提供向心力，建立速度与轨道半径的关系。"
+    },
+    {
+      "id": "physics-017",
+      "subject": "physics",
+      "kind": "choice",
+      "text": "电流通过纯电阻消耗的电能主要转化为？",
+      "choices": [
+        "内能",
+        "核能",
+        "化学能",
+        "重力势能"
+      ],
+      "answer": 0,
+      "explanation": "纯电阻将电能转化为内能，遵循焦耳定律。",
+      "topic": "电路",
+      "grade": 1,
+      "normal": 15,
+      "reason": "识记纯电阻的能量转化。"
+    },
+    {
+      "id": "physics-018",
+      "subject": "physics",
+      "kind": "choice",
+      "text": "质点作匀加速直线运动，速度—时间图像的斜率表示？",
+      "choices": [
+        "位移",
+        "路程",
+        "质量",
+        "加速度"
+      ],
+      "answer": 3,
+      "explanation": "v-t图线斜率Δv/Δt为加速度。",
+      "topic": "运动图像",
+      "grade": 1,
+      "normal": 15,
+      "reason": "识记速度—时间图像斜率的意义。"
+    },
+    {
+      "id": "physics-019",
+      "subject": "physics",
+      "kind": "choice",
+      "text": "质量2 kg的物体在水平面仅受合力6 N，求加速度大小。",
+      "choices": [
+        "2 m/s²",
+        "4 m/s²",
+        "3 m/s²",
+        "1 m/s²"
+      ],
+      "answer": 2,
+      "explanation": "a=F/m=6/2=3 m/s²。",
+      "topic": "牛顿第二定律",
+      "grade": 2,
+      "normal": 25,
+      "reason": "用a=F/m直接代入已给出的合力和质量。"
+    },
+    {
+      "id": "physics-020",
+      "subject": "physics",
+      "kind": "choice",
+      "text": "质量3 kg的物体在水平面仅受合力9 N，求加速度大小。",
+      "choices": [
+        "4 m/s²",
+        "3 m/s²",
+        "1 m/s²",
+        "2 m/s²"
+      ],
+      "answer": 1,
+      "explanation": "a=F/m=9/3=3 m/s²。",
+      "topic": "牛顿第二定律",
+      "grade": 2,
+      "normal": 25,
+      "reason": "用a=F/m直接代入已给出的合力和质量。"
+    },
+    {
+      "id": "physics-021",
+      "subject": "physics",
+      "kind": "choice",
+      "text": "质量4 kg的物体在水平面仅受合力12 N，求加速度大小。",
+      "choices": [
+        "3 m/s²",
+        "1 m/s²",
+        "2 m/s²",
+        "4 m/s²"
+      ],
+      "answer": 0,
+      "explanation": "a=F/m=12/4=3 m/s²。",
+      "topic": "牛顿第二定律",
+      "grade": 2,
+      "normal": 25,
+      "reason": "用a=F/m直接代入已给出的合力和质量。"
+    },
+    {
+      "id": "physics-022",
+      "subject": "physics",
+      "kind": "choice",
+      "text": "质量5 kg的物体在水平面仅受合力15 N，求加速度大小。",
+      "choices": [
+        "1 m/s²",
+        "2 m/s²",
+        "4 m/s²",
+        "3 m/s²"
+      ],
+      "answer": 3,
+      "explanation": "a=F/m=15/5=3 m/s²。",
+      "topic": "牛顿第二定律",
+      "grade": 2,
+      "normal": 25,
+      "reason": "用a=F/m直接代入已给出的合力和质量。"
+    },
+    {
+      "id": "physics-023",
+      "subject": "physics",
+      "kind": "choice",
+      "text": "质量6 kg的物体在水平面仅受合力18 N，求加速度大小。",
+      "choices": [
+        "2 m/s²",
+        "4 m/s²",
+        "3 m/s²",
+        "1 m/s²"
+      ],
+      "answer": 2,
+      "explanation": "a=F/m=18/6=3 m/s²。",
+      "topic": "牛顿第二定律",
+      "grade": 2,
+      "normal": 25,
+      "reason": "用a=F/m直接代入已给出的合力和质量。"
+    },
+    {
+      "id": "physics-024",
+      "subject": "physics",
+      "kind": "choice",
+      "text": "质量8 kg的物体在水平面仅受合力24 N，求加速度大小。",
+      "choices": [
+        "4 m/s²",
+        "3 m/s²",
+        "1 m/s²",
+        "2 m/s²"
+      ],
+      "answer": 1,
+      "explanation": "a=F/m=24/8=3 m/s²。",
+      "topic": "牛顿第二定律",
+      "grade": 2,
+      "normal": 25,
+      "reason": "用a=F/m直接代入已给出的合力和质量。"
+    },
+    {
+      "id": "physics-025",
+      "subject": "physics",
+      "kind": "choice",
+      "text": "一纯电阻R=2 Ω，通过恒定电流2 A，电功率为？",
+      "choices": [
+        "8 W",
+        "4 W",
+        "2 W",
+        "16 W"
+      ],
+      "answer": 0,
+      "explanation": "P=I²R=4×2=8 W。",
+      "topic": "电功率",
+      "grade": 2,
+      "normal": 25,
+      "reason": "选用P=I²R，先平方电流再乘电阻。"
+    },
+    {
+      "id": "physics-026",
+      "subject": "physics",
+      "kind": "choice",
+      "text": "一纯电阻R=4 Ω，通过恒定电流2 A，电功率为？",
+      "choices": [
+        "8 W",
+        "4 W",
+        "32 W",
+        "16 W"
+      ],
+      "answer": 3,
+      "explanation": "P=I²R=4×4=16 W。",
+      "topic": "电功率",
+      "grade": 2,
+      "normal": 25,
+      "reason": "选用P=I²R，先平方电流再乘电阻。"
+    },
+    {
+      "id": "physics-027",
+      "subject": "physics",
+      "kind": "choice",
+      "text": "一纯电阻R=5 Ω，通过恒定电流2 A，电功率为？",
+      "choices": [
+        "5 W",
+        "40 W",
+        "20 W",
+        "10 W"
+      ],
+      "answer": 2,
+      "explanation": "P=I²R=4×5=20 W。",
+      "topic": "电功率",
+      "grade": 2,
+      "normal": 25,
+      "reason": "选用P=I²R，先平方电流再乘电阻。"
+    },
+    {
+      "id": "physics-028",
+      "subject": "physics",
+      "kind": "choice",
+      "text": "一纯电阻R=8 Ω，通过恒定电流2 A，电功率为？",
+      "choices": [
+        "64 W",
+        "32 W",
+        "16 W",
+        "8 W"
+      ],
+      "answer": 1,
+      "explanation": "P=I²R=4×8=32 W。",
+      "topic": "电功率",
+      "grade": 2,
+      "normal": 25,
+      "reason": "选用P=I²R，先平方电流再乘电阻。"
+    },
+    {
+      "id": "physics-029",
+      "subject": "physics",
+      "kind": "choice",
+      "text": "一纯电阻R=10 Ω，通过恒定电流2 A，电功率为？",
+      "choices": [
+        "40 W",
+        "20 W",
+        "10 W",
+        "80 W"
+      ],
+      "answer": 0,
+      "explanation": "P=I²R=4×10=40 W。",
+      "topic": "电功率",
+      "grade": 2,
+      "normal": 25,
+      "reason": "选用P=I²R，先平方电流再乘电阻。"
+    },
+    {
+      "id": "physics-030",
+      "subject": "physics",
+      "kind": "choice",
+      "text": "一纯电阻R=20 Ω，通过恒定电流2 A，电功率为？",
+      "choices": [
+        "40 W",
+        "20 W",
+        "160 W",
+        "80 W"
+      ],
+      "answer": 3,
+      "explanation": "P=I²R=4×20=80 W。",
+      "topic": "电功率",
+      "grade": 2,
+      "normal": 25,
+      "reason": "选用P=I²R，先平方电流再乘电阻。"
+    },
+    {
+      "id": "english-001",
+      "subject": "english",
+      "kind": "choice",
+      "text": "By the time we arrived, the film _____.",
+      "choices": [
+        "had begun",
+        "begins",
+        "has beginning",
+        "will begin"
+      ],
+      "answer": 0,
+      "explanation": "过去某时之前已经完成，用过去完成时had begun。",
+      "topic": "过去完成时",
+      "grade": 2,
+      "normal": 25,
+      "reason": "结合过去时间参照判断动作先后及过去完成时。"
+    },
+    {
+      "id": "english-002",
+      "subject": "english",
+      "kind": "choice",
+      "text": "This is the book _____ I bought yesterday.",
+      "choices": [
+        "who",
+        "where",
+        "when",
+        "that"
+      ],
+      "answer": 3,
+      "explanation": "先行词为物，关系代词that作bought的宾语。",
+      "topic": "定语从句",
+      "grade": 2,
+      "normal": 25,
+      "reason": "辨认定语从句中缺少的宾语。"
+    },
+    {
+      "id": "english-003",
+      "subject": "english",
+      "kind": "choice",
+      "text": "The girl _____ father is a doctor is my classmate.",
+      "choices": [
+        "whom",
+        "which",
+        "whose",
+        "who"
+      ],
+      "answer": 2,
+      "explanation": "whose引导定语从句并作father的定语。",
+      "topic": "定语从句",
+      "grade": 2,
+      "normal": 25,
+      "reason": "辨认先行词与father之间的所属关系。"
+    },
+    {
+      "id": "english-004",
+      "subject": "english",
+      "kind": "choice",
+      "text": "It was in the library _____ I met her.",
+      "choices": [
+        "what",
+        "that",
+        "where",
+        "which"
+      ],
+      "answer": 1,
+      "explanation": "It was...that...是强调句型。",
+      "topic": "强调句",
+      "grade": 2,
+      "normal": 25,
+      "reason": "识别It was…that强调句框架。"
+    },
+    {
+      "id": "english-005",
+      "subject": "english",
+      "kind": "choice",
+      "text": "Only then _____ how important the advice was.",
+      "choices": [
+        "did I realize",
+        "I realized",
+        "I had realized",
+        "do I realized"
+      ],
+      "answer": 0,
+      "explanation": "Only＋状语置于句首，主句部分倒装。",
+      "topic": "倒装",
+      "grade": 3,
+      "normal": 40,
+      "reason": "辨认Only置前引发的部分倒装，并同时判断过去时。"
+    },
+    {
+      "id": "english-006",
+      "subject": "english",
+      "kind": "choice",
+      "text": "If I were you, I _____ the truth.",
+      "choices": [
+        "will tell",
+        "tell",
+        "have told",
+        "would tell"
+      ],
+      "answer": 3,
+      "explanation": "与现在事实相反的假设，主句用would＋动词原形。",
+      "topic": "虚拟语气",
+      "grade": 2,
+      "normal": 25,
+      "reason": "根据If I were you使用与现在相反的虚拟主句。"
+    },
+    {
+      "id": "english-007",
+      "subject": "english",
+      "kind": "choice",
+      "text": "I suggest that he _____ on time.",
+      "choices": [
+        "was",
+        "has been",
+        "be",
+        "is"
+      ],
+      "answer": 2,
+      "explanation": "suggest表示建议，从句用should＋原形，should可省略。",
+      "topic": "虚拟语气",
+      "grade": 3,
+      "normal": 40,
+      "reason": "识别suggest表示建议及从句虚拟语气，避开时态和人称干扰。"
+    },
+    {
+      "id": "english-008",
+      "subject": "english",
+      "kind": "choice",
+      "text": "_____ from the top of the hill, the city looks beautiful.",
+      "choices": [
+        "See",
+        "Seen",
+        "Seeing",
+        "To see"
+      ],
+      "answer": 1,
+      "explanation": "城市是被看，过去分词作状语。",
+      "topic": "非谓语动词",
+      "grade": 3,
+      "normal": 40,
+      "reason": "根据主语与see的被动关系选择分词，排除悬垂修饰。"
+    },
+    {
+      "id": "english-009",
+      "subject": "english",
+      "kind": "choice",
+      "text": "_____ the task, she went home.",
+      "choices": [
+        "Having finished",
+        "Have finished",
+        "To finishing",
+        "Being finish"
+      ],
+      "answer": 0,
+      "explanation": "先完成任务再回家，使用完成式现在分词。",
+      "topic": "非谓语动词",
+      "grade": 3,
+      "normal": 40,
+      "reason": "同时判断分词动作的先后关系与主动关系。"
+    },
+    {
+      "id": "english-010",
+      "subject": "english",
+      "kind": "choice",
+      "text": "The problem _____ tomorrow is important.",
+      "choices": [
+        "discussed yesterday",
+        "discussing",
+        "has discussed",
+        "to be discussed"
+      ],
+      "answer": 3,
+      "explanation": "将要被讨论，用不定式的被动形式。",
+      "topic": "非谓语动词",
+      "grade": 3,
+      "normal": 40,
+      "reason": "同时判断将来时间与被动关系，选择不定式被动式。"
+    },
+    {
+      "id": "english-011",
+      "subject": "english",
+      "kind": "choice",
+      "text": "Neither the teacher nor the students _____ late today.",
+      "choices": [
+        "was",
+        "be",
+        "are",
+        "is"
+      ],
+      "answer": 2,
+      "explanation": "neither...nor...遵循就近一致，students对应are。",
+      "topic": "主谓一致",
+      "grade": 2,
+      "normal": 25,
+      "reason": "应用neither…nor结构的就近一致。"
+    },
+    {
+      "id": "english-012",
+      "subject": "english",
+      "kind": "choice",
+      "text": "A number of students _____ taking part in the activity.",
+      "choices": [
+        "has",
+        "are",
+        "is",
+        "was"
+      ],
+      "answer": 1,
+      "explanation": "a number of后接复数名词，谓语用复数。",
+      "topic": "主谓一致",
+      "grade": 2,
+      "normal": 25,
+      "reason": "辨认a number of与复数谓语的搭配。"
+    },
+    {
+      "id": "english-013",
+      "subject": "english",
+      "kind": "choice",
+      "text": "The number of students in our class _____ fifty.",
+      "choices": [
+        "is",
+        "are",
+        "have",
+        "were"
+      ],
+      "answer": 0,
+      "explanation": "the number of...作主语时谓语用单数。",
+      "topic": "主谓一致",
+      "grade": 2,
+      "normal": 25,
+      "reason": "辨认the number作主语时的单数谓语。"
+    },
+    {
+      "id": "english-014",
+      "subject": "english",
+      "kind": "choice",
+      "text": "He has lived here _____ 2020.",
+      "choices": [
+        "for",
+        "during",
+        "until",
+        "since"
+      ],
+      "answer": 3,
+      "explanation": "since接过去时间点，常与现在完成时连用。",
+      "topic": "时态",
+      "grade": 1,
+      "normal": 15,
+      "reason": "识记since与起始年份的搭配。"
+    },
+    {
+      "id": "english-015",
+      "subject": "english",
+      "kind": "choice",
+      "text": "The bridge _____ at this time last year.",
+      "choices": [
+        "has built",
+        "builds",
+        "was being built",
+        "is building"
+      ],
+      "answer": 2,
+      "explanation": "过去某时正在被建，用过去进行时的被动语态。",
+      "topic": "被动语态",
+      "grade": 3,
+      "normal": 40,
+      "reason": "结合过去进行时间标志与桥梁受事关系，构造进行时被动。"
+    },
+    {
+      "id": "english-016",
+      "subject": "english",
+      "kind": "choice",
+      "text": "You _____ have told me earlier; now it is too late.",
+      "choices": [
+        "shall",
+        "should",
+        "must not",
+        "will"
+      ],
+      "answer": 1,
+      "explanation": "should have done表示本该做却未做。",
+      "topic": "情态动词",
+      "grade": 2,
+      "normal": 25,
+      "reason": "根据已错过时机的语境选择过去本应做的表达。"
+    },
+    {
+      "id": "english-017",
+      "subject": "english",
+      "kind": "choice",
+      "text": "He looks tired. He _____ have stayed up last night.",
+      "choices": [
+        "may",
+        "has",
+        "is",
+        "had"
+      ],
+      "answer": 0,
+      "explanation": "may have done表示对过去情况的可能推测。",
+      "topic": "情态动词",
+      "grade": 2,
+      "normal": 25,
+      "reason": "根据疲劳的线索表达对过去行为的可能推测。"
+    },
+    {
+      "id": "english-018",
+      "subject": "english",
+      "kind": "choice",
+      "text": "_____ matters most is your attitude.",
+      "choices": [
+        "That which why",
+        "How many",
+        "Where to",
+        "What"
+      ],
+      "answer": 3,
+      "explanation": "What引导主语从句并在从句中作主语。",
+      "topic": "名词性从句",
+      "grade": 2,
+      "normal": 25,
+      "reason": "辨认名词性从句缺少的主语成分。"
+    },
+    {
+      "id": "english-019",
+      "subject": "english",
+      "kind": "choice",
+      "text": "The news _____ our team won the game made us happy.",
+      "choices": [
+        "what",
+        "where",
+        "that",
+        "which"
+      ],
+      "answer": 2,
+      "explanation": "that引导同位语从句，解释news的内容。",
+      "topic": "同位语从句",
+      "grade": 3,
+      "normal": 40,
+      "reason": "区分同位语从句和定语从句，判断连接词是否作成分。"
+    },
+    {
+      "id": "english-020",
+      "subject": "english",
+      "kind": "choice",
+      "text": "_____ it rains tomorrow, we will stay indoors.",
+      "choices": [
+        "Because of",
+        "If",
+        "Although not",
+        "Despite"
+      ],
+      "answer": 1,
+      "explanation": "If引导条件状语从句，从句用一般现在时表将来。",
+      "topic": "状语从句",
+      "grade": 1,
+      "normal": 15,
+      "reason": "识记条件从句的常用连词。"
+    },
+    {
+      "id": "english-021",
+      "subject": "english",
+      "kind": "choice",
+      "text": "He kept working _____ he was very tired.",
+      "choices": [
+        "although",
+        "because of",
+        "despite of",
+        "unless not"
+      ],
+      "answer": 0,
+      "explanation": "although引导让步状语从句。",
+      "topic": "让步状语从句",
+      "grade": 1,
+      "normal": 15,
+      "reason": "识记让步关系的常用连词。"
+    },
+    {
+      "id": "english-022",
+      "subject": "english",
+      "kind": "choice",
+      "text": "The harder you work, _____ progress you will make.",
+      "choices": [
+        "more the",
+        "the most",
+        "most",
+        "the more"
+      ],
+      "answer": 3,
+      "explanation": "the＋比较级..., the＋比较级...表示越……越……。",
+      "topic": "比较结构",
+      "grade": 2,
+      "normal": 25,
+      "reason": "应用the＋比较级联动结构。"
+    },
+    {
+      "id": "english-023",
+      "subject": "english",
+      "kind": "choice",
+      "text": "The word \"extraordinary\" is closest in meaning to _____.",
+      "choices": [
+        "unimportant",
+        "usual",
+        "remarkable",
+        "ordinary"
+      ],
+      "answer": 2,
+      "explanation": "extraordinary意为非凡的、不同寻常的。",
+      "topic": "高中词汇",
+      "grade": 1,
+      "normal": 15,
+      "reason": "识记extraordinary的近义词。"
+    },
+    {
+      "id": "english-024",
+      "subject": "english",
+      "kind": "choice",
+      "text": "In \"She rejected the offer\", \"rejected\" means _____.",
+      "choices": [
+        "explained",
+        "refused",
+        "accepted",
+        "created"
+      ],
+      "answer": 1,
+      "explanation": "reject在此表示拒绝。",
+      "topic": "语境词义",
+      "grade": 1,
+      "normal": 15,
+      "reason": "根据短语辨认rejected的常见词义。"
+    },
+    {
+      "id": "english-025",
+      "subject": "english",
+      "kind": "choice",
+      "text": "He was _____ in the experiment and forgot the time.",
+      "choices": [
+        "absorbed",
+        "absorb",
+        "absorbingly",
+        "absorption"
+      ],
+      "answer": 0,
+      "explanation": "be absorbed in意为专心于。",
+      "topic": "固定搭配",
+      "grade": 2,
+      "normal": 25,
+      "reason": "使用be absorbed in的固定搭配。"
+    },
+    {
+      "id": "english-026",
+      "subject": "english",
+      "kind": "choice",
+      "text": "I look forward to _____ from you.",
+      "choices": [
+        "hear",
+        "heard",
+        "be heard",
+        "hearing"
+      ],
+      "answer": 3,
+      "explanation": "look forward to中的to为介词，后接动名词。",
+      "topic": "固定搭配",
+      "grade": 2,
+      "normal": 25,
+      "reason": "辨认look forward to中的to为介词。"
+    },
+    {
+      "id": "english-027",
+      "subject": "english",
+      "kind": "choice",
+      "text": "The teacher had the students _____ the paragraph again.",
+      "choices": [
+        "reading to",
+        "reads",
+        "read",
+        "to read"
+      ],
+      "answer": 2,
+      "explanation": "have sb do sth表示让某人做某事。",
+      "topic": "使役结构",
+      "grade": 2,
+      "normal": 25,
+      "reason": "使用have＋宾语＋动词原形的使役结构。"
+    },
+    {
+      "id": "english-028",
+      "subject": "english",
+      "kind": "choice",
+      "text": "Read: \"The survey found a link between exercise and higher grades, but the researchers warned that family support might influence both.\" What is the most reasonable conclusion?",
+      "choices": [
+        "The researchers rejected all of their data.",
+        "The survey alone does not establish cause and effect.",
+        "Exercise guarantees higher grades.",
+        "Family support was proved irrelevant."
+      ],
+      "answer": 1,
+      "explanation": "原文只报告关联并提出共同影响因素，不能据此断定因果关系。",
+      "topic": "阅读理解：区分相关与因果",
+      "grade": 4,
+      "normal": 60,
+      "reason": "阅读全文与选项，区分相关性、共同影响因素和因果结论。"
+    },
+    {
+      "id": "english-029",
+      "subject": "english",
+      "kind": "choice",
+      "text": "Read: \"Although extending library hours would increase costs, it would give working students access to books. The committee therefore proposed a trial.\" Why is a trial suggested?",
+      "choices": [
+        "To evaluate a possible benefit despite the additional cost.",
+        "To stop all students from borrowing books.",
+        "To prove that libraries should always close early.",
+        "To claim that the proposal has no disadvantages."
+      ],
+      "answer": 0,
+      "explanation": "Although引出让步，therefore给出试行建议；应同时理解成本与潜在收益。",
+      "topic": "阅读理解：让步关系与作者意图",
+      "grade": 4,
+      "normal": 60,
+      "reason": "整合让步、成本、受益群体与试行决定，概括决策理由。"
+    },
+    {
+      "id": "english-030",
+      "subject": "english",
+      "kind": "choice",
+      "text": "Read: \"The author mentions an unsuccessful experiment before describing how the method was improved.\" What is the likely purpose of this structure?",
+      "choices": [
+        "To argue that every experiment must be abandoned.",
+        "To replace evidence with unrelated personal details.",
+        "To deny that the method changed at all.",
+        "To show how learning from failure can lead to progress."
+      ],
+      "answer": 3,
+      "explanation": "先失败、后改进的结构用于表现从问题中学习和改进的方法。",
+      "topic": "阅读理解：篇章结构与写作目的",
+      "grade": 4,
+      "normal": 60,
+      "reason": "理解失败例子与后续改进的篇章联系，推断组织目的。"
+    },
+    {
+      "id": "math-001",
+      "subject": "math",
+      "kind": "choice",
+      "text": "函数y=ln x的定义域是？",
+      "choices": [
+        "(0,+∞)",
+        "[0,+∞)",
+        "(-∞,+∞)",
+        "(-∞,0)"
+      ],
+      "answer": 0,
+      "explanation": "自然对数真数必须大于0。",
+      "topic": "函数",
+      "grade": 1,
+      "normal": 15,
+      "reason": "识记对数函数真数必须为正。"
+    },
+    {
+      "id": "math-002",
+      "subject": "math",
+      "kind": "choice",
+      "text": "已知向量a=(1,2)，b=(3,−1)，则a·b等于？",
+      "choices": [
+        "5",
+        "−1",
+        "7",
+        "1"
+      ],
+      "answer": 3,
+      "explanation": "数量积为1×3＋2×(−1)=1。",
+      "topic": "平面向量",
+      "grade": 2,
+      "normal": 25,
+      "reason": "用坐标数量积公式计算两项乘积之和。"
+    },
+    {
+      "id": "math-003",
+      "subject": "math",
+      "kind": "choice",
+      "text": "椭圆x²/25＋y²/9＝1的焦距为？",
+      "choices": [
+        "10",
+        "6",
+        "8",
+        "4"
+      ],
+      "answer": 2,
+      "explanation": "c²=a²−b²=16，c=4，焦距2c=8。",
+      "topic": "圆锥曲线",
+      "grade": 3,
+      "normal": 40,
+      "reason": "识别a²和b²，求c，再区分半焦距c与焦距2c。"
+    },
+    {
+      "id": "math-004",
+      "subject": "math",
+      "kind": "choice",
+      "text": "抛物线y²=8x的焦点坐标是？",
+      "choices": [
+        "(0,4)",
+        "(2,0)",
+        "(4,0)",
+        "(0,2)"
+      ],
+      "answer": 1,
+      "explanation": "y²=2px，p=4，焦点(p/2,0)=(2,0)。",
+      "topic": "圆锥曲线",
+      "grade": 2,
+      "normal": 25,
+      "reason": "将标准方程的系数与焦点公式对应。"
+    },
+    {
+      "id": "math-005",
+      "subject": "math",
+      "kind": "choice",
+      "text": "函数f(x)=x³的导函数为？",
+      "choices": [
+        "3x²",
+        "x²",
+        "3x",
+        "x⁴/4"
+      ],
+      "answer": 0,
+      "explanation": "幂函数求导：(xⁿ)′=nxⁿ⁻¹。",
+      "topic": "导数",
+      "grade": 1,
+      "normal": 15,
+      "reason": "识记幂函数的求导公式。"
+    },
+    {
+      "id": "math-006",
+      "subject": "math",
+      "kind": "choice",
+      "text": "函数f(x)=eˣ的导函数为？",
+      "choices": [
+        "xeˣ",
+        "eˣ⁻¹",
+        "1/x",
+        "eˣ"
+      ],
+      "answer": 3,
+      "explanation": "指数函数eˣ的导函数仍为eˣ。",
+      "topic": "导数",
+      "grade": 1,
+      "normal": 15,
+      "reason": "识记指数函数eˣ的导数。"
+    },
+    {
+      "id": "math-007",
+      "subject": "math",
+      "kind": "choice",
+      "text": "若sin α=3/5且α为锐角，则cos α为？",
+      "choices": [
+        "3/4",
+        "5/4",
+        "4/5",
+        "−4/5"
+      ],
+      "answer": 2,
+      "explanation": "由sin²α＋cos²α=1，锐角余弦取正值。",
+      "topic": "三角函数",
+      "grade": 2,
+      "normal": 25,
+      "reason": "结合锐角条件和平方关系确定正根。"
+    },
+    {
+      "id": "math-008",
+      "subject": "math",
+      "kind": "choice",
+      "text": "复数(1+i)²等于？",
+      "choices": [
+        "−2i",
+        "2i",
+        "2",
+        "1+2i"
+      ],
+      "answer": 1,
+      "explanation": "展开得1+2i+i²=2i。",
+      "topic": "复数",
+      "grade": 2,
+      "normal": 25,
+      "reason": "展开平方并用i²=-1化简。"
+    },
+    {
+      "id": "math-009",
+      "subject": "math",
+      "kind": "choice",
+      "text": "从5名同学中选2人组成小组，共有多少种选法？",
+      "choices": [
+        "10",
+        "20",
+        "25",
+        "5"
+      ],
+      "answer": 0,
+      "explanation": "组合数C(5,2)=5×4/2=10。",
+      "topic": "组合",
+      "grade": 2,
+      "normal": 25,
+      "reason": "辨认不计顺序选取，计算组合数。"
+    },
+    {
+      "id": "math-010",
+      "subject": "math",
+      "kind": "choice",
+      "text": "一枚均匀硬币抛两次，恰好一次正面朝上的概率？",
+      "choices": [
+        "1/4",
+        "3/4",
+        "1",
+        "1/2"
+      ],
+      "answer": 3,
+      "explanation": "四种等可能结果，恰好一次正面有两种。",
+      "topic": "概率",
+      "grade": 2,
+      "normal": 25,
+      "reason": "枚举或利用二项模型计算两次抛硬币的概率。"
+    },
+    {
+      "id": "math-011",
+      "subject": "math",
+      "kind": "choice",
+      "text": "事件A、B独立，P(A)=0.5，P(B)=0.4，则P(AB)=？",
+      "choices": [
+        "0.1",
+        "0.5",
+        "0.2",
+        "0.9"
+      ],
+      "answer": 2,
+      "explanation": "独立事件同时发生概率为乘积。",
+      "topic": "独立事件",
+      "grade": 2,
+      "normal": 25,
+      "reason": "应用独立事件乘法公式。"
+    },
+    {
+      "id": "math-012",
+      "subject": "math",
+      "kind": "choice",
+      "text": "若随机变量X服从二项分布B(10,0.3)，则E(X)=？",
+      "choices": [
+        "2.1",
+        "3",
+        "7",
+        "0.3"
+      ],
+      "answer": 1,
+      "explanation": "二项分布期望为np=10×0.3。",
+      "topic": "随机变量",
+      "grade": 2,
+      "normal": 25,
+      "reason": "应用二项分布期望np。"
+    },
+    {
+      "id": "math-013",
+      "subject": "math",
+      "kind": "choice",
+      "text": "等差数列首项1、公差2，则前10项和为？",
+      "choices": [
+        "100",
+        "90",
+        "110",
+        "55"
+      ],
+      "answer": 0,
+      "explanation": "S₁₀=10×1+10×9×2/2=100。",
+      "topic": "数列",
+      "grade": 3,
+      "normal": 40,
+      "reason": "先确定项数和末项或直接选用等差数列求和公式，再计算。"
+    },
+    {
+      "id": "math-014",
+      "subject": "math",
+      "kind": "choice",
+      "text": "等比数列首项2、公比3，则第4项是？",
+      "choices": [
+        "18",
+        "81",
+        "162",
+        "54"
+      ],
+      "answer": 3,
+      "explanation": "a₄=2×3³=54。",
+      "topic": "数列",
+      "grade": 2,
+      "normal": 25,
+      "reason": "应用等比数列通项公式，辨认指数是项数减一。"
+    },
+    {
+      "id": "math-015",
+      "subject": "math",
+      "kind": "choice",
+      "text": "直线y=2x+1与y=−x+4的交点为？",
+      "choices": [
+        "(0,4)",
+        "(2,5)",
+        "(1,3)",
+        "(3,1)"
+      ],
+      "answer": 2,
+      "explanation": "联立2x+1=−x+4，x=1，y=3。",
+      "topic": "解析几何",
+      "grade": 3,
+      "normal": 40,
+      "reason": "联立两条直线方程，先求横坐标再代回纵坐标。"
+    },
+    {
+      "id": "math-016",
+      "subject": "math",
+      "kind": "choice",
+      "text": "若x>0，则x+1/x的最小值为？",
+      "choices": [
+        "4",
+        "2",
+        "0",
+        "1"
+      ],
+      "answer": 1,
+      "explanation": "基本不等式给出x+1/x≥2，x=1时取等。",
+      "topic": "不等式",
+      "grade": 2,
+      "normal": 25,
+      "reason": "应用基本不等式并核对取等条件。"
+    },
+    {
+      "id": "math-017",
+      "subject": "math",
+      "kind": "choice",
+      "text": "命题“若a>b，则a²>b²”的逆否命题是？",
+      "choices": [
+        "若a²≤b²，则a≤b",
+        "若a²>b²，则a>b",
+        "若a≤b，则a²≤b²",
+        "若a>b，则a²≤b²"
+      ],
+      "answer": 0,
+      "explanation": "逆否命题为否定结论推出否定条件；原命题本身并非恒真。",
+      "topic": "逻辑",
+      "grade": 3,
+      "normal": 40,
+      "reason": "先否定结论与条件，再交换位置写出逆否命题。"
+    },
+    {
+      "id": "math-018",
+      "subject": "math",
+      "kind": "choice",
+      "text": "集合A={1,2,3}，B={2,3,4}，则A∩B为？",
+      "choices": [
+        "{1,2,3,4}",
+        "{1,4}",
+        "{1,2}",
+        "{2,3}"
+      ],
+      "answer": 3,
+      "explanation": "交集由同时属于两个集合的元素组成。",
+      "topic": "集合",
+      "grade": 1,
+      "normal": 15,
+      "reason": "从给定有限集合中取公共元素。"
+    },
+    {
+      "id": "math-019",
+      "subject": "math",
+      "kind": "choice",
+      "text": "已知f(x)=x²−2x，求f′(2)。",
+      "choices": [
+        "5",
+        "-2",
+        "2",
+        "4"
+      ],
+      "answer": 2,
+      "explanation": "f′(x)=2x−2，代入x=2得2。",
+      "topic": "导数",
+      "grade": 2,
+      "normal": 25,
+      "reason": "先对二次式求导，再把指定自变量代入。"
+    },
+    {
+      "id": "math-020",
+      "subject": "math",
+      "kind": "choice",
+      "text": "已知f(x)=x²−3x，求f′(3)。",
+      "choices": [
+        "-3",
+        "3",
+        "6",
+        "7"
+      ],
+      "answer": 1,
+      "explanation": "f′(x)=2x−3，代入x=3得3。",
+      "topic": "导数",
+      "grade": 2,
+      "normal": 25,
+      "reason": "先对二次式求导，再把指定自变量代入。"
+    },
+    {
+      "id": "math-021",
+      "subject": "math",
+      "kind": "choice",
+      "text": "已知f(x)=x²−4x，求f′(4)。",
+      "choices": [
+        "4",
+        "8",
+        "9",
+        "-4"
+      ],
+      "answer": 0,
+      "explanation": "f′(x)=2x−4，代入x=4得4。",
+      "topic": "导数",
+      "grade": 2,
+      "normal": 25,
+      "reason": "先对二次式求导，再把指定自变量代入。"
+    },
+    {
+      "id": "math-022",
+      "subject": "math",
+      "kind": "choice",
+      "text": "已知f(x)=x²−5x，求f′(5)。",
+      "choices": [
+        "10",
+        "11",
+        "-5",
+        "5"
+      ],
+      "answer": 3,
+      "explanation": "f′(x)=2x−5，代入x=5得5。",
+      "topic": "导数",
+      "grade": 2,
+      "normal": 25,
+      "reason": "先对二次式求导，再把指定自变量代入。"
+    },
+    {
+      "id": "math-023",
+      "subject": "math",
+      "kind": "choice",
+      "text": "已知f(x)=x²−6x，求f′(6)。",
+      "choices": [
+        "13",
+        "-6",
+        "6",
+        "12"
+      ],
+      "answer": 2,
+      "explanation": "f′(x)=2x−6，代入x=6得6。",
+      "topic": "导数",
+      "grade": 2,
+      "normal": 25,
+      "reason": "先对二次式求导，再把指定自变量代入。"
+    },
+    {
+      "id": "math-024",
+      "subject": "math",
+      "kind": "choice",
+      "text": "已知f(x)=x²−7x，求f′(7)。",
+      "choices": [
+        "-7",
+        "7",
+        "14",
+        "15"
+      ],
+      "answer": 1,
+      "explanation": "f′(x)=2x−7，代入x=7得7。",
+      "topic": "导数",
+      "grade": 2,
+      "normal": 25,
+      "reason": "先对二次式求导，再把指定自变量代入。"
+    },
+    {
+      "id": "math-025",
+      "subject": "math",
+      "kind": "choice",
+      "text": "已知f(x)=x²−8x，求f′(8)。",
+      "choices": [
+        "8",
+        "16",
+        "17",
+        "-8"
+      ],
+      "answer": 0,
+      "explanation": "f′(x)=2x−8，代入x=8得8。",
+      "topic": "导数",
+      "grade": 2,
+      "normal": 25,
+      "reason": "先对二次式求导，再把指定自变量代入。"
+    },
+    {
+      "id": "math-026",
+      "subject": "math",
+      "kind": "choice",
+      "text": "已知f(x)=x²−9x，求f′(9)。",
+      "choices": [
+        "18",
+        "19",
+        "-9",
+        "9"
+      ],
+      "answer": 3,
+      "explanation": "f′(x)=2x−9，代入x=9得9。",
+      "topic": "导数",
+      "grade": 2,
+      "normal": 25,
+      "reason": "先对二次式求导，再把指定自变量代入。"
+    },
+    {
+      "id": "math-027",
+      "subject": "math",
+      "kind": "choice",
+      "text": "已知f(x)=x²−10x，求f′(10)。",
+      "choices": [
+        "21",
+        "-10",
+        "10",
+        "20"
+      ],
+      "answer": 2,
+      "explanation": "f′(x)=2x−10，代入x=10得10。",
+      "topic": "导数",
+      "grade": 2,
+      "normal": 25,
+      "reason": "先对二次式求导，再把指定自变量代入。"
+    },
+    {
+      "id": "math-028",
+      "subject": "math",
+      "kind": "choice",
+      "text": "等差数列a₁=3，公差d=2，求a2。",
+      "choices": [
+        "-4",
+        "5",
+        "3",
+        "7"
+      ],
+      "answer": 1,
+      "explanation": "aₙ=a₁+(n−1)d=3+(2−1)×2=5。",
+      "topic": "等差数列",
+      "grade": 2,
+      "normal": 25,
+      "reason": "用aₙ=a₁+(n−1)d，辨认项数与公差后代入。"
+    },
+    {
+      "id": "math-029",
+      "subject": "math",
+      "kind": "choice",
+      "text": "等差数列a₁=3，公差d=2，求a3。",
+      "choices": [
+        "7",
+        "5",
+        "9",
+        "-6"
+      ],
+      "answer": 0,
+      "explanation": "aₙ=a₁+(n−1)d=3+(3−1)×2=7。",
+      "topic": "等差数列",
+      "grade": 2,
+      "normal": 25,
+      "reason": "用aₙ=a₁+(n−1)d，辨认项数与公差后代入。"
+    },
+    {
+      "id": "math-030",
+      "subject": "math",
+      "kind": "choice",
+      "text": "等差数列a₁=3，公差d=2，求a4。",
+      "choices": [
+        "7",
+        "11",
+        "-8",
+        "9"
+      ],
+      "answer": 3,
+      "explanation": "aₙ=a₁+(n−1)d=3+(4−1)×2=9。",
+      "topic": "等差数列",
+      "grade": 2,
+      "normal": 25,
+      "reason": "用aₙ=a₁+(n−1)d，辨认项数与公差后代入。"
+    },
+    {
+      "id": "math-031",
+      "subject": "math",
+      "kind": "choice",
+      "text": "等差数列a₁=3，公差d=2，求a5。",
+      "choices": [
+        "13",
+        "-10",
+        "11",
+        "9"
+      ],
+      "answer": 2,
+      "explanation": "aₙ=a₁+(n−1)d=3+(5−1)×2=11。",
+      "topic": "等差数列",
+      "grade": 2,
+      "normal": 25,
+      "reason": "用aₙ=a₁+(n−1)d，辨认项数与公差后代入。"
+    },
+    {
+      "id": "math-032",
+      "subject": "math",
+      "kind": "choice",
+      "text": "等差数列a₁=3，公差d=2，求a6。",
+      "choices": [
+        "-12",
+        "13",
+        "11",
+        "15"
+      ],
+      "answer": 1,
+      "explanation": "aₙ=a₁+(n−1)d=3+(6−1)×2=13。",
+      "topic": "等差数列",
+      "grade": 2,
+      "normal": 25,
+      "reason": "用aₙ=a₁+(n−1)d，辨认项数与公差后代入。"
+    },
+    {
+      "id": "math-033",
+      "subject": "math",
+      "kind": "choice",
+      "text": "等差数列a₁=3，公差d=2，求a7。",
+      "choices": [
+        "15",
+        "13",
+        "17",
+        "-14"
+      ],
+      "answer": 0,
+      "explanation": "aₙ=a₁+(n−1)d=3+(7−1)×2=15。",
+      "topic": "等差数列",
+      "grade": 2,
+      "normal": 25,
+      "reason": "用aₙ=a₁+(n−1)d，辨认项数与公差后代入。"
+    },
+    {
+      "id": "math-034",
+      "subject": "math",
+      "kind": "choice",
+      "text": "等差数列a₁=3，公差d=2，求a8。",
+      "choices": [
+        "15",
+        "19",
+        "-16",
+        "17"
+      ],
+      "answer": 3,
+      "explanation": "aₙ=a₁+(n−1)d=3+(8−1)×2=17。",
+      "topic": "等差数列",
+      "grade": 2,
+      "normal": 25,
+      "reason": "用aₙ=a₁+(n−1)d，辨认项数与公差后代入。"
+    },
+    {
+      "id": "math-035",
+      "subject": "math",
+      "kind": "choice",
+      "text": "等差数列a₁=3，公差d=2，求a9。",
+      "choices": [
+        "21",
+        "-18",
+        "19",
+        "17"
+      ],
+      "answer": 2,
+      "explanation": "aₙ=a₁+(n−1)d=3+(9−1)×2=19。",
+      "topic": "等差数列",
+      "grade": 2,
+      "normal": 25,
+      "reason": "用aₙ=a₁+(n−1)d，辨认项数与公差后代入。"
+    },
+    {
+      "id": "math-036",
+      "subject": "math",
+      "kind": "choice",
+      "text": "等差数列a₁=3，公差d=2，求a10。",
+      "choices": [
+        "-20",
+        "21",
+        "19",
+        "23"
+      ],
+      "answer": 1,
+      "explanation": "aₙ=a₁+(n−1)d=3+(10−1)×2=21。",
+      "topic": "等差数列",
+      "grade": 2,
+      "normal": 25,
+      "reason": "用aₙ=a₁+(n−1)d，辨认项数与公差后代入。"
+    },
+    {
+      "id": "grid-001",
+      "subject": "math",
+      "kind": "grid",
+      "text": "f(x)=x²，找到编号 f′(2)。",
+      "answer": 4,
+      "explanation": "f′(x)=2x，f′(2)=4。",
+      "topic": "导数",
+      "grade": 2,
+      "normal": 25,
+      "reason": "先求x²的导数，再代入指定自变量。 56选一另留6秒寻找编号，不把视觉搜索伪装成学科难度。"
+    },
+    {
+      "id": "grid-002",
+      "subject": "math",
+      "kind": "grid",
+      "text": "f(x)=x²，找到编号 f′(3)。",
+      "answer": 6,
+      "explanation": "f′(x)=2x，f′(3)=6。",
+      "topic": "导数",
+      "grade": 2,
+      "normal": 25,
+      "reason": "先求x²的导数，再代入指定自变量。 56选一另留6秒寻找编号，不把视觉搜索伪装成学科难度。"
+    },
+    {
+      "id": "grid-003",
+      "subject": "math",
+      "kind": "grid",
+      "text": "f(x)=x²，找到编号 f′(4)。",
+      "answer": 8,
+      "explanation": "f′(x)=2x，f′(4)=8。",
+      "topic": "导数",
+      "grade": 2,
+      "normal": 25,
+      "reason": "先求x²的导数，再代入指定自变量。 56选一另留6秒寻找编号，不把视觉搜索伪装成学科难度。"
+    },
+    {
+      "id": "grid-004",
+      "subject": "math",
+      "kind": "grid",
+      "text": "f(x)=x²，找到编号 f′(5)。",
+      "answer": 10,
+      "explanation": "f′(x)=2x，f′(5)=10。",
+      "topic": "导数",
+      "grade": 2,
+      "normal": 25,
+      "reason": "先求x²的导数，再代入指定自变量。 56选一另留6秒寻找编号，不把视觉搜索伪装成学科难度。"
+    },
+    {
+      "id": "grid-005",
+      "subject": "math",
+      "kind": "grid",
+      "text": "f(x)=x²，找到编号 f′(6)。",
+      "answer": 12,
+      "explanation": "f′(x)=2x，f′(6)=12。",
+      "topic": "导数",
+      "grade": 2,
+      "normal": 25,
+      "reason": "先求x²的导数，再代入指定自变量。 56选一另留6秒寻找编号，不把视觉搜索伪装成学科难度。"
+    },
+    {
+      "id": "grid-006",
+      "subject": "math",
+      "kind": "grid",
+      "text": "f(x)=x²，找到编号 f′(7)。",
+      "answer": 14,
+      "explanation": "f′(x)=2x，f′(7)=14。",
+      "topic": "导数",
+      "grade": 2,
+      "normal": 25,
+      "reason": "先求x²的导数，再代入指定自变量。 56选一另留6秒寻找编号，不把视觉搜索伪装成学科难度。"
+    },
+    {
+      "id": "grid-007",
+      "subject": "math",
+      "kind": "grid",
+      "text": "f(x)=x²，找到编号 f′(8)。",
+      "answer": 16,
+      "explanation": "f′(x)=2x，f′(8)=16。",
+      "topic": "导数",
+      "grade": 2,
+      "normal": 25,
+      "reason": "先求x²的导数，再代入指定自变量。 56选一另留6秒寻找编号，不把视觉搜索伪装成学科难度。"
+    },
+    {
+      "id": "grid-008",
+      "subject": "math",
+      "kind": "grid",
+      "text": "f(x)=x²，找到编号 f′(9)。",
+      "answer": 18,
+      "explanation": "f′(x)=2x，f′(9)=18。",
+      "topic": "导数",
+      "grade": 2,
+      "normal": 25,
+      "reason": "先求x²的导数，再代入指定自变量。 56选一另留6秒寻找编号，不把视觉搜索伪装成学科难度。"
+    },
+    {
+      "id": "grid-009",
+      "subject": "math",
+      "kind": "grid",
+      "text": "f(x)=x²，找到编号 f′(10)。",
+      "answer": 20,
+      "explanation": "f′(x)=2x，f′(10)=20。",
+      "topic": "导数",
+      "grade": 2,
+      "normal": 25,
+      "reason": "先求x²的导数，再代入指定自变量。 56选一另留6秒寻找编号，不把视觉搜索伪装成学科难度。"
+    },
+    {
+      "id": "grid-010",
+      "subject": "math",
+      "kind": "grid",
+      "text": "f(x)=x²，找到编号 f′(11)。",
+      "answer": 22,
+      "explanation": "f′(x)=2x，f′(11)=22。",
+      "topic": "导数",
+      "grade": 2,
+      "normal": 25,
+      "reason": "先求x²的导数，再代入指定自变量。 56选一另留6秒寻找编号，不把视觉搜索伪装成学科难度。"
+    },
+    {
+      "id": "grid-011",
+      "subject": "math",
+      "kind": "grid",
+      "text": "f(x)=x²，找到编号 f′(12)。",
+      "answer": 24,
+      "explanation": "f′(x)=2x，f′(12)=24。",
+      "topic": "导数",
+      "grade": 2,
+      "normal": 25,
+      "reason": "先求x²的导数，再代入指定自变量。 56选一另留6秒寻找编号，不把视觉搜索伪装成学科难度。"
+    },
+    {
+      "id": "grid-012",
+      "subject": "math",
+      "kind": "grid",
+      "text": "f(x)=x²，找到编号 f′(13)。",
+      "answer": 26,
+      "explanation": "f′(x)=2x，f′(13)=26。",
+      "topic": "导数",
+      "grade": 2,
+      "normal": 25,
+      "reason": "先求x²的导数，再代入指定自变量。 56选一另留6秒寻找编号，不把视觉搜索伪装成学科难度。"
+    },
+    {
+      "id": "grid-013",
+      "subject": "math",
+      "kind": "grid",
+      "text": "f(x)=x²，找到编号 f′(14)。",
+      "answer": 28,
+      "explanation": "f′(x)=2x，f′(14)=28。",
+      "topic": "导数",
+      "grade": 2,
+      "normal": 25,
+      "reason": "先求x²的导数，再代入指定自变量。 56选一另留6秒寻找编号，不把视觉搜索伪装成学科难度。"
+    },
+    {
+      "id": "grid-014",
+      "subject": "math",
+      "kind": "grid",
+      "text": "等差数列a₁=2，公差3。找到编号 a3。",
+      "answer": 8,
+      "explanation": "a3=2+(3−1)×3=8。",
+      "topic": "数列",
+      "grade": 2,
+      "normal": 25,
+      "reason": "用等差数列通项公式代入项数和公差。 56选一另留6秒寻找编号，不把视觉搜索伪装成学科难度。"
+    },
+    {
+      "id": "grid-015",
+      "subject": "math",
+      "kind": "grid",
+      "text": "等差数列a₁=2，公差3。找到编号 a4。",
+      "answer": 11,
+      "explanation": "a4=2+(4−1)×3=11。",
+      "topic": "数列",
+      "grade": 2,
+      "normal": 25,
+      "reason": "用等差数列通项公式代入项数和公差。 56选一另留6秒寻找编号，不把视觉搜索伪装成学科难度。"
+    },
+    {
+      "id": "grid-016",
+      "subject": "math",
+      "kind": "grid",
+      "text": "等差数列a₁=2，公差3。找到编号 a5。",
+      "answer": 14,
+      "explanation": "a5=2+(5−1)×3=14。",
+      "topic": "数列",
+      "grade": 2,
+      "normal": 25,
+      "reason": "用等差数列通项公式代入项数和公差。 56选一另留6秒寻找编号，不把视觉搜索伪装成学科难度。"
+    },
+    {
+      "id": "grid-017",
+      "subject": "math",
+      "kind": "grid",
+      "text": "等差数列a₁=2，公差3。找到编号 a6。",
+      "answer": 17,
+      "explanation": "a6=2+(6−1)×3=17。",
+      "topic": "数列",
+      "grade": 2,
+      "normal": 25,
+      "reason": "用等差数列通项公式代入项数和公差。 56选一另留6秒寻找编号，不把视觉搜索伪装成学科难度。"
+    },
+    {
+      "id": "grid-018",
+      "subject": "math",
+      "kind": "grid",
+      "text": "等差数列a₁=2，公差3。找到编号 a7。",
+      "answer": 20,
+      "explanation": "a7=2+(7−1)×3=20。",
+      "topic": "数列",
+      "grade": 2,
+      "normal": 25,
+      "reason": "用等差数列通项公式代入项数和公差。 56选一另留6秒寻找编号，不把视觉搜索伪装成学科难度。"
+    },
+    {
+      "id": "grid-019",
+      "subject": "math",
+      "kind": "grid",
+      "text": "等差数列a₁=2，公差3。找到编号 a8。",
+      "answer": 23,
+      "explanation": "a8=2+(8−1)×3=23。",
+      "topic": "数列",
+      "grade": 2,
+      "normal": 25,
+      "reason": "用等差数列通项公式代入项数和公差。 56选一另留6秒寻找编号，不把视觉搜索伪装成学科难度。"
+    },
+    {
+      "id": "grid-020",
+      "subject": "math",
+      "kind": "grid",
+      "text": "等差数列a₁=2，公差3。找到编号 a9。",
+      "answer": 26,
+      "explanation": "a9=2+(9−1)×3=26。",
+      "topic": "数列",
+      "grade": 2,
+      "normal": 25,
+      "reason": "用等差数列通项公式代入项数和公差。 56选一另留6秒寻找编号，不把视觉搜索伪装成学科难度。"
+    },
+    {
+      "id": "grid-021",
+      "subject": "math",
+      "kind": "grid",
+      "text": "等差数列a₁=2，公差3。找到编号 a10。",
+      "answer": 29,
+      "explanation": "a10=2+(10−1)×3=29。",
+      "topic": "数列",
+      "grade": 2,
+      "normal": 25,
+      "reason": "用等差数列通项公式代入项数和公差。 56选一另留6秒寻找编号，不把视觉搜索伪装成学科难度。"
+    },
+    {
+      "id": "grid-022",
+      "subject": "math",
+      "kind": "grid",
+      "text": "等差数列a₁=2，公差3。找到编号 a11。",
+      "answer": 32,
+      "explanation": "a11=2+(11−1)×3=32。",
+      "topic": "数列",
+      "grade": 2,
+      "normal": 25,
+      "reason": "用等差数列通项公式代入项数和公差。 56选一另留6秒寻找编号，不把视觉搜索伪装成学科难度。"
+    },
+    {
+      "id": "grid-023",
+      "subject": "math",
+      "kind": "grid",
+      "text": "从4人中选2人，不计顺序。找到选法数量对应的编号。",
+      "answer": 6,
+      "explanation": "C(4,2)=4×3/2=6。",
+      "topic": "组合",
+      "grade": 2,
+      "normal": 25,
+      "reason": "辨认不计顺序的二人选取，再计算组合数。 56选一另留6秒寻找编号，不把视觉搜索伪装成学科难度。"
+    },
+    {
+      "id": "grid-024",
+      "subject": "math",
+      "kind": "grid",
+      "text": "从5人中选2人，不计顺序。找到选法数量对应的编号。",
+      "answer": 10,
+      "explanation": "C(5,2)=5×4/2=10。",
+      "topic": "组合",
+      "grade": 2,
+      "normal": 25,
+      "reason": "辨认不计顺序的二人选取，再计算组合数。 56选一另留6秒寻找编号，不把视觉搜索伪装成学科难度。"
+    },
+    {
+      "id": "grid-025",
+      "subject": "math",
+      "kind": "grid",
+      "text": "从6人中选2人，不计顺序。找到选法数量对应的编号。",
+      "answer": 15,
+      "explanation": "C(6,2)=6×5/2=15。",
+      "topic": "组合",
+      "grade": 2,
+      "normal": 25,
+      "reason": "辨认不计顺序的二人选取，再计算组合数。 56选一另留6秒寻找编号，不把视觉搜索伪装成学科难度。"
+    },
+    {
+      "id": "grid-026",
+      "subject": "math",
+      "kind": "grid",
+      "text": "从7人中选2人，不计顺序。找到选法数量对应的编号。",
+      "answer": 21,
+      "explanation": "C(7,2)=7×6/2=21。",
+      "topic": "组合",
+      "grade": 2,
+      "normal": 25,
+      "reason": "辨认不计顺序的二人选取，再计算组合数。 56选一另留6秒寻找编号，不把视觉搜索伪装成学科难度。"
+    },
+    {
+      "id": "grid-027",
+      "subject": "math",
+      "kind": "grid",
+      "text": "从8人中选2人，不计顺序。找到选法数量对应的编号。",
+      "answer": 28,
+      "explanation": "C(8,2)=8×7/2=28。",
+      "topic": "组合",
+      "grade": 2,
+      "normal": 25,
+      "reason": "辨认不计顺序的二人选取，再计算组合数。 56选一另留6秒寻找编号，不把视觉搜索伪装成学科难度。"
+    },
+    {
+      "id": "grid-028",
+      "subject": "math",
+      "kind": "grid",
+      "text": "从9人中选2人，不计顺序。找到选法数量对应的编号。",
+      "answer": 36,
+      "explanation": "C(9,2)=9×8/2=36。",
+      "topic": "组合",
+      "grade": 2,
+      "normal": 25,
+      "reason": "辨认不计顺序的二人选取，再计算组合数。 56选一另留6秒寻找编号，不把视觉搜索伪装成学科难度。"
+    },
+    {
+      "id": "grid-029",
+      "subject": "math",
+      "kind": "grid",
+      "text": "从10人中选2人，不计顺序。找到选法数量对应的编号。",
+      "answer": 45,
+      "explanation": "C(10,2)=10×9/2=45。",
+      "topic": "组合",
+      "grade": 2,
+      "normal": 25,
+      "reason": "辨认不计顺序的二人选取，再计算组合数。 56选一另留6秒寻找编号，不把视觉搜索伪装成学科难度。"
+    },
+    {
+      "id": "grid-030",
+      "subject": "math",
+      "kind": "grid",
+      "text": "从11人中选2人，不计顺序。找到选法数量对应的编号。",
+      "answer": 55,
+      "explanation": "C(11,2)=11×10/2=55。",
+      "topic": "组合",
+      "grade": 2,
+      "normal": 25,
+      "reason": "辨认不计顺序的二人选取，再计算组合数。 56选一另留6秒寻找编号，不把视觉搜索伪装成学科难度。"
+    },
+    {
+      "id": "grid-031",
+      "subject": "math",
+      "kind": "grid",
+      "text": "向量a=(2,1)，b=(2,3)。找到数量积a·b对应的编号。",
+      "answer": 7,
+      "explanation": "a·b=2×2+1×3=7。",
+      "topic": "平面向量",
+      "grade": 2,
+      "normal": 25,
+      "reason": "用坐标数量积公式计算两项乘积之和。 56选一另留6秒寻找编号，不把视觉搜索伪装成学科难度。"
+    },
+    {
+      "id": "grid-032",
+      "subject": "math",
+      "kind": "grid",
+      "text": "向量a=(3,1)，b=(2,3)。找到数量积a·b对应的编号。",
+      "answer": 9,
+      "explanation": "a·b=3×2+1×3=9。",
+      "topic": "平面向量",
+      "grade": 2,
+      "normal": 25,
+      "reason": "用坐标数量积公式计算两项乘积之和。 56选一另留6秒寻找编号，不把视觉搜索伪装成学科难度。"
+    },
+    {
+      "id": "grid-033",
+      "subject": "math",
+      "kind": "grid",
+      "text": "向量a=(4,1)，b=(2,3)。找到数量积a·b对应的编号。",
+      "answer": 11,
+      "explanation": "a·b=4×2+1×3=11。",
+      "topic": "平面向量",
+      "grade": 2,
+      "normal": 25,
+      "reason": "用坐标数量积公式计算两项乘积之和。 56选一另留6秒寻找编号，不把视觉搜索伪装成学科难度。"
+    },
+    {
+      "id": "grid-034",
+      "subject": "math",
+      "kind": "grid",
+      "text": "向量a=(5,1)，b=(2,3)。找到数量积a·b对应的编号。",
+      "answer": 13,
+      "explanation": "a·b=5×2+1×3=13。",
+      "topic": "平面向量",
+      "grade": 2,
+      "normal": 25,
+      "reason": "用坐标数量积公式计算两项乘积之和。 56选一另留6秒寻找编号，不把视觉搜索伪装成学科难度。"
+    },
+    {
+      "id": "grid-035",
+      "subject": "math",
+      "kind": "grid",
+      "text": "向量a=(6,1)，b=(2,3)。找到数量积a·b对应的编号。",
+      "answer": 15,
+      "explanation": "a·b=6×2+1×3=15。",
+      "topic": "平面向量",
+      "grade": 2,
+      "normal": 25,
+      "reason": "用坐标数量积公式计算两项乘积之和。 56选一另留6秒寻找编号，不把视觉搜索伪装成学科难度。"
+    },
+    {
+      "id": "route-001",
+      "subject": "route",
+      "kind": "route",
+      "text": "左边走廊没有窗户，也没有倒影。\n右侧的玻璃里，映着一块绿色安全出口牌。",
+      "choices": [
+        "向左",
+        "向右",
+        "躲进教室",
+        "继续下楼"
+      ],
+      "answer": 1,
+      "explanation": "按描述中的出口和路线线索选择。",
+      "topic": "走廊",
+      "grade": 2,
+      "normal": 25,
+      "reason": "综合窗户、倒影与安全出口标志，识别可行方向。"
+    },
+    {
+      "id": "route-002",
+      "subject": "route",
+      "kind": "route",
+      "text": "何枫琳推开了侧楼梯的门。\n绿色箭头指向楼下；上方只有熄灭的灯。",
+      "choices": [
+        "向左返回教室",
+        "向右走上楼",
+        "躲进空教室",
+        "沿侧楼梯继续下楼"
+      ],
+      "answer": 3,
+      "explanation": "按描述中的出口和路线线索选择。",
+      "topic": "侧楼梯",
+      "grade": 1,
+      "normal": 15,
+      "reason": "直接提取绿色箭头明确指出的方向。"
+    },
+    {
+      "id": "route-003",
+      "subject": "route",
+      "kind": "route",
+      "text": "实验室里，一条白色地面引导线向左延伸。\n右门的玻璃没有反光，门后传来熟悉的声音。",
+      "choices": [
+        "沿白线向左",
+        "听着声音向右",
+        "躲进储藏柜",
+        "推开没有反光的门"
+      ],
+      "answer": 0,
+      "explanation": "按描述中的出口和路线线索选择。",
+      "topic": "实验室",
+      "grade": 2,
+      "normal": 25,
+      "reason": "比较地面引导线与声音、异常玻璃等干扰线索。"
+    },
+    {
+      "id": "route-004",
+      "subject": "route",
+      "kind": "route",
+      "text": "前面安全出口的指示牌写着「大厅 →」。\n身后的脚步开始变慢，像是正在等你转身。",
+      "choices": [
+        "向左找脚步",
+        "向右进入大厅",
+        "躲进身后的教室",
+        "走回楼上"
+      ],
+      "answer": 1,
+      "explanation": "按描述中的出口和路线线索选择。",
+      "topic": "一楼走廊",
+      "grade": 1,
+      "normal": 15,
+      "reason": "直接提取大厅箭头指向。"
+    },
+    {
+      "id": "route-005",
+      "subject": "route",
+      "kind": "route",
+      "text": "大厅正门的绿色 EXIT 标牌亮着。\n白线向左通往门厅；右侧只有一面照不出你的镜子。",
+      "choices": [
+        "向左进入门厅",
+        "向右靠近镜子",
+        "回到实验室",
+        "继续向地下走"
+      ],
+      "answer": 0,
+      "explanation": "按描述中的出口和路线线索选择。",
+      "topic": "一楼大厅",
+      "grade": 1,
+      "normal": 15,
+      "reason": "直接提取白线与EXIT指示信息。"
+    },
+    {
+      "id": "route-006",
+      "subject": "route",
+      "kind": "route",
+      "text": "玻璃上映出真正的夜色。\n出口在右侧。门上还有一道写着 1/56 的编号锁。",
+      "choices": [
+        "向左回教室",
+        "向右走向校门",
+        "躲在讲台后",
+        "继续下楼"
+      ],
+      "answer": 1,
+      "explanation": "按描述中的出口和路线线索选择。",
+      "topic": "校门前厅",
+      "grade": 1,
+      "normal": 15,
+      "reason": "直接提取出口在右侧的信息。"
+    }
+  ],
+  "grades": {
+    "1": {
+      "label": "基础识记",
+      "seconds": 15,
+      "description": "直接识别概念、事实、公式或明确的信息。"
+    },
+    "2": {
+      "label": "单步应用",
+      "seconds": 25,
+      "description": "使用一条主要知识链，做代入、简单转换或局部语境判断。"
+    },
+    "3": {
+      "label": "多步辨析",
+      "seconds": 40,
+      "description": "同时处理多个条件、易混概念，或完成多步计算与推理。"
+    },
+    "4": {
+      "label": "阅读综合",
+      "seconds": 60,
+      "description": "读完短文与选项，整合信息并判断逻辑、意图或结构。"
+    }
+  },
+  "difficulties": {
+    "easy": {
+      "id": "easy",
+      "label": "简单",
+      "rank": 0,
+      "risk": 0.65,
+      "recover": 1.25,
+      "patrol": 0.8,
+      "interval": 1.35,
+      "react": 1.5,
+      "answer": 1.3,
+      "drain": 0.65,
+      "loss": 0.7,
+      "gain": 1.15,
+      "reward": 1.2,
+      "distance": 80,
+      "sprint": 14,
+      "extra": 35,
+      "grace": 1.8,
+      "hold": 1.1,
+      "forgiveness": 2,
+      "jitter": 24,
+      "rapidCount": 2,
+      "rapidTime": 2.8
+    },
+    "normal": {
+      "id": "normal",
+      "label": "普通",
+      "rank": 1,
+      "risk": 1,
+      "recover": 1,
+      "patrol": 1,
+      "interval": 1,
+      "react": 1,
+      "answer": 1,
+      "drain": 1,
+      "loss": 1,
+      "gain": 1,
+      "reward": 1,
+      "distance": 75,
+      "sprint": 18,
+      "extra": 45,
+      "grace": 1.4,
+      "hold": 1.4,
+      "forgiveness": 1,
+      "jitter": 18,
+      "rapidCount": 3,
+      "rapidTime": 2.6
+    },
+    "hard": {
+      "id": "hard",
+      "label": "困难",
+      "rank": 2,
+      "risk": 1.22,
+      "recover": 0.95,
+      "patrol": 1.14,
+      "interval": 0.85,
+      "react": 0.88,
+      "answer": 0.88,
+      "drain": 1.2,
+      "loss": 1.15,
+      "gain": 0.92,
+      "reward": 0.95,
+      "distance": 70,
+      "sprint": 20,
+      "extra": 50,
+      "grace": 1.3,
+      "hold": 1.5,
+      "forgiveness": 1,
+      "jitter": 18,
+      "rapidCount": 3,
+      "rapidTime": 3
+    },
+    "hell": {
+      "id": "hell",
+      "label": "地狱",
+      "rank": 3,
+      "risk": 1.5,
+      "recover": 0.85,
+      "patrol": 1.28,
+      "interval": 0.72,
+      "react": 0.76,
+      "answer": 0.78,
+      "drain": 1.4,
+      "loss": 1.3,
+      "gain": 0.85,
+      "reward": 0.9,
+      "distance": 65,
+      "sprint": 22,
+      "extra": 55,
+      "grace": 1.15,
+      "hold": 1.65,
+      "forgiveness": 1,
+      "jitter": 18,
+      "rapidCount": 4,
+      "rapidTime": 3.3
+    },
+    "extreme": {
+      "id": "extreme",
+      "label": "极限",
+      "rank": 4,
+      "risk": 1.8,
+      "recover": 0.78,
+      "patrol": 1.45,
+      "interval": 0.62,
+      "react": 0.64,
+      "answer": 0.68,
+      "drain": 1.65,
+      "loss": 1.5,
+      "gain": 0.8,
+      "reward": 0.85,
+      "distance": 60,
+      "sprint": 24,
+      "extra": 60,
+      "grace": 1,
+      "hold": 1.8,
+      "forgiveness": 1,
+      "jitter": 18,
+      "rapidCount": 5,
+      "rapidTime": 3.6
+    },
+    "god": {
+      "id": "god",
+      "label": "神级",
+      "rank": 5,
+      "risk": 2.25,
+      "recover": 0.65,
+      "patrol": 1.68,
+      "interval": 0.5,
+      "react": 0.55,
+      "answer": 0.58,
+      "drain": 2,
+      "loss": 1.8,
+      "gain": 0.7,
+      "reward": 0.75,
+      "distance": 55,
+      "sprint": 26,
+      "extra": 60,
+      "grace": 1,
+      "hold": 1.8,
+      "forgiveness": 1,
+      "jitter": 18,
+      "rapidCount": 6,
+      "rapidTime": 3.9
+    }
+  },
+  "routes": null,
+  "version": "3.8",
+  "academicCount": 196,
+  "routeCount": 6,
+  "formula": "round((normal + contextBonus + 1.5 * extraOralChemistryResponses) * currentAnswerMultiplier, 1)",
+  "contextBonus": {
+    "oral": 0,
+    "exam": 3,
+    "memory": 0,
+    "grid": 6,
+    "mirror": 4,
+    "route": 0
+  },
+  "note": "作者设计分级；题干、答案未改写；参数变式分别计条；未真人答题标定。普通四选一无场景补时，grid另加6秒。",
+  "answerEncoding": "choice与route的answer为原始选项0基索引；grid的answer为需点击的数学结果编号。游戏显示时会打乱选项，不能按此索引盲点。"
+}

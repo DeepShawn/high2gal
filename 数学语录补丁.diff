@@ -1,0 +1,68 @@
+--- v3.7/index.html
++++ v3.7.1/index.html
+@@ -5,7 +5,7 @@
+   <meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
+   <meta content="#121c1b" name="theme-color"/>
+   <meta content="高二（2）班：最后一节课。离线、单文件校园恐怖潜行游戏。" name="description"/>
+-  <title>高二（2）班：最后一节课 · v3.7 光与回执</title>
++  <title>高二（2）班：最后一节课 · v3.7.1 数学课堂语录</title>
+   <style>
+    /* All artwork is drawn with HTML and CSS. No remote assets or libraries. */
+ :root {
+@@ -9903,6 +9903,21 @@
+     const TASK_NAMES34={toy:'摆弄无刃塑料玩具',letter:'折好并传递情书',pengTalk:'和彭望梓说话',badminton:'一起打羽毛球',pengHelp:'请班长帮忙',clean:'整理卫生'};
+     const CLEAN_ITEMS34=['清掉纸屑','整理课本','清扫桌下'];
+     const MATH_QUOTES34=['So easy。','我教了这么多届，第1次见到你们这样的学生。','又笨又不努力，越来越笨。'];
++    // v3.7.1 — dialogue-only update. Keep save schemas, RNG and rule values unchanged.
++    const MATH_QUOTES371=Object.freeze([
++        '想讲就讲，想睡就睡。',
++        '你们什么时候才能懂事？',
++        '自以为聪明，又还很懒。',
++        '成绩这么差，你不会是马房山来武大附中的卧底吧？'
++    ]);
++    function mathWrongQuote371(st=S){
++        // Reuse the persisted lesson counter: reloads do not reroll a quote or consume game RNG.
++        // Terminal math streaks are handled before this presentation-only function is used.
++        const pool=[MATH_QUOTES371[2],MATH_QUOTES371[3],MATH_QUOTES34[2]];
++        const n=Math.max(1,Math.floor(st?.classStats?.wrong||1));
++        return pool[(n-1)%pool.length];
++    }
++
+     const NEW_STATS34=V34_ACHIEVEMENTS.map(x=>x.id);
+     EVENT_IDS.push('doubleTest34');
+     function makeV34(){return {version:1,baseDifficulty:null,rampFrom:0,enabled:true,rng:123456789,
+@@ -9974,6 +9989,13 @@
+     ENDINGS.unseen.hint='全程怀疑值严格低于20，所有题目答对；没有手机被抓、后门确认、罚站或新版校园纪律事件。';
+     ROLES['郭梓晁']='数学 / 班主任 · 男';ROLES['李方琳']='化学 · 女';ROLES['彭望梓']='班长 / 友方 · 女';
+     CLASSES[5].intro.push(['郭梓晁',MATH_QUOTES34[0]],['郭梓晁',MATH_QUOTES34[1]]);
++    // Insert before the existing warning from the deskmate: the first line is not permission.
++    {
++        const at=CLASSES[5].intro.findIndex(line=>line[0]==='同桌');
++        CLASSES[5].intro.splice(at<0?CLASSES[5].intro.length:at,0,
++            ['郭梓晁',MATH_QUOTES371[0]],['郭梓晁',MATH_QUOTES371[1]]);
++    }
++
+     CLASSES[1].note+=' 她有时未听清，正确答案须再回应1—2次。答错或超时会罚站300秒有效校园时间。课前检查订正，未订正会扣本。';
+     CLASSES[6].intro.push(['彭望梓','我在讲台上。自己的事情自己收好。还有——这盒点心是我的。']);
+     // Additional questions use the original subjects and deliberately simple facts.
+@@ -10130,7 +10152,10 @@
+         if(S?.screen!=='game')return;
+         if(extra&&ok)count34('ask34');
+         if(chem&&!ok)chemStand34();
+-        if(math&&!script&&!challenge)say('郭梓晁',ok?'So easy。':MATH_QUOTES34[2]);
++        if(math&&!script&&!challenge){
++            const feedback=ok?'So easy。':S.phase==='CLASS'&&!test?mathWrongQuote371(S):MATH_QUOTES34[2];
++            say('郭梓晁',feedback);
++        }
+         requestAutoSave();
+     };
+     // ---- Hygiene, props and friendly classmates --------------------------
+@@ -11350,7 +11375,7 @@
+     };
+     settingChange=function(el){const key=el.dataset.setting;BASE37.settingChange(el);if(key==='realMode')toast('真实模式设置用于下一周目，当前进度规则不改变。');if(key==='dialogueVoice'){stopSpeech37();speechStatus37=save.settings.dialogueVoice?(localVoice37()?'本地中文语音可用。':'未找到本地中文语音，文字仍可用。'):'默认关闭';if($('speechStatus37'))$('speechStatus37').textContent=speechStatus37;}requestAutoSave();};
+     modalAction=function(a){if(a==='inventory37'){openModal('inventory37',modal?.kind||null);return;}return BASE37.modalAction(a);};
+-    renderCharacters=function(){return BASE37.renderCharacters()+`<h3>新增校长与道具</h3><table class="timetable"><tr><th>化名</th><th>角色设定与事件</th></tr><tr><td>程今容</td><td>正校长，化名原样保留。讲话非常慢，长停顿间伴随“呼……”；不推断健康状况。语文课后段有校园讲话，也可能从后门巡视。</td></tr><tr><td>徐亥</td><td>校长，化名原样保留。喜欢管桌角、走廊和物品摆放；第一节晚自习可能追加卫生检查，也会巡视后门。</td></tr></table><p>王梓锐可在课间提供反光镜，但要先答对一道高中物理题；睡着时不交易。尹沙沙新增“省水省电省实验”。郭梓晁后门确认违规时会拍照或录像，下课训话后逐条给玩家核对；画面完全由游戏状态生成。</p>`;};
++    renderCharacters=function(){return BASE37.renderCharacters()+`<h3>新增校长与道具</h3><table class="timetable"><tr><th>化名</th><th>角色设定与事件</th></tr><tr><td>程今容</td><td>正校长，化名原样保留。讲话非常慢，长停顿间伴随“呼……”；不推断健康状况。语文课后段有校园讲话，也可能从后门巡视。</td></tr><tr><td>徐亥</td><td>校长，化名原样保留。喜欢管桌角、走廊和物品摆放；第一节晚自习可能追加卫生检查，也会巡视后门。</td></tr></table><p>王梓锐可在课间提供反光镜，但要先答对一道高中物理题；睡着时不交易。尹沙沙新增“省水省电省实验”。郭梓晁后门确认违规时会拍照或录像，下课训话后逐条给玩家核对；画面完全由游戏状态生成。</p><h3>郭梓晁 · 新增课堂语录</h3>${MATH_QUOTES371.map(line=>'<blockquote>'+esc(line)+'</blockquote>').join('')}<p>前两句加入数学课开场；后两句与原有答错台词在非考试数学答错、且尚未结束游戏时轮换。“想讲就讲，想睡就睡”只是角色台词，并不解除讲话、睡觉的限制。所有语录均为虚构剧情对白。</p>`;};
+     renderTimetable=function(){return BASE37.renderTimetable()+'<h3>新增地点交互</h3><p>课间走廊：寻找体委换取镜片。语文教室：程今容讲话。第一节晚自习：徐亥额外卫生要求。年级办公室：训话后的照片／录像核对台。</p>';};
+     document.addEventListener('click',e=>{const el=e.target instanceof Element?e.target.closest('[data-prop37]'):null;if(!el||el.disabled)return;e.preventDefault();
+       const a=el.dataset.prop37;if(a==='voiceTest'){speak37('程今容','同学们……呼……先把走廊……留出来。',true);if($('speechStatus37'))$('speechStatus37').textContent=speechStatus37;return;}

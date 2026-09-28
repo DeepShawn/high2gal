@@ -5,7 +5,7 @@
   <meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
   <meta content="#121c1b" name="theme-color"/>
   <meta content="高二（2）班：最后一节课。离线、单文件校园恐怖潜行游戏。" name="description"/>
-  <title>高二（2）班：最后一节课 · v3.5.1 同姓近音化名</title>
+  <title>高二（2）班：最后一节课 · v3.5.2 新手教室</title>
   <style>
    /* All artwork is drawn with HTML and CSS. No remote assets or libraries. */
 :root {
@@ -2657,6 +2657,160 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
 
 /* v3.5.1: keep full surnamed names together on narrow character cards. */
 .cast-table351 tbody tr:not(:last-child) td:first-child { white-space:nowrap; min-width:4.8em; }
+/* v3.5.2: independent, viewport-sized beginner classroom, never stage-scaled. */
+#menu .tutorial-launch352{display:flex;width:440px;align-items:center;justify-content:space-between;padding:12px 17px;margin-top:10px;border:1px solid #a6c395;background:#24352c;color:#eff6e8;font-size:16px;letter-spacing:.06em}
+#menu .tutorial-launch352 small{font-size:11px;letter-spacing:0;color:#bfd2b7}
+#menu.has-save .tutorial-launch352{padding:9px 17px;margin-top:7px}
+#menu.has-save .menu-memory{margin-top:6px}
+#topbar .utility{gap:5px}
+#tutorial352{position:fixed;inset:0;z-index:22000;height:100%;height:100dvh;background:#101918;color:#e7ede2;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;letter-spacing:0;text-shadow:none;isolation:isolate;overflow:hidden;font-size:16px;line-height:1.7;padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)}
+#tutorial352[hidden]{display:none!important}
+#tutorial352 *{box-sizing:border-box}
+#tutorial352 button,#tutorial352 select{font:inherit;line-height:1.4;letter-spacing:0;min-height:44px;cursor:pointer;border:1px solid #4a6257;background:#24372f;color:#f0f6e9;border-radius:7px;padding:9px 13px;text-align:center;touch-action:manipulation}
+#tutorial352 button:hover:not(:disabled){background:#344b3e;border-color:#b7cfa6}
+#tutorial352 button:disabled{cursor:default;opacity:.48}
+#tutorial352 :focus-visible{outline:3px solid #e8cc89;outline-offset:3px}
+#tutorial352 .tut-primary{background:#cfdfb9;color:#17251c;border-color:#cfdfb9;font-weight:700}
+#tutorial352 .tut-primary:hover:not(:disabled){background:#e2ecca;color:#111e15}
+#tutorial352 .tut-shell{max-width:1400px;margin:auto;height:100%;display:grid;grid-template-rows:auto 1fr auto}
+#tutorial352 .tut-top{display:flex;align-items:center;gap:18px;justify-content:space-between;padding:18px 26px;border-bottom:1px solid #34483e;background:#17221e;position:relative;z-index:2}
+#tutorial352 .tut-brand small{display:block;letter-spacing:.19em;color:#aabb9f;font-size:11px}
+#tutorial352 .tut-brand strong{font-size:23px;font-weight:650}
+#tutorial352 .tut-top-actions{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+#tutorial352 .tut-status-pill{font-size:12px;background:#26362a;color:#d7e6c8;padding:6px 11px;border-radius:30px;border:1px solid #516446}
+#tutorial352 .tut-middle{display:grid;grid-template-columns:248px 1fr;min-height:0}
+#tutorial352 .tut-nav{padding:20px 14px;overflow:auto;border-right:1px solid #34483e;overscroll-behavior:contain}
+#tutorial352 .tut-nav-label{font-size:12px;color:#bccdaf;margin:0 9px 8px;letter-spacing:.1em}
+#tutorial352 .tut-nav button{display:grid;grid-template-columns:25px 1fr 20px;text-align:left;align-items:center;border-color:transparent;background:none;width:100%;margin:2px 0;padding:8px 10px;font-size:14px;gap:8px}
+#tutorial352 .tut-nav button[aria-current="step"]{background:#2a3d30;border-color:#718769;color:#edfadf}
+#tutorial352 .tut-num{font:12px ui-monospace,monospace;color:#99b18e}
+#tutorial352 .tut-done{font-size:12px;color:#d0e8af}
+#tutorial352 .tut-main{overflow:auto;padding:26px 36px 40px;overscroll-behavior:contain;min-width:0}
+#tutorial352 .tut-eyebrow{font-size:12px;letter-spacing:.15em;color:#b7caa4;margin:0 0 7px}
+#tutorial352 h1{font-size:clamp(25px,3vw,36px);line-height:1.25;margin:0 0 13px;font-weight:650;color:#f2f5ec;letter-spacing:-.02em}
+#tutorial352 h2{font-size:19px;margin:22px 0 10px;font-weight:650;color:#e2ead8}
+#tutorial352 h3{font-size:16px;margin:15px 0 7px}
+#tutorial352 p{margin:10px 0;max-width:78ch;line-height:1.8;color:#d0dacd}
+#tutorial352 .tut-lead{font-size:17px;color:#b9cbb1;line-height:1.8}
+#tutorial352 .tut-note{padding:13px 16px;border-left:3px solid #a5be8f;border-radius:0 7px 7px 0;background:#1f3027;color:#deead1;margin:16px 0;font-size:14px;line-height:1.8}
+#tutorial352 .tut-note.warn{border-color:#e0a580;background:#352b23;color:#f1d6bd}
+#tutorial352 .tut-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:20px 0}
+#tutorial352 .tut-card{border:1px solid #3d5246;border-radius:9px;background:#19271f;padding:16px;min-width:0}
+#tutorial352 .tut-card strong{display:block;color:#e0eccf;font-size:16px}
+#tutorial352 .tut-card p{font-size:14px;margin:8px 0 0;line-height:1.75}
+#tutorial352 kbd{font:13px ui-monospace,monospace;border:1px solid #62745a;background:#293727;color:#eff6e4;padding:2px 7px;border-radius:4px;white-space:nowrap}
+#tutorial352 .tut-table-wrap{overflow:auto;border:1px solid #3b5043;border-radius:8px;margin:14px 0}
+#tutorial352 table{width:100%;border-collapse:collapse;text-align:left;margin:0;font-size:14px}
+#tutorial352 td,#tutorial352 th{padding:11px 13px;border-bottom:1px solid #314437;vertical-align:top;line-height:1.7}
+#tutorial352 th{color:#d9e9c8;background:#223126;font-weight:600}
+#tutorial352 tr:last-child td{border-bottom:0}
+#tutorial352 .tut-footer{padding:12px 26px;display:flex;gap:12px;align-items:center;border-top:1px solid #34483e;background:#17221e;z-index:2}
+#tutorial352 .tut-footer-info{flex:1;min-width:0;font-size:12px;line-height:1.6;color:#b7c5af}
+#tutorial352 .tut-progress{height:4px;width:100%;background:#354531;border-radius:9px;margin-top:6px;overflow:hidden}
+#tutorial352 .tut-progress i{display:block;height:100%;background:#c4dba4;width:0}
+#tutorial352 .tut-sim{position:relative;margin:22px 0 16px;border:1px solid #728965;border-radius:12px;overflow:hidden;background:#1a281f;box-shadow:0 10px 35px #0003}
+#tutorial352 .tut-sim-head{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;padding:12px 17px;background:#2a3c2c;border-bottom:1px solid #536346}
+#tutorial352 .tut-sim-head strong{color:#ebf3df;font-size:15px}
+#tutorial352 .tut-sim-tag{font:11px ui-monospace,monospace;color:#c5d4b7;letter-spacing:.06em}
+#tutorial352 .tut-sim-body{padding:18px}
+#tutorial352 .tut-controls{display:flex;flex-wrap:wrap;gap:8px;margin:13px 0}
+#tutorial352 .tut-controls label{display:flex;align-items:center;gap:9px;font-size:14px}
+#tutorial352 .tut-small{font-size:13px;color:#adc29f}
+#tutorial352 .tut-feedback{min-height:55px;padding:12px 14px;background:#101e16;border:1px solid #3f5642;color:#d6e7c9;font-size:14px;border-radius:7px;margin:14px 0;line-height:1.7}
+#tutorial352 .tut-feedback[data-result="failed"]{border-color:#cc9a73;color:#f2c8a6}
+#tutorial352 .tut-feedback[data-result="passed"]{border-color:#c7dda8;background:#30452e;color:#e9f4d4}
+#tutorial352 .tut-number-row{display:grid;grid-template-columns:repeat(var(--count),minmax(0,1fr));gap:8px;margin:17px 0}
+#tutorial352 .tut-number-row button{padding:14px 4px;min-height:89px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;border-color:#6c805c}
+#tutorial352 .tut-number-row b{font-size:30px;line-height:1.2}
+#tutorial352 .tut-number-row.space b{font-size:17px}
+#tutorial352 .tut-number-row .tut-hit{border-color:#bfd98f;background:#415436}
+#tutorial352 .tut-sequence{display:flex;gap:8px;flex-wrap:wrap;align-items:center;justify-content:center;margin:12px 0}
+#tutorial352 .tut-sequence span{padding:6px 11px;border-radius:5px;background:#2c3c29;border:1px solid #566849;color:#c3d5b0;min-width:37px;text-align:center;font-weight:650}
+#tutorial352 .tut-sequence span[aria-current="step"]{background:#d2e2b7;color:#192819;border-color:#e0f0c4;box-shadow:0 0 0 2px #708459}
+#tutorial352 .tut-sequence span.complete{opacity:.55;text-decoration:line-through}
+#tutorial352 .tut-timer{display:flex;align-items:center;justify-content:space-between;font-size:16px;gap:10px}
+#tutorial352 .tut-timer strong{font-variant-numeric:tabular-nums;font-size:24px;color:#dae8c4}
+#tutorial352 .tut-timer-track{height:6px;background:#36432e;overflow:hidden;border-radius:9px;margin:10px 0}
+#tutorial352 .tut-timer-track i{display:block;height:100%;background:#d3dfa2;transition:none}
+#tutorial352 .tut-freeze{padding:26px 14px;text-align:center;border:1px dashed #748762;margin:14px 0;min-height:148px;display:flex;flex-direction:column;justify-content:center;align-items:center}
+#tutorial352 .tut-freeze strong{font-size:34px;font-weight:600;color:#e3edcf}
+#tutorial352 .tut-mini-room{height:138px;position:relative;border:1px solid #4c6051;background:linear-gradient(0deg,#384139 0 21%,#26372e 21% 24%,#3b493e 24% 100%);border-radius:8px;overflow:hidden;margin:12px 0}
+#tutorial352 .tut-mini-board{position:absolute;left:12%;right:31%;top:15px;height:49px;background:#1d372d;border:3px solid #938977;display:flex;align-items:center;justify-content:center;color:#d4dfc2;font-size:13px}
+#tutorial352 .tut-mini-person{position:absolute;width:20px;height:42px;left:43%;top:62px;background:#14271f;border-radius:7px 7px 0 0}
+#tutorial352 .tut-mini-person:before{content:"";position:absolute;width:18px;height:18px;top:-15px;left:1px;border-radius:50%;background:#14271f}
+#tutorial352 .tut-mini-door{position:absolute;width:47px;height:102px;right:9%;bottom:6px;border:4px solid #766d61;background:#28382e}
+#tutorial352 .tut-mini-door:before{content:"";position:absolute;width:21px;height:33px;background:#799187;top:9px;left:9px;opacity:.45}
+#tutorial352 .tut-mini-door.watch:before{background:#14221d;border:2px solid #eadca1;opacity:1}
+#tutorial352 .tut-mini-label{position:absolute;bottom:8px;left:12px;font-size:12px;padding:2px 8px;background:#13231edb;border-radius:4px;color:#e5edd5}
+#tutorial352 .tut-bedroom{background:linear-gradient(0deg,#343a35 0 18%,#303c35 18% 100%)}
+#tutorial352 .tut-bedroom:after{content:"";position:absolute;left:12%;bottom:18%;width:43%;height:40px;border:5px solid #978875;background:#6f807b;border-radius:13px 4px 0 0}
+#tutorial352 .tut-bedroom .tut-mini-label{z-index:1}
+#tutorial352 .tut-resource-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:12px 0}
+#tutorial352 .tut-resource-row div{border:1px solid #485b42;border-radius:8px;padding:12px;font-size:13px;color:#b5c9a5}
+#tutorial352 .tut-resource-row b{display:block;font:28px ui-monospace,monospace;color:#e4eccf}
+#tutorial352 .tut-quiz button{display:block;width:100%;text-align:left;margin-top:8px}
+#tutorial352 .tut-menu-toggle{display:none}
+#tutorial352 .tut-alert{background:#3d3328;color:#ead5b1;border:1px solid #8b7256;border-radius:5px;padding:8px 12px;font-size:13px;margin-bottom:12px}
+#tutorial352 .tut-slot{display:flex;align-items:center;justify-content:space-between;gap:10px;border:1px solid #65784f;border-radius:7px;padding:13px;margin:12px 0}
+#tutorial352 .tut-badge{font-size:11px;letter-spacing:.1em;color:#dbe5bb;display:block}
+#tutorial352 details{border:1px solid #506248;border-radius:8px;margin:15px 0;padding:12px 15px}
+#tutorial352 summary{cursor:pointer;color:#dce8c6}
+#tutorial352 .tut-keymap{padding:10px 12px;border:1px solid #5d754d;border-radius:6px;font-size:14px;background:#273b2a;color:#dceec7}
+body.tutorial-open352 #rotateHint{display:none!important}
+@media(max-width:900px){
+ #tutorial352 .tut-middle{grid-template-columns:1fr;position:relative}
+ #tutorial352 .tut-nav{display:none;position:absolute;inset:0 auto 0 0;width:min(300px,90vw);z-index:4;background:#15241b;box-shadow:12px 0 40px #0009}
+ #tutorial352.tut-nav-open .tut-nav{display:block}
+ #tutorial352 .tut-menu-toggle{display:inline-block}
+ #tutorial352 .tut-top{padding:12px 15px;gap:8px}
+ #tutorial352 .tut-brand small{font-size:9px;letter-spacing:.12em}
+ #tutorial352 .tut-brand strong{font-size:20px}
+ #tutorial352 .tut-status-pill{display:none}
+ #tutorial352 .tut-main{padding:22px 19px 28px}
+ #tutorial352 .tut-grid{grid-template-columns:1fr;gap:8px}
+ #tutorial352 .tut-card{padding:13px 15px}
+ #tutorial352 .tut-footer{padding:10px 14px;gap:8px}
+ #tutorial352 .tut-footer-info{font-size:11px}
+ #tutorial352 .tut-top-actions{gap:5px}
+ #tutorial352 .tut-top button{font-size:13px;padding:8px 10px}
+ #tutorial352 .tut-footer button{font-size:13px;padding:8px 10px}
+ #tutorial352 .tut-number-row{gap:5px}
+ #tutorial352 .tut-number-row button{min-height:80px;padding:10px 2px;min-width:0}
+ #tutorial352 .tut-number-row b{font-size:26px}
+ #tutorial352 .tut-number-row kbd{font-size:11px;padding:2px 4px}
+ #tutorial352 .tut-sim-body{padding:14px}
+ #tutorial352 .tut-sequence{gap:5px}
+ #tutorial352 .tut-sequence span{padding:5px 8px;min-width:30px}
+}
+@media(max-width:380px){
+ #tutorial352 .tut-brand small{display:none}
+ #tutorial352 .tut-brand strong{font-size:18px;white-space:nowrap}
+ #tutorial352 .tut-main{padding:18px 12px}
+ #tutorial352 .tut-sim-body{padding:7px}
+ #tutorial352 .tut-number-row{gap:3px;margin:12px 0}
+ #tutorial352 .tut-number-row button{min-height:78px;padding:7px 1px}
+ #tutorial352 .tut-number-row kbd{font-size:10px;padding:2px}
+ #tutorial352 .tut-footer-info{min-width:54px}
+ #tutorial352 .tut-resource-row{gap:5px}
+ #tutorial352 .tut-resource-row div{padding:8px}
+}
+@media(max-height:480px){
+ #tutorial352 .tut-top{padding:6px 14px}
+ #tutorial352 .tut-brand small{display:none}
+ #tutorial352 .tut-footer{padding:6px 14px}
+ #tutorial352 .tut-main{padding:16px 20px 28px}
+}
+@media(prefers-reduced-motion:reduce){#tutorial352 *{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+#tutorialQuickEntry352{display:none}
+@media(max-width:900px){#tutorialQuickEntry352:not([hidden]){display:block;position:fixed;right:max(12px,env(safe-area-inset-right));bottom:max(12px,env(safe-area-inset-bottom));z-index:21000;min-height:48px;padding:12px 18px;border:1px solid #b3ca95;border-radius:9px;background:#d6e4c3;color:#17251c;font-size:15px;font-weight:650;box-shadow:0 3px 20px #0009;touch-action:manipulation}body.tutorial-open352 #tutorialQuickEntry352{display:none!important}}
+/* Reserve room for the new entry without overlapping the existing menu footer. */
+#menu.has-save .menu-content{top:64px}
+#menu.has-save .menu-title{font-size:76px}
+#menu.has-save .menu-rule{margin-top:12px;margin-bottom:12px}
+#menu.has-save .menu-links{margin-top:8px}
+#menu.has-save .menu-memory{margin-top:4px;font-size:11px}
+
 </style>
  </head>
  <body>
@@ -2939,7 +3093,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
        建议佩戴耳机　/　不含贴脸跳吓，可关闭闪烁与震动
       </span>
       <span>
-       单文件离线版　3.3
+       单文件离线版　3.5.2
        <br/>
        HTML / CSS / JAVASCRIPT
       </span>
@@ -3379,6 +3533,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
  * A snapshot NEVER contains callbacks, DOM nodes or wall-clock game timers.
  */
 (() => {
+    let tutorial352 = null; // isolated beginner overlay, never serialized in gameplay
     const $ = id => document.getElementById(id);
     const $$ = selector => [...document.querySelectorAll(selector)];
     const clamp = (v, lo = 0, hi = 100) => Math.max(lo, Math.min(hi, v));
@@ -5796,7 +5951,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
             html = `<p class="small">声音与视觉设置立即生效。流程速度和难度只影响新的一天；读档始终使用记录中的难度。</p><div class="modal-actions"><button class="outline-btn" data-modal-action="difficulty">下一局难度：${DIFFICULTIES[opts.difficulty].label}</button><button class="outline-btn" data-modal-action="achievements">成就档案</button></div><label class="settings-row"><span>音量<small>铃声、脚步、心跳、门声与操作音</small></span><span class="settings-control"><input aria-label="音量" type="range" min="0" max="100" value="${Math.round(opts.volume * 100)}" data-setting="volume"><output id="volumeOutput">${Math.round(opts.volume * 100)}%</output></span></label><label class="settings-row"><span>恐怖模式 · 校园与归家<small>默认关闭；增加校园倒影、卧室暗影和低声回响。不改变倒计时或主音量，不强制闪烁。</small></span><input type="checkbox" data-setting="fearMode" ${opts.fearMode ? 'checked' : ''}></label><label class="settings-row"><span>恐怖闪烁<small>仅事件触发的短暂明暗变化；敏感者建议关闭</small></span><input type="checkbox" data-setting="flicker" ${opts.flicker ? 'checked' : ''}></label><label class="settings-row"><span>屏幕震动<small>关闭后保留文字、阴影与声音提示</small></span><input type="checkbox" data-setting="shake" ${opts.shake ? 'checked' : ''}></label><label class="settings-row"><span>文字速度<small>点击对话框或按 Enter 可立即显示全文</small></span><span class="settings-control"><input aria-label="文字速度" type="range" min="12" max="90" value="${opts.textSpeed}" data-setting="textSpeed"><output id="textSpeedOutput">${opts.textSpeed}字/s</output></span></label><label class="settings-row"><span>剧情自动继续<small>文字显示完毕后留出阅读时间再继续</small></span><input type="checkbox" data-setting="auto" ${opts.auto ? 'checked' : ''}></label><label class="settings-row"><span>默认快速模式<small>缩短各阶段：新课表学科75秒、数学90秒、晚自习75/85秒、自由阶段12—40秒；两种模式均支持重试</small></span><input type="checkbox" data-setting="quick" ${opts.quick ? 'checked' : ''}></label><label class="settings-row"><span>显示未解锁结局的线索<small>可选剧透：在结局档案中显示达成条件</small></span><input type="checkbox" data-setting="endingHints" ${opts.endingHints ? 'checked' : ''}></label><div class="modal-actions"><button class="outline-btn" data-modal-action="fullscreen">⛶ 切换全屏</button><button class="outline-btn" data-modal-action="reset" ${S?.screen === 'game' ? 'disabled' : ''}>清除本地存档</button></div><p class="small" style="margin-top:14px">Alt + Enter 切换全屏。全屏受浏览器权限控制；被拒绝时可使用浏览器的 F11。${S?.screen === 'game' ? '清除记录只能在主菜单或结局页进行。' : ''}</p>`;
         }
         else if (kind === 'help') {
-            html = campusHelp()+`<p>你是江城大学附属中学高二（2）班的一名学生。撑过六门学科、体育和两节晚自习，在真正的 <b>21:40</b> 放学，再走出教学楼。游戏中的学校、人物与情节均为虚构。</p><h3>你的课桌</h3><p><span class="help-key">1</span>听课降低怀疑，但无聊会上升。<span class="help-key">2</span>写其他作业。<span class="help-key">3</span>玩魔方，以 <b>R U R′ U′</b> 完成公式；Shift + 字母表示逆转，完成一组后按难度归位2.8—3.8秒，可缓存下一组输入。<span class="help-key">4</span>手机：聊天、视频、小游戏、真实时间。<span class="help-key">5</span>观察讲台、老师、后门、窗外与同桌。作业和魔方不是普通通关的强制目标。</p><h3>先活下来</h3><p>平时 <span class="help-key">Space</span> 立即收好物品。危险事件出现时完成「快速反应」：简单两次空格，普通三次空格；困难、地狱、极限、神级依次为3、4、5、6个数字按钮。不要长按。手机连续使用越久越危险；留意脚步、玻璃与同桌提醒，任何致命突袭前都有线索。静音时仍有画面与文字提示。</p><p>怀疑达到 100 会被发现：第一次降到 60，第二次降到 75，第三次失败。手机被抓三次进入独立坏结局，并影响后续周目。无聊超过 65 会持续消耗专注；低专注让画面模糊，答题时间变短。</p><h3>六门学科，不是同一道题</h3><p>语文教你看反光。化学课留意突然的安静。生物课「条件反射」恢复松手静止：普通难度准备1.4秒，再静止1.4秒；允许一次明显动作，之后给0.35秒重新松手缓冲。轻微鼠标抖动、松键和系统操作不算失误；请勿点击棋盘或桌面。快速反应是另一种危急操作，触屏按大数字、键盘按按钮左起位置，按照下方提示顺序完成。具体难度、时间和容错见上方说明。课堂静止失败基础怀疑为8；完成后留2秒巡视缓冲。物理课戴蓓蓓固定在讲台，对讲话敏感；被确认后站后排至本节下课。逃生静候三秒仍保留。英语课按难度强化35—60秒，普通45秒。数学课连续答错两题会失败，56 个编号中只有一个符合题意。<b>第一遍下课铃是假的。</b></p><h3>操作与记录</h3><p><span class="help-key">1—4</span>限时事件选项。<span class="help-key">Enter</span>剧情继续。<span class="help-key">Esc</span>暂停。<span class="help-key">N</span>手记。<span class="help-key">M</span>静音。<span class="help-key">Alt+Enter</span>全屏。切到其他标签或窗口自动暂停；回到页面后手动继续。</p><p>新课表标准模式固定活动约30—33分钟，快速模式约15—17分钟（具体随体育与重复科目略有变化）；另加剧情、答题、棋局操作与逃生时间，也可提前结束部分自由阶段。课间过渡自动快进，体育、午餐、午休和晚餐实际游玩，不采用统一时间倍率。共26个结局。每5秒、关键操作及页面中断时保存完整进度。两种模式都支持从最新检查点重试，也可以在「存档」中选择本节开头、放学分歧或较早的检查点。读档后先暂停，继续时留有2秒准备期。</p><h3>传纸条与睡觉</h3><p><span class="help-key">6</span>打开纸条，按A请同桌望风、S约好放学同行、D借课堂笔记。写纸条、递出和等待回条共需5秒；巡逻不会暂停。收到回条后才获得奖励，再等10秒才能传下一张。切换行动、危险或点名会中止尚未送达的纸条。成功的同行纸条与观察同桌共用本节互动次数；不会代替调查线索。</p><p><span class="help-key">7</span>伏桌小憩，可选6/12/18秒。普通难度每秒专注+1.7、无聊−0.85；连续积累小憩疲劳超过12秒后收益降低，醒来8秒后才可再睡，清醒时疲劳缓慢恢复。风险不会靠瞬间醒来重置。按空格、再次按7或点击「醒来」可立即起身。老师靠近会触发当前难度的快速反应；不要把睡觉当成暂停。</p><h3>魔方输入</h3><p>先按3打开魔方。公式为 R → U → Shift+R → Shift+U，也可按 R → U → Q → E；Q对应R′，E对应U′。左右Shift均可，CapsLock不会改变方向。每次按键松开后再按，长按不连发。组间2.8—3.8秒归位期间可预输入最多8步；面板会显示已接收的动作和倒计时。切换行动或遇到危险会清空尚未执行的动作。所有六个面的正转和逆转都有按钮；若输入法拦截组合键，请切英文输入或点击按钮。</p><h3>调查与同桌</h3><p>每节课都有一条可通过观察发现的线索，手记会提示调查位置。至少在三节不同课程中观察同桌或成功传递同行纸条，可以在21:40选择同行。作业100%、六条线索以及是否接过钥匙，都能打开新的结局。普通离校路线和原有十二个结局仍然保留。</p><h3>存档说明</h3><p>自动记录与安全检查点相互独立，失败不会覆盖重试点。网页关闭、刷新、切到后台会尝试立即保存；突发断电或强制结束进程可能只保留最近一次成功写入。浏览器禁用存储时请使用「导出备份」。移动本地HTML、换浏览器或清理网站数据前也建议导出。导入/导出均在本机进行，不上传任何内容。</p><h3>六档难度与成就</h3><p>主菜单「难度」选择简单、普通、困难、地狱、极限或神级。标准/快速是流程长度，不是难度。读档与重试不改难度；旧存档默认普通。神级明确不可通关，有180秒有效游玩上限并拦截所有成功/替代出口；暂停、剧情和离线不消耗该计时。成就共94项，按单局里程碑或结局解锁；回档不丢已解锁成就，不靠重复读档累加次数。神级成就不要求通关，集齐全部结局也不需要神级通关。</p><h3>平衡提示</h3><p>魔方每组进度仍为4%，普通专注+9、无聊−7；乱转不再降无聊。手机风险热度在收起后每秒下降0.75，不靠切换瞬间清零。作业普通每秒+0.30%，快速流程有总课时补偿；难度会影响恢复和作业效率。观察同一处超过8秒后无聊略有上升，无法长期作为无成本静止策略。</p><p class="small">手机端建议横屏；所有动作都有可点击按钮。不会请求摄像头、麦克风或网络权限。</p>`;
+            html = campusHelp()+`<p>你是江城大学附属中学高二（2）班的一名学生。撑过六门学科、体育和两节晚自习，在真正的 <b>21:40</b> 放学，再走出教学楼。游戏中的学校、人物与情节均为虚构。</p><h3>你的课桌</h3><p><span class="help-key">1</span>听课降低怀疑，但无聊会上升。<span class="help-key">2</span>写其他作业。<span class="help-key">3</span>玩魔方，以 <b>R U R′ U′</b> 完成公式；Shift + 字母表示逆转，完成一组后按难度归位2.8—3.8秒，可缓存下一组输入。<span class="help-key">4</span>手机：聊天、视频、小游戏、真实时间。<span class="help-key">5</span>观察讲台、老师、后门、窗外与同桌。作业和魔方不是普通通关的强制目标。</p><h3>先活下来</h3><p>平时 <span class="help-key">Space</span> 立即收好物品。危险事件出现时完成「快速反应」：简单两次空格，普通三次空格；困难、地狱、极限、神级依次为3、4、5、6个数字按钮。不要长按。手机连续使用越久越危险；留意脚步、玻璃与同桌提醒，任何致命突袭前都有线索。静音时仍有画面与文字提示。</p><p>怀疑达到 100 会被发现：第一次降到 60，第二次降到 75，第三次失败。手机被抓三次进入独立坏结局，并影响后续周目。无聊超过 65 会持续消耗专注；低专注让画面模糊，答题时间变短。</p><h3>六门学科，不是同一道题</h3><p>语文教你看反光。化学课留意突然的安静。生物课「条件反射」恢复松手静止：普通难度准备1.4秒，再静止1.4秒；允许一次明显动作，之后给0.35秒重新松手缓冲。轻微鼠标抖动、松键和系统操作不算失误；请勿点击棋盘或桌面。快速反应是另一种危急操作，触屏按大数字、键盘按按钮左起位置，按照下方提示顺序完成。具体难度、时间和容错见上方说明。课堂静止失败基础怀疑为8；完成后留2秒巡视缓冲。物理课戴蓓蓓固定在讲台，对讲话敏感；被确认后站后排至本节下课。逃生静候三秒仍保留。英语课按难度强化35—60秒，普通45秒。数学课连续答错两题会失败，56 个编号中只有一个符合题意。<b>第一遍下课铃是假的。</b></p><h3>操作与记录</h3><p><span class="help-key">1—4</span>限时事件选项。<span class="help-key">Enter</span>剧情继续。<span class="help-key">Esc</span>暂停。<span class="help-key">N</span>手记。<span class="help-key">M</span>静音。<span class="help-key">Alt+Enter</span>全屏。切到其他标签或窗口自动暂停；回到页面后手动继续。</p><p>新课表标准模式固定活动约30—33分钟，快速模式约15—17分钟（具体随体育与重复科目略有变化）；另加剧情、答题、棋局操作与逃生时间，也可提前结束部分自由阶段。课间过渡自动快进，体育、午餐、午休和晚餐实际游玩，不采用统一时间倍率。共${ENDING_COUNT}个结局。每5秒、关键操作及页面中断时保存完整进度。两种模式都支持从最新检查点重试，也可以在「存档」中选择本节开头、放学分歧或较早的检查点。读档后先暂停，继续时留有2秒准备期。</p><h3>传纸条与睡觉</h3><p><span class="help-key">6</span>打开纸条，按A请同桌望风、S约好放学同行、D借课堂笔记。写纸条、递出和等待回条共需5秒；巡逻不会暂停。收到回条后才获得奖励，再等10秒才能传下一张。切换行动、危险或点名会中止尚未送达的纸条。成功的同行纸条与观察同桌共用本节互动次数；不会代替调查线索。</p><p><span class="help-key">7</span>伏桌小憩，可选6/12/18秒。普通难度每秒专注+1.7、无聊−0.85；连续积累小憩疲劳超过12秒后收益降低，醒来8秒后才可再睡，清醒时疲劳缓慢恢复。风险不会靠瞬间醒来重置。按空格、再次按7或点击「醒来」可立即起身。老师靠近会触发当前难度的快速反应；不要把睡觉当成暂停。</p><h3>魔方输入</h3><p>先按3打开魔方。公式为 R → U → Shift+R → Shift+U，也可按 R → U → Q → E；Q对应R′，E对应U′。左右Shift均可，CapsLock不会改变方向。每次按键松开后再按，长按不连发。组间2.8—3.8秒归位期间可预输入最多8步；面板会显示已接收的动作和倒计时。切换行动或遇到危险会清空尚未执行的动作。所有六个面的正转和逆转都有按钮；若输入法拦截组合键，请切英文输入或点击按钮。</p><h3>调查与同桌</h3><p>每节课都有一条可通过观察发现的线索，手记会提示调查位置。至少在三节不同课程中观察同桌或成功传递同行纸条，可以在21:40选择同行。作业100%、六条线索以及是否接过钥匙，都能打开新的结局。普通离校路线和原有十二个结局仍然保留。</p><h3>存档说明</h3><p>自动记录与安全检查点相互独立，失败不会覆盖重试点。网页关闭、刷新、切到后台会尝试立即保存；突发断电或强制结束进程可能只保留最近一次成功写入。浏览器禁用存储时请使用「导出备份」。移动本地HTML、换浏览器或清理网站数据前也建议导出。导入/导出均在本机进行，不上传任何内容。</p><h3>六档难度与成就</h3><p>主菜单「难度」选择简单、普通、困难、地狱、极限或神级。标准/快速是流程长度，不是难度。读档与重试不改难度；旧存档默认普通。神级明确不可通关，有180秒有效游玩上限并拦截所有成功/替代出口；暂停、剧情和离线不消耗该计时。成就共${ACHIEVEMENTS.length}项，按单局里程碑或结局解锁；回档不丢已解锁成就，不靠重复读档累加次数。神级成就不要求通关，集齐全部结局也不需要神级通关。</p><h3>平衡提示</h3><p>魔方每组进度仍为4%，普通专注+9、无聊−7；乱转不再降无聊。手机风险热度在收起后每秒下降0.75，不靠切换瞬间清零。作业普通每秒+0.30%，快速流程有总课时补偿；难度会影响恢复和作业效率。观察同一处超过8秒后无聊略有上升，无法长期作为无成本静止策略。</p><p class="small">手机端建议横屏；所有动作都有可点击按钮。不会请求摄像头、麦克风或网络权限。</p>`;
         }
         else if (kind === 'archive') {
             html = '<p class="small">有些路，只有走过才会留下名字。已发现 ' + save.endings.length + ' / '+ENDING_COUNT+'</p><div class="archive-grid">' + Object.entries(ENDINGS).map(([id, e]) => { const known = save.endings.includes(id); return `<div class="archive-card ${known ? '' : 'locked'}"><div class="ending-label">${known ? esc(e.type) : 'UNDISCOVERED / 未发现'}</div><h3>${known ? esc(e.title) : '??????'}</h3><p>${known || save.settings.endingHints ? esc(e.hint) : '这一页还没有被写下。可在设置中开启线索提示。'}</p></div>`; }).join('') + `</div><div class="stats-row"><span>开启 ${save.attempts} 天</span><span>成功离校 ${save.wins} 次</span><span>最长存活 ${fmtDuration(save.bestSurvival)}</span><span>魔方最高 ${save.bestCube}%</span></div>`;
@@ -5903,7 +6058,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
     catch {
         toast('全屏请求被浏览器阻止。请在独立浏览器标签打开，或使用 F11。', true, 5);
     } fullscreenChanged(); }
-    function fullscreenChanged() { const full = !!(document.fullscreenElement || document.webkitFullscreenElement); const local=document.querySelector('[data-reflex-fullscreen]'); if(local){local.textContent=full?'退出全屏':'全屏';local.setAttribute('aria-pressed',String(full));} $('fullscreenBtn').querySelector('span').textContent = full ? '退出全屏' : '全屏'; $('fullscreenBtn').setAttribute('aria-pressed', String(full)); if (wasFullscreen && !full && S?.screen === 'game' && !modal)
+    function fullscreenChanged() { const full = !!(document.fullscreenElement || document.webkitFullscreenElement); const local=document.querySelector('[data-reflex-fullscreen]'); if(local){local.textContent=full?'退出全屏':'全屏';local.setAttribute('aria-pressed',String(full));} $('fullscreenBtn').querySelector('span').textContent = full ? '退出全屏' : '全屏'; $('fullscreenBtn').setAttribute('aria-pressed', String(full)); if (wasFullscreen && !full && tutorial352) tutorialPause352(true); else if (wasFullscreen && !full && S?.screen === 'game' && !modal)
         openModal('pause'); wasFullscreen = full; resize(); }
     function resize() { const w = window.visualViewport?.width || window.innerWidth, h = window.visualViewport?.height || window.innerHeight; const scale = Math.min(w / 1600, h / 900); $('stage').style.transform = `translate(-50%,-50%) scale(${scale})`; $('stage').style.setProperty('--reflex-inverse',String(1/scale)); $('stage').style.setProperty('--reflex-vw',w+'px'); $('stage').style.setProperty('--reflex-vh',h+'px'); }
     function renderUI() {
@@ -5914,6 +6069,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         renderPhone(); if (S.action === 'cube')
         renderCube(); $('distanceBar').style.width = S.distance + '%'; $('distanceValue').textContent = Math.ceil(S.distance); updateActionUI(); renderCampus(); renderAllies(); renderTeacherStatus(); renderEnglishStatus(); }
     function tick(dt) {
+        if (tutorial352) return;
         uiClock += dt;
         for (let i = notices.length - 1; i >= 0; i--)
             if (notices[i].until <= uiClock) {
@@ -5985,7 +6141,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
             }
         }
     }
-    function frame(now) { const dt = Math.min(.075, Math.max(0, (now - lastFrame) / 1000)); lastFrame = now; if (!document.hidden)
+    function frame(now) { const dt = Math.min(.075, Math.max(0, (now - lastFrame) / 1000)); lastFrame = now; if (tutorial352) { if (!document.hidden) tutorialTick352(dt); requestAnimationFrame(frame); return; } if (!document.hidden)
         tick(dt); renderAccumulator += dt; if (renderAccumulator >= .075) {
         renderAccumulator = 0;
         renderUI();
@@ -6214,6 +6370,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
     });
     document.addEventListener('pointerup', interactionMotion, { passive: true });
     function interruptPage(reason) {
+        if (tutorial352) { tutorialPause352(true); if (S?.screen === 'game') autoSave(reason); lastFrame = performance.now(); return; }
         if (S?.screen === 'game') {
             autoSave(reason); storeRun();
             if (!modal) openModal('pause');
@@ -8232,6 +8389,485 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         if(/^Key/.test(code)){e.preventDefault();e.stopImmediatePropagation();}
     },true);
 
+    // v3.5.2 — Beginner classroom. All practice lives outside S/save/progress.
+    // No practice action calls setAction/choose/reflexInput or unlocks a real reward.
+    // Rapid/stillness configuration is built by the shipped game rule builders;
+    // tutorial-local RNG never consumes the formal game's random stream.
+    const TUTORIAL_KEY352='last-class.tutorial.v1';
+    const TUTORIAL_LESSONS352=[
+        ['welcome','先弄清要做什么','从选择模式到真正离校','入门'],
+        ['resources','看懂三条数值','怀疑、专注和无聊','入门'],
+        ['warnings','看见危险，先收好','脚步、讲台与后门','入门'],
+        ['space','快速反应 · 空格','简单两次，普通三次','实操'],
+        ['numbers','快速反应 · 数字','触屏点数字，键盘按位置','实操'],
+        ['still','条件反射 · 不要动','与快速反应恰好相反','实操'],
+        ['desk','课桌上的玩法','魔方、国际象棋、纸条与睡眠','实操'],
+        ['exam','回答问题与考试','先答试卷，冒险动作不是必选','实操'],
+        ['chores','晨交、卫生和办公室','看清什么时候能做什么','校园'],
+        ['campus','课间、吃饭与班长','校园事务与可选支线','校园'],
+        ['allies','认识老师和同学','化名档案与提醒状态','校园'],
+        ['home','归家 · 藏好再装睡','完成所有步骤，等家长离开','实操'],
+        ['saves','存档与失败重试','分清自动记录和安全检查点','实操'],
+        ['graduate','出发前的小测','五个问题，确认关键操作','完成']
+    ];
+    let tutorialRecord352={version:1,chapter:'welcome',read:[],passed:[],completedAt:null},tutorialStorage352=true;
+    function loadTutorialRecord352(){
+        try{const x=JSON.parse(localStorage.getItem(TUTORIAL_KEY352)||'null');if(!x||x.version!==1)return;
+            const ids=TUTORIAL_LESSONS352.map(l=>l[0]);
+            tutorialRecord352={version:1,chapter:ids.includes(x.chapter)?x.chapter:'welcome',
+                read:Array.isArray(x.read)?[...new Set(x.read.filter(id=>ids.includes(id)))]:[],
+                passed:Array.isArray(x.passed)?[...new Set(x.passed.filter(id=>ids.includes(id)))]:[],
+                completedAt:typeof x.completedAt==='string'&&x.completedAt.length<40?x.completedAt:null};
+        }catch{tutorialStorage352=false;}
+    }
+    function saveTutorialRecord352(){
+        try{localStorage.setItem(TUTORIAL_KEY352,JSON.stringify(tutorialRecord352));tutorialStorage352=true;}
+        catch{tutorialStorage352=false;}
+        const n=$('tutorialStorage352');if(n){n.hidden=tutorialStorage352;n.textContent='浏览器未允许保存教学记录。现在仍可完整练习；关闭页面后教学进度可能丢失，不影响练习本身。';}
+    }
+    function tutorialCard352(title,text){return `<div class="tut-card"><strong>${title}</strong><p>${text}</p></div>`;}
+    function tutorialTable352(head,rows){return `<div class="tut-table-wrap"><table><thead><tr>${head.map(s=>`<th>${s}</th>`).join('')}</tr></thead><tbody>${rows.map(row=>`<tr>${row.map(s=>`<td>${s}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;}
+    function tutorialNote352(text,warn=false){return `<div class="tut-note${warn?' warn':''}">${text}</div>`;}
+    function tutorialQuizHtml352(prompt,options){return `<p><b>${prompt}</b></p><div class="tut-quiz">${options.map((t,i)=>`<button data-tut-answer="${i}">${i+1} · ${t}</button>`).join('')}</div>`;}
+    function tutorialContent352(id){
+        switch(id){
+        case 'welcome':return `<p class="tut-lead">你不需要一次弄懂所有支线。先学会维持状态、看预警、收好物品，再完整走过一天。</p>
+            <div class="tut-grid">${tutorialCard352('01 / 上学','走完上午五节、下午四节和两节晚自习，留意课间与校园事务。')}${tutorialCard352('02 / 活下来','低风险听课与短暂放松交替；有异常先收好，限时事件按弹框规则操作。')}${tutorialCard352('03 / 真正离校','等到21:40真正放学。离校后根据路线继续操作，看到结局或全周日结才算完成。')}</div>
+            <h2>先选什么模式？</h2><p>第一次可先尝试<b>简单难度＋快速单日</b>。这里的“快速”只缩短流程，不是让你更快按键；难度在主菜单单独选择。七日挑战每天还要完成归家，不适合用来认识第一个按钮。</p>
+            ${tutorialNote352('神级是明确无法通关的生存挑战，不是新手必须完成的内容。本教程只是建议，不会替你修改难度或开始新的一局。',true)}
+            <p>本板块可随时退出、跳章和重新练习。<b>正式游戏在后台暂停；教学不产生被抓、手机风险、结局或游戏成就。</b>左侧圆点代表尚未读过，勾代表已读；“练”表示该章实操／小测完成。</p>`;
+        case 'resources':return `<p class="tut-lead">最安全的行动不能无限维持。要同时看怀疑、专注和无聊，而不只盯着老师。</p>
+            <div class="tut-grid">${tutorialCard352('怀疑 / 越低越安全','达到100会被发现。第一次回落至60，第二次至75；第三次被发现会失败。')}${tutorialCard352('专注 / 不要耗空','专注太低会模糊画面、缩短部分答题时间。休息、听课或正确完成魔方都能帮助恢复。')}${tutorialCard352('无聊 / 不能一直听课','无聊过高会消耗专注。在安全时段换一个活动，听到危险预警就先收好。')}</div>
+            <p><kbd>1</kbd> 听课，<kbd>2</kbd> 作业，<kbd>3</kbd> 魔方，<kbd>4</kbd> 手机，<kbd>5</kbd> 观察。手机连续使用越久风险越高，收起后热度逐渐下降，反复切换不会瞬间清零。</p>
+            ${tutorialNote352('下面是离散数值示意，不是正式游戏的每秒速率。按4体验风险增长，再按空格收好、按1听课，观察变化。')}`;
+        case 'warnings':return `<p class="tut-lead">先停止危险行为，再判断发生了什么。不要等弹框出现才开始找空格。</p>
+            ${tutorialTable352(['位置','需要留意','你的应对'],[['过道','脚步接近，老师停在附近','先收好；若出现快速反应，完成整套步骤。'],['讲台','停止板书、停声、抬头注视','不走动的老师也能看见你。收声或抬头，不要等脚步。'],['后门','玻璃反光、阴影、门把手、举起手机','按5观察后门可辨认；正在违规时优先收好。已登记的目击不能靠隐藏抹掉。']])}
+            <p>平时按一次<kbd>空格</kbd>收好即可；<b>已经触发快速反应后，一次空格不等于完成。</b>静音时文字和画面仍有预警。手机被抓三次与普通被发现另行统计。</p>`;
+        case 'space':return `<p class="tut-lead">看到“快速反应”，就按步骤行动。简单两次空格，普通三次空格；每次按下都要松开。</p>
+            ${tutorialTable352(['难度','课堂要求','基础操作时间'],['easy','normal'].map(k=>{const r=DIFFICULTIES[k];return[r.label,`${r.rapidCount} 次空格`,`${r.rapidTime.toFixed(1)} 秒`]}))}
+            <p>每题另有 ${RAPID_PREP.toFixed(1)} 秒准备，准备时的按键不计步。触屏依次点亮当前步骤按钮。数学和英语强化可能小幅缩时，以正式弹框倒计时为准。</p>
+            ${tutorialNote352('先选“慢速讲解（不超时）”熟悉动作，再选“正式计时”练习。练习难度独立，不改变你的周目难度。')}`;
+        case 'numbers':return `<p class="tut-lead"><b>大数字是要找的内容，小字“键1／键2”是键盘位置。</b>先看下方提示，再在上方找到它。</p>
+            ${tutorialTable352(['难度','数字按钮数','基础操作时间'],['hard','hell','extreme','god'].map(k=>{const r=DIFFICULTIES[k];return[r.label,String(r.rapidCount),`${r.rapidTime.toFixed(1)} 秒`]}))}
+            <div class="tut-note">示例：上方 <b>3 1 5 2 4</b>，提示 <b>4 2 5 1 3</b>。<br>触屏点击大数字：<b>4、2、5、1、3</b>。<br>键盘按左起位置：<b>5、4、3、2、1</b>。若上方本来就是12345，键盘才直接输入42513。</div>
+            <p>数字档可误按一次：扣时间、不清空正确步骤。第二次误按或超时失败。不要按空格猜下一步；空格不替代数字输入。</p>`;
+        case 'still':return `<p class="tut-lead"><b>“条件反射”不是快速反应。</b>生物弹框写“不要动”时，要松开手，而不是点数字或连按空格。</p>
+            ${tutorialNote352('普通难度：先给1.4秒松手准备，再连续静止1.4秒。第一次明显动作消耗容错，给0.35秒重新松手缓冲；再次明显动作失败。')}
+            <p>松开按键和手指、轻微鼠标抖动、系统控制不算失误。明显按键、点击、移动或滚轮会打断。物理的“静候三秒”是另一项挑战，仍需按它自己的提示等待。</p>
+            <p>点击练习开始后，把手离开输入设备，观察状态从“松开手”变为“保持静止”。教学导航与暂停按钮不扣容错。</p>`;
+        case 'desk':return `<p class="tut-lead">课桌活动用于调节状态和探索路线，不需要第一局就把作业、魔方和所有棋局全部完成。</p>
+            ${tutorialTable352(['入口','怎么做','风险与限制'],[['3 / 魔方','R → U → Shift+R → Shift+U；也可 R → U → Q → E','Q是R′，E是U′。归位时可预输入；遇到危险先收好。'],['8 / 国际象棋','点击白子，再点高亮落点；方向键选格、Enter确认','你执白，对手执黑。上课下棋不暂停巡逻，空格收棋并保留局面。'],['6 / 传纸条','选择话题，等回条真正送达','A望风、S同行、D笔记；未送达前打断没有收益。'],['7 / 睡觉','选择小憩时长，再按7或空格醒来','睡觉不是暂停。英语点名后，本节课会禁止再睡。'],['9 / 讲话','打开后选择话题，实际说完才结算','讲台或后门都可能听见。只打开面板不等于已经讲话。']])}
+            <p>下面只练一组魔方公式，不进入正式棋局，也不会给正式魔方增加进度。</p>`;
+        case 'exam':return `<p class="tut-lead">先看上方的题和答案。<b>考试不要求你作弊；独立选择正确答案就能交卷。</b></p>
+            <p>普通提问用<kbd>1—4</kbd>选择答案，也可以点击。化学题有时要重复回答2—3次，看已回应次数，不能只点一次就等结束。</p>
+            <h2>正式考试的专用界面</h2><p>同科连堂第二节的三题测试中，所有老师坐在讲台，普通动作隐藏。卷面答案保留，下面只出现“看别人的答案”和“传小抄”，这是两个<b>可选的冒险动作</b>。</p>
+            ${tutorialTable352(['操作','作用'],[['1—4／点答案','提交上方试卷答案，不打开原课桌动作。'],['A / 看别人的答案','持续2.4秒取得模糊参考。'],['S / 传小抄','持续3.6秒取得可能出错的建议。'],['空格／再次点同一动作','立即中止；试卷倒计时不会暂停。']])}
+            ${tutorialNote352('坐在讲台也会看向你。被确认后本题作废；本周目三次独立考试违规，会产生游戏内家长消息，全周跨日累计。下面强制示范一次预警，仅用于练习，不代表正式概率。',true)}`;
+        case 'chores':return `<p class="tut-lead">不是所有按钮都一直可用。先读任务标题，老师临时布置的事优先处理。</p>
+            ${tutorialTable352(['时段／事件','会出现什么','要做什么'],[['一周模式的早晨收本前','只显示补作业和抄作业','补写较慢但可靠；抄写更快但可能带来相同错误。收本后两项隐藏。'],['收发作业','检查、提交、领取或帮忙发本','按当前任务完成，不要误以为补到100%就自动发回。'],['李方琳课前检查','订正任务／交本','未订正可能扣本；到化学办公室面谈、订正后领回。'],['宣布检查卫生时','清纸屑、整理课本、清扫桌下','全部完成才合格。未完成会让老师靠近整理，可能发现手机。'],['课堂被罚站','行动受限的后排视角','戴蓓蓓罚站到本节结束；化学未答出可能罚站300秒。看提示，不靠离线抵扣。']])}
+            <p>按<kbd>V</kbd>打开“校园事务”。被扣本、需要面谈或临时卫生任务，都在状态说明中有提示。考试有单独动作规则，V不能绕过它。</p>`;
+        case 'campus':return `<p class="tut-lead">课间、体育、两次用餐与晚自习，不是同一种安全程度。</p>
+            ${tutorialTable352(['阶段','给新手的做法'],[['课间／体育／午休','利用自由时段休息、下棋、友好交流或运动。不要把课堂上的风险习惯带进来。'],['午餐与晚餐','先决定留下还是去食堂，再安排手机位置。外出后书包可能被搜；手机留包里有风险。'],['晚自习','继续观察监督者。坐讲台的家长也会抬头，巡走型则要留意脚步。'],['真正放学','确认21:40和课表进度；不要只凭一次铃声就离开。路线有倒计时，读题后操作。']])}
+            <h2>彭望梓与可选支线</h2><p>彭望梓是有天生猫耳、猫尾的友方猫娘班长，喜欢羽毛球、护食。普通友情默认可玩；“设置 → 攻略 → 攻略彭望梓”默认关闭，开启后才有情书与专属对话。上课互动仍可能被老师注意。</p>
+            ${tutorialNote352('教程不公开完整结局条件，也不会自动开启感情支线或恐怖模式。第一次只完成一条离校路线即可。')}`;
+        case 'allies':return `<p class="tut-lead">同学能提醒你，但不能代替你操作。留意他们当前是在观察、听讲还是睡眠。</p>
+            <div class="tut-grid">${tutorialCard352('王梓锐 / 体委','观察时可能提醒真实走动。听讲或睡着不望风，认真听讲时还可能带动你。')}${tutorialCard352('李司聪 / 数学课代表','观察时可能提醒真实后门；听讲或睡眠时不侦查。')}${tutorialCard352('提醒不是保证','难度越高提醒越少。同学睡觉被发现，会使这一排短时间受到额外关注。')}</div>
+            ${tutorialTable352(['教师化名','最该记住的差异'],[['何枫琳 / 语文','会走动；留意反光提示。'],['李方琳 / 化学','慢走、停声观察；有订正、重复回应和罚站。'],['王莹 / 生物','讲授通常不走动，习题课巡视；条件反射要静止。'],['戴蓓蓓 / 物理','不走动，对讲话敏感；被确认可罚到后排。'],['尹沙沙 / 英语','会走动与强化；open your eyes点名后本节不能睡。'],['郭梓晁 / 数学','不走动，对讲话、睡觉和违规低头严格。']])}
+            <p>顶部“人物”可查看更完整档案。所有已命名人物继续使用同姓、同音或近音化名，教程没有改回旧姓名或无关代号。</p>`;
+        case 'home':return `<p class="tut-lead">归家不是全程装睡。你需要在安全时累计使用手机，再在检查前完成全部隐藏步骤。</p>
+            <p>独立“归家”可直接开玩；七日模式每天成功离校后自动接入卧室。学校失败不跳到次日，夜间失败则可从夜间检查点重试。</p>
+            ${tutorialNote352('4／P拿手机 → 门边有动静 → 按当前快速反应要求完成熄屏、藏好、装睡 → 等家长完全离开。第一步完成不代表安全，尚未离开时重新亮屏仍会被发现。')}
+            <p>简单2步空格，普通3步空格，高难度使用数字按钮。全周后面的夜晚反应时间会逐步缩短，以当前弹框为准。<b>本练习只模拟一轮普通难度检查；3秒手机目标是教学值，不是正式夜晚目标。</b></p>`;
+        case 'saves':return `<p class="tut-lead">失败不等于从第一节重来。先找“从最近检查点重新出发”，不要急着点击“新的一天”。</p>
+            ${tutorialTable352(['记录','用处'],[['自动进度','每5秒有效游戏时间及关键操作保存。继续上次游戏回到最近成功保存的位置。'],['安全检查点','保留能重试的较安全节点，失败不会把它替换为失败画面。'],['手动保存／JSON导出','重要分歧另外保存。换浏览器、移动HTML或清理数据前导出备份。'],['导入／读档','在存档面板操作，恢复后先暂停并留准备时间；离线不扣游戏倒计时。']])}
+            ${tutorialNote352('本地记录不是云存档。突然断电或强制关闭不保证最后一次操作已保存；重要进度保留JSON。教程学习记录使用独立本地键，不在游戏JSON内，下面的“练习记录点”也是模拟槽位。',true)}
+            <p>按<kbd>Esc</kbd>暂停；<kbd>N</kbd>手记；<kbd>M</kbd>静音；<kbd>Alt + Enter</kbd>全屏。教程中F1打开／关闭本板块；练习中的Esc先暂停，不会把你的失误计到正式游戏。</p>`;
+        case 'graduate':return `<p class="tut-lead">不要求背住所有数值。只需分清现在应该操作、静止、收好，还是继续读题。</p>
+            <p>完成下面五道不计时小测。答错会给解释，可当场重答。完成只记录为<b>教学小测</b>，不发正式成就，不新建周目、不替换已有存档。</p>
+            <div class="tut-grid">${tutorialCard352('新玩家','退出教程，选择简单难度和快速单日，从最短的完整流程开始。')}${tutorialCard352('已有进度','退出后先回暂停页或原来的系统面板，再明确点击继续。')}${tutorialCard352('要练某个机制','随时按F1或点顶部“教程”返回；左侧可直接选择章节。')}</div>
+            <p>当前正式内容为 <b>${ENDING_COUNT} 条结局、${ACHIEVEMENTS.length} 项成就</b>。不需要在第一局集齐。新手教程不会透露各个隐藏结局的完整触发条件。</p>`;
+        default:return '';
+        }
+    }
+    const TUTORIAL_CHECKS352={
+        welcome:{q:'第一次入门，哪个起点更合适？',a:['简单难度＋快速单日','神级七日挑战','一边读档一边修改当前难度'],correct:0,why:'先用短流程学操作。快速是课时长度，难度单独选择；神级明确不可通关。'},
+        chores:{q:'只有老师宣布检查卫生后，才出现哪些动作？',a:['看别人的答案、传小抄','清纸屑、整理课本、清扫桌下','补作业、抄作业'],correct:1,why:'卫生动作只在检查任务中开放；考试动作只在考试，补写／抄写只在全周早晨收本前。'},
+        campus:{q:'去食堂前，哪件事应该先处理？',a:['把手机留包里就一定安全','先安排手机位置，再确认离开','一直坐在归家床上装睡'],correct:1,why:'外出后可能搜查书包。先读饭点选择与手机位置，留班、随身或保管的规则以面板为准。'},
+        allies:{q:'李司聪正在听讲或睡眠，还会替你侦查后门吗？',a:['不会，自己仍需看预警','会，每次危险都保证提醒','只要按空格就自动让他醒来'],correct:0,why:'只有观察状态才尝试提醒；同学帮助有概率与冷却，不能当成自动隐藏。'}
+    };
+    const TUTORIAL_FINAL352=[
+        {q:'弹框写“条件反射：不要动”，应该怎样做？',a:['准备期松手，然后保持静止','立刻连续按三次空格','打开手机查看时间'],correct:0,why:'条件反射要求静止；快速反应才是按步骤操作。'},
+        {q:'上方按钮 3 1 5 2 4，提示 4 2 5 1 3。键盘顺序是什么？',a:['4 2 5 1 3','5 4 3 2 1','1 2 3 4 5'],correct:1,why:'键盘按目标数字的左起位置，小字位置键分别是5、4、3、2、1。'},
+        {q:'考试只显示两项冒险动作，必须用一次才能交卷吗？',a:['是，先传小抄','不是，直接独立作答即可','必须先恢复普通动作'],correct:1,why:'上方的试卷答案始终保留，两项冒险动作不是必选。'},
+        {q:'归家已完成全部隐藏，家长还没走，能亮屏吗？',a:['立即拿出来不影响','只要手机目标没满就能用','不能，等脚步远去'],correct:2,why:'完成隐藏后也不能在观察阶段亮屏。等家长完全离开，再继续累计目标。'},
+        {q:'正式游戏失败后，要回到最近的安全节点，选什么？',a:['从最近检查点重新出发','新的一天','清除所有记录'],correct:0,why:'检查点用于重试。新开局会替换周目进度，清除记录则会删除更多数据。'}
+    ];
+    function tutorialBlank352(id){const feedback=({welcome:'选择你认为合适的起点。',resources:'按4或点击“拿手机”，再收好、听课和观察。',warnings:'点击“模拟后门预警”，看到反光后收好。',desk:'按R开始一组公式，也可以点击转动按钮。',exam:'可以直接独立回答练习题；也能先体验冒险预警和中止。',chores:'选择对应这一事件的动作。',campus:'先检查离开前的安排。',allies:'看清同学状态再选择。',home:'先拿手机累计3秒，再模拟家长开门。',saves:'先建立练习记录点，再模拟失败和重试。',graduate:'选择答案，不计时；答错可以重答。'})[id]||'点击“开始练习”。可无限重试，不影响正式进度。';return {kind:id,status:'ready',feedback,elapsed:0,steps:0,focus:72,boredom:60,suspicion:15,phone:false,seenPhone:false,didListen:false,didObserve:false,task:null,warning:false,void:false,answer:null,quiz:0,question:0,slot:null,checkpoint:null,clock:0,phoneTime:0};}
+    function tutorialOpen352(chapter=null){
+        if(tutorial352){if(chapter)tutorialGo352(chapter);return;}
+        const chapterId=TUTORIAL_LESSONS352.some(l=>l[0]===chapter)?chapter:tutorialRecord352.chapter;
+        const backFocus=document.activeElement;
+        // Save only the real state, once, before the teaching overlay exists.
+        if(S?.screen==='game'&&!restoring)autoSave('打开新手教程前');
+        tutorial352={chapter:chapterId,paused:false,mode:'guided',difficulty:chapterId==='numbers'?'extreme':'normal',seed:0x352a71,
+            sim:tutorialBlank352(chapterId),backFocus,viewportInert:$('viewport').inert,viewportAria:$('viewport').getAttribute('aria-hidden'),openedFromGame:S?.screen==='game'};
+        $('tutorial352').hidden=false;document.body.classList.add('tutorial-open352');
+        tutorialRender352();$('tutorialTitle352').focus({preventScroll:true});
+        $('viewport').inert=true;$('viewport').setAttribute('aria-hidden','true');
+        tutorialRecord352.chapter=chapterId;saveTutorialRecord352();lastFrame=performance.now();
+    }
+    function tutorialClose352(){
+        if(!tutorial352)return;
+        const t=tutorial352;tutorial352=null;$('tutorial352').hidden=true;$('tutorial352').classList.remove('tut-nav-open');$('tutorialNavToggle352').setAttribute('aria-expanded','false');
+        document.body.classList.remove('tutorial-open352');$('viewport').inert=t.viewportInert;
+        if(t.viewportAria===null)$('viewport').removeAttribute('aria-hidden');else $('viewport').setAttribute('aria-hidden',t.viewportAria);
+        lastFrame=performance.now();
+        // Never unpause an exam / chase / bedroom behind the learner's back.
+        if(S?.screen==='game'&&!modal)openModal('pause');
+        else if(modal)$('modalClose').focus({preventScroll:true});
+        else if(t.backFocus instanceof HTMLElement&&t.backFocus.isConnected)t.backFocus.focus({preventScroll:true});
+        renderUI();
+    }
+    function tutorialGo352(id){
+        if(!tutorial352||!TUTORIAL_LESSONS352.some(l=>l[0]===id))return;
+        tutorial352.chapter=id;tutorial352.paused=false;tutorial352.sim=tutorialBlank352(id);
+        if(id==='space'&&!['easy','normal'].includes(tutorial352.difficulty))tutorial352.difficulty='normal';
+        if(id==='numbers'&&!['hard','hell','extreme','god'].includes(tutorial352.difficulty))tutorial352.difficulty='extreme';
+        if(id==='home')tutorial352.difficulty='normal';
+        tutorialRecord352.chapter=id;saveTutorialRecord352();$('tutorial352').classList.remove('tut-nav-open');$('tutorialNavToggle352').setAttribute('aria-expanded','false');
+        tutorialRender352();$('tutorialTitle352').focus({preventScroll:true});
+    }
+    function tutorialMark352(practiced=false){
+        if(!tutorial352)return;const id=tutorial352.chapter;
+        if(!tutorialRecord352.read.includes(id))tutorialRecord352.read.push(id);
+        if(practiced&&!tutorialRecord352.passed.includes(id))tutorialRecord352.passed.push(id);
+        if(id==='graduate'&&practiced&&!tutorialRecord352.completedAt)tutorialRecord352.completedAt=new Date().toISOString();
+        saveTutorialRecord352();tutorialNav352();
+    }
+    function tutorialNav352(){
+        if(!tutorial352)return;
+        $('tutorialNav352').innerHTML='<p class="tut-nav-label">章节目录 / 可自由跳转</p>'+TUTORIAL_LESSONS352.map(([id,title,sub,group],i)=>
+            `<button data-tut-chapter="${id}" ${id===tutorial352.chapter?'aria-current="step"':''} title="${esc(sub)}"><span class="tut-num">${String(i+1).padStart(2,'0')}</span><span>${title}</span><span class="tut-done" aria-label="${tutorialRecord352.passed.includes(id)?'练习完成':tutorialRecord352.read.includes(id)?'已读':'未读'}">${tutorialRecord352.passed.includes(id)?'练':tutorialRecord352.read.includes(id)?'✓':'·'}</span></button>`).join('');
+        $('tutorialProgress352').textContent=`已读 ${tutorialRecord352.read.length} / ${TUTORIAL_LESSONS352.length}　·　练习／小测 ${tutorialRecord352.passed.length} / ${TUTORIAL_LESSONS352.length}`;
+        $('tutorialProgressBar352').style.width=(tutorialRecord352.read.length/TUTORIAL_LESSONS352.length*100)+'%';
+        const index=TUTORIAL_LESSONS352.findIndex(l=>l[0]===tutorial352.chapter);
+        $('tutorialPrev352').disabled=index===0;
+        $('tutorialNext352').textContent=index===TUTORIAL_LESSONS352.length-1?'返回游戏':'下一节 →';
+    }
+    function tutorialRender352(){
+        if(!tutorial352)return;const t=tutorial352,l=TUTORIAL_LESSONS352.find(x=>x[0]===t.chapter),i=TUTORIAL_LESSONS352.indexOf(l);
+        $('tutorialMain352').innerHTML=`<div id="tutorialStorage352" class="tut-alert" ${tutorialStorage352?'hidden':''}>本地教学记录暂不可用，仍可正常练习。</div><div class="tut-eyebrow">${l[3]} / ${String(i+1).padStart(2,'0')} · ${TUTORIAL_LESSONS352.length} CHAPTERS</div><h1 id="tutorialTitle352" tabindex="-1">${l[1]}</h1><div class="tut-controls"><button data-tut-action="practice">直接到本节练习 ↓</button></div>${tutorialContent352(l[0])}<section id="lessonSim352" class="tut-sim" aria-label="独立教学练习" tabindex="-1"><div class="tut-sim-head"><strong>练习区 · 不影响存档</strong><span class="tut-sim-tag">SAFE PRACTICE / 可重试</span></div><div class="tut-sim-body" id="tutorialSimBody352"></div></section><div class="tut-controls"><button data-tut-action="mark">标记本节已读</button><span class="tut-small">已读与练习完成分别记录，可以先读后练。</span></div>`;
+        $('tutorialMain352').scrollTop=0;tutorialNav352();tutorialRenderSim352();
+    }
+    function tutorialMiniRoom352(home=false){return `<div class="tut-mini-room${home?' tut-bedroom':''}" aria-hidden="true"><div class="tut-mini-board">${home?'22:10 / 教学卧室':'高二（2）班 / 教学教室'}</div>${home?'':'<div class="tut-mini-person"></div>'}<div class="tut-mini-door" id="tutDoor352"></div><div class="tut-mini-label" id="tutSceneLabel352">${home?'门还关着':'先留意脚步与反光'}</div></div>`;}
+    function tutorialRapidHTML352(c,home=false){
+        const space=c.mode==='space',labels=home?(c.count===2?['熄屏藏好','躺下装睡']:['熄灭屏幕','藏好手机','躺下装睡']):rapidLabels(c);
+        return `<div class="tut-timer"><span id="tutTimerLabel352">准备</span><strong id="tutClock352">—</strong></div><div class="tut-timer-track"><i id="tutTimerBar352"></i></div><div class="tut-number-row ${space?'space':''}" style="--count:${c.count}">${c.layout.map((n,i)=>`<button data-tut-slot="${i}" aria-label="${space?'步骤'+(i+1)+' '+labels[i]:'数字'+n+'，左起第'+(i+1)+'位，键'+(i+1)}"><b>${space?labels[i]:n}</b><kbd>${space?'空格':'键 '+(i+1)}</kbd></button>`).join('')}</div><p class="tut-small" style="text-align:center">${space?'逐次按下并松开，不要长按':'下方提示：按从左到右的目标顺序完成'}</p><div class="tut-sequence">${c.sequence.map((n,i)=>`<span data-tut-prompt="${i}">${space?'空格':n}</span>`).join('')}</div>${!space&&tutorial352.mode==='guided'?`<div class="tut-keymap" id="tutKeymap352">教学辅助 · 键盘完整顺序：${c.sequence.map(n=>c.layout.indexOf(n)+1).join(' → ')}<br>正式计时会隐藏这一行，只保留题面的大数字和位置小字。</div>`:''}`;
+    }
+    function tutorialRenderSim352(){
+        if(!tutorial352)return;const t=tutorial352,p=t.sim,id=t.chapter;
+        let html='';
+        const quiz=TUTORIAL_CHECKS352[id];
+        if(quiz)html=tutorialQuizHtml352(quiz.q,quiz.a);
+        else if(id==='resources')html=`<div class="tut-resource-row"><div>怀疑<b id="tutSusp352">15</b></div><div>专注<b id="tutFocus352">72</b></div><div>无聊<b id="tutBore352">60</b></div></div><div class="tut-controls"><button data-tut-act="listen">1 · 听课</button><button data-tut-act="phone">4 · 拿手机</button><button data-tut-act="observe">5 · 观察</button><button data-tut-act="hide">空格 · 收好</button></div><p class="tut-small">体验手机 → 收好 → 听课 → 观察四个操作。数值为方向示意，不是正式速率。</p>`;
+        else if(id==='warnings')html=tutorialMiniRoom352()+`<div class="tut-controls"><button data-tut-act="watch-start">模拟后门预警</button><button data-tut-act="hide">空格 · 先收好</button></div><p class="tut-small">预警出现后，在被确认前收好。失败也只影响这一轮演示。</p>`;
+        else if(id==='space'||id==='numbers'){
+            const keys=id==='space'?['easy','normal']:['hard','hell','extreme','god'];
+            html=`<div class="tut-controls"><label>练习难度 <select id="tutDifficulty352" aria-label="练习难度">${keys.map(k=>`<option value="${k}" ${t.difficulty===k?'selected':''}>${DIFFICULTIES[k].label}</option>`).join('')}</select></label><label>计时方式 <select id="tutMode352" aria-label="练习计时方式"><option value="guided" ${t.mode==='guided'?'selected':''}>慢速讲解（不超时）</option><option value="timed" ${t.mode==='timed'?'selected':''}>正式计时</option></select></label></div><div id="tutRapidArea352">${p.c?tutorialRapidHTML352(p.c):'<p>先读好操作方式，再开始。数字布局和目标顺序各自排列。</p>'}</div><div class="tut-controls"><button class="tut-primary" data-tut-action="start">${p.c?'重新出题':'开始练习'}</button></div>`;
+        }
+        else if(id==='still')html=`<div class="tut-freeze" id="tutFreeze352"><strong id="tutFreezeTitle352">先读提示</strong><span id="tutFreezeClock352">普通难度 / 松手1.4秒，再静止1.4秒</span></div><div class="tut-controls"><button class="tut-primary" data-tut-action="start">开始静止练习</button></div>`;
+        else if(id==='desk')html=`<p><b>按这个公式：</b> R → U → R′ → U′</p><div class="tut-sequence">${['R','U',"R'","U'"].map((s,i)=>`<span data-tut-cube="${i}">${s.replace("'",'′')}</span>`).join('')}</div><div class="tut-controls">${[['R','R'],['U','U'],["R'",'R′ / Q'],["U'",'U′ / E']].map(([v,s])=>`<button data-tut-turn="${esc(v)}">${s}</button>`).join('')}</div><p class="tut-small">键盘 R、U、Shift+R、Shift+U；或 R、U、Q、E。输入错误只重置教学公式。</p>`;
+        else if(id==='exam')html=`${tutorialMiniRoom352()}<p><b>练习试卷：2＋2＝？</b>（独立答题即可完成。）</p><div class="tut-controls">${['2','3','4','5'].map((n,i)=>`<button data-tut-exam-answer="${i}"><kbd>${i+1}</kbd> ${n}</button>`).join('')}</div><hr style="border:0;border-top:1px solid #4b6045"><p class="tut-small">考试专用动作 · 非必选</p><div class="tut-controls"><button data-tut-exam="peek">A · 看别人的答案</button><button data-tut-exam="slip">S · 传小抄</button></div><p class="tut-small">正在冒险时按空格或点同一按钮中止。预警约0.8秒出现，1.8秒继续动作会被确认。</p>`;
+        else if(id==='home')html=`${tutorialMiniRoom352(true)}<p id="tutHomeGoal352">教学手机目标：0.0 / 3.0秒</p><div id="tutHomeRapid352">${p.c?tutorialRapidHTML352(p.c,true):''}</div><div class="tut-controls"><button data-tut-act="home-phone">4 / P · 拿出手机</button><button data-tut-act="home-hide">空格 · 开始多步隐藏</button><button data-tut-act="home-check">模拟家长开门</button></div><p class="tut-small">本轮为慢速讲解，不超时。手机满3秒后模拟开门，完成三步，再等观察结束。正式归家不会为你暂停检查。</p>`;
+        else if(id==='saves')html=`<div class="tut-slot"><div><span class="tut-badge">仅教学 / 不是真实存档</span><strong id="tutSlot352">还没有练习记录点</strong></div><span>▣</span></div><div class="tut-controls"><button data-tut-act="save-demo">建立练习记录点</button><button data-tut-act="fail-demo">模拟失败</button><button data-tut-act="restore-demo">从练习记录点重试</button></div><p>顺序：建立记录点 → 模拟失败 → 重试。这里只保存一个教学变量，不导入、导出或覆盖你的游戏记录。</p>`;
+        else if(id==='graduate'){
+            const q=TUTORIAL_FINAL352[Math.min(p.question,TUTORIAL_FINAL352.length-1)];
+            html=p.status==='passed'?`<h2>小测完成。可以出发了。</h2><p>已答对5题。退出后不会自动新开游戏；已有周目仍在暂停或原系统面板中。</p><div class="tut-controls"><button class="tut-primary" data-tut-action="close">回到游戏</button></div>`:`<span class="tut-small">第 ${p.question+1} / ${TUTORIAL_FINAL352.length} 题 · 不计时</span>${tutorialQuizHtml352(q.q,q.a)}`;
+        }
+        html+=`<div id="tutFeedback352" class="tut-feedback" role="status" aria-live="polite">${esc(p.feedback)}</div><div class="tut-controls"><button data-tut-action="reset">重置本节练习</button><span class="tut-small">随时跳章；已读和已完成记录不会因练习重置而清空。</span></div>`;
+        $('tutorialSimBody352').innerHTML=html;tutorialPaint352();
+    }
+    function tutorialMessage352(text){if(!tutorial352)return;tutorial352.sim.feedback=text;const e=$('tutFeedback352');if(e){e.textContent=text;e.dataset.result=tutorial352.sim.status;}}
+    function tutorialPass352(text){if(!tutorial352)return;tutorial352.sim.status='passed';tutorialMessage352(text);tutorialMark352(true);tutorialPaint352();}
+    function tutorialFail352(text){if(!tutorial352)return;tutorial352.sim.status='failed';tutorialMessage352(text+' 这只是练习，可立即重置重试。');tutorialPaint352();}
+    function tutorialRandom352(){tutorial352.seed=(Math.imul(tutorial352.seed,1664525)+1013904223)>>>0;return tutorial352.seed/4294967296;}
+    function tutorialBegin352(){
+        if(!tutorial352)return;const t=tutorial352,id=t.chapter;t.paused=false;t.sim=tutorialBlank352(id);const p=t.sim;p.status='running';
+        if(id==='space'||id==='numbers'){
+            p.c=createRapidChallenge({difficulty:t.difficulty,classIndex:0,extraUntil:0,t:0},{tutorial:false,wasPhone:true},tutorialRandom352);
+            if(id==='numbers'&&t.difficulty==='extreme'&&t.mode==='guided'){p.c.layout=[3,1,5,2,4];p.c.sequence=[4,2,5,1,3];}
+            p.feedback=`先准备${p.c.grace.toFixed(1)}秒，之后按提示。${t.mode==='guided'?'本轮不超时，可慢慢找到位置。':'本轮使用正式基础时间；失误只影响教学。'}`;
+        }else if(id==='still'){p.c=createReflexChallenge({difficulty:'normal',phase:'CLASS'});p.feedback='现在松开手。等待准备结束，再保持静止。';}
+        tutorialRenderSim352();$('lessonSim352').scrollIntoView({block:'start'});$('lessonSim352').focus({preventScroll:true});
+    }
+    function tutorialSlot352(slot){
+        if(!tutorial352||tutorial352.paused)return;const t=tutorial352,p=t.sim,c=p.c;
+        if(!c||c.type!=='hide'||p.status!=='running'||c.elapsed<c.grace||!Number.isInteger(slot)||slot<0||slot>=c.count)return;
+        if(c.layout[slot]!==c.sequence[c.step]){
+            if(c.slips>=c.allowance){tutorialFail352('第二次误按。看清大数字与位置小字的区别。');return;}
+            c.slips++;c.remaining-=c.penalty;
+            if(t.mode==='timed'&&t.chapter!=='home'&&c.remaining<=0){tutorialFail352('误按扣时后已没有剩余时间。');return;}
+            tutorialMessage352('这次按错了，正确步骤保留。数字键按左起位置，不是直接抄目标数字。');
+        }else{
+            c.step++;
+            if(c.step>=c.count){
+                if(t.chapter==='home'){
+                    p.phone=false;p.sleep=true;p.c=null;p.watching=1.6;
+                    tutorialMessage352('三步已全部完成：已经装睡。家长还在门口观察，先不要亮屏。');tutorialRenderSim352();
+                }else tutorialPass352('全部步骤完成。记住：正式游戏必须整套完成，不能只做第一步。');
+            }else tutorialMessage352(`已完成 ${c.step}/${c.count} 步，继续下一个提示。`);
+        }
+        tutorialPaint352();
+    }
+    function tutorialMotion352(e){
+        const t=tutorial352,p=t?.sim,c=p?.c;if(!t||t.paused||t.chapter!=='still'||p.status!=='running'||!c)return;
+        const target=e.target instanceof Element?e.target:null;
+        if(target?.closest('.tut-top,.tut-nav,.tut-footer,[data-tut-action]')){c.motionAnchor=null;return;}
+        if(['keyup','pointerup'].includes(e.type)||e.repeat||e.isComposing||e.ctrlKey||e.metaKey||e.altKey)return;
+        if(e.type==='keydown'&&['Shift','Alt','Control','Meta','Escape','Tab','CapsLock','F1','F11','F12'].includes(e.key))return;
+        if(c.elapsed<c.grace){c.motionAnchor=null;return;}
+        if(e.type==='pointermove'){
+            const point={x:e.clientX,y:e.clientY};if(!c.motionAnchor){c.motionAnchor=point;return;}
+            if(Math.hypot(point.x-c.motionAnchor.x,point.y-c.motionAnchor.y)<Math.max(8,DIFFICULTIES.normal.jitter*Math.min(innerWidth/1600,innerHeight/900)))return;
+            c.motionAnchor=point;
+        }else if(e.type==='wheel'&&Math.abs(e.deltaX||0)+Math.abs(e.deltaY||0)<20)return;
+        if(c.elapsed-c.lastMotionAt<.35)return;c.lastMotionAt=c.elapsed;
+        if(c.slips<c.allowance){c.slips++;c.grace=c.elapsed+.35;c.remaining=c.freezeFor+.35;c.total=c.elapsed+c.remaining;c.motionAnchor=null;tutorialMessage352('已消耗一次容错。再给0.35秒松手，之后重新保持完整的1.4秒静止。');}
+        else tutorialFail352('又出现了明显动作。条件反射不需要点击或按数字。');
+        tutorialPaint352();
+    }
+    function tutorialExamAction352(kind){
+        const p=tutorial352?.sim;if(tutorial352?.chapter!=='exam'||tutorial352.paused||p.status==='passed'||p.void||p.status==='failed')return;
+        if(p.task?.kind===kind){p.task=null;p.warning=false;tutorialMessage352('已停止冒险动作，没有形成确认。现在可独立回答上方试题。');return;}
+        if(p.task)return;p.status='running';p.task={kind,elapsed:0};tutorialMessage352('演示正在进行。留意讲台的变化；随时按空格中止。');
+    }
+    function tutorialAnswer352(n){
+        const t=tutorial352,p=t?.sim;if(!t||t.paused||p.status==='passed')return;
+        const q=t.chapter==='graduate'?TUTORIAL_FINAL352[p.question]:TUTORIAL_CHECKS352[t.chapter];if(!q||n<0||n>=q.a.length)return;
+        if(n!==q.correct){tutorialMessage352('再想一想：'+q.why);return;}
+        if(t.chapter==='graduate'){
+            p.question++;
+            if(p.question>=TUTORIAL_FINAL352.length){tutorialPass352('五题通过。学习结果只记在本地教学记录，不影响游戏档案。');tutorialRenderSim352();}
+            else{p.feedback='上一题正确：'+q.why;tutorialRenderSim352();}
+        }else tutorialPass352('回答正确。'+q.why);
+    }
+    function tutorialAct352(action){
+        const t=tutorial352,p=t?.sim;if(!t||t.paused)return;
+        if(p.status==='failed'&&action!=='restore-demo')return;
+        if(t.chapter==='resources'){
+            if(action==='phone'){p.phone=true;p.seenPhone=true;p.suspicion=Math.min(95,p.suspicion+16);p.boredom=Math.max(0,p.boredom-14);tutorialMessage352('手机让无聊下降，但风险增加。现在按空格收好。');}
+            if(action==='hide'){p.phone=false;p.hiddenOnce=p.seenPhone;tutorialMessage352('已经收好。正式游戏的手机热度会慢慢下降，不是立即清零。');}
+            if(action==='listen'){p.phone=false;p.didListen=true;p.suspicion=Math.max(0,p.suspicion-10);p.focus=Math.min(100,p.focus+8);p.boredom=Math.min(100,p.boredom+6);tutorialMessage352('听课能恢复状态，但会增加无聊。接着按5观察。');}
+            if(action==='observe'){p.phone=false;p.didObserve=true;tutorialMessage352('已观察老师。注意画面与文字，而不只等同学提醒。');}
+            if(p.seenPhone&&p.hiddenOnce&&p.didListen&&p.didObserve)tutorialPass352('四项体验完成。怀疑、专注、无聊要一起看，危险来时先收好。');
+        }else if(t.chapter==='warnings'){
+            if(action==='watch-start'){p.status='running';p.elapsed=0;p.warning=false;p.phone=true;tutorialMessage352('模拟你正在使用手机。稍后后门反光会变化。');}
+            else if(action==='hide'){if(!p.warning){tutorialMessage352('提前收好是安全习惯。点击“模拟后门预警”后再练一次响应。');p.phone=false;return;}p.phone=false;tutorialPass352('在被确认前收好。已经登记的目击不能被之后的隐藏撤销。');}
+        }else if(t.chapter==='home'){
+            if(action==='home-phone'){
+                if(p.sleep&&p.watching>0){tutorialFail352('家长还没有离开，你重新亮屏了。');return;}
+                if(p.c){tutorialMessage352('正在多步隐藏，先完成全部步骤。');return;}
+                if(p.status==='passed')return;p.status='running';p.phone=true;p.sleep=false;tutorialMessage352('屏幕亮起，累计教学目标3秒。之后点击“模拟家长开门”。');
+            }else if(action==='home-check'){
+                if(p.phoneTime<3||!p.phone){tutorialMessage352('先拿出手机并累计3秒教学时间，再练完整一轮检查。');return;}
+                p.parent=true;p.handle=1.15;p.status='running';tutorialMessage352('门把手开始转动！按空格或点击多步隐藏按钮。');
+            }else if(action==='home-hide'){
+                if(p.c){if(p.c.mode==='space')tutorialSlot352(p.c.step);return;}
+                if(!p.parent){tutorialMessage352('先完成3秒手机目标，再模拟家长开门。正式游戏也可以提前主动藏好。');return;}
+                p.phone=false;p.c=createRapidChallenge({difficulty:'normal',classIndex:-1,t:0,extraUntil:0},{home34:true,parent:true},tutorialRandom352);
+                p.c.window=3.6;p.c.total=p.c.remaining=p.c.grace+p.c.window;tutorialMessage352('按当前步骤完成熄屏、藏手机、装睡。这轮慢速讲解不超时。');tutorialRenderSim352();$('lessonSim352').focus({preventScroll:true});
+            }
+        }else if(t.chapter==='saves'){
+            if(action==='save-demo'){p.checkpoint={label:'模拟：课间开始 / 怀疑15',suspicion:15};p.status='running';tutorialMessage352('练习记录点已建立。接着点击“模拟失败”。');}
+            if(action==='fail-demo'){if(!p.checkpoint){tutorialMessage352('先建立一个练习记录点。');return;}p.status='failed';tutorialMessage352('模拟失败，但之前的安全记录点仍在。现在从记录点重试。');}
+            if(action==='restore-demo'){if(!p.checkpoint||p.status!=='failed'){tutorialMessage352('按建立记录点 → 模拟失败 → 重试的顺序体验。');return;}tutorialPass352('已经回到模拟课间，怀疑恢复为15。真实游戏通过“存档”或失败页的检查点按钮操作。');}
+        }
+        tutorialPaint352();
+    }
+    function tutorialPause352(force=null){
+        if(!tutorial352)return;tutorial352.paused=typeof force==='boolean'?force:!tutorial352.paused;
+        if(tutorial352.sim.c?.type==='freeze')tutorial352.sim.c.motionAnchor=null;
+        lastFrame=performance.now();tutorialPaint352();
+    }
+    function tutorialCommand352(command){
+        if(!tutorial352)return;const t=tutorial352,i=TUTORIAL_LESSONS352.findIndex(l=>l[0]===t.chapter);
+        if(command==='close')tutorialClose352();
+        else if(command==='pause')tutorialPause352();
+        else if(command==='fullscreen')toggleFullscreen();
+        else if(command==='nav'){$('tutorial352').classList.toggle('tut-nav-open');$('tutorialNavToggle352').setAttribute('aria-expanded',String($('tutorial352').classList.contains('tut-nav-open')));}
+        else if(command==='mark'){tutorialMark352();tutorialMessage352('本节已读。练习仍可继续，完成后另记“练”。');}
+        else if(command==='prev'&&i>0)tutorialGo352(TUTORIAL_LESSONS352[i-1][0]);
+        else if(command==='next'){if(i===TUTORIAL_LESSONS352.length-1)tutorialClose352();else tutorialGo352(TUTORIAL_LESSONS352[i+1][0]);}
+        else if(command==='practice'){$('lessonSim352').scrollIntoView({block:'start'});$('lessonSim352').focus({preventScroll:true});}
+        else if(command==='start')tutorialBegin352();
+        else if(command==='reset'){t.sim=tutorialBlank352(t.chapter);t.paused=false;tutorialRenderSim352();}
+    }
+    function tutorialTick352(dt){
+        const t=tutorial352;if(!t||t.paused||document.hidden)return;const p=t.sim;
+        if(!Number.isFinite(dt)||dt<=0)return;
+        if(p.status==='running'){
+            p.elapsed+=dt;
+            const c=p.c;
+            if(c){
+                const before=c.elapsed;c.elapsed+=dt;
+                if(c.type==='hide'){
+                    const counting=t.mode==='timed'&&t.chapter!=='home';
+                    if(counting)c.remaining-=dt;
+                    else c.remaining=c.elapsed<c.grace?c.window+c.grace-c.elapsed:c.window;
+                    if(counting&&c.remaining<=0)tutorialFail352('时间到了。可先用不超时讲解，再回来挑战正式计时。');
+                }else if(c.type==='freeze'){
+                    c.remaining-=dt;
+                    if(c.remaining<=0)tutorialPass352('静止完成。你没有点击任何答案，这正是这项挑战的正确操作。');
+                }
+            }
+            if(t.chapter==='warnings'){
+                if(!p.warning&&p.elapsed>=1){p.warning=true;tutorialMessage352('后门反光出现！现在按空格收好。');}
+                if(p.elapsed>=4&&p.phone)tutorialFail352('演示中持续亮屏已被看到。下次有反光就先停止。');
+            }
+            if(t.chapter==='exam'&&p.task){
+                p.task.elapsed+=dt;
+                if(p.task.elapsed>=.8&&!p.warning){p.warning=true;tutorialMessage352('老师停止翻页，看向你。按空格或同一动作按钮立刻中止。');}
+                if(p.task.elapsed>=1.8){p.task=null;p.void=true;tutorialFail352('继续冒险被确认，本题作废。三次独立确认会产生正式游戏内通知；此处不登记。');}
+            }
+            if(t.chapter==='home'){
+                if(p.phone&&!p.parent)p.phoneTime=Math.min(3,(p.phoneTime||0)+dt);
+                if(p.parent&&!p.c&&!p.sleep&&p.handle!=null){p.handle-=dt;if(p.handle<=0)tutorialAct352('home-hide');}
+                if(p.sleep&&p.watching>0){p.watching=Math.max(0,p.watching-dt);if(p.watching===0)tutorialPass352('这一轮安全完成：手机目标达成，三步全做完，并等到了家长离开。');}
+            }
+        }
+        tutorialPaint352();
+    }
+    function tutorialPaint352(){
+        if(!tutorial352)return;const t=tutorial352,p=t.sim,c=p.c;
+        const pause=$('tutorialPause352');if(pause){pause.textContent=innerWidth<500?(t.paused?'继续':'暂停'):(t.paused?'继续练习':'暂停练习');pause.setAttribute('aria-label',t.paused?'继续练习':'暂停练习');pause.setAttribute('aria-pressed',String(t.paused));}
+        $('tutorialStatus352').textContent=t.paused?'教学已暂停':'独立教学 · 正式进度暂停';
+        if($('tutFeedback352')){$('tutFeedback352').dataset.result=p.status;if(t.paused)$('tutFeedback352').textContent='练习已暂停。点击顶部“继续练习”后恢复，不计算离开的时间。';else $('tutFeedback352').textContent=p.feedback;}
+        if($('tutSusp352')){$('tutSusp352').textContent=p.suspicion;$('tutFocus352').textContent=p.focus;$('tutBore352').textContent=p.boredom;}
+        if($('tutDoor352'))$('tutDoor352').classList.toggle('watch',!!p.warning||!!p.parent&&p.status!=='passed');
+        if($('tutSceneLabel352'))$('tutSceneLabel352').textContent=t.chapter==='home'?(p.status==='passed'?'脚步远去，可以继续下一轮':p.sleep?'家长还在观察，别亮屏':p.parent?'门把手转动':p.phone?'屏幕亮起':'手机收着，门关着'):t.chapter==='exam'?(p.warning?'讲台注视：立即停止冒险动作':'老师坐在讲台翻阅试卷'):p.warning?'后门反光！先收好':'教室暂时平静';
+        if($('tutHomeGoal352'))$('tutHomeGoal352').textContent=`教学手机目标：${(p.phoneTime||0).toFixed(1)} / 3.0秒`;
+        if($('tutSlot352'))$('tutSlot352').textContent=p.checkpoint?p.checkpoint.label:'还没有练习记录点';
+        if(t.chapter==='desk')$$('[data-tut-cube]').forEach(e=>{const i=Number(e.dataset.tutCube);e.classList.toggle('complete',i<p.steps);if(i===p.steps)e.setAttribute('aria-current','step');else e.removeAttribute('aria-current');});
+        if(c?.type==='hide'){
+            const pre=c.elapsed<c.grace,blocked=t.paused||pre||p.status!=='running';
+            if($('tutClock352')){$('tutClock352').textContent=pre?(c.grace-c.elapsed).toFixed(1)+'s':t.mode==='guided'||t.chapter==='home'?'不限时':Math.max(0,Math.min(c.window,c.remaining)).toFixed(1)+'s';$('tutTimerLabel352').textContent=pre?'准备 · 此时按键不计步':`完成 ${c.step}/${c.count} 步`;}
+            if($('tutTimerBar352'))$('tutTimerBar352').style.width=(pre||t.mode==='guided'||t.chapter==='home'?100:Math.max(0,c.remaining)/c.window*100)+'%';
+            $$('[data-tut-slot]').forEach(e=>{const i=Number(e.dataset.tutSlot);e.disabled=blocked||(c.mode==='space'&&i!==c.step);e.classList.toggle('tut-hit',c.sequence.slice(0,c.step).includes(c.layout[i]));});
+            $$('[data-tut-prompt]').forEach(e=>{const i=Number(e.dataset.tutPrompt);e.classList.toggle('complete',i<c.step);if(i===c.step)e.setAttribute('aria-current','step');else e.removeAttribute('aria-current');});
+        }
+        if(c?.type==='freeze'&&$('tutFreezeTitle352')){
+            const pre=c.elapsed<c.grace;$('tutFreezeTitle352').textContent=p.status==='passed'?'完成静止':p.status==='failed'?'再试一次':t.paused?'已暂停':pre?'松开手':'保持静止';
+            $('tutFreezeClock352').textContent=`${Math.max(0,pre?c.grace-c.elapsed:c.remaining).toFixed(1)} 秒 · 剩余容错 ${c.allowance-c.slips}`;
+        }
+        // Only practise controls pause; navigation/reset/system controls stay available.
+        $$('[data-tut-act],[data-tut-turn],[data-tut-answer],[data-tut-exam],[data-tut-exam-answer]').forEach(e=>{e.disabled=t.paused||p.status==='passed'||p.status==='failed'&&!(t.chapter==='saves'&&e.dataset.tutAct==='restore-demo');});
+    }
+    function tutorialCube352(turn){
+        const t=tutorial352,p=t?.sim;if(!t||t.chapter!=='desk'||t.paused||p.status==='passed')return;
+        const seq=['R','U',"R'","U'"];
+        if(turn===seq[p.steps]){p.steps++;if(p.steps===seq.length)tutorialPass352('R U R′ U′ 已完成。正式游戏中等待归位、留意老师，不要一直低头。');else tutorialMessage352(`已接收 ${turn.replace("'",'′')}。下一步：${seq[p.steps].replace("'",'′')}。`);}
+        else{p.steps=0;tutorialMessage352('顺序不对，教学公式重新开始：R → U → R′ → U′。');}
+        tutorialPaint352();
+    }
+    function tutorialExamAnswer352(index){const t=tutorial352,p=t?.sim;if(!t||t.chapter!=='exam'||t.paused||p.status==='passed')return;
+        if(p.void){tutorialMessage352('本轮示范题已作废，请重置后独立回答。');return;}
+        p.task=null;p.warning=false;
+        if(index===2)tutorialPass352('独立作答正确。考试的两项冒险动作不是必选，直接交卷就可以。');
+        else tutorialMessage352('2＋2等于4。注意数字1—4代表选项位置，所以键盘应按3。');
+    }
+    function tutorialKey352(e){
+        if(!tutorial352)return;const t=tutorial352,p=t.sim,code=normalizedKeyCode(e),target=e.target instanceof Element?e.target:null;
+        e.stopImmediatePropagation();
+        if(e.ctrlKey||e.metaKey)return;
+        if(e.altKey){if(code==='Enter'){e.preventDefault();if(!e.repeat)toggleFullscreen();}return;}
+        if(e.isComposing||e.keyCode===229)return;
+        if(code==='F1'){e.preventDefault();if(!e.repeat)tutorialClose352();return;}
+        if(code==='Escape'){e.preventDefault();if(!e.repeat){if($('tutorial352').classList.contains('tut-nav-open')){$('tutorial352').classList.remove('tut-nav-open');$('tutorialNavToggle352').setAttribute('aria-expanded','false');return;}
+            if(p.status==='running'||t.paused)tutorialPause352();else tutorialClose352();}return;}
+        if(code==='Tab'){
+            const els=[...$('tutorial352').querySelectorAll('button:not(:disabled),select:not(:disabled),[tabindex="0"]')].filter(el=>el.getClientRects().length&&!el.closest('[hidden]'));
+            if(!els.length)return;const first=els[0],last=els[els.length-1];
+            if(e.shiftKey&&(document.activeElement===first||!els.includes(document.activeElement))){e.preventDefault();last.focus();}
+            else if(!e.shiftKey&&(document.activeElement===last||!els.includes(document.activeElement))){e.preventDefault();first.focus();}return;
+        }
+        if(target?.closest('input,textarea,select,[contenteditable="true"]'))return;
+        if(e.repeat){e.preventDefault();return;}
+        // Keyboard activation of navigation/system controls never becomes a drill input.
+        const system=target?.closest('button[data-tut-action],button[data-tut-chapter]');
+        if(system&&(code==='Space'||code==='Enter')){e.preventDefault();system.click();return;}
+        if(t.paused){if(/^Key|^Digit|^Numpad|Space|Enter/.test(code))e.preventDefault();return;}
+        if(t.chapter==='still'){tutorialMotion352(e);if(code==='Space')e.preventDefault();return;}
+        const n=/^(Digit|Numpad)[0-9]$/.test(code)?Number(code.slice(-1)):0;
+        if(p.c?.type==='hide'){
+            if(code==='Space'){e.preventDefault();if(p.c.mode==='space')tutorialSlot352(p.c.step);return;}
+            if(n){e.preventDefault();if(p.c.mode==='sequence'&&!e.shiftKey)tutorialSlot352(n-1);return;}
+        }
+        if(t.chapter==='desk'){const turn=cubeTurnFromKey(e);if(turn){e.preventDefault();tutorialCube352(turn);return;}}
+        if(t.chapter==='exam'){
+            if(code==='Space'){e.preventDefault();p.task=null;p.warning=false;tutorialMessage352('已停止冒险动作。仍可独立答题。');tutorialPaint352();return;}
+            if(['KeyA','KeyS'].includes(code)){e.preventDefault();tutorialExamAction352(code==='KeyA'?'peek':'slip');return;}
+            if(n>=1&&n<=4){e.preventDefault();tutorialExamAnswer352(n-1);return;}
+        }
+        if(t.chapter==='resources'){
+            const a=({Digit1:'listen',Numpad1:'listen',Digit4:'phone',Numpad4:'phone',Digit5:'observe',Numpad5:'observe',Space:'hide'})[code];
+            if(a){e.preventDefault();tutorialAct352(a);return;}
+        }
+        if(t.chapter==='warnings'&&code==='Space'){e.preventDefault();tutorialAct352('hide');return;}
+        if(t.chapter==='home'){
+            if(['KeyP','Digit4','Numpad4'].includes(code)){e.preventDefault();tutorialAct352('home-phone');return;}
+            if(code==='Space'){e.preventDefault();tutorialAct352('home-hide');return;}
+        }
+        if(n&&(TUTORIAL_CHECKS352[t.chapter]||t.chapter==='graduate')){e.preventDefault();tutorialAnswer352(n-1);return;}
+        if(code==='Enter'||code==='Space'){
+            const b=target?.closest('#tutorial352 button');if(b){e.preventDefault();b.click();}else if(code==='Space')e.preventDefault();
+        }
+    }
+    function installTutorial352(){
+        loadTutorialRecord352();
+        $('homeStart').insertAdjacentHTML('afterend','<button id="tutorialStart352" class="tutorial-launch352" data-open-tutorial352="1">新手教程 <small>从零开始 · 讲解＋安全练习 ↗</small></button>');
+        $('charactersBtn').insertAdjacentHTML('beforebegin','<button id="tutorialBtn352" title="新手教程 / F1" data-open-tutorial352="1">教程</button>');
+        const homeNav=document.querySelector('.home-header nav');if(homeNav)homeNav.insertAdjacentHTML('afterbegin','<button data-open-tutorial352="1">教程</button>');
+        document.body.insertAdjacentHTML('beforeend','<button id="tutorialQuickEntry352" data-open-tutorial352="1" aria-label="打开新手教程">新手教程 · 从这里学</button>');
+        document.body.insertAdjacentHTML('beforeend',`<section id="tutorial352" hidden role="dialog" aria-modal="true" aria-labelledby="tutorialBrand352"><div class="tut-shell"><header class="tut-top"><div class="tut-brand"><small>THE LAST CLASS / BEGINNER CLASSROOM</small><strong id="tutorialBrand352">新手教室</strong></div><span class="tut-status-pill" id="tutorialStatus352">独立教学 · 正式进度暂停</span><div class="tut-top-actions"><button id="tutorialNavToggle352" class="tut-menu-toggle" data-tut-action="nav" aria-controls="tutorialNav352" aria-expanded="false">章节</button><button id="tutorialPause352" data-tut-action="pause">暂停练习</button><button data-tut-action="fullscreen" aria-label="教程切换全屏">全屏</button><button data-tut-action="close" aria-label="退出新手教程">退出</button></div></header><div class="tut-middle"><nav id="tutorialNav352" class="tut-nav" aria-label="教学章节"></nav><article id="tutorialMain352" class="tut-main"></article></div><footer class="tut-footer"><button id="tutorialPrev352" data-tut-action="prev">← 上一节</button><div class="tut-footer-info"><span id="tutorialProgress352"></span><div class="tut-progress"><i id="tutorialProgressBar352"></i></div></div><button id="tutorialNext352" class="tut-primary" data-tut-action="next">下一节 →</button></footer></div></section>`);
+        // Window capture runs before every existing classroom/exam listener.
+        window.addEventListener('keydown',e=>{
+            if(tutorial352){tutorialKey352(e);return;}
+            if(e.key==='F1'&&!e.ctrlKey&&!e.metaKey&&!e.altKey&&!e.isComposing){e.preventDefault();e.stopImmediatePropagation();if(!e.repeat)tutorialOpen352();}
+        },true);
+        window.addEventListener('click',e=>{
+            const target=e.target instanceof Element?e.target:null;
+            if(!tutorial352){if(target?.closest('[data-open-tutorial352]')){e.preventDefault();e.stopImmediatePropagation();tutorialOpen352();}return;}
+            e.stopImmediatePropagation();const b=target?.closest('#tutorial352 button');if(!b||b.disabled)return;e.preventDefault();
+            if(b.dataset.tutAction)tutorialCommand352(b.dataset.tutAction);
+            else if(b.dataset.tutChapter)tutorialGo352(b.dataset.tutChapter);
+            else if(b.dataset.tutSlot!=null)tutorialSlot352(Number(b.dataset.tutSlot));
+            else if(b.dataset.tutAct)tutorialAct352(b.dataset.tutAct);
+            else if(b.dataset.tutTurn)tutorialCube352(b.dataset.tutTurn);
+            else if(b.dataset.tutAnswer!=null)tutorialAnswer352(Number(b.dataset.tutAnswer));
+            else if(b.dataset.tutExam)tutorialExamAction352(b.dataset.tutExam);
+            else if(b.dataset.tutExamAnswer!=null)tutorialExamAnswer352(Number(b.dataset.tutExamAnswer));
+            tutorialPaint352();
+        },true);
+        for(const type of ['pointerdown','pointermove','pointerup','keyup','wheel'])window.addEventListener(type,e=>{
+            if(!tutorial352)return;e.stopImmediatePropagation();tutorialMotion352(e);
+        },{capture:true,passive:type==='pointermove'||type==='pointerup'||type==='wheel'});
+        window.addEventListener('change',e=>{
+            if(!tutorial352)return;e.stopImmediatePropagation();
+            if(e.target.id==='tutDifficulty352'&&DIFFICULTIES[e.target.value])tutorial352.difficulty=e.target.value;
+            else if(e.target.id==='tutMode352')tutorial352.mode=e.target.value==='timed'?'timed':'guided';else return;
+            tutorial352.sim=tutorialBlank352(tutorial352.chapter);tutorial352.paused=false;tutorialRenderSim352();
+        },true);
+        window.addEventListener('blur',()=>{if(tutorial352)tutorialPause352(true);});
+        document.addEventListener('visibilitychange',()=>{if(tutorial352&&document.hidden)tutorialPause352(true);});
+        const previousRender=renderModal;
+        renderModal=function(){previousRender();if(modal&&['pause','settings','help','recovery'].includes(modal.kind))$('modalBody').insertAdjacentHTML('afterbegin','<div class="modal-actions"><button class="solid-btn" data-open-tutorial352="1">新手教程 · 讲解与练习</button></div>');};
+        const previousExam=renderExam35;
+        renderExam35=function(){previousExam();if(isExam35()&&document.querySelector('.exam-tools35')&&!$('examTutorial352'))document.querySelector('.exam-tools35').insertAdjacentHTML('afterbegin','<button id="examTutorial352" data-open-tutorial352="1">教程</button>');};
+    }
+    installTutorial352();
+    const renderBeforeTutorial352=renderUI;
+    renderUI=function(){if(!tutorial352){renderBeforeTutorial352();if($('tutorialQuickEntry352'))$('tutorialQuickEntry352').hidden=!!S||!!modal;}};
+
     // The classroom is a layered DOM illustration rather than a raster image.
     const seats = [{ x: 436, y: 403, s: .68 }, { x: 669, y: 420, s: .70 }, { x: 1044, y: 413, s: .74 }, { x: 1210, y: 428, s: .80 }, { x: 363, y: 468, s: .94 }, { x: 619, y: 487, s: 1.06 }, { x: 955, y: 479, s: 1.02 }, { x: 1195, y: 488, s: 1.11 }];
     $('students').innerHTML = seats.map(p => `<div class="student" style="left:${p.x}px;top:${p.y}px;transform:scale(${p.s})"><div class="student-head"></div><div class="student-body"></div><div class="student-desk"></div><div class="student-chair"></div></div>`).join('');
@@ -8253,6 +8889,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
             } renderUI(); }, setAction, turnCube, observe, choose, number: finishQuestion, hide: resolveHide, freeze: startFreeze, grid: startGrid, question: askQuestion, danger: triggerDanger, fakeBell: startFakeBell, door: showDoor, complete: completeDay, escape: startEscape, sprint: sprintTap, ending: finishEnding, fail: gameOver, retry: retryLesson, menu: returnMenu, openModal, closeModal, render: renderUI, extra: triggerExtraordinary, scramble: scrambleButtons, lesson: enterClass, get queue() { return eventQueue; } };
 if(testMode)Object.assign(window.__LAST_CLASS_TEST__,{examAction35,examRules35,isExam35,ensure35,validate35,anonymize35,beginTest35:beginTest34,renderExam35,notifyExamParents35,stopExamTask35,v34Action,metrics34,triggerHygiene34,beginChemCheck34,beginChemOffice34,beginMorning34,finishMorning34,startRecess34,beginHomeRapid34,makeV34,weekProgress34,beginTest34,finishTask34,validate34State,render34,select34,makeCalendar34:makeCalendarState,collectMorning34,returnMorning34,chemStand34,unlockRoutes34});
 if(testMode)Object.defineProperty(window.__LAST_CLASS_TEST__,'exam35',{get:()=>S?.v35?.exam});
+if(testMode)Object.defineProperty(window.__LAST_CLASS_TEST__,'tutorial',{value:{open:tutorialOpen352,close:tutorialClose352,go:tutorialGo352,command:tutorialCommand352,act:tutorialAct352,slot:tutorialSlot352,answer:tutorialAnswer352,advance:tutorialTick352,pause:tutorialPause352,begin:tutorialBegin352,get state(){return tutorial352;},get record(){return tutorialRecord352;},lessons:TUTORIAL_LESSONS352,key:TUTORIAL_KEY352}});
 })();
   </script>
  </body>

@@ -2512,7 +2512,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
 #menu .menu-links{margin-top:12px;}
 .timetable summary,summary{cursor:pointer;padding:10px;}
 #charactersBtn{white-space:nowrap;}
-/* v3.3: viewport-sized controls over an offline CSS bedroom illustration. */
+/* v3.4: viewport-sized controls over an offline CSS bedroom illustration. */
 #homeStart{margin-top:7px;border:1px solid #a5947955;background:#161c22;color:#deceb0;padding:10px 14px;font-size:16px;text-align:left;width:100%;min-height:42px;}#homeStart span{float:right;font-size:12px;opacity:.75}
 #englishSilence{position:absolute;top:154px;left:420px;width:630px;z-index:18;padding:12px 18px;border:1px solid #deba7550;background:#151920ed;color:#f2dda8;text-align:center;font-size:17px;pointer-events:none;white-space:pre-line;}
 .english-quiet .student{animation:none!important}.english-quiet #room{filter:saturate(.45)}
@@ -2562,7 +2562,48 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
 #menu .menu-links{margin-top:18px;}
 #menu #weekStart,#menu #homeStart{width:440px;max-width:100%;}
 
-  </style>
+  /* v3.4 school-life UI: keyboard/pointer share buttons; never require hover. */
+#lifeDock34{position:absolute;z-index:26;left:410px;right:270px;top:610px;display:flex;gap:7px;align-items:center;flex-wrap:wrap;font-size:12px}
+#lifeDock34 button,#lifeControls34 button,#lifePanel34 header button{border:1px solid #72938a77;background:#152d27;color:#e1e8cc;padding:9px 12px;min-height:40px;border-radius:5px;font:inherit;cursor:pointer}
+#lifeDock34 button:hover,#lifeControls34 button:hover{background:#29483a}
+#lifeDock34 button:disabled,#lifeControls34 button:disabled{opacity:.48;cursor:default}
+#lifeSummary34{color:#c5d2ba;line-height:1.45}
+#lifePanel34{position:absolute;z-index:29;left:445px;top:236px;width:688px;max-height:345px;overflow:auto;box-sizing:border-box;background:linear-gradient(155deg,#102920fa,#10211efb);border:1px solid #8c9e72aa;border-radius:9px;box-shadow:0 18px 55px #000a;padding:17px 21px;color:#edf0db}
+#lifePanel34 header{display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:19px;letter-spacing:1px}
+#lifePanel34 header button{font-size:13px;min-height:34px;padding:5px 10px}
+#lifeStatus34{white-space:pre-line;font-size:15px;line-height:1.6;margin:12px 0}
+#lifeControls34{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+#lifeControls34 button{font-size:14px;min-height:44px}
+#lifeFoot34{font-size:12px;line-height:1.6;color:#bacbb5;margin:12px 0 0}
+.lifeMeter34{height:5px;background:#71856a2a;border-radius:3px;overflow:hidden}
+.lifeMeter34 i{display:block;height:100%;background:#9dad7b;width:0}
+#peng34{position:absolute;left:715px;top:410px;z-index:5;width:65px;height:105px;pointer-events:none;filter:brightness(.85)}
+#peng34.at-board34{left:690px;top:304px;transform:scale(.9)}
+.peng-head34{position:absolute;left:18px;top:11px;width:33px;height:40px;border-radius:45% 45% 40% 40%;background:#2b302b;box-shadow:0 -4px #252425,-5px 7px #26272b,5px 7px #26272b}
+.peng-ear34{position:absolute;top:0;width:21px;height:22px;background:#776f7d;clip-path:polygon(50% 0,100% 100%,0 100%);z-index:2}
+.peng-ear34.l{left:11px;transform:rotate(-16deg)}.peng-ear34.r{left:39px;transform:rotate(17deg)}
+.peng-body34{position:absolute;left:8px;top:48px;width:52px;height:55px;border-radius:18px 18px 3px 3px;background:linear-gradient(90deg,#334f47,#22372d);border-top:4px solid #76877c}
+#peng34 b{position:absolute;top:110px;left:-14px;white-space:nowrap;font-size:12px;color:#c3c8b4;background:#0b1f1cc9;border-radius:3px;padding:4px 6px}
+.recess34 #campusScene{background:linear-gradient(0deg,#1d2a27,#102020)}
+.recess34 #campusScene:after{content:'课 间';position:absolute;right:12%;top:17%;font-size:86px;opacity:.11;letter-spacing:30px}
+.chem-office34 #campusScene{background:linear-gradient(140deg,#1e3128,#28352e 55%,#151e20)}
+.chem-office34 #campusScene:after{content:'化学办公室 / 订正与领回';position:absolute;left:12%;top:22%;padding:24px;border:1px solid #a4b39555;color:#c3caad;font-size:28px;letter-spacing:5px}
+#stage.home-active #challengeLayer{z-index:52;visibility:visible!important}
+#stage.home-active #lifeDock34,#stage.home-active #lifePanel34,#stage.home-active #peng34{display:none!important}
+#stage #challengeCard .routes34{display:block;margin-top:14px;min-height:44px;width:100%}
+#stage.fear-on .recess34,#stage.fear-on.chem-office34 #campusScene{filter:saturate(.6)}
+#lifePanel34 button:focus-visible,#lifeDock34 button:focus-visible{outline:3px solid #dfd49a;outline-offset:3px}
+@media(max-width:1000px){
+#lifeDock34{left:50%;top:90px;right:auto;width:calc(var(--reflex-vw,100vw) - 22px);transform:translateX(-50%) scale(var(--reflex-inverse,1));transform-origin:top center;font-size:11px;justify-content:center}
+#lifeDock34 button{min-height:44px;padding:6px 9px}
+#lifeDock34 #lifeSummary34{display:none}
+#lifePanel34{left:50%;top:47%;width:min(660px,calc(var(--reflex-vw,100vw) - 22px));max-height:calc(var(--reflex-vh,100vh) - 120px);transform:translate(-50%,-50%) scale(var(--reflex-inverse,1));transform-origin:center;padding:12px 14px}
+#lifePanel34 header{font-size:17px}#lifeStatus34{font-size:13px;margin:9px 0}#lifeFoot34{font-size:11px;margin-top:8px}
+#lifeControls34{gap:6px}#lifeControls34 button{font-size:13px;min-height:44px}
+}
+@media(prefers-reduced-motion:reduce){#peng34,#lifePanel34{transition:none!important}}
+
+</style>
  </head>
  <body>
   <div id="viewport">
@@ -2767,7 +2808,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
           <div id="homeStory" hidden><strong id="homeStoryName"></strong><p id="homeStoryText"></p><button data-home-action="next">显示全文 / 继续 ↵</button></div>
           <div id="homeLive"><div class="home-warning" id="homeWarning"><span id="homeThreatTitle" role="status" aria-live="polite"></span><strong id="homeReactionTime"></strong><div class="home-meter"><i id="homeReactionBar"></i></div><p id="homeThreatDetail"></p></div>
           <div class="home-actions"><button id="homePlayButton" data-home-action="phone"><b>拿出手机</b><small>4 / P</small></button><button id="homeHideButton" data-home-action="hide"><b id="homeHideLabel">藏手机 → 装睡</b><small id="homeHideKey">逐次按空格</small></button></div>
-          <p class="home-footer" id="homeActionHelp">先熄屏藏好，再躺下装睡；等家长离开之后才能继续。长按空格不会完成两步。</p></div>
+          <p class="home-footer" id="homeActionHelp">先熄屏藏好，再躺下装睡；等家长离开之后才能继续。长按空格不会自动完成多个步骤。</p></div>
         </div>
       </div>
     </section>
@@ -3389,7 +3430,43 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
     const SAVE_KEY = 'last-class.offline.v1'; // Retain v1 achievements/settings on the same origin.
     const PROGRESS_KEY = 'last-class.progress.v2';
     const BACKUP_KEY = PROGRESS_KEY + '.backup';
-    const ENDING_IDS = ['true','phone','math','loop','cfop','unseen','falsebell','homework','companion','truth','gatekeeper','mirror','chessMaster','officeTruth','parentHome','sports','bagPhone','officeLoop','doorRoster','lastStone','alliesTogether','calmExit','chessDraw','weekClear','homeSafe','homeCaught'];
+    // v3.4 additions. These IDs exist before profile normalization so old and new unlocks merge safely.
+    const V34_ENDINGS = {
+        correctedBook:{type:'GOOD END · CAMPUS',title:'领回自己的名字',prose:'订正页盖上了日期。李芳林把作业本还给你。\n“错的地方，要自己看懂。”\n21:40，你带走的不再是一册被扣下的纸。门牌上的名字，也不再跟着你移动。',hint:'化学作业未订正而被扣本，去化学办公室完成面谈和订正、领回本子；21:40选择新校园路线。'},
+        tidyDesk:{type:'GOOD END · CAMPUS',title:'课桌上的空白',prose:'纸屑进了垃圾袋，课本按科目排好。\n老师经过你的座位，没有再伸手整理。\n21:40，桌面干干净净。玻璃里的那只手，终于找不到可以拿走的东西。',hint:'同一日独立通过两次卫生检查，未因老师代整理而被发现手机；21:40选择新校园路线。'},
+        twinTest:{type:'SECRET END · CAMPUS',title:'第二张试卷',prose:'两节同样的课，并没有把时钟困住。\n第二张试卷上的分数是真的。\n你收起连堂测试，走过两个相同的门牌。第三扇门之外，是校园的夜风。',hint:'在一次同科连堂的第二节完成三题课堂测试，至少答对两题；21:40选择测试路线。'},
+        morningOwn:{type:'GOOD END · CAMPUS',title:'清晨写下的答案',prose:'清晨那页作业有涂改，也有自己的计算。\n李思聪收走了本子，彭王梓帮你留出一块干净的桌面。\n晚上，你把批改后的纸装回书包。不是抄来的答案，终于带你走出了重复的清晨。',hint:'一周模式当日早晨只补不抄，完成并提交作业、领回批改本；21:40选择清晨路线。'},
+        pengFriend:{type:'GOOD END · FRIENDSHIP',title:'猫耳发卡与羽毛球',prose:'彭王梓把球拍塞回包里，按住快要歪掉的猫耳发卡。\n“这是我的点心。那一块……给你。”\n你们谈了一路刚才的球。只是朋友，也足够让这条路不再安静得可怕。',hint:'得到班长的友方帮助，并在体育或课间一起打过羽毛球；无须开启攻略，在21:40选择朋友路线。'},
+        pengPromise:{type:'GOOD END · OPTIONAL STORY',title:'课后再说喜欢',prose:'你没有在讲台上等待一个答案。\n21:40，彭王梓把折好的信还给你，里面多写了一行字：\n“我愿意了解你。明天先打球，再把作业写完。”\n她留住自己的点心，也给你留了一段并肩走的路。',hint:'开启彭王梓攻略；好感至少50、成功送达一封情书、打过羽毛球，并在离校时征询她的意愿。普通朋友路线不受此开关影响。'}
+    };
+    const V34_ACHIEVEMENTS = [
+        ['broadcast34','下一节是谁','听完一次完整的上课播报。',1],
+        ['recess34','铃声之间','实际完成一次新增课间。',1],
+        ['ask34','举手的人','同一日答对五次新增课堂提问。',5],
+        ['twin34','连堂不是循环','完成一次三题连堂测试。',1],
+        ['twinPerfect34','两节课的回声','一次连堂测试三题全对。',1],
+        ['morningSelf34','自己的笔迹','早晨只补不抄，写完并交上作业。',1],
+        ['morningCopy34','一样的错字','抄作业后，晨检发现雷同。',1,true],
+        ['collect34','收本，发本','实际帮忙收作业并发回批改本。',1],
+        ['correct34','红笔留下的路','在课前或面谈中亲自订正三处化学作业。',3],
+        ['book34','本子回来了','到化学办公室面谈、订正并领回被扣的本子。',1],
+        ['hear34','再说一遍','一次化学提问连续正确回应，直到老师听清。',1],
+        ['stand34','五分钟以后','完整结束300秒有效校园时间的化学罚站。',1,true],
+        ['clean34','自己收拾','在期限内完成一次卫生检查的全部三项。',1],
+        ['search34','老师替你收拾','卫生不合格后，老师代整理并发现手机。',1,true],
+        ['toy34','道具不是利刃','实际摆弄无刃塑料玩具并收好。',1],
+        ['toyCheck34','被误叫的玩具','玩具被注意后说明它是无刃塑料道具。',1,true],
+        ['allySleep34','邻座也会犯困','见到一位协助同学因睡着而被老师提醒。',1],
+        ['allyListen34','被认真感染','王子睿认真听讲，带动你主动抬头。',1],
+        ['pengHelp34','讲台上的猫耳','收到彭王梓的友方帮助。',1],
+        ['badminton34','放学前的一球','在允许的自由时段与彭王梓打过羽毛球。',1],
+        ['letter34','写在课后','在攻略开启时成功送达一封情书。',1],
+        ['snack34','护食也会分享','与彭王梓明确商量分享点心。',1],
+        ['homeRapid34','门后的多步动作','实际完成一次新的归家快速隐藏。',1],
+        ['weekRamp34','渐紧的一周','以新版规则完成七个逐日增压的归家夜晚。',7]
+    ].map(([id,name,desc,target,hidden])=>({id,name,desc,target,hidden:!!hidden,group:'校园新章'}));
+
+    const ENDING_IDS = ['true','phone','math','loop','cfop','unseen','falsebell','homework','companion','truth','gatekeeper','mirror','chessMaster','officeTruth','parentHome','sports','bagPhone','officeLoop','doorRoster','lastStone','alliesTogether','calmExit','chessDraw','weekClear','homeSafe','homeCaught',...Object.keys(V34_ENDINGS)];
     const ENDING_COUNT = ENDING_IDS.length;
     // Difficulty changes mechanics, never the lesson calendar. A run owns its
     // difficulty; changing the menu selection cannot alter an existing save.
@@ -3406,14 +3483,14 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
     const RAPID_PREP=.40;
     const RAPID_PENALTIES=Object.freeze([0,0,.35,.40,.45,.50]);
     const GOD_LIMIT = 180;
-    const CLEAR_ENDINGS = ['true','cfop','unseen','homework','companion','truth','chessMaster','officeTruth','parentHome','sports','alliesTogether','calmExit','chessDraw','weekClear'];
+    const CLEAR_ENDINGS = ['true','cfop','unseen','homework','companion','truth','chessMaster','officeTruth','parentHome','sports','alliesTogether','calmExit','chessDraw','weekClear',...Object.keys(V34_ENDINGS)];
     const ACHIEVEMENT_IDS = ['lesson1','lessons6','hide1','hide10','reflex','note1','note5','nap30','cube100','work100','clues6','answers10','cleanClear','quickClear','noPhone',
-        ...DIFFICULTY_IDS.filter(x=>x!=='god').map(x=>'clear_'+x),'god60','god120','god180','allEndings','chessFirst','chessWin','chessWin3','talkOnce','officeVisit','officeBoundary','rearSpot3','rearAvoid3','meals2','safeBag','pe3','evening1','parentWalk','parentDesk','wholeDay','allCampus','rapidClean','rapidTen','rapidSix','stillThree','bothReflex','wangNotice','liNotice','allyHelp3','allyBoth','chessMove','chessCastle','chessPromotion','chessEnPassant','chessDrawOnce','all31','standBack','randomEleven','doubleLesson','biologyExercise','weekFirst','weekThree','weekSeven','weekQuiet','eyesOpen','homeFirst','homeHide3','homePerfect','weekNights',...ENDING_IDS.map(x=>'end_'+x)];
+        ...DIFFICULTY_IDS.filter(x=>x!=='god').map(x=>'clear_'+x),'god60','god120','god180','allEndings','chessFirst','chessWin','chessWin3','talkOnce','officeVisit','officeBoundary','rearSpot3','rearAvoid3','meals2','safeBag','pe3','evening1','parentWalk','parentDesk','wholeDay','allCampus','rapidClean','rapidTen','rapidSix','stillThree','bothReflex','wangNotice','liNotice','allyHelp3','allyBoth','chessMove','chessCastle','chessPromotion','chessEnPassant','chessDrawOnce','all31','standBack','randomEleven','doubleLesson','biologyExercise','weekFirst','weekThree','weekSeven','weekQuiet','eyesOpen','homeFirst','homeHide3','homePerfect','weekNights',...V34_ACHIEVEMENTS.map(x=>x.id),...ENDING_IDS.map(x=>'end_'+x)];
     function rules(st=S) { return DIFFICULTIES[st?.difficulty] || DIFFICULTIES.normal; }
     const testMode = new URLSearchParams(location.search).get('test') === '1';
     const persistenceEnabled = !testMode || new URLSearchParams(location.search).get('persist') === '1';
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const DEFAULT_SAVE = { version: 1, endings: [], bestSurvival: 0, bestCube: 0, bestHomework: 0, attempts: 0, wins: 0, phoneRestricted: false, achievements: {}, achievementProgress: {}, godBest: 0, settings: { difficulty: 'normal', fearMode:false, volume: .35, flicker: !reduced, shake: !reduced, textSpeed: 36, auto: false, quick: false, endingHints: false } };
+    const DEFAULT_SAVE = { version: 1, endings: [], bestSurvival: 0, bestCube: 0, bestHomework: 0, attempts: 0, wins: 0, phoneRestricted: false, achievements: {}, achievementProgress: {}, godBest: 0, settings: { difficulty: 'normal', fearMode:false, pengRoute:false, volume: .35, flicker: !reduced, shake: !reduced, textSpeed: 36, auto: false, quick: false, endingHints: false } };
     let storageOK = true;
     function normalizeProfile(raw) {
         const out = clone(DEFAULT_SAVE);
@@ -3431,7 +3508,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
             if(typeof v==='number'&&Number.isFinite(v)&&v>=0&&v<=1e7) out.achievementProgress[id]=v;
         }
         if(DIFFICULTY_IDS.includes(raw.settings?.difficulty)) out.settings.difficulty=raw.settings.difficulty;
-        for (const k of ['flicker', 'shake', 'auto', 'quick', 'endingHints', 'fearMode'])
+        for (const k of ['flicker', 'shake', 'auto', 'quick', 'endingHints', 'fearMode', 'pengRoute'])
             if (typeof raw.settings?.[k] === 'boolean') out.settings[k] = raw.settings[k];
         const vol = Number(raw.settings?.volume ?? .35);
         out.settings.volume = Number.isFinite(vol) ? clamp(vol, 0, 1) : .35;
@@ -3455,11 +3532,11 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         $('storageWarning').hidden = false;
     const CLASSES = [
         { id: 'chinese', subject: '语文', teacher: '何凤林', title: '守门人', duration: 180, start: 460, end: 505, speed: .82, awareness: .5, board: '玻璃的意义，不只是让你看见外面。\n请留意：反光、脚步、真正的时间。', rule: '看反光，不必回头', note: '后门的反光会提前暴露巡查。手机显示真实时间；数学课之前，黑板旁的钟可能不可靠。', intro: [['何凤林', '今天教室似乎比平时安静。'], ['何凤林', '有些东西，不需要回头，也能看到。玻璃的意义，不只是让你看见外面。'], ['同桌', '按 1—9 切换行动：6纸条、7睡觉、8下棋、9讲话。危险时完成快速反应：简单2空格，普通3空格，高难度按数字顺序。手机不是必需品。']] },
-        { id: 'chemistry', subject: '化学', teacher: '李芳玲', title: '反应监视者', duration: 180, start: 520, end: 565, speed: 1.0, awareness: 1, board: '化学反应与实验现象\n镁条燃烧 → 耀眼白光 / 白色固体', rule: '安静下来时，先收起东西', note: '李芳玲突然停止讲课时会观察课桌。镁条燃烧发出耀眼白光，生成白色固体；二氧化碳使澄清石灰水变浑浊。', intro: [['李芳玲', '把与这节课无关的东西，收起来。'], ['同桌', '她走得慢，但随时会停。全班突然安静的时候，千万别拿着手机。'], ['李芳玲', '让你受着你就受着。']] },
+        { id: 'chemistry', subject: '化学', teacher: '李芳林', title: '反应监视者', duration: 180, start: 520, end: 565, speed: 1.0, awareness: 1, board: '化学反应与实验现象\n镁条燃烧 → 耀眼白光 / 白色固体', rule: '安静下来时，先收起东西', note: '李芳林突然停止讲课时会观察课桌。镁条燃烧发出耀眼白光，生成白色固体；二氧化碳使澄清石灰水变浑浊。', intro: [['李芳林', '把与这节课无关的东西，收起来。'], ['同桌', '她走得慢，但随时会停。全班突然安静的时候，千万别拿着手机。'], ['李芳林', '让你受着你就受着。']] },
         { id: 'biology', subject: '生物', teacher: '王颖', title: '稳态观察者', duration: 180, start: 610, end: 655, speed: 1.02, awareness: 1.12, board: '神经调节 / 条件反射\n不要动。先松开手，再保持静止。', rule: '讲授课看低头；习题课会走动', note: '条件反射恢复保持静止：普通准备1.4秒、静止1.4秒；松键和轻微抖动不算失误，允许一次明显动作，之后给0.35秒缓冲重新静止。快速反应是另一种巡视挑战：简单2空格、普通3空格，更高档依次3/4/5/6个数字。反射的结构基础是反射弧。', intro: [['王颖', '今天观察一个简单的条件反射。观察对象，是你们。'], ['同桌', '王颖说“不要动”时，先松开手再保持静止。不要和老师靠近时的快速反应弄混。'], ['王颖', '注意，不要让习惯替你做决定。讲解时先抬头，习题课再写自己的步骤。']] },
         { id: 'physics', subject: '物理', teacher: '戴贝贝', title: '讲台上的耳朵', duration: 180, start: 840, end: 885, speed: 0, awareness: 1.3, board: '惯性 / 课堂纪律\n讲台听得见，后排也听得见。', rule: '不走动，不代表听不见讲话', note: '戴贝贝上课不走动，对实际讲话尤其敏感。先有停声提示，继续讲话会被要求到后排站至本节真实下课；站立时桌面行动锁定，听课、观察和答题仍可用。逃生的静候三秒仍是独立机关。', intro: [['戴贝贝', '运动状态，可不是这么容易改变的。'], ['同桌', '她今天不在教室走动，但后排讲话，她在讲台也听得见。'], ['戴贝贝', '讲话的同学，站到后面去。这节课保持安静。']] },
         { id: 'english', subject: '英语', teacher: '尹莎莎', title: 'EXTRAORDINARY', duration: 180, start: 900, end: 945, speed: 1.5, awareness: 1.35, board: 'GOOD → EXTRAORDINARY\nextraordinary / 非凡的，不寻常的', rule: '不是 Good，是 Extraordinary', note: '听见“梁子辕open your eyes”后，全班安静，立刻醒来，本节真实下课前无法再次睡觉。记住 Extraordinary。强化模式按难度持续35—60秒（普通45秒）：移动×1.35、怀疑增长×1.25，隐藏限时缩短15%。however 表示“然而”；过去完成时使用 had done。', intro: [['尹莎莎', '说 Good 太 low。说 extraordinary。高级。'], ['尹莎莎', '这才是江城实验中学的水平。'], ['同桌', '她为什么说了另一所学校的名字……先记住那个单词。']] },
-        { id: 'math', subject: '数学', teacher: '郭自嘲', title: '1 / 56', duration: 240, start: 980, end: 1050, speed: 0, awareness: 1.7, board: '1 / 56\n每一个人的思考能力……', rule: '21:40 以前，不离开', note: 'f(x)=x² 时，f′(x)=2x。1/56 机关需要按题意计算编号，不是猜“1”。听课满 20 秒有短暂提示。班主任的第一遍下课铃是假的。', intro: [['郭自嘲', '你们不要以为来到这里是屈才了。'], ['郭自嘲', '你们每一个人的思考能力……都不及我的 1/56。'], ['郭自嘲', '你们的计算能力太有限了，我建议你们以后可以开一家公司，计算能力有限公司。'], ['郭自嘲', '都说你们这一届学生很牛，但看来也不过如此。'], ['同桌', '郭自嘲不上下走动，但讲话、睡觉和偷偷低头，他都盯得很严。哪怕数学连堂，21:40 以前都不是放学。']] }
+        { id: 'math', subject: '数学', teacher: '郭自朝', title: '1 / 56', duration: 240, start: 980, end: 1050, speed: 0, awareness: 1.7, board: '1 / 56\n每一个人的思考能力……', rule: '21:40 以前，不离开', note: 'f(x)=x² 时，f′(x)=2x。1/56 机关需要按题意计算编号，不是猜“1”。听课满 20 秒有短暂提示。班主任的第一遍下课铃是假的。', intro: [['郭自朝', '你们不要以为来到这里是屈才了。'], ['郭自朝', '你们每一个人的思考能力……都不及我的 1/56。'], ['郭自朝', '你们的计算能力太有限了，我建议你们以后可以开一家公司，计算能力有限公司。'], ['郭自朝', '都说你们这一届学生很牛，但看来也不过如此。'], ['同桌', '郭自朝不上下走动，但讲话、睡觉和偷偷低头，他都盯得很严。哪怕数学连堂，21:40 以前都不是放学。']] }
     ];
     // v3.0 — a serializable campus calendar, independent from the six subject IDs.
     const TIMETABLE = Object.freeze([
@@ -3482,13 +3559,13 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         {id:'study2',subject:'晚自习Ⅱ',teacher:'值日家长',title:'家长监督',duration:165,quick:85,start:1200,end:1300,speed:.92,awareness:1,board:'20:00—21:40 / 家长监督\n请勿提前离校。最后一节，仍有人在看。',rule:'先观察家长：巡走，还是讲台值守',note:'每局最后一节的家长固定为巡走或讲台值守。巡走会反复经过座位；值守会看自己的书、记事，不时抬头。抬头前有提示；作业在两种模式下都安全。',intro:[['值日家长','今天最后一节由我来看着。你们写自己的作业。'],['同桌','有的家长一直在走，有的就坐在讲台做自己的事。先观察，别凭上一次的经验。']]}
     );
     for(const slot of TIMETABLE) if(slot.kind==='class') { CLASSES[slot.lesson].start=slot.start; CLASSES[slot.lesson].end=slot.end; }
-    const CAMPUS_CHALLENGES = ['mealPlan','officeQuestion','officeLedger','campusRoutes','campusRoutes2','friendRoutes','weekDay'];
+    const CAMPUS_CHALLENGES = ['mealPlan','officeQuestion','officeLedger','campusRoutes','campusRoutes2','friendRoutes','weekDay','morningCollect34','morningReturn34','chemBook34','chemOffice34','newRoutes34','pengReply34','romanceReview34','toyReview34'];
     const EXTRA_ACHIEVEMENTS = [
         {id:'chessFirst',name:'课桌上的黑白',desc:'实际完成一盘国际象棋；中断或重开不计。旧版已解锁记录保留。',target:1},
         {id:'chessWin',name:'白王的胜局',desc:'在一盘完整对弈中获胜。',target:1},
         {id:'chessWin3',name:'三局之外',desc:'在同一周目赢下三盘国际象棋；旧版已解锁记录保留。',target:3},
         {id:'talkOnce',name:'压低一点声音',desc:'实际完成一次交谈；仅打开面板不计。',target:1},
-        {id:'officeVisit',name:'下课来一趟',desc:'被后门的郭自嘲记下讲话，并进入办公室。',target:1},
+        {id:'officeVisit',name:'下课来一趟',desc:'被后门的郭自朝记下讲话，并进入办公室。',target:1},
         {id:'officeBoundary',name:'自己的回答',desc:'在办公室明确个人边界，同时接受课堂纪律要求。',target:1},
         {id:'rearSpot3',name:'玻璃中的值班表',desc:'同一周目主动观察三次不同的真实后门巡视。',target:3},
         {id:'rearAvoid3',name:'没有写下名字',desc:'同一周目在三次真实后门巡视中没有被登记。教学不计。',target:3},
@@ -3526,12 +3603,12 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
     ].map(x=>({...x,group:'校园'}));
     const CAMPUS_ENDINGS = {
         chessMaster:{type:'SECRET END · 04',title:'终局之外',prose:'21:40。记谱纸最后的一着，是将死。\n同桌没有催你落下下一子。\n「这盘已经下完了，我们回家。」\n你第一次明白，赢棋之后，不必再接受另一盘。',hint:'本周目实际赢下一盘国际象棋。21:40选择「全天新路线」→收起胜局。'},
-        officeTruth:{type:'SECRET END · 05',title:'被划掉的谈话记录',prose:'你把那页互相矛盾的巡视记录，交回办公室。\n郭自嘲看了很久，把你的名字划掉。\n「同一时刻，我不可能在两个地方。」\n门外的黑影还在等一个学生。你已经不在它的名单里。',hint:'因讲话被通知去办公室，查看并记下巡查记录的矛盾，完成谈话。21:40在全天新路线中交回记录。'},
+        officeTruth:{type:'SECRET END · 05',title:'被划掉的谈话记录',prose:'你把那页互相矛盾的巡视记录，交回办公室。\n郭自朝看了很久，把你的名字划掉。\n「同一时刻，我不可能在两个地方。」\n门外的黑影还在等一个学生。你已经不在它的名单里。',hint:'因讲话被通知去办公室，查看并记下巡查记录的矛盾，完成谈话。21:40在全天新路线中交回记录。'},
         parentHome:{type:'GOOD END · 03',title:'有人等你回家',prose:'21:40。家长合上自己的记事本，检查了一遍空教室。\n「好了，回家吧。」\n你跟着有温度的脚步走向校门，玻璃里的脚步没有跟上。\n路灯下，有人叫出了你的名字。',hint:'识别最后一节家长的监督方式，完成该节且没有在该节被登记、被发现或隐藏失败。21:40选择跟家长离开。'},
         sports:{type:'GOOD END · 04',title:'操场上的风',prose:'白天在操场跑过的路线，你还记得。\n21:40，你没有跟着玻璃里的箭头走。\n穿过篮球架，沿着跑道外侧，晚风吹到了校门。\n今天并不只有课桌和后门。',hint:'体育课实际完成慢跑、投篮和散步。21:40在全天新路线第二页选择操场路线。'},
         bagPhone:{type:'BAD END · 06',title:'书包里的来电',prose:'你还在食堂，教室的检查记录已经写好了。\n老师从书包夹层取出了手机。屏幕亮着：「到哪了？」\n广播只念了一遍你的名字。\n晚自习的座位空了。手机和你，都被留在了那份记录里。',hint:'午餐或晚餐选择离开教室，把手机留在书包；若本次发生搜查，就会进入此结局。'},
         officeLoop:{type:'BAD END · 07',title:'办公室没有下课铃',prose:'你在没有日期的承诺书上签了名。\n窗外的天已经黑了，办公室的钟却没有秒针。\n「再谈五分钟。」\n门口传来同样的脚步。五分钟后，还是这句话。',hint:'在办公室查看记录后，选择签署明确警告过的空白承诺书。'},
-        doorRoster:{type:'BAD END · 08',title:'后门点名册',prose:'第三条尚未撤销的记录，被写在你的名字后面。\n后门打开，郭自嘲把登记本转向你。\n名单上没有班级，只有座位号。\n最后一行的日期，是明天。',hint:'同一记录线累计三次尚未撤销的后门违规。完成办公室谈话可撤销一级；每次真实巡视最多登记一次。'},
+        doorRoster:{type:'BAD END · 08',title:'后门点名册',prose:'第三条尚未撤销的记录，被写在你的名字后面。\n后门打开，郭自朝把登记本转向你。\n名单上没有班级，只有座位号。\n最后一行的日期，是明天。',hint:'同一记录线累计三次尚未撤销的后门违规。完成办公室谈话可撤销一级；每次真实巡视最多登记一次。'},
         lastStone:{type:'ALTERNATE END · 02',title:'未落下的最后一子',prose:'你把白马留在棋盘边上，没有收进盒子。\n玻璃里的人伸出手，替你走了下一步。\n教室里还有一盘棋，永远轮到你。\n07:20，门外传来新的学生的脚步声。',hint:'本周目至少赢一盘棋，并主动观察三次真实后门巡视。21:40在全天新路线第二页选择留下最后一子（替代结局，不离校）。'}
     };
 
@@ -3566,6 +3643,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         calmExit:{type:'SECRET END · 06',title:'动静之间',prose:'该动的时候，你收好了所有东西。\n该静止的时候，你没有追着脚步回头。\n21:40，门边的影子等你犯下最后一个错误。\n你只做了最普通的事：拿起书包，走了出去。',hint:'本周目在新版零失误完成静止条件反射至少1次、快速反应至少3次，且零快速反应失败。21:40选动静路线。'},
         chessDraw:{type:'SECRET END · 07',title:'和棋之后',prose:'记谱纸最后写着：½—½。\n同桌把双方的王并排放回盒子。\n「没有谁欠谁下一局。」\n教室里的钟终于走到了21:40。你收起棋盘，没有再接受玻璃里的挑战。',hint:'本周目实际完成至少1局国际象棋和棋；自动规则和棋或双方各走10步后、子力差不超过一兵的协议和棋均可。21:40选择收起和棋记录。'}
     });
+    Object.assign(ENDINGS,V34_ENDINGS);
     const EVIDENCE = [
         {target:'door', where:'后门', title:'多出来的倒影', text:'玻璃里有第57张课桌，真实的教室里却没有。'},
         {target:'board', where:'讲台', title:'擦不掉的归字', text:'化学公式被擦掉后，粉笔灰在黑板上留下了一个「归」字。'},
@@ -3583,10 +3661,10 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         math:[[.08,'mathstage1'],[.28,'mathq1'],[.46,'mathq2'],[.65,'mathgrid'],[.84,'fakebell']],
         study1:[], study2:[]
     };
-    const CONTINUATIONS = ['classReady','fakeBellWait','showPack','startEscape','escapeFreeze','escapeMemoryDone','showSprint','finishTruth','finishHomework','finishGatekeeper','campusReady','officeQuestion','officeResume','homeReady'];
-    const EVENT_IDS = [...Object.values(LESSON_EVENTS).flat().map(e=>e[1]),'random','biofrequency'];
+    const CONTINUATIONS = ['classReady','fakeBellWait','showPack','startEscape','escapeFreeze','escapeMemoryDone','showSprint','finishTruth','finishHomework','finishGatekeeper','campusReady','officeQuestion','officeResume','homeReady','classStart34','morningReturn34','chemOffice34','chemReturn34','testNext34'];
+    const EVENT_IDS = [...Object.values(LESSON_EVENTS).flat().map(e=>e[1]),'random','biofrequency','extraQuestion34','hygiene34'];
     const POSITIONS = [{ x: 842, y: 305, z: .81 }, { x: 578, y: 324, z: .92 }, { x: 1080, y: 338, z: 1.00 }, { x: 536, y: 380, z: 1.06 }, { x: 366, y: 405, z: 1.24 }, { x: 1218, y: 407, z: 1.24 }, { x: 1294, y: 367, z: 1.08 }, { x: 1380, y: 300, z: .85 }];
-    const ROLES = { '郭自嘲':'REAR DOOR INSPECTOR', '值日家长':'PARENT ON DUTY', '体育老师':'PHYSICAL EDUCATION', '同桌': 'DESKMATE', '你': 'YOU', '广播': 'BROADCAST', '系统': 'SYSTEM', '王子睿':'SPORTS REPRESENTATIVE','李思聪':'MATH REPRESENTATIVE', '何凤林': 'THE GATEKEEPER', '李芳玲': 'REACTION WATCHER', '王颖': 'HOMEOSTASIS', '戴贝贝': 'RELATIVE MOTION', '尹莎莎': 'EXTRAORDINARY', '郭自嘲': '1 / 56', '李芙容': 'THE CHOSEN ONE' };
+    const ROLES = { '郭自朝':'REAR DOOR INSPECTOR', '值日家长':'PARENT ON DUTY', '体育老师':'PHYSICAL EDUCATION', '同桌': 'DESKMATE', '你': 'YOU', '广播': 'BROADCAST', '系统': 'SYSTEM', '王子睿':'SPORTS REPRESENTATIVE','李思聪':'MATH REPRESENTATIVE', '何凤林': 'THE GATEKEEPER', '李芳林': 'REACTION WATCHER', '王颖': 'HOMEOSTASIS', '戴贝贝': 'RELATIVE MOTION', '尹莎莎': 'EXTRAORDINARY', '郭自朝': '1 / 56', '李芙容': 'THE CHOSEN ONE' };
     let S = null, checkpoint = null, challenge = null, script = null, modal = null, returnFocus = null;
     let dialogue = { name: '同桌', text: '', shown: 0, hold: 0 }, eventQueue = [], notices = [], audio = null;
     let uiClock = 0, lastFrame = performance.now(), renderAccumulator = 0, lastMutedVolume = .35;
@@ -3657,7 +3735,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         {id:'god120',name:'神明也在等铃',desc:'神级单次记录线实际坚持120秒。不要求通关。',group:'挑战',target:120},
         {id:'god180',name:'闭环的见证者',desc:'神级坚持到180秒闭环终结。它是挑战成就，不是通关。',group:'挑战',target:180},
         {id:'allEndings',name:'旧日手记',desc:'收集原有全部12个结局；新增夜校全档案记录20个结局。旧解锁日期保留。',group:'结局',target:12},
-        ...EXTRA_ACHIEVEMENTS,
+        ...EXTRA_ACHIEVEMENTS, ...V34_ACHIEVEMENTS,
         {id:'eyesOpen',name:'全班都醒了',desc:'听到“梁子辕open your eyes”后，保持清醒完成当前英语课；仅触发点名不计。',group:'课堂',target:1,hidden:true},
         {id:'homeFirst',name:'另一扇门',desc:'实际开始归家夜间操作。读开场对白不计。',group:'归家',target:1},
         {id:'homeHide3',name:'屏息在门后',desc:'同一晚在三次真实入室检查前收好手机并装睡，且整次检查未被发现；一开始就在装睡不刷次数。',group:'归家',target:3},
@@ -3674,9 +3752,9 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
             note1:st?.notes.sent||0,note5:st?.notes.sent||0,nap30:st?.rest.total||0,
             cube100:st?.cube||0,work100:st?.homework||0,clues6:st?.evidence.length||0,
             answers10:st&&st.questionWrong===0?st.questionRight:0,
-            cleanClear:clear&&st.caught===0&&st.dangerFails===0&&st.questionWrong===0&&st.campus.rear.incidents===0?1:0,
+            cleanClear:clear&&st.caught===0&&st.dangerFails===0&&st.questionWrong===0&&st.campus.rear.incidents===0&&cleanSchool34(st)?1:0,
             quickClear:clear&&st.mode==='quick'?1:0,noPhone:clear&&!st.phoneEver?1:0,
-            allEndings:save.endings.filter(id=>ENDING_IDS.slice(0,12).includes(id)).length, ...campusAchievementMetrics(),...weeklyMetrics(),...homeAchievementMetrics()};
+            allEndings:save.endings.filter(id=>ENDING_IDS.slice(0,12).includes(id)).length, ...campusAchievementMetrics(),...weeklyMetrics(),...homeAchievementMetrics(),...metrics34()};
         for(const id of DIFFICULTY_IDS.filter(id=>id!=='god')) m['clear_'+id]=clear&&st.difficulty===id?1:0;
         for(const id of ['god60','god120','god180']) m[id]=st?.difficulty==='god'?st.godElapsed:0;
         for(const id of ENDING_IDS) m['end_'+id]=save.endings.includes(id)?1:0;
@@ -3733,7 +3811,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         const current=achievementMetrics(S?.endingId),count=Object.keys(save.achievements).length;
         const filtered=ACHIEVEMENTS.filter(a=>achievementFilter==='all'||achievementFilter==='unlocked'&&save.achievements[a.id]||achievementFilter==='locked'&&!save.achievements[a.id]||a.group===achievementFilter);
         return `<div class="achievement-summary"><strong>${count} / ${ACHIEVEMENTS.length}</strong><span class="small">神级最好坚持 ${save.godBest.toFixed(1)} / ${GOD_LIMIT}秒</span></div><p>已解锁成就跨周目保留，随备份导出/导入。条形显示历史单局最高进度；回档不会把同一段操作重复相加。普通玩法指标迁移后继续统计，旧结局自动补发对应成就。</p>
-        <div class="achievement-toolbar">${[['all','全部'],['unlocked','已解锁'],['locked','未解锁'],['课堂','课堂'],['挑战','挑战'],['校园','校园'],['归家','归家'],['结局','结局']].map(([id,label])=>`<button data-achievement-filter="${id}" class="${achievementFilter===id?'active':''}">${label}</button>`).join('')}</div>
+        <div class="achievement-toolbar">${[['all','全部'],['unlocked','已解锁'],['locked','未解锁'],['课堂','课堂'],['挑战','挑战'],['校园','校园'],['校园新章','校园新章'],['归家','归家'],['结局','结局']].map(([id,label])=>`<button data-achievement-filter="${id}" class="${achievementFilter===id?'active':''}">${label}</button>`).join('')}</div>
         <div class="achievement-grid">${filtered.map(a=>{
             const record=save.achievements[a.id],secret=(a.hidden||a.ending)&&!record&&!save.settings.endingHints;
             const best=record?a.target:Math.min(a.target,save.achievementProgress[a.id]||0),now=Math.min(a.target,current[a.id]||0);
@@ -3996,6 +4074,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
     // v2 gameplay branches. Every continuation is an ID, never serialized JS.
     // ---------------------------------------------------------------------
     function dispatchContinuation(id, ok) {
+        if(continue34(id,ok))return;
         if(campusContinuation(id))return;
         switch (id) {
             case null: case undefined: return;
@@ -4025,6 +4104,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         }
     }
     function dispatchEvent(id) {
+        if(event34(id))return;
         switch (id) {
             case 'instruction': say('何凤林','听课能降低怀疑，但一直听也会走神。写写作业、转转魔方，然后记得抬头。'); break;
             case 'practice': triggerDanger('何凤林示意你练习：简单两次空格，普通三次空格；高难度看下方数字顺序。',true); break;
@@ -4047,7 +4127,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
             case 'engboost': triggerExtraordinary(); break;
             case 'engq2': askQuestion('english',1); break;
             case 'engq3': askQuestion('english',2); break;
-            case 'mathstage1': say('郭自嘲','第一阶段。讲台观察。你们的每一个动作，都有定义域。'); caption('BOSS / 1 / 56',4); break;
+            case 'mathstage1': say('郭自朝','第一阶段。讲台观察。你们的每一个动作，都有定义域。'); caption('BOSS / 1 / 56',4); break;
             case 'mathq1': askQuestion('math',0); break;
             case 'mathq2': askQuestion('math',1); break;
             case 'mathgrid': startGrid(); break;
@@ -4199,6 +4279,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         migrate31Snapshot(snap);
         migrate32Snapshot(snap);
         migrate33Snapshot(snap);
+        migrate34Snapshot(snap);
         const num=(n,lo=0,hi=10000000)=>typeof n==='number' && Number.isFinite(n) && n>=lo && n<=hi;
         assertValid(st && st.screen==='game' && ['INTRO','CLASS','BREAK','COMPLETE','ESCAPE','CAMPUS','HOME'].includes(st.phase),'进度不在可恢复阶段');
         assertValid(['normal','quick'].includes(st.mode) && Number.isInteger(st.classIndex) && st.classIndex>=0 && st.classIndex<CLASSES.length,'课程信息无效');
@@ -4213,6 +4294,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         validateBalanceState(st,c,num);
         validate32State(st,c,num);
         validate33State(st,c,num);
+        validate34State(st,c,num);
         validateCampusState(st,c,num);
         assertValid(['board','teacher','door','window','mate'].includes(st.observe) && ['chat','video','time','game'].includes(st.phoneApp),'界面状态无效');
         const base=makeState(st.mode);
@@ -4629,7 +4711,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
             dispatchContinuation(done);
     } renderDialogue(); requestAutoSave(); }
     function renderDialogue() { $('dialogueText').textContent = dialogue.text.slice(0, Math.floor(dialogue.shown)); $('dialogueNext').hidden = !script && dialogue.shown >= dialogue.text.length; $('dialogueNext').innerHTML = (dialogue.shown < dialogue.text.length ? '显示全文' : '继续') + ' <span class="next-mark">▸</span>'; $('dialogueAuto').textContent = script ? (save.settings.auto ? 'AUTO ON' : '点击 / ENTER') : '实时课堂'; }
-    function makeState(mode, difficulty='normal') { return { homeVersion33:1, english33:makeEnglishState(), home:null, homeTotals:makeHomeTotals(), featuresVersion:31, teacherRules32:true, calendar:legacyCalendar(), discipline:makeDisciplineState(), campus:makeCampusState(), balanceVersion:2, difficulty:DIFFICULTY_IDS.includes(difficulty)?difficulty:'normal', godElapsed:0, godWarned:false, phoneHeat:0, reflexNextAt:0, reflexExtraCount:0, runStats:makeRunStats(), screen: 'game', phase: 'INTRO', mode, classIndex: 0, elapsed: 0, duration: 180, t: 0, survival: 0, action: 'listen', observe: 'teacher', observeElapsed: 0, observeNoted: false, suspicion: 0, maxSuspicion: 0, focus: 100, boredom: 0, homework: 0, cube: 0, cubeStep: 0, cubeCool: 0, lastCubeTurn: -10, phoneApp: 'chat', phoneSeconds: 0, totalPhone: 0, phoneEver: false, phoneCaught: 0, caught: 0, listenSeconds: 0, questionRight: 0, questionWrong: 0, mathStreak: 0, dangerFails: 0, nextEvent: 40, nextDoor: 27, door: null, teacher: { x: 842, y: 305, z: .81, target: 0, wait: 4, step: 0, near: false, tailUntil: 0, hold: 0 }, dangerCooldown: 0, extraUntil: 0, shuffleUntil: 0, anomalyUntil: 0, heartTimer: 0, eventsDone: [], messages: ['班群：今天好像要巡查。', '同桌：留意后门玻璃的反光。'], journal: [], operationTimes: [], classStats: {}, distance: 70, escapeNode: 0, escapeStarted: false, phoneGameTarget: 0, phoneGameRewardAt: -10, breakRemaining: 0, escapeRoutePending: false, endingId: null, evidence: [], bondLessons: [], companion: false, mirrorChoices: 0, actionOrder: [0,1,2,3,4,5,6,7,8], mechanicsVersion:1, notes:makeNotesState(), rest:makeRestState(), cubeQueue:[], cubeLastInput:'', cubeInputInfo:'', runPhoneRestricted: save.phoneRestricted, runId: Date.now().toString(36) + '-' + Math.random().toString(36).slice(2,10) }; }
+    function makeState(mode, difficulty='normal') { return { v34:makeV34(), homeVersion33:1, english33:makeEnglishState(), home:null, homeTotals:makeHomeTotals(), featuresVersion:31, teacherRules32:true, calendar:legacyCalendar(), discipline:makeDisciplineState(), campus:makeCampusState(), balanceVersion:2, difficulty:DIFFICULTY_IDS.includes(difficulty)?difficulty:'normal', godElapsed:0, godWarned:false, phoneHeat:0, reflexNextAt:0, reflexExtraCount:0, runStats:makeRunStats(), screen: 'game', phase: 'INTRO', mode, classIndex: 0, elapsed: 0, duration: 180, t: 0, survival: 0, action: 'listen', observe: 'teacher', observeElapsed: 0, observeNoted: false, suspicion: 0, maxSuspicion: 0, focus: 100, boredom: 0, homework: 0, cube: 0, cubeStep: 0, cubeCool: 0, lastCubeTurn: -10, phoneApp: 'chat', phoneSeconds: 0, totalPhone: 0, phoneEver: false, phoneCaught: 0, caught: 0, listenSeconds: 0, questionRight: 0, questionWrong: 0, mathStreak: 0, dangerFails: 0, nextEvent: 40, nextDoor: 27, door: null, teacher: { x: 842, y: 305, z: .81, target: 0, wait: 4, step: 0, near: false, tailUntil: 0, hold: 0 }, dangerCooldown: 0, extraUntil: 0, shuffleUntil: 0, anomalyUntil: 0, heartTimer: 0, eventsDone: [], messages: ['班群：今天好像要巡查。', '同桌：留意后门玻璃的反光。'], journal: [], operationTimes: [], classStats: {}, distance: 70, escapeNode: 0, escapeStarted: false, phoneGameTarget: 0, phoneGameRewardAt: -10, breakRemaining: 0, escapeRoutePending: false, endingId: null, evidence: [], bondLessons: [], companion: false, mirrorChoices: 0, actionOrder: [0,1,2,3,4,5,6,7,8], mechanicsVersion:1, notes:makeNotesState(), rest:makeRestState(), cubeQueue:[], cubeLastInput:'', cubeInputInfo:'', runPhoneRestricted: save.phoneRestricted, runId: Date.now().toString(36) + '-' + Math.random().toString(36).slice(2,10) }; }
     function startGame(mode, difficulty=save.settings.difficulty, campaign='day', seed) {
         initAudio(); clearTransient();
         $('stage').classList.remove('is-menu');
@@ -4953,7 +5035,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         if(challenge?.type!=='hide')return;const c=closeChallenge();S.campus.allies.wang.pending=null;
         if(c.tutorial){addSuspicion(5);say('何凤林','这一轮只是练习。正式巡视时，先看清提示，再操作。');toast('安全演练结束 · 不计快速反应失败或成就。');return;}
         S.dangerFails++;if(c.parent)S.campus.parents.strikes++;
-        if(c.wasPhone&&registerPhoneCaught())return;addSuspicion(S.classIndex===5?34:26,false);
+        if(c.wasPhone&&registerPhoneCaught())return;addSuspicion(S.classIndex===5?48:36,false);
         if(S.screen!=='game')return;S.dangerCooldown=S.t+10;S.teacher.hold=Math.max(S.teacher.hold,S.t+2);
         say(CLASSES[S.classIndex].teacher,c.wasSleep?'醒一醒，坐直看黑板。':'刚才在做什么？先把课本打开。');toast('快速反应失败 · 怀疑上升。',true);sound('warn');requestAutoSave();
     }
@@ -4984,7 +5066,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
     } checkAchievements(); return true; }
     function finishQuestion(index) { if (modal || recoveryGrace > 0 || !challenge || !['question', 'grid'].includes(challenge.type))
         return; const c = closeChallenge(), ok = index === c.correct; if (!recordAnswer(ok, c.math))
-        return; sound(ok ? 'click' : 'warn'); toast(ok ? '回答正确 · 怀疑下降' : (index === null ? '回答超时。' : '回答错误。'), !ok); say(c.math ? '郭自嘲' : (S.phase === 'ESCAPE' ? '你' : CLASSES[S.classIndex].teacher), ok ? c.explain : '记住：' + c.explain); if (c.onDone)
+        return; sound(ok ? 'click' : 'warn'); toast(ok ? '回答正确 · 怀疑下降' : (index === null ? '回答超时。' : '回答错误。'), !ok); say(c.math ? '郭自朝' : (S.phase === 'ESCAPE' ? '你' : CLASSES[S.classIndex].teacher), ok ? c.explain : '记住：' + c.explain); if (c.onDone)
         dispatchContinuation(c.onDone, ok); }
     // Two independent challenges: biology stillness (v2.2), classroom rapid hiding.
     function createReflexChallenge(st,onDone=null) {
@@ -5136,7 +5218,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         } else finishFreeze(false);
     }
     function startGrid(onDone = null) { const variants = [{ q: '找到编号：7 × 8 − 13 = ？', n: 43, e: '7×8−13=43。正确编号是43。' }, { q: 'f(x)=x²。找到编号 f′(7)。', n: 14, e: 'f′(x)=2x，f′(7)=14。' }, { q: '找到编号：56 ÷ 2 + 7 = ？', n: 35, e: '56÷2+7=35。正确编号是35。' }]; const v = pick(variants); beginChallenge({ type: 'grid', remaining: Math.max(6,(S.phase === 'ESCAPE' ? 14 : 14 + S.focus * .03)*rules().answer), hintDuration:1.8*rules().answer, title: '1 / 56', description: v.q, kicker: S.phase === 'ESCAPE' ? 'FINAL LOCK / 最后一道编号锁' : 'BOSS / 思考能力', numbers: shuffle(Array.from({ length: 56 }, (_, i) => i + 1)), correct: v.n, explain: v.e, math: true, hint: S.listenSeconds >= 20, onDone }); sound('warn'); }
-    function startFakeBell() { sound('bell'); fx('flicker'); beginChallenge({ type: 'fakeBell', remaining: 16, title: '下课了。是吗？', kicker: 'THE BELL / 第一遍铃声', description: "走廊里响起放学铃。没有一个同学起身。\n郭自嘲仍然站在黑板前，静静看着你。", choices: ['离开教室', '继续坐着'] }); say('广播', '下课时间到了。请同学们……离开。'); }
+    function startFakeBell() { sound('bell'); fx('flicker'); beginChallenge({ type: 'fakeBell', remaining: 16, title: '下课了。是吗？', kicker: 'THE BELL / 第一遍铃声', description: "走廊里响起放学铃。没有一个同学起身。\n郭自朝仍然站在黑板前，静静看着你。", choices: ['离开教室', '继续坐着'] }); say('广播', '下课时间到了。请同学们……离开。'); }
     function choose(index) {
         if (!challenge || modal || recoveryGrace > 0) return;
         const c = challenge;
@@ -5153,7 +5235,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
             }
             else {
                 addSuspicion(-4);
-                playScript([['你', '你把手放回课本上。铃声又响了几秒，忽然断了。'], ['郭自嘲', '不错。']], 'fakeBellWait');
+                playScript([['你', '你把手放回课本上。铃声又响了几秒，忽然断了。'], ['郭自朝', '不错。']], 'fakeBellWait');
             }
             return;
         }
@@ -5290,12 +5372,12 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
     }
     function suddenWatch() { if ((['phone','cube','note','sleep','chess'].includes(S.action)||(S.action==='talk'&&S.campus.speech.topic))) {
         caption('讲课声突然中断。全班静音。', 2.5);
-        triggerDanger('李芳玲停下了。她正在看你的手。');
+        triggerDanger('李芳林停下了。她正在看你的手。');
     }
     else {
         S.teacher.hold = S.t + 3;
         caption('讲课声突然中断。你已经拿好了笔。', 3);
-        say('李芳玲', '让你受着你就受着。');
+        say('李芳林', '让你受着你就受着。');
         addSuspicion(-2);
     } }
     function scrambleButtons() { S.shuffleUntil = S.t + 5; const order = shuffle(ACTIONS.map((_,i)=>i)); S.actionOrder = order; $$('.action').forEach((e, i) => e.style.order = order[i]); toast('神经调节：按钮位置交换 5 秒。数字快捷键不变。', true, 4); fx('flicker'); say('王颖', '习惯，还是判断？'); }
@@ -5477,7 +5559,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         S.phase='BREAK';S.action='listen';S.door=null;S.extraUntil=0;
         $('doorShadow').style.opacity='0';sound('bell',.6);
         const next=dayTable()[S.campus.cursor+1];
-        beginChallenge({type:'break',remaining:3,kicker:'LESSON COMPLETE / 课间',title:CLASSES[S.classIndex].subject+'结束',description:(S.campus.office.pending?'郭自嘲已通知：下课先到办公室。\n':'')+(next?'下一阶段：'+next.name+' · '+fmtTime(next.start)+'。':'21:40，真正的放学时间。')});
+        beginChallenge({type:'break',remaining:3,kicker:'LESSON COMPLETE / 课间',title:CLASSES[S.classIndex].subject+'结束',description:(S.campus.office.pending?'郭自朝已通知：下课先到办公室。\n':'')+(next?'下一阶段：'+next.name+' · '+fmtTime(next.start)+'。':'21:40，真正的放学时间。')});
     }
     function completeDay() {
         completeStandingLesson();
@@ -5493,7 +5575,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
     function resolveDayEnd() {
         S.companion = false;
         if (S.cube >= 100 && !S.phoneEver) { finishEnding('cfop'); return; }
-        if (S.maxSuspicion < 20 && S.questionWrong === 0 && S.questionRight > 0) { finishEnding('unseen'); return; }
+        if (S.maxSuspicion < 20 && S.questionWrong === 0 && S.questionRight > 0 && cleanSchool34()) { finishEnding('unseen'); return; }
         beginEscapeStory();
     }
     // Escape routes, six subject memories and a final repeated-click sprint.
@@ -5533,7 +5615,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
                 playScript([['何凤林', '最后一道题，没有标准答案。'], ['何凤林', '走侧楼梯。记住，先看提示，再按顺序。'], ['王颖', '不要让习惯替你做决定。']], 'escapeFreeze');
                 break;
             case 2:
-                say('李芳玲', '受着。');
+                say('李芳林', '受着。');
                 askQuestion('chemistry', 0, done);
                 break;
             case 3:
@@ -5822,6 +5904,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         }
         checkAchievements();
         S.t += dt;
+        if(update34(dt))return;
         if(S.phase==='HOME'){updateHome(dt);return;}
         updateHorror(dt);
         if(S.phase==='CAMPUS'&&!challenge){updateCampus(dt);return;}
@@ -6194,7 +6277,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
     }
     function campusSlot() { return dayTable()[S?.campus?.cursor??0]; }
     function campusFree() { return S?.phase==='CAMPUS'&&S.campus.location!=='office'; }
-    function campusName(st=S) { return st?.campus?.location==='office'?'办公室 · 郭自嘲':dayTable(st)[st?.campus?.cursor??0]?.name||'教室'; }
+    function campusName(st=S) { return st?.campus?.location==='office'?'办公室 · 郭自朝':dayTable(st)[st?.campus?.cursor??0]?.name||'教室'; }
     function campusRecord(text) {
         const records=S.campus.rear.records;
         records.push({time:currentTime(),text});if(records.length>40)records.shift();
@@ -6341,8 +6424,8 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         o.returnVisit=returnVisit;o.returnLocation=['classroom','playground','canteen','gate'].includes(a.location)?a.location:'classroom';
         o.unlocked=true;o.pending=false;o.visits++;a.location='office';S.phase='CAMPUS';
         $('challengeLayer').hidden=true;$('teacher').hidden=true;
-        playScript([['你','门牌上写着：年级办公室。不是另一张课桌。'],['郭自嘲',returnVisit?'坐吧。上次的记录还在这里。':'我在后门听见了。让你下课来，是想把事情说清楚。'],['郭自嘲','你跟别人讲话，是不是互相喜欢对方？']], 'officeQuestion');
-        campusRecord('进入办公室，接受郭自嘲的谈话。');checkAchievements();renderCampus();rememberCheckpoint('办公室 · 谈话开始','event');autoSave('进入办公室');
+        playScript([['你','门牌上写着：年级办公室。不是另一张课桌。'],['郭自朝',returnVisit?'坐吧。上次的记录还在这里。':'我在后门听见了。让你下课来，是想把事情说清楚。'],['郭自朝','你跟别人讲话，是不是互相喜欢对方？']], 'officeQuestion');
+        campusRecord('进入办公室，接受郭自朝的谈话。');checkAchievements();renderCampus();rememberCheckpoint('办公室 · 谈话开始','event');autoSave('进入办公室');
     }
     function showOfficeQuestion() {
         beginChallenge({type:'officeQuestion',kicker:'OFFICE / 办公室',title:'这次，由你回答。',description:'他把记录本推到桌边。\n你可以说明关系，也可以保留隐私。前三种回答都能结束训话，不会因是否喜欢对方而受罚。',choices:['只是同学。刚才聊得起劲，忘了课堂要求。','这是我的私事；但上课不讲话的要求，我接受。','我们有好感，但不会让聊天影响课堂。','先看看桌上的巡查记录']});
@@ -6352,7 +6435,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         if(!o.returnVisit){S.campus.rear.level=Math.max(0,S.campus.rear.level-1);addSuspicion(-10,false);}
         closeChallenge();
         campusRecord((o.returnVisit?'补看记录结束，本次不重复撤销登记；':'谈话结束，撤销一级后门登记；')+'当前未撤销记录 '+S.campus.rear.level+'/3。');
-        playScript([['郭自嘲','我不替你定义和同学的关系。普通交往也不需要向我证明。'],['郭自嘲',o.returnVisit?'记录看完就回去吧。上次谈话撤销过的提醒，不会重复撤销。':'课堂里别一直讲话。今天这条提醒先撤一级，回去吧。'],['你',o.evidence?'你记下了同一时刻出现在两处的签名。这份记录可以留到21:40再处理。':'你走向门口。办公室的灯，和教室的不一样。']], 'officeResume');
+        playScript([['郭自朝','我不替你定义和同学的关系。普通交往也不需要向我证明。'],['郭自朝',o.returnVisit?'记录看完就回去吧。上次谈话撤销过的提醒，不会重复撤销。':'课堂里别一直讲话。今天这条提醒先撤一级，回去吧。'],['你',o.evidence?'你记下了同一时刻出现在两处的签名。这份记录可以留到21:40再处理。':'你走向门口。办公室的灯，和教室的不一样。']], 'officeResume');
         checkAchievements();requestAutoSave();
     }
     function leaveOffice() {
@@ -6370,7 +6453,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         switch(c.type){
             case 'mealPlan':chooseMeal(index);break;
             case 'officeQuestion':
-                if(index===3){closeChallenge();beginChallenge({type:'officeLedger',kicker:'巡查记录 / 不要签空白页',title:'同一个签名，出现在两处。',description:'18:42：郭自嘲，后门。18:42：郭自嘲，办公室。\n有一页空白承诺书，页脚写着：签名后不得离开。旁边有明确的红字：此选项会进入坏结局。',choices:['记下矛盾，回去回答问题','不看记录，直接回答','签署空白承诺书（坏结局）']});}
+                if(index===3){closeChallenge();beginChallenge({type:'officeLedger',kicker:'巡查记录 / 不要签空白页',title:'同一个签名，出现在两处。',description:'18:42：郭自朝，后门。18:42：郭自朝，办公室。\n有一页空白承诺书，页脚写着：签名后不得离开。旁边有明确的红字：此选项会进入坏结局。',choices:['记下矛盾，回去回答问题','不看记录，直接回答','签署空白承诺书（坏结局）']});}
                 else finishOffice(index);break;
             case 'officeLedger':
                 closeChallenge();if(index===2){finishEnding('officeLoop');break;}
@@ -6484,7 +6567,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
     }
     function updateChess(dt){
         const c=S.campus.chess;
-        if(S.phase==='CLASS')addSuspicion(.10*dt,false);
+        if(S.phase==='CLASS')addSuspicion(.24*dt,false);
         if(S.screen!=='game'||c.result||c.turn!=='b')return;
         c.aiRemaining=Math.max(0,c.aiRemaining-dt);if(c.aiRemaining>0)return;
         if(chessSearch?.state!==c||chessSearch.fen!==c.fen)chessSearch={state:c,fen:c.fen,generator:chessSearchGenerator(c.fen,rules().rank)};
@@ -6522,7 +6605,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         $('chessNext').textContent=c.result?'开新一局':'放弃重开';$('chessOfferDraw').disabled=!!c.result||c.turn!=='w'||!!c.promotion;
         $('chessLiveRisk').textContent=campusFree()?'自由活动 · 下棋不算违规。':S.door?.real?'后门正在观察！空格收棋，局面保留。':S.teacher.near?'有人就在座位旁。先收棋。':`怀疑 ${Math.floor(S.suspicion)} · 课堂继续，空格收棋。`;
     }
-    const ALLY_RULES=Object.freeze({chance:[.90,.75,.60,.45,.30,.15],cooldown:[16,22,30,40,52,65]});
+    const ALLY_RULES=Object.freeze({chance:[.65,.48,.34,.23,.14,.07],cooldown:[22,30,40,52,68,85]});
     const ALLY_NAMES={wang:'王子睿',li:'李思聪'};
     function makeAlliesState(){const person=()=>({heard:0,helped:0,nextAt:0,lastEvent:'',pending:null,until:0,text:'',lessons:[]});return {version:1,serial:0,wang:person(),li:person()};}
     function allyWarning(kind,eventId,text,random=Math.random){
@@ -6614,7 +6697,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         const pattern=real?pick(['ledger','linger','knock','return']):'ledger';
         if(real&&pattern==='linger')duration=Math.max(duration,11);
         if(real&&pattern==='return')duration=Math.max(duration,11);
-        S.door={real,born:S.t,until:S.t+duration,kind,serial:++r.serial,pattern,inspector:S.classIndex===5?'李芙容':'郭自嘲',exposure:0,recorded:false,tutorial:source==='lesson',spotted:false};
+        S.door={real,born:S.t,until:S.t+duration,kind,serial:++r.serial,pattern,inspector:S.classIndex===5?'李芙容':'郭自朝',exposure:0,recorded:false,tutorial:source==='lesson',spotted:false};
         if(real)r.nextAllowed=S.t+duration+32;
         $('doorShadow').className=kind==='glasses'?'glasses':kind==='hand'?'hand':'';
         $('doorShadow').style.opacity=real?'.92':'.45';
@@ -6631,12 +6714,12 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         d.recorded=true;const a=S.campus,r=a.rear;r.level++;r.incidents++;
         if(S.classIndex===7)a.parents.strikes++;
         const labels={phone:'使用手机',cube:'摆弄魔方',note:'传纸条',sleep:'睡觉',chess:'下棋',talk:'上课讲话'};
-        campusRecord((d.inspector||'郭自嘲')+'确认：'+labels[action]+'；未撤销登记 '+r.level+'/3。');
-        if(action==='talk'&&(d.inspector||'郭自嘲')==='郭自嘲'){
+        campusRecord((d.inspector||'郭自朝')+'确认：'+labels[action]+'；未撤销登记 '+r.level+'/3。');
+        if(action==='talk'&&(d.inspector||'郭自朝')==='郭自朝'){
             a.office.pending=true;a.office.unlocked=true;
-            say('郭自嘲','刚才跟别人讲什么？下课到办公室来一趟。');
+            say('郭自朝','刚才跟别人讲什么？下课到办公室来一趟。');
             toast('新地点已解锁：办公室 · 本节下课后前往。',true,5);
-        } else say(d.inspector||'郭自嘲','我在后门看见了。已经记在这里，别再试一次。');
+        } else say(d.inspector||'郭自朝','我在后门看见了。已经记在这里，别再试一次。');
         cancelDeskActivity('caught');S.action='listen';S.phoneSeconds=0;updateActionUI();
         if(action==='phone'&&registerPhoneCaught())return;
         if(r.level>=3){finishEnding('doorRoster');return;}
@@ -6676,7 +6759,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         if(S.observe==='teacher'&&S.classIndex===2&&isExercise()){S.discipline.exerciseSeen=true;checkAchievements();}
         if(S.observe==='door'){
             spotRear();
-            if(S.door?.real&&!S.door.tutorial)say('你',(S.door.inspector||'郭自嘲')+'的眼镜在玻璃上有真实反光。'+({ledger:'他正在对照登记本。',linger:'他还没有离开，别以为安静就是安全。',knock:'指节敲了两下，停在门框上。',return:'影子淡下去之后，还会折回来。'})[S.door.pattern]);
+            if(S.door?.real&&!S.door.tutorial)say('你',(S.door.inspector||'郭自朝')+'的眼镜在玻璃上有真实反光。'+({ledger:'他正在对照登记本。',linger:'他还没有离开，别以为安静就是安全。',knock:'指节敲了两下，停在门框上。',return:'影子淡下去之后，还会折回来。'})[S.door.pattern]);
         }
         if(S.classIndex===7&&S.phase==='CLASS'&&S.observe==='teacher'){
             S.campus.parents.observed=true;
@@ -6731,9 +6814,9 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         if(!playing){for(const id of ['campusScene','campusPanel','chessPanel','talkPanel'])$(id).hidden=true;$('fearVeil').classList.remove('active');$('stage').classList.remove('fear-active');return;}
         const a=S.campus,slot=campusSlot(),free=campusFree(),ready=!challenge&&!script;
         const roomNames={gate:'校门',classroom:'高二（2）班',playground:'操场',canteen:'食堂',office:'年级办公室',corridor:'走廊'};
-        $('campusHud').innerHTML=`<div class="campus-tag">${slot.band} / ${roomNames[a.location]||'教室'}</div><div>07:20 到校 — 21:40 放学</div><div>后门登记 ${a.rear.level}/3 · 棋局 ${a.chess.wins} 胜</div><div>手机：${({bag:'书包内',pocket:'随身',locker:'保管柜 · 本局封存',none:'不可用'})[a.bag.phone]}</div>${a.office.pending?'<div class="office-notice">下课到办公室 · 郭自嘲</div>':''}`;
+        $('campusHud').innerHTML=`<div class="campus-tag">${slot.band} / ${roomNames[a.location]||'教室'}</div><div>07:20 到校 — 21:40 放学</div><div>后门登记 ${a.rear.level}/3 · 棋局 ${a.chess.wins} 胜</div><div>手机：${({bag:'书包内',pocket:'随身',locker:'保管柜 · 本局封存',none:'不可用'})[a.bag.phone]}</div>${a.office.pending?'<div class="office-notice">下课到办公室 · 郭自朝</div>':''}`;
         const d=S.door;
-        $('rearStatus').textContent=d?.real?d.tutorial?'后门识别教学\n本次不登记违规':d.recorded?'这次巡视已登记\n不要忽略下一次目光':S.t-d.born<1.8?'后门有人靠近\n现在收好还来得及':d.pattern==='return'&&S.t-d.born>3.4&&S.t-d.born<5.3?'脚步远了……\n反光还在，不要抢着开口':(d.inspector||'郭自嘲')+'正在观察\n停止讲话 · 收好物品':a.rear.level===2?'已有两条未撤销记录\n再被确认将进入坏结局':'';
+        $('rearStatus').textContent=d?.real?d.tutorial?'后门识别教学\n本次不登记违规':d.recorded?'这次巡视已登记\n不要忽略下一次目光':S.t-d.born<1.8?'后门有人靠近\n现在收好还来得及':d.pattern==='return'&&S.t-d.born>3.4&&S.t-d.born<5.3?'脚步远了……\n反光还在，不要抢着开口':(d.inspector||'郭自朝')+'正在观察\n停止讲话 · 收好物品':a.rear.level===2?'已有两条未撤销记录\n再被确认将进入坏结局':'';
         $('rearStatus').classList.toggle('hot',!!d?.real||a.rear.level===2);
         $('chessPanel').hidden=!(ready&&['CLASS','CAMPUS'].includes(S.phase)&&S.action==='chess');
         $('talkPanel').hidden=!(ready&&['CLASS','CAMPUS'].includes(S.phase)&&S.action==='talk');
@@ -6746,7 +6829,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
             $('campusSceneTitle').textContent=roomNames[a.location];
             $('campusSceneSub').textContent=a.location==='office'?'办公室 / 谈话与记录':fmtTime(slot.start)+' — '+fmtTime(slot.end)+' / '+slot.name;
             $('teacher').hidden=true;$('courseName').textContent=slot.band+' · '+campusName();
-            $('teacherName').textContent=a.location==='office'?'郭自嘲 / 下课谈话':slot.kind==='pe'?'体育老师 / 自由活动':'自由活动 / 非课堂违规时段';
+            $('teacherName').textContent=a.location==='office'?'郭自朝 / 下课谈话':slot.kind==='pe'?'体育老师 / 自由活动':'自由活动 / 非课堂违规时段';
         } else if(S.phase!=='ESCAPE'){
             $('teacher').hidden=false;$('courseName').textContent=slot.band+' · '+(slot.ordinal?'第'+slot.ordinal+'节 · ':'')+slot.name;
             if(S.classIndex===7)$('teacherName').textContent='值日家长 / '+(a.parents.observed?(a.parents.mode==='walk'?'巡走型':'讲台值守型'):'监督方式待观察');
@@ -6783,7 +6866,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         return allyJournal()+`<h3>全天档案 / ${campusName()}</h3><p>棋局：${a.chess.wins}胜 / ${a.chess.games}完成局。交谈：${a.speech.completed}次。\n后门：识别${a.rear.spotted}次、安全经过${a.rear.avoided}次、未撤销${a.rear.level}/3条。办公室：${a.office.unlocked?'已解锁':'尚未解锁'}${a.office.pending?'，下课前往':''}。</p><div class="modal-actions"><button class="outline-btn" data-modal-action="timetable">课表与地图</button></div>`+a.rear.records.slice(-10).reverse().map(r=>`<div class="journal-entry"><b>${fmtTime(r.time)}</b><p>${esc(r.text)}</p></div>`).join('');
     }
     function campusHelp() {
-        return `<h3>v3.2 / 七日课表</h3><p><b>新课表与一周挑战：</b>上午5节、下午4节、晚自习2节；随机排课，允许两连堂、不允许三连堂，体育每天0—1节且算在九节日间课程内。主菜单一周挑战连续玩星期一至星期日，成功离校才进入下一天，日结可保存退出。</p><p><b>课堂差异：</b>戴贝贝不走动，确认讲话后罚站到本节下课；郭自嘲不走动，严查讲话、睡觉和违规低头；王颖讲授课不走动、习题课走动；何凤林和尹莎莎会走动。按2在习题课是本节练习，不算违规低头。右上角“人物”可以随时查档。</p><p><b>条件反射与快速反应：</b>条件反射恢复v2.2：普通准备1.4秒、静止1.4秒，一次容错；松开键和轻微抖动不算失误。快速反应独立为简单2空格、普通3空格、困难3数字、地狱4数字、极限5数字、神级6数字。统一准备0.4秒，操作时间2.8/2.6/3.0/3.3/3.6/3.9秒。触屏点大数字，键盘按按钮的左起位置，按下方提示顺序完成。高难度数字题第一次误按扣0.35—0.50秒、不清空步骤，第二次或超时失败。数学及英语强化分别仅扣0.20/0.15秒，不受其他缩时叠乘。</p><p>从07:20校门开始，六科之外还有体育、午晚餐、午休与两节晚自习，21:40才是真正放学。顶部「课表」查看时间线和地图。</p><p><b>8 下棋</b>：8×8国际象棋，你执白先行。先选棋子、再点高亮合法落点，或方向键选格、Enter确认。支持易位、过路兵、升变、将军、将死与和棋。升变时Q/R/B/N选后/车/象/马。三次重复、五十回合、逼和和常见子力不足自动和棋；双方各走10步、子力差不超过一兵可提和。空格收棋，局面和对手思考进度保留；AI按难度做轻量搜索，不是专业棋力引擎。旧五子棋未完局转换为新初始局面，旧档案保留但不冒充国际象棋胜场。课堂不暂停，体育与休息时可以放心玩。</p><p><b>9 讲话</b>：选择话题后实际交谈5秒，中断没有完成奖励；结束后安静7秒。郭自嘲在后门确认讲话后，会登记并要求下课去办公室。可以解释关系或保留隐私，前三种回答不因关系不同受罚；查看记录能开启支线。</p><p><b>后门更少、更严重</b>：普通基础抽查8%，用手机14%，高怀疑18%，数学22%；每40秒附近尝试一次，真实巡视结束后有32秒硬冷却，所有随机来源共用。出现前1.8秒可收好，持续违规才会被登记；三条未撤销记录进入独立结局。完整办公室谈话撤销一级。真假反光、敲窗、停留、假走后折返均有可见说明，不要把暂时变淡当作完全离开。</p><p><b>饭点与书包</b>：午餐、晚餐各自预先确定一次检查结果，普通基础概率25%。明确选择离开且把手机留包，若被查到则触发《书包里的来电》。携带、寄存或留教室可以避免；寄存后本局不能再使用手机。任何暂停、读档都不会重抽。</p><p><b>家长监督</b>：最后一节随机固定为巡走型或讲台值守型，读档不改。巡走反复经过座位；讲台值守会处理自己的事，在抬头前给出1.8秒合本提示。晚自习写作业是安全行为。</p><p><b>恐怖强化</b>：设置可选，默认关闭。增加低声回响、延迟倒影、额外剪影及夜间异常；不会缩短倒计时、改变AI难度、提高主音量或强制开启闪烁。全部关键危险仍有可见提示。</p><p><b>友方同学</b>：体委王子睿提醒真实走动；数学课代表李思聪提醒真实后门。提醒概率随难度为90/75/60/45/30/15%，各自最短间隔16/22/30/40/52/65秒。提醒不自动替你隐藏，不替代基础危险预警。</p><p><b>24个结局 / 87项成就</b>：新增《前排与后门之间》《动静之间》《和棋之后》。旧12/20结局收集门槛不提高，v3.1的23结局全档案仍保留；新增七日结局《走过七次放学铃》和9项成就（含此结局）。21:40离校面板第四项，再进入同学、反应与和棋页。</p>`;
+        return `<h3>v3.2 / 七日课表</h3><p><b>新课表与一周挑战：</b>上午5节、下午4节、晚自习2节；随机排课，允许两连堂、不允许三连堂，体育每天0—1节且算在九节日间课程内。主菜单一周挑战连续玩星期一至星期日，成功离校才进入下一天，日结可保存退出。</p><p><b>课堂差异：</b>戴贝贝不走动，确认讲话后罚站到本节下课；郭自朝不走动，严查讲话、睡觉和违规低头；王颖讲授课不走动、习题课走动；何凤林和尹莎莎会走动。按2在习题课是本节练习，不算违规低头。右上角“人物”可以随时查档。</p><p><b>条件反射与快速反应：</b>条件反射恢复v2.2：普通准备1.4秒、静止1.4秒，一次容错；松开键和轻微抖动不算失误。快速反应独立为简单2空格、普通3空格、困难3数字、地狱4数字、极限5数字、神级6数字。统一准备0.4秒，操作时间2.8/2.6/3.0/3.3/3.6/3.9秒。触屏点大数字，键盘按按钮的左起位置，按下方提示顺序完成。高难度数字题第一次误按扣0.35—0.50秒、不清空步骤，第二次或超时失败。数学及英语强化分别仅扣0.20/0.15秒，不受其他缩时叠乘。</p><p>从07:20校门开始，六科之外还有体育、午晚餐、午休与两节晚自习，21:40才是真正放学。顶部「课表」查看时间线和地图。</p><p><b>8 下棋</b>：8×8国际象棋，你执白先行。先选棋子、再点高亮合法落点，或方向键选格、Enter确认。支持易位、过路兵、升变、将军、将死与和棋。升变时Q/R/B/N选后/车/象/马。三次重复、五十回合、逼和和常见子力不足自动和棋；双方各走10步、子力差不超过一兵可提和。空格收棋，局面和对手思考进度保留；AI按难度做轻量搜索，不是专业棋力引擎。旧五子棋未完局转换为新初始局面，旧档案保留但不冒充国际象棋胜场。课堂不暂停，体育与休息时可以放心玩。</p><p><b>9 讲话</b>：选择话题后实际交谈5秒，中断没有完成奖励；结束后安静7秒。郭自朝在后门确认讲话后，会登记并要求下课去办公室。可以解释关系或保留隐私，前三种回答不因关系不同受罚；查看记录能开启支线。</p><p><b>后门更少、更严重</b>：普通基础抽查8%，用手机14%，高怀疑18%，数学22%；每40秒附近尝试一次，真实巡视结束后有32秒硬冷却，所有随机来源共用。出现前1.8秒可收好，持续违规才会被登记；三条未撤销记录进入独立结局。完整办公室谈话撤销一级。真假反光、敲窗、停留、假走后折返均有可见说明，不要把暂时变淡当作完全离开。</p><p><b>饭点与书包</b>：午餐、晚餐各自预先确定一次检查结果，普通基础概率25%。明确选择离开且把手机留包，若被查到则触发《书包里的来电》。携带、寄存或留教室可以避免；寄存后本局不能再使用手机。任何暂停、读档都不会重抽。</p><p><b>家长监督</b>：最后一节随机固定为巡走型或讲台值守型，读档不改。巡走反复经过座位；讲台值守会处理自己的事，在抬头前给出1.8秒合本提示。晚自习写作业是安全行为。</p><p><b>恐怖强化</b>：设置可选，默认关闭。增加低声回响、延迟倒影、额外剪影及夜间异常；不会缩短倒计时、改变AI难度、提高主音量或强制开启闪烁。全部关键危险仍有可见提示。</p><p><b>友方同学</b>：体委王子睿提醒真实走动；数学课代表李思聪提醒真实后门。提醒概率随难度为90/75/60/45/30/15%，各自最短间隔16/22/30/40/52/65秒。提醒不自动替你隐藏，不替代基础危险预警。</p><p><b>24个结局 / 87项成就</b>：新增《前排与后门之间》《动静之间》《和棋之后》。旧12/20结局收集门槛不提高，v3.1的23结局全档案仍保留；新增七日结局《走过七次放学铃》和9项成就（含此结局）。21:40离校面板第四项，再进入同学、反应与和棋页。</p>`;
     }
     function campusButton(action) {
         if(action==='timetable'){openModal('timetable');return;}
@@ -6874,7 +6957,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
     function teacherBehaviorNote(st=S){
         if(!st)return '';
         if(st.classIndex===3)return '戴贝贝不离开讲台，尤其留意讲话；被确认后到后排站至本节下课。';
-        if(st.classIndex===5)return '郭自嘲不在教室走动；讲话、睡觉、与课堂无关的低头动作都会引来讲台注视。';
+        if(st.classIndex===5)return '郭自朝不在教室走动；讲话、睡觉、与课堂无关的低头动作都会引来讲台注视。';
         if(st.classIndex===2)return isExercise(st)?'王颖：这节是习题课，会沿过道走动；做本节习题不算违规低头。':'王颖：讲授课留在讲台，敏感于讲话和违规低头。';
         if(st.classIndex===0)return '何凤林会沿过道走动。友方身份不等于免除课堂纪律。';
         if(st.classIndex===4)return '尹莎莎会在教室各处走动；强化期间脚步更快。';
@@ -6898,7 +6981,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         const d=S.discipline;
         if(d.standing){d.standing.elapsed+=dt;return;}
         if(![2,3,5].includes(S.classIndex))return;
-        const talking=S.action==='talk'&&!!S.campus.speech.topic;
+        const talking=S.action==='talk'&&!!S.campus.speech.topic||S.v34?.task?.type==='pengTalk';
         const head=S.classIndex!==3&&headDownAction();
         d.speechHeat=Math.max(0,d.speechHeat+(talking?dt:-dt*.85));
         d.headHeat=Math.max(0,d.headHeat+(head?dt:-dt*.85));
@@ -6953,13 +7036,13 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         const c=S?.calendar,d=S?.discipline,t=S?dayTable():[],a=S?.campus;
         return {standBack:d?.standingCompleted||0,randomEleven:c?.format==='random'&&t.every(x=>a.completed.includes(x.id))?1:0,
             doubleLesson:c?.format==='random'&&t.some((s,i)=>s.kind==='class'&&i>0&&t[i-1].kind==='class'&&s.lesson===t[i-1].lesson&&a.completed.includes(s.id)&&a.completed.includes(t[i-1].id))?1:0,
-            biologyExercise:d?.exerciseSeen?1:0,weekFirst:c?.results.length||0,weekThree:c?.results.length||0,weekSeven:c?.complete?7:0,weekQuiet:c?.complete&&c.results.every(r=>r.caught===0&&r.standing===0)?1:0};
+            biologyExercise:d?.exerciseSeen?1:0,weekFirst:c?.results.length||0,weekThree:c?.results.length||0,weekSeven:c?.complete?7:0,weekQuiet:c?.complete&&c.results.every(r=>r.caught===0&&r.standing===0&&!(r.incidents34>0))?1:0};
     }
     function settleWeekDay(id){
         const c=S.calendar;
         if(c.results.length!==c.day)return; // Never credit the same daily settlement twice.
         if(!S.home||S.home.status!=='passed'||S.home.schoolEnding!==id)return;
-        c.results.push({day:c.day,ending:id,survival:S.survival,caught:S.caught,standing:S.discipline.standingCaught,homework:S.homework,home:homeResult()});
+        c.results.push({day:c.day,ending:id,survival:S.survival,caught:S.caught,standing:S.discipline.standingCaught,incidents34:S.v34.incidents,homework:S.homework,home:homeResult()});
         cancelDeskActivity('ending');S.phase='COMPLETE';S.action='listen';S.endingId=null;S.elapsed=S.duration;S.door=null;challenge=null;script=null;eventQueue=[];
         if(c.day===6){c.complete=true;checkAchievements();finishEnding('weekClear');return;}
         checkAchievements();
@@ -6973,7 +7056,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         if(c.day>=c.homeFromDay&&!c.results[c.day]?.home)return;
         c.day++;const chess=clone(old.campus.chess),homeTotals=clone(old.homeTotals);
         clearTransient();S=makeState(old.mode,old.difficulty);S.calendar=c;S.teacherRules32=true;S.runId=old.runId;S.runPhoneRestricted=old.runPhoneRestricted;
-        S.homeTotals=homeTotals;S.campus.bag.phone=old.runPhoneRestricted?'none':'bag';S.campus.chess=chess;S.t=old.t;S.survival=old.survival;
+        S.v34=carryV34(old.v34,S);S.homeTotals=homeTotals;S.campus.bag.phone=old.runPhoneRestricted?'none':'bag';S.campus.chess=chess;S.t=old.t;S.survival=old.survival;
         if(progress){progress.status='active';progress.ending=null;progress.branch=null;progress.lesson=null;}checkpoint=null;autosaveDue=0;checkpointDue=0;
         $('menu').hidden=true;$('ending').hidden=true;$('pauseBtn').hidden=false;$('journalBtn').hidden=false;
         enterCampusSlot(0);
@@ -6986,15 +7069,15 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         ['戴贝贝','物理。不在课堂走动，对讲话敏感；被确认讲话，站后排至本节下课。'],
         ['尹莎莎','英语。经常沿不同过道走动，保留 EXTRAORDINARY 强化。新语录：“梁子辕open your eyes”。全班安静，立刻唤醒，本节课内禁睡。'],
         ['何凤林','语文、守门人。会在教室走动，也教你观察反光。'],
-        ['郭自嘲','数学（旧版名：郭自朝）。站在讲台，严查讲话、睡觉和违规低头；保留后门与办公室剧情。语录：“你们的计算能力太有限了，我建议你们以后可以开一家公司，计算能力有限公司。”“都说你们这一届学生很牛，但看来也不过如此。”'],
+        ['郭自朝','数学（旧版名：郭自朝）。站在讲台，严查讲话、睡觉和违规低头；保留后门与办公室剧情。语录：“你们的计算能力太有限了，我建议你们以后可以开一家公司，计算能力有限公司。”“都说你们这一届学生很牛，但看来也不过如此。”'],
         ['王颖','生物。讲授课不走动；习题课会巡视。尤其留意讲话和违规低头。'],
-        ['李芳玲','化学。缓慢走动、突然停声观察。名言：“让你受着你就受着。”'],
+        ['李芳林','化学。缓慢走动、突然停声观察。名言：“让你受着你就受着。”'],
         ['李芙容','校级巡查、最终走廊追逐；数学课期间的真实后门巡视由她承担，避免同一教师同时出现在讲台和后门。'],
         ['爸爸／妈妈','归家模式的虚构家长。可能经过门边、转动门把手或进入卧室。先藏手机，再装睡，并等到离开；不沿用课堂NPC提醒。'],
         ['同桌／值班老师／值日家长','同桌提供纸条、聊天、国际象棋互动；值班老师负责第一节晚自习，家长负责第二节。']
     ].map(([n,t])=>`<tr><td>${n}</td><td>${t}</td></tr>`).join('')}</table><p>习题课按2做本节练习是合法行动；讲授课的按2仍为其他作业。普通听课和观察不算违规低头。完整档案另见同目录《人物档案.md》。</p>`;}
 
-    // v3.3: explicit, serializable home state. No wall-clock game timers.
+    // v3.4: explicit, serializable home state. No wall-clock game timers.
     function makeEnglishState(completed=0){return {called:false,banned:false,calledAt:0,quietUntil:0,completed};}
     function makeHomeTotals(){return {started:0,cleared:0,clean:0};}
     function englishSleepLocked(st=S){return !!st&&st.phase==='CLASS'&&st.classIndex===4&&st.english33.banned;}
@@ -7155,7 +7238,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         }
         if(h.elapsed>=h.duration-1e-7&&!h.parent)completeHomeNight();
     }
-    function homeResult(){const h=S.home;return {passed:true,seconds:h.elapsed,phone:h.phoneSeconds,target:h.target,caught:h.caught,hides:h.hides};}
+    function homeResult(){const h=S.home;return {passed:true,seconds:h.elapsed,phone:h.phoneSeconds,target:h.target,caught:h.caught,hides:h.hides,rapid34:h.rapidVersion34===1};}
     function completeHomeNight(){
         if(!homeActive()||S.home.elapsed<S.home.duration-1e-7||S.home.parent)return false;
         const h=S.home;h.elapsed=h.duration;S.elapsed=h.duration;
@@ -7203,7 +7286,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         $('homeWarning').classList.toggle('hot',!!p&&['handle','opening','watch'].includes(p.phase));
         $('homeReactionTime').textContent=p?.phase==='opening'?p.remaining.toFixed(1)+' 秒':p?.phase==='watch'?'保持装睡':'';
         $('homeReactionBar').style.width=p?.phase==='opening'?Math.max(0,p.remaining/p.window*100)+'%':'0%';
-        const description=p?.phase==='corridor'?'脚步可能只是经过，也可能停在门口。现在可以提前收好。':p?.phase==='handle'?'不要等看见人影。先熄屏藏手机，再躺下。':p?.phase==='opening'?`两步都完成才安全。当前：${{phone:'手机还亮着',hidden:'已藏手机，请继续装睡',sleep:'已装睡，等检查结束'}[h.action]}`:p?.phase==='watch'?(p.caught?p.feedback:'现在亮屏或坐起来会被发现。门没关上前不要动。'):p?.phase==='retreat'?'脚步还没完全远去。耐心等门边的影子离开。':h.lastFeedback;
+        const description=p?.phase==='corridor'?'脚步可能只是经过，也可能停在门口。现在可以提前收好。':p?.phase==='handle'?'不要等看见人影。先熄屏藏手机，再躺下。':p?.phase==='opening'?`所有隐藏步骤完成才安全。当前：${{phone:'手机还亮着',hidden:'已藏手机，请继续装睡',sleep:'已装睡，等检查结束'}[h.action]}`:p?.phase==='watch'?(p.caught?p.feedback:'现在亮屏或坐起来会被发现。门没关上前不要动。'):p?.phase==='retreat'?'脚步还没完全远去。耐心等门边的影子离开。':h.lastFeedback;
         $('homeThreatDetail').textContent=description;
         $('homeHideLabel').textContent=h.action==='phone'?'① 熄屏 · 藏手机':h.action==='hidden'?'② 躺下 · 装睡':'已经装睡';
         $('homeHideKey').textContent=h.action==='sleep'?'等门边恢复安静':'空格 / 点击此按钮';
@@ -7212,7 +7295,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         if(script){$('homeStoryName').textContent=dialogue.name;$('homeStoryText').textContent=dialogue.text.slice(0,Math.floor(dialogue.shown));}
         const texts=['【异象】衣柜边多了一道不属于门边的影子。','【异象】窗里的房间，比你先暗了一次。','【异象】楼道安静下来，像整栋楼都屏住了呼吸。'];
         $('homeAtmosphere').textContent=save.settings.fearMode&&h.elapsed<h.fearUntil&&!p?texts[h.fearIndex]:h.action==='phone'?'屏幕里的消息：王子睿「压力，阿妈忒拉斯。」':'';
-        $('homeActionHelp').textContent=S.difficulty==='god'?'神级没有成功出口。180秒闭环或尝试完成归家时失败；暂停、离线不计时。':h.phoneSeconds>=h.target?'手机目标已完成。现在可以保持装睡，等到23:00。':'先藏好，再装睡；等脚步远去。长按空格不会完成两步，暂停和离线不增加手机时间。';
+        $('homeActionHelp').textContent=S.difficulty==='god'?'神级没有成功出口。180秒闭环或尝试完成归家时失败；暂停、离线不计时。':h.phoneSeconds>=h.target?'手机目标已完成。现在可以保持装睡，等到23:00。':'先藏好，再装睡；等脚步远去。长按空格不会自动完成多个步骤，暂停和离线不增加手机时间。';
     }
     function renderHomeSetup(){
         const dummy={mode:save.settings.quick?'quick':'normal',difficulty:save.settings.difficulty},r=homeRules(dummy);
@@ -7247,17 +7330,593 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
         for(const k of ['hides','visits','passes','rng','feedIndex'])assertValid(Number.isInteger(h[k])&&num(h[k],0,k==='rng'?4294967295:1e7),'归家计数无效：'+k);
         for(const k of ['nextAt','fearNext','fearUntil','fearIndex','feedbackUntil'])assertValid(num(h[k]),'归家时序无效：'+k);
         assertValid(typeof h.lastFeedback==='string'&&h.lastFeedback.length<=400,'归家提示无效');
-        if(st.phase==='HOME')assertValid(h.status==='active'&&h.caught<3&&st.action==='listen'&&!c&&st.elapsed===h.elapsed&&st.duration===h.duration&&(!snapHasInvalidHomeScript(st)), '归家阶段冲突');
+        if(st.phase==='HOME')assertValid(h.status==='active'&&h.caught<3&&st.action==='listen'&&(!c||c.type==='hide'&&c.home34===true)&&st.elapsed===h.elapsed&&st.duration===h.duration&&(!snapHasInvalidHomeScript(st)), '归家阶段冲突');
         if(h.status==='passed')assertValid(validResult(homeResultFor(h)),'归家完成结果不符合目标');
         const p=h.parent;
         if(p){
             assertValid(['pass','enter','sudden'].includes(p.kind)&&['妈妈','爸爸'].includes(p.name)&&['corridor','handle','opening','watch','retreat'].includes(p.phase),'家长检查状态无效');
-            assertValid(num(p.remaining,0,4.1)&&num(p.window,0,3.2)&&typeof p.risky==='boolean'&&typeof p.caught==='boolean'&&typeof p.feedback==='string'&&p.feedback.length<400&&Number.isInteger(p.serial)&&num(p.serial),'家长检查计时无效');
+            assertValid(num(p.remaining,0,8)&&num(p.window,0,8)&&typeof p.risky==='boolean'&&typeof p.caught==='boolean'&&typeof p.feedback==='string'&&p.feedback.length<400&&Number.isInteger(p.serial)&&num(p.serial),'家长检查计时无效');
             assertValid(p.phase!=='opening'||p.window===r.reaction&&p.remaining<=p.window+.001,'开门反应窗口无效');
         }
     }
     function snapHasInvalidHomeScript(st){return !!st.campus.speech.topic||!!st.notes.draft||st.cubeQueue.length>0;}
     function homeResultFor(h){return {passed:h.status==='passed',seconds:h.elapsed,phone:h.phoneSeconds,target:h.target,caught:h.caught,hides:h.hides};}
+
+    // =====================================================================
+    // v3.4 — serializable school-life expansion. Timers use the game clock;
+    // every transition is synchronous and saved using the existing envelope.
+    // =====================================================================
+    const BASE34={rules,makeState,enterClass,enterCampusSlot,campusSlot,campusName,campusContinue,
+        nextCampusSlot,leaveOffice,updateCampus,updateClass,scheduledEvents,canAct,setAction,
+        cancelDeskActivity,teacherRisky,rearRiskAction,headDownAction,updateTeacher,updateDoor,
+        allyWarning,renderAllies,renderUI,renderCampus,renderHome,renderChallenge,updateChallenge,
+        choose,askQuestion,finishQuestion,triggerDanger,completeRapid,failHide,rapidLabels,reflexInput,
+        safeHide,homeAction,homeRules,startHomeNight,spawnHomeParent,stepHomeParent,catchAtHome,
+        updateHome,renderModal,modalAction,settingChange,renderCharacters,renderTimetable,
+        renderWeekSetup,renderHomeSetup,renderDifficultyHud,clearTransient,observationResult,
+        rearProbability,renderTeacherStatus,showCampusRoutes,finishEnding,completeHomeNight};
+    const STATE_NAMES34={watch:'留意周围',listen:'认真听讲',sleep:'趴桌睡眠'};
+    const TASK_NAMES34={toy:'摆弄无刃塑料玩具',letter:'折好并传递情书',pengTalk:'和彭王梓说话',badminton:'一起打羽毛球',pengHelp:'请班长帮忙',clean:'整理卫生'};
+    const CLEAN_ITEMS34=['清掉纸屑','整理课本','清扫桌下'];
+    const MATH_QUOTES34=['So easy。','我教了这么多届，第1次见到你们这样的学生。','又笨又不努力，越来越笨。'];
+    const NEW_STATS34=V34_ACHIEVEMENTS.map(x=>x.id);
+    EVENT_IDS.push('doubleTest34');
+    function makeV34(){return {version:1,baseDifficulty:null,rampFrom:0,enabled:true,rng:123456789,
+        stats:Object.fromEntries(NEW_STATS34.map(k=>[k,0])),dailyCopied:false,
+        morning:{phase:'off',mode:null,elapsed:0,duration:45,progress:35,self:0,copy:0,submitted:false,returned:false,helped:false,roll:.5,copyFound:false},
+        book:{corrections:3,held:false,checked:[],recovered:0,pending:false},
+        office:null,recess:null,task:null,menu:false,panelClosed:false,clean:null,cleanChecked:[],cleanPhones:0,dailyClean:0,incidents:0,
+        toy:{owned:true,uses:0,shown:false,confiscated:false},stand:0,standActive:false,
+        allies:{wang:{mode:'watch',remaining:24,elapsed:0,checked:false},li:{mode:'watch',remaining:30,elapsed:0,checked:false}},
+        attentionUntil:0,peng:{affection:0,letters:0,chats:0,badminton:0,help:0,snacks:0,discussed:[],flags:[],cooldown:0,heat:0,warning:false,notices:0,consent:false},
+        lesson:{slot:'',extra:0,extraNext:.12,double:false,testDone:false,cleanPlanned:false,cleanAt:.32},test:null,
+        lastReport:'',broadcasts:[],nightRapid:0};}
+    function ensure34(st=S){if(!st)return null;if(!st.v34)st.v34=makeV34();const v=st.v34;
+        if(v.baseDifficulty===null)v.baseDifficulty=st.difficulty;
+        return v;}
+    function carryV34(old,st){const v=makeV34();v.baseDifficulty=old?.baseDifficulty||st.difficulty;
+        v.rampFrom=old?.rampFrom||0;v.stand=old?.stand||0;v.standActive=!!old?.standActive;v.rng=old?.rng??123456789;
+        if(old){v.stats=clone(old.stats);v.stats.ask34=0;v.peng=clone(old.peng);v.peng.discussed=[];v.peng.flags=[];v.peng.cooldown=0;v.peng.heat=0;v.peng.warning=false;v.peng.consent=false;v.toy.uses=old.toy.uses;v.book.recovered=old.book.recovered;}
+        return v;}
+    function random34(){const v=ensure34();v.rng=(Math.imul(v.rng,1664525)+1013904223)>>>0;return v.rng/4294967296;}
+    function count34(id,n=1){const v=ensure34();if(!v)return;v.stats[id]=(v.stats[id]||0)+n;checkAchievements();requestAutoSave();}
+    function weekProgress34(st=S){const v=st?.v34;if(st?.calendar?.mode!=='week')return 0;return clamp((st.calendar.day-(v?.rampFrom||0))/Math.max(1,6-(v?.rampFrom||0)),0,1);}
+    rules=function(st=S){const base=BASE34.rules(st);if(st?.calendar?.mode!=='week'||!st.v34)return base;
+        const p=weekProgress34(st),next=DIFFICULTIES[DIFFICULTY_IDS[Math.min(base.rank+1,5)]];
+        const out={...base};for(const k of ['risk','recover','patrol','interval','react','answer','drain','loss','gain','reward','distance','extra','grace','hold'])out[k]=base[k]+(next[k]-base[k])*p;
+        out.sprint=Math.round(base.sprint+(next.sprint-base.sprint)*p);
+        // Input topology changes only on the final day, never mid-question.
+        const final=p>=1-1e-8?next:base;out.rank=st.difficulty==='extreme'?4:final.rank;out.rapidCount=final.rapidCount;
+        out.rapidTime=base.rapidTime+(next.rapidTime-base.rapidTime)*p;
+        out.label=p>0?base.label+'→'+next.label+' '+Math.round(p*100)+'%':base.label;
+        return out;};
+    function migrate34Snapshot(snap){const st=snap.state;if(st.v34)return;
+        st.v34=makeV34();st.v34.baseDifficulty=st.difficulty;st.v34.rampFrom=st.calendar?.day||0;
+        st.v34.rng=parseInt(checksum(snap.id+'|34'),16)>>>0;
+        if(st.home){const old=BASE34.homeRules(st);st.home.rules34={...old,duration:st.home.duration,target:st.home.target,reaction:st.home.parent?.window||old.reaction,rapidCount:rules(st).rapidCount};}
+        // Do not invent completed morning work, corrections, dialogue or tests.
+        if(st.phase==='CLASS'){st.v34.lesson.slot=dayTable(st)[st.campus.cursor].id;st.v34.lesson.extraNext=Math.max(.15,st.elapsed/st.duration+.16);}
+    }
+    function validate34State(st,c,num){const v=st.v34;
+        assertValid(v?.version===1&&DIFFICULTY_IDS.includes(v.baseDifficulty)&&v.baseDifficulty===st.difficulty,'新版起始难度无效');
+        assertValid(Number.isInteger(v.rampFrom)&&num(v.rampFrom,0,6)&&Number.isInteger(v.rng)&&num(v.rng,0,4294967295),'周增压或随机状态无效');
+        for(const id of NEW_STATS34)assertValid(Number.isInteger(v.stats[id])&&num(v.stats[id]),'新版成就计数无效：'+id);
+        assertValid(Number.isInteger(v.incidents)&&num(v.incidents),'课堂纪律计数无效');
+        assertValid(Number.isInteger(v.dailyClean)&&num(v.dailyClean,0,20),'当日卫生计数无效');
+        assertValid(num(v.stand,0,300)&&typeof v.standActive==='boolean'&&num(v.attentionUntil),'罚站/关注状态无效');
+        const m=v.morning;assertValid(['off','work','collect','return','done'].includes(m.phase)&&[null,'self','copy'].includes(m.mode),'晨检阶段无效');
+        for(const k of ['elapsed','duration','progress','self','copy','roll'])assertValid(num(m[k]),'晨检数值无效');
+        assertValid(m.progress<=100&&m.elapsed<=m.duration+.001&&m.roll<=1&&m.duration>0,'晨检进度越界');
+        for(const k of ['submitted','returned','helped','copyFound'])assertValid(typeof m[k]==='boolean','晨检标志无效');
+        const b=v.book;assertValid(Number.isInteger(b.corrections)&&num(b.corrections,0,3)&&typeof b.held==='boolean'&&typeof b.pending==='boolean'&&num(b.recovered)&&Array.isArray(b.checked)&&b.checked.length<=15,'作业本状态无效');
+        for(const who of ['wang','li']){const a=v.allies[who];assertValid(Object.keys(STATE_NAMES34).includes(a.mode)&&num(a.remaining,0,90)&&num(a.elapsed)&&typeof a.checked==='boolean','同学行动状态无效');}
+        const p=v.peng;for(const k of ['affection','letters','chats','badminton','help','snacks','cooldown','heat','notices'])assertValid(num(p[k]),'班长进度无效');
+        assertValid(p.affection<=100&&Array.isArray(p.discussed)&&p.discussed.length<=40&&Array.isArray(p.flags)&&p.flags.length<=20&&typeof p.consent==='boolean','班长分支状态无效');
+        if(v.task)assertValid(Object.keys(TASK_NAMES34).includes(v.task.type)&&num(v.task.elapsed,0,20)&&num(v.task.duration,.1,20)&&v.task.elapsed<=v.task.duration+.001&&typeof v.task.key==='string'&&num(v.task.roll,0,1),'行动计时无效');
+        if(v.clean){const x=v.clean;assertValid(['request','approach','search','done'].includes(x.phase)&&num(x.remaining,0,40)&&Array.isArray(x.done)&&new Set(x.done).size===x.done.length&&x.done.every(n=>Number.isInteger(n)&&n>=0&&n<3)&&num(x.roll,0,1)&&typeof x.exposed==='boolean','卫生检查状态无效');}
+        if(v.recess)assertValid(st.phase==='CAMPUS'&&Number.isInteger(v.recess.target)&&num(v.recess.target,0,dayTable(st).length)&&num(v.recess.elapsed,0,v.recess.duration)&&num(v.recess.duration,1,60),'课间状态无效');
+        if(v.office)assertValid(['beforeBreak','free'].includes(v.office.returnTo)&&Number.isInteger(v.office.cursor)&&num(v.office.cursor,0,dayTable(st).length-1),'化学办公室返回点无效');
+        if(v.test)assertValid(Number.isInteger(v.test.index)&&num(v.test.index,0,3)&&num(v.test.right,0,3)&&typeof v.test.subject==='string'&&QUESTIONS[v.test.subject],'连堂测试状态无效');
+        if(c?.hearing34)assertValid(c.type==='question'&&Number.isInteger(c.hearing34)&&num(c.hearing34,1,3)&&Number.isInteger(c.heard34)&&num(c.heard34,0,c.hearing34-1),'化学回应次数无效');
+        if(c?.home34)assertValid(st.phase==='HOME'&&c.type==='hide','归家快速隐藏阶段无效');
+        if(st.home?.rules34){const h=st.home.rules34;for(const k of ['duration','target','reaction','warning','gapMin','gapMax'])assertValid(num(h[k],0,200),'夜间规则无效');}
+        assertValid(Array.isArray(v.broadcasts)&&v.broadcasts.length<=20&&Array.isArray(v.cleanChecked)&&v.cleanChecked.length<=20,'课堂索引无效');
+    }
+    function cleanSchool34(st=S){return st.caught===0&&st.phoneCaught===0&&st.campus.rear.incidents===0&&st.discipline.standingCaught===0&&!(st.v34?.incidents>0);}
+    function metrics34(){const v=S?.v34;if(!v)return {};const m={...v.stats};m.correct34=Math.min(3,v.stats.correct34);m.collect34=v.stats.collect34;
+        m.weekRamp34=S?.calendar?.mode==='week'?S.calendar.results.filter(r=>r.home?.rapid34).length:0;return m;}
+    // These are fictional roles, not claims about real people with these names.
+    for(const [i,c]of CLASSES.entries()){c.gender=i===5?'男':'女';}
+    ENDINGS.unseen.hint='全程怀疑值严格低于20，所有题目答对；没有手机被抓、后门确认、罚站或新版校园纪律事件。';
+    ROLES['郭自朝']='数学 / 班主任 · 男';ROLES['李芳林']='化学 · 女';ROLES['彭王梓']='班长 / 友方 · 女';
+    CLASSES[5].intro.push(['郭自朝',MATH_QUOTES34[0]],['郭自朝',MATH_QUOTES34[1]]);
+    CLASSES[1].note+=' 她有时未听清，正确答案须再回应1—2次。答错或超时会罚站300秒有效校园时间。课前检查订正，未订正会扣本。';
+    CLASSES[6].intro.push(['彭王梓','我在讲台上。自己的事情自己收好。还有——这盒点心是我的。']);
+    // Additional questions use the original subjects and deliberately simple facts.
+    QUESTIONS.chinese.push({text:'“留意反光、脚步与真实时间”中，哪一项最适合确认是否真正放学？',choices:['独立时钟显示21:40','听见任意一次铃声','看到同学起身','墙上影子消失'],answer:0,explain:'确认真实时间到21:40，再按流程离校。'}, {text:'“玻璃的意义，不只是让你看见外面。”这句话提示了什么？',choices:['留意倒影中的异常','玻璃会替你答题','一直闭眼即可安全','每道门都是出口'],answer:0,explain:'倒影也可能包含关键线索。'});
+    QUESTIONS.chemistry.push({text:'水的化学式是？',choices:['H₂O','CO₂','O₂','NaCl'],answer:0,explain:'水的化学式是H₂O。'}, {text:'氧气的化学式是？',choices:['O₂','CO₂','N₂','H₂'],answer:0,explain:'氧气通常以双原子分子O₂存在。'});
+    QUESTIONS.biology.push({text:'条件反射弹框要求“不要动”时，正确操作是？',choices:['松开手并保持静止','不断按空格','拖动鼠标','打开手机'],answer:0,explain:'条件反射与快速反应分开：这里要静止。'});
+    QUESTIONS.physics.push({text:'速度等于路程除以时间。10米用5秒走完，平均速度是多少？',choices:['2米/秒','5米/秒','10米/秒','50米/秒'],answer:0,explain:'10÷5=2米/秒。'});
+    QUESTIONS.english.push({text:'“Open your eyes.”中eyes的意思是？',choices:['眼睛','耳朵','书本','窗户'],answer:0,explain:'eyes意为眼睛。'});
+    QUESTIONS.math.push({text:'解方程 2x+3=11，x等于？',choices:['4','3','5','7'],answer:0,explain:'2x=8，所以x=4。'}, {text:'已知 a=3，求 a²+1。',choices:['10','7','9','12'],answer:0,explain:'3²+1=10。'});
+    // ---- Course broadcasts, recesses and schoolwork -----------------------
+    enterCampusSlot=function(index){ensure34();if(index>=dayTable().length)return BASE34.enterCampusSlot(index);
+        const v=S.v34,slot=dayTable()[index];v.recess=null;v.menu=false;v.task=null;
+        if(slot.kind==='arrival'&&S.calendar.mode==='week'&&v.morning.phase==='off'){
+            BASE34.enterCampusSlot(index);beginMorning34();return;
+        }
+        BASE34.enterCampusSlot(index);
+        if(slot.kind==='pe'&&script){script.lines.unshift(['课堂广播','下节课是体育课，由体育老师任教。']);script.index=0;say(...script.lines[0]);}
+    };
+    enterClass=function(index,fromCheckpoint=false){ensure34();BASE34.enterClass(index,fromCheckpoint);
+        const v=S.v34,slot=BASE34.campusSlot(),table=dayTable(),previous=table[S.campus.cursor-1];
+        v.lesson={slot:slot.id,extra:0,extraNext:.12,double:!!(previous?.kind==='class'&&previous.lesson===index&&index<6),testDone:false,cleanPlanned:random34()<.52,cleanAt:.24+random34()*.18};
+        v.clean=null;v.menu=false;v.panelClosed=false;v.task=null;
+        for(const a of Object.values(v.allies)){a.mode='watch';a.remaining=18+random34()*14;a.elapsed=0;a.checked=false;}
+        if(script){script.lines.unshift(['课堂广播',`下节课是${CLASSES[index].subject}课，由${CLASSES[index].teacher}老师任教。`]);
+            script.done='classStart34';script.index=0;say(...script.lines[0]);}
+        autoSave('课堂播报与新课初始化');
+    };
+    function continue34(id,ok){
+        if(id==='classStart34'){
+            const v=ensure34();if(!v.broadcasts.includes(campusSlot().id)){v.broadcasts.push(campusSlot().id);count34('broadcast34');}
+            S.phase='CLASS';
+            if(S.classIndex===1&&!v.book.checked.includes(campusSlot().id)){beginChemCheck34();return true;}
+            BASE34Continuation34();return true;
+        }
+        if(id==='testNext34'){const t=S.v34.test;if(!t)return true;t.index++;if(ok)t.right++;nextTest34();return true;}
+        if(id==='morningReturn34'){showMorningReturn34();return true;}
+        if(id==='chemOffice34'){showChemOffice34();return true;}
+        if(id==='chemReturn34'){leaveChemOffice34();return true;}
+        return false;
+    }
+    function BASE34Continuation34(){dispatchContinuation('classReady');requestAutoSave();}
+    campusSlot=function(){const v=S?.v34;if(v?.recess)return {id:'recess34-'+S.campus.cursor,band:'课间',name:'课间 · 走廊与课桌',kind:'recess',start:v.recess.start,end:v.recess.end,duration:v.recess.duration,quick:v.recess.duration};return BASE34.campusSlot();};
+    campusName=function(st=S){if(st?.v34?.office)return '化学办公室 · 李芳林';if(st?.v34?.recess)return '课间 · 走廊';return BASE34.campusName(st);};
+    function startRecess34(target){if(!S||target>=dayTable().length){BASE34.enterCampusSlot(target);return;}
+        const v=ensure34(),cur=dayTable()[S.campus.cursor],next=dayTable()[target];
+        if(v.recess)return;
+        cancelDeskActivity('lesson');challenge=null;script=null;eventQueue=[];
+        const duration=S.mode==='quick'?12:24;
+        v.panelClosed=false;v.recess={target,elapsed:0,duration,start:cur.end,end:Math.max(cur.end+1,next.start)};
+        S.phase='CAMPUS';S.campus.location='corridor';S.action='listen';S.elapsed=0;S.duration=duration;S.door=null;S.extraUntil=0;
+        $('challengeLayer').hidden=true;S.english33.banned=false;
+        say('彭王梓','下课了。到走廊透透气，想打两球也行——别动我的饭盒。');
+        renderUI();rememberCheckpoint('课间 · '+fmtTime(cur.end),'event');autoSave('进入真实课间');
+    }
+    nextCampusSlot=function(){if(!S||S.screen!=='game')return;
+        const v=ensure34();if(v.morning.phase==='work'){finishMorning34();return;}
+        if(['collect','return'].includes(v.morning.phase))return;
+        if(v.recess){if(v.task){toast('当前活动还没结束，可以先按空格停下。');return;}
+            const target=v.recess.target;v.recess=null;count34('recess34');enterCampusSlot(target);return;}
+        if(v.book.pending){markCampusSlotComplete();beginChemOffice34('beforeBreak');return;}
+        if(S.campus.office.pending){BASE34.nextCampusSlot();return;}
+        const cur=BASE34.campusSlot(),next=dayTable()[S.campus.cursor+1];
+        if(['class','pe'].includes(cur.kind)&&next&&['class','pe'].includes(next.kind)){markCampusSlotComplete();startRecess34(S.campus.cursor+1);return;}
+        return BASE34.nextCampusSlot();
+    };
+    leaveOffice=function(){if(S.campus.office.returnVisit)return BASE34.leaveOffice();
+        const next=S.campus.cursor+1;S.campus.location='classroom';
+        if(next<dayTable().length)startRecess34(next);else BASE34.enterCampusSlot(next);
+    };
+    campusContinue=function(){const v=S?.v34;if(v?.morning.phase==='work'){toast('收作业前只有补作业和抄作业；到收本时间再提交。');return;}
+        if(v?.recess){if(v.recess.elapsed<5){toast('先在课间停留至少5秒。');return;}nextCampusSlot();return;}
+        return BASE34.campusContinue();};
+    function beginMorning34(){const v=ensure34(),m=v.morning;
+        m.phase='work';m.duration=S.mode==='quick'?28:50;m.elapsed=0;m.progress=35;m.mode=null;m.roll=random34();
+        S.duration=m.duration;S.elapsed=0;S.action='listen';S.campus.location='classroom';
+        // The only desk actions before collection are make-up work and copying.
+        if(script){script.lines=[['课堂广播',WEEK_NAMES[S.calendar.day]+'，07:20。收作业前，请核对本子的姓名和订正。'],['李思聪','07:30收作业。你还没写完的部分，现在可以补。照抄别人的本子会留下相同的错字。'],['彭王梓','我帮忙发本子。先做自己的作业，猫耳发卡不会替你算题。']];script.index=0;script.done='campusReady';say(...script.lines[0]);}
+        rememberCheckpoint('清晨 · 收作业之前','lesson');autoSave('晨检初始化');
+    }
+    function finishMorning34(){const m=S.v34.morning;if(m.phase!=='work')return;
+        S.v34.task=null;m.phase='collect';m.mode=null;S.action='listen';
+        beginChallenge({type:'morningCollect34',kicker:'07:30 / 早晨作业检查',title:'开始收作业。',description:`当前完成 ${Math.floor(m.progress)}%。\n自己补写 ${m.self.toFixed(1)} 秒，抄写 ${m.copy.toFixed(1)} 秒。\n未完成或抄写雷同会被记录，但不会无提示结束整周。`,choices:['提交自己的本子，并帮课代表收齐','只提交自己的本子','如实说明没写完，再交上本子']});
+        autoSave('晨检收本');
+    }
+    function collectMorning34(index){const v=S.v34,m=v.morning;if(m.phase!=='collect')return;
+        closeChallenge();m.submitted=true;m.helped=index===0;m.copyFound=m.copy>0&&m.roll<Math.min(.8,.30+m.copy*.015);
+        if(m.copyFound){v.incidents++;v.dailyCopied=true;count34('morningCopy34');campusRecord('晨检：作业存在相同错字，要求亲自订正。');}
+        if(m.copy===0&&m.progress>=100){count34('morningSelf34');v.book.corrections=Math.max(0,v.book.corrections-1);}
+        else v.book.corrections=m.copyFound?3:Math.max(2,v.book.corrections);
+        m.phase='return';
+        playScript([['李思聪',m.helped?'你把本组的作业按姓名收齐，交到讲台。':'你的本子已经放在讲台。'],['老师',m.copyFound?'这两份的错误连位置都一样。把思路自己写清楚，再订正。':m.progress<100?'没写完的地方做了标记，之后要补齐。':'已经收好。红笔标注的地方，记得订正。'],['彭王梓','批改本回来了，领取时不要把别人的本子拿走。']], 'morningReturn34');
+        requestAutoSave();
+    }
+    function showMorningReturn34(){beginChallenge({type:'morningReturn34',kicker:'HOMEWORK / 收发完成前',title:'把作业发回座位。',description:'这是真实的收发步骤，不是只增加作业百分比。化学本中的红笔标记仍需本人订正。',choices:['领回自己的本子，并帮班长发本','只领回自己的本子']});}
+    function returnMorning34(index){const m=S.v34.morning;if(m.phase!=='return')return;
+        closeChallenge();m.returned=true;m.phase='done';if(index===0&&m.helped)count34('collect34');
+        S.v34.lastReport='晨检已完成 · 本子已发回 · 化学待订正 '+S.v34.book.corrections+' 处';
+        say('彭王梓',index===0?'谢谢，最后一摞我来。收本发本都做完了。':'你的本子在这里。名字别写在猫耳上。');
+        S.elapsed=S.duration;nextCampusSlot();requestAutoSave();
+    }
+    function beginChemCheck34(){const b=S.v34.book;
+        if(b.held){b.checked.push(campusSlot().id);say('李芳林','本子还扣在办公室。下课带着订正来谈。');b.pending=true;return;}
+        beginChallenge({type:'chemBook34',kicker:'BEFORE CHEMISTRY / 化学课前',title:'先检查作业订正。',description:`李芳林：“红笔标出的地方，订正了吗？”\n还有 ${b.corrections} 处需要订正。亲自订正每处需4秒有效操作时间；交未订正的本子会被扣下，下课去化学办公室。`,choices:['订正一处（4秒）','交给老师检查','暂不订正，交上作业本'],locks:[b.corrections===0?'已经全部订正':null,null,null]});
+    }
+    function checkChemBook34(index){const b=S.v34.book,c=challenge;
+        if(index===0){if(!b.corrections||c.workRemaining)return;c.workRemaining=4;c.remaining=4;c.total=4;c.elapsed=0;c.title='正在亲自订正……';c.choices=['订正中，请稍候'];c.locks=['正在写订正'];renderChallenge();requestAutoSave();return;}
+        closeChallenge();if(!b.checked.includes(campusSlot().id))b.checked.push(campusSlot().id);
+        if(b.corrections>0){S.v34.incidents++;b.held=true;b.pending=true;campusRecord('李芳林扣下未订正的作业本：下课到化学办公室面谈。');say('李芳林','不订正，本子先放我这里。下课到办公室来，把错因说清楚。');}
+        else say('李芳林','订正检查过了。把本子收好，开始上课。');
+        S.v34.lastReport=b.held?'作业本被扣 · 下课去化学办公室':'化学订正合格';requestAutoSave();
+    }
+    function beginChemOffice34(returnTo='free'){
+        const v=ensure34();if(!v.book.held)return;
+        cancelDeskActivity('event');challenge=null;script=null;eventQueue=[];
+        v.office={returnTo,cursor:S.campus.cursor,location:S.campus.location};v.book.pending=false;
+        S.phase='CAMPUS';S.campus.location='office';S.action='listen';S.door=null;
+        playScript([['旁白','化学办公室。桌上是你被扣下的本子，红笔还压在那一页。'],['李芳林','让你受着你就受着。订正不是把答案描一遍。你先说错在哪里，再自己改。'],['你','我把作业本翻开，准备说明和订正。']], 'chemOffice34');
+        renderUI();rememberCheckpoint('化学办公室 · 被扣的作业本','event');autoSave('化学办公室开始');
+    }
+    function showChemOffice34(){const b=S.v34.book;beginChallenge({type:'chemOffice34',kicker:'CHEMISTRY OFFICE / 面谈与订正',title:'把这一页说清楚。',description:`还剩 ${b.corrections} 处。可以询问错因，也可以动笔订正；全部完成后才能领回。\n面谈不会要求你承认没有发生的事情。`,choices:['说明错因并订正一处（4秒）','请老师再解释一次','领取作业本，返回校园'],locks:[b.corrections===0?'已经订正完':null,null,b.corrections>0?'需要全部订正':null]});}
+    function leaveChemOffice34(){const v=S.v34,o=v.office;if(!o)return;
+        v.office=null;v.book.held=false;v.book.pending=false;v.book.recovered++;count34('book34');
+        S.campus.location=o.location==='office'?'classroom':o.location;S.phase='CAMPUS';
+        if(o.returnTo==='beforeBreak'){nextCampusSlot();}else {say('你','本子已领回，你回到刚才的自由时段。');renderUI();}
+        requestAutoSave();
+    }
+    function chemStand34(){const v=ensure34();v.incidents++;v.panelClosed=false;v.stand=300;v.standActive=true;cancelDeskActivity('event');S.action='listen';
+        campusRecord('化学提问未答出：罚站300秒有效校园时间，跨课堂保存。');
+        say('李芳林','先站五分钟，认真听。等会儿再坐下。');toast('化学罚站 05:00 · 只能听讲、观察、答题或完成老师要求的整理。',true,6);requestAutoSave();}
+    scheduledEvents=function(){BASE34.scheduledEvents();const v=ensure34();if(S.classIndex>=6)return;
+        const l=v.lesson,ratio=S.elapsed/S.duration;
+        if(l.extra<3&&ratio>=l.extraNext){l.extra++;l.extraNext=[.12,.51,.76,2][l.extra];enqueue('extra34-'+l.extra,'extraQuestion34');}
+        if(l.cleanPlanned&&!v.cleanChecked.includes(l.slot)&&ratio>=l.cleanAt){v.cleanChecked.push(l.slot);enqueue('clean34-'+l.slot,'hygiene34');}
+        if(l.double&&!l.testDone&&ratio>=.07&&!challenge&&!script){l.testDone=true;enqueue('test34-'+l.slot,'doubleTest34');}
+    };
+    function event34(id){if(id==='doubleTest34'){beginTest34();return true;}if(id==='hygiene34'){triggerHygiene34();return true;}if(id==='extraQuestion34'){
+        askQuestion(CLASSES[S.classIndex].id,(S.v34.lesson.extra+S.calendar.day)%QUESTIONS[CLASSES[S.classIndex].id].length);if(challenge)challenge.extra34=true;return true;}return false;}
+    function beginTest34(){if(challenge||script)return false;S.v34.test={subject:CLASSES[S.classIndex].id,index:0,right:0};nextTest34();return true;}
+    function nextTest34(){const t=S.v34.test;if(!t)return;
+        if(t.index>=3){count34('twin34');if(t.right===3)count34('twinPerfect34');if(t.right>=2)S.v34.peng.flags.push('testPass');
+            S.v34.lastReport=`连堂测试 ${t.right}/3 · ${t.right>=2?'合格':'需要复习'}`;say(CLASSES[S.classIndex].teacher,S.v34.lastReport);addSuspicion(t.right>=2?-5:8,false);S.v34.test=null;requestAutoSave();return;}
+        askQuestion(t.subject,t.index+S.calendar.day,'testNext34');if(challenge){challenge.test34=true;challenge.title='连堂课堂测试 · '+(t.index+1)+'/3';challenge.kicker='TWO LESSONS / 第二节的试卷';renderChallenge();}}
+    askQuestion=function(subject,number=0,onDone=null){BASE34.askQuestion(subject,number,onDone);const c=challenge;if(c?.type!=='question')return;
+        c.subject34=subject;
+        if(subject==='chemistry'&&S.phase==='CLASS'){c.hearing34=random34()<.48?2+Math.floor(random34()*2):1;c.heard34=0;
+            if(c.hearing34>1){c.remaining+=1.5*(c.hearing34-1);c.total=c.remaining;c.description+='\n老师这次可能没听清：正确选项需要逐次回应'+c.hearing34+'次。每次结果有明确提示。';}renderChallenge();}
+    };
+    finishQuestion=function(index){if(modal||recoveryGrace>0||!challenge||!['question','grid'].includes(challenge.type))return;
+        const c=challenge,ok=index===c.correct;
+        if(c.hearing34&&ok){c.heard34++;if(c.heard34<c.hearing34){c.description=`她没有听清。请把同一个答案再说一遍（${c.heard34}/${c.hearing34}）。\n`+c.description.replace(/^她没有听清。[^\n]*\n/,'');renderChallenge();sound('paper');requestAutoSave();return;}if(c.hearing34>1)count34('hear34');}
+        const test=c.test34,extra=c.extra34,chem=c.subject34==='chemistry'&&S.phase==='CLASS',math=c.math;
+        if(test)c.math=false; // A short classroom test is not the fatal math Boss streak.
+        BASE34.finishQuestion(index);
+        if(S?.screen!=='game')return;
+        if(extra&&ok)count34('ask34');
+        if(chem&&!ok)chemStand34();
+        if(math&&!script&&!challenge)say('郭自朝',ok?'So easy。':MATH_QUOTES34[2]);
+        requestAutoSave();
+    };
+    // ---- Hygiene, props and friendly classmates --------------------------
+    function busy34(){const v=S?.v34;return !!v&&(v.morning.phase==='work'||v.stand>0||v.clean&&['approach','search'].includes(v.clean.phase));}
+    canAct=function(){return BASE34.canAct()&&!busy34();};
+    setAction=function(action){if(S?.v34?.morning.phase==='work'){toast('先完成早晨作业。收作业前，其他课桌选项不开放。');return;}
+        if(S?.v34?.stand>0){if(['listen','observe'].includes(action)&&!modal&&!challenge&&!script){S.action=action;renderUI();}else toast('化学罚站还剩 '+fmtDuration(S.v34.stand)+'，暂时不能做自己的事情。');return;}
+        if(BASE34.canAct()&&!busy34()){S.v34.menu=false;S.v34.panelClosed=true;}return BASE34.setAction(action);};
+    cancelDeskActivity=function(reason='switch'){if(S?.v34?.task){if(S.v34.task.type==='toy'&&reason==='hide'&&S.v34.task.elapsed>=2)count34('toy34');S.v34.task=null;}
+        return BASE34.cancelDeskActivity(reason);};
+    function risk34(st=S){const task=st?.v34?.task;return !!task&&['toy','letter','pengTalk'].includes(task.type)&&st.phase==='CLASS';}
+    teacherRisky=function(){return risk34()||BASE34.teacherRisky();};
+    rearRiskAction=function(){if(risk34())return S.v34.task.type==='pengTalk'?'talk':S.v34.task.type==='toy'?'cube':'note';return BASE34.rearRiskAction();};
+    headDownAction=function(){return risk34()||BASE34.headDownAction();};
+    observationResult=function(){if(S?.v34?.task)return;return BASE34.observationResult();};
+    triggerDanger=function(reason,tutorial=false){const task=S?.v34?.task?clone(S.v34.task):null;
+        BASE34.triggerDanger(reason,tutorial);
+        if(challenge?.type==='hide'&&task){challenge.source34=task.type;challenge.toy34=task.type==='toy';challenge.romance34=!!save.settings.pengRoute&&['letter','pengTalk'].includes(task.type);}
+    };
+    function triggerHygiene34(){if(!S||S.phase!=='CLASS'||S.v34.clean&&!['done'].includes(S.v34.clean.phase))return false;
+        const v=S.v34;v.panelClosed=false;v.clean={phase:'request',remaining:S.mode==='quick'?12:18,done:[],roll:random34(),exposed:S.action==='phone',toyShown:v.task?.type==='toy',found:false};
+        say(CLASSES[S.classIndex].teacher,'等一下，我要检查你们课桌和座位周围的卫生。纸屑、课本、桌下，都整理好。');
+        toast('卫生检查开始 · 做卫生按钮出现；三项全做完才合格。',true,5);render34();requestAutoSave();return true;
+    }
+    function startClean34(index){const v=S.v34,c=v.clean;if(!c||c.phase!=='request'||c.done.includes(index)||v.task||challenge||script||modal||recoveryGrace>0)return;
+        cancelDeskActivity('switch');S.action='listen';v.panelClosed=false;v.task={type:'clean',key:String(index),elapsed:0,duration:2.2,roll:0};requestAutoSave();render34();}
+    function updateHygiene34(dt){const v=S.v34,c=v.clean;if(!c||c.phase==='done')return;
+        if(S.action==='phone')c.exposed=true;
+        c.remaining=Math.max(0,c.remaining-dt);
+        if(c.phase==='request'&&c.remaining===0){
+            if(c.done.length===3){c.phase='done';v.dailyClean++;count34('clean34');say(CLASSES[S.classIndex].teacher,'这次整理好了。继续上课。');return;}
+            cancelDeskActivity('event');S.action='listen';c.phase='approach';c.remaining=3;
+            say(CLASSES[S.classIndex].teacher,'这也叫整理好？我过来帮你收。');caption('老师正在走向你的课桌，可能接触书包。',4);
+        }else if(c.phase==='approach'&&c.remaining===0){c.phase='search';c.remaining=3;caption('老师开始整理散乱的课本和书包。',3);}
+        else if(c.phase==='search'&&c.remaining===0){c.phase='done';S.teacher.wait=3;S.teacher.hold=S.t+3;
+            const hasPhone=phoneAllowed(),probability=hasPhone?(c.exposed?.72:S.campus.bag.phone==='bag'?.40:.16):0;
+            if(c.roll<probability){v.incidents++;c.found=true;v.cleanPhones++;count34('search34');campusRecord('卫生代整理：老师发现了手机。');
+                if(registerPhoneCaught())return;addSuspicion(18,false);
+                if(S.screen==='game')say(CLASSES[S.classIndex].teacher,S.classIndex===5?'你他妈才读了几年书，我教了这么多年书，手机长什么样我能不知道吗。':'书包里这是什么？手机先收好，卫生自己整理。');
+            }else say(CLASSES[S.classIndex].teacher,'这次帮你整理了。下一次，自己把桌面清干净。');
+            if(c.toyShown&&S.screen==='game')toyReview34();
+            requestAutoSave();
+        }
+    }
+    updateTeacher=function(dt){const c=S?.v34?.clean;if(c&&['approach','search'].includes(c.phase)){
+        const t=S.teacher;t.x+=(1100-t.x)*Math.min(1,dt*1.2);t.y+=(430-t.y)*Math.min(1,dt*1.2);t.z+=(1.15-t.z)*Math.min(1,dt*1.2);return;
+        }return BASE34.updateTeacher(dt);};
+    rearProbability=function(){const p=BASE34.rearProbability();return Math.min(.38,p+(S?.v34?.attentionUntil>S.t?.035:0));};
+    function updateAllies34(dt){const v=S.v34;if(S.phase!=='CLASS')return;
+        for(const kind of ['wang','li']){const a=v.allies[kind];a.elapsed+=dt;a.remaining=Math.max(0,a.remaining-dt);
+            if(a.remaining<=0){const roll=random34();a.mode=roll<.24?'sleep':roll<.57?'listen':'watch';a.remaining=20+random34()*20;a.elapsed=0;a.checked=false;
+                S.campus.allies[kind].pending=null;
+                if(kind==='wang'&&a.mode==='listen'&&random34()<.38&&S.action!=='listen'&&!S.door?.real&&!S.teacher.near&&!v.task){
+                    cancelDeskActivity('switch');S.action='listen';count34('allyListen34');say('王子睿','压力，阿妈忒拉斯。先把这一段听懂，别一直低头。');
+                }
+                requestAutoSave();
+            }
+            if(a.mode==='sleep'&&!a.checked&&a.elapsed>=5){a.checked=true;
+                if(random34()<Math.min(.60,.20+.07*rules().rank)){v.attentionUntil=S.t+22;count34('allySleep34');
+                    caption(CLASSES[S.classIndex].teacher+'发现'+ALLY_NAMES[kind]+'睡着，开始留意这一排。',4);
+                    say(CLASSES[S.classIndex].teacher,ALLY_NAMES[kind]+'，抬头。这一排也都抬头。');
+                    // Attention rises; the player's own caught counter is NOT changed.
+                    S.teacher.wait=Math.min(S.teacher.wait,1.5);requestAutoSave();
+                }
+            }
+        }
+    }
+    allyWarning=function(kind,eventId,text,random=Math.random){const a=S?.v34?.allies?.[kind];
+        if(a&&a.mode!=='watch') {const b=S.campus.allies[kind];b.lastEvent=String(eventId);b.pending=null;requestAutoSave();return false;}
+        return BASE34.allyWarning(kind,eventId,text,random);
+    };
+    renderAllies=function(){BASE34.renderAllies();if(!S?.v34)return;
+        for(const kind of ['wang','li']){const el=$('ally-'+kind),a=S.v34.allies[kind];if(el&&S.campus.allies[kind].until<=S.t)el.querySelector('span').textContent=STATE_NAMES34[a.mode]+(a.mode==='watch'?'':' · 暂不提醒');}
+    };
+    function toyReview34(){const v=S.v34;if(challenge||script){v.toy.shown=true;return;}
+        v.incidents++;v.toy.shown=false;v.toy.confiscated=true;v.toy.owned=false;
+        const text=S.classIndex===5?'郭自朝：“你他妈才读了几年书，我教了这么多年书，玩具刀长什么样我能不知道吗。”':'老师把无刃塑料玩具放在了讲台一侧。';
+        beginChallenge({type:'toyReview34',kicker:'PROP / 无刃塑料玩具',title:'请先说明这件物品。',description:text+'\n这里是没有刀刃的塑料道具，游戏中的误称不等于现实法律分类；没有攻击或伤害用途。',choices:['说明它是无刃塑料玩具，接受暂存','请老师核对道具标识，再交保管']});
+    }
+    function startTask34(type,key='',duration=5){if(!BASE34.canAct()||busy34()||S.discipline.standing)return false;
+        const v=S.v34;if(v.task)return false;
+        if(['letter','pengTalk'].includes(type)&&!save.settings.pengRoute)return false;
+        if(type==='toy'&&!v.toy.owned){toast('玩具已暂存，本日不能再拿出来。');return false;}
+        if(type==='badminton'&&!(v.recess||campusFree()&&campusSlot().kind==='pe')){toast('羽毛球只能在体育或新增课间进行。');return false;}
+        if(['letter','pengTalk'].includes(type)&&S.t<v.peng.cooldown){toast('先等她把话说完。');return false;}
+        cancelDeskActivity('switch');S.action='observe';S.observeElapsed=0;S.observeNoted=true;
+        v.panelClosed=false;v.task={type,key,elapsed:0,duration,roll:random34()};v.peng.heat=0;v.peng.warning=false;
+        if(type==='toy')say('你','这是圆钝、无刃的塑料玩具。只能当道具摆弄，课堂上拿出仍会被老师注意。');
+        if(type==='letter')say('你','你认真折起纸页。可以被拒绝；课堂上递出去，也可能被老师叫住。');
+        if(type==='pengTalk')say('彭王梓',({'ball':'你也喜欢羽毛球？下课打一会儿。','snack':'想吃先问。我护食，但是可以自己决定分给你。','boundary':'嗯，不碰我的饭盒就好。猫耳也不许乱摸。','tomorrow':'先把这节课上完。放学以后再说。'})[key]);
+        if(type==='badminton')say('彭王梓','只打几球。发卡不算球网，别往那边打。');
+        if(type==='pengHelp')say('彭王梓','看题目这一行。还有，真正放学是21:40，我会在讲台上提醒。');
+        render34();requestAutoSave();return true;
+    }
+    function finishTask34(){const v=S.v34,t=v.task;if(!t)return;v.task=null;S.action='listen';const p=v.peng;
+        if(t.type==='clean'){const i=Number(t.key),c=v.clean;if(c?.phase==='request'&&!c.done.includes(i)){c.done.push(i);sound('paper');
+                if(c.done.length===3){c.phase='done';v.dailyClean++;count34('clean34');say(CLASSES[S.classIndex].teacher,'三处都整理了，这次合格。');}}}
+        if(t.type==='toy'){v.toy.uses++;count34('toy34');S.boredom=clamp(S.boredom-5);say('你','你把塑料玩具收回袋里。');}
+        if(t.type==='pengHelp'&&!p.flags.includes('help')){p.flags.push('help');p.help++;p.affection=clamp(p.affection+4);count34('pengHelp34');S.focus=clamp(S.focus+5);}
+        if(t.type==='badminton'&&!p.flags.includes('badminton')){p.flags.push('badminton');p.badminton++;p.affection=clamp(p.affection+12);count34('badminton34');S.boredom=clamp(S.boredom-14);}
+        if(t.type==='letter'&&!p.flags.includes('letter')){p.flags.push('letter');p.letters++;p.affection=clamp(p.affection+16);count34('letter34');say('彭王梓','信我收到了。等下课再看，别在课堂上等我回答。');p.cooldown=S.t+8;}
+        if(t.type==='pengTalk'&&!p.discussed.includes(t.key)){p.discussed.push(t.key);p.chats++;p.affection=clamp(p.affection+8);p.cooldown=S.t+7;
+            if(t.key==='snack'){p.snacks++;count34('snack34');say('彭王梓','这块我拿走啦。说好了，下一块你自己留着。');}}
+        checkAchievements();render34();requestAutoSave();
+    }
+    function romanceNotice34(){S.v34.incidents++;const p=S.v34.peng;p.notices++;p.heat=0;p.warning=false;campusRecord('课堂传信/私聊被注意：要求课后说明，不替同学定义关系。');
+        beginChallenge({type:'romanceReview34',kicker:'CLASSROOM / 课堂私聊被注意',title:'“是不是在谈恋爱？”',description:CLASSES[S.classIndex].teacher+'停下讲课。\n你可以说明关系，也可以保留隐私。选项不会强制你承认恋爱，不会因拒绝回答私人关系而直接失败。课堂秩序的提醒会被记录。',choices:['我们在了解彼此，私聊留到课后','先说明课堂行为，私人关系不公开','向老师说明只是普通同学']});
+    }
+    function updateTasks34(dt){const v=S.v34,t=v.task;if(!t)return;
+        if(S.phase==='CLASS'&&['toy','letter','pengTalk'].includes(t.type)){
+            addSuspicion((t.type==='toy'?.36:t.type==='letter'?.50:.40)*dt,false);if(S.screen!=='game')return;
+            if(save.settings.pengRoute&&['letter','pengTalk'].includes(t.type)){
+                v.peng.heat+=dt;if(v.peng.heat>=1.5&&!v.peng.warning){v.peng.warning=true;caption('老师的目光移向信纸和你们，先停下。',3);}
+                if(v.peng.heat>=3.4&&t.roll<Math.min(.76,.30+rules().rank*.07)){
+                    v.task=null;S.action='listen';romanceNotice34();return;
+                }
+            }
+        }
+        t.elapsed=Math.min(t.duration,t.elapsed+dt);if(t.elapsed>=t.duration)finishTask34();
+    }
+    function update34(dt){if(!S||S.screen!=='game')return false;const v=ensure34();
+        if(S.phase==='HOME')return false;
+        if(challenge||script)return false;
+        if(v.morning.phase==='work'){
+            const m=v.morning;m.elapsed=Math.min(m.duration,m.elapsed+dt);S.elapsed=m.elapsed;S.survival+=dt;
+            if(m.mode){const speed=S.mode==='quick'?2:1;m.progress=clamp(m.progress+(m.mode==='self'?1.55:3.8)*speed*dt);m[m.mode]+=dt;}
+            if(m.elapsed>=m.duration)finishMorning34();return true;
+        }
+        if(v.stand>0&&(['CLASS','CAMPUS'].includes(S.phase)&&S.campus.location!=='office')){
+            v.stand=Math.max(0,v.stand-dt);S.action=['listen','observe'].includes(S.action)?S.action:'listen';
+            if(v.stand===0&&v.standActive){v.standActive=false;count34('stand34');say('李芳林','五分钟到了，坐下。接着听。');}
+        }
+        updateTasks34(dt);if(challenge||script||S.screen!=='game')return true;
+        if(S.phase==='CLASS'){
+            updateHygiene34(dt);if(challenge||S.screen!=='game')return true;
+            updateAllies34(dt);
+            if(v.toy.shown){toyReview34();return true;}
+        }
+        if(v.recess){const r=v.recess;r.elapsed=Math.min(r.duration,r.elapsed+dt);S.elapsed=r.elapsed;S.survival+=dt;
+            if(S.action==='chess')updateChess(dt);else if(S.action==='cube')updateCubeQueue();else if(S.action==='phone'){S.phoneEver=true;S.phoneSeconds+=dt;S.totalPhone+=dt;}else if(S.action==='sleep')updateSleep(dt);else if(S.action==='talk')updateTalk(dt);else if(S.action==='note')updateNotes(dt);
+            S.focus=clamp(S.focus+.30*dt);S.boredom=clamp(S.boredom-.25*dt);if(r.elapsed>=r.duration&&!v.task)nextCampusSlot();return true;
+        }
+        return false;
+    }
+    updateClass=function(dt){const clean=S?.v34?.clean;
+        // Mandatory cleanup occupies the teacher, not a second simultaneous chase.
+        if(clean&&['approach','search'].includes(clean.phase)){S.elapsed=Math.min(S.duration,S.elapsed+dt);S.survival+=dt;updateTeacher(dt);return;}
+        return BASE34.updateClass(dt);};
+    // ---- Night hiding reuses rapid-reaction mechanics --------------------
+    homeRules=function(st=S){if(st?.home?.rules34&&st.home.day===st.calendar?.day&&st.home.status==='active')return {...st.home.rules34};
+        const rank=DIFFICULTIES[st?.difficulty]?.rank??1,week=st?.calendar?.mode==='week',p=weekProgress34(st),to=Math.min(rank+1,5);
+        const lerp=(a)=>a[rank]+(a[to]-a[rank])*p;
+        const r={duration:st?.mode==='quick'?90:180,target:Math.round(lerp([32,36,40,44,48,52])*(st?.mode==='quick'?.5:1)*10)/10,
+            reaction:lerp([3.8,3.6,3.4,3.25,3.10,2.95])-(week&&rank===5?.30*p:0),
+            warning:lerp([1.30,1.15,1,.90,.80,.70]),gapMin:lerp([18,16,14,12,10,9]),gapMax:lerp([27,24,22,20,18,16]),rapidCount:rules(st).rapidCount};
+        return r;};
+    homeGap=function(){const r=homeRules();return homeRange(r.gapMin,r.gapMax)*(S.mode==='quick'?.85:1);};
+    startHomeNight=function(schoolEnding=null){ensure34();const r=homeRules({...S,home:null});BASE34.startHomeNight(schoolEnding);
+        if(!S?.home||S.phase!=='HOME')return;S.home.rules34={...r};S.home.rapidVersion34=1;S.v34.menu=false;S.v34.task=null;
+        if(script){script.lines=script.lines.filter(l=>!l[1].includes('先按一次空格')&&!l[1].includes('家长可能只是经过'));
+            script.lines.push(['系统',`按4或P玩手机。隐藏改用快速反应：${rules().rank<2?'逐次按'+rules().rapidCount+'次空格':rules().rapidCount+'个随机数字，触屏点目标数字，键盘按左起位置'}。全部步骤完成，才算藏好并装睡。`],['系统',`本晚反应窗口 ${r.reaction.toFixed(2)} 秒，另有0.4秒准备和门把手预警。家长仍会走动；不要只完成一半。${S.calendar.mode==='week'?'全周下一晚的窗口会进一步缩短，最多升到起始难度下一档。':''}`]);}
+        autoSave('归家多步规则');renderUI();
+    };
+    function beginHomeRapid34(){if(!homeActive()||script||challenge||modal||recoveryGrace>0||S.home.action==='sleep')return false;
+        const h=S.home,r=homeRules(),info={home34:true,tutorial:false,wasPhone:true,wasSleep:false,wasNote:false,wasTalk:false,wasChess:false,parent:true};
+        const c=createRapidChallenge({...S,classIndex:-1,extraUntil:0},info,homeRandom);
+        c.window=r.reaction;c.remaining=c.total=c.grace+c.window;c.title='熄屏、藏好，再装睡。';c.kicker='HOME / 多步快速隐藏';
+        c.description=c.mode==='space'?`逐次按${c.count}次空格，或点击当前步骤。全部完成才安全。`:'按提示数字依次完成各步。触屏点大数字，键盘按左起位置；完成后才自动装睡。';
+        beginChallenge(c);h.lastFeedback='快速隐藏进行中，家长检查仍在继续。';renderHome();requestAutoSave();return true;
+    }
+    homeAction=function(action){if(action==='hide'&&homeActive()&&!modal&&!script&&recoveryGrace<=0){
+            if(challenge?.home34){if(challenge.mode==='space')reflexInput(challenge.step);return;}
+            beginHomeRapid34();return;}
+        const result=BASE34.homeAction(action);if(action==='phone'&&homeActive()){S.home.lastFeedback='屏幕已亮起。按空格或点击快速隐藏，完成全部步骤才会装睡。';renderHome();}return result;};
+    spawnHomeParent=function(kind=null){BASE34.spawnHomeParent(kind);if(S?.home?.parent?.phase==='handle'&&S.home.action!=='sleep')beginHomeRapid34();};
+    stepHomeParent=function(){BASE34.stepHomeParent();if(homeActive()&&S.home.parent?.phase==='handle'&&S.home.action!=='sleep')beginHomeRapid34();};
+    rapidLabels=function(c){if(c.home34)return c.count===2?['熄屏藏好','躺下装睡']:['熄灭屏幕','藏好手机','躺下装睡'];return BASE34.rapidLabels(c);};
+    reflexInput=function(slot){const c=challenge,home=!!c?.home34,step=c?.step;const result=BASE34.reflexInput(slot);
+        if(home&&homeActive()&&challenge===c&&c.step>step){S.home.action='hidden';S.home.lastFeedback='动作还没完成，继续按提示装睡。';requestAutoSave();}
+        return result;};
+    completeRapid=function(){if(challenge?.home34){closeChallenge();S.home.action='sleep';S.home.lastFeedback='全部步骤完成，已经藏好并装睡。等家长完全离开。';S.v34.nightRapid++;count34('homeRapid34');sound('paper');renderHome();requestAutoSave();return;}
+        return BASE34.completeRapid();};
+    failHide=function(){if(challenge?.home34){closeChallenge();S.home.lastFeedback='动作没有完成，尚未装睡。';
+            if(S.home.parent&&S.home.parent.kind!=='pass')catchAtHome('隐藏动作未在窗口内全部完成。');
+            else {S.home.action='hidden';toast('隐藏中断，请重新完成动作。',true);}
+            requestAutoSave();return;}
+        const c=challenge?clone(challenge):null;BASE34.failHide();
+        if(S?.screen!=='game')return;
+        if(c?.toy34)toyReview34();else if(c?.romance34)romanceNotice34();
+    };
+    catchAtHome=function(reason){if(challenge?.home34)closeChallenge();return BASE34.catchAtHome(reason);};
+    updateHome=function(dt){if(challenge?.home34){BASE34.updateChallenge(dt);if(!homeActive())return;}
+        BASE34.updateHome(dt);
+    };
+    renderHome=function(){BASE34.renderHome();if(challenge?.home34)syncReflexLayout();
+        $('homeHideLabel').textContent=challenge?.home34?'按弹框完成全部步骤':'快速隐藏 · '+(rules().rank<2?rules().rapidCount+'次空格':rules().rapidCount+'个数字');
+        $('homeHideKey').textContent='完成后才会自动装睡';$('homeHideButton').disabled=!!script||!!modal||!!challenge||S.home.action==='sleep';
+        $('homePlayButton').disabled=!!script||!!modal||!!challenge||S.home.action==='phone'||S.home.elapsed>=S.home.duration;
+        $('homeActionHelp').textContent=`本晚窗口 ${homeRules().reaction.toFixed(2)} 秒。${S.calendar.mode==='week'?'每日逐渐缩短，难度上限为起始档的下一档。':''}全部步骤完成才装睡；家长未离开时不能亮屏。`;
+    };
+    // ---- Extra routes: original exit paths remain available --------------
+    function routeLocks34(){const v=S.v34,p=v.peng,m=v.morning;return [
+        v.book.recovered>0?null:'需要去化学办公室订正并领回本子',
+        v.dailyClean>=2&&v.cleanPhones===0?null:'需要两次自行完成卫生，且零代整理发现手机',
+        p.flags.includes('testPass')?null:'需要连堂测试至少答对2/3题',
+        m.phase==='done'&&m.copy===0&&m.progress>=100&&m.submitted&&m.returned?null:'需要当日只补不抄，写完、提交并领回作业',
+        p.help>0&&p.badminton>0?null:'需要班长帮助与一次羽毛球',
+        !save.settings.pengRoute?'先在设置→攻略中开启':p.affection<50||p.letters<1||p.badminton<1?'需要好感50、一封已送达情书、一次羽毛球':null];}
+    function unlockRoutes34(page=0){const ids=Object.keys(V34_ENDINGS),start=page*3,locks=routeLocks34();
+        beginChallenge({type:'newRoutes34',page34:page,kicker:'21:40 / 校园新章 '+(page+1)+'/2',title:page?'课后，才是自己的时间。':'把今天未完成的事放下。',description:'锁定项会说明条件。新结局不会绕过神级闭环；一周成功离校后仍须完成归家。',choices:[...ids.slice(start,start+3).map(id=>'《'+ENDINGS[id].title+'》'),page?'返回旧版全部路线':'下一页 · 清晨与班长'],locks:[...locks.slice(start,start+3),null]});}
+    showCampusRoutes=function(page=0){BASE34.showCampusRoutes(page);if(challenge)challenge.canRoutes34=true;renderChallenge();};
+    function select34(index){if(!challenge||modal||recoveryGrace>0||!Number.isInteger(index)||index<0||index>3)return false;
+        const c=challenge;if(c.choices&&index>=c.choices.length)return false;if(c.locks?.[index])return true;
+        if(c.type==='morningCollect34'){collectMorning34(index);return true;}
+        if(c.type==='morningReturn34'){returnMorning34(index);return true;}
+        if(c.type==='chemBook34'){checkChemBook34(index);return true;}
+        if(c.type==='chemOffice34'){
+            if(index===0&&S.v34.book.corrections>0){if(c.workRemaining)return true;c.workRemaining=4;c.remaining=4;c.total=4;c.elapsed=0;c.title='当面订正……';c.choices=['正在订正'];c.locks=['写完后继续面谈'];renderChallenge();requestAutoSave();}
+            else if(index===1){c.description='李芳林：“写出原来的思路，标出错误，再把正确步骤完整写一遍。”\n剩余 '+S.v34.book.corrections+' 处。';renderChallenge();}
+            else if(index===2&&S.v34.book.corrections===0){closeChallenge();playScript([['李芳林','订正看过了。本子拿回去，下次上课前自己检查。'],['你','你拿起作业本，从化学办公室走出来。']], 'chemReturn34');}return true;
+        }
+        if(c.type==='romanceReview34'){closeChallenge();addSuspicion(12,false);say(CLASSES[S.classIndex].teacher,'我不替你们定义关系。先把上课私聊停下来，有话下课说。');requestAutoSave();return true;}
+        if(c.type==='toyReview34'){closeChallenge();count34('toyCheck34');say(CLASSES[S.classIndex].teacher,index===1?'标识看过了，是塑料道具。课堂上先保管，不用它比划别人。':'说明清楚了。先保管起来，课堂上不摆弄。');requestAutoSave();return true;}
+        if(c.type==='newRoutes34'){const page=c.page34;closeChallenge();if(index===3){if(page)showCampusRoutes();else unlockRoutes34(1);return true;}
+            const id=Object.keys(V34_ENDINGS)[page*3+index];if(id==='pengPromise'){beginChallenge({type:'pengReply34',kicker:'AFTER SCHOOL / 她自己的回答',title:'“放学之后，再说一遍？”',description:'彭王梓看完信，表示愿意继续了解你。你的邀请仍然由她自己决定。',choices:['问她愿不愿意一起回家','不急着确认，先做朋友']});}
+            else finishEnding(id);return true;}
+        if(c.type==='pengReply34'){closeChallenge();S.v34.peng.consent=index===0;finishEnding(index===0?'pengPromise':'pengFriend');return true;}
+        return false;
+    }
+    choose=function(index){if(select34(index))return;return BASE34.choose(index);};
+    updateChallenge=function(dt){const c=challenge;if(c&&['chemBook34','chemOffice34'].includes(c.type)&&c.workRemaining){c.elapsed+=dt;c.remaining=Math.max(0,c.remaining-dt);c.workRemaining=c.remaining;
+            if(c.remaining<=0){S.v34.book.corrections=Math.max(0,S.v34.book.corrections-1);count34('correct34');const type=c.type;closeChallenge();if(type==='chemBook34')beginChemCheck34();else showChemOffice34();}
+            else {if($('challengeTimer'))$('challengeTimer').style.width=c.remaining/c.total*100+'%';if($('challengeSeconds'))$('challengeSeconds').textContent=c.remaining.toFixed(1)+'s';}return;}
+        return BASE34.updateChallenge(dt);};
+    renderChallenge=function(){BASE34.renderChallenge();if(!challenge)return;const c=challenge;
+        if(c.canRoutes34){const btn=document.createElement('button');btn.className='outline-btn routes34';btn.textContent='新增路线 · 作业／卫生／班长';btn.dataset.v34='routes';$('challengeCard').append(btn);}
+        if(['chemBook34','chemOffice34'].includes(c.type))$('challengeCard').classList.add('paper34');
+        if(c.type==='romanceReview34')$('challengeCard').classList.add('letter-review34');
+    };
+    // ---- Responsive UI and settings -------------------------------------
+    $('stage').insertAdjacentHTML('beforeend',`<div id="peng34" hidden role="img" aria-label="女班长彭王梓，戴猫耳发卡"><i class="peng-ear34 l"></i><i class="peng-ear34 r"></i><i class="peng-head34"></i><i class="peng-body34"></i><b>彭王梓 · 班长</b></div>
+        <div id="lifeDock34" hidden><button data-v34="menu">校园事务 / V</button><button data-v34="toy">玩具刀 · 无刃塑料</button><button data-v34="help">班长帮忙</button><span id="lifeSummary34"></span></div>
+        <section id="lifePanel34" hidden aria-label="校园事务"><header><b id="lifeTitle34"></b><button data-v34="close" aria-label="收起校园事务">收起</button></header><p id="lifeStatus34"></p><div class="lifeMeter34"><i id="lifeProgress34"></i></div><div id="lifeControls34"></div><p id="lifeFoot34"></p></section>`);
+    let lifeKey34='';
+    function button34(action,text,disabled=false){return `<button type="button" data-v34="${action}" ${disabled?'disabled':''}>${esc(text)}</button>`;}
+    function render34(){const v=S?.v34,playing=S?.screen==='game',home=S?.phase==='HOME';
+        const visible=playing&&!home&&!['ESCAPE','COMPLETE','INTRO','BREAK'].includes(S.phase)&&!script&&!challenge;
+        $('lifeDock34').hidden=!visible||v?.morning.phase==='work';
+        const peng=playing&&!home&&(S.phase==='CLASS'||!!v?.recess||S.campus.location==='playground');$('peng34').hidden=!peng;
+        if(peng){$('peng34').classList.toggle('at-board34',S.phase==='CLASS'&&S.classIndex>=6);$('peng34').title='彭王梓 · 女 · 友方班长 · 猫耳发卡 / 羽毛球 / 护食';}
+        $('stage').classList.toggle('recess34',!!v?.recess);$('stage').classList.toggle('chem-office34',!!v?.office);
+        const required=visible&&(v.morning.phase==='work'||v.clean&&v.clean.phase!=='done'||!!v.task||v.stand>0||!!v.recess);
+        const open=visible&&(v.morning.phase==='work'||!v.panelClosed&&(v.menu||required));$('lifePanel34').hidden=!open;$('stage').classList.toggle('life-open34',open);
+        if(!playing||!v){lifeKey34='';return;}
+        if(v.office){$('campusSceneTitle').textContent='化学办公室';$('teacherName').textContent='李芳林 / 女 · 订正面谈';$('campusSceneSub').textContent='被扣的本子 · 错因与领回';}
+        if(v.recess){$('campusSceneTitle').textContent='课间走廊';$('campusSceneSub').textContent='课桌 / 羽毛球 / 同学对话';$('campusPanel').hidden=true;}
+        if(v.morning.phase==='work'){
+            $('actionDock').hidden=true;for(const id of ['campusPanel','phone','notePanel','sleepPanel','chessPanel','talkPanel','observePanel','cubePanel'])$(id).hidden=true;
+            $('campusSceneTitle').textContent='清晨 · 作业收发台';$('teacherName').textContent='李思聪 / 收本 · 彭王梓 / 发本';
+        }else if(visible)$('actionDock').hidden=false;
+        if(v.stand>0&&visible){$$('[data-action]').forEach(b=>{if(!['listen','observe'].includes(b.dataset.action))b.disabled=true;});$('teacherRuleHud').hidden=false;$('teacherRuleHud').textContent='化学罚站 · '+fmtDuration(v.stand)+' · 仅听课、观察及教师要求的任务';$('stage').classList.add('standing-back');}
+        const summary=`${v.book.held?'本子：被扣':`订正 ${3-v.book.corrections}/3`}${v.attentionUntil>S.t?' · 这一排被重点留意':''}${save.settings.pengRoute?' · 彭王梓好感 '+Math.floor(v.peng.affection):''}`;
+        $('lifeSummary34').textContent=summary;
+        $('lifeDock34').querySelector('[data-v34="toy"]').disabled=!v.toy.owned||busy34()||!!S.discipline.standing;
+        $('lifeDock34').querySelector('[data-v34="help"]').disabled=busy34()||!!S.discipline.standing;
+        if(!open){$('lifeControls34').replaceChildren();lifeKey34='';return;}
+        const morning=v.morning.phase==='work',clean=v.clean&&v.clean.phase!=='done',task=v.task;
+        let title='校园事务 · 时间仍在继续',status=summary,progress=0,foot='按空格中止正在做的事。不会暂停教师巡视。',controls='';
+        if(morning){const m=v.morning;title='收作业之前 · 仅开放两项行动';status=`完成 ${Math.floor(m.progress)}% · 距收作业 ${Math.ceil(m.duration-m.elapsed)} 秒 · ${m.mode==='self'?'正在自己补写':m.mode==='copy'?'正在抄写同学作业':'请选择行动'}`;progress=m.progress;
+            controls=button34('self','1 · 补作业（自己完成）')+button34('copy','2 · 抄作业（可能雷同）');foot='到收本时间会检查、收取并发回。期间隐藏全部其他课桌动作；暂停和设置仍可用。';}
+        else if(clean){const c=v.clean;title=c.phase==='request'?'老师宣布卫生检查':'老师正在替你整理';status=`${c.phase==='request'?'三项需全做完':'尚未达标，可能翻到手机'} · 剩余 ${c.remaining.toFixed(1)} 秒 · ${c.done.length}/3 完成`;progress=c.done.length/3*100;
+            if(c.phase==='request')controls=CLEAN_ITEMS34.map((x,i)=>button34('clean'+i,x+(c.done.includes(i)?' ✓':' · 2.2秒'),c.done.includes(i)||!!task)).join('');
+            foot=c.phase==='request'?'这些做卫生按钮只在本次检查期间显示；两项完成仍不合格。':'老师此时的靠近是代整理，不受通常“讲台不走动”规则限制。';}
+        else if(task){title=TASK_NAMES34[task.type];status=`${task.elapsed.toFixed(1)} / ${task.duration.toFixed(1)} 秒${risk34()?' · 教师和后门仍在运行':''}`;progress=task.elapsed/task.duration*100;controls=button34('stop','立即收好 / 空格');}
+        else if(v.stand>0){title='化学课罚站';status='剩余 '+fmtDuration(v.stand)+' · 不得进行个人活动';progress=(1-v.stand/300)*100;foot='300秒有效校园时间，跨课堂保存。暂停、剧情、答题和离线不抵扣；教师要求的卫生可做。';controls=button34('listen','认真听课')+button34('observe','观察周围');}
+        else {
+            if(v.recess){title='课间 · 与同学在走廊';status=`还剩 ${Math.ceil(v.recess.duration-v.recess.elapsed)} 秒 · ${summary}`;progress=v.recess.elapsed/v.recess.duration*100;}
+            controls=button34('toy',v.toy.owned?'摆弄玩具刀（无刃塑料）':'玩具已暂存',!v.toy.owned)+button34('help','请班长帮忙');
+            if(v.recess||campusFree()&&campusSlot().kind==='pe')controls+=button34('badminton','和彭王梓打羽毛球（6秒）');
+            if(v.book.held&&campusFree())controls+=button34('chemOffice','去化学办公室领本');
+            if(save.settings.pengRoute){controls+=button34('letter','情书（6秒）',v.peng.flags.includes('letter'))+['ball','snack','boundary','tomorrow'].map((x,i)=>button34('talk-'+x,['对话 · 羽毛球','对话 · 分享点心','对话 · 尊重边界','对话 · 放学以后'][i],v.peng.discussed.includes(x))).join('');
+                foot=`好感 ${v.peng.affection}/100 · 情书 ${v.peng.letters} · 羽毛球 ${v.peng.badminton}。在课上私聊或递信会被老师注意；课后更安全。`;}
+            else foot='彭王梓是友方同学：女，猫系性格，戴猫耳发卡，喜欢羽毛球、护食。可在设置→攻略开启可选感情支线。';
+            if(v.recess)controls+=button34('next','结束课间，准备下一节');
+        }
+        $('lifeTitle34').textContent=title;$('lifeStatus34').textContent=status;$('lifeProgress34').style.width=progress+'%';$('lifeFoot34').textContent=foot;
+        const key=controls;if(key!==lifeKey34){$('lifeControls34').innerHTML=controls;lifeKey34=key;}
+        // Closing a required status never conceals the required morning actions.
+        $('lifePanel34').querySelector('[data-v34="close"]').disabled=morning;
+    }
+    renderUI=function(){BASE34.renderUI();render34();};
+    clearTransient=function(){BASE34.clearTransient();for(const id of ['lifePanel34','lifeDock34','peng34'])if($(id))$(id).hidden=true;lifeKey34='';$('stage').classList.remove('life-open34','recess34','chem-office34');};
+    function v34Action(action){if(!S||S.screen!=='game'||modal||recoveryGrace>0)return;
+        if(action==='routes'&&challenge?.canRoutes34){closeChallenge();unlockRoutes34();return;}
+        if(script||challenge)return;const v=ensure34();
+        if(action==='menu'){v.menu=true;v.panelClosed=false;render34();return;}if(action==='close'){if(v.morning.phase==='work')return;if(v.task)safeHide();v.menu=false;v.panelClosed=true;render34();return;}
+        if(v.morning.phase==='work'){if(['self','copy'].includes(action)){v.morning.mode=action;render34();requestAutoSave();}return;}
+        if(action.startsWith('clean')){startClean34(Number(action.slice(-1)));return;}
+        if(action==='stop'){safeHide();return;}
+        if(action==='listen'||action==='observe'){setAction(action);return;}
+        if(action==='toy'){startTask34('toy','',6);return;}
+        if(action==='letter'){startTask34('letter','',6);return;}
+        if(action==='badminton'){startTask34('badminton','',6);return;}
+        if(action==='help'){startTask34('pengHelp','',3);return;}
+        if(action.startsWith('talk-')){startTask34('pengTalk',action.slice(5),5);return;}
+        if(action==='chemOffice'&&campusFree()&&!busy34()){beginChemOffice34('free');return;}
+        if(action==='next'){campusContinue();return;}
+    }
+    document.addEventListener('click',e=>{const b=e.target.closest?.('[data-v34]');if(!b||b.disabled)return;e.preventDefault();e.stopPropagation();v34Action(b.dataset.v34);},true);
+    document.addEventListener('keydown',e=>{if(!S||modal||script||challenge||e.altKey||e.ctrlKey||e.metaKey||e.isComposing||recoveryGrace>0)return;
+        if(e.target?.closest?.('input,textarea,select,[contenteditable="true"]'))return;
+        const code=normalizedKeyCode(e);
+        if(S.v34?.morning.phase==='work'&&(/^(Digit|Numpad)[0-9]$/.test(code)||code==='Space')){e.preventDefault();e.stopImmediatePropagation();if(e.repeat)return;if(code.endsWith('1'))v34Action('self');if(code.endsWith('2'))v34Action('copy');return;}
+        if(code==='KeyV'&&S.phase!=='HOME'){e.preventDefault();e.stopImmediatePropagation();if(!e.repeat)v34Action('menu');}
+    },true);
+    const guide34=()=>`<p>可选感情支线。默认关闭；关闭时仍保留班长帮助和羽毛球友情路线，不影响主线通关。</p><label class="settings-row"><span>攻略彭王梓<small>女班长，猫系性格。开放情书和专属对话；内容为校园日常与非露骨好感交流。</small></span><input type="checkbox" data-setting="pengRoute" ${save.settings.pengRoute?'checked':''}></label><p>开启后按V进入校园事务，可以聊羽毛球、分享点心、说明边界、写情书。在课堂做这些事仍可能被老师叫住。她会保留自己的选择；不以强迫表白或侵犯隐私推进路线。</p><p>同一天每种话题、送信与羽毛球只加一次好感。课后选择需要好感50、已送达情书和羽毛球经历。早晨收作业前、罚站中不开放这些动作。</p>`;
+    renderModal=function(){BASE34.renderModal();if(modal?.kind==='romance34'){$('modalTitle').textContent='攻略 · 可选人物支线';$('modalBody').innerHTML=guide34();}
+        if(modal?.kind==='settings')$('modalBody').insertAdjacentHTML('afterbegin','<div class="modal-actions"><button class="solid-btn" data-modal-action="romance34">攻略 · 彭王梓（'+(save.settings.pengRoute?'开启':'默认关闭')+'）</button></div>');
+        if(modal?.kind==='help')$('modalBody').insertAdjacentHTML('afterbegin','<h3>v3.4 校园新章</h3><p>按V打开校园事务。早晨收本前只有补作业与抄作业；每次课前都有广播，新增真实课间与连堂测试。化学重复回应看弹框计数，答错罚站300秒。卫生检查宣布后才显示清理按钮；拒绝整理可能被老师发现手机。归家改用空格或数字快速反应；全周逐日增强但不会超过起始档下一档。完整操作与数值见本版README和平衡说明。</p>');
+    };
+    modalAction=function(action){if(action==='romance34'){openModal('romance34',modal?.kind||null);return;}return BASE34.modalAction(action);};
+    settingChange=function(el){BASE34.settingChange(el);if(el.dataset.setting==='pengRoute'){
+            if(!save.settings.pengRoute&&S?.v34?.task&&['letter','pengTalk'].includes(S.v34.task.type)){S.v34.task=null;S.action='listen';}
+            render34();requestAutoSave();}}
+    renderCharacters=function(){return BASE34.renderCharacters()+`<h3>v3.4 人物补充（以此为准）</h3><p>郭自朝是教师中唯一的男性。何凤林、李芳林、王颖、戴贝贝、尹莎莎、李芙容，以及未命名的体育／值班教师均为女性。家长与学生不属于这一限制。历史名字“郭自嘲／郭子潮”均兼容为郭自朝，不再新增同名教师。</p><p>郭自朝语录：So easy。／我教了这么多届，第1次见到你们这样的学生。／又笨又不努力，越来越笨。／你他妈才读了几年书，我教了这么多年书，手机长什么样我能不知道吗。（玩具事件改说玩具刀；含粗口，仅为虚构角色台词。）</p><p>李芳林有时没有听清回答，正确答案可能需要回应2—3次。未答出罚站300秒有效校园时间。课前查订正，未订正扣本并安排办公室面谈。</p><p>王子睿、李思聪会观察、听讲或睡眠。睡觉时均不提醒；李思聪听讲时不侦查，王子睿听讲时也专注课堂且可能带动玩家。睡眠被教师发现时，这一排被关注22秒，不直接增加玩家被抓次数。</p><p>彭王梓：女班长，猫系性格，戴猫耳发卡，喜欢羽毛球；自习课站在讲台，友好、护食、喜欢抢一口点心。分享剧情会明确商量，不强迫玩家交出食物。默认只有友情，感情支线由设置开关控制。</p>`;};
+    renderTimetable=function(){return BASE34.renderTimetable()+`<h3>本版新增的课间与收发</h3><p>相邻两节课堂之间增加24秒标准／12秒快速的可玩课间（可以提前结束）。不把课间算成额外课程，不改变上午5节、下午4节、晚自习2节的数量。每次上课前播报学科和教师，同科连堂第二节安排三题测试。</p><p>全周每天到校先做晨检：50秒标准／28秒快速的补作业或抄作业，之后完成收发。化学课前独立检查订正，被扣本后增加化学办公室。</p>${S?.calendar?.mode==='week'?'<p>当前起始难度 '+esc(DIFFICULTIES[S.difficulty].label)+'，增压进度 '+Math.round(weekProgress34()*100)+'%。整周不允许临时换低难度。极限周不会自动变成不可通关的神级闭环。</p>':''}`;};
+    renderWeekSetup=function(){return BASE34.renderWeekSetup().replace('难度与流程速度整周固定。','起始难度和流程速度整周固定；规则逐日平滑增强，最多到起始档下一档。极限周不自动开启神级必败。每天有晨检收发、课间与归家多步隐藏，归家窗口逐日缩短。');};
+    renderHomeSetup=function(){return BASE34.renderHomeSetup().replace(/<b>按4或P拿出手机；逐次按两次空格：藏好手机 → 躺下装睡。<\/b>/,'<b>按4或P拿出手机；隐藏使用同难度快速反应：简单2次空格，普通3次空格，困难至神级3／4／5／6个数字。</b>').replace('触屏点击屏幕下方对应按钮。','触屏按提示点大数字，键盘按上方按钮的左起位置。全部步骤完成才自动装睡。');};
+    // Seed each new run deterministically from its generated run identifier.
+    makeState=function(mode,difficulty='normal'){const st=BASE34.makeState(mode,difficulty);st.v34.baseDifficulty=st.difficulty;st.v34.rng=parseInt(checksum(st.runId),16)>>>0;return st;};
 
     // The classroom is a layered DOM illustration rather than a raster image.
     const seats = [{ x: 436, y: 403, s: .68 }, { x: 669, y: 420, s: .70 }, { x: 1044, y: 413, s: .74 }, { x: 1210, y: 428, s: .80 }, { x: 363, y: 468, s: .94 }, { x: 619, y: 487, s: 1.06 }, { x: 955, y: 479, s: 1.02 }, { x: 1195, y: 488, s: 1.11 }];
@@ -7278,6 +7937,7 @@ body.no-motion *,body.no-motion *:before,body.no-motion *:after {
                 dialogue.shown = dialogue.text.length;
                 advanceDialogue();
             } renderUI(); }, setAction, turnCube, observe, choose, number: finishQuestion, hide: resolveHide, freeze: startFreeze, grid: startGrid, question: askQuestion, danger: triggerDanger, fakeBell: startFakeBell, door: showDoor, complete: completeDay, escape: startEscape, sprint: sprintTap, ending: finishEnding, fail: gameOver, retry: retryLesson, menu: returnMenu, openModal, closeModal, render: renderUI, extra: triggerExtraordinary, scramble: scrambleButtons, lesson: enterClass, get queue() { return eventQueue; } };
+if(testMode)Object.assign(window.__LAST_CLASS_TEST__,{v34Action,metrics34,triggerHygiene34,beginChemCheck34,beginChemOffice34,beginMorning34,finishMorning34,startRecess34,beginHomeRapid34,makeV34,weekProgress34,beginTest34,finishTask34,validate34State,render34,select34,makeCalendar34:makeCalendarState,collectMorning34,returnMorning34,chemStand34,unlockRoutes34});
 })();
   </script>
  </body>

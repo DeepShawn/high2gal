@@ -1,54 +1,17 @@
-v3.13「海胆与星客」测试说明
+v3.13.2 测试说明
 
-汇总：65项已执行断言通过，0项断言失败，所列已完成测试未捕获页面运行时异常。
-另通过内嵌JavaScript的Node语法检查。机器可读结果在tests/最终测试结果.json，包含交付HTML的SHA256。
+已完成：
+1. 内嵌 JavaScript 语法检查（node --check）通过。
+2. 默认设置 rapidBoost=false。
+3. 默认快速反应拓扑：简单/普通=2/3 空格；困难/地狱/极限/神级=3/4/5/6 数字。
+4. 强化拓扑：简单/普通不变；困难/地狱/极限/神级=5/6/8/10 数字。
+5. 主菜单存在独立复选框，并有 change 事件接入设置保存。
+6. 新开周目把开关写入周目状态；七日跨天保留该值。
+7. 课堂、归家和教程练习使用对应快速反应数量。
+8. DeepShawn 神级特殊试炼继续固定十键。
+9. v3.13.1 已开始的高数量快速反应兼容校验，不强制重抽当前弹框。
+10. 简中、繁中、英文、日文的开关文案已加入本地化表。
 
-分类：
-20项：四组魔方判定、真实按键、缓存、教程、旧快照、校园道具和移动减速。
-20项：独立对战命中、能量、学习题发射许可、错误/超时、暂停、数据验证、独立存储、备份、失败重试。
-12项：已有课时/计数/存档隔离、四语、真实键盘、全屏、四种触屏视口、手机魔方、实际v3.12旧档迁移。
-8项：五档直接对战的五波通关、普通/困难学习对战的五波通关，以及神级实际失守和本波重试。
-3项：校园普通休闲/普通学习各完整一天，及针对性的次日道具迁移。
-2项：真实requestAnimationFrame下的启动、自然目标出现、发射、暂停，以及移动端答题弹框暂停恢复。
-
-不是“全部难度都已通关”：
-神级代理在第五波失守，随后验证了检查点重试。它是上述8项中的“失败/重试”断言，绝不是神级通关成功。
-普通、困难学习对战代理会读出题库正确答案，模拟少量读题等待；其通关不代表真人能以同样速度完成题目。
-单人关卡没有联机服务、真人对战或网络同步测试。
-
-保存测试范围：
-使用Chromium DOM、真实键盘/触屏事件、模拟localStorage，再重建新文档恢复。对战题目顺序、时限、状态保持；校园与对战存储键隔离、写入失败提示和备份回退均检查。
-原生file://导航已实际尝试，被当前环境ERR_BLOCKED_BY_ADMINISTRATOR拦截，因此真实关闭浏览器后重新打开的磁盘持久恢复未验证，不计通过。
-对战JSON导出结构、验证器、页面重建已测；不同设备文件选择器/下载器和操作系统语音未作真机验收。
-
-屏幕与操作：
-320×568、390×844、844×390、768×1024触屏模拟，1440×960桌面。
-检查技能按钮命中、第二次进入、全屏切换、无横向溢出、题目弹框暂停、校园四组魔方触屏输入。
-没有宣称手机真机、Safari、Firefox、不同实体键盘及中文输入法全部验证。
-
-校园回归边界：
-普通休闲和普通学习各一个完整单日流程，使用游戏正式的自定义4×课堂流速，保留问答等待，没有把资源强制设为满值或跳过课表。
-另检查原48结局/174成就数据计数、四倍课时字段、存档迁移，以及新道具跨日字段。
-本次尝试的完整七日回归超出执行预算，未走完整周，未计通过；不沿用旧版本的七日成功声明。未重新逐一触发所有48个校园结局，也未逐题审校既有题库。
-
-重跑：
-需要Python3、Playwright Python模块、Chromium及Node；这是开发测试环境，不是游玩依赖。
-CHROMIUM_BIN环境变量可指定Chromium路径。
-python tools/build313.py
-node --check tests/syntax313.js
-python tests/test313.py cube
-python tests/test313.py battle
-python tests/test313.py integration
-python tests/test_battle_flow313.py easy
-python tests/test_battle_flow313.py normal
-python tests/test_battle_flow313.py hard
-python tests/test_battle_flow313.py hell
-python tests/test_battle_flow313.py extreme
-python tests/test_battle_flow313.py god
-python tests/test_battle_flow313.py normal study
-python tests/test_battle_flow313.py hard study
-python tests/test_school_regression313.py
-python tests/test_live_ui313.py
-python tests/aggregate313.py
-
-旧版源码tools/base_v3_12.html随包保留，迁移测试直接从旧源码生成快照，而不只在新代码中伪造旧字段。
+未完成：
+- 当前容器中的 Chromium 对这个持续 requestAnimationFrame 的大型本地单文件页面无法正常结束 headless 截图进程，因此未将浏览器截图作为通过项。
+- 手机真机、Safari、Firefox 未重新验收。

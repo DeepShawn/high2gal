@@ -5,7 +5,7 @@
   <meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
   <meta content="#121c1b" name="theme-color"/>
   <meta content="高二（2）班：最后一节课。离线、单文件校园恐怖潜行游戏。" name="description"/>
-  <title>高二（2）班：最后一节课 · v3.18 被收起的作业</title>
+  <title>高二（2）班：最后一节课 · v3.19 课后捉迷藏</title>
   <style>
    /* All artwork is drawn with HTML and CSS. No remote assets or libraries. */
 :root {
@@ -3612,6 +3612,50 @@ body.mobile39 #stage.work-popup318 #challengeCard,body.phone-mode39 #stage.work-
 body.work-popup318 #toastStack{visibility:hidden!important;pointer-events:none!important}
 
 </style>
+<style id="hideStyle319">
+/* Namespaced rules: never change coordinates of the school/game overlays. */
+#independentHub319{grid-column:1/-1;min-width:0;border:1px solid #779b8e66;border-radius:12px;background:#16342dcc;margin:8px 0 12px;color:#dce8dc;}
+#independentHub319 summary{padding:13px 15px;cursor:pointer;font-size:14px;letter-spacing:.05em;min-height:44px;box-sizing:border-box;}
+#independentHub319 .mode-cards319{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;padding:0 12px 12px;}
+#independentHub319 .mode-cards319>div{background:#102923;border:1px solid #45685b;border-radius:9px;min-width:0;overflow:hidden;padding:8px;display:flex;flex-direction:column;justify-content:center;gap:8px;}
+#independentHub319 button,#independentHub319 #battleMenuButton313{position:static!important;transform:none!important;width:100%!important;min-width:0!important;height:auto!important;min-height:44px!important;padding:10px!important;font-size:13px!important;line-height:1.45!important;letter-spacing:.015em!important;white-space:normal!important;overflow-wrap:anywhere;display:block!important;box-sizing:border-box;margin:0!important;text-align:start;background:#25453b;color:#e7ecd8;border:1px solid #739582;border-radius:6px;cursor:pointer;}
+#independentHub319 button:disabled{opacity:.43;cursor:not-allowed;}#independentHub319 button:hover:not(:disabled){background:#345b4a;}
+#independentHub319 #menu317{margin:0;padding:0;background:none;border:0;min-width:0;}#independentHub319 .night-toggle317{display:flex;align-items:center;gap:8px;justify-content:space-between;min-height:38px;margin-bottom:6px;font-size:12px;}
+#independentHub319 .night-toggle317 input{width:22px;height:22px;accent-color:#b5d4b9;flex:0 0 22px;cursor:pointer;}
+#independentHub319 .menu-independent317{display:flex;flex-direction:column;gap:6px;}#independentHub319 #modeArchives317,#hideArchiveLaunch319{font-size:11px!important;min-height:36px!important;background:transparent!important;}
+body.hide-open319>:not(#hideSeek319):not(script):not(style){visibility:hidden!important;pointer-events:none!important;}
+#hideSeek319[hidden]{display:none!important;}#hideSeek319,#hideSeek319 *{box-sizing:border-box;}#hideSeek319{position:fixed;inset:0;z-index:55000;display:flex;flex-direction:column;height:100dvh;max-height:100dvh;overflow:hidden;background:#101e23;color:#e6eadf;font:15px/1.55 system-ui,-apple-system,'Segoe UI',sans-serif;isolation:isolate;visibility:visible;}
+#hideSeek319 button,#hideSeek319 select{font:inherit;color:inherit;background:#233d42;border:1px solid #58757a;border-radius:8px;padding:10px 14px;min-height:44px;cursor:pointer;white-space:normal;overflow-wrap:anywhere;text-align:center;line-height:1.4;max-width:100%;}
+#hideSeek319 button:disabled{opacity:.4;cursor:not-allowed;}#hideSeek319 button:hover:not(:disabled){background:#35575b;}#hideSeek319 button:focus-visible,#hideSeek319 select:focus-visible{outline:3px solid #efd4a4;outline-offset:2px;}#hideSeek319 button[aria-pressed=true]{background:#526754;border-color:#d3dcb8;}#hideSeek319 select{width:100%;display:block;margin-top:8px;color-scheme:dark;}
+#hideSeek319 h1,#hideSeek319 h2,#hideSeek319 h3,#hideSeek319 p{margin:0;}#hideSeek319 p+p{margin-top:14px;}#hideSeek319 .hs-head319{flex:0 0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:16px max(20px,env(safe-area-inset-right)) 16px max(20px,env(safe-area-inset-left));border-bottom:1px solid #49636a;background:#132a2e;}
+#hideSeek319 .hs-head319 small{font-size:10px;letter-spacing:.22em;color:#9aafa9;}#hideSeek319 .hs-head319 h1{font-size:22px;font-weight:650;letter-spacing:.07em;}#hideSeek319 nav{display:flex;flex-wrap:wrap;gap:7px;align-items:center;}
+#hideSeek319 .hs-scroll319{flex:1 1 auto;min-height:0;overflow:auto;overscroll-behavior:contain;scrollbar-gutter:stable;padding:clamp(12px,2vw,28px);width:100%;}
+#hideSeek319 .hs-setup319{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(290px,.8fr);gap:32px;max-width:1160px;margin-inline:auto;align-content:start;}
+#hideSeek319 .hs-intro319{padding:20px 12px;}#hideSeek319 .hs-intro319 h2{font-size:clamp(26px,4vw,42px);font-weight:550;letter-spacing:.06em;margin:20px 0 16px;}#hideSeek319 .hs-intro319 p{max-width:52ch;color:#b8cbc7;}#hideSeek319 .hs-eyebrow319{font-size:12px;letter-spacing:.4em;color:#dcc194;}
+#hideSeek319 .hs-card319{background:#1a3035;border:1px solid #496369;border-radius:15px;padding:22px;min-width:0;align-self:start;box-shadow:0 12px 40px #0002;}#hideSeek319 .hs-card319 label{display:block;font-size:13px;color:#bed1ca;}#hideSeek319 .hs-card319>p{margin:16px 0;}#hideSeek319 .hs-sub319{font-size:12px;color:#9fb7b3;}
+#hideSeek319 .hs-actions319{display:flex;flex-direction:column;gap:10px;margin:22px 0 15px;}#hideSeek319 .hs-primary319{background:#abc9ba;color:#142f2e;border-color:#cee8d6;font-weight:650;}#hideSeek319 .hs-primary319:hover{background:#c6decf;}#hideSeek319 .hs-row319{display:flex;flex-wrap:wrap;gap:9px;}#hideSeek319 .hs-row319 button{flex:1 1 130px;}
+#hideSeek319 .hs-cover319{height:210px;margin:20px 0;position:relative;overflow:hidden;border-radius:12px;background:linear-gradient(105deg,#253f42 30%,#1c3536 30%,#182e33 72%,#2d4848 72%);border:1px solid #446469;}
+#hideSeek319 .hs-door319{position:absolute;left:18%;top:25px;bottom:0;width:24%;border:5px solid #788d7b;background:#0c1c22;}#hideSeek319 .hs-door319:after{content:'';position:absolute;right:8px;top:55%;width:6px;height:6px;border-radius:50%;background:#e4c786;}
+#hideSeek319 .hs-orbit319{position:absolute;left:47%;top:20%;width:170px;height:170px;border:1px solid #729e9844;border-radius:50%;box-shadow:0 0 0 28px #7fada20d,0 0 0 60px #7fada208;}#hideSeek319 .hs-cover319 b{position:absolute;left:58%;top:53px;font-size:65px;font-weight:300;color:#aed7c4;}#hideSeek319 .hs-cover319 i{position:absolute;right:18%;bottom:22px;width:16px;height:16px;background:#e6cf9b;transform:rotate(45deg);}
+#hideSeek319 .hs-play319{display:grid;grid-template-columns:minmax(0,1fr) 310px;gap:20px;max-width:1360px;margin:0 auto;align-content:start;}#hideSeek319 .hs-stage319{min-width:0;}#hideSeek319 .hs-status319{display:flex;gap:8px;flex-wrap:wrap;justify-content:space-between;align-items:center;font-size:13px;padding:8px 2px 13px;}#hideSeek319 .hs-status319 time{font-variant-numeric:tabular-nums;color:#e6cf9b;}
+#hideSeek319 .hs-canvas319{position:relative;aspect-ratio:19/13;border:1px solid #506d72;border-radius:10px;overflow:hidden;background:#152b31;}#hideSeek319 canvas{display:block;width:100%;height:100%;touch-action:pan-y;}#hideSeek319 .hs-grace319{position:absolute;inset:0;pointer-events:none;display:flex;align-items:center;justify-content:center;font-size:24px;color:#eff9e3;text-shadow:0 2px 7px #000;}#hideSeek319 .hs-grace319:not(:empty){background:#15262fa0;}
+#hideSeek319 .hs-legend319{font-size:11px;color:#a6bbb7;margin:10px 0;line-height:1.6;}#hideSeek319 .hs-message319{border-inline-start:3px solid #d7c296;background:#233a3d;padding:12px 14px;min-height:52px;color:#f0d7a7;font-size:14px;}
+#hideSeek319 .hs-controls319{padding:17px;}#hideSeek319 .hs-meters319{display:grid;gap:10px;}#hideSeek319 .hs-meters319 label{display:grid;grid-template-columns:1fr auto;gap:3px 10px;}#hideSeek319 .hs-meters319 b{font-size:12px;font-weight:400;color:#e6cf9b;font-variant-numeric:tabular-nums;}#hideSeek319 progress{grid-column:1/-1;width:100%;height:7px;border:0;background:#0e2429;accent-color:#9cc6b7;}#hideSeek319 #hsAlertBar319{accent-color:#d98b79;}
+#hideSeek319 .hs-inputs319{display:flex;flex-direction:column;gap:14px;margin:17px 0;}#hideSeek319 .hs-dpad319{display:grid;grid-template-columns:repeat(3,50px);grid-template-rows:repeat(2,48px);gap:5px;justify-content:center;}#hideSeek319 .hs-dpad319 button{font-size:22px;padding:3px;touch-action:none;user-select:none;-webkit-user-select:none;}#hideSeek319 .hs-dpad319 button[data-hsdir319='0']{grid-column:2;}#hideSeek319 .hs-dpad319 button[data-hsdir319='3']{grid-column:1;grid-row:2;}#hideSeek319 .hs-dpad319 button[data-hsdir319='2']{grid-column:2;grid-row:2;}#hideSeek319 .hs-dpad319 button[data-hsdir319='1']{grid-column:3;grid-row:2;}#hideSeek319 .hs-skill319{display:grid;grid-template-columns:1fr 1fr;gap:8px;}#hideSeek319 .hs-skill319 button{padding:8px;font-size:13px;}
+#hideSeek319 .hs-foot319{flex:0 0 auto;padding:8px max(14px,env(safe-area-inset-right)) max(8px,env(safe-area-inset-bottom));font-size:11px;color:#acc4bc;border-top:1px solid #3c575b;background:#142a2f;min-height:30px;}
+#hideSeek319 .hs-shade319{position:absolute;inset:0;z-index:4;display:flex;align-items:center;justify-content:center;padding:16px;background:#09191dda;overflow:auto;}#hideSeek319 .hs-dialog319{max-width:570px;max-height:calc(100dvh - 32px);overflow:auto;min-width:0;width:100%;background:#20393d;border:1px solid #8caa9c;border-radius:18px;padding:28px;box-shadow:0 20px 70px #0008;}#hideSeek319 .hs-dialog319 h2{font-size:27px;margin:8px 0 18px;}#hideSeek319 .hs-dialog319 p{color:#c2d4cb;margin-bottom:18px;}#hideSeek319 .hs-dialog319 small{font-size:11px;color:#c9b68e;letter-spacing:.12em;}
+#hideSeek319 .hs-help319{max-width:940px;margin:auto;}#hideSeek319 .hs-help319 p{margin-top:20px;}#hideSeek319 .hs-help319 button{margin-top:24px;}#hideSeek319 .hs-archive319{max-width:1000px;margin:auto;}#hideSeek319 .hs-archive319 h3{margin:22px 0 10px;}#hideSeek319 .hs-records319{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-bottom:24px;}#hideSeek319 .hs-records319 article{display:flex;flex-direction:column;gap:5px;padding:15px;background:#1a3136;border:1px solid #425b60;border-radius:8px;min-width:0;color:#a6b8b5;}#hideSeek319 .hs-records319 article.unlocked{border-color:#adc596;color:#e8e9ce;}#hideSeek319 .hs-records319 small{font-size:11px;color:#819d99;}
+@media(max-width:700px){#independentHub319 .mode-cards319{padding:0 8px 8px;gap:7px;}#independentHub319 summary{font-size:12px;padding:10px;}#hideSeek319 .hs-head319{padding:10px 12px;gap:8px;align-items:flex-start;}#hideSeek319 .hs-head319 h1{font-size:17px;}#hideSeek319 .hs-head319 small{font-size:8px;letter-spacing:.08em;}#hideSeek319 .hs-head319 nav{gap:4px;justify-content:flex-end;}#hideSeek319 .hs-head319 button{font-size:11px;padding:8px;min-height:40px;}#hideSeek319 .hs-setup319{display:block;}#hideSeek319 .hs-intro319{padding:8px 0 20px;}#hideSeek319 .hs-cover319{height:145px;}#hideSeek319 .hs-intro319 h2{font-size:29px;}#hideSeek319 .hs-card319{padding:16px;}#hideSeek319 .hs-play319{grid-template-columns:1fr;gap:12px;padding:10px;}#hideSeek319 .hs-status319{font-size:12px;padding:4px 0 8px;}#hideSeek319 .hs-legend319{font-size:10px;margin:6px 0;}#hideSeek319 .hs-message319{font-size:12px;min-height:44px;padding:8px 10px;}#hideSeek319 .hs-controls319{padding:12px;}#hideSeek319 .hs-meters319{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;}#hideSeek319 .hs-meters319 label{font-size:11px;gap:3px;}#hideSeek319 .hs-inputs319{display:grid;grid-template-columns:155px minmax(0,1fr);gap:10px;margin:12px 0;}#hideSeek319 .hs-skill319{gap:5px;}#hideSeek319 .hs-skill319 button{font-size:11px;padding:5px;}#hideSeek319 .hs-records319{grid-template-columns:1fr;}#hideSeek319 .hs-dialog319{padding:20px;}#hideSeek319 .hs-foot319{font-size:10px;padding-top:5px;}}
+@media(max-width:360px){#independentHub319 .mode-cards319{grid-template-columns:1fr;}#hideSeek319 .hs-head319{flex-direction:column;}#hideSeek319 .hs-head319 nav{width:100%;justify-content:space-between;}#hideSeek319 .hs-inputs319{grid-template-columns:145px minmax(0,1fr);}#hideSeek319 .hs-dpad319{grid-template-columns:repeat(3,45px);}}
+@media(max-height:540px) and (min-width:650px){#hideSeek319 .hs-head319{padding:7px 12px;}#hideSeek319 .hs-head319 h1{font-size:16px;}#hideSeek319 .hs-head319 button{padding:6px 10px;min-height:38px;}#hideSeek319 .hs-play319{grid-template-columns:minmax(0,1fr) 265px;padding:8px;gap:12px;}#hideSeek319 .hs-controls319{padding:10px;}#hideSeek319 .hs-setup319{padding:12px;gap:16px;}#hideSeek319 .hs-status319{font-size:11px;}#hideSeek319 .hs-inputs319{gap:9px;}#hideSeek319 .hs-canvas319{max-height:310px;}#hideSeek319 .hs-foot319{padding:4px 12px;min-height:22px;}}
+@media(prefers-reduced-motion:reduce){#hideSeek319 *{scroll-behavior:auto!important;}}
+/* Keep the entire arena visible on desktop, not only its upper rows. */
+#hideSeek319 .hs-canvas319{width:min(100%,calc((100dvh - 265px)*1.461538));max-height:none;margin-inline:auto;}
+#hideSeek319 progress{-webkit-appearance:none;appearance:none;border-radius:4px;overflow:hidden;}#hideSeek319 progress::-webkit-progress-bar{background:#0e2429;}#hideSeek319 progress::-webkit-progress-value{background:#9cc6b7;border-radius:4px;}#hideSeek319 #hsAlertBar319::-webkit-progress-value{background:#d98b79;}#hideSeek319 progress::-moz-progress-bar{background:#9cc6b7;}
+@media(max-width:700px){#hideSeek319 .hs-canvas319{width:100%;}}
+@media(max-height:540px) and (min-width:650px){#hideSeek319 .hs-canvas319{width:min(100%,calc((100dvh - 175px)*1.461538));}}
+
+</style>
 </head>
  <body>
   <div id="viewport">
@@ -3893,7 +3937,7 @@ body.work-popup318 #toastStack{visibility:hidden!important;pointer-events:none!i
        建议佩戴耳机　/　不含贴脸跳吓，可关闭闪烁与震动
       </span>
       <span>
-       单文件离线版　3.18
+       单文件离线版　3.19
        <br/>
        HTML / CSS / JAVASCRIPT
       </span>
@@ -4317,6 +4361,8 @@ body.work-popup318 #toastStack{visibility:hidden!important;pointer-events:none!i
   </noscript>
   <script>
    'use strict';
+let hideGuard319=null;for(const type of ['keydown','keyup'])window.addEventListener(type,e=>{if(hideGuard319)hideGuard319(e);},true);
+
 /*
  * 高二（2）班：最后一节课 / THE LAST CLASS
  * Single-file offline release 3.6 — all assets generated in CSS / Web Audio.
@@ -13840,7 +13886,7 @@ function localizeAll310(){
  if(previousLocale310!==null&&previousLocale310!==lang){stopSpeech37();}
  previousLocale310=lang;
  localizeRoot310(document.body);
- document.title=translate310('高二（2）班：最后一节课',lang)+' · v3.18';
+ document.title=translate310('高二（2）班：最后一节课',lang)+' · v3.19';
  document.body.classList.toggle('english-lesson310',forcedEnglish310());
 }
 // Always translate a complete line before revealing it. Canonical script positions survive.
@@ -16892,7 +16938,7 @@ function flushLocale3171(force=false){
     rawLocalizeRoot3171(el);renderingStats3171.partialLocaleRoots++;
    }
   }
-  const title=translate310('高二（2）班：最后一节课',lang)+' · v3.18';
+  const title=translate310('高二（2）班：最后一节课',lang)+' · v3.19';
   if(document.title!==title)document.title=title;
  }finally{
   dirtyLocaleObserver3171.observe(document.body,localeObserverOptions3171);
@@ -16984,7 +17030,7 @@ function paintMotion3171(){
  }
 }
 const headerVersion3171=phoneShell39.querySelector('.phone-header39 small');
-if(headerVersion3171)headerVersion3171.textContent='v3.18';
+if(headerVersion3171)headerVersion3171.textContent='v3.19';
 
 // New feature text: Simplified / Traditional Chinese, English, Japanese,
 // French, Russian, Icelandic and Arabic. Existing legacy coverage is unchanged.
@@ -17401,6 +17447,325 @@ document.addEventListener('click',e=>{
  if(cmd==='leave'&&!modal&&!script&&recoveryGrace<=0)leaveWorkOffice318();
 });
 
+/* All new interface strings are local; existing legacy language coverage is unchanged. */
+const HS_LANG319=['zh-CN','en','ja','fr','ru','is','ar'];
+const HS_WORD319={};
+function hsWords319(id,zh,en,ja,fr,ru,is,ar){HS_WORD319[id]={'zh-CN':zh,'zh-TW':traditional310(zh),en,ja,fr,ru,is,ar};}
+function hsText319(id,args={}){const lang=preferredLocale310(),row=HS_WORD319[id];return (row?.[lang]||row?.en||text317(id)).replace(/\{(\w+)\}/g,(_,k)=>String(args[k]??'{'+k+'}'));}
+hsWords319('hub','独立游戏 · 各自存档','Independent games · separate saves','独立ゲーム・個別セーブ','Jeux indépendants · sauvegardes séparées','Отдельные игры и сохранения','Sjálfstæðir leikir · aðskildar vistanir','ألعاب مستقلة · حفظ منفصل');
+hsWords319('classic','海胆苹果 · 经典五波','Urchin Apple · Classic Five Waves','ウニリンゴ・従来の5ウェーブ','Pomme-oursin · cinq vagues classiques','Яблоко-ёж · классические пять волн','Ígulepli · fimm klassískar bylgjur','تفاحة القنفذ · خمس موجات كلاسيكية');
+hsWords319('title','课后捉迷藏','Hide and Seek After Class','放課後のかくれんぼ','Cache-cache après les cours','Прятки после уроков','Feluleikur eftir skóla','الغميضة بعد الدروس');
+hsWords319('lead','铃声之后，走廊不再属于老师。收集徽记，借助藏身处和声响诱饵，避开搜寻者，回到集合点。','After the bell, the corridors belong to the players. Gather tokens, use hiding spots and sound decoys, and evade the seekers to reach the meeting point.','放課後の廊下で印を集め、隠れ場所と音のおとりを使い、鬼を避けて集合場所へ戻ろう。','Après la sonnerie, ramassez les jetons, utilisez les cachettes et les leurres sonores, puis rejoignez le point de rendez-vous sans vous faire attraper.','После звонка соберите жетоны, используйте укрытия и звуковые приманки, обойдите водящих и вернитесь к месту встречи.','Safnaðu merkjum eftir bjölluna. Notaðu felustaði og hljóðtálbeitur til að komast fram hjá leitendum og ná samkomustaðnum.','بعد الجرس اجمع الرموز، واستخدم المخابئ والطُعم الصوتي، وتجنب الباحثين للوصول إلى نقطة اللقاء.');
+hsWords319('separate','独立三轮；不使用校园怀疑、物品或成就。退出时保留校园进度。','Three independent rounds. School suspicion, items and achievements are not used. School progress is preserved.','独立した3ラウンド。学校の疑念・道具・実績には影響しません。','Trois manches indépendantes, sans effet sur les objets, soupçons ou succès scolaires.','Три отдельных раунда. Предметы, подозрение и достижения школы не меняются.','Þrjár sjálfstæðar lotur. Engin áhrif á skóladót, grun eða afrek.','ثلاث جولات مستقلة لا تؤثر على الشك أو الأدوات أو إنجازات المدرسة.');
+hsWords319('start','开始三轮挑战','Start three rounds','3ラウンド開始','Commencer trois manches','Начать три раунда','Hefja þrjár lotur','ابدأ ثلاث جولات');
+hsWords319('continue','继续捉迷藏','Continue hide and seek','かくれんぼを再開','Reprendre le cache-cache','Продолжить прятки','Halda feluleik áfram','متابعة الغميضة');
+hsWords319('help','玩法说明','How to play','遊び方','Règles du jeu','Правила','Leiðbeiningar','طريقة اللعب');
+hsWords319('archive','捉迷藏档案','Hide-and-seek records','かくれんぼ記録','Archives du cache-cache','Архив пряток','Skrár feluleiks','سجل الغميضة');
+hsWords319('menu','返回主菜单','Main menu','メインメニュー','Menu principal','Главное меню','Aðalvalmynd','القائمة الرئيسية');
+hsWords319('back','返回','Back','戻る','Retour','Назад','Til baka','رجوع');
+hsWords319('pause','暂停','Pause','一時停止','Pause','Пауза','Hlé','إيقاف مؤقت');
+hsWords319('resume','继续','Resume','再開','Reprendre','Продолжить','Halda áfram','استئناف');
+hsWords319('full','全屏','Fullscreen','全画面','Plein écran','Полный экран','Allur skjár','ملء الشاشة');
+hsWords319('export','导出捉迷藏备份','Export hide-and-seek save','かくれんぼを書き出す','Exporter la sauvegarde','Экспорт пряток','Flytja út vistun','تصدير حفظ الغميضة');
+hsWords319('import','导入捉迷藏备份','Import hide-and-seek save','かくれんぼを読み込む','Importer la sauvegarde','Импорт пряток','Flytja inn vistun','استيراد حفظ الغميضة');
+hsWords319('overwrite','已有捉迷藏进度。确认替换？已解锁档案保留，校园和其他模式不受影响。','Replace the hide-and-seek run? Unlocked records remain. School and other modes are not affected.','かくれんぼの進行を置き換えますか？解除済み記録や他モードは残ります。','Remplacer la partie ? Les archives acquises et les autres modes restent intacts.','Заменить прохождение пряток? Открытые записи и другие режимы сохранятся.','Skipta út feluleiknum? Opnaðar skrár og aðrir leikir haldast.','هل تريد استبدال جولة الغميضة؟ تبقى السجلات المفتوحة والأوضاع الأخرى دون تغيير.');
+hsWords319('calm','舒缓','Relaxed','ゆったり','Détente','Спокойно','Rólegt','هادئ');
+hsWords319('normal','标准','Standard','標準','Standard','Обычно','Venjulegt','عادي');
+hsWords319('tense','紧张','Tense','緊張','Tendu','Напряжённо','Spennandi','متوتر');
+hsWords319('level','捉迷藏压力','Hide-and-seek pressure','かくれんぼの緊張度','Pression du cache-cache','Сложность пряток','Erfiðleikastig feluleiks','صعوبة الغميضة');
+hsWords319('tuning','每轮 {time} 秒 · {seekers} 位搜寻者 · 无离线扣时','{time}s per round · {seekers} seekers · no offline time loss','各ラウンド{time}秒・鬼{seekers}人・オフライン時間は減りません','{time} s par manche · {seekers} chercheurs · hors ligne sans décompte','{time} с на раунд · водящих: {seekers} · офлайн время не идёт','{time} sek. í lotu · {seekers} leitendur · tími líður ekki utan leiks','{time} ثانية لكل جولة · {seekers} باحثين · لا ينقص الوقت خارج اللعبة');
+hsWords319('rules','每轮收集3枚金色徽记，再到绿色集合点。柜子是藏身处；紫色信笺是可选收集。墙壁阻挡视线，搜寻者会追查奔跑和诱饵声音。被发现条到100或时间耗尽即本轮失败，可从本轮开始重试。','Collect 3 gold tokens and reach the green meeting point each round. Cabinets are hiding spots; violet letters are optional. Walls block sight. Seekers investigate running and decoys. Detection at 100 or timeout loses the round; retry from its start.','各ラウンドで金色の印を3個集め、緑の集合場所へ。棚は隠れ場所、紫の手紙は任意収集です。壁は視線を遮り、鬼は走る音やおとりを調べます。発見度100か時間切れで失敗。そのラウンドから再挑戦できます。','Ramassez 3 jetons dorés puis rejoignez le point vert. Les armoires cachent, les lettres violettes sont facultatives. Les murs bloquent la vue. Les chercheurs suivent les bruits. Détection à 100 ou délai écoulé : réessayez la manche.','Соберите 3 золотых жетона и дойдите до зелёной точки. Шкафы — укрытия, фиолетовые письма необязательны. Стены закрывают обзор. Водящие идут на шум. При обнаружении 100 или истечении времени повторите раунд.','Safnaðu 3 gullmerkjum og náðu græna staðnum. Skápar eru felustaðir og fjólublá bréf valfrjáls. Veggir stöðva sjónlínur. Leitendur elta hljóð. Við 100 í uppgötvun eða útrunninn tíma má endurtaka lotuna.','اجمع 3 رموز ذهبية واذهب إلى نقطة اللقاء الخضراء. الخزائن مخابئ والرسائل البنفسجية اختيارية. الجدران تحجب الرؤية والباحثون يتبعون الأصوات. عند وصول الاكتشاف إلى 100 أو انتهاء الوقت تخسر الجولة ويمكن إعادتها.');
+hsWords319('controls','WASD／方向键移动 · Shift 奔跑 · E 藏身／出来 · Q 声响诱饵 · 空格倾听 · Esc 暂停。手机按住方向键连续走；松开即停。','WASD/arrows: move · Shift: sprint · E: hide/leave · Q: decoy · Space: listen · Esc: pause. On touchscreens, hold a direction to walk; release to stop.','WASD／矢印：移動、Shift：走る、E：隠れる／出る、Q：おとり、Space：聞く、Esc：停止。タッチは方向を押し続けて移動。','WASD/flèches : déplacement · Maj : courir · E : se cacher/sortir · Q : leurre · Espace : écouter · Échap : pause. Maintenez une direction sur écran tactile.','WASD/стрелки — движение, Shift — бег, E — укрытие, Q — приманка, пробел — слушать, Esc — пауза. На сенсоре удерживайте направление.','WASD/örvar: ganga · Shift: hlaupa · E: fela/koma út · Q: tálbeita · bil: hlusta · Esc: hlé. Haltu inni ör á snertiskjá.','WASD أو الأسهم للحركة · Shift للجري · E للاختباء والخروج · Q للطُعم · مسافة للاستماع · Esc للإيقاف. على الهاتف اضغط مطولاً على الاتجاه.');
+hsWords319('hideRules','藏身会消耗屏息时间，耗尽会自动出来。搜寻者靠近柜子会先检查，提示倒计时结束才掀开柜门。剩余诱饵每轮重置。暂停、帮助和后台会冻结所有计时；恢复有2秒缓冲。','Hiding drains breath; an empty meter forces you out. A nearby seeker inspects the cabinet before opening it. Decoys reset each round. Pause, help and background freeze all timers; resuming gives 2s preparation.','隠れると息止め時間が減り、尽きると外へ。鬼は棚を調べてから開けます。おとりはラウンドごとに補充。停止・説明・バックグラウンドでは時間停止、再開は2秒の準備。','Se cacher épuise le souffle. Un chercheur proche inspecte avant d’ouvrir. Les leurres reviennent à chaque manche. Pause, aide et arrière-plan figent les compteurs ; reprise avec 2 s de préparation.','Укрытие расходует запас дыхания. Водящий сначала проверяет шкаф с предупреждением. Приманки обновляются каждый раунд. Пауза, справка и фон останавливают время; после возврата есть 2 секунды.','Felur eyða öndunartíma. Leitandi skoðar skáp áður en hann opnar. Tálbeitur endurnýjast í hverri lotu. Hlé, hjálp og bakgrunnur stöðva tímann; 2 sekúndur gefast við endurkomu.','الاختباء يستهلك مدة حبس النفس؛ نفادها يخرجك تلقائياً. يفحص الباحث الخزانة مع عد تنازلي قبل فتحها. يتجدد الطُعم كل جولة. تتوقف المؤقتات عند الإيقاف أو المساعدة أو الخلفية، مع مهلة ثانيتين للاستئناف.');
+hsWords319('round','第 {n}/3 轮','Round {n}/3','第{n}/3ラウンド','Manche {n}/3','Раунд {n}/3','Lota {n}/3','الجولة {n}/3');
+hsWords319('map0','阅览室','Reading room','閲覧室','Salle de lecture','Читальный зал','Lesstofa','قاعة المطالعة');
+hsWords319('map1','器材室','Equipment room','用具室','Salle de matériel','Инвентарная','Áhaldageymsla','غرفة المعدات');
+hsWords319('map2','美术走廊','Art corridor','美術廊下','Couloir des arts','Художественный коридор','Listagangur','رواق الفنون');
+hsWords319('time','剩余时间','Time left','残り時間','Temps restant','Осталось','Tími eftir','الوقت المتبقي');
+hsWords319('tokens','徽记 {n}/3','Tokens {n}/3','印 {n}/3','Jetons {n}/3','Жетоны {n}/3','Merki {n}/3','الرموز {n}/3');
+hsWords319('detection','被发现','Detection','発見度','Détection','Обнаружение','Uppgötvun','الاكتشاف');
+hsWords319('stamina','体力','Stamina','体力','Endurance','Выносливость','Þol','القدرة');
+hsWords319('breath','屏息','Breath','息止め','Souffle','Дыхание','Öndun','حبس النفس');
+hsWords319('hide','藏身 / E','Hide / E','隠れる / E','Se cacher / E','Спрятаться / E','Fela / E','اختبئ / E');
+hsWords319('leave','出来 / E','Leave / E','出る / E','Sortir / E','Выйти / E','Koma út / E','اخرج / E');
+hsWords319('sprint','奔跑','Sprint','走る','Courir','Бежать','Hlaupa','الجري');
+hsWords319('decoy','诱饵 {n} / Q','Decoys {n} / Q','おとり {n} / Q','Leurres {n} / Q','Приманки {n} / Q','Tálbeitur {n} / Q','الطُعم {n} / Q');
+hsWords319('listen','倾听 / 空格','Listen / Space','聞く / Space','Écouter / Espace','Слушать / пробел','Hlusta / bil','استمع / مسافة');
+hsWords319('safe','暂时没有视线落在你身上。','No one has you in sight for now.','今は視線を向けられていません。','Personne ne vous voit pour le moment.','Сейчас вас никто не видит.','Enginn sér þig í augnablikinu.','لا أحد يراك الآن.');
+hsWords319('seen','搜寻者看见你了，找墙壁遮挡！','A seeker sees you. Break sight behind a wall!','見つかりそう！壁の後ろへ！','Un chercheur vous voit. Cachez-vous derrière un mur !','Вас видят! Уйдите за стену!','Leitandi sér þig. Farðu bak við vegg!','يراك باحث! احتمِ خلف جدار!');
+hsWords319('inspection','柜门正在被检查 · 还剩 {s} 秒','Cabinet inspection · {s}s left','棚を調査中・あと{s}秒','Inspection de l’armoire · {s} s','Проверка шкафа · {s} с','Skápur skoðaður · {s} sek.','فحص الخزانة · بقي {s} ث');
+hsWords319('hidden','你藏好了；留意呼吸和柜门。','You are hidden. Watch your breath and the cabinet door.','隠れました。呼吸と棚の扉に注意。','Vous êtes caché. Surveillez le souffle et la porte.','Вы спрятались. Следите за дыханием и дверцей.','Þú ert í felum. Fylgstu með öndun og skápnum.','أنت مختبئ. راقب النفس وباب الخزانة.');
+hsWords319('nearHide','走到蓝色柜子格内，才能藏身。','Stand on a blue cabinet tile to hide.','青い棚のマスで隠れられます。','Placez-vous sur une case d’armoire bleue.','Встаньте на синюю клетку шкафа.','Stattu á bláum skápreit til að fela þig.','قف على خانة الخزانة الزرقاء للاختباء.');
+hsWords319('noise','诱饵发出声音，附近搜寻者会去确认。','The decoy makes a noise. Nearby seekers will investigate.','おとりの音を近くの鬼が調べます。','Le leurre fait du bruit. Les chercheurs proches vont vérifier.','Приманка шумит, ближайшие водящие проверят звук.','Tálbeitan hljómar. Leitendur í nágrenninu athuga hana.','أصدر الطُعم صوتاً، سيتحقق الباحثون القريبون.');
+hsWords319('listened','最近的脚步：{dir}，约 {n} 格。','Nearest footsteps: {dir}, about {n} tiles.','近い足音：{dir}、約{n}マス。','Pas les plus proches : {dir}, environ {n} cases.','Ближайшие шаги: {dir}, примерно {n} клеток.','Næstu fótspor: {dir}, um {n} reitir.','أقرب خطوات: {dir}، نحو {n} خانات.');
+hsWords319('north','上方','north','上','au nord','сверху','norður','الأعلى');
+hsWords319('south','下方','south','下','au sud','снизу','suður','الأسفل');
+hsWords319('west','左侧','west','左','à gauche','слева','vestur','اليسار');
+hsWords319('east','右侧','east','右','à droite','справа','austur','اليمين');
+hsWords319('cough','屏息耗尽，你忍不住出来换气。','Out of breath: you step out to breathe.','息が尽き、外に出ました。','À bout de souffle, vous sortez respirer.','Дыхание закончилось, вы вышли из укрытия.','Öndunartími búinn; þú kemur út.','نفد النفس فخرجت لتتنفس.');
+hsWords319('tokenFound','找到一枚徽记。','A token collected.','印を1個発見。','Un jeton ramassé.','Жетон найден.','Merki fundið.','عثرت على رمز.');
+hsWords319('letterFound','你找到了本轮的紫色信笺。','You found this round’s violet letter.','このラウンドの紫の手紙を発見。','Vous avez trouvé la lettre violette.','Найдено фиолетовое письмо раунда.','Fjólublátt bréf lotunnar fannst.','وجدت رسالة هذه الجولة البنفسجية.');
+hsWords319('needTokens','集合点还需要3枚徽记；你已有 {n} 枚。','The meeting point needs 3 tokens; you have {n}.','集合場所には印3個が必要。現在{n}個。','Il faut 3 jetons au rendez-vous ; vous en avez {n}.','Нужно 3 жетона; у вас {n}.','Það þarf 3 merki; þú ert með {n}.','تحتاج نقطة اللقاء إلى 3 رموز؛ لديك {n}.');
+hsWords319('grace','准备继续 · {s} 秒','Ready in {s}s','再開まで{s}秒','Reprise dans {s} s','Продолжение через {s} с','Hefst eftir {s} sek.','الاستئناف خلال {s} ث');
+hsWords319('pauseText','脚步停下了。帮助、导出与暂停不会消耗本轮时间。','Footsteps stop. Help, exporting and pause do not spend round time.','足音が止まりました。説明・書き出し・停止中は時間が減りません。','Les pas s’arrêtent. Aide, export et pause ne consomment pas le temps.','Шаги замерли. Справка, экспорт и пауза не расходуют время.','Fótsporin stöðvast. Hjálp, útflutningur og hlé nota ekki tíma.','توقفت الخطوات. المساعدة والتصدير والإيقاف لا تستهلك وقت الجولة.');
+hsWords319('roundClear','本轮集合成功','Round complete','ラウンドクリア','Manche terminée','Раунд пройден','Lota kláruð','اكتملت الجولة');
+hsWords319('next','进入下一轮','Next round','次のラウンド','Manche suivante','Следующий раунд','Næsta lota','الجولة التالية');
+hsWords319('retry','从本轮检查点重试','Retry this round','このラウンドから再挑戦','Rejouer cette manche','Повторить этот раунд','Endurtaka þessa lotu','أعد هذه الجولة');
+hsWords319('won','三轮完成','All three rounds complete','3ラウンドクリア','Trois manches terminées','Все три раунда пройдены','Allar þrjár lotur kláraðar','اكتملت الجولات الثلاث');
+hsWords319('caught','你被搜寻者找到了','A seeker found you','鬼に見つかりました','Un chercheur vous a trouvé','Водящий вас нашёл','Leitandi fann þig','وجدك أحد الباحثين');
+hsWords319('timeout','集合时间到了','Meeting time is over','集合時間になりました','Le temps est écoulé','Время вышло','Tíminn er búinn','انتهى الوقت');
+hsWords319('saved','捉迷藏进度已自动保存','Hide-and-seek progress saved','かくれんぼを自動保存済み','Cache-cache sauvegardé','Прятки сохранены','Feluleikur vistaður','حُفظ تقدم الغميضة');
+hsWords319('memoryOnly','存储不可用：退出浏览器前请导出备份。','Storage unavailable: export a backup before closing the browser.','保存できません。ブラウザーを閉じる前に書き出してください。','Stockage indisponible : exportez avant de fermer.','Хранилище недоступно: экспортируйте до закрытия браузера.','Geymsla ófáanleg: flyttu út áður en vafra er lokað.','التخزين غير متاح: صدّر نسخة قبل إغلاق المتصفح.');
+hsWords319('invalid','备份无效、损坏或属于其他模式。原进度未更改。','Invalid, damaged or wrong-mode backup. Current progress is unchanged.','バックアップが不正・破損・別モードです。元の記録は変更されません。','Sauvegarde invalide, endommagée ou d’un autre mode. Rien n’a changé.','Неверная, повреждённая или чужая резервная копия. Прогресс не изменён.','Ógild, skemmd eða röng vistun. Núverandi framvinda óbreytt.','نسخة غير صالحة أو تالفة أو لوضع آخر. لم يتغير تقدمك.');
+hsWords319('imported','备份已恢复；游戏处于暂停状态。','Backup restored; the game is paused.','バックアップ復元。一時停止中です。','Sauvegarde restaurée ; jeu en pause.','Копия восстановлена; игра на паузе.','Vistun endurheimt; leikurinn er í hléi.','استعيدت النسخة؛ اللعبة متوقفة مؤقتاً.');
+hsWords319('legend','金色：徽记　蓝色：藏身柜　紫色：信笺　绿色：集合点','Gold: token · Blue: hiding spot · Violet: letter · Green: meeting point','金：印　青：隠れ場所　紫：手紙　緑：集合場所','Or : jeton · Bleu : cachette · Violet : lettre · Vert : rendez-vous','Золото: жетон · Синий: шкаф · Фиолетовый: письмо · Зелёный: сбор','Gull: merki · Blátt: felur · Fjólublátt: bréf · Grænt: samkoma','ذهبي: رمز · أزرق: مخبأ · بنفسجي: رسالة · أخضر: لقاء');
+hsWords319('stats','累计 {s} 秒 · 信笺 {n}/3 · 重试 {r} 次','Total {s}s · letters {n}/3 · retries {r}','合計{s}秒・手紙{n}/3・再挑戦{r}回','Total {s} s · lettres {n}/3 · essais {r}','Всего {s} с · писем {n}/3 · повторов {r}','Samtals {s} sek. · bréf {n}/3 · endurtekningar {r}','المجموع {s} ث · الرسائل {n}/3 · الإعادات {r}');
+hsWords319('records','只记录捉迷藏。已解锁记录跨局保留，重试不清除，但当前局统计回到本轮起点。','Hide and seek only. Unlocks persist across runs. Retry restores this round’s starting stats.','かくれんぼ専用。解除済み記録は保持、再挑戦時の統計はラウンド開始時に戻ります。','Cache-cache uniquement. Les archives restent acquises ; un nouvel essai restaure les statistiques du début de manche.','Только прятки. Открытые записи остаются, при повторе статистика возвращается к началу раунда.','Aðeins feluleikur. Opnaðar skrár haldast; endurtekning endurheimtir tölur frá upphafi lotu.','للغميضة فقط. تبقى السجلات المفتوحة؛ الإعادة تعيد إحصاءات بداية الجولة.');
+hsWords319('medals','独立勋章','Independent medals','独立メダル','Médailles indépendantes','Отдельные медали','Sjálfstæð merki','أوسمة مستقلة');
+hsWords319('ends','独立结局','Independent endings','独立エンディング','Fins indépendantes','Отдельные концовки','Sjálfstæðir endar','نهايات مستقلة');
+hsWords319('locked','尚未达成','Not unlocked','未達成','Non débloqué','Не открыто','Óopnað','غير مفتوح');
+hsWords319('m_enter','放学后的约定 · 开始一局','After-class promise · start a run','放課後の約束・開始','Promesse après les cours · commencer','Обещание после уроков · начать','Loforð eftir skóla · byrja','وعد بعد الدروس · ابدأ جولة');
+hsWords319('m_hide','柜门之后 · 实际藏身一次','Behind the cabinet · hide once','棚の向こう・1回隠れる','Derrière la porte · se cacher une fois','За дверцей · спрятаться раз','Bak við hurð · fela sig einu sinni','خلف الخزانة · اختبئ مرة');
+hsWords319('m_round','约定的地点 · 完成第一轮','Meeting point · finish round one','約束の場所・第1ラウンドクリア','Rendez-vous · finir la première manche','Место встречи · пройти первый раунд','Samkomustaður · klára fyrstu lotu','مكان اللقاء · أكمل الجولة الأولى');
+hsWords319('m_win','三次集合 · 完成三轮','Three meetings · complete all rounds','3度の集合・全ラウンドクリア','Trois rendez-vous · tout terminer','Три встречи · пройти все раунды','Þrjár samkomur · klára allar lotur','ثلاثة لقاءات · أكمل جميع الجولات');
+hsWords319('m_decoy','另一边的声响 · 一局三次成功引开','Sound elsewhere · divert seekers 3 times in a run','別の音・1周で3回おびき寄せる','Bruit ailleurs · trois diversions dans une partie','Звук в стороне · три отвлечения за игру','Hljóð annars staðar · þrjár tálbeitur virka','صوت بعيد · شتت الباحثين ثلاث مرات في جولة كاملة');
+hsWords319('m_letters','夹在书里的话 · 一局找齐3封信并完成三轮','Between the pages · collect all 3 letters and finish','本の間の言葉・手紙3通と全クリア','Entre les pages · trois lettres et victoire','Между страниц · три письма и победа','Milli blaðsíðna · þrjú bréf og sigur','بين الصفحات · اجمع الرسائل الثلاث وأكمل');
+hsWords319('m_clean','一次也没被找到 · 零重试完成三轮','Never found · complete without retries','見つからない・再挑戦なし全クリア','Jamais trouvé · finir sans recommencer','Ни разу не найден · без повторов','Aldrei fundin · vinna án endurtekninga','لم يعثروا عليك · أكمل دون إعادة');
+hsWords319('m_breath','学会等待 · 一局累计藏身30秒','Patient player · hide for 30s in a run','待つこと・1周で合計30秒隠れる','Patience · 30 s caché dans une partie','Терпение · 30 секунд в укрытии за игру','Þolinmæði · 30 sekúndur í felum','الصبر · اختبئ 30 ثانية في جولة كاملة');
+hsWords319('m_tense','脚步很近 · 紧张压力完成三轮','Close footsteps · complete on Tense','近い足音・緊張で全クリア','Pas tout proches · finir en Tendu','Шаги близко · победить на напряжённом','Nálæg fótspor · vinna á erfiðu','خطوات قريبة · أكمل على المتوتر');
+hsWords319('e_clear','被找到之前','Before They Find You','見つかる前に','Avant d’être trouvé','Пока тебя не нашли','Áður en þau finna þig','قبل أن يجدوك');
+hsWords319('e_perfect','没有留下脚步','No Footsteps Left','足音を残さず','Sans laisser de pas','Не оставляя шагов','Engin fótspor eftir','بلا أثر للخطوات');
+hsWords319('e_letters','三封课后的信','Three Letters After Class','放課後の三通','Trois lettres après les cours','Три письма после уроков','Þrjú bréf eftir skóla','ثلاث رسائل بعد الدروس');
+hsWords319('e_caught','光束里的名字','A Name in the Light','光の中の名前','Un nom dans la lumière','Имя в луче','Nafn í ljósinu','اسم في شعاع الضوء');
+hsWords319('e_timeout','钟声替你认输','The Bell Calls Time','鐘が告げる終わり','La cloche met fin au jeu','Звонок завершает игру','Bjallan kallar tímann','الجرس ينهي اللعبة');
+hsWords319('end_clear','第三枚集合印盖下，大家在出口会合。这一次，最后离开的人没有被落下。','The final mark is stamped. Everyone meets at the exit; no one is left behind.','最後の印を押して出口で集合。誰も置いていかれませんでした。','Le dernier tampon est posé. Tout le monde se retrouve à la sortie.','Последняя отметка поставлена. Все встречаются у выхода.','Síðasta merkið er komið. Allir hittast við útganginn.','وُضع الختم الأخير والتقى الجميع عند المخرج. لم يُترك أحد.');
+hsWords319('end_caught','“找到你了！”光停在柜门前。这里只输掉一轮游戏；同学留着位置，等你再来。','“Found you!” The light stops at the cabinet. It is only a lost round; your friends wait for another try.','「見つけた！」光が棚で止まりました。負けたのはゲームの1ラウンドだけ。また挑戦しましょう。','« Trouvé ! » La lumière s’arrête. Une manche perdue seulement : vos amis vous attendent.','« Нашёл! » Луч остановился у шкафа. Проигран лишь раунд, друзья ждут новой попытки.','„Fann þig!“ Ljósið stöðvast. Aðeins ein lota tapaðist; vinirnir bíða.','«وجدتك!» توقف الضوء عند الخزانة. إنها خسارة جولة فقط، وزملاؤك ينتظرون محاولتك.');
+hsWords319('end_timeout','集合铃响了，剩余的徽记留给下一次。所有人都会回到集合点，没有人被锁在楼里。','The meeting bell rings. The remaining tokens can wait. Everyone returns; nobody is locked inside.','集合の鐘。残りの印は次の機会に。皆が戻り、閉じ込められる人はいません。','La cloche sonne. Les jetons attendront. Personne ne reste enfermé.','Прозвенел звонок. Жетоны подождут, никто не заперт в здании.','Bjallan hringir. Merkin geta beðið. Enginn er læstur inni.','رن جرس اللقاء. يمكن ترك الرموز للمرة القادمة. يعود الجميع ولا يُحبس أحد.');
+
+hsWords319('wallDecoy','前方是墙。先转向空地再使用诱饵。','A wall is ahead. Face open floor before tossing a decoy.','前は壁です。空いた床を向いてからおとりを投げてください。','Un mur est devant vous. Tournez-vous vers le sol libre avant de lancer le leurre.','Впереди стена. Повернитесь к свободному проходу перед броском.','Vegg er fyrir framan. Snúðu að opnu svæði áður en þú kastar.','أمامك جدار. استدر نحو مساحة مفتوحة قبل رمي الطُعم.');
+
+/* v3.19: independent hide-and-seek. The school/legacy stores are never mutated.
+ * One existing requestAnimationFrame loop owns simulation and canvas drawing.
+ * All paths, timers and outcomes are serializable; no wall-clock catch-up.
+ */
+const HS_CFG319={calm:{time:210,seekers:1,step:.75,range:4,gain:34,breath:16,decoys:4},normal:{time:180,seekers:2,step:.68,range:5,gain:40,breath:13,decoys:3},tense:{time:150,seekers:3,step:.62,range:5,gain:36,breath:10,decoys:2}};
+const HS_MEDALS319=['enter','hide','round','win','decoy','letters','clean','breath','tense'];
+const HS_ENDS319=['clear','perfect','letters','caught','timeout'];
+const HS_KEY319='last-class-hide-seek-v319';
+const HS_W319=19,HS_H319=13,HS_SIZE319=40;
+const HS_DIR319=[[0,-1],[1,0],[0,1],[-1,0]];
+const HS_KEYS319={KeyW:0,ArrowUp:0,KeyD:1,ArrowRight:1,KeyS:2,ArrowDown:2,KeyA:3,ArrowLeft:3};
+let hsStore319={schema:1,latest:null,checkpoint:null,medals:{},endings:{}},hs319=null,hsOpen319=false,hsPage319='setup',hsSetup319='normal';
+let hsRenderKey319='',hsCanvas319=null,hsBackground319=null,hsBackgroundKey319='',hsSaveClock319=0,hsDrawClock319=0,hsDraws319=0,hsBuilds319=0,hsError319='',hsNotice319='',hsFocus319=null,hsDirection319=null,hsKeysHeld319=new Set(),hsShift319=false,hsSprint319=false,hsPointer319=null;
+const hsInert319=new Map();
+function hsClone319(v){return JSON.parse(JSON.stringify(v));}
+function hsFinite319(x,a,b){return typeof x==='number'&&Number.isFinite(x)&&x>=a&&x<=b;}
+function hsMap319(round){
+ const m=Array.from({length:HS_H319},(_,y)=>Array.from({length:HS_W319},(_,x)=>x===0||y===0||x===HS_W319-1||y===HS_H319-1?'#':'.'));
+ // Five rooms, connected by doors. Every round uses different door locations.
+ const a=[3,5,2][round],b=[9,8,10][round];
+ for(let y=1;y<12;y++){if(![a,b].includes(y))m[y][6]='#';if(![2+round,9-round].includes(y))m[y][12]='#';}
+ for(let x=1;x<18;x++)if(![3,9,15].includes(x))m[6][x]='#';
+ for(const [x,y]of [[3,3],[9,3],[15,3],[3,9],[9,9],[15,9]])m[y][x]='H';
+ for(const [x,y]of [[4,4],[10,4],[16,4],[4,10],[10,10],[16,10]])m[y][x]='#';
+ m[11][1]='X';return m.map(r=>r.join(''));
+}
+function hsWalk319(map,x,y){return Number.isInteger(x)&&Number.isInteger(y)&&x>=0&&x<HS_W319&&y>=0&&y<HS_H319&&map[y]?.[x]!=='#';}
+function hsPoint319(p,map){return p&&hsWalk319(map,p.x,p.y);}
+function hsRng319(s){let a=s.rng>>>0;a=(a+0x6D2B79F5)>>>0;s.rng=a;let t=Math.imul(a^(a>>>15),a|1);t^=t+Math.imul(t^(t>>>7),t|61);return((t^(t>>>14))>>>0)/4294967296;}
+function hsDistance319(a,b){return Math.abs(a.x-b.x)+Math.abs(a.y-b.y);}
+function hsPath319(map,from,to){
+ if(!hsPoint319(to,map))return [];const queue=[{x:from.x,y:from.y}],prev=new Map([[from.y*HS_W319+from.x,null]]);let end=-1;
+ for(let i=0;i<queue.length;i++){const p=queue[i],key=p.y*HS_W319+p.x;if(p.x===to.x&&p.y===to.y){end=key;break;}
+  for(const [dx,dy]of HS_DIR319){const x=p.x+dx,y=p.y+dy,k=y*HS_W319+x;if(hsWalk319(map,x,y)&&!prev.has(k)){prev.set(k,key);queue.push({x,y});}}}
+ if(end<0)return [];const result=[];for(let k=end;prev.get(k)!==null;k=prev.get(k)){result.unshift({x:k%HS_W319,y:Math.floor(k/HS_W319)});}return result;
+}
+function hsSight319(s,e,p=s.player){
+ const cfg=HS_CFG319[s.difficulty],dx=p.x-e.x,dy=p.y-e.y,d=Math.hypot(dx,dy);if(d>cfg.range+.3)return false;
+ if(d>1.45){const [fx,fy]=HS_DIR319[e.dir];if((dx*fx+dy*fy)/d<.20)return false;}
+ const n=Math.ceil(d*3);for(let i=1;i<n;i++){const x=Math.round(e.x+dx*i/n),y=Math.round(e.y+dy*i/n);if(!hsWalk319(s.map,x,y))return false;}return true;
+}
+function hsStats319(){return {seconds:0,hidden:0,decoys:0,letters:0,clears:0,retries:0,maxAlert:0};}
+function hsFresh319(difficulty='normal',seed,round=0,old=null){
+ const cfg=HS_CFG319[difficulty];if(!cfg)throw Error('Unknown hide-and-seek difficulty');
+ const maps=hsMap319(round),tokensByRound=[[[9,1],[17,5],[13,11]],[[17,1],[7,9],[17,11]],[[7,1],[17,9],[5,11]]];
+ const s={schema:1,kind:'hideSeek319',id:old?.id||Date.now().toString(36)+'-'+Math.random().toString(36).slice(2,9),difficulty,round,map:maps,phase:'running',paused:false,grace:2,t:0,left:cfg.time,rng:(seed??Math.random()*4294967296)>>>0,alert:0,moveWait:0,breath:cfg.breath,stamina:100,hidden:false,inspect:0,listenAt:0,decoyAt:0,decoys:cfg.decoys,decoy:null,player:{x:1,y:1,dir:2},enemies:[],tokens:tokensByRound[round].map(([x,y])=>({x,y,taken:false})),letter:{x:round===1?5:17,y:round===2?1:11,taken:false},stats:old?hsClone319(old.stats):hsStats319(),message:'safe',messageArgs:{},messageUntil:0,nearExit:false};
+ const spots=[[15,8],[9,8],[3,10]],patrols=[{x:15,y:1},{x:7,y:11},{x:1,y:5}];
+ for(let i=0;i<cfg.seekers;i++){const [x,y]=spots[(i+round)%spots.length];s.enemies.push({x,y,dir:i%4,wait:1+i*.35,target:{...patrols[(i+round)%patrols.length]},interest:0,seen:false,inspect:0});}
+ return s;
+}
+function hsValidate319(raw){
+ if(!raw||raw.schema!==1||raw.kind!=='hideSeek319'||!HS_CFG319[raw.difficulty]||!Number.isInteger(raw.round)||raw.round<0||raw.round>2||typeof raw.id!=='string'||raw.id.length>100)throw Error('Invalid hide-and-seek state');
+ const s=hsClone319(raw),cfg=HS_CFG319[s.difficulty],map=hsMap319(s.round);
+ if(JSON.stringify(s.map)!==JSON.stringify(map)||!['running','roundClear','won','caught','timeout'].includes(s.phase)||typeof s.paused!=='boolean'||typeof s.hidden!=='boolean')throw Error('Invalid map/phase');
+ for(const [key,min,max]of [['t',0,600],['left',0,cfg.time],['rng',0,4294967295],['alert',0,100],['grace',0,2],['moveWait',0,1],['stamina',0,100],['breath',0,cfg.breath],['inspect',0,5],['listenAt',0,10000],['decoyAt',0,10000],['decoys',0,cfg.decoys],['messageUntil',0,10000]])if(!hsFinite319(s[key],min,max))throw Error('Invalid number '+key);
+ if(!hsPoint319(s.player,map)||!Number.isInteger(s.player.dir)||s.player.dir<0||s.player.dir>3||!Array.isArray(s.enemies)||s.enemies.length!==cfg.seekers)throw Error('Invalid actor');
+ for(const e of s.enemies)if(!hsPoint319(e,map)||!hsPoint319(e.target,map)||!Number.isInteger(e.dir)||e.dir<0||e.dir>3||!hsFinite319(e.wait,0,3)||!hsFinite319(e.interest,0,30)||!hsFinite319(e.inspect,0,5))throw Error('Invalid seeker');
+ const original=hsFresh319(s.difficulty,1,s.round);
+ for(const [key,ref]of [['tokens',original.tokens],['letter',[original.letter]]]){const arr=key==='tokens'?s.tokens:[s.letter];if(!Array.isArray(arr)||arr.length!==ref.length)throw Error('Invalid collectibles');for(let i=0;i<ref.length;i++)if(arr[i].x!==ref[i].x||arr[i].y!==ref[i].y||typeof arr[i].taken!=='boolean')throw Error('Invalid collectible');}
+ if(s.hidden&&map[s.player.y][s.player.x]!=='H')throw Error('Invalid hiding spot');
+ if(s.decoy&&(!hsPoint319(s.decoy,map)||!hsFinite319(s.decoy.until,0,10000)))throw Error('Invalid decoy');
+ if(!s.stats||Object.keys(hsStats319()).some(k=>!hsFinite319(s.stats[k],0,1e7)))throw Error('Invalid statistics');
+ if(s.stats.letters>3||s.stats.clears>3||s.stats.maxAlert>100||!Number.isInteger(s.decoys))throw Error('Invalid progression');
+ if(!HS_WORD319[s.message])s.message='safe';s.messageArgs=s.messageArgs&&typeof s.messageArgs==='object'?s.messageArgs:{};
+ for(const k of Object.keys(s.messageArgs))if(!['n','dir','s'].includes(k)||!['string','number'].includes(typeof s.messageArgs[k]))delete s.messageArgs[k];
+ return s;
+}
+function hsStoreValidate319(raw){if(!raw||raw.schema!==1||typeof raw!=='object')throw Error('Invalid store');const result={schema:1,latest:raw.latest?hsValidate319(raw.latest):null,checkpoint:raw.checkpoint?hsValidate319(raw.checkpoint):null,medals:{},endings:{}};
+ if(result.checkpoint&&(result.checkpoint.phase!=='running'||result.checkpoint.t!==0))throw Error('Invalid checkpoint');
+ if(result.latest&&result.checkpoint&&(result.latest.id!==result.checkpoint.id||result.latest.round!==result.checkpoint.round))throw Error('Mismatched checkpoint');
+ for(const [field,keys]of [['medals',HS_MEDALS319],['endings',HS_ENDS319]])for(const id of keys){const date=raw[field]?.[id];if(typeof date==='string'&&date.length<40&&Number.isFinite(Date.parse(date)))result[field][id]=date;}
+ return result;}
+try{const raw=localStorage.getItem(HS_KEY319);if(raw)hsStore319=hsStoreValidate319(JSON.parse(raw));}catch(_){hsError319='memoryOnly';}
+function hsSave319(){if(hs319)hsStore319.latest=hsClone319(hs319);try{localStorage.setItem(HS_KEY319,JSON.stringify(hsStore319));hsError319='';}catch(_){hsError319='memoryOnly';}hsSaveClock319=0;}
+function hsUnlock319(type,id){const field=type==='end'?'endings':'medals';if(!hsStore319[field][id])hsStore319[field][id]=new Date().toISOString();}
+function hsAwards319(){const s=hs319;if(!s)return;
+ if(s.stats.hidden>=30)hsUnlock319('medal','breath');if(s.stats.decoys>=3)hsUnlock319('medal','decoy');
+ if(s.stats.clears>=1)hsUnlock319('medal','round');
+ if(s.phase==='won'){hsUnlock319('medal','win');hsUnlock319('end','clear');if(s.stats.retries===0){hsUnlock319('medal','clean');hsUnlock319('end','perfect');}if(s.stats.letters===3){hsUnlock319('medal','letters');hsUnlock319('end','letters');}if(s.difficulty==='tense')hsUnlock319('medal','tense');}
+}
+function hsMessage319(key,args={},duration=3){hs319.message=key;hs319.messageArgs=args;hs319.messageUntil=hs319.t+duration;}
+function hsNoise319(at,decoy=false){let heard=false;for(const e of hs319.enemies)if(hsDistance319(e,at)<=(decoy?14:6)){e.target={x:at.x,y:at.y};e.interest=decoy?9:5;heard=true;}if(decoy&&heard)hs319.stats.decoys++;return heard;}
+function hsCollect319(){const s=hs319;for(const token of s.tokens)if(!token.taken&&hsDistance319(token,s.player)===0){token.taken=true;hsMessage319('tokenFound');hsSave319();}
+ if(!s.letter.taken&&hsDistance319(s.letter,s.player)===0){s.letter.taken=true;s.stats.letters++;hsMessage319('letterFound');hsSave319();}
+ const onExit=s.map[s.player.y][s.player.x]==='X';if(onExit&&s.tokens.every(x=>x.taken)){hsFinish319('clear');return;}if(onExit&&!s.nearExit)hsMessage319('needTokens',{n:s.tokens.filter(x=>x.taken).length});s.nearExit=onExit;
+}
+function hsMove319(dir){if(!Number.isInteger(dir)||dir<0||dir>3)return false;const s=hs319;if(!s||s.phase!=='running'||s.paused||s.grace>0||s.hidden||s.moveWait>0)return false;
+ s.player.dir=dir;const [dx,dy]=HS_DIR319[dir],x=s.player.x+dx,y=s.player.y+dy;if(!hsWalk319(s.map,x,y)){s.moveWait=.06;return false;}
+ const running=(hsSprint319||hsShift319)&&s.stamina>=6;s.moveWait=running?.14:.25;s.player.x=x;s.player.y=y;if(running){s.stamina-=6;hsNoise319(s.player);}hsCollect319();return true;
+}
+function hsHide319(){const s=hs319;if(!hsCanAct319())return;if(s.hidden){s.hidden=false;s.inspect=0;for(const e of s.enemies)e.inspect=0;hsMessage319('safe');}
+ else if(s.map[s.player.y][s.player.x]==='H'&&s.breath>1){s.hidden=true;hsClearInput319();hsUnlock319('medal','hide');hsMessage319('hidden');}else hsMessage319('nearHide');hsSave319();}
+function hsCanAct319(){return hsOpen319&&hsPage319==='play'&&hs319?.phase==='running'&&!hs319.paused&&hs319.grace<=0;}
+function hsDecoy319(){const s=hs319;if(!hsCanAct319()||s.decoys<=0||s.decoyAt>s.t||s.hidden)return;
+ let p={x:s.player.x,y:s.player.y};const [dx,dy]=HS_DIR319[s.player.dir];for(let i=0;i<4;i++){if(hsWalk319(s.map,p.x+dx,p.y+dy))p={x:p.x+dx,y:p.y+dy};else break;}
+ if(p.x===s.player.x&&p.y===s.player.y){hsMessage319('wallDecoy');return;}
+ s.decoys--;s.decoyAt=s.t+3;s.decoy={...p,until:s.t+5};hsNoise319(p,true);hsMessage319('noise');hsAwards319();hsSave319();}
+function hsListen319(){const s=hs319;if(!hsCanAct319()||s.listenAt>s.t)return;s.listenAt=s.t+5;const e=[...s.enemies].sort((a,b)=>hsDistance319(a,s.player)-hsDistance319(b,s.player))[0],dx=e.x-s.player.x,dy=e.y-s.player.y;
+ hsMessage319('listened',{dir:hsText319(Math.abs(dx)>Math.abs(dy)?dx>0?'east':'west':dy>0?'south':'north'),n:hsDistance319(e,s.player)},4);hsSave319();}
+function hsFinish319(reason){if(!['clear','caught','timeout'].includes(reason))return;const s=hs319;if(!s||s.phase!=='running')return;hsClearInput319();if(reason==='clear'){s.stats.clears++;s.phase=s.round===2?'won':'roundClear';}else{s.phase=reason;hsUnlock319('end',reason);}hsAwards319();hsSave319();hsRenderKey319='';}
+function hsStep319(dt){const s=hs319;if(!hsOpen319||hsPage319!=='play'||!s||s.paused||s.phase!=='running'||document.hidden||!hsFinite319(dt,0,30))return;
+ let left=Math.min(5,dt);while(left>1e-7&&s.phase==='running'){const d=Math.min(.05,left);left-=d;if(s.grace>0){s.grace=Math.max(0,s.grace-d);continue;}
+  const cfg=HS_CFG319[s.difficulty];s.t+=d;s.stats.seconds+=d;s.left=Math.max(0,s.left-d);s.moveWait=Math.max(0,s.moveWait-d);s.stamina=Math.min(100,s.stamina+d*12);
+  if(hsDirection319!==null)hsMove319(hsDirection319);if(s.phase!=='running')break;
+  if(s.hidden){s.breath=Math.max(0,s.breath-d);s.stats.hidden+=d;if(s.breath===0){s.hidden=false;s.inspect=0;hsNoise319(s.player);hsMessage319('cough');}}
+  else s.breath=Math.min(cfg.breath,s.breath+d*1.8);
+  let seen=false,minInspect=0;
+  for(const e of s.enemies){e.wait=Math.max(0,e.wait-d);e.interest=Math.max(0,e.interest-d);e.seen=!s.hidden&&hsSight319(s,e);if(e.seen){seen=true;e.target={x:s.player.x,y:s.player.y};e.interest=6;}
+   if(s.hidden&&hsDistance319(e,s.player)<=1){e.inspect+=d;minInspect=Math.max(minInspect,e.inspect);if(e.inspect>=2.2){s.hidden=false;s.alert=Math.min(100,s.alert+45);e.inspect=0;e.target={x:s.player.x,y:s.player.y};e.interest=6;hsMessage319('seen');}continue;}else e.inspect=0;
+   if(e.wait>0)continue;e.wait=Math.max(.28,cfg.step-s.round*.04);
+   if(hsDistance319(e,e.target)===0||!e.interest&&hsRng319(s)<.18){const walk=[];for(let y=1;y<12;y++)for(let x=1;x<18;x++)if(hsWalk319(s.map,x,y)&&hsDistance319(e,{x,y})>3)walk.push({x,y});e.target=walk[Math.floor(hsRng319(s)*walk.length)];}
+   const path=hsPath319(s.map,e,e.target);if(path.length){const p=path[0],dx=p.x-e.x,dy=p.y-e.y;e.dir=dx===1?1:dx===-1?3:dy===1?2:0;e.x=p.x;e.y=p.y;}else e.target={x:1,y:11};
+  }
+  s.inspect=minInspect;s.alert=Math.max(0,Math.min(100,s.alert+(seen?cfg.gain:-27)*d));s.stats.maxAlert=Math.max(s.stats.maxAlert,s.alert);
+  if(s.decoy&&s.decoy.until<=s.t)s.decoy=null;
+  if(s.alert>=100){hsFinish319('caught');break;}if(s.left<=0){hsFinish319('timeout');break;}
+ }
+ hsAwards319();hsSaveClock319+=dt;hsDrawClock319+=dt;if(hsSaveClock319>=5)hsSave319();if(hsDrawClock319>=1/30){hsDrawClock319=0;hsDraw319();}
+}
+function hsClearInput319(){hsDirection319=null;hsShift319=false;hsSprint319=false;hsPointer319=null;hsKeysHeld319.clear();}
+function hsPause319(force=true){if(!hs319||hsPage319!=='play')return;hs319.paused=force;hs319.grace=2;hsClearInput319();hsSave319();hsRenderKey319='';hsRender319();}
+function hsStart319(difficulty=hsSetup319,seed){if(!HS_CFG319[difficulty])return false;hs319=hsFresh319(difficulty,seed);hsPage319='play';hsStore319.checkpoint=hsClone319(hs319);hsUnlock319('medal','enter');hsClearInput319();hsBackgroundKey319='';hsRenderKey319='';hsSave319();initAudio();hsRender319();return true;}
+function hsNext319(){if(hs319?.phase!=='roundClear')return false;hs319=hsFresh319(hs319.difficulty,hs319.rng,hs319.round+1,hs319);hsStore319.checkpoint=hsClone319(hs319);hsPage319='play';hsClearInput319();hsBackgroundKey319='';hsRenderKey319='';hsSave319();hsRender319();return true;}
+function hsRestore319(checkpoint=false){const raw=checkpoint?hsStore319.checkpoint:hsStore319.latest;if(!raw)return false;const restored=hsValidate319(raw);if(checkpoint)restored.stats.retries=Math.max(restored.stats.retries,hs319?.id===restored.id?hs319.stats.retries:hsStore319.latest?.stats.retries||0)+1;hs319=restored;hs319.paused=true;hs319.grace=2;hsPage319='play';hsClearInput319();hsBackgroundKey319='';hsRenderKey319='';hsSave319();hsRender319();return true;}
+function hsExport319(download=true){hsSave319();const pack={format:'last-class-hide-seek',version:1,data:hsClone319(hsStore319)};if(download){const url=URL.createObjectURL(new Blob([JSON.stringify(pack,null,2)],{type:'application/json'})),a=document.createElement('a');a.href=url;a.download='last-class-hide-seek-v3.19.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}return pack;}
+function hsImport319(pack){if(!pack||pack.format!=='last-class-hide-seek'||pack.version!==1)throw Error('Wrong mode');const checked=hsStoreValidate319(pack.data);
+ // Preserve already unlocked records while replacing only this mode's run.
+ for(const k of ['medals','endings'])for(const [id,date]of Object.entries(hsStore319[k]))if(!checked[k][id]||date<checked[k][id])checked[k][id]=date;
+ hsStore319=checked;hs319=checked.latest?hsClone319(checked.latest):null;if(hs319){hs319.paused=true;hs319.grace=2;}hsPage319='setup';hsBackgroundKey319='';hsRenderKey319='';hsSave319();hsNotice319='imported';return true;}
+
+// DOM is a sibling of the scaled school stage, never a descendant of it.
+const hsRoot319=document.createElement('section');hsRoot319.id='hideSeek319';hsRoot319.hidden=true;hsRoot319.dataset.noTranslate310='';hsRoot319.setAttribute('aria-label','Hide and seek');document.body.appendChild(hsRoot319);
+const hsFile319=document.createElement('input');hsFile319.type='file';hsFile319.accept='.json,application/json';hsFile319.hidden=true;document.body.appendChild(hsFile319);
+function hsOpenMode319(page='setup'){if(S?.screen==='game')return false;if(arcadeOpen317)closeArcade317();if(battleOpen313)exitBattle313();if(modal)closeModal();if(tutorialActive36())closeTutorial36();hsFocus319=document.activeElement;hsPage319=page;hsOpen319=true;hsRoot319.hidden=false;document.body.classList.add('hide-open319');hsClearInput319();stopSpeech37();
+ for(const el of document.body.children)if(el!==hsRoot319&&el!==hsFile319&&!['SCRIPT','STYLE'].includes(el.tagName)){hsInert319.set(el,el.inert);el.inert=true;}
+ hsRenderKey319='';hsRender319();hsRoot319.querySelector('button')?.focus({preventScroll:true});return true;}
+function hsClose319(){if(!hsOpen319)return;if(hs319){hs319.paused=true;hsSave319();}hsClearInput319();hsOpen319=false;hsRoot319.hidden=true;hsRoot319.replaceChildren();hsCanvas319=null;hsBackground319=null;document.body.classList.remove('hide-open319');for(const [el,prior]of hsInert319)if(el.isConnected)el.inert=prior;hsInert319.clear();hsRenderKey319='';renderUI();hsFocus319?.focus?.({preventScroll:true});}
+function hsBtn319(cmd,key,extra=''){return `<button type="button" data-hs319="${cmd}" ${extra}>${esc(hsText319(key))}</button>`;}
+function hsHeader319(){return `<header class="hs-head319"><div><small>AFTER CLASS / HIDE & SEEK · 3.19</small><h1>${esc(hsText319('title'))}</h1></div><nav aria-label="${esc(hsText319('menu'))}">${hsPage319==='play'&&hs319?.phase==='running'?hsBtn319('pause',hs319.paused?'resume':'pause'):''}${hsBtn319('help','help')}${hsBtn319('full','full')}${hsBtn319('exit','menu')}</nav></header>`;}
+function hsSetupMarkup319(){const cfg=HS_CFG319[hsSetup319];return `<main class="hs-scroll319 hs-setup319"><section class="hs-intro319"><span class="hs-eyebrow319">01 — 02 — 03</span><div class="hs-cover319" aria-hidden="true"><div class="hs-door319"></div><span class="hs-orbit319"></span><b>?</b><i></i></div><h2>${esc(hsText319('title'))}</h2><p>${esc(hsText319('lead'))}</p><p class="hs-sub319">${esc(hsText319('separate'))}</p></section><section class="hs-card319"><label>${esc(hsText319('level'))}<select id="hsDifficulty319">${Object.keys(HS_CFG319).map(k=>`<option value="${k}" ${k===hsSetup319?'selected':''}>${esc(hsText319(k))}</option>`).join('')}</select></label><p id="hsTuning319">${esc(hsText319('tuning',{time:cfg.time,seekers:cfg.seekers}))}</p><label>${esc(text317('language'))}<select id="hsLanguage319">${LOCALES310.map(l=>`<option value="${l}" ${l===preferredLocale310()?'selected':''}>${NATIVE310[l]}</option>`).join('')}</select></label><div class="hs-actions319">${hsBtn319('start','start','class="hs-primary319"')}${hsStore319.latest?hsBtn319('continue','continue'):''}${hsBtn319('archive','archive')}${hsBtn319('help','help')}</div><div class="hs-row319">${hsBtn319('export','export')}${hsBtn319('import','import')}</div><p class="hs-sub319">${esc(hsText319('controls'))}</p></section></main>`;}
+function hsHelpMarkup319(){return `<main class="hs-scroll319 hs-help319"><section class="hs-card319"><h2>${esc(hsText319('help'))}</h2>${['rules','controls','hideRules','legend','separate'].map(k=>`<p>${esc(hsText319(k))}</p>`).join('')}${hsBtn319('back','back','class="hs-primary319"')}</section></main>`;}
+function hsArchiveMarkup319(){return `<main class="hs-scroll319 hs-archive319"><h2>${esc(hsText319('archive'))}</h2><p>${esc(hsText319('records'))}</p><h3>${esc(hsText319('ends'))} · ${Object.keys(hsStore319.endings).length}/5</h3><div class="hs-records319">${HS_ENDS319.map(id=>`<article class="${hsStore319.endings[id]?'unlocked':''}"><b>${esc(hsText319('e_'+id))}</b><small>${hsStore319.endings[id]?esc(hsStore319.endings[id].slice(0,10)):esc(hsText319('locked'))}</small></article>`).join('')}</div><h3>${esc(hsText319('medals'))} · ${Object.keys(hsStore319.medals).length}/9</h3><div class="hs-records319">${HS_MEDALS319.map(id=>`<article class="${hsStore319.medals[id]?'unlocked':''}"><b>${esc(hsText319('m_'+id))}</b><small>${hsStore319.medals[id]?esc(hsStore319.medals[id].slice(0,10)):esc(hsText319('locked'))}</small></article>`).join('')}</div><div class="hs-row319">${hsBtn319('back','back')}${hsBtn319('export','export')}${hsBtn319('import','import')}</div></main>`;}
+function hsPlayMarkup319(){const s=hs319,ended=s.phase!=='running';return `<main class="hs-scroll319 hs-play319"><section class="hs-stage319"><div class="hs-status319"><b>${esc(hsText319('round',{n:s.round+1}))} · ${esc(hsText319('map'+s.round))}</b><span id="hsTokens319"></span><time id="hsTime319"></time></div><div class="hs-canvas319"><canvas id="hsBoard319" width="760" height="520" aria-label="${esc(hsText319('legend'))}"></canvas><div id="hsGrace319" class="hs-grace319"></div></div><p class="hs-legend319">${esc(hsText319('legend'))}</p><div id="hsMessage319" class="hs-message319" role="status"></div></section><aside class="hs-card319 hs-controls319"><div class="hs-meters319"><label>${esc(hsText319('detection'))}<b id="hsAlert319"></b><progress id="hsAlertBar319" max="100"></progress></label><label>${esc(hsText319('stamina'))}<b id="hsStamina319"></b><progress id="hsStaminaBar319" max="100"></progress></label><label>${esc(hsText319('breath'))}<b id="hsBreath319"></b><progress id="hsBreathBar319" max="${HS_CFG319[s.difficulty].breath}"></progress></label></div><div class="hs-inputs319" ${ended||s.paused?'inert':''}><div class="hs-dpad319" dir="ltr"><button data-hsdir319="0" aria-label="${esc(hsText319('north'))}">↑</button><button data-hsdir319="3" aria-label="${esc(hsText319('west'))}">←</button><button data-hsdir319="2" aria-label="${esc(hsText319('south'))}">↓</button><button data-hsdir319="1" aria-label="${esc(hsText319('east'))}">→</button></div><div class="hs-skill319">${hsBtn319('hide','hide','id="hsHide319"')}${hsBtn319('sprint','sprint','id="hsSprint319" aria-pressed="false"')}${hsBtn319('decoy','decoy','id="hsDecoy319"')}${hsBtn319('listen','listen','id="hsListen319"')}</div></div><p class="hs-sub319">${esc(hsText319('controls'))}</p><div class="hs-row319">${hsBtn319('export','export')}${hsBtn319('archive','archive')}</div></aside></main>${s.paused&&!ended?`<div class="hs-shade319"><section class="hs-dialog319" role="dialog" aria-modal="true" aria-labelledby="hsPausedTitle319"><h2 id="hsPausedTitle319">${esc(hsText319('pause'))}</h2><p>${esc(hsText319('pauseText'))}</p><div class="hs-row319">${hsBtn319('pause','resume','class="hs-primary319"')}${hsBtn319('export','export')}${hsBtn319('exit','menu')}</div></section></div>`:''}${ended?hsResultMarkup319():''}`;}
+function hsResultMarkup319(){const s=hs319,won=s.phase==='won',clear=s.phase==='roundClear',title=clear?'roundClear':won?'won':s.phase;return `<div class="hs-shade319"><section class="hs-dialog319" role="dialog" aria-modal="true" aria-labelledby="hsResultTitle319"><small>HIDE & SEEK / ${s.round+1} OF 3</small><h2 id="hsResultTitle319">${esc(hsText319(title))}</h2><p>${esc(hsText319(clear||won?'end_clear':'end_'+s.phase))}</p><p>${esc(hsText319('stats',{s:Math.round(s.stats.seconds),n:s.stats.letters,r:s.stats.retries}))}</p><div class="hs-row319">${clear?hsBtn319('next','next','class="hs-primary319"'):!won?hsBtn319('retry','retry','class="hs-primary319"'):hsBtn319('archive','archive','class="hs-primary319"')}${hsBtn319('setup','back')}${hsBtn319('export','export')}${hsBtn319('exit','menu')}</div></section></div>`;}
+function hsRender319(force=false){if(!hsOpen319)return;const s=hs319,key=[hsPage319,preferredLocale310(),s?.phase,s?.round,s?.paused].join('|');
+ if(force||key!==hsRenderKey319){hsRenderKey319=key;hsBuilds319++;hsRoot319.dir=preferredLocale310()==='ar'?'rtl':'ltr';hsRoot319.innerHTML=hsHeader319()+(hsPage319==='setup'?hsSetupMarkup319():hsPage319==='help'?hsHelpMarkup319():hsPage319==='archive'?hsArchiveMarkup319():hsPlayMarkup319())+'<footer class="hs-foot319" id="hsSave319"></footer>';hsCanvas319=$('hsBoard319');hsDraw319();if(hsRoot319.querySelector('.hs-shade319')){hsRoot319.querySelector('.hs-play319').inert=true;hsRoot319.querySelector('.hs-head319').inert=true;hsRoot319.querySelector('.hs-shade319 button')?.focus({preventScroll:true});}}
+ const set=(id,str)=>{const el=$(id);if(el&&el.textContent!==String(str))el.textContent=String(str);};
+ if(hsPage319==='play'&&s){set('hsTime319',hsText319('time')+' '+Math.ceil(s.left)+'s');set('hsTokens319',hsText319('tokens',{n:s.tokens.filter(x=>x.taken).length}));set('hsAlert319',Math.ceil(s.alert)+'%');set('hsStamina319',Math.floor(s.stamina)+'%');set('hsBreath319',s.breath.toFixed(1)+'s');
+  for(const [id,val]of [['hsAlertBar319',s.alert],['hsStaminaBar319',s.stamina],['hsBreathBar319',s.breath]])if($(id))$(id).value=val;
+  set('hsHide319',hsText319(s.hidden?'leave':'hide'));set('hsDecoy319',hsText319('decoy',{n:s.decoys}));$('hsSprint319')?.setAttribute('aria-pressed',String(hsSprint319||hsShift319));
+  if($('hsHide319'))$('hsHide319').disabled=s.grace>0;if($('hsDecoy319'))$('hsDecoy319').disabled=s.grace>0||s.hidden||s.decoys<=0||s.decoyAt>s.t;if($('hsListen319'))$('hsListen319').disabled=s.grace>0||s.listenAt>s.t;
+  set('hsGrace319',s.grace>0&&!s.paused&&s.phase==='running'?hsText319('grace',{s:s.grace.toFixed(1)}):'');
+  const keyMessage=s.inspect>0?'inspection':s.enemies.some(e=>e.seen)&&!s.hidden?'seen':s.messageUntil>s.t?s.message:s.hidden?'hidden':'safe';set('hsMessage319',hsText319(keyMessage,keyMessage==='inspection'?{s:Math.max(0,2.2-s.inspect).toFixed(1)}:s.messageArgs));
+ }
+ set('hsSave319',hsText319(hsNotice319||hsError319||'saved'));
+}
+function hsDraw319(){const s=hs319;if(!hsCanvas319||!s)return;const ctx=hsCanvas319.getContext('2d',{alpha:false});if(!ctx)return;hsDraws319++;
+ const bgKey=s.round+'|'+preferredLocale310();if(!hsBackground319||hsBackgroundKey319!==bgKey){hsBackgroundKey319=bgKey;hsBackground319=document.createElement('canvas');hsBackground319.width=760;hsBackground319.height=520;const c=hsBackground319.getContext('2d');c.fillStyle='#101d22';c.fillRect(0,0,760,520);
+  for(let y=0;y<13;y++)for(let x=0;x<19;x++){const px=x*40,py=y*40,t=s.map[y][x];if(t==='#'){c.fillStyle='#293c42';c.fillRect(px+1,py+1,38,38);c.fillStyle='#344b50';c.fillRect(px+1,py+1,38,3);}else{c.fillStyle=(x+y)%2?'#172b30':'#192f34';c.fillRect(px,py,40,40);c.strokeStyle='#233b40';c.strokeRect(px,py,40,40);if(t==='H'){c.fillStyle='#416477';c.fillRect(px+5,py+5,30,30);c.strokeStyle='#94bdc8';c.strokeRect(px+5,py+5,30,30);c.fillStyle='#bdd3d5';c.fillRect(px+26,py+18,3,6);}if(t==='X'){c.fillStyle='#30685f';c.fillRect(px+2,py+2,36,36);c.fillStyle='#caf0cf';c.font='bold 25px sans-serif';c.textAlign='center';c.fillText('↙',px+20,py+30);}}}
+ }
+ ctx.drawImage(hsBackground319,0,0);const cfg=HS_CFG319[s.difficulty];
+ // Cache visibility tiles by seeker position/facing instead of allocating per frame.
+ for(const e of s.enemies){ctx.fillStyle='rgba(244,197,105,0.10)';const key=s.round+':'+e.x+':'+e.y+':'+e.dir+':'+cfg.range;if(!hsVision319.has(key)){const cells=[];for(let y=Math.max(1,e.y-cfg.range);y<=Math.min(11,e.y+cfg.range);y++)for(let x=Math.max(1,e.x-cfg.range);x<=Math.min(17,e.x+cfg.range);x++)if(hsWalk319(s.map,x,y)&&hsSight319(s,e,{x,y}))cells.push([x,y]);if(hsVision319.size>180)hsVision319.clear();hsVision319.set(key,cells);}for(const [x,y]of hsVision319.get(key))ctx.fillRect(x*40+1,y*40+1,38,38);}
+ for(const p of s.tokens)if(!p.taken){const x=p.x*40+20,y=p.y*40+20;ctx.fillStyle='#edd19a';ctx.beginPath();ctx.moveTo(x,y-10);ctx.lineTo(x+9,y);ctx.lineTo(x,y+10);ctx.lineTo(x-9,y);ctx.closePath();ctx.fill();}
+ if(!s.letter.taken){const x=s.letter.x*40+8,y=s.letter.y*40+11;ctx.fillStyle='#bba2e6';ctx.fillRect(x,y,24,18);ctx.strokeStyle='#513d6e';ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x+12,y+10);ctx.lineTo(x+24,y);ctx.stroke();}
+ if(s.decoy){ctx.strokeStyle='#cab3ea';ctx.lineWidth=2;ctx.beginPath();ctx.arc(s.decoy.x*40+20,s.decoy.y*40+20,12+Math.sin(s.t*6)*3,0,Math.PI*2);ctx.stroke();ctx.fillStyle='#a98ad2';ctx.fillRect(s.decoy.x*40+17,s.decoy.y*40+17,6,6);}
+ function actor(p,color,hidden){const x=p.x*40+20,y=p.y*40+20;ctx.save();ctx.globalAlpha=hidden?.40:1;ctx.fillStyle='#0b151a';ctx.beginPath();ctx.ellipse(x,y+11,15,6,0,0,Math.PI*2);ctx.fill();ctx.fillStyle=color;ctx.beginPath();ctx.arc(x,y-2,12,0,Math.PI*2);ctx.fill();ctx.fillRect(x-10,y+5,20,9);const [dx,dy]=HS_DIR319[p.dir];ctx.fillStyle='#122c32';ctx.beginPath();ctx.arc(x+dx*6-2,y+dy*6-2,2,0,Math.PI*2);ctx.arc(x+dx*6+2,y+dy*6-2,2,0,Math.PI*2);ctx.fill();ctx.restore();}
+ for(const e of s.enemies)actor(e,e.seen?'#e78676':'#d6aa75',false);actor(s.player,'#94d5c0',s.hidden);
+ ctx.strokeStyle=s.alert>65?'#ed8e77':'#98d4c0';ctx.lineWidth=2;ctx.beginPath();ctx.arc(s.player.x*40+20,s.player.y*40+20,17,0,Math.PI*2);ctx.stroke();
+ if(s.inspect>0){ctx.strokeStyle='#ed8e77';ctx.lineWidth=4;ctx.beginPath();ctx.arc(s.player.x*40+20,s.player.y*40+20,19,-Math.PI/2,-Math.PI/2+Math.PI*2*s.inspect/2.2);ctx.stroke();}
+}
+const hsVision319=new Map();
+function hsCommand319(action){hsNotice319='';if(action==='exit'){hsClose319();return;}if(action==='full'){toggleFullscreen();return;}
+ if(action==='start'){if(hsStore319.latest&&hsStore319.latest.phase!=='won'&&!confirm(hsText319('overwrite')))return;hsStart319();return;}
+ if(action==='continue')hsRestore319();else if(action==='retry')hsRestore319(true);else if(action==='next')hsNext319();else if(action==='pause')hsPause319(!hs319.paused);
+ else if(action==='help'||action==='archive'){if(hs319&&hsPage319==='play')hsPause319(true);hsPage319=action;hsRenderKey319='';}
+ else if(action==='back'){hsPage319=hs319?'play':'setup';hsRenderKey319='';}
+ else if(action==='setup'){if(hs319)hs319.paused=true;hsSave319();hsPage319='setup';hsRenderKey319='';}
+ else if(action==='hide')hsHide319();else if(action==='sprint'&&hsCanAct319())hsSprint319=!hsSprint319;else if(action==='decoy')hsDecoy319();else if(action==='listen')hsListen319();
+ else if(action==='export'){hsExport319();}else if(action==='import'){hsFile319.click();return;}
+ hsRender319();hsDraw319();}
+hsRoot319.addEventListener('click',e=>{const b=e.target.closest('[data-hs319]');if(!b||b.disabled||b.closest('[inert]'))return;e.preventDefault();hsCommand319(b.dataset.hs319);});
+hsRoot319.addEventListener('change',e=>{if(e.target.id==='hsDifficulty319'){if(HS_CFG319[e.target.value])hsSetup319=e.target.value;const c=HS_CFG319[hsSetup319];$('hsTuning319').textContent=hsText319('tuning',{time:c.time,seekers:c.seekers});}if(e.target.id==='hsLanguage319'){save.settings.language=e.target.value;persist();hsRenderKey319='';hsBackgroundKey319='';hsRender319();}});
+hsRoot319.addEventListener('pointerdown',e=>{const b=e.target.closest('[data-hsdir319]');if(!b||b.disabled||!hsCanAct319())return;e.preventDefault();hsDirection319=Number(b.dataset.hsdir319);hsPointer319=e.pointerId;b.setPointerCapture?.(e.pointerId);hsMove319(hsDirection319);hsDraw319();});
+function hsReleasePointer319(e){if(e.pointerId===hsPointer319){hsPointer319=null;hsDirection319=null;}}
+hsRoot319.addEventListener('pointerup',hsReleasePointer319);hsRoot319.addEventListener('pointercancel',hsReleasePointer319);hsRoot319.addEventListener('lostpointercapture',hsReleasePointer319);
+hsFile319.addEventListener('change',async()=>{const f=hsFile319.files?.[0];hsFile319.value='';if(!f)return;try{if(f.size>300000)throw Error('size');const pack=JSON.parse(await f.text());if(!confirm(hsText319('overwrite')))return;hsImport319(pack);}catch(_){hsNotice319='invalid';}hsRenderKey319='';hsRender319();});
+hideGuard319=(e)=>{if(!hsOpen319)return;e.stopImmediatePropagation();if(e.ctrlKey||e.metaKey||e.isComposing)return;
+ if(e.type==='keyup'){hsKeysHeld319.delete(e.code);if(e.code==='ShiftLeft'||e.code==='ShiftRight')hsShift319=false;const held=[...hsKeysHeld319].filter(k=>k in HS_KEYS319);if(hsPointer319===null)hsDirection319=held.length?HS_KEYS319[held.at(-1)]:null;return;}
+ if(e.key==='Tab'){const scope=hsRoot319.querySelector('.hs-shade319')||hsRoot319,els=[...scope.querySelectorAll('button:not(:disabled),select,input')].filter(el=>el.getClientRects().length&&!el.closest('[inert]'));if(!els.length){e.preventDefault();return;}const i=els.indexOf(document.activeElement);if(i<0||e.shiftKey&&i===0||!e.shiftKey&&i===els.length-1){e.preventDefault();els[e.shiftKey?els.length-1:0].focus();}return;}
+ if(e.altKey&&e.code==='Enter'){e.preventDefault();if(!e.repeat)toggleFullscreen();return;}
+ if(e.code==='F1'){e.preventDefault();if(!e.repeat)hsCommand319('help');return;}
+ if(e.code==='Escape'){e.preventDefault();if(e.repeat)return;if(hsPage319==='play'&&hs319.phase==='running')hsPause319(!hs319.paused);else if(hsPage319==='help'||hsPage319==='archive')hsCommand319('back');else hsClose319();return;}
+ if(['INPUT','SELECT','TEXTAREA'].includes(e.target.tagName))return;if(e.repeat)return;
+ if(e.code in HS_KEYS319){e.preventDefault();if(hsCanAct319()){hsKeysHeld319.add(e.code);hsDirection319=HS_KEYS319[e.code];hsMove319(hsDirection319);hsDraw319();}return;}
+ if(e.code==='ShiftLeft'||e.code==='ShiftRight'){if(hsCanAct319())hsShift319=true;return;}
+ const cmd={KeyE:'hide',KeyQ:'decoy',Space:'listen'}[e.code];if(cmd&&hsCanAct319()){e.preventDefault();hsCommand319(cmd);}
+};
+window.addEventListener('blur',()=>{if(hsOpen319){hsClearInput319();if(hsPage319==='play')hsPause319(true);}});
+document.addEventListener('visibilitychange',()=>{if(document.hidden&&hsOpen319){hsClearInput319();if(hs319){hs319.paused=true;hsSave319();}hsRenderKey319='';}});
+window.addEventListener('pagehide',()=>{if(hsOpen319&&hs319){hs319.paused=true;hsSave319();}});
+let hsWasFull319=false;document.addEventListener('fullscreenchange',()=>{if(hsWasFull319&&!document.fullscreenElement&&hsOpen319&&hsPage319==='play')hsPause319(true);hsWasFull319=!!document.fullscreenElement;});
+
+/* The original v3.18 checkbox only had a modalBody input listener. The menu
+ * checkbox never reached it and was overwritten by syncMenu317 each frame. */
+document.addEventListener('change',e=>{if(e.target.matches('#menu317 input[data-setting="nightWatch"]')){e.stopPropagation();settingChange(e.target);syncMenu317();}},true);
+
+// Promote, do not replace or delete, the legacy classic-five-wave entry.
+const hub319=document.createElement('details');hub319.id='independentHub319';hub319.open=true;hub319.dataset.noTranslate310='';hub319.innerHTML='<summary id="hubTitle319"></summary><div class="mode-cards319"><div id="classicCard319"></div><div id="tacticsCard319"></div><div id="nightCard319"></div><div id="hideCard319"></div></div>';
+battleMenuButton313.before(hub319);$('tacticsCard319').appendChild(battleMenuButton313);$('nightCard319').appendChild($('menu317'));
+const classicButton319=document.createElement('button');classicButton319.type='button';classicButton319.id='classicLaunch319';classicButton319.addEventListener('click',()=>{if(!S||S.screen!=='game'){if(arcadeOpen317)closeArcade317();B317.openBattle313();}});$('classicCard319').appendChild(classicButton319);
+const hideButton319=document.createElement('button');hideButton319.type='button';hideButton319.id='hideLaunch319';hideButton319.addEventListener('click',()=>hsOpenMode319());$('hideCard319').appendChild(hideButton319);
+const hideArchiveButton319=document.createElement('button');hideArchiveButton319.type='button';hideArchiveButton319.id='hideArchiveLaunch319';hideArchiveButton319.addEventListener('click',()=>hsOpenMode319('archive'));$('hideCard319').appendChild(hideArchiveButton319);
+let hubLanguage319='';function syncHub319(){const lang=preferredLocale310();if(lang===hubLanguage319)return;hubLanguage319=lang;$('hubTitle319').textContent=hsText319('hub');classicButton319.textContent=hsText319('classic');hideButton319.textContent=hsText319('title');hideArchiveButton319.textContent=hsText319('archive');}
+const tickBefore319=tick,renderBefore319=renderUI,motionBefore319=paintMotion3171;
+tick=function(dt){if(hsOpen319){hsStep319(dt);return;}return tickBefore319(dt);};
+renderUI=function(...args){if(hsOpen319){hsRender319();return;}const r=renderBefore319(...args);syncHub319();return r;};
+paintMotion3171=function(){if(hsOpen319)return;return motionBefore319();};
+// Avoid background UI work while classic battle and tactical/night roots are active.
+const renderClassicBefore319=renderUI;renderUI=function(...a){if(battleOpen313){renderBattle313();return;}if(arcadeOpen317){renderArcade317();return;}return renderClassicBefore319(...a);};
+syncHub319();
+
     // The classroom is a layered DOM illustration rather than a raster image.
     const seats = [{ x: 436, y: 403, s: .68 }, { x: 669, y: 420, s: .70 }, { x: 1044, y: 413, s: .74 }, { x: 1210, y: 428, s: .80 }, { x: 363, y: 468, s: .94 }, { x: 619, y: 487, s: 1.06 }, { x: 955, y: 479, s: 1.02 }, { x: 1195, y: 488, s: 1.11 }];
     $('students').innerHTML = seats.map(p => `<div class="student" style="left:${p.x}px;top:${p.y}px;transform:scale(${p.s})"><div class="student-head"></div><div class="student-body"></div><div class="student-desk"></div><div class="student-chair"></div></div>`).join('');
@@ -17519,6 +17884,12 @@ if(testMode)Object.assign(window.__LAST_CLASS_TEST__,{
  tick318:tick,startNextWeekDay
 });
 if(testMode)Object.defineProperty(window.__LAST_CLASS_TEST__,'work318',{configurable:true,get:()=>S?.v318});
+if(testMode)Object.assign(window.__LAST_CLASS_TEST__,{
+ hsOpenMode319,hsClose319,hsStart319,hsNext319,hsStep319,hsMove319,hsHide319,hsDecoy319,hsListen319,hsPause319,hsRestore319,hsExport319,hsImport319,hsValidate319,hsStoreValidate319,hsFresh319,hsMap319,hsPath319,hsWalk319,hsSight319,hsNoise319,hsFinish319,hsRender319,hsDraw319,hsSave319,hsCommand319,hsCollect319,hsText319,
+ get hsState319(){return hs319;},get hsStore319(){return hsStore319;},get hsOpen319(){return hsOpen319;},get hsPage319(){return hsPage319;},get hsConfig319(){return HS_CFG319;},get hsWords319(){return HS_WORD319;},get hsRenderStats319(){return {builds:hsBuilds319,draws:hsDraws319};},get hsDirection319(){return hsDirection319;},openClassic319(){return B317.openBattle313();}
+});
+if(testMode)Object.defineProperties(window.__LAST_CLASS_TEST__,{hsState319:{configurable:true,get:()=>hs319},hsStore319:{configurable:true,get:()=>hsStore319},hsOpen319:{configurable:true,get:()=>hsOpen319},hsPage319:{configurable:true,get:()=>hsPage319},hsRenderStats319:{configurable:true,get:()=>({builds:hsBuilds319,draws:hsDraws319})},hsDirection319:{configurable:true,get:()=>hsDirection319}});
+
 
 })();
   </script>

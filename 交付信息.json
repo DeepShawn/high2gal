@@ -1,0 +1,12 @@
+{
+  "version": "3.19",
+  "base_sha256": "e6f14a3ac9bdebe8f2d833e07041ab0e47d4dbeaa62747cd14ee819086a5cf54",
+  "bytes": 3937332,
+  "sha256": "0e58a5693e3a58f4c74c83ec7828cbcf738b65682b7649a0275a2fce6852ebd8",
+  "checks": {
+    "passed": 395,
+    "total": 395,
+    "blocked": 2,
+    "errors": 0
+  }
+}

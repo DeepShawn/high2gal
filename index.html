@@ -5,7 +5,7 @@
   <meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
   <meta content="#121c1b" name="theme-color"/>
   <meta content="高二（2）班：最后一节课。离线、单文件校园恐怖潜行游戏。" name="description"/>
-  <title>高二（2）班：最后一节课 · v3.16 掌心与水声</title>
+  <title>高二（2）班：最后一节课 · v3.17 夜巡与异星</title>
   <style>
    /* All artwork is drawn with HTML and CSS. No remote assets or libraries. */
 :root {
@@ -3437,6 +3437,85 @@ body:not(.phone-mode39) #stage #homePhoneMount316 #phone{position:relative!impor
 #room{isolation:isolate}
 #peng34[data-portrait316],#wangActor39[data-portrait316]{filter:none!important}
 
+/* v3.17: lightweight surfaces. No blur sampling or full-screen flashing. */
+#arcade317[hidden],#horrorPanel317[hidden],#podiumLook317[hidden]{display:none!important}
+#arcade317{position:fixed;inset:0;z-index:40000;width:100%;height:100vh;height:100dvh;overflow:hidden;display:grid;grid-template-rows:auto auto minmax(0,1fr) auto auto;isolation:isolate;background:#0b1822;color:#dfebdf;font:15px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif;box-sizing:border-box;padding:env(safe-area-inset-top) max(12px,env(safe-area-inset-right)) env(safe-area-inset-bottom) max(12px,env(safe-area-inset-left))}
+#arcade317 *,#arcade317 *:before,#arcade317 *:after{box-sizing:border-box}
+#arcade317 button,#arcade317 select,#arcade317 input{font:inherit;touch-action:manipulation}
+#arcade317 button{min-height:44px;border:1px solid #5e82755e;background:#1c343a;color:#e6ebd7;border-radius:10px;padding:9px 14px;cursor:pointer;white-space:normal;overflow-wrap:anywhere;line-height:1.4}
+#arcade317 button:hover:not(:disabled){background:#294b4b;border-color:#b7c695}
+#arcade317 button:focus-visible,#arcade317 select:focus-visible{outline:3px solid #e6ca82;outline-offset:2px}
+#arcade317 button[aria-pressed="true"]{background:#425b50;border-color:#dbcb98;color:#faf1d2}
+#arcade317 button:disabled{opacity:.43;cursor:not-allowed}
+#arcade317 button.arc-primary317{background:#c0cda4;color:#182e2a;border-color:#e2d2a6;font-weight:700}
+#arcade317 select{min-height:44px;max-width:100%;background:#122a33;color:#deead9;border:1px solid #6b8980;border-radius:8px;padding:6px 10px}
+#arcade317 h1,#arcade317 h2,#arcade317 h3,#arcade317 p{margin:0 0 14px}
+#arcade317 h1{font-size:clamp(25px,3vw,42px);line-height:1.25;letter-spacing:-.025em}
+#arcade317 h2{font-size:22px;line-height:1.5}#arcade317 h3{font-size:16px;line-height:1.5}
+.arc-head317{grid-row:1;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 4px;border-bottom:1px solid #7494863d;min-width:0}
+.arc-brand317{min-width:0;display:grid;gap:3px;max-width:620px}.arc-brand317 small{font-size:10px;letter-spacing:2px;color:#99b9ad}.arc-brand317 strong{font-size:18px;line-height:1.4}
+.arc-head317 nav{display:flex;gap:7px;flex-shrink:0}.arc-head317 nav button{min-width:56px}
+.arc-main317{grid-row:3;overflow:auto;min-height:0;min-width:0;scrollbar-width:thin;scrollbar-color:#64877d #172d36;overscroll-behavior:contain;padding:20px clamp(0px,2vw,24px)}
+.arc-setup317{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(280px,.9fr);gap:clamp(16px,4vw,56px);align-items:start;width:min(1200px,100%);margin:auto;}
+.arc-eyebrow317{font-size:11px;letter-spacing:2.5px;color:#c5bd96;display:block;margin-bottom:17px}.arc-intro317{padding-top:20px;min-width:0}.arc-intro317>p{color:#b4c6be;max-width:590px}
+.arc-duo317{display:flex;align-items:center;justify-content:center;gap:50px;max-width:480px;margin:22px auto 10px;padding:26px;border:1px solid #8c9e7852;border-radius:100% 100% 30px 30px;background:radial-gradient(ellipse at bottom,#2b4740,#122732)}
+.arc-duo317 svg{width:40%;height:auto;max-height:190px}.arc-config317{padding:24px;background:#152e34;border:1px solid #78958942;border-radius:18px;min-width:0}.arc-config317 label{display:grid;grid-template-columns:1fr;gap:7px;margin-bottom:17px;color:#d2dace}.arc-config317 label.arc-check317{display:flex;justify-content:space-between;align-items:center;gap:15px}.arc-config317 input[type=checkbox]{width:22px;height:22px;accent-color:#a8c8a1}
+.arc-actionlist317{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:18px 0}.arc-actionlist317 .arc-primary317{grid-column:1/-1}.arc-note317{font-size:12px;color:#a8beb5;line-height:1.7}
+.arc-hud317{grid-row:2;display:flex;justify-content:center;flex-wrap:wrap;gap:6px 28px;padding:9px 6px;border-bottom:1px solid #73978d38;background:#12262d;font-variant-numeric:tabular-nums}.arc-hud317 span{font-size:13px;color:#9dbbb1}.arc-hud317 b{font-size:19px;color:#e3e9c8;margin-inline-start:7px}
+.arc-play317{padding:8px 0;display:flex;align-items:center;justify-content:center}
+.arc-stagewrap317{width:min(1040px,100%);max-height:100%;min-height:100px;display:flex;flex-direction:column;align-items:center;position:relative;flex-shrink:1}
+#arcCanvas317{display:block;max-width:100%;width:auto;max-height:min(52vh,560px);height:auto;aspect-ratio:2/1;border:1px solid #6e8e824a;border-radius:12px;background:#12222e;touch-action:manipulation;direction:ltr}
+.arc-scene-caption317{font-size:12px;color:#b6c6b1;text-align:center;margin:5px 0!important;padding:0 4px;min-height:18px}.arc-grace317{position:absolute;inset:30% 0 auto;text-align:center;font-size:30px;font-variant-numeric:tabular-nums;color:#f0e1b9;pointer-events:none;text-shadow:0 2px 8px #000}
+.arc-controls317{grid-row:4;width:min(1040px,100%);margin:auto;padding:6px 0;min-width:0}.arc-doorbuttons317{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}.arc-feeds317{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;margin-top:8px}
+.arc-lanes317{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-bottom:8px}.arc-skills317{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px}.arc-skills317 button{display:flex;flex-direction:column;justify-content:space-between;gap:4px;padding:8px!important;text-align:start;font-size:13px!important}.arc-skills317 small{font-size:10px;color:#bad0c5}.arc-skills317 kbd{font-size:10px;background:#09212a;padding:1px 4px;border-radius:3px;color:#b6bb9a}.arc-hint317{font-size:11px;text-align:center;color:#8eada2;line-height:1.5;margin:8px 0 2px!important}.arc-save317{grid-row:5;text-align:end;font-size:10px;color:#8eaba1;min-height:15px;padding:0 3px}
+.arc-dialog317{width:min(760px,100%);max-height:100%;overflow:auto;overscroll-behavior:contain;margin:auto;padding:28px;border-radius:16px;border:1px solid #9eac8463;background:#1a3038;box-shadow:0 16px 35px #0003}.arc-dialog317>button{margin:5px}.arc-dialog317 .arc-primary317{min-width:140px}.arc-qtop317{display:flex;justify-content:space-between;gap:12px;color:#bfceb1}.arc-qtop317 output{font-variant-numeric:tabular-nums}.arc-dialog317 progress{width:100%;height:7px;margin:12px 0 19px;accent-color:#c0ca94}
+.arc-answergrid317{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:18px 0}.arc-answergrid317 button{display:flex;align-items:flex-start;text-align:start;gap:12px;padding:14px!important}.arc-answergrid317 kbd{font:11px ui-monospace,monospace;border:1px solid #6f9082;padding:2px 6px;border-radius:4px}.arc-answergrid317 .correct317{border-color:#d5de97!important;opacity:1!important;background:#315545!important}.arc-upgrades317{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:22px}.arc-result317{text-align:center}.arc-resultart317 svg{width:130px;height:120px}
+.arc-help317{width:min(850px,100%);margin:auto}.arc-tablewrap317{overflow:auto;margin:20px 0}.arc-tablewrap317 table{border-collapse:collapse;width:100%}.arc-tablewrap317 th,.arc-tablewrap317 td{padding:11px;border-bottom:1px solid #607e7352;text-align:start}
+.arc-archive317{width:min(1200px,100%);margin:auto}.arc-tabs317{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}.arc-recordgrid317{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:20px 0 30px}.arc-record317{border:1px solid #426661;padding:19px;border-radius:12px;background:#172d35}.arc-record317 small{font-size:11px;color:#88a8a0}.arc-record317 h3{color:#c3c9b2;margin-top:8px!important}.arc-record317 p{font-size:13px;color:#94afa5}.arc-record317.unlocked317{border-color:#a9b781;background:#243b3c}.arc-medalgrid317{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.arc-medal317{display:flex;align-items:center;gap:14px;border:1px solid #496b6355;border-radius:10px;background:#162d34;padding:14px}.arc-medal317 i{font-style:normal;font-size:28px;color:#536a65}.arc-medal317 h3{font-size:13px!important;margin:0 0 5px!important}.arc-medal317 small{font-size:10px;color:#8fb3a5}.arc-medal317.unlocked317 i{color:#e1c383}.arc-medal317.unlocked317{border-color:#abb4829c}
+.arc-inline317{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px;margin-bottom:16px;background:#25433e;border-radius:8px}.arc-inline317 button{min-height:40px}
+body.arcade-open317{overflow:hidden!important}body.arcade-open317 #stage,body.arcade-open317 #phoneShell39,body.arcade-open317 #horrorPanel317{visibility:hidden!important;pointer-events:none!important}body.arcade-open317 #arcade317{visibility:visible}
+#menu317{margin:10px 0;padding:13px;border:1px solid #8fab8c55;border-radius:11px;background:#1d3736;min-width:0}.night-toggle317{display:flex;align-items:center;justify-content:space-between;gap:14px;font-size:13px;margin-bottom:10px}.night-toggle317 input{width:20px;height:20px;accent-color:#c4d4a8}.menu-independent317{display:grid;grid-template-columns:1fr 1fr;gap:8px}.menu-independent317 button{min-height:42px;padding:8px 11px;border:1px solid #75998765;border-radius:8px;background:#2e4840;font-size:12px;white-space:normal;color:#d7dfc7}.menu-independent317 button:disabled{opacity:.42}
+body:not(.phone-mode39) #menu .menu-content{top:38px!important;max-height:calc(100% - 110px);width:660px;padding-right:18px}.menu-title small{font-size:12px!important}
+#horrorPanel317{position:relative;padding:12px;margin:8px 0;background:#281f2c;border:1px solid #b4939469;border-radius:9px;color:#e5d8bd;font-size:12px;line-height:1.65;white-space:normal;pointer-events:none}
+body.true-horror317 #board{background:linear-gradient(145deg,#172e2b,#0f2126);color:#d5d2ae}body.true-horror317 #room{background-color:#0a1922}body.true-horror317 #floor{opacity:.75}body.true-horror317 #stage:after{content:"";position:absolute;inset:0;border:30px solid #050e17b0;pointer-events:none;z-index:7}
+body.anomaly-active317 #board{border-color:#806a78;box-shadow:inset 0 0 45px #050e16}body.anomaly-active317 #rearDoor{border-color:#8d8199}
+#podiumLook317{font-size:12px;padding:8px;background:#203a42;color:#e0e3cd;line-height:1.6;margin-top:5px;border-radius:7px}
+.filming317:after{content:"";display:block;position:absolute;width:12px;height:24px;background:#d2d9d4;border:3px solid #15252d;right:20%;top:30%;transform:rotate(-13deg);pointer-events:none}
+.feature317{border-color:#879a7366!important}.feature317 .settings-row small{max-width:630px}.locale-coverage317{border:1px solid #b4a88b40;border-radius:8px;padding:10px;margin:12px 0;font-size:12px}.voice-grid310{grid-template-columns:repeat(2,minmax(0,1fr))!important}.voice-card310{min-width:0}.voice-card310 small{overflow-wrap:anywhere}.locale-panel310 select{max-width:220px;min-width:120px}
+.rtl317 #arcade317,.rtl317 #settingsPanel312,.rtl317 .locale-panel310{direction:rtl;text-align:right}.rtl317 .arc-stagewrap317,.rtl317 .arc-lanes317,.rtl317 .arc-doorbuttons317,.rtl317 .arc-feeds317,#reflexControls .reflex-grid23{direction:ltr}.rtl317 .arc-doorbuttons317 button,.rtl317 .arc-feeds317 button,.rtl317 .arc-lanes317 button{direction:rtl}.rtl317 #dialogueText,.rtl317 #modalBody,.rtl317 .challenge-description{text-align:right;unicode-bidi:plaintext}.rtl317 #gameClock,.rtl317 kbd,.rtl317 #grid56,.rtl317 .cube-formula,.rtl317 .chess-board,.rtl317 .rapid-pad31{direction:ltr;unicode-bidi:isolate}
+@media(max-width:760px){
+ #arcade317{padding-left:max(8px,env(safe-area-inset-left));padding-right:max(8px,env(safe-area-inset-right));font-size:13px}.arc-head317{padding:8px 0;gap:8px;flex-wrap:wrap}.arc-brand317{max-width:100%;width:100%}.arc-brand317 strong{font-size:14px}.arc-brand317 small{font-size:8px;letter-spacing:1.4px}.arc-head317 nav{width:100%;display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:5px}.arc-head317 nav button{font-size:11px!important;min-height:38px!important;padding:6px!important;min-width:0}.arc-main317{padding:12px 0}.arc-setup317{display:flex;flex-direction:column;gap:15px;width:100%;margin:0}.arc-intro317{padding:4px 6px}.arc-intro317 h1{font-size:26px!important}.arc-duo317{margin:12px auto;gap:25px;padding:15px;max-width:320px}.arc-duo317 svg{max-height:100px}.arc-config317{width:100%;padding:16px;border-radius:13px}.arc-actionlist317{gap:7px}
+ .arc-hud317{gap:3px 13px;padding:5px 0}.arc-hud317 span{font-size:10px}.arc-hud317 b{font-size:15px}.arc-play317{padding:5px 0}#arcCanvas317{max-height:34vh;max-height:34dvh;max-width:100%;border-radius:8px}.arc-controls317{padding:4px 0}.arc-controls317 button{min-height:42px!important;padding:6px 5px!important;font-size:11px!important}.arc-feeds317{grid-template-columns:repeat(4,minmax(0,1fr));gap:4px;margin-top:5px}.arc-feeds317 button:last-child{grid-column:1/-1}.arc-doorbuttons317{gap:5px}.arc-lanes317{gap:5px;margin-bottom:5px}.arc-skills317{grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}.arc-skills317 button{min-height:52px!important;font-size:11px!important}.arc-skills317 small{font-size:9px}.arc-hint317{display:none}.arc-dialog317{padding:16px 12px;border-radius:10px}.arc-dialog317 h1{font-size:23px!important}.arc-answergrid317{grid-template-columns:1fr;gap:8px}.arc-answergrid317 button{min-height:45px!important}.arc-upgrades317{gap:8px}.arc-recordgrid317,.arc-medalgrid317{grid-template-columns:1fr}.arc-record317{padding:14px}.arc-record317 p{font-size:12px}.arc-tabs317 button{flex:1}.arc-scene-caption317{font-size:10px}.arc-save317{font-size:9px;height:12px;min-height:12px}
+ .voice-grid310{grid-template-columns:1fr!important}.locale-panel310 select{max-width:155px;min-width:105px}.feature317 .settings-row{gap:12px}.feature317 .settings-row small{font-size:11px}
+ #phoneShell39 #menu317 .menu-independent317 button{width:100%!important;font-size:12px}#phoneShell39 #horrorPanel317{margin:5px 0;font-size:11px}
+}
+@media(max-width:360px){.arc-skills317{grid-template-columns:repeat(2,minmax(0,1fr))}#arcCanvas317{max-height:26vh;max-height:26dvh}.arc-doorbuttons317{gap:3px}.arc-brand317 strong{font-size:12px}.arc-head317 nav button{min-height:35px!important}.arc-dialog317{padding:12px 10px}.arc-main317 h2{font-size:17px!important}}
+@media(max-height:520px) and (min-width:640px){
+ #arcade317{grid-template-columns:minmax(0,1fr) 285px;grid-template-rows:auto auto minmax(0,1fr) auto;column-gap:12px}.arc-head317{grid-column:1/-1;padding:5px 0;flex-wrap:nowrap}.arc-brand317{width:auto}.arc-brand317 strong{font-size:12px}.arc-head317 nav{width:auto;display:flex}.arc-head317 nav button{min-height:34px;padding:5px 8px;font-size:11px}.arc-hud317{grid-row:2;grid-column:1/-1;padding:4px}.arc-main317{grid-column:1/-1;grid-row:3}.arc-play317:has(#arcCanvas317){grid-column:1}.arc-controls317{grid-column:2;grid-row:3;overflow:auto;max-height:100%;padding:5px 0}.arc-skills317{grid-template-columns:repeat(2,minmax(0,1fr));gap:5px}.arc-controls317 button{min-height:40px!important;font-size:10px!important}.arc-feeds317{grid-template-columns:1fr 1fr}.arc-feeds317 button:last-child{grid-column:1/-1}.arc-hint317{display:none}.arc-save317{grid-column:1/-1;grid-row:4}#arcCanvas317{max-height:calc(100dvh - 133px);width:auto}.arc-stagewrap317{max-height:100%}.arc-scene-caption317{font-size:10px}.arc-dialog317{max-height:100%;padding:15px}.arc-setup317{grid-template-columns:1fr 1fr;display:grid;overflow:auto}.arc-duo317 svg{max-height:100px}.arc-duo317{padding:10px}.arc-config317{padding:14px}.arc-intro317{padding-top:0}
+}
+@media(prefers-reduced-motion:reduce){#arcade317 *,body.true-horror317 #stage *{animation:none!important;transition:none!important}}
+/* Main menu uses the original controls in a two-column grid, never clones. */
+body:not(.phone-mode39) #menu .menu-content{left:90px!important;top:68px!important;width:650px!important;max-height:750px!important;padding:16px 20px 22px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:9px 12px;align-content:start;background:linear-gradient(110deg,#112b26ed,#183832cc);border:1px solid #87a69138;border-radius:17px;box-shadow:0 16px 50px #010d0a55}
+body:not(.phone-mode39) #menu .menu-content>:is(.menu-kicker,.menu-class,.menu-title,.menu-rule,#continueCard,#menuExtra39,#difficultyBtn,#battleMenuButton313,#menu317,.menu-links,.menu-memory){grid-column:1/-1}
+body:not(.phone-mode39) #menu .menu-title{font-size:58px;line-height:1.1;margin:4px 0}body:not(.phone-mode39) #menu .menu-class{font-size:20px;margin:0}body:not(.phone-mode39) #menu .menu-rule{margin:8px 0;font-size:16px}
+body:not(.phone-mode39) #menu :is(#startNormal,#startQuick,#weekStart,#homeStart,#battleMenuButton313,#difficultyBtn){width:100%!important;min-width:0;box-sizing:border-box;margin:0;display:flex;gap:6px;align-items:center;justify-content:space-between;padding:11px 13px;font-size:16px;white-space:normal}
+body:not(.phone-mode39) #menu :is(#startNormal,#startQuick) small{font-size:10px}
+body:not(.phone-mode39) #menuExtra39{margin:0;width:100%!important;padding:10px 12px;box-sizing:border-box}body:not(.phone-mode39) #menuExtra39>label{display:flex;align-items:center;gap:8px;font-size:13px;line-height:1.5}body:not(.phone-mode39) #menuExtra39 p{font-size:11px;margin:5px 0}body:not(.phone-mode39) #menu .menu-links{margin:3px 0;display:flex;gap:8px;flex-wrap:wrap}
+#menuStudyLabel39{display:inline!important;visibility:visible!important}body.rtl317:not(.phone-mode39) #menu .menu-content{left:auto!important;right:90px!important;text-align:right}
+@media(max-width:639px) and (orientation:portrait){#arcCanvas317{max-height:calc(100dvh - 330px);max-width:100%;width:auto}.arc-stagewrap317{width:100%;display:flex;flex-direction:column;align-items:center}.arc-play317{align-items:center}.arc-head317{flex-shrink:0}}
+@media(max-width:360px) and (orientation:portrait){#arcCanvas317{max-height:calc(100dvh - 340px)}}
+
+/* Mobile header / scrollable game / controls occupy disjoint layout tracks. */
+body.phone-mode39 #phoneShell39{display:grid!important;grid-template-rows:auto minmax(0,1fr) auto;overflow:hidden!important;padding:0!important;height:100dvh!important;min-height:0!important;scroll-padding:0!important;touch-action:pan-y;}
+body.phone-mode39 #phoneShell39>.phone-header39{position:relative!important;grid-row:1;inset:auto!important;}
+body.phone-mode39 #phoneScroll317{grid-row:2;overflow:auto;overscroll-behavior:contain;min-height:0;min-width:0;padding:0 0 18px;scroll-padding-top:12px;scroll-padding-bottom:18px;}
+body.phone-mode39 #phoneShell39>#phoneDock39{position:relative!important;grid-row:3;inset:auto!important;width:100%!important;max-height:34dvh;overflow:auto;padding:8px 10px max(8px,env(safe-area-inset-bottom));} 
+body.phone-mode39 #phoneScroll317 #phoneMenu39{padding-bottom:0!important;}
+body.phone-mode39 #phoneScroll317 #phone.smartphone316{scroll-margin-top:12px!important;scroll-margin-bottom:20px!important;}
+body.phone-mode39 #phoneShell39 #phoneActions39{min-width:0;overflow:hidden;}
+body.phone-mode39 #phoneShell39 #phoneDock39 button{scroll-margin:8px!important;}
+@media(max-height:520px) and (min-width:640px){body.phone-mode39 #phoneShell39>#phoneDock39{max-height:32dvh;}body.phone-mode39 #phoneShell39 .phone-header39{padding:4px 10px!important;}body.phone-mode39 #phoneShell39 .phone-header39>b{font-size:10px;}body.phone-mode39 #phoneShell39 .phone-header39 button{min-height:34px!important;padding:3px!important;}body.phone-mode39 #phoneShell39 #actionDock{grid-template-columns:repeat(9,minmax(77px,1fr))!important;overflow:auto!important;}body.phone-mode39 #phoneShell39 #actionDock .action{min-height:40px!important;height:40px!important;}body.phone-mode39 #phoneShell39 #actionDock small,body.phone-mode39 #phoneShell39 #actionDock kbd{display:none!important;}}
+
 </style>
  </head>
  <body>
@@ -3719,7 +3798,7 @@ body:not(.phone-mode39) #stage #homePhoneMount316 #phone{position:relative!impor
        建议佩戴耳机　/　不含贴脸跳吓，可关闭闪烁与震动
       </span>
       <span>
-       单文件离线版　3.16
+       单文件离线版　3.17
        <br/>
        HTML / CSS / JAVASCRIPT
       </span>
@@ -5072,7 +5151,7 @@ const MEDIA_ACH316=[
  {id:'remindRead316',name:'谢谢提醒',desc:'收到真实同学提醒后，在班级群中确认读过。',group:'课堂',target:1},
  {id:'photoRead316',name:'镜头停住的瞬间',desc:'打开一张值日家长真实拍摄并发布的游戏内照片。',group:'课堂',target:1},
  {id:'videoRead316',name:'四秒也要看完',desc:'在游戏手机中完整播放一次家长发布的四秒课堂录像。',group:'课堂',target:1},
- {id:'cameraReady316',name:'镜头前的课本',desc:'家长开始预警时正在低头，随后及时抬头，最终录像或照片中未出现低头。',group:'课堂',target:1},
+ {id:'cameraReady316',name:'镜头前的课本',desc:'家长开始举机时正在低头，随后及时抬头，最终录像或照片中未出现低头。',group:'课堂',target:1},
  {id:'explain316',name:'把前后说清楚',desc:'实际经历家长根据低头影像发起的询问，完成解释对话。',group:'课堂',target:1},
  {id:'stash316',name:'先合上盒盖',desc:'洗澡前实际完成把熄屏手机放进带盖收纳盒的动作。',group:'课堂',target:1},
  {id:'shower316',name:'洗去一天的疲惫',desc:'实际完成一次洗澡，未被发现手机。',group:'课堂',target:1},
@@ -5081,7 +5160,22 @@ const MEDIA_ACH316=[
  {id:'minigame316',name:'课间三连配',desc:'在手机配对小游戏中累计完成三次正确匹配。',group:'课堂',target:3}
 ];
 
-    const ENDING_IDS = ['true','phone','math','loop','cfop','unseen','falsebell','homework','companion','truth','gatekeeper','mirror','chessMaster','officeTruth','parentHome','sports','bagPhone','officeLoop','doorRoster','lastStone','alliesTogether','calmExit','chessDraw','weekClear','homeSafe','homeCaught',...Object.keys(V34_ENDINGS),...Object.keys(V37_ENDINGS),...Object.keys(V39_ENDINGS),...Object.keys(FOOD_ENDINGS315),...Object.keys(MEDIA_END316)];
+// Registration before profile loading: ONLY campus rewards enter the campus registry.
+const CAMPUS_END317={
+ horrorDawn317:{type:'SIDE END',title:'灯灭以后仍是清晨',prose:'真实恐怖模式的一天结束了。你辨清三次走廊异象，没有把每一声呼吸都当成自己的。\n关上教室的门，钟终于朝同一个方向走。',hint:'全日保持真实恐怖模式，化解至少三次异象后成功离校。'},
+ quietCamera317:{type:'SIDE END',title:'未响的快门',prose:'没有广播告诉你镜头什么时候朝向这边。你自己抬头，读懂了讲台上的动作。\n班级群留下的是课本，不是臆测。',hint:'同一天主动观察讲台识别至少两次拍摄，两次均未留下低头影像，再成功离校。'},
+ lostSignal317:{type:'BAD END',title:'呼吸占满了走廊',prose:'你把每一次异响都留到了最后。黑板上空白的名字逐个亮起，而你再也分不清哪一声呼吸属于自己。\n可以从最近的检查点重新开始。',hint:'真实恐怖模式中心神压力到达100。'}
+};
+const CAMPUS_ACH317=[
+ {id:'horrorRead317',name:'没有名字的脚步',desc:'在真实恐怖模式中实际化解一次异象。',group:'挑战',target:1},
+ {id:'horrorThree317',name:'辨认真正的声音',desc:'同日化解三次异象。',group:'挑战',target:3},
+ {id:'horrorClear317',name:'不借一封情书',desc:'全日保持真实恐怖模式后成功离校。',group:'挑战',target:1},
+ {id:'cameraOwn317',name:'抬头才看得到',desc:'没有体委提醒时，主动观察讲台识别一次家长举机。',group:'课堂',target:1},
+ {id:'cameraTwo317',name:'不等提示音',desc:'同日两次主动识别拍摄并让最终影像没有低头。',group:'挑战',target:2},
+ {id:'cameraAlly317',name:'十之一的提醒',desc:'实际收到一次清醒体委给出的10%拍摄提醒。',group:'课堂',target:1}
+];
+
+    const ENDING_IDS = ['true','phone','math','loop','cfop','unseen','falsebell','homework','companion','truth','gatekeeper','mirror','chessMaster','officeTruth','parentHome','sports','bagPhone','officeLoop','doorRoster','lastStone','alliesTogether','calmExit','chessDraw','weekClear','homeSafe','homeCaught',...Object.keys(V34_ENDINGS),...Object.keys(V37_ENDINGS),...Object.keys(V39_ENDINGS),...Object.keys(FOOD_ENDINGS315),...Object.keys(MEDIA_END316),...Object.keys(CAMPUS_END317)];
     const ENDING_COUNT = ENDING_IDS.length;
     // Difficulty changes mechanics, never the lesson calendar. A run owns its
     // difficulty; changing the menu selection cannot alter an existing save.
@@ -5101,12 +5195,12 @@ const MEDIA_ACH316=[
     const GOD_LIMIT = 180;
     const CLEAR_ENDINGS = ['true','cfop','unseen','homework','companion','truth','chessMaster','officeTruth','parentHome','sports','alliesTogether','calmExit','chessDraw','weekClear',...Object.keys(V34_ENDINGS),...Object.keys(V37_ENDINGS).filter(id=>id!=='realEmpty37'),...Object.keys(V39_ENDINGS).filter(id=>id!=='deepArchive39'),...Object.keys(FOOD_ENDINGS315).filter(id=>id!=='classShare315')];
     const ACHIEVEMENT_IDS = ['lesson1','lessons6','hide1','hide10','reflex','note1','note5','nap30','cube100','work100','clues6','answers10','cleanClear','quickClear','noPhone',
-        ...DIFFICULTY_IDS.filter(x=>x!=='god').map(x=>'clear_'+x),'god60','god120','god180','allEndings','chessFirst','chessWin','chessWin3','talkOnce','officeVisit','officeBoundary','rearSpot3','rearAvoid3','meals2','safeBag','pe3','evening1','parentWalk','parentDesk','wholeDay','allCampus','rapidClean','rapidTen','rapidSix','stillThree','bothReflex','wangNotice','liNotice','allyHelp3','allyBoth','chessMove','chessCastle','chessPromotion','chessEnPassant','chessDrawOnce','all31','standBack','randomEleven','doubleLesson','biologyExercise','weekFirst','weekThree','weekSeven','weekQuiet','eyesOpen','homeFirst','homeHide3','homePerfect','weekNights',...V34_ACHIEVEMENTS.map(x=>x.id),...V37_ACHIEVEMENTS.map(x=>x.id),...V39_ACHIEVEMENTS.map(x=>x.id),...ENDING_IDS.map(x=>'end_'+x),...FOOD_ACH315.map(a=>a.id),...MEDIA_ACH316.map(a=>a.id)];
+        ...DIFFICULTY_IDS.filter(x=>x!=='god').map(x=>'clear_'+x),'god60','god120','god180','allEndings','chessFirst','chessWin','chessWin3','talkOnce','officeVisit','officeBoundary','rearSpot3','rearAvoid3','meals2','safeBag','pe3','evening1','parentWalk','parentDesk','wholeDay','allCampus','rapidClean','rapidTen','rapidSix','stillThree','bothReflex','wangNotice','liNotice','allyHelp3','allyBoth','chessMove','chessCastle','chessPromotion','chessEnPassant','chessDrawOnce','all31','standBack','randomEleven','doubleLesson','biologyExercise','weekFirst','weekThree','weekSeven','weekQuiet','eyesOpen','homeFirst','homeHide3','homePerfect','weekNights',...V34_ACHIEVEMENTS.map(x=>x.id),...V37_ACHIEVEMENTS.map(x=>x.id),...V39_ACHIEVEMENTS.map(x=>x.id),...ENDING_IDS.map(x=>'end_'+x),...FOOD_ACH315.map(a=>a.id),...MEDIA_ACH316.map(a=>a.id),...CAMPUS_ACH317.map(a=>a.id)];
     function rules(st=S) { return DIFFICULTIES[st?.difficulty] || DIFFICULTIES.normal; }
     const testMode = new URLSearchParams(location.search).get('test') === '1';
     const persistenceEnabled = !testMode || new URLSearchParams(location.search).get('persist') === '1';
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const DEFAULT_SAVE = { version: 1, endings: [], bestSurvival: 0, bestCube: 0, bestHomework: 0, attempts: 0, wins: 0, phoneRestricted: false, achievements: {}, achievementProgress: {}, realRuns37:{}, deepTrialRuns39:{}, godBest: 0, settings: { classSpeed:1,language:'zh-CN',mobileMode:false,studyMode:false,rapidBoost:false,wangRoute:false, difficulty: 'normal', realMode:false, dialogueVoice:false, fearMode:false, pengRoute:false, volume: .35, flicker: !reduced, shake: !reduced, textSpeed: 36, auto: false, quick: false, endingHints: false } };
+    const DEFAULT_SAVE = { version: 1, endings: [], bestSurvival: 0, bestCube: 0, bestHomework: 0, attempts: 0, wins: 0, phoneRestricted: false, achievements: {}, achievementProgress: {}, realRuns37:{}, deepTrialRuns39:{}, godBest: 0, settings: { trueHorror:false,nightWatch:false,cloudVoice:false,voiceRate:1, classSpeed:1,language:'zh-CN',mobileMode:false,studyMode:false,rapidBoost:false,wangRoute:false, difficulty: 'normal', realMode:false, dialogueVoice:false, fearMode:false, pengRoute:false, volume: .35, flicker: !reduced, shake: !reduced, textSpeed: 36, auto: false, quick: false, endingHints: false } };
     let storageOK = true;
     function normalizeProfile(raw) {
         const out = clone(DEFAULT_SAVE);
@@ -5128,14 +5222,16 @@ const MEDIA_ACH316=[
             if(typeof v==='number'&&Number.isFinite(v)&&v>=0&&v<=1e7) out.achievementProgress[id]=v;
         }
         if(DIFFICULTY_IDS.includes(raw.settings?.difficulty)) out.settings.difficulty=raw.settings.difficulty;
-        for (const k of ['flicker', 'shake', 'auto', 'quick', 'endingHints', 'fearMode', 'pengRoute', 'realMode', 'dialogueVoice','studyMode','mobileMode','wangRoute','rapidBoost'])
+        for (const k of ['flicker', 'shake', 'auto', 'quick', 'endingHints', 'fearMode', 'pengRoute', 'realMode', 'dialogueVoice','studyMode','mobileMode','wangRoute','rapidBoost','trueHorror','nightWatch','cloudVoice'])
             if (typeof raw.settings?.[k] === 'boolean') out.settings[k] = raw.settings[k];
-        if(['zh-CN','zh-TW','en','ja'].includes(raw.settings?.language))out.settings.language=raw.settings.language;
+        if(['zh-CN','zh-TW','en','ja','fr','ru','is','ar'].includes(raw.settings?.language))out.settings.language=raw.settings.language;
         for(const [id,x] of Object.entries(raw.deepTrialRuns39||{}).slice(-100))if(/^[A-Za-z0-9_.:-]{1,120}$/.test(id)&&!['__proto__','constructor','prototype'].includes(id)&&x?.failed===true)out.deepTrialRuns39[id]={failed:true};
         const vol = Number(raw.settings?.volume ?? .35);
         out.settings.volume = Number.isFinite(vol) ? clamp(vol, 0, 1) : .35;
         out.settings.textSpeed = clamp(Number(raw.settings?.textSpeed) || 36, 12, 90);
         out.settings.classSpeed = Number.isFinite(Number(raw.settings?.classSpeed)) ? clamp(Number(raw.settings.classSpeed), .25, 4) : 1;
+        out.settings.voiceRate=Number.isFinite(Number(raw.settings?.voiceRate))?clamp(Number(raw.settings.voiceRate),.55,1.5):1;
+        if(out.settings.trueHorror){out.settings.pengRoute=false;out.settings.wangRoute=false;}
         return out;
     }
     function loadSave() {
@@ -7922,7 +8018,8 @@ const MEDIA_ACH316=[
     Object.assign(ENDINGS,V37_ENDINGS);
     Object.assign(ENDINGS,FOOD_ENDINGS315);
     Object.assign(ENDINGS,MEDIA_END316);
-    const ACHIEVEMENTS = [...MEDIA_ACH316,...FOOD_ACH315,
+    Object.assign(ENDINGS,CAMPUS_END317);
+    const ACHIEVEMENTS = [...CAMPUS_ACH317,...MEDIA_ACH316,...FOOD_ACH315,
         {id:'lesson1',name:'第一声真铃',desc:'在一个周目中完成第一节课。',group:'课堂',target:1},
         {id:'lessons6',name:'六科归档',desc:'在一个周目中完成原有六门学科；晚自习另有成就。',group:'课堂',target:6},
         {id:'hide1',name:'手比影子快',desc:'成功完成一次正式快速反应；教学演练不计。',group:'课堂',target:1},
@@ -12432,7 +12529,7 @@ const MEDIA_ACH316=[
     // v3.7 — independent beginner course. Practices never call game actions,
     // consume the game's random stream, unlock achievements, or modify snapshots.
     const TUTORIAL_KEY36='last-class-tutorial-v1';
-    const TUTORIAL_LESSONS36=Object.freeze([{id:'phone316',label:'手机、班级群与洗澡',title:'看清一张照片，也听完一段解释。'},{id:'food315',label:'吃饭、拖堂与课堂零食',title:'先照顾肚子，再盯住后门。'},{id:'battle313',label:'四组魔方与独立对战',title:'两种节奏，不共用一份进度。'},{id:'pace312',label:'课时、卫生与设置',title:'分清课时进度与反应倒计时。'},
+    const TUTORIAL_LESSONS36=Object.freeze([{id:'expansion317',label:'夜巡、战术与无声镜头',title:'不同的夜晚，分别保存。'},{id:'phone316',label:'手机、班级群与洗澡',title:'看清一张照片，也听完一段解释。'},{id:'food315',label:'吃饭、拖堂与课堂零食',title:'先照顾肚子，再盯住后门。'},{id:'battle313',label:'四组魔方与独立对战',title:'两种节奏，不共用一份进度。'},{id:'pace312',label:'课时、卫生与设置',title:'分清课时进度与反应倒计时。'},
         {id:'start',label:'先知道目标',title:'第一天，先学会安全离开。'},
         {id:'desk',label:'认清课桌与数值',title:'先看数值，再决定做什么。',practice:'desk'},
         {id:'rapid',label:'快速反应：该动',title:'危险靠近时，完成隐藏。',practice:'rapid'},
@@ -13524,9 +13621,9 @@ const CATALOG310={"exact":{"棋局FEN无效":["Invalid chess FEN","チェスのF
  * Display text never writes back to question answers, scripts, saves or game rules.
  * All translations are compiled offline from the accompanying authored catalogue.
  */
-const LOCALES310=['zh-CN','zh-TW','en','ja'];
-const NATIVE310={'zh-CN':'简体中文','zh-TW':'繁體中文',en:'English',ja:'日本語'};
-const BCP310={'zh-CN':'zh-CN','zh-TW':'zh-TW',en:'en-US',ja:'ja-JP'};
+const LOCALES310=['zh-CN','zh-TW','en','ja','fr','ru','is','ar'];
+const NATIVE310={'zh-CN':'简体中文','zh-TW':'繁體中文',en:'English',ja:'日本語',fr:'Français',ru:'Русский',is:'Íslenska',ar:'العربية'};
+const BCP310={'zh-CN':'zh-CN','zh-TW':'zh-TW',en:'en-US',ja:'ja-JP',fr:'fr-FR',ru:'ru-RU',is:'is-IS',ar:'ar-SA'};
 const HAN310=/[\u3400-\u9fff]/;
 const missing310=new Set(),translatedCache310=new Map();
 const textRecords310=new WeakMap(),parentTextRecords310=new WeakMap(),attrRecords310=new WeakMap();
@@ -13610,7 +13707,7 @@ function localizeAll310(){
  if(previousLocale310!==null&&previousLocale310!==lang){stopSpeech37();}
  previousLocale310=lang;
  localizeRoot310(document.body);
- document.title=translate310('高二（2）班：最后一节课',lang)+' · v3.16';
+ document.title=translate310('高二（2）班：最后一节课',lang)+' · v3.17';
  document.body.classList.toggle('english-lesson310',forcedEnglish310());
 }
 // Always translate a complete line before revealing it. Canonical script positions survive.
@@ -13780,7 +13877,7 @@ validateReflexChallenge=function(st,c,num){
  assertValid(Number.isInteger(c.allowance)&&c.allowance>=0&&c.allowance<=1&&Number.isInteger(c.slips)&&c.slips>=0&&c.slips<=c.allowance&&num(c.lastMotionAt,-100,200),'条件反射容错无效');
  assertValid(num(c.jitter311,2,8)&&(c.motionAnchor===null||(c.motionAnchor&&num(c.motionAnchor.x,-1e7,1e7)&&num(c.motionAnchor.y,-1e7,1e7))),'静止指针无效');
 };
-const SYSTEM311='.utility,#modal,#resumeBanner,[data-reflex-pause],[data-reflex-fullscreen],[data-tutorial-open36],.phone-header39,[data-u39="pause"],[data-u39="settings"],[data-u39="saves"],[data-u39="tutorial"],[data-u39="fullscreen"],.question-tools38';
+const SYSTEM311='#arcade317,.utility,#modal,#resumeBanner,[data-reflex-pause],[data-reflex-fullscreen],[data-tutorial-open36],.phone-header39,[data-u39="pause"],[data-u39="settings"],[data-u39="saves"],[data-u39="tutorial"],[data-u39="fullscreen"],.question-tools38';
 function meaningfulKey311(e){return !(e.repeat||e.isComposing||e.ctrlKey||e.metaKey||e.altKey||['Escape','Alt','Control','Meta','Shift','CapsLock','Tab','F1','F11','F12'].includes(e.key)||['KeyN','KeyM'].includes(normalizedKeyCode(e)));}
 function stillMistake311(){const c=challenge;if(c?.type!=='freeze'||c.stillVersion!==2||modal||script||recoveryGrace>0||c.elapsed<c.grace)return;
  if(c.elapsed-c.lastMotionAt<.18)return;c.lastMotionAt=c.elapsed;
@@ -14176,7 +14273,7 @@ function refreshSettingsValues312(){
 }
 renderModal=function(...args){syncSystem312();
  if(modal?.kind!=='settings')return B312.renderModal(...args);
- stopSpeech37();$('modalTitle').textContent='设置';
+ $('modalTitle').textContent='设置';
  const lang=effectiveLocale310();
  if(!$('settingsPanel312')||settingsLocale312!==lang){
   const body=$('modalBody'),scroll=body.scrollTop,opened=[...body.querySelectorAll('details')].map(d=>d.open);
@@ -15651,6 +15748,963 @@ document.addEventListener('click',e=>{
  phoneKey316='';renderPhone(true);requestAutoSave();
 },true);
 
+/* Authored eight-language UI catalogue. Legacy entries not yet translated to the
+ * four added languages retain an explicitly labelled English fallback. */
+const TEXT317={};const SOURCE317=new Map();
+const NEW_LANG317=['fr','ru','is','ar'];
+const EN_EXTRA317={fr:{},ru:{},is:{},ar:{}};
+function addText317(line){const a=line.split('|');if(a.length!==8)throw Error('Locale row '+a[0]+' has '+a.length+' columns');
+ const [id,zh,en,ja,fr,ru,is,ar]=a;TEXT317[id]={'zh-CN':zh,'zh-TW':traditional310(zh),en,ja,fr,ru,is,ar};
+ if(!SOURCE317.has(norm310(zh)))SOURCE317.set(norm310(zh),TEXT317[id]);
+ if(!CATALOG310.exact[zh])CATALOG310.exact[zh]=[en,ja,traditional310(zh)];for(const lang of NEW_LANG317)EN_EXTRA317[lang][en]=TEXT317[id][lang];}
+const ROWS317=`
+newEdition|夜巡与异星|Night Watch & Starfall|夜警と星の落下|Veille de nuit et chute stellaire|Ночная вахта и звездопад|Næturvakt og stjörnufall|الحراسة الليلية وسقوط النجوم
+languages|八语与语音|Eight languages & speech|8言語と音声|Huit langues et synthèse vocale|Восемь языков и озвучка|Átta tungumál og tal|ثماني لغات وصوت
+language|显示语言|Display language|表示言語|Langue d’affichage|Язык интерфейса|Tungumál viðmóts|لغة العرض
+voice|对话语音播报|Dialogue narration|会話の読み上げ|Lecture des dialogues|Озвучка диалогов|Upplestur samtala|قراءة الحوارات
+voiceHelp|默认关闭。点击开启或试听以授权播放；保留字幕。|Off by default. Enable or preview with a click to activate playback; subtitles remain.|初期設定はオフ。クリックで有効化または試聴します。字幕は残ります。|Désactivée par défaut. Cliquez pour activer ou tester la lecture ; les sous-titres restent visibles.|По умолчанию выключено. Нажмите включение или пробу для запуска; субтитры остаются.|Sjálfgefið slökkt. Smelltu til að virkja eða prófa; skjátexti helst sýnilegur.|معطلة افتراضياً. انقر للتفعيل أو التجربة؛ تبقى الترجمة النصية ظاهرة.
+cloudVoice|允许浏览器联网声线|Allow browser network voices|ブラウザーのオンライン音声を許可|Autoriser les voix en ligne du navigateur|Разрешить сетевые голоса браузера|Leyfa netraddir vafrans|السماح بأصوات المتصفح الشبكية
+cloudHelp|默认关闭。仅本机无声线时使用；文本可能由浏览器交给语音服务。|Off by default. Network voices may send dialogue text to the browser's speech provider.|初期設定はオフ。オンライン音声は会話文を音声サービスに送信する場合があります。|Désactivé par défaut. Les voix en ligne peuvent transmettre le texte au fournisseur vocal du navigateur.|По умолчанию выключено. Сетевой голос может передавать текст поставщику синтеза речи браузера.|Sjálfgefið slökkt. Netraddir kunna að senda texta til talþjónustu vafrans.|معطل افتراضياً. قد ترسل الأصوات الشبكية نص الحوار إلى مزود خدمة الكلام في المتصفح.
+rate|朗读速度|Narration speed|読み上げ速度|Vitesse de lecture|Скорость речи|Upplestrarhraði|سرعة القراءة
+preview|试听|Preview voice|試聴|Écouter|Прослушать|Prófa rödd|تجربة الصوت
+voiceSample|你好，我是DeepShawn。先观察，再作出决定。|Hello, I am DeepShawn. Observe first, then decide.|こんにちは、DeepShawnです。まず観察してから決めましょう。|Bonjour, je suis DeepShawn. Observez d’abord, puis décidez.|Здравствуйте, я DeepShawn. Сначала наблюдайте, затем решайте.|Halló, ég heiti DeepShawn. Fylgstu fyrst með og taktu síðan ákvörðun.|مرحباً، أنا DeepShawn. راقب أولاً، ثم اتخذ قرارك.
+voiceReady|声线可用|Voice available|音声あり|Voix disponible|Голос доступен|Rödd tiltæk|الصوت متاح
+voiceMissing|没有匹配声线，请安装系统语音包|No matching voice. Install a system voice pack.|対応音声がありません。端末の音声パックを導入してください。|Aucune voix correspondante. Installez un pack vocal système.|Подходящего голоса нет. Установите языковой голосовой пакет.|Engin samsvarandi rödd. Settu upp talpakka í stýrikerfinu.|لا يوجد صوت مطابق. ثبّت حزمة صوت في النظام.
+voiceWait|正在等待声线加载|Waiting for voices to load|音声の読み込み待ち|Chargement des voix en cours|Ожидание загрузки голосов|Bíð eftir að raddir hlaðist|جارٍ انتظار تحميل الأصوات
+voicePlaying|正在朗读|Speaking|読み上げ中|Lecture en cours|Воспроизведение|Les upp|جارٍ القراءة
+voiceStopped|播报已停止|Narration stopped|読み上げ停止|Lecture arrêtée|Озвучка остановлена|Upplestur stöðvaður|توقفت القراءة
+voiceBlocked|播放被阻止，请点击“重试语音”|Playback blocked. Click Retry voice.|再生がブロックされました。「音声を再試行」を押してください。|Lecture bloquée. Cliquez sur Réessayer la voix.|Воспроизведение заблокировано. Нажмите «Повторить голос».|Spilun stöðvuð. Smelltu á Prófa rödd aftur.|تم حظر التشغيل. انقر على إعادة محاولة الصوت.
+voiceUnavailable|浏览器未提供语音功能，文字不受影响|Speech is unavailable; text still works.|音声未対応。テキストは利用できます。|Synthèse vocale indisponible ; le texte reste accessible.|Синтез речи недоступен; текст работает.|Tal er ekki tiltækt; texti virkar áfram.|الكلام غير متاح؛ النص يعمل دون تأثر.
+retryVoice|重试语音|Retry voice|音声を再試行|Réessayer la voix|Повторить голос|Prófa rödd aftur|إعادة محاولة الصوت
+stopVoice|停止朗读|Stop narration|読み上げ停止|Arrêter la lecture|Остановить речь|Stöðva upplestur|إيقاف القراءة
+muted|已静音，请调高音量|Muted. Increase volume.|消音中。音量を上げてください。|Son coupé. Augmentez le volume.|Звук выключен. Увеличьте громкость.|Hljóðlaust. Hækkaðu hljóðstyrk.|الصوت مكتوم. ارفع مستوى الصوت.
+local|本地|Local|端末内|Locale|Локальный|Staðbundin|محلي
+network|联网|Network|オンライン|En ligne|Сетевой|Á netinu|شبكي
+coverage|新语言覆盖说明|New-language coverage|新言語の翻訳範囲|Couverture des nouvelles langues|Охват новых языков|Umfang nýrra tungumála|نطاق اللغات الجديدة
+fallback|部分旧剧情及旧题库保留英文，尚未完成四种新语言的全文翻译。新模式操作、说明与结局已翻译。|Some legacy stories and questions remain in English; full translation into the four new languages is not complete. New-mode controls, instructions and endings are translated.|一部の旧会話と問題は英語です。新4言語の全文訳は未完了です。新モードの操作・説明・結末は翻訳済みです。|Certains anciens récits et questions restent en anglais ; leur traduction intégrale n’est pas terminée. Les commandes, règles et fins des nouveaux modes sont traduites.|Часть старых диалогов и вопросов остаётся на английском; полный перевод на четыре новых языка не завершён. Управление, инструкции и концовки новых режимов переведены.|Sum eldri samtöl og spurningar eru enn á ensku; fullri þýðingu á fjögur nýju málin er ekki lokið. Stýringar, leiðbeiningar og endar nýrra stillinga eru þýdd.|تبقى بعض القصص والأسئلة القديمة بالإنجليزية؛ الترجمة الكاملة إلى اللغات الأربع الجديدة لم تكتمل. تُرجمت عناصر التحكم والتعليمات والنهايات في الأوضاع الجديدة.
+englishFallback|旧文本 · 英文回退|Legacy text · English fallback|旧テキスト・英語表示|Ancien texte · repli en anglais|Старый текст · английский резерв|Eldri texti · enska til vara|نص قديم · عرض إنجليزي بديل
+horror|真实恐怖游戏|True Horror|本格ホラー|Horreur immersive|Настоящий хоррор|Raunverulegur hryllingur|الرعب الحقيقي
+horrorHelp|与真实模式、恐怖画面兼容。开启会关闭两条攻略并取消正在进行的恋爱互动；友情仍保留。关闭后不会自动恢复攻略。|Compatible with Realism and horror visuals. Enabling closes both romance routes and cancels active romance actions; friendship remains. Disabling does not reopen romance.|リアルモードとホラー演出に併用可能。恋愛2ルートと進行中の恋愛行動を停止。友情は維持。オフにしても恋愛は自動復帰しません。|Compatible avec Réalisme et les effets d’horreur. L’activation ferme les deux romances et annule l’action romantique en cours ; l’amitié reste. La désactivation ne les réactive pas.|Совместим с реализмом и визуальным хоррором. Включение отключает оба романа и текущие романтические действия; дружба остаётся. Выключение не возвращает романы автоматически.|Virkar með raunsæi og hryllingsútliti. Slekkur á báðum ástarleiðum og hættir við virkar ástarathafnir; vinátta helst. Þær opnast ekki sjálfkrafa aftur.|متوافق مع الواقعية والمؤثرات المرعبة. يوقف مساري العلاقات والتفاعلات العاطفية الجارية؛ تبقى الصداقة. لا تعود العلاقات تلقائياً عند إيقافه.
+horrorRules|异象会积累心神压力。辨认脚步并收好手机，或看清讲台与后门。压力达到100结束本日。暂停时不计时。|Anomalies build strain. Put the phone away for footsteps, or inspect the podium and rear door. At 100 strain the day ends. Pausing stops its clock.|異変で心神圧力が増加。足音にはスマホをしまい、教壇や後ろ扉を確認。100で当日終了。ポーズ中は停止。|Les anomalies augmentent la tension. Rangez le téléphone face aux pas ou examinez l’estrade et la porte arrière. À 100, la journée s’arrête. La pause arrête le temps.|Аномалии повышают напряжение. При шагах уберите телефон либо осмотрите кафедру и заднюю дверь. При 100 день заканчивается. Пауза останавливает время.|Frávik auka álag. Leggðu símann frá þér við fótatak eða skoðaðu kennarapúlt og afturdyr. Við 100 endar dagurinn. Tíminn stöðvast í pásu.|تزيد الظواهر الغريبة الضغط النفسي. أخفِ الهاتف عند سماع الخطوات أو افحص المنصة والباب الخلفي. ينتهي اليوم عند 100، وتتوقف الساعة أثناء الإيقاف المؤقت.
+strain|心神压力|Strain|心神圧力|Tension|Напряжение|Álag|الضغط النفسي
+blackout|灯灭了一盏。收好手机，听清三秒脚步。|A light goes out. Put the phone away and listen for three seconds.|照明が一つ消えた。スマホをしまい、3秒足音を聞く。|Une lampe s’éteint. Rangez le téléphone et écoutez trois secondes.|Лампа погасла. Уберите телефон и слушайте шаги три секунды.|Ljós slokknar. Leggðu símann frá þér og hlustaðu í þrjár sekúndur.|انطفأ مصباح. أخفِ الهاتف واستمع للخطوات ثلاث ثوانٍ.
+reflection|黑板上多了一道影子。观察讲台两秒，辨认它。|A shadow appears on the board. Inspect the podium for two seconds.|黒板に影が増えた。教壇を2秒見て確かめる。|Une ombre apparaît au tableau. Observez l’estrade deux secondes.|На доске появилась тень. Осмотрите кафедру две секунды.|Skuggi birtist á töflunni. Skoðaðu kennarapúltið í tvær sekúndur.|ظهر ظل على السبورة. راقب المنصة ثانيتين لتتعرف عليه.
+rearEcho|后窗的倒影慢了半拍。观察后门两秒。|The rear window reflection lags. Watch the rear door for two seconds.|後ろ窓の反射が遅れる。後ろ扉を2秒確認。|Le reflet de la fenêtre arrière tarde. Observez la porte arrière deux secondes.|Отражение в заднем окне запаздывает. Наблюдайте за задней дверью две секунды.|Spegilmynd afturrúðunnar er á eftir. Horfðu á afturdyrnar í tvær sekúndur.|تأخر انعكاس النافذة الخلفية. راقب الباب الخلفي ثانيتين.
+resolved|异象退去了|Anomaly resolved|異変が消えた|Anomalie dissipée|Аномалия исчезла|Frávikið hvarf|زالت الظاهرة
+missed|你没来得及分辨那道影子|You did not identify the shadow in time|影の確認が間に合わなかった|Vous n’avez pas identifié l’ombre à temps|Вы не успели распознать тень|Þú greindir ekki skuggann í tæka tíð|لم تتعرف على الظل في الوقت المناسب
+routeLocked|真实恐怖模式中，感情攻略关闭|Romance is off in True Horror|本格ホラーでは恋愛ルート停止|Romances désactivées en Horreur immersive|Романы отключены в настоящем хорроре|Ástarleiðir eru lokaðar í hryllingi|العلاقات العاطفية معطلة في الرعب الحقيقي
+silentCamera|家长拍摄不再弹出系统预警。主动观察讲台才能辨认举机；普通难度举机1秒。清醒体委每次有10%概率提醒，睡眠时不提醒。|Parent filming has no system alert. Inspect the podium to spot the raised phone; Normal gives one second. An awake sports rep has a 10% chance per event to warn you; a sleeping one cannot.|保護者の撮影にシステム警告はありません。教壇の観察で挙動を確認。普通は1秒。起きた体育委員は各撮影10%で知らせ、睡眠中は知らせません。|Aucune alerte système lors des prises de vue. Regardez l’estrade pour repérer le téléphone ; une seconde en Normal. La déléguée éveillée prévient dans 10 % des cas, jamais en dormant.|Съёмка без системного предупреждения. Смотрите на кафедру, чтобы заметить телефон; на обычном уровне — одна секунда. Бодрствующая староста по спорту предупреждает с шансом 10%, спящая — нет.|Engin kerfisviðvörun fylgir myndatöku. Skoðaðu púltið til að sjá símann; ein sekúnda á venjulegu stigi. Vakandi íþróttafulltrúi varar við með 10% líkum, sofandi aldrei.|لا يظهر تنبيه نظام عند التصوير. راقب المنصة لترى رفع الهاتف؛ المهلة ثانية في العادي. تنبهك ممثلة الرياضة المستيقظة باحتمال 10% لكل حدث، ولا تنبه أثناء النوم.
+lookPhone|讲台上的家长正抬起手机|The parent at the podium is raising a phone|教壇の保護者がスマホを上げている|Le parent à l’estrade lève son téléphone|Родитель у кафедры поднимает телефон|Foreldrið við púltið lyftir símanum|ولي الأمر على المنصة يرفع الهاتف
+allyPhoto|王梓锐：看讲台，手机举起来了。|Wang Zirui: Look at the podium. A phone is going up.|王梓鋭：教壇を見て。スマホを上げてる。|Wang Zirui : Regarde l’estrade, le téléphone se lève.|Ван Цзыжуй: Посмотри на кафедру, поднимают телефон.|Wang Zirui: Sjáðu púltið. Sími er að fara á loft.|وانغ زيروي: انظر إلى المنصة، الهاتف يرتفع.
+nightToggle|五夜守夜模式|Five-night watch mode|五夜警備モード|Mode veille de cinq nuits|Режим пяти ночных вахт|Fimm nátta vakt|وضع حراسة خمس ليالٍ
+nightToggleHelp|默认关闭。开启后在主菜单进入独立守夜，不改变校园进度。|Off by default. Enable its separate menu entry; campus progress is unchanged.|初期設定オフ。専用入口から遊び、学校の進行は変わりません。|Désactivé par défaut. Active une entrée séparée ; la progression scolaire ne change pas.|По умолчанию выключен. Отдельный вход из меню; школьный прогресс не меняется.|Sjálfgefið slökkt. Virkjaðu sérstakan valmyndarinngang; skólaframvinda breytist ekki.|معطل افتراضياً. يفتح مدخلاً مستقلاً في القائمة؛ لا تتغير سجلات المدرسة.
+nightTitle|旧楼五夜|Five Nights in the Old Wing|旧校舎の五夜|Cinq nuits dans l’ancienne aile|Пять ночей в старом корпусе|Fimm nætur í gamla álmunni|خمس ليالٍ في الجناح القديم
+nightLead|监控、门灯与有限电力。熬过00:00—06:00，连续守住五夜。|Cameras, door lights and limited power. Survive midnight to 06:00 for five nights.|監視カメラ、ドア灯、限られた電力。午前0時から6時まで5夜を守る。|Caméras, éclairages et énergie limitée. Survivez de minuit à 6 h pendant cinq nuits.|Камеры, фонари и ограниченная энергия. Продержитесь с полуночи до 06:00 пять ночей.|Myndavélar, dyraljós og takmörkuð orka. Lifðu frá miðnætti til 06:00 í fimm nætur.|كاميرات وأضواء أبواب وطاقة محدودة. اصمد من منتصف الليل إلى السادسة لخمس ليالٍ.
+nightOriginal|以监控生存玩法为灵感；原创旧楼、机械海胆、星客与钟面人。不使用原作角色或素材。|Surveillance-survival inspired; original wing, mechanical urchin, alien and Clockface. No original franchise characters or assets.|監視サバイバルに着想。旧校舎、機械ウニ、星の客、時計面はオリジナル。既存作品のキャラクターや素材は不使用。|Inspiré de la survie par surveillance : aile, oursin mécanique, visiteur stellaire et Cadran originaux. Aucun personnage ni élément de la franchise d’origine.|Вдохновлён выживанием с камерами. Корпус, механический ёж, пришелец и Циферблат оригинальны; персонажи и ресурсы чужой франшизы не используются.|Innblástur frá lifun með eftirliti. Álman, vélræni ígulkerinn, geimveran og Klukkuskífan eru frumsköpun. Engar persónur eða eignir annarrar seríu.|مستوحى من البقاء بالمراقبة؛ الجناح والقنفذ الآلي والفضائي ووجه الساعة أصلية، بلا شخصيات أو أصول السلسلة الأصلية.
+nightRules|机械海胆从左门靠近，外星人从右门靠近；先用灯确认再关门。钟面人在监控室积蓄，查看它或用诱饵减缓。长时间关门会耗尽电力。|The urchin approaches left, the alien right. Check with a light, then shut that door. Clockface builds pressure in the camera room; watch it or lure it back. Keeping doors shut drains power.|機械ウニは左、星の客は右。灯りで確認してから閉める。時計面は監視室で圧力をため、カメラか誘導音で抑える。閉め続けると電力が尽きる。|L’oursin approche à gauche, l’alien à droite. Vérifiez avec la lumière, puis fermez. Cadran monte en pression : surveillez-le ou attirez-le en arrière. Des portes toujours fermées épuisent l’énergie.|Ёж идёт слева, пришелец справа. Сначала проверьте фонарём, затем закройте дверь. Циферблат набирает силу в камере: наблюдайте или отвлекайте. Постоянно закрытые двери истощают заряд.|Ígulkerinn kemur að vinstri, geimveran að hægri. Athugaðu með ljósi og lokaðu svo. Klukkuskífan safnar þrýstingi; fylgstu með henni eða lokkaðu hana frá. Lokaðar dyr tæma orkuna.|يقترب القنفذ من اليسار والفضائي من اليمين. تحقق بالضوء ثم أغلق الباب. يتصاعد ضغط وجه الساعة؛ راقبه أو استخدم الطعم. إغلاق الأبواب طويلاً يستنزف الطاقة.
+nightTime|每夜150秒有效时间。每夜入口为检查点，暂停和离线不推进。|Each night is 150 active seconds. Each entrance is a checkpoint; pausing and offline time do not advance it.|各夜は有効時間150秒。夜の入口で記録。ポーズ・オフライン時間は進みません。|Chaque nuit dure 150 secondes actives. Point de reprise au début ; pause et absence ne font pas avancer le temps.|Ночь длится 150 активных секунд. Начало — контрольная точка; пауза и офлайн не продвигают время.|Hver nótt varir 150 virkar sekúndur. Upphaf hennar er vistunarstaður; hlé og ótengdur tími telja ekki.|كل ليلة 150 ثانية فعلية. بدايتها نقطة حفظ؛ لا يتقدم الوقت أثناء الإيقاف أو انقطاع الصفحة.
+start|开始|Start|開始|Commencer|Начать|Byrja|ابدأ
+continue|继续记录|Continue save|記録を続ける|Reprendre|Продолжить|Halda áfram|متابعة الحفظ
+newRun|新开一局|New run|新しく開始|Nouvelle partie|Новая игра|Ný tilraun|جولة جديدة
+resume|继续游戏|Resume|再開|Reprendre la partie|Возобновить|Halda áfram|استئناف
+pause|暂停|Pause|一時停止|Pause|Пауза|Hlé|إيقاف مؤقت
+settings|设置|Settings|設定|Paramètres|Настройки|Stillingar|الإعدادات
+close|关闭|Close|閉じる|Fermer|Закрыть|Loka|إغلاق
+menu|主菜单|Main menu|メインメニュー|Menu principal|Главное меню|Aðalvalmynd|القائمة الرئيسية
+back|返回|Back|戻る|Retour|Назад|Til baka|رجوع
+fullscreen|全屏|Full screen|全画面|Plein écran|Полный экран|Allur skjár|ملء الشاشة
+help|玩法说明|How to play|遊び方|Comment jouer|Как играть|Leiðbeiningar|كيفية اللعب
+archives|独立模式档案|Independent-mode archives|独立モード記録|Archives des modes indépendants|Архивы отдельных режимов|Skrár sjálfstæðra stillinga|أرشيف الأوضاع المستقلة
+medals|勋章|Medals|勲章|Médailles|Медали|Orður|الأوسمة
+endings|结局|Endings|結末|Fins|Концовки|Endar|النهايات
+campus|校园主线|Campus story|学校の物語|Histoire scolaire|Школьная история|Skólasagan|قصة المدرسة
+nightArchive|五夜守夜档案|Night-watch archive|五夜警備記録|Archives de veille|Архив ночной вахты|Næturvaktarskrá|أرشيف الحراسة الليلية
+battleArchive|异星对战档案|Starfall battle archive|星客対戦記録|Archives du combat stellaire|Архив звёздной битвы|Stjörnubardagaskrá|أرشيف معركة النجوم
+independent|进度、结局和勋章独立保存，不计入校园毕业或神级封存试炼。|Progress, endings and medals are separate. They never count as campus graduation or sealed trials.|進行・結末・勲章は別記録。学校卒業や封印試練には数えません。|Progression, fins et médailles séparées. Ne comptent jamais pour la remise de diplôme ni les épreuves scellées.|Прогресс, концовки и медали отдельные. Они не засчитываются как школьный выпуск или запечатанные испытания.|Framvinda, endar og orður vistast sér. Þau telja ekki sem skólaútskrift eða innsigluð próf.|تُحفظ التقدمات والنهايات والأوسمة منفصلة، ولا تُحسب تخرجاً مدرسياً أو تجارب مختومة.
+export|导出本模式备份|Export this mode|このモードを出力|Exporter ce mode|Экспорт режима|Flytja út þessa stillingu|تصدير هذا الوضع
+import|导入本模式备份|Import this mode|このモードを読込|Importer ce mode|Импорт режима|Flytja inn þessa stillingu|استيراد هذا الوضع
+saved|已自动保存|Autosaved|自動保存済み|Sauvegarde automatique|Автосохранение|Sjálfvirkt vistað|حُفظ تلقائياً
+saveError|无法保存，请导出备份|Cannot save; export a backup|保存できません。出力してください|Échec de sauvegarde ; exportez une copie|Не удалось сохранить; экспортируйте копию|Ekki tókst að vista; flyttu út afrit|تعذر الحفظ؛ صدّر نسخة احتياطية
+invalidSave|备份无效或属于其他模式|Invalid backup or different mode|無効な記録、または別モードです|Copie invalide ou autre mode|Неверная копия или другой режим|Ógilt afrit eða önnur stilling|نسخة غير صالحة أو تخص وضعاً آخر
+replace|将替换本模式的进度。继续？|Replace this mode's progress? |このモードの進行を置き換えますか？|Remplacer la progression de ce mode ?|Заменить прогресс этого режима?|Skipta út framvindu þessarar stillingar?|هل تريد استبدال تقدم هذا الوضع؟
+checkpoint|从检查点重试|Retry checkpoint|チェックポイントから再試行|Reprendre au point de contrôle|Повторить с контрольной точки|Reyna aftur frá vistunarstað|إعادة المحاولة من نقطة الحفظ
+nextNight|开始下一夜|Begin next night|次の夜へ|Commencer la nuit suivante|Начать следующую ночь|Hefja næstu nótt|بدء الليلة التالية
+night|夜次|Night|夜|Nuit|Ночь|Nótt|الليلة
+power|电力|Power|電力|Énergie|Энергия|Orka|الطاقة
+leftDoor|左门|Left door|左ドア|Porte gauche|Левая дверь|Vinstri dyr|الباب الأيسر
+rightDoor|右门|Right door|右ドア|Porte droite|Правая дверь|Hægri dyr|الباب الأيمن
+leftLight|左灯|Left light|左ライト|Lampe gauche|Левый фонарь|Vinstra ljós|الضوء الأيسر
+rightLight|右灯|Right light|右ライト|Lampe droite|Правый фонарь|Hægra ljós|الضوء الأيمن
+camera|监控|Cameras|監視カメラ|Caméras|Камеры|Myndavélar|الكاميرات
+open|开启|Open|開く|Ouvrir|Открыть|Opna|فتح
+shut|关上|Shut|閉める|Fermer|Закрыть|Loka|إغلاق
+on|开启|On|オン|Activé|Включено|Kveikt|مفعل
+off|关闭|Off|オフ|Désactivé|Выключено|Slökkt|معطل
+cam0|入口大厅|Entrance hall|玄関ホール|Hall d’entrée|Вестибюль|Anddyri|بهو المدخل
+cam1|左侧走廊|Left corridor|左廊下|Couloir gauche|Левый коридор|Vinstri gangur|الممر الأيسر
+cam2|右侧走廊|Right corridor|右廊下|Couloir droit|Правый коридор|Hægri gangur|الممر الأيمن
+cam3|废弃广播室|Abandoned radio room|廃放送室|Ancienne salle radio|Заброшенная радиорубка|Yfirgefið útvarpsherbergi|غرفة البث المهجورة
+lure|声音诱饵|Audio lure|音声誘導|Leurre sonore|Звуковая приманка|Hljóðtálbeita|طعم صوتي
+reboot|重启监控|Reboot cameras|監視を再起動|Relancer les caméras|Перезапуск камер|Endurræsa myndavélar|إعادة تشغيل الكاميرات
+rebooting|监控正在重启|Cameras rebooting|監視再起動中|Redémarrage des caméras|Камеры перезапускаются|Myndavélar endurræsast|جارٍ إعادة تشغيل الكاميرات
+signal|信号|Signal|信号|Signal|Сигнал|Merki|الإشارة
+safe|暂时没有动静|No movement for now|今は動きなし|Aucun mouvement pour l’instant|Пока движения нет|Engin hreyfing sem stendur|لا حركة حالياً
+atDoor|门边有东西|Something is at the door|ドアに何かいる|Quelque chose est à la porte|Кто-то у двери|Eitthvað er við dyrnar|شيء ما عند الباب
+powerOut|停电了。门已打开。|Blackout. Doors have opened.|停電。ドアが開いた。|Panne de courant. Les portes se sont ouvertes.|Электричество кончилось. Двери открылись.|Rafmagnið fór. Dyrnar opnuðust.|انقطعت الكهرباء. فُتحت الأبواب.
+clockface|钟面人|Clockface|時計面|Cadran|Циферблат|Klukkuskífan|وجه الساعة
+mechanical|机械海胆|Mechanical urchin|機械ウニ|Oursin mécanique|Механический ёж|Vélrænn ígulker|قنفذ آلي
+alien|外星人|Alien|星の客|Alien|Пришелец|Geimvera|الفضائي
+urchin|海胆苹果|Urchin Apple|ウニリンゴ|Pomme-oursin|Яблоко-ёж|Ígulkersepli|تفاحة القنفذ
+nightWin|06:00 · 这一夜结束了|06:00 · Night survived|06:00・今夜を越えた|06:00 · Nuit survivante|06:00 · Ночь пережита|06:00 · Nóttin lifð af|06:00 · نجوت من الليلة
+nightLost|值班室失守|Office breached|警備室陥落|Poste envahi|Пост прорван|Vaktstofan féll|اختُرقت غرفة الحراسة
+nightHint|左门A，右门D；左灯Q，右灯E；空格监控，1—4切镜头，L诱饵，R重启。按键只控制游戏，不需要声音也能玩。|A/D doors; Q/E lights; Space cameras; 1–4 feeds; L lure; R reboot. Visual cues make sound optional.|A/Dドア、Q/E灯り、Space監視、1–4映像、L誘導、R再起動。視覚手掛かりで音声なしでも可。|A/D portes ; Q/E lumières ; Espace caméras ; 1–4 vues ; L leurre ; R redémarrage. Les indices visuels permettent de jouer sans son.|A/D двери; Q/E фонари; Пробел камеры; 1–4 каналы; L приманка; R перезапуск. Визуальные подсказки позволяют играть без звука.|A/D dyr; Q/E ljós; bil myndavélar; 1–4 myndir; L tálbeita; R endurræsing. Hægt er að spila án hljóðs.|A/D للأبواب؛ Q/E للأضواء؛ المسافة للكاميرات؛ 1–4 للمشاهد؛ L للطعم؛ R لإعادة التشغيل. الإشارات البصرية تكفي للعب بلا صوت.
+battleTitle|海胆苹果与外星人 · 战术对战|Urchin Apple & Alien · Tactical Battle|ウニリンゴと星の客・戦術対戦|Pomme-oursin et Alien · Combat tactique|Яблоко-ёж и пришелец · Тактический бой|Ígulkersepli og geimvera · Taktískur bardagi|تفاحة القنفذ والفضائي · معركة تكتيكية
+battleLead|六种技能、六类敌人、三路防线。每波升级，组合减速、破盾和贯穿。|Six skills, six enemy classes and three lanes. Upgrade each wave; combine slow, shield break and piercing.|6技能・6敵種・3レーン。毎波強化し、減速・盾破壊・貫通を組み合わせる。|Six compétences, six ennemis, trois voies. Améliorez-vous à chaque vague et combinez ralentissement, brise-bouclier et perforation.|Шесть навыков, шесть типов врагов и три линии. Улучшайтесь после волн; сочетайте замедление, пробитие щитов и сквозной удар.|Sex hæfileikar, sex óvinaflokkar og þrjár brautir. Uppfærðu hverja bylgju; sameinaðu hægingu, skjaldbrot og gegnumskot.|ست مهارات وست فئات أعداء وثلاثة مسارات. طوّر بعد كل موجة واجمع الإبطاء وكسر الدروع والاختراق.
+campaign|十波远征|Ten-wave expedition|10ウェーブ遠征|Expédition en dix vagues|Поход из десяти волн|Tíu bylgna leiðangur|حملة عشر موجات
+endless|无尽生存|Endless survival|無限サバイバル|Survie sans fin|Бесконечное выживание|Endalaus lifun|بقاء لا نهائي
+escort|护送信标|Beacon escort|ビーコン護衛|Escorte de balise|Сопровождение маяка|Fylgd leiðarljóss|مرافقة المنارة
+bossrush|首领连战|Boss rush|ボス連戦|Suite de boss|Череда боссов|Samfelldir stjórabardagar|تتابع الزعماء
+study|学习模式 · 答题后发射|Study · answer before firing|学習・回答後に発射|Étude · répondre avant de tirer|Учёба · ответ перед выстрелом|Nám · svara fyrir skot|تعلم · أجب قبل إطلاق النار
+studyHelp|所有攻击与主动技能都需要答对一题。答题和解析时战场冻结；答错不消耗能量但不发射。|Every active skill needs a correct answer. Battle freezes during questions and feedback. Wrong answers spend no energy and do not fire.|全技能は正解後に発動。問題・解説中は戦場停止。不正解はエネルギーを使わず発動もしません。|Toute compétence active exige une bonne réponse. Le combat s’arrête pendant question et correction. Une erreur ne consomme rien et ne tire pas.|Каждый активный навык требует верного ответа. Бой заморожен во время вопроса и разбора. Ошибка не тратит энергию и не запускает навык.|Hver virk færni krefst rétts svars. Bardagi frýs við spurningar og skýringar. Rangt svar eyðir engri orku og skýtur ekki.|كل مهارة فعالة تحتاج جواباً صحيحاً. تتجمد المعركة أثناء السؤال والشرح. الخطأ لا يستهلك طاقة ولا يطلق المهارة.
+classic|经典五波对战与旧记录|Classic five waves & old saves|従来の5波と旧記録|Cinq vagues classiques et anciennes sauvegardes|Классические пять волн и старые записи|Klassískar fimm bylgjur og eldri vistanir|خمس موجات كلاسيكية وسجلات قديمة
+wave|波次|Wave|ウェーブ|Vague|Волна|Bylgja|الموجة
+energy|能量|Energy|エネルギー|Énergie|Энергия|Orka|الطاقة
+shield|防线|Defence|防衛線|Défense|Оборона|Vörn|الدفاع
+score|得分|Score|スコア|Score|Очки|Stig|النقاط
+combo|连击|Combo|コンボ|Combo|Комбо|Samfella|التتابع
+left|左路|Left lane|左レーン|Voie gauche|Левая линия|Vinstri braut|المسار الأيسر
+middle|中路|Middle lane|中央レーン|Voie centrale|Средняя линия|Miðbraut|المسار الأوسط
+right|右路|Right lane|右レーン|Voie droite|Правая линия|Hægri braut|المسار الأيمن
+scanShot|海胆监测弹|Urchin scan shot|ウニ索敵弾|Tir de repérage|Сканирующий выстрел|Leitarskot ígulkers|قذيفة رصد القنفذ
+pierce|外星贯穿|Alien pierce|星の貫通|Perforation alien|Сквозной луч|Gegnumskot geimveru|اختراق الفضائي
+freeze|冰封力场|Stasis field|停止フィールド|Champ de stase|Поле стазиса|Stöðvunarsvið|حقل التجميد
+beacon|扫描信标|Scan beacon|索敵ビーコン|Balise de scan|Сканирующий маяк|Leitarviti|منارة المسح
+barrier|修复屏障|Repair barrier|障壁修復|Barrière réparatrice|Ремонт барьера|Viðgerðarvörn|إصلاح الحاجز
+overload|异星超载|Starfall overload|星の過負荷|Surcharge stellaire|Звёздная перегрузка|Stjörnuofhleðsla|الحمل النجمي الزائد
+upgrade|波间升级 · 选择一项|Between waves · choose an upgrade|波間強化・1つ選択|Entre les vagues · choisissez une amélioration|Между волнами · выберите улучшение|Milli bylgna · veldu uppfærslu|بين الموجات · اختر تطويراً
+damageUp|伤害提高20%|Damage +20%|ダメージ+20%|Dégâts +20 %|Урон +20%|Skaði +20%|الضرر +20%
+regenUp|能量恢复提高20%|Energy regeneration +20%|回復速度+20%|Régénération +20 %|Восстановление энергии +20%|Orkuhleðsla +20%|استعادة الطاقة +20%
+slowUp|减速持续时间提高25%|Slow duration +25%|減速時間+25%|Durée de ralentissement +25 %|Длительность замедления +25%|Hægingarlengd +25%|مدة الإبطاء +25%
+repairUp|立即修复3点防线|Repair 3 defence now|防衛を即時3回復|Réparer 3 points de défense|Восстановить 3 защиты|Gera við 3 varnarstig|إصلاح 3 نقاط دفاع الآن
+ready|就绪|Ready|準備完了|Prêt|Готово|Tilbúið|جاهز
+noTarget|这条路没有目标|No target in this lane|このレーンに標的なし|Aucune cible sur cette voie|На линии нет цели|Ekkert skotmark á þessari braut|لا هدف في هذا المسار
+needEnergy|能量不足或技能冷却中|Insufficient energy or cooldown|エネルギー不足、または待機中|Énergie insuffisante ou recharge|Недостаточно энергии или перезарядка|Ónóg orka eða færni í bið|طاقة غير كافية أو المهارة قيد التبريد
+answer|选择答案|Choose an answer|答えを選択|Choisir une réponse|Выберите ответ|Veldu svar|اختر إجابة
+correct|回答正确|Correct answer|正解|Bonne réponse|Верный ответ|Rétt svar|إجابة صحيحة
+wrong|未答对，不发射|Incorrect; no shot|不正解・発射なし|Incorrect ; aucun tir|Неверно; выстрела нет|Rangt; ekkert skot|إجابة خاطئة؛ لا إطلاق
+fire|确认发射|Confirm fire|発射確認|Confirmer le tir|Подтвердить выстрел|Staðfesta skot|تأكيد الإطلاق
+cancel|取消|Cancel|キャンセル|Annuler|Отмена|Hætta við|إلغاء
+retire|结束无尽挑战并结算|Retire and record survival|無限挑戦を終了して記録|Terminer et enregistrer la survie|Завершить и записать выживание|Hætta og skrá lifun|إنهاء تحدي البقاء وتسجيل النتيجة
+victory|防守成功|Defence successful|防衛成功|Défense réussie|Оборона успешна|Vörn tókst|نجاح الدفاع
+defeat|防线失守|Defence breached|防衛線突破|Défense percée|Оборона прорвана|Vörnin féll|اختُرقت الدفاعات
+battleHint|A/S/D选路；J海胆、K贯穿、L冰封、U信标、I屏障、O超载。先减速再贯穿可触发连锁。|A/S/D lanes; J scan, K pierce, L stasis, U beacon, I repair, O overload. Slowing then piercing triggers a chain.|A/S/Dレーン、J索敵、K貫通、L停止、U索敵塔、I修復、O過負荷。減速後の貫通で連鎖。|A/S/D voies ; J scan, K perforation, L stase, U balise, I réparation, O surcharge. Ralentir puis percer crée une chaîne.|A/S/D линии; J скан, K луч, L стазис, U маяк, I ремонт, O перегрузка. Замедление перед лучом даёт цепную реакцию.|A/S/D brautir; J leit, K gegnumskot, L stöðvun, U viti, I viðgerð, O ofhleðsla. Hæging og svo gegnumskot mynda keðju.|A/S/D للمسارات؛ J للرصد، K للاختراق، L للتجميد، U للمنارة، I للإصلاح، O للحمل الزائد. الإبطاء ثم الاختراق يصنع سلسلة.
+armored|护盾型|Armoured|装甲型|Blindé|Бронированный|Brynvarinn|مدرع
+sprinter|疾走型|Sprinter|疾走型|Sprinteur|Спринтер|Spretthlaupari|عدّاء
+splitter|分裂型|Splitter|分裂型|Scission|Делящийся|Kljúfari|منقسم
+healer|修复型|Healer|修復型|Soigneur|Целитель|Græðari|معالج
+jammer|干扰型|Jammer|妨害型|Brouilleur|Глушитель|Truflari|مشوش
+phantom|隐形型|Phantom|隠密型|Fantôme|Фантом|Draugur|شبح
+boss|首领投影|Boss projection|ボス投影|Projection de boss|Проекция босса|Stjóravörpun|إسقاط الزعيم
+nightEnding1|第一缕荧光|The first fluorescent dawn|最初の蛍光の夜明け|La première aube fluorescente|Первый люминесцентный рассвет|Fyrsta flúrljósa dögunin|الفجر الفلوري الأول
+nightEnding2|五次六点钟|Five six-o'clocks|5回の6時|Cinq fois six heures|Пять раз в шесть|Fimm sinnum klukkan sex|السادسة خمس مرات
+nightEnding3|电量仍有余温|Power left at dawn|朝にも残る電力|Du courant à l’aube|Заряд к рассвету|Orka eftir við dögun|طاقة متبقية عند الفجر
+nightEnding4|没有呼吸的值班室|The breathless office|息のない警備室|Le poste sans souffle|Пост без дыхания|Vaktstofan án andardráttar|غرفة الحراسة بلا أنفاس
+nightEnding5|最后一格电|The last bar of power|最後の電力目盛り|La dernière barre d’énergie|Последнее деление заряда|Síðasta orkustrikið|آخر شريط طاقة
+nightProse1|你没有逃跑。第一夜的值班表上，留下了一个清楚的签名。|You did not flee. The first night's log bears a steady signature.|逃げなかった。初夜の記録に確かな署名が残った。|Vous n’avez pas fui. Le registre de la première nuit porte une signature assurée.|Вы не убежали. В журнале первой ночи стоит уверенная подпись.|Þú flúðir ekki. Í fyrstu næturfærslunni stendur örugg undirskrift.|لم تهرب. يحمل سجل الليلة الأولى توقيعاً ثابتاً.
+nightProse2|五夜过去，旧楼第一次在六点准时安静下来。|Five nights later, the old wing finally falls quiet at six.|5夜を越え、旧校舎は初めて6時に静まった。|Après cinq nuits, l’ancienne aile se tait enfin à six heures.|Через пять ночей старый корпус наконец затихает ровно в шесть.|Eftir fimm nætur þagnar gamla álman loks klukkan sex.|بعد خمس ليالٍ، يصمت الجناح القديم أخيراً عند السادسة.
+nightProse3|你没有把每一道门都锁死。观察和克制让最后一夜保住了电力。|You did not lock every door forever. Observation and restraint saved the final night's power.|すべての扉を閉め続けなかった。観察と節制で最終夜の電力が残った。|Vous n’avez pas condamné chaque porte. Observation et retenue ont préservé l’énergie finale.|Вы не запирали все двери постоянно. Наблюдение и сдержанность сохранили заряд в последнюю ночь.|Þú læstir ekki öllum dyrum að eilífu. Athygli og aðhald vörðu orku síðustu nætur.|لم تغلق كل الأبواب إلى الأبد. حفظت المراقبة وضبط النفس طاقة الليلة الأخيرة.
+nightProse4|门边的影子先走了进来。重试仍从这一夜的入口开始。|The shadow entered first. Retry from the beginning of this night.|扉の影が先に入ってきた。この夜の入口から再試行できる。|L’ombre est entrée la première. Reprenez au début de cette nuit.|Тень вошла первой. Повтор начнётся с начала этой ночи.|Skugginn kom fyrstur inn. Reyndu aftur frá upphafi þessarar nætur.|دخل الظل أولاً. أعد المحاولة من بداية هذه الليلة.
+nightProse5|电力耗尽后，门不再听从开关。不是每一个黑暗都能靠关闭解决。|When power ran out, the doors stopped obeying. Not every darkness can be solved by shutting it out.|電力が尽きると扉は従わない。閉めるだけでは消せない暗闇もある。|Sans énergie, les portes n’obéissent plus. Toute obscurité ne se résout pas en la fermant dehors.|Когда заряд кончился, двери перестали слушаться. Не всякую тьму можно просто запереть снаружи.|Þegar orkan þraut hlýddu dyrnar ekki lengur. Ekki er hægt að loka allt myrkur úti.|حين نفدت الطاقة لم تعد الأبواب تطيع. ليس كل ظلام يُحل بإغلاقه خارجاً.
+battleEnding1|十道防线之后|Beyond ten lines|10本の防衛線の先|Au-delà des dix lignes|За десятью рубежами|Handan tíu varnarlína|وراء عشرة خطوط
+battleEnding2|信标到站|Beacon delivered|ビーコン到着|Balise livrée|Маяк доставлен|Leiðarljósið komst á leiðarenda|وصلت المنارة
+battleEnding3|星客的答案|The alien's answer|星の客の答え|La réponse de l’alien|Ответ пришельца|Svar geimverunnar|إجابة الفضائي
+battleEnding4|还未结束的波次|Waves without end|終わらないウェーブ|Des vagues sans fin|Волны без конца|Bylgjur án enda|موجات بلا نهاية
+battleEnding5|最后一颗海胆|The last urchin|最後のウニ|Le dernier oursin|Последний ёж|Síðasti ígulkerinn|القنفذ الأخير
+battleProse1|十波投影消散了。海胆苹果收起尖刺，星客合上了发光的地图。|Ten waves dissolve. Urchin Apple folds its spines; the alien closes the glowing map.|10波の投影が消え、ウニリンゴはトゲを収め、星の客は地図を閉じた。|Dix vagues se dissipent. Pomme-oursin replie ses piquants ; l’alien referme la carte lumineuse.|Десять волн рассеялись. Яблоко-ёж сложил иглы, пришелец закрыл светящуюся карту.|Tíu bylgjur hverfa. Ígulkersepli fellir niður broddana og geimveran lokar lýsandi kortinu.|تلاشت عشر موجات. طوت تفاحة القنفذ أشواكها وأغلق الفضائي الخريطة المضيئة.
+battleProse2|信标没有停在半路。你给同伴留住了一条可以通过的路线。|The beacon did not stop halfway. You kept a path open for your companion.|ビーコンは途中で止まらなかった。仲間が通れる道を守った。|La balise n’est pas restée à mi-chemin. Vous avez gardé un passage pour votre compagnon.|Маяк не остановился на полпути. Вы сохранили путь для спутника.|Leiðarljósið stöðvaðist ekki á miðri leið. Þú héltst leið opinni fyrir félaga þinn.|لم تتوقف المنارة في منتصف الطريق. أبقيت مساراً مفتوحاً لرفيقك.
+battleProse3|最后的首领投影破碎了。扫描、破盾和贯穿，终于组成了完整的回答。|The last boss projection breaks. Scan, shield break and pierce form a complete answer.|最後のボス投影が砕けた。索敵、盾破壊、貫通が一つの答えになった。|Le dernier boss se brise. Repérage, brise-bouclier et perforation composent la réponse.|Последняя проекция босса разбита. Сканирование, снятие щита и луч стали полным ответом.|Síðasta stjóravörpunin brotnar. Leit, skjaldbrot og gegnumskot mynda heilt svar.|تحطم إسقاط الزعيم الأخير. شكّل الرصد وكسر الدرع والاختراق إجابة متكاملة.
+battleProse4|你主动记录了这段生存。无尽不是必须一直留下，而是还能决定何时结束。|You chose to record this survival. Endless means you can still decide when to stop.|生き延びた記録を自分で残した。無限でも、終える時は自分で決められる。|Vous avez choisi d’enregistrer cette survie. Sans fin ne signifie pas sans choix d’arrêter.|Вы сами записали этот результат. Бесконечность не лишает права решить, когда остановиться.|Þú valdir að skrá þessa lifun. Endalaust þýðir að þú mátt samt ákveða hvenær nóg er komið.|اخترت تسجيل هذا البقاء. اللانهاية لا تسلبك اختيار وقت التوقف.
+battleProse5|最后一道防线失去了颜色。升级和重试都还在，校园进度没有被改写。|The last defence loses its colour. Upgrades and retries remain; campus progress is untouched.|最後の防衛線が色を失った。強化も再試行も残り、学校の記録は変わらない。|La dernière ligne perd sa couleur. Améliorations et reprises restent possibles ; l’école est intacte.|Последний рубеж поблёк. Улучшения и повторы остаются; школьный прогресс не изменён.|Síðasta vörnin missir litinn. Uppfærslur og endurtilraunir bíða; skólaframvinda er óbreytt.|فقد آخر خط دفاع لونه. تبقى التطويرات والمحاولات، ولا يتغير تقدم المدرسة.
+unlocked|已解锁|Unlocked|解除済み|Débloqué|Открыто|Opnað|مفتوح
+locked|尚未解锁|Locked|未解除|Verrouillé|Закрыто|Læst|مغلق
+empty|暂无记录|No records yet|記録なし|Aucun enregistrement|Записей пока нет|Engar skrár enn|لا توجد سجلات بعد
+recordsNote|各板块互不累计，重复读档不会重复解锁同一个勋章。|Sections do not share progress. Reloading never duplicates a medal.|各部門の進捗は独立。ロードで同じ勲章を重複獲得しません。|Les sections ne partagent pas la progression. Recharger ne duplique jamais une médaille.|Разделы не делят прогресс. Загрузка не дублирует медаль.|Framvinda flokkanna er aðskilin. Endurhleðsla tvöfaldar aldrei orðu.|لا تتشارك الأقسام التقدم. إعادة التحميل لا تكرر الوسام.
+nightFirstMedal|夜班新人|First night on duty|初めての夜勤|Première garde|Первая ночная смена|Fyrsta næturvakt|أول مناوبة ليلية
+nightFiveMedal|五夜守望|Five-night keeper|五夜の守り手|Gardien de cinq nuits|Хранитель пяти ночей|Vörður fimm nátta|حارس خمس ليالٍ
+powerMedal|节电值班员|Power keeper|節電警備員|Gardien économe|Экономный дежурный|Orkuvörður|حارس الطاقة
+camMedal|四路监控|Four-camera watch|4映像の監視|Quatre caméras|Четыре камеры|Fjórar myndavélar|مراقبة أربع كاميرات
+repelMedal|关门有时|Doors at the right time|閉める時を知る|Fermer au bon moment|Закрыть вовремя|Loka á réttum tíma|إغلاق في الوقت المناسب
+lureMedal|回声引路|Echo guide|反響の導き|Guide par l’écho|Проводник эха|Bergmálsleiðsögn|دليل الصدى
+rebootMedal|信号重连|Signal restored|信号復旧|Signal retrouvé|Сигнал восстановлен|Merki endurheimt|استعادة الإشارة
+noLureMedal|只凭眼睛|Eyes alone|目だけを頼りに|Les yeux seuls|Только глазами|Aðeins augun|بالعينين فقط
+hardNightMedal|更深的夜|A deeper night|さらに深い夜|Une nuit plus profonde|Более глубокая ночь|Dýpri nótt|ليلة أعمق
+lastPowerMedal|最后一点电|One last spark|最後の電力|Une dernière étincelle|Последняя искра|Síðasti neisti|الشرارة الأخيرة
+battleFirstMedal|第一道防线|First defence|最初の防衛|Première défense|Первый рубеж|Fyrsta vörnin|الدفاع الأول
+battleTenMedal|十波守卫|Ten-wave guardian|10波の守護者|Gardien de dix vagues|Страж десяти волн|Vörður tíu bylgna|حارس عشر موجات
+studyMedal|知识装填|Knowledge loaded|知識装填|Savoir chargé|Заряжено знанием|Þekking hlaðin|تحميل المعرفة
+perfectMedal|一处也不漏|No breaches|突破ゼロ|Aucune brèche|Ни одного прорыва|Engin göt|بلا اختراق
+synergyMedal|异星连锁|Starfall chain|星の連鎖|Chaîne stellaire|Звёздная цепь|Stjörnukeðja|سلسلة نجمية
+splitMedal|一分为二|Split in two|二つに分裂|Scindé en deux|Надвое|Klofnað í tvennt|انقسام إلى اثنين
+jamMedal|打破干扰|Break the jam|妨害を破る|Briser le brouillage|Снять помехи|Rjúfa truflun|كسر التشويش
+armorMedal|破盾专家|Shield breaker|盾破壊の達人|Brise-bouclier|Разрушитель щитов|Skjaldbrjótur|خبير كسر الدروع
+escortMedal|护送完成|Escort complete|護衛完了|Escorte terminée|Сопровождение завершено|Fylgd lokið|اكتملت المرافقة
+bossMedal|首领终结者|Boss finisher|ボスを終わらせる者|Finisseur de boss|Победитель боссов|Bana stjóranna|منهي الزعماء
+endlessMedal|二十波以后|Beyond twenty waves|20波の先|Au-delà de vingt vagues|После двадцати волн|Handan tuttugu bylgna|بعد عشرين موجة
+sixSkillsMedal|六种回答|Six answers|6つの答え|Six réponses|Шесть ответов|Sex svör|ست إجابات
+repairMedal|重筑屏障|Rebuild the barrier|障壁再建|Rebâtir la barrière|Восстановить барьер|Endurbyggja vörnina|إعادة بناء الحاجز
+freezeMedal|冻结一条路|Freeze a lane|レーンを凍らせる|Geler une voie|Заморозить линию|Frysta braut|تجميد مسار
+beaconMedal|看见隐形者|See the unseen|見えない敵を見る|Voir l’invisible|Увидеть невидимых|Sjá ósýnilegt|رؤية الخفي
+comboMedal|十连击|Ten-hit streak|10連撃|Série de dix|Серия из десяти|Tíu í röð|عشر ضربات متتالية
+upgradeMedal|全面改装|Full refit|全面改造|Refonte complète|Полная модернизация|Heildaruppfærsla|تعديل شامل
+studyTwentyMedal|二十次独立作答|Twenty independent answers|20回の回答|Vingt réponses autonomes|Двадцать самостоятельных ответов|Tuttugu sjálfstæð svör|عشرون إجابة مستقلة
+hardBattleMedal|高压防线|High-pressure defence|高圧の防衛|Défense sous pression|Оборона под давлением|Vörn undir álagi|دفاع تحت الضغط
+hundredMedal|百次投影消散|A hundred projections gone|100体の投影消滅|Cent projections dissipées|Сто исчезнувших проекций|Hundrað varpanir horfnar|تلاشي مئة إسقاط
+nightDisabled|先在主菜单或设置开启五夜守夜模式|Enable Night Watch in the menu or settings first|まずメニューか設定で五夜警備をオンに|Activez d’abord la veille dans le menu ou les paramètres|Сначала включите ночную вахту в меню или настройках|Virkjaðu fyrst næturvakt í valmynd eða stillingum|فعّل الحراسة الليلية في القائمة أو الإعدادات أولاً
+archiveTab|分类记录|Separate records|分類記録|Registres séparés|Отдельные записи|Aðskildar skrár|سجلات منفصلة
+observeBoard|观察讲台|Inspect podium|教壇を観察|Observer l’estrade|Осмотреть кафедру|Skoða púltið|مراقبة المنصة
+newTutorial|夜巡、战术与无声镜头|Night watch, tactics and silent cameras|夜警・戦術・無言の撮影|Veille, tactique et caméras silencieuses|Ночная вахта, тактика и тихие камеры|Næturvakt, taktík og hljóðlausar myndavélar|الحراسة والتكتيك والكاميرات الصامتة
+`;
+for(const line of ROWS317.trim().split('\n'))addText317(line);
+function text317(id,args={},lang=effectiveLocale310()){
+ const row=TEXT317[id];const s=row?.[lang]??row?.en??id;return s.replace(/\{(\w+)\}/g,(_,k)=>String(args[k]??'{'+k+'}'));
+}
+const englishSource317=translate310;
+const fallback317=new Set();
+function translateEnglish317(s,lang){
+ const exact=EN_EXTRA317[lang]?.[norm310(s)];if(exact!==undefined)return exact;
+ if(!/[A-Za-z]/.test(s))return s;
+ // Preserve mathematical values, proper names and code; NEVER fabricate a translation.
+ fallback317.add(norm310(s));return s;
+}
+translate310=function(input,lang=effectiveLocale310(),depth=0){
+ if(!NEW_LANG317.includes(lang))return englishSource317(input,lang,depth);
+ const raw=String(input??'');const own=SOURCE317.get(norm310(raw));
+ if(own)return own[lang];
+ return translateEnglish317(englishSource317(raw,'en',depth),lang);
+};
+const baseTr313_317=tr313,baseF315_317=f315,baseTr316_317=tr316;
+tr313=function(id,values={}){const lang=effectiveLocale310();if(!NEW_LANG317.includes(lang))return baseTr313_317(id,values);
+ const row=L313[id];if(!row)return id;return translateEnglish317(row[1],lang).replace(/\{(\w+)\}/g,(_,k)=>String(values[k]??'{'+k+'}'));};
+f315=function(id,args={},locale=effectiveLocale310()){return NEW_LANG317.includes(locale)?translateEnglish317(baseF315_317(id,args,'en'),locale):baseF315_317(id,args,locale);};
+tr316=function(id,args={},locale=effectiveLocale310()){if(id==='helpB')return text317('captureGuide',{},locale);return NEW_LANG317.includes(locale)?translateEnglish317(baseTr316_317(id,args,'en'),locale):baseTr316_317(id,args,locale);};
+const localeAllBefore317=localizeAll310;
+localizeAll310=function(){localeAllBefore317();const lang=effectiveLocale310();document.documentElement.dir=lang==='ar'?'rtl':'ltr';
+ document.body.classList.toggle('rtl317',lang==='ar');
+ document.documentElement.dataset.extendedLocale317=NEW_LANG317.includes(lang)?lang:'';
+};
+
+/* Reviewed additions for core controls and exact medal requirements.
+ * Original English narrative remains an explicitly labelled fallback. */
+const MORE_ROWS317=`
+nightArchiveMedal|旧楼全记录|Every old-wing record|旧校舎の全記録|Toutes les archives de l’aile|Все записи старого корпуса|Allar skrár gamla álmunnar|كل سجلات الجناح القديم
+noRetryMedal|不借第二次机会|No second chance needed|やり直しなし|Sans seconde chance|Без второй попытки|Án annars tækifæris|دون فرصة ثانية
+streakTwentyMedal|二十题连对|Twenty correct in a row|20問連続正解|Vingt bonnes réponses de suite|Двадцать верных подряд|Tuttugu rétt í röð|عشرون إجابة صحيحة متتالية
+fiveBossMedal|五位首领|Five bosses defeated|ボス5体撃破|Cinq boss vaincus|Пять поверженных боссов|Fimm stjórar sigraðir|هزيمة خمسة زعماء
+threeModesMedal|三路战术结业|Three tactical campaigns|3作戦修了|Trois campagnes tactiques|Три тактические кампании|Þrjár herferðir í taktík|ثلاث حملات تكتيكية
+reqNights|同一轮完成{n}晚守夜。|Complete {n} nights in one run.|1プレイで{n}夜を終える。|Terminer {n} nuits dans une partie.|Завершить {n} ночей за один заход.|Ljúktu {n} nóttum í sömu umferð.|أكمل {n} ليالٍ في جولة واحدة.
+reqNightPower|一晚结束时保留至少25%电力。|Finish a night with at least 25% power.|電力25%以上で一夜を終える。|Finir une nuit avec au moins 25 % d’énergie.|Закончить ночь с зарядом не ниже 25%.|Ljúktu nótt með að minnsta kosti 25% orku.|أنهِ ليلة بطاقة لا تقل عن 25%.
+reqFeeds|同一轮查看全部4路监控。|View all four camera feeds in one run.|1プレイで4映像すべてを見る。|Consulter les quatre caméras dans une partie.|Посмотреть все четыре камеры за один заход.|Skoðaðu allar fjórar myndavélarnar í sömu umferð.|شاهد الكاميرات الأربع في جولة واحدة.
+reqRepel|同一轮用门挡回{n}次来访者。|Repel {n} intrusions with doors in one run.|1プレイで扉を使い{n}回撃退する。|Repousser {n} intrusions avec les portes dans une partie.|Отразить дверями {n} вторжений за один заход.|Stöðvaðu {n} innrásir með hurðum í sömu umferð.|صدّ {n} اقتحامات بالأبواب في جولة واحدة.
+reqLure|同一轮使用{n}次声音诱饵。|Use the sound lure {n} times in one run.|1プレイで音の囮を{n}回使う。|Utiliser le leurre sonore {n} fois dans une partie.|Использовать звуковую приманку {n} раз за один заход.|Notaðu hljóðtálbeitu {n} sinnum í sömu umferð.|استخدم الطُعم الصوتي {n} مرات في جولة واحدة.
+reqReboot|同一轮启动{n}次监控重启。|Start {n} camera reboots in one run.|1プレイで監視を{n}回再起動する。|Lancer {n} redémarrages de caméras dans une partie.|Запустить {n} перезагрузок камер за один заход.|Ræstu myndavélarnar aftur {n} sinnum í sömu umferð.|ابدأ إعادة تشغيل الكاميرات {n} مرات في جولة واحدة.
+reqNoLure|尚未使用声音诱饵时完成一晚。|Complete a night before using any sound lure.|音の囮をまだ使わずに一夜を終える。|Finir une nuit sans avoir utilisé le leurre sonore.|Завершить ночь, ни разу не использовав приманку.|Ljúktu nótt án þess að hafa notað hljóðtálbeitu.|أكمل ليلة قبل استخدام أي طُعم صوتي.
+reqNightHard|困难或更高难度完成全部五晚。|Complete all five nights on Hard or above.|困難以上で5夜すべて終える。|Terminer les cinq nuits en Difficile ou plus.|Завершить все пять ночей на сложном уровне или выше.|Ljúktu öllum fimm nóttum á erfiðu stigi eða hærra.|أكمل الليالي الخمس على الصعب أو أعلى.
+reqLowPower|一晚成功结束时电力大于0且不超过5%。|Win a night with power above 0% and at most 5%.|電力0%超・5%以下で一夜を終える。|Réussir une nuit avec plus de 0 % et au plus 5 % d’énergie.|Выиграть ночь с зарядом выше 0%, но не больше 5%.|Ljúktu nótt með meira en 0% en í mesta lagi 5% orku.|اربح ليلة بطاقة أعلى من 0% ولا تتجاوز 5%.
+reqUnbroken|不使用检查点重试，完成同轮五晚。|Complete five nights without checkpoint retries.|チェックポイント再挑戦なしで5夜を終える。|Finir cinq nuits sans reprise au point de contrôle.|Пройти пять ночей без повторов с контрольной точки.|Ljúktu fimm nóttum án þess að endurreyna frá vistunarpunkti.|أكمل خمس ليالٍ دون إعادة المحاولة من نقطة الحفظ.
+reqNightEnds|解锁本板块全部5条结局。|Unlock all five endings in this section.|この部門の全5結末を解放する。|Débloquer les cinq fins de cette section.|Открыть все пять концовок этого раздела.|Opnaðu alla fimm enda þessa flokks.|افتح النهايات الخمس في هذا القسم.
+reqWaves|同一轮守住{n}波。|Clear {n} waves in one run.|1プレイで{n}波を防ぐ。|Repousser {n} vagues dans une partie.|Отразить {n} волн за один заход.|Stöðvaðu {n} bylgjur í sömu umferð.|صدّ {n} موجات في جولة واحدة.
+reqCampaign|完成十波战役。|Complete the ten-wave campaign.|10波の作戦を完了する。|Terminer la campagne de dix vagues.|Завершить кампанию из десяти волн.|Ljúktu tíu bylgna herferðinni.|أكمل حملة الموجات العشر.
+reqStudyClear|学习模式下赢得一场有终点的对战。|Win a finite battle mode with study enabled.|学習オンで終点のある対戦に勝つ。|Gagner un mode fini avec l’étude activée.|Победить в режиме с концом, включив учёбу.|Vinnðu bardagaham með endapunkti og virku námi.|اربح وضع قتال محدد النهاية مع تفعيل الدراسة.
+reqPerfect|没有敌人突破防线，赢得对战。|Win without any enemy breaching the line.|敵の突破ゼロで対戦に勝つ。|Gagner sans aucune percée ennemie.|Победить без единого прорыва противника.|Vinnðu án þess að nokkur óvinur rjúfi varnarlínuna.|اربح دون أن يخترق أي عدو خط الدفاع.
+reqSynergy|同一轮触发{n}次扫描减速与贯穿连携命中。|Land {n} scan-slow and piercing combinations in one run.|1プレイで探知・減速と貫通の連携を{n}回当てる。|Réussir {n} combinaisons ralentissement-perforation dans une partie.|Выполнить {n} связок сканирования, замедления и пробития за заход.|Hittu með {n} samspilum skönnunar, hægingar og gegnumskots í sömu umferð.|حقق {n} إصابات بتوليفة المسح والإبطاء والاختراق في جولة واحدة.
+reqSplit|同一轮击败{n}个分裂者。|Defeat {n} splitters in one run.|1プレイで分裂体を{n}体倒す。|Vaincre {n} diviseurs dans une partie.|Победить {n} делителей за один заход.|Sigraðu {n} klofnara í sömu umferð.|اهزم {n} من المنقسمين في جولة واحدة.
+reqJam|同一轮击败{n}个干扰者。|Defeat {n} jammers in one run.|1プレイで妨害体を{n}体倒す。|Vaincre {n} brouilleurs dans une partie.|Победить {n} подавителей за один заход.|Sigraðu {n} truflara í sömu umferð.|اهزم {n} من المشوشين في جولة واحدة.
+reqArmor|同一轮用攻击击穿{n}面护甲。|Break {n} armour shields with attacks in one run.|1プレイで攻撃により装甲を{n}枚破る。|Briser {n} armures par attaque dans une partie.|Разбить атаками {n} щитов за один заход.|Brjóttu {n} brynvarnir með árásum í sömu umferð.|اكسر {n} دروع بالهجمات في جولة واحدة.
+reqEscort|保住信标，完成八波护送。|Keep the beacon intact through eight escort waves.|8波を越えて信標を守り抜く。|Protéger la balise pendant huit vagues d’escorte.|Защитить маяк в восьми волнах сопровождения.|Verndaðu vitann í átta fylgdarbylgjum.|احمِ المنارة عبر ثماني موجات مرافقة.
+reqBossRush|完成五波首领挑战。|Complete the five-wave boss rush.|5波のボス連戦を終える。|Terminer les cinq vagues de boss.|Пройти пять волн боссов.|Ljúktu fimm bylgjum af stjórum.|أكمل تحدي الزعماء ذي الموجات الخمس.
+reqSkills|同一轮实际发射全部6种技能。|Actually use all six skills in one run.|1プレイで6技能すべてを実行する。|Utiliser les six compétences dans une partie.|Применить все шесть навыков за один заход.|Notaðu allar sex aðgerðirnar í sömu umferð.|استخدم المهارات الست فعلياً في جولة واحدة.
+reqRepair|同一轮完成{n}次屏障修复。|Complete {n} barrier repairs in one run.|1プレイで障壁を{n}回修復する。|Réparer la barrière {n} fois dans une partie.|Восстановить барьер {n} раз за один заход.|Lagaðu varnarlínuna {n} sinnum í sömu umferð.|أكمل {n} إصلاحات للحاجز في جولة واحدة.
+reqFreeze|同一轮累计冻结命中{n}个敌人，可为重复目标。|Land {n} freeze hits in one run; repeated targets count.|1プレイで凍結を{n}回当てる。同じ敵も可。|Atteindre {n} fois des ennemis par gel; une même cible compte.|Нанести {n} замораживающих попаданий; повторные цели учитываются.|Hittu {n} sinnum með frystingu í sömu umferð; endurtekin skot á sama óvin telja.|حقق {n} إصابات تجميد في جولة واحدة؛ تُحسب الأهداف المتكررة.
+reqReveal|同一轮揭示{n}次处于隐形状态的敌人。|Reveal hidden enemies {n} times in one run.|1プレイで不可視の敵を{n}回見つける。|Révéler {n} fois des ennemis cachés dans une partie.|Раскрыть невидимых врагов {n} раз за один заход.|Afhjúpaðu ósýnilega óvini {n} sinnum í sömu umferð.|اكشف الأعداء المختفين {n} مرات في جولة واحدة.
+reqCombo|达到{n}连击；相邻击败间隔不超过4秒。|Reach a {n}-kill combo with no gap longer than four seconds.|撃破間隔4秒以内で{n}連撃に達する。|Atteindre {n} éliminations en chaîne, espacées d’au plus quatre secondes.|Достичь серии из {n} убийств с интервалом не более четырёх секунд.|Náðu {n} sigra röð með í mesta lagi fjórum sekúndum á milli.|حقق سلسلة من {n} هزائم بفاصل لا يتجاوز أربع ثوانٍ.
+reqUpgrade|同一轮选择至少3种不同的波间升级。|Choose at least three different inter-wave upgrades in one run.|1プレイで波間強化を3種類以上選ぶ。|Choisir trois améliorations différentes dans une partie.|Выбрать не менее трёх разных улучшений за заход.|Veldu minnst þrjár ólíkar uppfærslur í sömu umferð.|اختر ثلاثة أنواع مختلفة على الأقل من ترقيات ما بين الموجات في جولة واحدة.
+reqAnswers|同一轮正确回答{n}道学习题。|Answer {n} study questions correctly in one run.|1プレイで学習問題{n}問に正解する。|Répondre correctement à {n} questions dans une partie.|Правильно ответить на {n} учебных вопросов за один заход.|Svaraðu {n} náms­spurningum rétt í sömu umferð.|أجب عن {n} أسئلة دراسية بشكل صحيح في جولة واحدة.
+reqBattleHard|困难或更高难度赢得对战。|Win a battle on Hard or above.|困難以上で対戦に勝つ。|Gagner en Difficile ou plus.|Победить на сложном уровне или выше.|Vinnðu á erfiðu stigi eða hærra.|اربح قتالاً على الصعب أو أعلى.
+reqKills|同一轮击败{n}个投影。|Defeat {n} projections in one run.|1プレイで投影を{n}体倒す。|Vaincre {n} projections dans une partie.|Победить {n} проекций за один заход.|Sigraðu {n} varpanir í sömu umferð.|اهزم {n} إسقاطات في جولة واحدة.
+reqNoRetry|未使用检查点重试，赢得对战。|Win without using checkpoint retries.|チェックポイント再挑戦なしで勝つ。|Gagner sans reprise au point de contrôle.|Победить без повторов с контрольной точки.|Vinnðu án þess að endurreyna frá vistunarpunkti.|اربح دون إعادة المحاولة من نقطة الحفظ.
+reqStreak|同一轮连续答对20题。|Answer twenty questions correctly in a row in one run.|1プレイで20問連続正解する。|Réussir vingt réponses consécutives dans une partie.|Дать двадцать верных ответов подряд за один заход.|Svaraðu tuttugu spurningum rétt í röð í sömu umferð.|أجب عن عشرين سؤالاً بشكل صحيح متتالٍ في جولة واحدة.
+reqBossKills|同一轮击败5个首领。|Defeat five bosses in one run.|1プレイでボスを5体倒す。|Vaincre cinq boss dans une partie.|Победить пять боссов за один заход.|Sigraðu fimm stjóra í sömu umferð.|اهزم خمسة زعماء في جولة واحدة.
+reqModes|分别完成战役、护送与首领挑战，可跨周目。|Complete campaign, escort and boss rush; separate runs count.|作戦・護衛・ボス連戦を各完了。別プレイ可。|Terminer campagne, escorte et boss, même dans des parties séparées.|Завершить кампанию, сопровождение и боссов; можно за разные заходы.|Ljúktu herferð, fylgd og stjórabardögum; má vera í ólíkum umferðum.|أكمل الحملة والمرافقة وتحدي الزعماء؛ يمكن إكمالها في جولات مختلفة.
+settingTitle|设置|Settings|設定|Paramètres|Настройки|Stillingar|الإعدادات
+studyToggle|学习模式（默认关闭）|Study mode (off by default)|学習モード（初期はオフ）|Mode étude (désactivé par défaut)|Учебный режим (выключен по умолчанию)|Námshamur (sjálfgefið óvirkur)|وضع الدراسة (معطّل افتراضياً)
+casualMenu|少题 · 基础优先 · 固定短时限 · 56选一3题|Fewer questions · basics · short timers · three number grids|少ない問題・基礎優先・短い制限時間・数字盤3問|Moins de questions · bases · temps courts · trois grilles|Меньше вопросов · основы · короткое время · три сетки|Færri spurningar · undirstöður · stuttur tími · þrjár talnatöflur|أسئلة أقل · أساسيات · وقت قصير · ثلاث شبكات أرقام
+studyMenu|多题 · 分级延时 · 课堂时钟×0.65 · 56选一5题|More questions · graded timers · lesson clock ×0.65 · five grids|多い問題・難度別時間・授業時計×0.65・数字盤5問|Plus de questions · temps gradués · horloge ×0,65 · cinq grilles|Больше вопросов · время по уровню · часы ×0,65 · пять сеток|Fleiri spurningar · tími eftir stigi · klukka ×0,65 · fimm töflur|أسئلة أكثر · وقت بحسب المستوى · ساعة ×0.65 · خمس شبكات
+menuStart|开始新的一天|Start a new day|新しい一日を開始|Commencer une journée|Начать новый день|Hefja nýjan dag|ابدأ يوماً جديداً
+menuQuick|快速模式|Quick lessons|短時間モード|Cours rapides|Быстрые уроки|Flýtikennsla|حصص سريعة
+menuWeek|一周挑战|Seven-day challenge|7日間チャレンジ|Défi de sept jours|Семидневное испытание|Sjö daga áskorun|تحدي سبعة أيام
+menuHome|归家|Homecoming|帰宅|Retour à la maison|Возвращение домой|Heimkoma|العودة إلى المنزل
+menuTut|新手教程|Beginner tutorial|初心者ガイド|Tutoriel débutant|Обучение для новичков|Kennsla fyrir byrjendur|شرح للمبتدئين
+howTo|游戏说明|How to play|遊び方|Comment jouer|Как играть|Leiðbeiningar|طريقة اللعب
+endingArchive|结局档案|Ending archive|結末の記録|Archives des fins|Архив концовок|Endasafn|أرشيف النهايات
+characters|人物|Characters|登場人物|Personnages|Персонажи|Persónur|الشخصيات
+teacher|老师|Teacher|先生|Professeur|Учитель|Kennari|المعلّم
+student|同学|Classmates|クラスメイト|Camarades|Одноклассники|Bekkjarfélagar|زملاء الصف
+saves|存档|Saves|セーブ|Sauvegardes|Сохранения|Vistanir|ملفات الحفظ
+timetable|课表|Timetable|時間割|Emploi du temps|Расписание|Stundaskrá|الجدول
+journal|手记|Journal|手帳|Journal|Записки|Dagbók|المذكرات
+listen|听课|Listen|授業を聞く|Écouter|Слушать|Hlusta|الاستماع
+homework|作业|Homework|宿題|Devoirs|Домашняя работа|Heimanám|الواجبات
+cube|魔方|Cube|キューブ|Cube|Кубик|Kubbur|المكعب
+phone|手机|Phone|スマホ|Téléphone|Телефон|Sími|الهاتف
+observe|观察|Observe|観察|Observer|Наблюдать|Fylgjast með|المراقبة
+notes|传纸条|Pass a note|メモを渡す|Passer un mot|Передать записку|Rétta miða|تمرير ورقة
+sleep|睡觉|Sleep|眠る|Dormir|Спать|Sofa|النوم
+chess|下棋|Play chess|チェス|Jouer aux échecs|Играть в шахматы|Tefla|لعب الشطرنج
+speaking|讲话|Talk|話す|Parler|Разговаривать|Tala|الكلام
+putAway|收好|Put away|しまう|Ranger|Убрать|Ganga frá|إخفاء الأغراض
+wake|醒来|Wake up|起きる|Se réveiller|Проснуться|Vakna|الاستيقاظ
+suspicion|怀疑|Suspicion|疑い|Soupçon|Подозрение|Grunur|الاشتباه
+focus|专注|Focus|集中|Concentration|Сосредоточенность|Einbeiting|التركيز
+boredom|无聊|Boredom|退屈|Ennui|Скука|Leiði|الملل
+fullness|饱食度|Fullness|満腹度|Satiété|Сытость|Sedda|الشبع
+lunch|午餐|Lunch|昼食|Déjeuner|Обед|Hádegismatur|الغداء
+dinner|晚餐|Dinner|夕食|Dîner|Ужин|Kvöldmatur|العشاء
+arrival|到校|Arrival|登校|Arrivée|Прибытие|Koma|الوصول
+break|课间|Break|休み時間|Récréation|Перемена|Frímínútur|الاستراحة
+pe|体育|PE|体育|EPS|Физкультура|Íþróttir|التربية البدنية
+chinese|语文|Chinese|国語|Chinois|Китайский язык|Kínverska|اللغة الصينية
+chemistry|化学|Chemistry|化学|Chimie|Химия|Efnafræði|الكيمياء
+biology|生物|Biology|生物|Biologie|Биология|Líffræði|الأحياء
+physics|物理|Physics|物理|Physique|Физика|Eðlisfræði|الفيزياء
+english|英语|English|英語|Anglais|Английский язык|Enska|اللغة الإنجليزية
+mathematics|数学|Mathematics|数学|Mathématiques|Математика|Stærðfræði|الرياضيات
+studyOne|第一节晚自习|Evening study I|夜間自習1|Étude du soir I|Вечерняя самоподготовка I|Kvöldnám I|المذاكرة المسائية الأولى
+studyTwo|第二节晚自习|Evening study II|夜間自習2|Étude du soir II|Вечерняя самоподготовка II|Kvöldnám II|المذاكرة المسائية الثانية
+realMode|真实模式|Realistic mode|リアルモード|Mode réaliste|Реалистичный режим|Raunveruleikahamur|الوضع الواقعي
+oldHorror|恐怖模式 · 校园与归家|Horror mode · campus and home|恐怖モード・学校と家|Horreur · campus et maison|Ужасы · школа и дом|Hryllingur · skóli og heimili|الرعب · المدرسة والمنزل
+mobile|手机端模式|Phone layout|スマホ用配置|Interface mobile|Мобильный интерфейс|Símaviðmót|واجهة الهاتف
+volume|音量|Volume|音量|Volume|Громкость|Hljóðstyrkur|مستوى الصوت
+textSpeed|文字速度|Text speed|文字速度|Vitesse du texte|Скорость текста|Textahraði|سرعة النص
+autoText|剧情自动继续|Auto-advance dialogue|台詞を自動送り|Dialogue automatique|Автопереход диалога|Sjálfvirk framvinda samtals|تقدم الحوار تلقائياً
+flicker|恐怖闪烁|Horror flicker|恐怖の点滅|Scintillements|Мерцание|Flökt|الوميض المرعب
+shake|屏幕震动|Screen shake|画面の揺れ|Secousses de l’écran|Тряска экрана|Skjálfti á skjá|اهتزاز الشاشة
+settingsLead|按自己的节奏上课|Set your own pace|自分のペースで|À votre rythme|В своём темпе|Á þínum hraða|اضبط إيقاعك
+settingsIntro|课时、显示与声音在此调整。攻略入口已收进下方折叠区。|Adjust lesson pace, display and sound. Relationships are in the collapsed section below.|授業の速さ・表示・音を調整。交流は下の折りたたみ内。|Réglez le rythme, l’affichage et le son. Les relations sont repliées ci-dessous.|Настройте темп уроков, экран и звук. Отношения — в свёрнутом разделе ниже.|Stilltu kennsluhraða, skjá og hljóð. Samskipti eru í samanbrotnum kafla neðar.|اضبط زمن الحصص والعرض والصوت. توجد العلاقات في القسم المطوي أدناه.
+rulesHeading|课时与规则|Lesson time and rules|授業時間とルール|Durée et règles|Время уроков и правила|Kennslutími og reglur|زمن الحصص والقواعد
+romanceHeading|攻略与同学互动|Relationships and classmates|交流と恋愛|Relations et camarades|Отношения и одноклассники|Samskipti við bekkjarfélaga|العلاقات والزملاء
+layoutHeading|画面与手机布局|Display and phone layout|画面とスマホ配置|Affichage et mobile|Экран и мобильный вид|Skjár og símaviðmót|العرض وواجهة الهاتف
+readingHeading|声音与阅读|Sound and reading|音と読書|Son et lecture|Звук и чтение|Hljóð og lestur|الصوت والقراءة
+materialsHeading|存档与资料|Saves and references|セーブと資料|Sauvegardes et documents|Сохранения и материалы|Vistanir og gögn|الحفظ والمراجع
+classSpeed|课堂时间流速|Classroom clock speed|授業時計の速度|Vitesse de l’horloge|Скорость часов урока|Hraði kennsluklukku|سرعة ساعة الحصة
+classSpeedHint|0.25～4；默认1，数值越大，下课越快。|0.25–4; default 1. Higher means lessons finish sooner.|0.25～4、初期1。大きいほど早く下校。|0,25–4 ; 1 par défaut. Plus la valeur est haute, plus le cours finit vite.|0,25–4; по умолчанию 1. Выше — урок заканчивается быстрее.|0,25–4; sjálfgefið 1. Hærra gildi styttir kennslustund.|من 0.25 إلى 4؛ الافتراضي 1. القيمة الأعلى تنهي الحصة أسرع.
+classFour|所有课堂课时已延长四倍。|All lesson durations are four times longer.|全授業の長さは4倍です。|Tous les cours durent quatre fois plus longtemps.|Все уроки продлены в четыре раза.|Allar kennslustundir eru fjórfalt lengri.|مُدّدت جميع الحصص إلى أربعة أمثال مدتها.
+all|全部|All|すべて|Tout|Все|Allt|الكل
+on|开启|On|オン|Activé|Включено|Virkt|مفعّل
+off|关闭|Off|オフ|Désactivé|Выключено|Óvirkt|معطّل
+clearSaves|清除本地存档|Clear local saves|ローカルセーブを削除|Effacer les sauvegardes locales|Удалить локальные сохранения|Eyða staðbundnum vistunum|حذف الحفظ المحلي
+mirror|反光镜|Reflection mirror|反射鏡|Miroir|Зеркало|Spegill|مرآة الانعكاس
+board|讲台|Podium|教壇|Estrade|Кафедра|Kennarapúlt|المنصة
+rear|后门|Rear door|後ろの扉|Porte arrière|Задняя дверь|Bakdyr|الباب الخلفي
+window|窗外|Outside the window|窓の外|Par la fenêtre|За окном|Utan gluggans|خارج النافذة
+space|空格|Space|スペース|Espace|Пробел|Bilslá|المسافة
+realLock|开启后自动关闭两位同学的攻略；普通友情保留。|Enabling this disables both romance routes; ordinary friendship remains.|オンにすると恋愛2ルートが無効。友情は残ります。|Désactive les deux romances ; l’amitié reste disponible.|Отключает обе романтические линии; дружба остаётся.|Slekkur á báðum rómantískum leiðum; vinátta helst.|يُعطّل مساري الرومانسية؛ تبقى الصداقة العادية.
+voiceNetworkOnly|此语言只有网络声线；请自行选择是否允许网络语音。|Only a network voice is available. Choose whether to allow network speech.|この言語はネット音声のみ。許可するか選んでください。|Seule une voix réseau est disponible. Choisissez de l’autoriser ou non.|Доступен только сетевой голос. Выберите, разрешать ли его.|Aðeins netrödd er tiltæk. Veldu hvort leyfa eigi hana.|يتوفر صوت شبكي فقط. اختر ما إذا كنت تسمح بالنطق عبر الشبكة.
+`;
+for(const row of MORE_ROWS317.trim().split('\n'))addText317(row);
+const MEDAL_REQUIREMENTS317={nights:'reqNights',power25:'reqNightPower',feeds:'reqFeeds',repelled:'reqRepel',lures:'reqLure',reboots:'reqReboot',noLureClear:'reqNoLure',hardClear:'reqBattleHard',lowPower:'reqLowPower',unbrokenFive:'reqUnbroken',allNightEnds:'reqNightEnds',clearedWaves:'reqWaves',campaign:'reqCampaign',studyClear:'reqStudyClear',perfectClear:'reqPerfect',synergy:'reqSynergy',splitKills:'reqSplit',jamKills:'reqJam',armorBreaks:'reqArmor',escort:'reqEscort',bossrush:'reqBossRush',skills:'reqSkills',repairs:'reqRepair',stasisHits:'reqFreeze',reveals:'reqReveal',maxCombo:'reqCombo',upgradeTypes:'reqUpgrade',correct:'reqAnswers',kills:'reqKills',noRetryClear:'reqNoRetry',correctStreak:'reqStreak',bossKills:'reqBossKills',modesCleared:'reqModes'};
+const REWARD_ROWS317=`
+campusHorrorTitle|灯灭以后仍是清晨|Dawn Beyond the Blackout|消灯の先の朝|L’aube après l’extinction|Рассвет после темноты|Dögun eftir myrkur|فجر بعد انطفاء الأنوار
+campusHorrorProse|真实恐怖模式的一天结束了。你辨清三次走廊异象，没有把每一声呼吸都当成自己的。关上教室的门，钟终于朝同一个方向走。|The day in True Horror is over. You identified three corridor anomalies without mistaking every breath for your own. Close the classroom door. The clocks finally move in one direction.|本格ホラーの一日が終わった。廊下の異変を三度見分け、すべての息を自分のものとは思わなかった。教室の扉を閉める。時計はようやく同じ方向へ進む。|La journée d’Horreur immersive s’achève. Vous avez reconnu trois anomalies sans prendre chaque souffle pour le vôtre. Fermez la porte de la classe : les horloges avancent enfin dans le même sens.|День настоящего хоррора окончен. Вы распознали три аномалии, не принимая каждый вдох за свой. Закройте дверь класса. Часы наконец идут в одну сторону.|Degi raunverulegs hryllings er lokið. Þú greindir þrjú frávik á ganginum án þess að halda að hvert andvarp væri þitt. Lokaðu stofudyrunum. Klukkurnar ganga loks í sömu átt.|انتهى يوم الرعب الحقيقي. ميّزت ثلاث ظواهر في الممر دون أن تحسب كل نفسٍ نفسَك. أغلق باب الصف؛ أخيراً تتحرك الساعات في اتجاه واحد.
+campusHorrorHint|全日保持真实恐怖模式，化解至少三次异象后成功离校。|Keep True Horror on for the entire day, resolve at least three anomalies, then leave school successfully.|一日中本格ホラーをオンにし、異変を3回以上解決して下校する。|Garder l’Horreur immersive toute la journée, dissiper trois anomalies et quitter l’école avec succès.|Провести весь день в настоящем хорроре, устранить три аномалии и успешно покинуть школу.|Hafðu hryllingsham virkan allan daginn, leystu minnst þrjú frávik og komstu úr skólanum.|أبقِ الرعب الحقيقي مفعلاً طوال اليوم، وعالج ثلاث ظواهر على الأقل ثم غادر المدرسة بنجاح.
+campusCameraTitle|未响的快门|The Silent Shutter|鳴らなかったシャッター|L’obturateur silencieux|Тихий затвор|Hljóðlaus lokari|الغالق الصامت
+campusCameraProse|没有广播告诉你镜头什么时候朝向这边。你自己抬头，读懂了讲台上的动作。班级群留下的是课本，不是臆测。|No announcement told you when the lens turned your way. You looked up yourself and read the movement at the podium. The class group records textbooks, not assumptions.|レンズがこちらを向く放送はなかった。自分で顔を上げ、教壇の動きを読んだ。クラスの記録に残ったのは教科書で、憶測ではない。|Aucune annonce n’a indiqué que l’objectif vous visait. Vous avez levé les yeux et compris le geste à l’estrade. Le groupe de classe garde des manuels, pas des suppositions.|Никто не объявил, когда объектив повернулся к вам. Вы сами подняли глаза и заметили движение у кафедры. В чате остались учебники, а не домыслы.|Engin tilkynning sagði hvenær linsan sneri að þér. Þú leitst sjálf upp og skildir hreyfinguna við púltið. Í bekkjarhópnum sjást bækur, ekki getgátur.|لم يخبرك إعلان بموعد توجّه العدسة نحوك. رفعت رأسك بنفسك وفهمت الحركة على المنصة. بقيت في مجموعة الصف كتبٌ لا تخمينات.
+campusCameraHint|同一天主动观察讲台识别至少两次拍摄，两次均未留下低头影像，再成功离校。|In one day, identify two captures yourself without a rep warning, leave no head-down frames in either, then leave school successfully.|同じ日に委員の警告なしで撮影を2回見つけ、うつむいた映像を残さず下校する。|Repérer soi-même deux prises de vue dans la journée, sans aide, ne laisser aucune image tête baissée et quitter l’école.|Самостоятельно заметить две съёмки за день без подсказки, не попасть в них с опущенной головой и успешно уйти.|Taktu sjálf eftir tveimur myndatökum sama dag án viðvörunar, vertu ekki með höfuðið niðri og komstu úr skólanum.|لاحظ عمليتي تصوير بنفسك في يوم واحد دون تنبيه، ولا تظهر مطأطئ الرأس في أي منهما، ثم غادر بنجاح.
+campusLostTitle|呼吸占满了走廊|A Corridor Full of Breathing|息に満ちた廊下|Un couloir plein de souffles|Коридор, полный дыхания|Gangur fullur af andardrætti|ممر امتلأ بالأنفاس
+campusLostProse|你把每一次异响都留到了最后。黑板上空白的名字逐个亮起，而你再也分不清哪一声呼吸属于自己。可以从最近的检查点重新开始。|You left every strange sound until too late. Blank names on the board begin to glow; you can no longer tell which breath is yours. You may retry from the latest checkpoint.|異音をすべて後回しにした。黒板の空白の名前が順に光り、どの息が自分のものかもう分からない。直前のチェックポイントから再挑戦できる。|Vous avez attendu trop longtemps face à chaque bruit. Les noms vides au tableau s’illuminent ; vous ne reconnaissez plus votre souffle. Reprenez au dernier point de contrôle.|Вы откладывали каждый странный звук. Пустые имена на доске загораются; вы больше не узнаёте свой вдох. Можно повторить с последней контрольной точки.|Þú frestaðir því að bregðast við hverju undarlegu hljóði. Auð nöfn á töflunni glóa; þú þekkir ekki lengur eigin andardrátt. Þú getur reynt aftur frá síðasta vistunarpunkti.|أجّلت كل صوت غريب حتى فات الأوان. أضاءت الأسماء الفارغة على السبورة، ولم تعد تميّز نفسَك. يمكنك إعادة المحاولة من آخر نقطة حفظ.
+campusLostHint|真实恐怖模式中心神压力到达100。|Reach 100 strain in True Horror.|本格ホラーで心神圧力100になる。|Atteindre 100 de tension en Horreur immersive.|Достичь 100 напряжения в настоящем хорроре.|Náðu 100 álagi í hryllingsham.|بلوغ 100 من الضغط النفسي في الرعب الحقيقي.
+achHorrorRead|没有名字的脚步|Footsteps Without a Name|名のない足音|Des pas sans nom|Шаги без имени|Nafnlaust fótatak|خطوات بلا اسم
+achHorrorReadDesc|在真实恐怖模式中实际化解一次异象。|Resolve an anomaly in True Horror.|本格ホラーで異変を1回解決する。|Dissiper une anomalie en Horreur immersive.|Устранить аномалию в настоящем хорроре.|Leystu eitt frávik í hryllingsham.|عالج ظاهرة غريبة في الرعب الحقيقي.
+achHorrorThree|辨认真正的声音|Identify the Real Sound|本物の音を見分けて|Reconnaître le vrai son|Распознать настоящий звук|Greina rétta hljóðið|تمييز الصوت الحقيقي
+achHorrorThreeDesc|同日化解三次异象。|Resolve three anomalies in one day.|同じ日に異変を3回解決する。|Dissiper trois anomalies dans la journée.|Устранить три аномалии за день.|Leystu þrjú frávik sama dag.|عالج ثلاث ظواهر في يوم واحد.
+achHorrorClear|不借一封情书|Without a Love Letter|恋文に頼らず|Sans lettre d’amour|Без любовного письма|Án ástarbréfs|دون رسالة حب
+achHorrorClearDesc|全日保持真实恐怖模式后成功离校。|Leave school successfully after a full day of True Horror.|本格ホラーを一日中有効にして下校する。|Quitter l’école après une journée entière d’Horreur immersive.|Успешно покинуть школу после полного дня настоящего хоррора.|Komstu úr skólanum eftir heilan dag í hryllingsham.|غادر المدرسة بنجاح بعد يوم كامل من الرعب الحقيقي.
+achOwn|抬头才看得到|Only If You Look Up|顔を上げて初めて|Il faut lever les yeux|Только подняв глаза|Aðeins ef þú lítur upp|لا تراه إلا برفع رأسك
+achOwnDesc|没有体委提醒时，主动观察讲台识别一次家长举机。|Spot a parent raising a phone by inspecting the podium, without a rep warning.|委員の警告なしで、教壇を観察して保護者の挙動を見つける。|Repérer le téléphone levé à l’estrade sans avertissement de la déléguée.|Заметить поднятый телефон у кафедры без предупреждения старосты.|Sjáðu foreldri lyfta síma við púltið án viðvörunar fulltrúa.|لاحظ ولي أمر يرفع الهاتف عند مراقبة المنصة دون تنبيه الممثلة.
+achTwo|不等提示音|No Alert Needed|合図を待たず|Sans attendre l’alerte|Не ждать сигнала|Án viðvörunarhljóðs|دون انتظار التنبيه
+achTwoDesc|同日两次主动识别拍摄并让最终影像没有低头。|Identify two captures yourself in one day and leave no head-down frame.|同日に撮影を2回自力で見つけ、うつむいた映像を残さない。|Repérer deux prises de vue et n’y laisser aucune image tête baissée.|Самостоятельно заметить две съёмки за день без кадров с опущенной головой.|Taktu sjálf eftir tveimur myndatökum án þess að höfuðið sé niðri.|لاحظ عمليتي تصوير بنفسك في يوم واحد دون لقطات وأنت مطأطئ الرأس.
+achAlly|十之一的提醒|One Warning in Ten|10分の1の合図|Un avertissement sur dix|Одно предупреждение из десяти|Ein viðvörun af tíu|تنبيه من كل عشرة
+achAllyDesc|实际收到一次清醒体委给出的10%拍摄提醒。|Receive the awake sports rep’s 10%-chance filming reminder.|起きている体育委員の確率10%の撮影警告を受ける。|Recevoir l’avertissement à 10 % de la déléguée éveillée.|Получить подсказку бодрствующей старосты с шансом 10%.|Fáðu myndatökuviðvörun vakandi fulltrúa með 10% líkum.|تلقَّ تنبيه تصوير باحتمال 10% من ممثلة الرياضة المستيقظة.
+`;
+for(const row of REWARD_ROWS317.trim().split('\n'))addText317(row);
+// New prose is stored with line breaks; normalized exact matches retain paragraph semantics.
+for(const [id,keys] of Object.entries({horrorDawn317:['campusHorrorTitle','campusHorrorProse','campusHorrorHint'],quietCamera317:['campusCameraTitle','campusCameraProse','campusCameraHint'],lostSignal317:['campusLostTitle','campusLostProse','campusLostHint']})){
+ for(const [field,key]of [['title',keys[0]],['prose',keys[1]],['hint',keys[2]]]){const raw=CAMPUS_END317[id][field],row=TEXT317[key];CATALOG310.exact[norm310(raw)]=[row.en,row.ja,row['zh-TW']];for(const l of NEW_LANG317)EN_EXTRA317[l][norm310(row.en)]=row[l];}
+}
+for(const row of `difficulty|难度|Difficulty|難易度|Difficulté|Сложность|Erfiðleikastig|الصعوبة
+easy|简单|Easy|簡単|Facile|Легко|Auðvelt|سهل
+normal|普通|Normal|普通|Normal|Обычный|Venjulegt|عادي
+hard|困难|Hard|困難|Difficile|Сложный|Erfitt|صعب
+hell|地狱|Hell|地獄|Infernal|Ад|Helvíti|جحيم
+extreme|极限|Extreme|極限|Extrême|Экстрим|Öfgakennt|متطرف
+demigod|半神|Demigod|半神|Demi-dieu|Полубог|Hálfguð|نصف إله
+god|神级|God|神級|Divin|Божественный|Guðlegt|إلهي`.split('\n'))addText317(row);
+
+addText317('captureGuide|末节晚自习有三次不定时拍摄，不弹系统预警。普通举机1秒，需自己观察讲台；随后拍照或录像4秒并发到2025级二班。清醒体委每次仅有10%机会提醒，睡着不提醒。|The final evening study has three irregular captures with no automatic warning. The normal phone raise lasts 1 second; inspect the podium yourself. A photo or 4-second video is posted to the class group. An awake sports rep has a 10% chance to warn; a sleeping rep cannot.|最終自習では不定期に3回撮影され、自動警告はありません。普通では構える時間は1秒。自分で教壇を見ましょう。写真か4秒動画が投稿されます。起きている体育委員は10%で知らせ、睡眠中は知らせません。|Trois prises de vue irrégulières ont lieu pendant la dernière étude, sans alerte automatique. En normal, le téléphone se lève en 1 seconde : observez l’estrade. Une photo ou une vidéo de 4 secondes est publiée. La déléguée éveillée prévient avec 10 % de chance ; endormie, jamais.|На последней самоподготовке три нерегулярные съёмки без автоматического сигнала. В обычном режиме телефон поднимают за 1 секунду: следите за кафедрой. Затем публикуют фото или видео на 4 секунды. Бодрствующая староста предупреждает с шансом 10%, спящая — никогда.|Á síðustu námsstund kvöldsins eru þrjár myndatökur án sjálfvirkrar viðvörunar. Í venjulegri stillingu er símanum lyft á einni sekúndu; fylgstu sjálf með púlltinu. Mynd eða fjögurra sekúndna myndskeið birtist í hópnum. Vakandi fulltrúi varar við með 10% líkum, en ekki sofandi.|تحدث ثلاث عمليات تصوير غير منتظمة في المذاكرة المسائية الأخيرة بلا تنبيه تلقائي. في العادي يستغرق رفع الهاتف ثانية واحدة؛ راقب المنصة بنفسك. تُنشر صورة أو فيديو مدته أربع ثوانٍ. الممثلة المستيقظة تنبه باحتمال 10%، والنائمة لا تنبه.');
+
+/* Speech playback: no localService===true assumption, no repaint cancellation,
+ * strong utterance references, delayed voice discovery, explicit user retries.
+ * Network voices require a separate opt-in. No microphone or custom server. */
+const VOICE317={generation:0,current:null,last:null,pending:null,wait:null,watch:null,activated:false,status:'voiceStopped'};
+function voiceStatus317(id){VOICE317.status=id;speechStatus37=text317(id);const node=$('voiceStatus310');if(node&&node.textContent!==speechStatus37)node.textContent=speechStatus37;}
+function allVoices317(){try{return window.speechSynthesis?.getVoices?.()||[];}catch(_){return [];}}
+deviceVoices310=function(){return allVoices317().filter(v=>v.localService!==false||save.settings.cloudVoice===true);};
+matchingVoice310=function(lang){
+ const prefix={'zh-CN':'zh','zh-TW':'zh',en:'en',ja:'ja',fr:'fr',ru:'ru',is:'is',ar:'ar'}[lang]||'en';
+ const target=(BCP310[lang]||lang).toLowerCase();
+ return deviceVoices310().map(v=>({v,code:String(v.lang||'').toLowerCase().replaceAll('_','-')}))
+  .filter(x=>x.code===prefix||x.code.startsWith(prefix+'-')||(prefix==='zh'&&x.code.startsWith('cmn')))
+  .sort((a,b)=>(b.code===target?20:0)+(b.v.localService!==false?5:0)+(b.v.default?1:0)-((a.code===target?20:0)+(a.v.localService!==false?5:0)+(a.v.default?1:0)))[0]?.v||null;
+};
+voiceReport310=function(){return LOCALES310.map(locale=>{const v=matchingVoice310(locale);return {locale,available:!!v,name:v?.name||'',lang:v?.lang||'',local:v?.localService!==false};});};
+const stopBefore317=stopSpeech37;
+stopSpeech37=function(){VOICE317.generation++;clearTimeout(VOICE317.wait);clearTimeout(VOICE317.watch);VOICE317.wait=null;VOICE317.watch=null;VOICE317.current=null;VOICE317.pending=null;
+ stopBefore317();voiceStatus317('voiceStopped');};
+function voiceChunks317(text){const chunks=[],sentences=String(text).match(/[^。！？.!?\n]+[。！？.!?\n]*|[。！？.!?\n]+/g)||[text];
+ for(let part of sentences){while(part.length>175){let cut=part.lastIndexOf(' ',170);if(cut<60)cut=165;chunks.push(part.slice(0,cut));part=part.slice(cut);}if(part.trim())chunks.push(part.trim());}return chunks;}
+function speakCore317(name,text,options={}){
+ const lang=options.locale||effectiveLocale310();
+ stopSpeech37();if(!save.settings.dialogueVoice&&!options.force){voiceStatus317('voiceStopped');return false;}
+ if(save.settings.volume<=0){voiceStatus317('muted');return false;}
+ if(document.hidden)return false;
+ const synth=window.speechSynthesis;if(!synth||!window.SpeechSynthesisUtterance){voiceStatus317('voiceUnavailable');return false;}
+ const localized=translate310(text,lang),voice=matchingVoice310(lang);
+ VOICE317.last={name,text,options:{...options,locale:lang}};
+ if(!voice){const all=allVoices317(),prefix=(BCP310[lang]||lang).slice(0,2);const remoteOnly=all.some(v=>v.localService===false&&String(v.lang).slice(0,2)===prefix);voiceStatus317(remoteOnly&&!save.settings.cloudVoice?'voiceNetworkOnly':all.length?'voiceMissing':'voiceWait');VOICE317.pending={name,text,options:{...options,locale:lang},generation:VOICE317.generation};
+  if(!options.retried)VOICE317.wait=setTimeout(()=>{const p=VOICE317.pending;if(!p||p.generation!==VOICE317.generation)return;
+    if(matchingVoice310(lang))speakCore317(name,text,{...options,locale:lang,retried:true});else voiceStatus317('voiceMissing');},1000);
+  return false;
+ }
+ const generation=VOICE317.generation,parts=voiceChunks317(localized);let i=0;
+ const next=()=>{if(generation!==VOICE317.generation||document.hidden)return;const line=parts[i++];if(!line){VOICE317.current=null;speechBusy37=false;voiceStatus317('voiceReady');return;}
+  const u=new SpeechSynthesisUtterance(line);VOICE317.current=u;u.voice=voice;u.lang=voice.lang||BCP310[lang];
+  u.volume=save.settings.volume;u.rate=(name==='程今容'?.57:1)*(save.settings.voiceRate||1);u.pitch=1;speechBusy37=true;
+  let started=false;
+  u.onstart=()=>{if(generation!==VOICE317.generation)return;started=true;clearTimeout(VOICE317.watch);voiceStatus317('voicePlaying');};
+  u.onend=()=>{if(generation!==VOICE317.generation)return;clearTimeout(VOICE317.watch);VOICE317.current=null;VOICE317.wait=setTimeout(next,name==='程今容'?420:45);};
+  u.onerror=e=>{if(generation!==VOICE317.generation)return;clearTimeout(VOICE317.watch);VOICE317.current=null;speechBusy37=false;
+   voiceStatus317(['not-allowed','audio-busy','interrupted'].includes(e.error)?'voiceBlocked':'voiceUnavailable');};
+  try{if(synth.paused)synth.resume();synth.speak(u);voiceStatus317('voicePlaying');
+   VOICE317.watch=setTimeout(()=>{if(generation!==VOICE317.generation||started)return;if(synth.paused)synth.resume();
+    if(!synth.speaking&&!synth.pending){speechBusy37=false;voiceStatus317('voiceBlocked');}},1800);
+  }catch(_){speechBusy37=false;voiceStatus317('voiceUnavailable');}
+ };next();return true;
+}
+speak310=function(name,text,options={}){if(typeof options==='boolean')options={force:options};return speakCore317(name,text,options);};
+speak37=function(name,text,force=false){return speak310(name,text,{force});};
+localVoice37=function(){return matchingVoice310(effectiveLocale310());};
+voiceCards310=function(){return voiceReport310().map(r=>`<article class="voice-card310" data-no-translate310><b>${NATIVE310[r.locale]}</b><span>${esc(text317(r.available?'voiceReady':'voiceMissing'))}</span>${r.name?`<small>${esc(r.name)} · ${text317(r.local?'local':'network')}</small>`:''}<button type="button" data-voice317="${r.locale}">${esc(text317('preview'))}</button></article>`).join('');};
+languagePanel310=function(){return `<section class="locale-panel310" data-no-translate310><h3>${esc(text317('languages'))}</h3><label class="settings-row"><span>${esc(text317('language'))}</span><select data-setting="language">${LOCALES310.map(x=>`<option value="${x}" ${preferredLocale310()===x?'selected':''}>${NATIVE310[x]}</option>`).join('')}</select></label><details class="locale-coverage317"><summary>${esc(text317('coverage'))}</summary><p>${esc(text317('fallback'))}</p></details><label class="settings-row"><span>${esc(text317('voice'))}<small>${esc(text317('voiceHelp'))}</small></span><input type="checkbox" data-setting="dialogueVoice" ${save.settings.dialogueVoice?'checked':''}></label><label class="settings-row"><span>${esc(text317('cloudVoice'))}<small>${esc(text317('cloudHelp'))}</small></span><input type="checkbox" data-setting="cloudVoice" ${save.settings.cloudVoice?'checked':''}></label><label class="settings-row"><span>${esc(text317('rate'))}</span><input type="range" min="0.55" max="1.5" step="0.05" value="${save.settings.voiceRate||1}" data-setting="voiceRate"></label><div id="voiceAvailability310" class="voice-grid310">${voiceCards310()}</div><p id="voiceStatus310" role="status">${esc(text317(VOICE317.status))}</p><div class="modal-actions"><button data-voice317="retry">${esc(text317('retryVoice'))}</button><button data-voice317="stop">${esc(text317('stopVoice'))}</button></div></section>`;};
+window.speechSynthesis?.addEventListener('voiceschanged',()=>{
+ const p=VOICE317.pending;if(p&&p.generation===VOICE317.generation&&matchingVoice310(p.options.locale))speakCore317(p.name,p.text,{...p.options,retried:true});
+ const el=$('voiceAvailability310');if(el)el.innerHTML=voiceCards310();
+});
+// The trusted click itself starts speech. Never rely on autoplay or a render loop.
+document.addEventListener('click',e=>{const b=e.target.closest('[data-voice317]');if(!b)return;e.preventDefault();e.stopImmediatePropagation();VOICE317.activated=true;
+ const a=b.dataset.voice317;if(a==='stop'){stopSpeech37();return;}if(a==='retry'&&VOICE317.last){const l=VOICE317.last;speak310(l.name,l.text,{...l.options,force:true});return;}
+ const lang=LOCALES310.includes(a)?a:effectiveLocale310();speak310('DeepShawn',text317('voiceSample',{},lang),{force:true,locale:lang});
+},true);
+
+/* Campus changes remain inside S; independent modes never write these counters. */
+const B317={makeState,startNextWeekDay,validateSnapshot,captureSnapshot,restoreSnapshot,updateClass,updateHome,
+ renderUI,render316,finishEnding,achievementMetrics,settingChange,settings312,renderModal,tutorialCopy36,
+ socialAction39,v34Action,beginCapture316,finishCapture316,updateDuty316,enterClass,renderPhoneArt39,
+ observationResult,returnMenu,clearTransient,tick,openBattle313};
+function fresh317(enabled=false){return {version:1,horror:{enabled,whole:enabled,day:0,strain:0,next:28,clock:0,event:null,solved:0,missed:0},camera:{own:[],safe:[],ally:[]}};}
+function ensure317(st=S){if(!st)return null;if(!st.v317)st.v317=fresh317(false);return st.v317;}
+makeState=function(...a){const st=B317.makeState(...a);st.v317=fresh317(!!save.settings.trueHorror);return st;};
+startNextWeekDay=function(...a){const old=S?.v317?clone(S.v317):null,r=B317.startNextWeekDay(...a);if(S&&old){S.v317.camera=old.camera;S.v317.horror.enabled=old.horror.enabled;S.v317.horror.whole=old.horror.enabled;S.v317.horror.day=S.calendar.day;}return r;};
+validateSnapshot=function(snap){const r=B317.validateSnapshot(snap),v=ensure317(snap.state),h=v.horror;
+ assertValid(v.version===1&&h&&typeof h.enabled==='boolean'&&typeof h.whole==='boolean'&&num316(h.strain,0,100)&&num316(h.clock)&&num316(h.next)&&num316(h.solved)&&num316(h.missed),'Invalid horror state');
+ if(h.event)assertValid(['blackout','reflection','rearEcho'].includes(h.event.kind)&&num316(h.event.left,0,30)&&num316(h.event.held,0,5),'Invalid anomaly');
+ assertValid(v.camera&&typeof v.camera==='object'&&['own','safe','ally'].every(k=>Array.isArray(v.camera[k])),'Missing camera arrays');
+ for(const a of Object.values(v.camera))assertValid(Array.isArray(a)&&a.length<=128&&a.every(x=>typeof x==='string'&&x.length<100),'Invalid camera observations');return r;};
+captureSnapshot=function(...a){if(S)ensure317();return B317.captureSnapshot(...a);};
+restoreSnapshot=function(...a){const r=B317.restoreSnapshot(...a);if(S){const h=ensure317().horror;save.settings.trueHorror=h.enabled;if(h.enabled)closeRomance317();}return r;};
+function horrorActive317(){return !!(S?.screen==='game'&&ensure317().horror.enabled);}
+function closeRomance317(){save.settings.pengRoute=false;save.settings.wangRoute=false;
+ if(S?.v34?.task&&['letter','pengTalk'].includes(S.v34.task.type)){S.v34.task=null;S.action='listen';}
+ if(S?.v39?.social){S.v39.social=null;S.action='listen';}
+ if(challenge&&['pengReply34','social39'].includes(challenge.type))closeChallenge();
+}
+socialAction39=function(target,type,...a){if(horrorActive317()&&type!=='chat'){toast(text317('routeLocked'));return false;}return B317.socialAction39(target,type,...a);};
+v34Action=function(type,...a){if(horrorActive317()&&['letter','pengTalk'].includes(type)){toast(text317('routeLocked'));return false;}return B317.v34Action(type,...a);};
+function updateHorror317(dt){
+ if(!horrorActive317()||script||challenge||modal||recoveryGrace>0||tutorialActive36()||!['CLASS','HOME'].includes(S.phase)||S.phase==='HOME'&&bathActive316()||S.phase==='CLASS'&&S.campus.location!=='classroom')return;
+ const h=ensure317().horror;h.clock+=dt;
+ if(!h.event){h.strain=Math.max(0,h.strain-dt*.055);if(h.clock>=h.next){
+  const kinds=S.phase==='HOME'?['blackout']:['blackout','reflection','rearEcho'];
+  const k=kinds[Math.floor(roll316(S.runId+':horror317:'+h.day+':'+h.solved+':'+h.missed)*kinds.length)];
+  h.event={kind:k,left:12,held:0};sound('door',.25);requestAutoSave();}return;}
+ const e=h.event,home=S.phase==='HOME';let good=false;
+ if(e.kind==='blackout')good=home?S.home.action==='sleep':S.action==='listen'||S.action==='observe';
+ else if(e.kind==='reflection')good=S.action==='observe'&&['board','teacher'].includes(S.observe);
+ else good=S.action==='observe'&&S.observe==='door'&&(S.v311?.mirror?.phase==='view'||S.v37?.turn?.phase==='view');
+ e.left=Math.max(0,e.left-dt);e.held=good?e.held+dt:0;
+ if(e.held>=(e.kind==='blackout'?3:2)){h.solved++;h.strain=Math.max(0,h.strain-9);h.event=null;h.next=h.clock+24+roll316(S.runId+':hnext:'+h.clock)*18;caption(text317('resolved'),2);checkAchievements();requestAutoSave();}
+ else if(e.left<=0){h.missed++;h.strain=Math.min(100,h.strain+24+rules().rank*2);h.event=null;h.next=h.clock+22;caption(text317('missed'),3);requestAutoSave();if(h.strain>=100)finishEnding('lostSignal317');}
+}
+function recordSide317(id){if(!S||!CAMPUS_END317[id]||id==='lostSignal317')return false;if(!save.endings.includes(id)){save.endings.push(id);checkAchievements(id);persist();requestAutoSave();}return true;}
+achievementMetrics=function(id=null){const m=B317.achievementMetrics(id),v=S?ensure317():null,h=v?.horror,day=S?.calendar?.day??0;
+ const clear=S?.difficulty!=='god'&&CLEAR_ENDINGS.includes(id);
+ return {...m,horrorRead317:h?.solved||0,horrorThree317:h?.solved||0,horrorClear317:clear&&h?.enabled&&h.whole?1:0,
+  cameraOwn317:v?.camera.own.length||0,cameraTwo317:v?.camera.safe.filter(x=>x.startsWith(day+':')).length||0,cameraAlly317:v?.camera.ally.length||0};};
+finishEnding=function(id){if(S&&S.difficulty!=='god'&&CLEAR_ENDINGS.includes(id)&&S.phase!=='HOME'){
+ const v=ensure317(),h=v.horror;if(h.enabled&&h.whole&&h.solved>=3)recordSide317('horrorDawn317');
+ if(v.camera.safe.filter(x=>x.startsWith(S.calendar.day+':')).length>=2)recordSide317('quietCamera317');
+ }return B317.finishEnding(id);};
+// Silent captures: the state and physical raised phone are visible ONLY through
+// podium observation. No pre-capture toast, countdown, sound or group notification.
+const CAMERA_LIFT317=[1.3,1,.86,.75,.65,.58,.50];
+function watchingPodium317(){return S?.phase==='CLASS'&&S.action==='observe'&&['board','teacher'].includes(S.observe)&&!script&&!challenge&&!modal;}
+beginCapture316=function(kind){
+ if(!S||S.phase!=='CLASS'||S.classIndex!==7||script||challenge)return false;
+ const d=planDuty316();if(d.pending||d.index>=3)return false;const key=d.day+':'+d.index,awake=S.v34?.allies?.wang?.mode!=='sleep';
+ const r=roll316(S.runId+':silent-camera317:'+key),warn=awake&&r<.10;
+ d.pending={stage:'warning',kind:kind||d.events[d.index].kind,left:CAMERA_LIFT317[rules().rank],elapsed:0,frames:[],initialDown:pose316().down,silent317:true,observed317:false,ally317:warn,roll317:r};
+ if(warn){unique316(ensure317().camera.ally,key);caption(text317('allyPhoto'),2);post316('reminder','王梓锐',text317('allyPhoto'),'silent-ally:'+key);checkAchievements();}
+ requestAutoSave();return true;
+};
+finishCapture316=function(){const d=S?.v316?.duty,p=d?.pending;if(p?.silent317&&p.frames.length){const key=d.day+':'+d.index;
+ if(p.observed317&&!p.ally317&&!p.frames.some(f=>f.down))unique316(ensure317().camera.safe,key);}
+ return B317.finishCapture316();};
+updateDuty316=function(dt){const d=S?.v316?.duty,p=d?.pending;
+ if(p?.silent317&&watchingPodium317()&&!p.observed317){p.observed317=true;if(!p.ally317)unique316(ensure317().camera.own,d.day+':'+d.index);checkAchievements();requestAutoSave();}
+ return B317.updateDuty316(dt);};
+enterClass=function(...a){const r=B317.enterClass(...a);if(S?.classIndex===7){const a=S.v34?.allies?.wang;if(a&&roll316(S.runId+':late-sleep317:'+S.calendar.day)<.32){a.mode='sleep';a.remaining=45+55*roll316(S.runId+':late-sleep-time317:'+S.calendar.day);a.elapsed=0;a.checked=false;}}
+ return r;};
+updateClass=function(dt){updateHorror317(dt);if(S?.screen!=='game')return;return B317.updateClass(dt);};
+updateHome=function(dt){updateHorror317(dt);if(S?.screen!=='game')return;return B317.updateHome(dt);};
+const horrorPanel317=document.createElement('aside');horrorPanel317.id='horrorPanel317';horrorPanel317.hidden=true;horrorPanel317.dataset.noTranslate310='';document.body.appendChild(horrorPanel317);
+function renderCampus317(){const active=horrorActive317()&&!modal&&!tutorialActive36()&&!battleOpen313;
+ const h=S?ensure317().horror:null;document.body.classList.toggle('true-horror317',!!active);document.body.classList.toggle('anomaly-active317',!!active&&!!h?.event);
+ const holder=save.settings.mobileMode?$('phonePlay39'):$('desktopToolBody314');if(holder&&horrorPanel317.parentElement!==holder)holder.prepend(horrorPanel317);
+ horrorPanel317.hidden=!active||!['CLASS','HOME'].includes(S.phase);if(!horrorPanel317.hidden){
+ const text=text317('strain')+' '+Math.round(h.strain)+'/100'+(h.event?' · '+text317(h.event.kind)+' ['+Math.ceil(h.event.left)+'s]':'');
+ if(horrorPanel317.textContent!==text)horrorPanel317.textContent=text;
+ }
+ // Remove the old floating warning banner and any unconditional filming cue.
+ dutyBanner316.hidden=true;const p=S?.v316?.duty?.pending,visible=!!p&&watchingPodium317();
+ $('teacher')?.classList.toggle('filming316',visible);document.querySelector('.phone-teacher39')?.classList.toggle('filming317',visible);
+ document.body.classList.toggle('observing-camera317',visible);
+ let note=$('podiumLook317');if(!note){note=document.createElement('div');note.id='podiumLook317';note.dataset.noTranslate310='';$('observePanel')?.appendChild(note);if(!note.isConnected)$('actionHint')?.after(note);}
+ if(note){note.hidden=!visible;if(visible)note.textContent=text317('lookPhone');}
+ for(const el of document.querySelectorAll('[data-setting="pengRoute"],[data-setting="wangRoute"]')){
+  el.disabled=!!save.settings.trueHorror;if(el.disabled)el.checked=false;
+ }
+}
+render316=function(...a){const r=B317.render316(...a);renderCampus317();return r;};
+const previewArt317=renderPhoneArt39;
+renderPhoneArt39=function(...a){const r=previewArt317(...a);if(S?.classIndex===7){const p=S.v316?.duty?.pending,el=document.querySelector('.phone-teacher39');el?.classList.toggle('filming317',!!p&&watchingPodium317());}return r;};
+observationResult=function(){if(watchingPodium317()&&S.v316?.duty?.pending){say('你',text317('lookPhone'));return;}return B317.observationResult();};
+settings312=function(){let html=B317.settings312();const options=`<section class="setting-section312 feature317" data-no-translate310><h3>07 · ${esc(text317('newEdition'))}</h3>${checkbox312('trueHorror',esc(text317('horror')),esc(text317('horrorHelp')))}<p>${esc(text317('horrorRules'))}</p>${checkbox312('nightWatch',esc(text317('nightToggle')),esc(text317('nightToggleHelp')))}<p>${esc(text317('silentCamera'))}</p><button type="button" data-arc317="archives">${esc(text317('archives'))}</button></section>`;
+ return html.replace('04 · 四语与语音','04 · '+text317('languages')).replace('</div>', '</div>')+options;};
+settingChange=function(el){const k=el.dataset.setting;
+ if(['trueHorror','nightWatch','cloudVoice'].includes(k)){
+  save.settings[k]=!!el.checked;
+  if(k==='trueHorror'){if(el.checked)closeRomance317();if(S?.screen==='game'){const h=ensure317().horror;h.enabled=el.checked;if(!el.checked||S.t>1)h.whole=false;}}
+  if(k==='cloudVoice')stopSpeech37();persist();requestAutoSave();renderCampus317();syncMenu317?.();
+  if(k==='cloudVoice'&&$('voiceAvailability310'))$('voiceAvailability310').innerHTML=voiceCards310();return;
+ }
+ if(k==='voiceRate'){const n=Number(el.value);save.settings.voiceRate=Number.isFinite(n)?clamp(n,.55,1.5):1;persist();return;}
+ if(['pengRoute','wangRoute'].includes(k)&&save.settings.trueHorror){el.checked=false;closeRomance317();persist();return;}
+ if(k==='dialogueVoice'){
+  save.settings.dialogueVoice=!!el.checked;persist();requestAutoSave();
+  if(el.checked){VOICE317.activated=true;speak310('DeepShawn',text317('voiceSample'),{force:true});}else stopSpeech37();return;
+ }
+ return B317.settingChange(el);
+};
+tutorialCopy36=function(id){if(id==='expansion317')return `<section data-no-translate310><h3>${text317('newTutorial')}</h3><p>${text317('silentCamera')}</p><h3>${text317('horror')}</h3><p>${text317('horrorHelp')}</p><p>${text317('horrorRules')}</p><h3>${text317('nightTitle')}</h3><p>${text317('nightRules')}</p><p>${text317('nightTime')}</p><h3>${text317('battleTitle')}</h3><p>${text317('battleLead')}</p><p>${text317('studyHelp')}</p><p>${text317('independent')}</p><h3>${text317('languages')}</h3><p>${text317('voiceHelp')}</p><p>${text317('fallback')}</p></section>`;return B317.tutorialCopy36(id);};
+
+/* Two independent original mini-games. No state here is assigned to campus S.
+ * Updates use bounded substeps and render through one reusable canvas. */
+const MODE_KEYS317={night:'lastclass:nightwatch317:v1',battle:'lastclass:tactics317:v1'};
+const NIGHT_MEDALS317=[
+ ['first','nightFirstMedal','nights',1],['five','nightFiveMedal','nights',5],['power','powerMedal','power25',1],
+ ['feeds','camMedal','feeds',4],['repel','repelMedal','repelled',10],['lure','lureMedal','lures',3],
+ ['reboot','rebootMedal','reboots',2],['noLure','noLureMedal','noLureClear',1],['hard','hardNightMedal','hardClear',1],
+ ['last','lastPowerMedal','lowPower',1],['unbroken','perfectMedal','unbrokenFive',1],['all','nightArchiveMedal','allNightEnds',5]
+];
+const BATTLE_MEDALS317=[
+ ['first','battleFirstMedal','clearedWaves',1],['ten','battleTenMedal','campaign',1],['study','studyMedal','studyClear',1],
+ ['perfect','perfectMedal','perfectClear',1],['synergy','synergyMedal','synergy',5],['split','splitMedal','splitKills',8],
+ ['jam','jamMedal','jamKills',5],['armor','armorMedal','armorBreaks',10],['escort','escortMedal','escort',1],
+ ['boss','bossMedal','bossrush',1],['endless','endlessMedal','clearedWaves',20],['skills','sixSkillsMedal','skills',6],
+ ['repair','repairMedal','repairs',5],['freeze','freezeMedal','stasisHits',20],['beacon','beaconMedal','reveals',5],
+ ['combo','comboMedal','maxCombo',10],['upgrade','upgradeMedal','upgradeTypes',3],['answers','studyTwentyMedal','correct',20],
+ ['hard','hardBattleMedal','hardClear',1],['hundred','hundredMedal','kills',100],['clean','noRetryMedal','noRetryClear',1],
+ ['twentyPerfect','streakTwentyMedal','correctStreak',20],['bossFive','fiveBossMedal','bossKills',5],['all','threeModesMedal','modesCleared',3]
+];
+const NIGHT_ENDS317={first:['nightEnding1','nightProse1'],five:['nightEnding2','nightProse2'],power:['nightEnding3','nightProse3'],caught:['nightEnding4','nightProse4'],blackout:['nightEnding5','nightProse5']};
+const BATTLE_ENDS317={campaign:['battleEnding1','battleProse1'],escort:['battleEnding2','battleProse2'],bossrush:['battleEnding3','battleProse3'],endless:['battleEnding4','battleProse4'],lost:['battleEnding5','battleProse5']};
+const SKILLS317={
+ scan:{name:'scanShot',cost:12,cd:1.5,damage:32,travel:.35,key:'J'},
+ pierce:{name:'pierce',cost:23,cd:3.0,damage:49,travel:.48,key:'K'},
+ stasis:{name:'freeze',cost:25,cd:11,damage:12,travel:.25,key:'L'},
+ beacon:{name:'beacon',cost:18,cd:9,damage:0,travel:.2,key:'U'},
+ repair:{name:'barrier',cost:32,cd:16,damage:0,travel:.2,key:'I'},
+ overload:{name:'overload',cost:55,cd:18,damage:88,travel:.65,key:'O'}
+};
+const ENEMIES317=['armored','sprinter','splitter','healer','jammer','phantom'];
+const MODE_STORES317={};let arcade317=null,arcadeKind317='night',arcadePage317='setup',arcadeOpen317=false,arcadeRenderKey317='',arcadeCanvas317=null,arcadeDrawClock317=0,arcadeSaveClock317=0,arcadeError317='',arcadeFocus317=null;
+function emptyModeStore317(kind){return {version:1,kind,latest:null,checkpoint:null,medals:{},endings:{},records:[]};}
+function modeValidate317(st,kind){
+ const n=(x,min=0,max=1e8)=>typeof x==='number'&&Number.isFinite(x)&&x>=min&&x<=max;
+ const check=(ok,msg)=>{if(!ok)throw Error(msg);};
+ check(st&&st.version===1&&st.kind===kind&&typeof st.id==='string'&&st.id.length<=100&&DIFFICULTY_IDS.includes(st.difficulty),'Invalid independent header');
+ check(['running','question','feedback','upgrade','nightWon','won','lost','retired'].includes(st.phase)&&typeof st.paused==='boolean','Invalid phase');
+ for(const k of ['t','retries','grace'])check(n(st[k]),'Invalid clock '+k);
+ check(n(st.rng,0,4294967295),'Invalid random clock');
+ check(st.grace<=2&&Number.isInteger(st.rng)&&st.rng<=4294967295,'Invalid random state');
+ check(st.stats&&typeof st.stats==='object'&&Object.values(st.stats).every(v=>Array.isArray(v)?v.length<300:n(v)),'Invalid statistics');
+ if(kind==='night'){
+  check(['running','nightWon','won','lost'].includes(st.phase),'Invalid night phase');
+  check(Number.isInteger(st.night)&&st.night>=1&&st.night<=5&&n(st.elapsed,0,150)&&st.duration===150&&n(st.power,0,100)&&n(st.signal,0,100)&&n(st.clockPressure,0,110),'Invalid night');
+  check(['left','right'].every(x=>typeof st.doors[x]==='boolean'&&n(st.lights[x]))&&typeof st.cameras==='boolean'&&Number.isInteger(st.feed)&&st.feed>=0&&st.feed<=3,'Invalid night controls');
+  check(n(st.reboot,0,4)&&n(st.lureAt)&&n(st.darkTime,0,10000)&&Array.isArray(st.foes)&&st.foes.length===2,'Invalid night systems');
+  for(const e of st.foes)check(['left','right'].includes(e.side)&&Number.isInteger(e.pos)&&e.pos>=0&&e.pos<=4&&n(e.next)&&n(e.doorTime,0,20),'Invalid night foe');
+ }else{
+  check(['campaign','endless','escort','bossrush'].includes(st.variant)&&typeof st.study==='boolean'&&n(st.energy,0,100)&&n(st.defence,0,10)&&n(st.score)&&n(st.beaconHP,0,100)&&n(st.beaconProgress,0,100),'Invalid battle resources');
+  check(Number.isInteger(st.wave)&&st.wave>=1&&st.wave<=999&&Number.isInteger(st.lane)&&st.lane>=0&&st.lane<=2&&n(st.spawnLeft,0,60)&&n(st.spawnIn)&&n(st.serial),'Invalid waves');
+  check(Array.isArray(st.enemies)&&st.enemies.length<=80&&Array.isArray(st.shots)&&st.shots.length<=40,'Invalid entity count');
+  check(Object.keys(SKILLS317).every(k=>n(st.cool[k]))&&Object.keys(st.upgrades).every(k=>['damage','regen','slow'].includes(k)&&n(st.upgrades[k],0,1000)),'Invalid upgrades');
+  for(const e of st.enemies)check(Number.isInteger(e.id)&&e.id>0&&Number.isInteger(e.lane)&&e.lane>=0&&e.lane<=2&&[...ENEMIES317,'boss','small'].includes(e.type)&&n(e.y,-.2,1.2)&&n(e.hp,0,100000)&&n(e.max,1,100000)&&e.hp<=e.max&&n(e.armor,0,100000)&&n(e.speed,0,.4)&&n(e.slowUntil)&&n(e.reveal)&&n(e.slow,0,1)&&n(e.healAt),'Invalid enemy');
+  check(new Set(st.enemies.map(x=>x.id)).size===st.enemies.length,'Duplicate enemy');
+  for(const p of st.shots)check(Object.hasOwn(SKILLS317,p.skill)&&n(p.elapsed,0,1)&&n(p.total,.1,1)&&Number.isInteger(p.lane)&&p.lane>=0&&p.lane<=2,'Invalid shot');
+  check(Array.isArray(st.deck)&&st.deck.length<2000&&st.deck.every(id=>{const r=QUESTION_INDEX38.get(id);return r?.kind==='choice'&&r.grade<=2;}),'Invalid question deck');
+  if(st.q){const q=st.q,r=QUESTION_INDEX38.get(q.id);check(r?.kind==='choice'&&r.grade<=2&&q.order.length===4&&new Set(q.order).size===4&&q.order.every(i=>Number.isInteger(i)&&i>=0&&i<4)&&n(q.total,1,200)&&n(q.left,0,q.total)&&Object.hasOwn(SKILLS317,q.skill)&&Number.isInteger(q.lane)&&q.lane>=0&&q.lane<=2&&[null,true,false].includes(q.correct),'Invalid question');}
+  check(!!st.q===['question','feedback'].includes(st.phase),'Question mismatch');
+ }
+ return st;
+}
+function validateModeStore317(raw,kind){if(!raw||raw.version!==1||raw.kind!==kind||!Array.isArray(raw.records)||raw.records.length>50)throw Error('Invalid archive');
+ const out=emptyModeStore317(kind);for(const key of ['latest','checkpoint'])if(raw[key])out[key]=clone(modeValidate317(raw[key],kind));
+ const defs=kind==='night'?NIGHT_MEDALS317:BATTLE_MEDALS317,ends=kind==='night'?NIGHT_ENDS317:BATTLE_ENDS317;
+ for(const [id]of defs){const t=raw.medals?.[id];if(typeof t==='number'&&Number.isFinite(t)&&t>0&&t<1e15)out.medals[id]=t;}
+ for(const id of Object.keys(ends)){const t=raw.endings?.[id];if(typeof t==='number'&&Number.isFinite(t)&&t>0&&t<1e15)out.endings[id]=t;}
+ out.records=raw.records.filter(x=>x&&typeof x.id==='string'&&x.id.length<120&&typeof x.result==='string'&&x.result.length<50&&typeof x.at==='number'&&typeof x.score==='number').slice(0,50);return out;
+}
+function loadModes317(){for(const kind of ['night','battle']){MODE_STORES317[kind]=emptyModeStore317(kind);
+ for(const key of [MODE_KEYS317[kind],MODE_KEYS317[kind]+':backup']){try{const v=localStorage.getItem(key);if(!v)continue;if(v.length>1500000)throw Error('Too large');MODE_STORES317[kind]=validateModeStore317(JSON.parse(v),kind);break;}catch(_){arcadeError317='saveError';}}}}
+function saveMode317(checkpoint=false){if(!arcade317)return false;const kind=arcade317.kind,store=MODE_STORES317[kind];store.latest=clone(arcade317);if(checkpoint)store.checkpoint=clone(arcade317);
+ try{const old=localStorage.getItem(MODE_KEYS317[kind]);if(old&&old.length<1500000){try{validateModeStore317(JSON.parse(old),kind);localStorage.setItem(MODE_KEYS317[kind]+':backup',old);}catch(_){}}
+ localStorage.setItem(MODE_KEYS317[kind],JSON.stringify(store));arcadeError317='';return true;}catch(_){arcadeError317='saveError';return false;}}
+function random317(st=arcade317){let x=st.rng>>>0;x^=x<<13;x^=x>>>17;x^=x<<5;st.rng=x>>>0||0x345abcde;return (st.rng>>>0)/4294967296;}
+function shuffle317(values,st=arcade317){const a=values.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(random317(st)*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+function seedMode317(kind,difficulty,seed){return {version:1,kind,id:kind+':'+Date.now().toString(36)+':'+Math.random().toString(36).slice(2,8),difficulty,phase:'running',paused:false,grace:2,t:0,rng:(seed??Math.floor(Math.random()*4294967295))>>>0||0x123bcd,retries:0};}
+function newNight317(difficulty,seed){const s=seedMode317('night',difficulty,seed);Object.assign(s,{night:1,elapsed:0,duration:150,power:100,signal:100,cameras:false,feed:0,doors:{left:false,right:false},lights:{left:0,right:0},reboot:0,lureAt:0,darkTime:0,clockPressure:0,foes:[],lastEnd:null,stats:{nights:0,power25:0,feeds:[],repelled:0,lures:0,reboots:0,noLureClear:0,hardClear:0,lowPower:0,unbrokenFive:0}});nightEnemies317(s);return s;}
+function nightEnemies317(s){s.foes=['left','right'].map((side,i)=>({side,pos:0,next:s.t+6+i*4+random317(s)*4,doorTime:0}));}
+function newTactics317(difficulty,study,variant='campaign',seed){const s=seedMode317('battle',difficulty,seed);
+ Object.assign(s,{variant,study:!!study,wave:1,lane:1,energy:100,defence:8,score:0,beaconHP:100,beaconProgress:0,enemies:[],shots:[],serial:0,spawnLeft:0,spawnIn:0,cool:Object.fromEntries(Object.keys(SKILLS317).map(k=>[k,0])),upgrades:{damage:0,regen:0,slow:0},q:null,deck:[],combo:0,lastKill:-100,lastEnd:null,
+ stats:{clearedWaves:0,kills:0,shots:0,correct:0,questions:0,wrong:0,leaked:0,synergy:0,splitKills:0,jamKills:0,armorBreaks:0,repairs:0,stasisHits:0,reveals:0,maxCombo:0,skills:[],upgradeTypes:[],correctStreak:0,bestStreak:0,bossKills:0}});setupWave317(s);return s;}
+function rank317(s=arcade317){return DIFFICULTIES[s.difficulty].rank;}
+function modeFactor317(s=arcade317){return [.78,1,1.14,1.28,1.40,1.55,1.70][rank317(s)];}
+function awardModes317(s=arcade317){if(!s)return;const store=MODE_STORES317[s.kind];let metrics;
+ if(s.kind==='night')metrics={...s.stats,feeds:s.stats.feeds.length,allNightEnds:Object.keys(store.endings).length};
+ else{const win=s.phase==='won',clean=win&&s.stats.leaked===0;metrics={...s.stats,skills:s.stats.skills.length,upgradeTypes:s.stats.upgradeTypes.length,correctStreak:s.stats.bestStreak,
+  campaign:win&&s.variant==='campaign'?1:0,escort:win&&s.variant==='escort'?1:0,bossrush:win&&s.variant==='bossrush'?1:0,
+  studyClear:win&&s.study?1:0,perfectClear:clean?1:0,hardClear:win&&rank317(s)>=2?1:0,noRetryClear:win&&s.retries===0?1:0,modesCleared:['campaign','escort','bossrush'].filter(k=>store.endings[k]).length};}
+ for(const [id,,metric,target]of(s.kind==='night'?NIGHT_MEDALS317:BATTLE_MEDALS317))if((metrics[metric]||0)>=target)store.medals[id]??=Date.now();
+}
+function endModeRecord317(id,s=arcade317){const store=MODE_STORES317[s.kind];store.endings[id]??=Date.now();s.lastEnd=id;
+ const key=s.id+':'+(s.kind==='night'?s.night:s.wave)+':'+s.retries;
+ store.records=[{id:key,result:id,at:Date.now(),score:s.score||0},...store.records.filter(x=>x.id!==key)].slice(0,50);awardModes317(s);saveMode317();}
+function finishNight317(win,reason='caught'){
+ const s=arcade317;if(!s||s.kind!=='night'||s.phase!=='running')return;
+ s.paused=false;s.grace=0;s.cameras=false;s.lights.left=s.lights.right=0;
+ if(!win){s.phase='lost';endModeRecord317(reason);return;}
+ s.elapsed=150;s.stats.nights=Math.max(s.stats.nights,s.night);if(s.power>=25)s.stats.power25++;
+ if(s.power>0&&s.power<=5)s.stats.lowPower=1;if(s.stats.lures===0)s.stats.noLureClear=1;
+ s.phase=s.night===5?'won':'nightWon';
+ if(s.night===1)endModeRecord317('first');
+ if(s.night===5){if(rank317(s)>=2)s.stats.hardClear=1;if(s.retries===0)s.stats.unbrokenFive=1;endModeRecord317('five');if(s.power>=25)endModeRecord317('power');}
+ awardModes317(s);saveMode317();}
+function nextNight317(){const s=arcade317;if(!s||s.kind!=='night'||s.phase!=='nightWon'||s.night>=5)return false;
+ s.night++;s.phase='running';s.elapsed=0;s.power=100;s.signal=100;s.clockPressure=0;s.darkTime=0;s.cameras=false;s.doors={left:false,right:false};s.lights={left:0,right:0};s.reboot=0;s.lureAt=s.t;s.grace=2;s.lastEnd=null;nightEnemies317(s);saveMode317(true);return true;}
+function nightAction317(cmd,arg){const s=arcade317;if(!s||s.kind!=='night'||s.phase!=='running'||s.paused||s.grace>0)return false;
+ if(cmd==='door'&&['left','right'].includes(arg)&&s.power>0)s.doors[arg]=!s.doors[arg];
+ else if(cmd==='light'&&['left','right'].includes(arg)&&s.power>=.6){s.power-=.6;s.lights[arg]=s.t+1.6;}
+ else if(cmd==='camera'&&s.power>0&&s.reboot<=0&&s.signal>0)s.cameras=!s.cameras;
+ else if(cmd==='feed'&&s.cameras&&Number.isInteger(arg)&&arg>=0&&arg<4){s.feed=arg;if(!s.stats.feeds.includes(arg))s.stats.feeds.push(arg);}
+ else if(cmd==='lure'&&s.power>=5&&s.lureAt<=s.t&&s.cameras){s.power-=5;s.lureAt=s.t+14;s.clockPressure=Math.max(0,s.clockPressure-23);for(const e of s.foes)if(s.feed===0||s.feed===(e.side==='left'?1:2)){e.pos=Math.max(0,e.pos-2);e.doorTime=0;e.next=s.t+5;}s.stats.lures++;}
+ else if(cmd==='reboot'&&s.power>=4&&s.reboot<=0){s.power-=4;s.reboot=3;s.cameras=false;s.stats.reboots++;}
+ else return false;awardModes317();saveMode317();return true;
+}
+function tickNight317(d){const s=arcade317,rate=modeFactor317(s)*(1+(s.night-1)*.11);s.t+=d;s.elapsed=Math.min(150,s.elapsed+d);
+ if(s.reboot>0){s.reboot=Math.max(0,s.reboot-d);if(s.reboot===0)s.signal=100;}
+ s.power=Math.max(0,s.power-d*(.105+(s.cameras?.09:0)+(s.doors.left?.46:0)+(s.doors.right?.46:0)));
+ s.signal=Math.max(0,s.signal-d*(s.cameras?.4:.10)*(1+(s.night-1)*.15));if(s.signal<=0)s.cameras=false;
+ if(s.power<=0){s.doors.left=s.doors.right=false;s.cameras=false;s.darkTime+=d;if(s.darkTime>=7){finishNight317(false,'blackout');return;}}
+ s.clockPressure=Math.max(0,s.clockPressure+d*(s.cameras&&s.feed===3&&s.reboot<=0?-9:(.58+s.night*.065)*rate));
+ if(s.clockPressure>=100){finishNight317(false);return;}
+ for(const e of s.foes){if(e.pos===4){e.doorTime+=d;if(s.doors[e.side]&&s.power>0&&e.doorTime>=.7){s.stats.repelled++;e.pos=0;e.doorTime=0;e.next=s.t+(7+random317(s)*6)/rate;}
+  else if(!s.doors[e.side]&&e.doorTime>=Math.max(1.35,3.0-rate*.55)){finishNight317(false);return;}}
+  else if(s.t>=e.next){const seen=s.cameras&&(s.feed===(e.side==='left'?1:2)||e.pos===0&&s.feed===0);
+   if(!seen||random317(s)>.48)e.pos++;e.next=s.t+(7+random317(s)*7)/rate;if(e.pos===4)e.doorTime=0;}}
+ if(s.elapsed>=150)finishNight317(true);
+}
+function setupWave317(s=arcade317){s.spawnLeft=s.variant==='bossrush'?3:Math.min(28,4+s.wave);s.spawnIn=1.5;s.enemies=[];s.shots=[];s.phase='running';s.bossPending=s.variant==='bossrush'||s.wave%5===0;s.q=null;s.grace=1.5;}
+function spawnEnemy317(type=null,lane=null,s=arcade317){const factor=modeFactor317(s);type=type||(s.bossPending?'boss':ENEMIES317[Math.floor(random317(s)*Math.min(6,2+s.wave))]);
+ if(type==='boss')s.bossPending=false;const max=Math.round((type==='boss'?260+s.wave*22:type==='small'?20:35+s.wave*6)*factor);
+ const e={id:++s.serial,type,lane:lane??Math.floor(random317(s)*3),y:-.03,hp:max,max,armor:type==='armored'?Math.round(max*.5):type==='boss'?60:0,
+ speed:(.021+Math.min(s.wave,25)*.0016)*factor*(type==='sprinter'?1.55:type==='boss'?.7:1),slowUntil:0,slow:1,reveal:0,healAt:s.t+4,door:0};
+ if(s.enemies.length<72)s.enemies.push(e);return e;}
+function tacticsTargets317(lane,s=arcade317){return s.enemies.filter(e=>e.lane===lane&&e.hp>0).sort((a,b)=>b.y-a.y);}
+function requestSkill317(skill){const s=arcade317,w=SKILLS317[skill];if(!s||s.kind!=='battle'||s.phase!=='running'||s.paused||s.grace>0||!w)return false;
+ if(s.cool[skill]>s.t||s.energy<w.cost)return false;if(!['repair','beacon'].includes(skill)&&!tacticsTargets317(s.lane).length)return false;
+ if(s.study){if(!s.deck.length)s.deck=shuffle317(QUESTION_CATALOG38.filter(r=>r.kind==='choice'&&r.grade<=2&&r.subject!=='chinese').map(r=>r.id),s);
+  const row=QUESTION_INDEX38.get(s.deck.shift()),total=roundTime38(row.normal*DIFFICULTIES[s.difficulty].answer);
+  s.q={id:row.id,order:shuffle317([0,1,2,3],s),skill,lane:s.lane,total,left:total,correct:null};s.phase='question';s.stats.questions++;saveMode317();return true;}
+ return fireSkill317(skill,s.lane);
+}
+function fireSkill317(skill,lane){const s=arcade317,w=SKILLS317[skill];if(!s||s.energy<w.cost||s.cool[skill]>s.t)return false;
+ s.energy-=w.cost;s.cool[skill]=s.t+w.cd;s.stats.shots++;if(!s.stats.skills.includes(skill))s.stats.skills.push(skill);
+ s.shots.push({skill,lane,elapsed:0,total:w.travel});awardModes317();saveMode317();return true;}
+function answerTactics317(i){const s=arcade317,q=s?.q;if(!s||s.paused||s.grace>0||s.phase!=='question'||!q||i!==null&&(!Number.isInteger(i)||i<0||i>3))return false;
+ const row=QUESTION_INDEX38.get(q.id);q.correct=i!==null&&q.order[i]===row.answer;s.phase='feedback';
+ if(q.correct){s.stats.correct++;s.stats.correctStreak++;s.stats.bestStreak=Math.max(s.stats.bestStreak,s.stats.correctStreak);}else{s.stats.wrong++;s.stats.correctStreak=0;}awardModes317();saveMode317();return true;}
+function feedbackTactics317(cancel=false){const s=arcade317,q=s?.q;if(!s||!q||s.paused||!['question','feedback'].includes(s.phase))return false;
+ s.q=null;s.phase='running';if(!cancel&&q.correct)fireSkill317(q.skill,q.lane);saveMode317();return true;}
+function impactSkill317(p){const s=arcade317,w=SKILLS317[p.skill],lane=tacticsTargets317(p.lane);let targets=[];
+ if(p.skill==='repair'){s.defence=Math.min(8,s.defence+3);if(s.variant==='escort')s.beaconHP=Math.min(100,s.beaconHP+12);s.stats.repairs++;return;}
+ if(p.skill==='beacon'){targets=s.enemies;for(const e of targets){if(e.type==='phantom'&&e.reveal<=s.t)s.stats.reveals++;e.reveal=s.t+8;e.armor=Math.max(0,e.armor-18);}return;}
+ if(p.skill==='scan'){targets=lane.slice(0,1);for(const e of lane){if(e.type==='phantom'&&e.reveal<=s.t)s.stats.reveals++;e.reveal=s.t+6;}}
+ if(p.skill==='pierce')targets=lane.slice(0,4);
+ if(p.skill==='stasis'){targets=lane;s.stats.stasisHits+=targets.length;}
+ if(p.skill==='overload')targets=s.enemies.slice(0,16);
+ for(const e of targets){let damage=w.damage*(1+.2*s.upgrades.damage);const chain=p.skill==='pierce'&&e.slowUntil>s.t&&e.reveal>s.t;
+  if(chain){damage*=1.5;s.stats.synergy++;}if(e.type==='phantom'&&e.reveal<=s.t&&p.skill!=='scan'&&p.skill!=='overload')damage*=.5;
+  if(e.armor>0){const before=e.armor,absorbed=Math.min(e.armor,damage*(p.skill==='pierce'?.35:1));e.armor-=absorbed;damage-=absorbed;if(before>0&&e.armor<=0)s.stats.armorBreaks++;}
+  e.hp=Math.max(0,e.hp-damage);e.reveal=Math.max(e.reveal,s.t+2);
+  if(['scan','stasis','overload'].includes(p.skill)){e.slow=p.skill==='stasis'?0:.45;e.slowUntil=s.t+(p.skill==='stasis'?2.6:4)*(1+.25*s.upgrades.slow);}
+ }
+ const dead=s.enemies.filter(e=>e.hp<=0);s.enemies=s.enemies.filter(e=>e.hp>0);
+ for(const e of dead){s.stats.kills++;if(e.type==='boss')s.stats.bossKills++;if(e.type==='jammer')s.stats.jamKills++;
+  if(e.type==='splitter'){s.stats.splitKills++;for(let i=0;i<2;i++){const child=spawnEnemy317('small',e.lane);child.y=e.y+.01;}}
+  s.combo=s.t-s.lastKill<=4?s.combo+1:1;s.lastKill=s.t;s.stats.maxCombo=Math.max(s.stats.maxCombo,s.combo);s.score+=Math.round((e.type==='boss'?600:100)+Math.min(100,s.combo*5));}
+ awardModes317();
+}
+function chooseUpgrade317(kind){const s=arcade317;if(!s||s.kind!=='battle'||s.phase!=='upgrade'||!['damage','regen','slow','repair'].includes(kind))return false;
+ if(kind==='repair')s.defence=Math.min(8,s.defence+3);else s.upgrades[kind]++;
+ if(!s.stats.upgradeTypes.includes(kind))s.stats.upgradeTypes.push(kind);s.wave++;s.energy=Math.min(100,s.energy+20);setupWave317();awardModes317();saveMode317(true);return true;}
+function finishTactics317(win,retired=false){const s=arcade317;if(!s||s.kind!=='battle'||['won','lost','retired'].includes(s.phase))return;
+ s.phase=retired?'retired':win?'won':'lost';s.q=null;s.paused=false;s.grace=0;
+ endModeRecord317(retired?'endless':win?s.variant:'lost');}
+function tickTactics317(d){const s=arcade317;
+ if(s.phase==='question'){s.q.left=Math.max(0,s.q.left-d);if(s.q.left<=0)answerTactics317(null);return;}
+ if(s.phase!=='running')return;s.t+=d;
+ const jam=s.enemies.some(e=>e.type==='jammer'&&e.y>.25),regen=5.5*(1+.2*s.upgrades.regen)/Math.sqrt(modeFactor317(s));
+ s.energy=Math.min(100,s.energy+regen*d*(jam?.65:1));
+ if(s.spawnLeft>0){s.spawnIn-=d;if(s.spawnIn<=0){spawnEnemy317();s.spawnLeft--;s.spawnIn=Math.max(1.4,4.1-Math.min(20,s.wave)*.12)/Math.sqrt(modeFactor317(s));}}
+ for(const p of s.shots)p.elapsed=Math.min(p.total,p.elapsed+d);const impacts=s.shots.filter(p=>p.elapsed>=p.total);s.shots=s.shots.filter(p=>p.elapsed<p.total);for(const p of impacts)impactSkill317(p);
+ for(const e of s.enemies){e.y+=d*e.speed*(e.slowUntil>s.t?e.slow:1);if(e.type==='healer'&&e.healAt<=s.t){e.healAt=s.t+4;for(const other of s.enemies)if(other.lane===e.lane)other.hp=Math.min(other.max,other.hp+6);}}
+ const leaked=s.enemies.filter(e=>e.y>=1);if(leaked.length){s.stats.leaked+=leaked.length;s.defence=Math.max(0,s.defence-leaked.reduce((n,e)=>n+(e.type==='boss'?3:1),0));if(s.variant==='escort')s.beaconHP=Math.max(0,s.beaconHP-leaked.length*15);s.enemies=s.enemies.filter(e=>e.y<1);}
+ if(s.defence<=0||s.beaconHP<=0){finishTactics317(false);return;}
+ if(s.variant==='escort')s.beaconProgress=Math.min(99,(s.wave-1)*12.5+Math.min(12,s.t/15));
+ if(s.spawnLeft===0&&!s.enemies.length&&!s.shots.length){s.stats.clearedWaves=Math.max(s.stats.clearedWaves,s.wave);
+  const goal={campaign:10,escort:8,bossrush:5,endless:999}[s.variant];
+  if(s.wave>=goal){if(s.variant==='escort')s.beaconProgress=100;finishTactics317(true);return;}
+  s.phase='upgrade';awardModes317();saveMode317();}
+}
+function stepArcade317(dt){const s=arcade317;if(!arcadeOpen317||arcadePage317!=='play'||!s||s.paused||document.hidden||!Number.isFinite(dt)||dt<=0||!['running','question'].includes(s.phase))return;
+ let left=Math.min(5,dt);while(left>1e-7){const d=Math.min(.05,left);left-=d;if(s.grace>0){s.grace=Math.max(0,s.grace-d);continue;}
+ if(s.kind==='night')tickNight317(d);else tickTactics317(d);if(!['running','question'].includes(s.phase))break;}
+ arcadeSaveClock317+=dt;if(arcadeSaveClock317>=5){arcadeSaveClock317=0;saveMode317();}
+ arcadeDrawClock317+=dt;
+}
+function pauseArcade317(force){if(!arcade317)return;arcade317.paused=typeof force==='boolean'?force:!arcade317.paused;if(!arcade317.paused)arcade317.grace=2;stopSpeech37();saveMode317();arcadeRenderKey317='';}
+function restoreMode317(checkpoint=false){const store=MODE_STORES317[arcadeKind317],raw=checkpoint?store.checkpoint:store.latest;if(!raw)return false;
+ const retries=arcade317?.id===raw.id&&arcade317?.kind===raw.kind?arcade317.retries:raw.retries;arcade317=clone(modeValidate317(raw,arcadeKind317));if(checkpoint)arcade317.retries=retries+1;arcade317.paused=true;arcade317.grace=2;arcadePage317='play';arcadeRenderKey317='';saveMode317();return true;}
+function startArcade317(kind,difficulty,study=false,variant='campaign',seed){if(S?.screen==='game')return false;if(kind==='night'&&!save.settings.nightWatch)return false;
+ if(!['night','battle'].includes(kind)||!DIFFICULTY_IDS.includes(difficulty)||!['campaign','escort','bossrush','endless'].includes(variant))return false;
+ arcadeKind317=kind;arcade317=kind==='night'?newNight317(difficulty,seed):newTactics317(difficulty,study,variant,seed);arcadePage317='play';arcadeRenderKey317='';saveMode317(true);initAudio();return true;}
+loadModes317();
+
+/* Stable independent-mode UI. One root, one delegated handler, one canvas.
+ * All counters update in place. Rebuilds occur only on structural transitions. */
+const arcadeRoot317=document.createElement('section');arcadeRoot317.id='arcade317';arcadeRoot317.hidden=true;arcadeRoot317.dataset.noTranslate310='';arcadeRoot317.setAttribute('aria-label','Independent games');document.body.appendChild(arcadeRoot317);
+const arcadeImport317=document.createElement('input');arcadeImport317.type='file';arcadeImport317.accept='.json,application/json';arcadeImport317.hidden=true;document.body.appendChild(arcadeImport317);
+const inertBefore317=new Map();
+const setup317={difficulty:'normal',study:false,variant:'campaign'};
+function button317(cmd,key,extra=''){return `<button type="button" data-arc317="${cmd}" ${extra}>${esc(text317(key))}</button>`;}
+function lockBackground317(on){if(on){for(const e of document.body.children)if(e!==arcadeRoot317&&e!==arcadeImport317&&!['SCRIPT','STYLE'].includes(e.tagName)){inertBefore317.set(e,e.inert);e.inert=true;}}
+ else{for(const [e,v]of inertBefore317)if(e.isConnected)e.inert=v;inertBefore317.clear();}}
+function openArcade317(kind='night',page='setup'){
+ if(S?.screen==='game'&&page!=='archive')return false;
+ if(kind==='night'&&page!=='archive'&&!save.settings.nightWatch){toast(text317('nightDisabled'));return false;}
+ if(!arcadeOpen317){arcadeFocus317=document.activeElement;lockBackground317(true);}
+ arcadeKind317=kind;arcadePage317=page;arcadeOpen317=true;arcadeRoot317.hidden=false;document.body.classList.add('arcade-open317');arcadeRenderKey317='';stopSpeech37();localeObserver310.disconnect();renderArcade317(true);return true;
+}
+function closeArcade317(){if(arcade317){arcade317.paused=true;saveMode317();}arcadeOpen317=false;arcadeRoot317.hidden=true;arcadeRenderKey317='';arcadeCanvas317=null;document.body.classList.remove('arcade-open317');lockBackground317(false);
+ localeObserver310.observe(document.body,{subtree:true,childList:true,characterData:true,attributes:true,attributeFilter:['title','aria-label','placeholder','alt']});
+ B317.renderUI();renderCampus317();arcadeFocus317?.focus?.({preventScroll:true});}
+openBattle313=function(){return openArcade317('battle');};
+function arcadeHeader317(){const playing=arcadePage317==='play';return `<header class="arc-head317"><div class="arc-brand317"><small>THE LAST CLASS / ${arcadeKind317==='night'?'NIGHT WATCH':'TACTICS'}</small><strong>${esc(text317(arcadeKind317==='night'?'nightTitle':'battleTitle'))}</strong></div><nav>${playing?button317('pause',arcade317?.paused?'resume':'pause'):''}${button317('help','help')}${button317('full','fullscreen')}${button317('exit','menu')}</nav></header>`;}
+function arcadeSetupMarkup317(){const night=arcadeKind317==='night',store=MODE_STORES317[arcadeKind317];return `<main class="arc-main317 arc-setup317"><section class="arc-intro317"><span class="arc-eyebrow317">${night?'00:00 — 06:00 / FIVE NIGHTS':'SCAN → SLOW → PIERCE'}</span><h1>${esc(text317(night?'nightTitle':'battleTitle'))}</h1><p>${esc(text317(night?'nightLead':'battleLead'))}</p><div class="arc-duo317">${creatureSVG313('urchin')}${creatureSVG313('alien')}</div><p>${esc(text317(night?'nightOriginal':'studyHelp'))}</p></section><section class="arc-config317"><label>${esc(t313('难度'))}<select data-arcsetting317="difficulty">${DIFFICULTY_IDS.map(k=>`<option value="${k}" ${setup317.difficulty===k?'selected':''}>${esc(t313(DIFFICULTIES[k].label))}</option>`).join('')}</select></label>
+ ${night?`<p>${esc(text317('nightTime'))}</p>`:`<label>${esc(text317('battleTitle'))}<select data-arcsetting317="variant">${['campaign','endless','escort','bossrush'].map(v=>`<option value="${v}" ${setup317.variant===v?'selected':''}>${esc(text317(v))}</option>`).join('')}</select></label><label class="arc-check317"><span>${esc(text317('study'))}</span><input type="checkbox" data-arcsetting317="study" ${setup317.study?'checked':''}></label>`}
+ <label>${esc(text317('language'))}<select data-arcsetting317="language">${LOCALES310.map(l=>`<option value="${l}" ${preferredLocale310()===l?'selected':''}>${NATIVE310[l]}</option>`).join('')}</select></label>
+ ${NEW_LANG317.includes(effectiveLocale310())?`<p class="arc-note317">${esc(text317('fallback'))}</p>`:''}
+ <div class="arc-actionlist317">${button317('start','newRun','class="arc-primary317"')}${button317('continue','continue',store.latest?'':'disabled')}${button317('archives','archives')}${button317('export','export')}${button317('import','import')}${!night?button317('classic','classic'):''}</div><p class="arc-note317">${esc(text317('independent'))}</p></section></main>`;}
+function arcadeHelpMarkup317(){return `<main class="arc-main317 arc-help317"><h1>${esc(text317(arcadeKind317==='night'?'nightTitle':'battleTitle'))}</h1><p>${esc(text317(arcadeKind317==='night'?'nightRules':'battleLead'))}</p><p>${esc(text317(arcadeKind317==='night'?'nightTime':'studyHelp'))}</p><p>${esc(text317(arcadeKind317==='night'?'nightHint':'battleHint'))}</p><p>${esc(text317('independent'))}</p>
+ ${arcadeKind317==='battle'?`<div class="arc-tablewrap317"><table><thead><tr><th>${text317('energy')}</th><th>${text317('ready')}</th><th>${text317('battleTitle')}</th></tr></thead><tbody>${Object.values(SKILLS317).map(w=>`<tr><td>${w.cost}</td><td>${w.cd}s</td><td>${esc(text317(w.name))} [${w.key}]</td></tr>`).join('')}</tbody></table></div>`:''}${button317('back','back')}</main>`;}
+function medalDesc317(metric,target){return text317(arcadeKind317==='night'&&metric==='hardClear'?'reqNightHard':MEDAL_REQUIREMENTS317[metric]||'unlocked',{n:target});}
+function archiveMarkup317(){const kind=arcadeKind317,store=MODE_STORES317[kind],ends=kind==='night'?NIGHT_ENDS317:BATTLE_ENDS317,medals=kind==='night'?NIGHT_MEDALS317:BATTLE_MEDALS317;
+ return `<main class="arc-main317 arc-archive317"><div class="arc-tabs317">${button317('tab:night','nightArchive',kind==='night'?'aria-pressed="true"':'')}${button317('tab:battle','battleArchive',kind==='battle'?'aria-pressed="true"':'')}${button317('campus','campus')}${button317('classic','classic')}</div><p>${esc(text317('recordsNote'))}</p><h2>${esc(text317('endings'))} ${Object.keys(store.endings).length}/${Object.keys(ends).length}</h2><div class="arc-recordgrid317">${Object.entries(ends).map(([id,[title,body]])=>`<article class="arc-record317 ${store.endings[id]?'unlocked317':''}"><small>${text317(store.endings[id]?'unlocked':'locked')}</small><h3>${esc(text317(title))}</h3><p>${esc(text317(body))}</p></article>`).join('')}</div><h2>${text317('medals')} ${Object.keys(store.medals).length}/${medals.length}</h2><div class="arc-medalgrid317">${medals.map(([id,title,metric,target],i)=>`<article class="arc-medal317 ${store.medals[id]?'unlocked317':''}"><i aria-hidden="true">${store.medals[id]?'✦':'◇'}</i><div><h3>${esc(text317(title))} ${id==='all'?' / ARCHIVE':''}</h3><small>${esc(medalDesc317(metric,target))} · ${text317(store.medals[id]?'unlocked':'locked')}</small></div></article>`).join('')}</div><div class="arc-actionlist317">${button317('export','export')}${button317('import','import')}${button317('back','back')}</div></main>`;
+}
+function playMarkup317(){const s=arcade317,night=s.kind==='night';let body='';
+ if(s.paused){body=`<section class="arc-dialog317"><span class="arc-eyebrow317">PAUSED / SAVED</span><h1>${esc(text317('pause'))}</h1><p>${esc(text317('independent'))}</p>${button317('pause','resume','class="arc-primary317"')}${button317('export','export')}${button317('retry','checkpoint')}</section>`;}
+ else if(s.q){const q=s.q,r=QUESTION_INDEX38.get(q.id),done=s.phase==='feedback';body=`<section class="arc-dialog317 arc-question317"><div class="arc-qtop317"><b>${text317('answer')} · L${r.grade}</b><output id="arcQTime317">${q.left.toFixed(1)}s</output></div><progress id="arcQProgress317" max="${q.total}" value="${q.left}"></progress><h2>${esc(t313(r.text))}</h2>${NEW_LANG317.includes(effectiveLocale310())?`<small class="arc-note317">${esc(text317('englishFallback'))}</small>`:''}<div class="arc-answergrid317">${q.order.map((j,i)=>`<button data-arc317="answer:${i}" ${done?'disabled':''} class="${done&&j===r.answer?'correct317':''}"><kbd>${i+1}</kbd><span>${esc(t313(r.choices[j]))}</span></button>`).join('')}</div>${done?`<h3>${esc(text317(q.correct?'correct':'wrong'))}</h3><p>${esc(t313(r.explanation))}</p>${button317('feedback',q.correct?'fire':'continue','class="arc-primary317"')}`:button317('cancel','cancel')}<p class="arc-note317">${esc(text317('studyHelp'))}</p></section>`;}
+ else if(s.phase==='upgrade'){body=`<section class="arc-dialog317"><span class="arc-eyebrow317">WAVE ${s.wave} / COMPLETE</span><h1>${text317('upgrade')}</h1><div class="arc-upgrades317">${['damage','regen','slow','repair'].map(k=>button317('upgrade:'+k,k+'Up')).join('')}</div></section>`;}
+ else if(['won','lost','retired','nightWon'].includes(s.phase)){const id=s.lastEnd,entry=(night?NIGHT_ENDS317:BATTLE_ENDS317)[id];body=`<section class="arc-dialog317 arc-result317"><div class="arc-resultart317">${creatureSVG313(s.phase==='lost'?'alien':'urchin')}</div><span class="arc-eyebrow317">${s.phase.toUpperCase()}</span><h1>${text317(s.phase==='lost'?(night?'nightLost':'defeat'):night?'nightWin':'victory')}</h1>${entry?`<h2>${text317(entry[0])}</h2><p>${text317(entry[1])}</p>`:''}<p>${night?text317('night')+' '+s.night+' / 5 · '+text317('power')+' '+Math.round(s.power)+'%':text317('wave')+' '+s.wave+' · '+text317('score')+' '+s.score}</p><div class="arc-actionlist317">${s.phase==='nightWon'?button317('nextNight','nextNight','class="arc-primary317"'):''}${s.phase==='lost'?button317('retry','checkpoint','class="arc-primary317"'):''}${button317('archives','archives')}${button317('back','menu')}${button317('export','export')}</div></section>`;}
+ else body=`<div class="arc-stagewrap317"><canvas id="arcCanvas317" width="1000" height="500" aria-label="${esc(text317(night?'nightTitle':'battleTitle'))}"></canvas><p class="arc-scene-caption317" id="arcSceneCaption317"></p><p id="arcGrace317" class="arc-grace317"></p></div>`;
+ return `<div class="arc-hud317">${night?`<span>${text317('night')} <b id="arcNight317">${s.night}/5</b></span><span><b id="arcTime317">00:00</b></span><span>${text317('power')} <b id="arcPower317">${Math.ceil(s.power)}%</b></span><span>${text317('signal')} <b id="arcSignal317">${Math.ceil(s.signal)}%</b></span>`:`<span>${text317('wave')} <b id="arcWave317">${s.wave}</b></span><span>${text317('energy')} <b id="arcEnergy317">${Math.floor(s.energy)}</b></span><span>${text317('shield')} <b id="arcDef317">${s.defence}/8</b></span><span>${text317('score')} <b id="arcScore317">${s.score}</b></span>${s.variant==='escort'?'<span>◆ <b id="arcBeaconHP317">'+s.beaconHP+'%</b></span>':''}`}</div><main class="arc-main317 arc-play317">${body}</main>${!s.paused&&s.phase==='running'?controlsMarkup317():''}`;
+}
+function controlsMarkup317(){const s=arcade317;
+ if(s.kind==='night')return `<footer class="arc-controls317 arc-nightcontrols317"><div class="arc-doorbuttons317">${button317('door:left','leftDoor','id="arcLeftDoor317"')}${button317('camera','camera','id="arcCamera317"')}${button317('door:right','rightDoor','id="arcRightDoor317"')}${button317('light:left','leftLight')}${button317('lure','lure','id="arcLure317"')}${button317('light:right','rightLight')}</div><div class="arc-feeds317">${[0,1,2,3].map(i=>button317('feed:'+i,'cam'+i,`id="arcFeed${i}_317"`)).join('')}${button317('reboot','reboot','id="arcReboot317"')}</div><p class="arc-hint317">${text317('nightHint')}</p></footer>`;
+ return `<footer class="arc-controls317 arc-battlecontrols317"><div class="arc-lanes317">${['left','middle','right'].map((k,i)=>button317('lane:'+i,k,`id="arcLane${i}_317" aria-pressed="${s.lane===i}"`)).join('')}</div><div class="arc-skills317">${Object.entries(SKILLS317).map(([id,w])=>`<button data-arc317="skill:${id}" id="arcSkill_${id}"><span><kbd>${w.key}</kbd> ${text317(w.name)}</span><small>${text317('energy')} ${w.cost} · <b data-cool317="${id}">${text317('ready')}</b></small></button>`).join('')}</div>${s.variant==='endless'?button317('retire','retire'):''}<p class="arc-hint317">${text317('battleHint')}</p></footer>`;
+}
+function renderArcade317(force=false){if(!arcadeOpen317)return;
+ const s=arcade317,key=[arcadeKind317,arcadePage317,effectiveLocale310(),s?.phase,s?.paused,s?.q?.id,s?.q?.correct].join(':');
+ if(force||key!==arcadeRenderKey317){arcadeRenderKey317=key;arcadeRoot317.innerHTML=arcadeHeader317()+(arcadePage317==='setup'?arcadeSetupMarkup317():arcadePage317==='help'?arcadeHelpMarkup317():arcadePage317==='archive'?archiveMarkup317():playMarkup317())+`<div class="arc-save317" id="arcSave317"></div>`;
+  arcadeCanvas317=$('arcCanvas317');arcadeDrawClock317=1;
+ }
+ if(arcadePage317==='play'&&s){const set=(id,t)=>{const e=$(id);if(e&&e.textContent!==String(t))e.textContent=t;};
+  if(s.kind==='night'){set('arcTime317',String(Math.min(6,Math.floor(s.elapsed/25))).padStart(2,'0')+':'+String(Math.floor((s.elapsed%25)/25*60)).padStart(2,'0'));set('arcPower317',Math.ceil(s.power)+'%');set('arcSignal317',Math.ceil(s.signal)+'%');
+   for(const side of ['left','right']){const e=$('arc'+(side==='left'?'Left':'Right')+'Door317');if(e){e.setAttribute('aria-pressed',String(s.doors[side]));e.disabled=s.power<=0;}}
+   $('arcCamera317')?.setAttribute('aria-pressed',String(s.cameras));for(let i=0;i<4;i++){const b=$('arcFeed'+i+'_317');if(b){b.disabled=!s.cameras;b.setAttribute('aria-pressed',String(s.cameras&&s.feed===i));}}
+   if($('arcLure317'))$('arcLure317').disabled=s.power<5||s.lureAt>s.t||!s.cameras;if($('arcReboot317'))$('arcReboot317').disabled=s.power<4||s.reboot>0;
+  }else{set('arcWave317',s.wave);set('arcEnergy317',Math.floor(s.energy));set('arcDef317',s.defence+'/8');set('arcScore317',s.score);set('arcBeaconHP317',s.beaconHP+'%');
+   for(let i=0;i<3;i++)$('arcLane'+i+'_317')?.setAttribute('aria-pressed',String(s.lane===i));
+   for(const [k,w]of Object.entries(SKILLS317)){const e=$('arcSkill_'+k);if(!e)continue;e.disabled=s.energy<w.cost||s.cool[k]>s.t||s.grace>0;e.querySelector('[data-cool317]').textContent=s.cool[k]>s.t?(s.cool[k]-s.t).toFixed(1)+'s':text317('ready');}
+  }
+  if(s.q){set('arcQTime317',s.q.left.toFixed(1)+'s');if($('arcQProgress317'))$('arcQProgress317').value=s.q.left;}
+  set('arcGrace317',s.grace>0?s.grace.toFixed(1)+'s':'' );
+  if(arcadeCanvas317&&arcadeDrawClock317>=.05){arcadeDrawClock317=0;drawArcade317();}
+ }
+ const error=$('arcSave317');if(error)error.textContent=arcadeError317?text317(arcadeError317):text317('saved');
+}
+function drawCreature317(ctx,type,x,y,size=1,alpha=1){ctx.save();ctx.translate(x,y);ctx.scale(size,size);ctx.globalAlpha=alpha;
+ if(type==='urchin'||type==='mechanical'){ctx.fillStyle='#cc726f';ctx.beginPath();for(let i=0;i<32;i++){const a=i*Math.PI/16,r=i%2?24:37;const px=Math.cos(a)*r,py=Math.sin(a)*r;i?ctx.lineTo(px,py):ctx.moveTo(px,py);}ctx.closePath();ctx.fill();ctx.strokeStyle='#f3cf9a';ctx.lineWidth=2;ctx.stroke();ctx.fillStyle='#223740';ctx.beginPath();ctx.arc(-10,-3,4,0,Math.PI*2);ctx.arc(10,-3,4,0,Math.PI*2);ctx.fill();ctx.strokeStyle='#362d36';ctx.beginPath();ctx.arc(0,3,12,.1,Math.PI-.1);ctx.stroke();}
+ else if(type==='clockface'){ctx.fillStyle='#b5b9a4';ctx.fillRect(-17,28,34,38);ctx.beginPath();ctx.arc(0,0,32,0,Math.PI*2);ctx.fill();ctx.strokeStyle='#21343c';ctx.lineWidth=3;ctx.beginPath();ctx.moveTo(0,0);ctx.lineTo(0,-19);ctx.moveTo(0,0);ctx.lineTo(18,8);ctx.stroke();for(let i=0;i<12;i++){ctx.save();ctx.rotate(i*Math.PI/6);ctx.fillStyle='#20333b';ctx.fillRect(-1,-27,2,5);ctx.restore();}}
+ else {ctx.strokeStyle='#bcbbd4';ctx.lineWidth=4;ctx.beginPath();ctx.moveTo(-16,-14);ctx.quadraticCurveTo(-28,-50,-22,-58);ctx.moveTo(16,-14);ctx.quadraticCurveTo(28,-50,22,-58);ctx.stroke();ctx.fillStyle='#8e9bb6';ctx.beginPath();ctx.ellipse(0,3,32,27,0,0,Math.PI*2);ctx.fill();ctx.fillStyle='#dce9d6';ctx.beginPath();ctx.ellipse(-11,-1,8,11,0,0,Math.PI*2);ctx.ellipse(11,-1,8,11,0,0,Math.PI*2);ctx.fill();ctx.fillStyle='#203540';ctx.beginPath();ctx.arc(-10,-1,3,0,Math.PI*2);ctx.arc(10,-1,3,0,Math.PI*2);ctx.fill();}
+ ctx.restore();}
+function drawArcade317(){const cv=arcadeCanvas317,s=arcade317;if(!cv||!s)return;const portrait=s.kind==='battle'&&innerWidth<640&&innerHeight>innerWidth;const W=portrait?660:1000,H=portrait?700:500;if(cv.width!==W||cv.height!==H){cv.width=W;cv.height=H;}cv.style.aspectRatio=W+'/'+H;const c=cv.getContext('2d',{alpha:false});c.clearRect(0,0,W,H);c.fillStyle='#101f2a';c.fillRect(0,0,W,H);c.font='14px system-ui';c.textBaseline='middle';c.textAlign='center';
+ if(s.kind==='night'){
+  c.fillStyle='#172a33';c.fillRect(0,0,W,340);c.fillStyle='#243d40';c.beginPath();c.moveTo(180,330);c.lineTo(0,500);c.lineTo(1000,500);c.lineTo(820,330);c.closePath();c.fill();
+  c.strokeStyle='#41605b';for(let x=0;x<1000;x+=100){c.beginPath();c.moveTo(500+(x-500)*.4,330);c.lineTo(x,500);c.stroke();}
+  for(const [side,x]of [['left',28],['right',812]]){const light=s.lights[side]>s.t&&s.power>0,closed=s.doors[side];c.fillStyle='#294442';c.fillRect(x-7,65,174,290);c.fillStyle=closed?'#405158':light?'#63745c':'#071019';c.fillRect(x,72,160,275);
+   if(closed){c.strokeStyle='#728076';for(let y=92;y<343;y+=24){c.beginPath();c.moveTo(x,y);c.lineTo(x+160,y);c.stroke();}}
+   const foe=s.foes.find(e=>e.side===side);if(light&&!closed&&foe.pos===4)drawCreature317(c,side==='left'?'mechanical':'alien',x+80,215,2.2);
+   c.fillStyle=light?'#e6d7aa':'#829289';c.fillRect(x+48,46,64,7);c.fillStyle='#b6c7be';c.fillText(text317(side==='left'?'leftDoor':'rightDoor'),x+80,385,170);
+  }
+  c.fillStyle='#09222d';c.fillRect(266,98,468,232);c.strokeStyle='#75938c';c.strokeRect(265,97,470,234);
+  if(s.power<=0){c.fillStyle='#8f514d';c.fillText(text317('powerOut'),500,205,425);}
+  else if(s.reboot>0){c.fillStyle='#aebfab';c.fillText(text317('rebooting'),500,193,420);c.fillText(s.reboot.toFixed(1)+'s',500,225);}
+  else if(s.cameras){c.fillStyle='#9cbfaf';c.fillText('CAM 0'+(s.feed+1)+' / '+text317('cam'+s.feed),500,119,425);c.strokeStyle='#355652';c.beginPath();c.moveTo(300,300);c.lineTo(415,152);c.lineTo(585,152);c.lineTo(700,300);c.moveTo(415,152);c.lineTo(415,290);c.moveTo(585,152);c.lineTo(585,290);c.stroke();
+   for(const e of s.foes)if(s.feed===0&&e.pos===0||s.feed===(e.side==='left'?1:2)&&e.pos>0)drawCreature317(c,e.side==='left'?'mechanical':'alien',e.side==='left'?420:580,225,.7+e.pos*.14,.85);
+   if(s.feed===3){drawCreature317(c,'clockface',500,213,1.2);c.fillStyle='#486061';c.fillRect(346,290,308,8);c.fillStyle='#c99478';c.fillRect(346,290,308*Math.min(1,s.clockPressure/100),8);}
+  }else{c.fillStyle='#77938a';c.fillText('OLD WING / SECURITY',500,171);c.font='47px ui-monospace,monospace';c.fillStyle='#cad1b4';c.fillText(String(Math.min(6,Math.floor(s.elapsed/25))).padStart(2,'0')+':00',500,229);c.font='14px system-ui';c.fillStyle='#829e91';c.fillText(text317('camera'),500,294);}
+  c.fillStyle='#435957';c.beginPath();c.moveTo(252,370);c.lineTo(748,370);c.lineTo(850,500);c.lineTo(150,500);c.fill();c.fillStyle='#bac5ae';c.fillRect(407,393,180,59);c.fillStyle='#36514b';for(let i=0;i<4;i++)c.fillRect(423,405+i*9,140-i*16,2);
+  const visible=s.foes.some(e=>e.pos===4&&s.lights[e.side]>s.t);const caption=$('arcSceneCaption317');if(caption)caption.textContent=s.power<=0?text317('powerOut'):visible?text317('atDoor'):s.cameras?text317('cam'+s.feed):text317('safe');
+ }else{
+  const laneWidth=W/3,defY=H-76,spawnY=55,travel=H-140,actor=portrait?1.10:1;
+  for(let i=0;i<3;i++){c.fillStyle=i===s.lane?'#244044':'#152f37';c.fillRect(i*laneWidth+4,0,laneWidth-8,H);c.strokeStyle='#456564';c.setLineDash([6,9]);c.beginPath();c.moveTo((i+1)*laneWidth,0);c.lineTo((i+1)*laneWidth,H);c.stroke();c.setLineDash([]);c.fillStyle='#9fb7aa';c.fillText(text317(['left','middle','right'][i]),i*laneWidth+laneWidth/2,20);}
+  c.fillStyle='#82a9a1';c.fillRect(0,defY, W,3);c.fillStyle='#203841';c.fillRect(0,defY+5,W,71);drawCreature317(c,'urchin',s.lane*laneWidth+laneWidth*.34,H-31,.75*actor);drawCreature317(c,'alien',s.lane*laneWidth+laneWidth*.66,H-26,.63*actor);
+  const colors={armored:'#9ea7b9',sprinter:'#d5ac78',splitter:'#b095ae',healer:'#a4b77d',jammer:'#ba7890',phantom:'#7bb3bf',boss:'#dbc498',small:'#b6a7bf'};
+  for(const e of s.enemies){const x=e.lane*laneWidth+laneWidth/2,y=spawnY+e.y*travel,scale=(e.type==='boss'?1.35:.8)*actor,alpha=e.type==='phantom'&&e.reveal<=s.t?.30:1;c.save();c.translate(x,y);c.scale(scale,scale);c.globalAlpha=alpha;c.fillStyle=colors[e.type]||'#b4bbb0';c.beginPath();c.arc(0,-20,15,0,Math.PI*2);c.fill();c.beginPath();c.moveTo(-24,1);c.lineTo(0,-5);c.lineTo(24,1);c.lineTo(28,33);c.lineTo(-28,33);c.closePath();c.fill();c.fillStyle='#112631';c.fillRect(-14,-23,28,4);c.fillStyle='#bbd9ce';c.fillRect(-20,40,40*e.hp/e.max,4);c.strokeStyle=e.slowUntil>s.t?'#7ddad2':'#667d7b';c.strokeRect(-20,40,40,4);
+   if(e.armor>0){c.strokeStyle='#c8cbd4';c.lineWidth=3;c.beginPath();c.arc(0,2,35,.2,Math.PI*1.9);c.stroke();}
+   if(e.type==='healer'){c.fillStyle='#203d34';c.fillRect(-2,5,4,16);c.fillRect(-8,11,16,4);}
+   c.restore();c.fillStyle='#d0dcce';c.font='11px system-ui';c.fillText(text317(e.type==='small'?'splitter':e.type),x,y+54,155);
+  }
+  for(const p of s.shots){const x=p.lane*laneWidth+laneWidth/2,y=H-40-p.elapsed/p.total*(travel-20);c.strokeStyle=p.skill==='pierce'?'#a7a0ee':p.skill==='overload'?'#eacb91':'#a5d9c1';c.lineWidth=p.skill==='overload'?8:4;c.beginPath();c.moveTo(x,y+20);c.lineTo(x,y-18);c.stroke();if(p.skill==='scan')drawCreature317(c,'urchin',x,y,.32);}
+  const caption=$('arcSceneCaption317');if(caption)caption.textContent=text317('combo')+' ×'+s.combo+(s.variant==='escort'?' · ◆ '+Math.floor(s.beaconProgress)+'%':'');
+ }
+}
+function syncMenu317(){let block=$('menu317');if(!block){block=document.createElement('div');block.id='menu317';block.dataset.noTranslate310='';block.innerHTML=`<label class="night-toggle317"><span id="nightLabel317"></span><input type="checkbox" data-setting="nightWatch"></label><div class="menu-independent317"><button id="nightLaunch317" data-arc317="open:night"></button><button id="modeArchives317" data-arc317="archives"></button></div>`;battleMenuButton313.after(block);}
+ if($('nightLabel317').textContent!==text317('nightToggle'))$('nightLabel317').textContent=text317('nightToggle');
+ const cb=block.querySelector('input');cb.checked=!!save.settings.nightWatch;$('nightLaunch317').disabled=!save.settings.nightWatch;$('nightLaunch317').textContent=text317('nightTitle');$('modeArchives317').textContent=text317('archives');
+ battleMenuButton313.textContent=text317('battleTitle');
+ const title=$('menuStudyLabel39'),policy=$('menuPolicy39');if(title){title.dataset.noTranslate310='';if(title.textContent!==text317('studyToggle'))title.textContent=text317('studyToggle');}
+ if(policy){policy.dataset.noTranslate310='';const txt=text317(save.settings.studyMode?'studyMenu':'casualMenu');if(policy.textContent!==txt)policy.textContent=txt;}
+ const brand=document.querySelector('.menu-foot');if(brand){for(const n of brand.childNodes)if(n.nodeType===3&&n.nodeValue.includes('3.16'))n.nodeValue=n.nodeValue.replace('3.16','3.17');}
+
+}
+function exportMode317(){if(arcade317&&arcade317.kind===arcadeKind317)saveMode317();const data={format:'lastclass-independent317',version:1,kind:arcadeKind317,store:MODE_STORES317[arcadeKind317]};
+ const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='last-class-'+arcadeKind317+'-317.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);return data;}
+function importMode317(data){if(!data||data.format!=='lastclass-independent317'||data.version!==1||data.kind!==arcadeKind317)throw Error('Wrong mode');const checked=validateModeStore317(data.store,arcadeKind317);MODE_STORES317[arcadeKind317]=checked;arcade317=checked.latest?clone(checked.latest):null;
+ if(arcade317){arcade317.paused=true;arcade317.grace=2;saveMode317();}else localStorage.setItem(MODE_KEYS317[arcadeKind317],JSON.stringify(checked));arcadePage317='setup';arcadeRenderKey317='';return true;}
+arcadeImport317.addEventListener('change',async()=>{const f=arcadeImport317.files?.[0];arcadeImport317.value='';if(!f)return;try{if(f.size>1500000)throw Error('Too large');const data=JSON.parse(await f.text());if(!confirm(text317('replace')))return;importMode317(data);arcadeError317='';}catch(_){arcadeError317='invalidSave';}renderArcade317(true);});
+function arcadeCommand317(cmd){const [action,value]=cmd.split(':'),s=arcade317;
+ if(action==='open')return openArcade317(value);
+ if(action==='archives'){if(!arcadeOpen317)openArcade317('night','archive');else{if(s)pauseArcade317(true);arcadePage317='archive';}renderArcade317(true);return;}
+ if(action==='exit'){closeArcade317();return;}
+ if(action==='full'){toggleFullscreen();return;}
+ if(action==='classic'){closeArcade317();if(S?.screen==='game')return;B317.openBattle313();return;}
+ if(action==='campus'){closeArcade317();openModal('archive');return;}
+ if(action==='help'){if(s)pauseArcade317(true);arcadePage317='help';}
+ else if(action==='tab'&&['night','battle'].includes(value)){arcadeKind317=value;arcadePage317='archive';}
+ else if(action==='back'){if(s&&s.kind===arcadeKind317&&['running','question','feedback','upgrade'].includes(s.phase))arcadePage317='play';else{arcadePage317='setup';arcade317=null;}}
+ else if(action==='start'){if(MODE_STORES317[arcadeKind317].latest&&!confirm(text317('replace')))return;startArcade317(arcadeKind317,setup317.difficulty,setup317.study,setup317.variant);}
+ else if(action==='continue')restoreMode317(false);
+ else if(action==='retry')restoreMode317(true);
+ else if(action==='pause')pauseArcade317();
+ else if(action==='export'){exportMode317();return;}
+ else if(action==='import'){arcadeImport317.click();return;}
+ else if(action==='nextNight')nextNight317();
+ else if(action==='door'||action==='light')nightAction317(action,value);
+ else if(action==='camera'||action==='lure'||action==='reboot')nightAction317(action);
+ else if(action==='feed')nightAction317('feed',Number(value));
+ else if(action==='lane'&&s?.kind==='battle'&&s.phase==='running'&&!s.paused){s.lane=Math.max(0,Math.min(2,Number(value)));}
+ else if(action==='skill')requestSkill317(value);
+ else if(action==='answer')answerTactics317(Number(value));
+ else if(action==='feedback')feedbackTactics317();
+ else if(action==='cancel')feedbackTactics317(true);
+ else if(action==='upgrade')chooseUpgrade317(value);
+ else if(action==='retire'&&s?.kind==='battle'&&s.variant==='endless'&&s.stats.clearedWaves>=1)finishTactics317(false,true);
+ renderArcade317();drawArcade317();
+}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-arc317]');if(!b)return;e.preventDefault();e.stopImmediatePropagation();if(!b.disabled&&!b.closest('[inert]'))arcadeCommand317(b.dataset.arc317);},true);
+arcadeRoot317.addEventListener('change',e=>{const k=e.target.dataset.arcsetting317;if(!k)return;if(k==='language'){save.settings.language=e.target.value;persist();stopSpeech37();document.documentElement.dir=e.target.value==='ar'?'rtl':'ltr';document.body.classList.toggle('rtl317',e.target.value==='ar');renderArcade317(true);}else setup317[k]=k==='study'?e.target.checked:e.target.value;});
+arcadeRoot317.addEventListener('pointerdown',e=>{if(e.target.id!=='arcCanvas317'||arcade317?.kind!=='battle'||arcade317.paused)return;const r=e.target.getBoundingClientRect();arcadeCommand317('lane:'+Math.max(0,Math.min(2,Math.floor((e.clientX-r.left)/r.width*3))));});
+window.addEventListener('keydown',e=>{if(!arcadeOpen317||e.ctrlKey||e.metaKey)return;const tag=e.target?.tagName;if(['INPUT','SELECT','TEXTAREA'].includes(tag)){e.stopImmediatePropagation();return;}
+ if(e.key==='Tab'){e.stopImmediatePropagation();const els=[...arcadeRoot317.querySelectorAll('button:not([disabled]),select,input')].filter(x=>x.getClientRects().length);if(els.length){if(e.shiftKey&&document.activeElement===els[0]){e.preventDefault();els.at(-1).focus();}else if(!e.shiftKey&&document.activeElement===els.at(-1)){e.preventDefault();els[0].focus();}}return;}
+ e.stopImmediatePropagation();if(e.code==='Enter'&&e.altKey){e.preventDefault();toggleFullscreen();return;}if(e.code==='Escape'){e.preventDefault();if(arcadePage317==='play')pauseArcade317();else closeArcade317();renderArcade317();return;}
+ if(e.repeat)return;const s=arcade317;if(!s||arcadePage317!=='play'||s.paused||s.grace>0)return;
+ let cmd=null;if(s.q){if(/^Digit[1-4]$/.test(e.code)&&s.phase==='question')cmd='answer:'+(Number(e.code.slice(-1))-1);else if(e.code==='Enter'&&s.phase==='feedback')cmd='feedback';}
+ else if(s.kind==='night')cmd={KeyA:'door:left',KeyD:'door:right',KeyQ:'light:left',KeyE:'light:right',Space:'camera',KeyL:'lure',KeyR:'reboot',Digit1:'feed:0',Digit2:'feed:1',Digit3:'feed:2',Digit4:'feed:3'}[e.code];
+ else cmd={KeyA:'lane:0',KeyS:'lane:1',KeyD:'lane:2',KeyJ:'skill:scan',KeyK:'skill:pierce',KeyL:'skill:stasis',KeyU:'skill:beacon',KeyI:'skill:repair',KeyO:'skill:overload'}[e.code];
+ if(cmd){e.preventDefault();arcadeCommand317(cmd);}
+},true);
+window.addEventListener('blur',()=>{if(arcadeOpen317&&arcade317)pauseArcade317(true);});
+document.addEventListener('visibilitychange',()=>{if(document.hidden&&arcadeOpen317&&arcade317)pauseArcade317(true);});
+window.addEventListener('pagehide',()=>{if(arcadeOpen317&&arcade317){arcade317.paused=true;saveMode317();}});
+const tickBefore317=tick,renderBefore317=renderUI;
+tick=function(dt){if(arcadeOpen317){stepArcade317(dt);if(arcadeDrawClock317>=1/30){drawArcade317();arcadeDrawClock317=0;}return;}return tickBefore317(dt);};
+renderUI=function(...a){if(arcadeOpen317){renderArcade317();return;}const r=renderBefore317(...a);syncMenu317();renderCampus317();return r;};
+// Per-mode links in the existing school archive avoid combining counts.
+renderModal=function(...a){const r=B317.renderModal(...a);if(modal&&['archive','achievements'].includes(modal.kind)&&!$('modeArchiveLinks317')){
+ const nav=document.createElement('nav');nav.id='modeArchiveLinks317';nav.dataset.noTranslate310='';nav.className='arc-inline317';nav.innerHTML='<b>'+text317('campus')+'</b>'+button317('archives','archives');$('modalBody').prepend(nav);
+ }renderCampus317();return r;};
+let lastFull317=false;document.addEventListener('fullscreenchange',()=>{if(lastFull317&&!document.fullscreenElement&&arcadeOpen317)pauseArcade317(true);lastFull317=!!document.fullscreenElement;});
+syncMenu317();
+
+const motionBefore317=interactionMotion;interactionMotion=function(e){if(arcadeOpen317)return;return motionBefore317(e);};
+
+// Separate the mobile scroll viewport from both fixed control bands.
+const phoneScroll317=document.createElement('div');phoneScroll317.id='phoneScroll317';
+const phoneHeader317=phoneShell39.querySelector('.phone-header39');phoneHeader317.after(phoneScroll317);
+for(const id of ['phoneMenu39','phonePreview39','phoneStatus39','phonePlay39','phoneSide39','phoneHome39','phoneDialogue39','phoneEnding39'])phoneScroll317.appendChild($(id));
+phoneHeader317.querySelector('small').textContent='v3.17';
+
     // The classroom is a layered DOM illustration rather than a raster image.
     const seats = [{ x: 436, y: 403, s: .68 }, { x: 669, y: 420, s: .70 }, { x: 1044, y: 413, s: .74 }, { x: 1210, y: 428, s: .80 }, { x: 363, y: 468, s: .94 }, { x: 619, y: 487, s: 1.06 }, { x: 955, y: 479, s: 1.02 }, { x: 1195, y: 488, s: 1.11 }];
     $('students').innerHTML = seats.map(p => `<div class="student" style="left:${p.x}px;top:${p.y}px;transform:scale(${p.s})"><div class="student-head"></div><div class="student-body"></div><div class="student-desk"></div><div class="student-chair"></div></div>`).join('');
@@ -15738,6 +16792,25 @@ if(testMode)Object.assign(window.__LAST_CLASS_TEST__,{
 
 if(testMode)Object.defineProperty(window.__LAST_CLASS_TEST__,'mediaState316',{get(){return S?.v316;}});
 
+
+if(testMode)Object.assign(window.__LAST_CLASS_TEST__,{
+ ensure317,beginCapture316,finishCapture316,updateDuty316,updateHorror317,watchingPodium317,renderCampus317,recordSide317,
+ settingChange,renderUI,render316,renderPhoneArt39,finishEnding,achievementMetrics,settings312,languagePanel310,
+ text317,voiceReport310,matchingVoice310,deviceVoices310,speak310,stopSpeech37,translate310,localizeAll310,
+ newNight317,newTactics317,modeValidate317,validateModeStore317,saveMode317,startArcade317,openArcade317,closeArcade317,
+ stepArcade317,renderArcade317,nightAction317,nextNight317,finishNight317,requestSkill317,fireSkill317,
+ answerTactics317,feedbackTactics317,impactSkill317,spawnEnemy317,chooseUpgrade317,finishTactics317,restoreMode317,
+ exportMode317,importMode317,awardModes317,arcadeCommand317,rank317,modeFactor317,
+ get arcade317(){return arcade317;},get modes317(){return MODE_STORES317;},get voice317(){return VOICE317;},
+ get nightMedals317(){return NIGHT_MEDALS317;},get battleMedals317(){return BATTLE_MEDALS317;},get locale317(){return TEXT317;},
+ get newLanguageFallback317(){return [...fallback317];},
+ setTestArcade317(s){arcade317=s;arcadeKind317=s.kind;arcadePage317='play';arcadeOpen317=true;arcadeRoot317.hidden=false;arcadeRenderKey317='';renderArcade317(true);}
+});
+if(testMode)Object.defineProperties(window.__LAST_CLASS_TEST__,{
+ arcade317:{configurable:true,get:()=>arcade317},modes317:{configurable:true,get:()=>MODE_STORES317},
+ newLanguageFallback317:{configurable:true,get:()=>[...fallback317]}
+});
+if(testMode)Object.assign(window.__LAST_CLASS_TEST__,{returnMenu,questionCatalog38:QUESTION_CATALOG38,questionIndex38:QUESTION_INDEX38,pauseArcade317,renderModal,preferredLocale310,effectiveLocale310});
 
 })();
   </script>

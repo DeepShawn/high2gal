@@ -1,0 +1,3462 @@
+{
+  "newEdition": {
+    "zh-CN": "夜巡与异星",
+    "zh-TW": "夜巡與異星",
+    "en": "Night Watch & Starfall",
+    "ja": "夜警と星の落下",
+    "fr": "Veille de nuit et chute stellaire",
+    "ru": "Ночная вахта и звездопад",
+    "is": "Næturvakt og stjörnufall",
+    "ar": "الحراسة الليلية وسقوط النجوم"
+  },
+  "languages": {
+    "zh-CN": "八语与语音",
+    "zh-TW": "八語與語音",
+    "en": "Eight languages & speech",
+    "ja": "8言語と音声",
+    "fr": "Huit langues et synthèse vocale",
+    "ru": "Восемь языков и озвучка",
+    "is": "Átta tungumál og tal",
+    "ar": "ثماني لغات وصوت"
+  },
+  "language": {
+    "zh-CN": "显示语言",
+    "zh-TW": "顯示語言",
+    "en": "Display language",
+    "ja": "表示言語",
+    "fr": "Langue d’affichage",
+    "ru": "Язык интерфейса",
+    "is": "Tungumál viðmóts",
+    "ar": "لغة العرض"
+  },
+  "voice": {
+    "zh-CN": "对话语音播报",
+    "zh-TW": "對話語音播報",
+    "en": "Dialogue narration",
+    "ja": "会話の読み上げ",
+    "fr": "Lecture des dialogues",
+    "ru": "Озвучка диалогов",
+    "is": "Upplestur samtala",
+    "ar": "قراءة الحوارات"
+  },
+  "voiceHelp": {
+    "zh-CN": "默认关闭。点击开启或试听以授权播放；保留字幕。",
+    "zh-TW": "預設關閉。點擊開啓或試聽以授權播放；保留字幕。",
+    "en": "Off by default. Enable or preview with a click to activate playback; subtitles remain.",
+    "ja": "初期設定はオフ。クリックで有効化または試聴します。字幕は残ります。",
+    "fr": "Désactivée par défaut. Cliquez pour activer ou tester la lecture ; les sous-titres restent visibles.",
+    "ru": "По умолчанию выключено. Нажмите включение или пробу для запуска; субтитры остаются.",
+    "is": "Sjálfgefið slökkt. Smelltu til að virkja eða prófa; skjátexti helst sýnilegur.",
+    "ar": "معطلة افتراضياً. انقر للتفعيل أو التجربة؛ تبقى الترجمة النصية ظاهرة."
+  },
+  "cloudVoice": {
+    "zh-CN": "允许浏览器联网声线",
+    "zh-TW": "允許瀏覽器聯網聲線",
+    "en": "Allow browser network voices",
+    "ja": "ブラウザーのオンライン音声を許可",
+    "fr": "Autoriser les voix en ligne du navigateur",
+    "ru": "Разрешить сетевые голоса браузера",
+    "is": "Leyfa netraddir vafrans",
+    "ar": "السماح بأصوات المتصفح الشبكية"
+  },
+  "cloudHelp": {
+    "zh-CN": "默认关闭。仅本机无声线时使用；文本可能由浏览器交给语音服务。",
+    "zh-TW": "預設關閉。僅本機無聲線時使用；文本可能由瀏覽器交給語音服務。",
+    "en": "Off by default. Network voices may send dialogue text to the browser's speech provider.",
+    "ja": "初期設定はオフ。オンライン音声は会話文を音声サービスに送信する場合があります。",
+    "fr": "Désactivé par défaut. Les voix en ligne peuvent transmettre le texte au fournisseur vocal du navigateur.",
+    "ru": "По умолчанию выключено. Сетевой голос может передавать текст поставщику синтеза речи браузера.",
+    "is": "Sjálfgefið slökkt. Netraddir kunna að senda texta til talþjónustu vafrans.",
+    "ar": "معطل افتراضياً. قد ترسل الأصوات الشبكية نص الحوار إلى مزود خدمة الكلام في المتصفح."
+  },
+  "rate": {
+    "zh-CN": "朗读速度",
+    "zh-TW": "朗讀速度",
+    "en": "Narration speed",
+    "ja": "読み上げ速度",
+    "fr": "Vitesse de lecture",
+    "ru": "Скорость речи",
+    "is": "Upplestrarhraði",
+    "ar": "سرعة القراءة"
+  },
+  "preview": {
+    "zh-CN": "试听",
+    "zh-TW": "試聽",
+    "en": "Preview voice",
+    "ja": "試聴",
+    "fr": "Écouter",
+    "ru": "Прослушать",
+    "is": "Prófa rödd",
+    "ar": "تجربة الصوت"
+  },
+  "voiceSample": {
+    "zh-CN": "你好，我是DeepShawn。先观察，再作出决定。",
+    "zh-TW": "你好，我是DeepShawn。先觀察，再作出決定。",
+    "en": "Hello, I am DeepShawn. Observe first, then decide.",
+    "ja": "こんにちは、DeepShawnです。まず観察してから決めましょう。",
+    "fr": "Bonjour, je suis DeepShawn. Observez d’abord, puis décidez.",
+    "ru": "Здравствуйте, я DeepShawn. Сначала наблюдайте, затем решайте.",
+    "is": "Halló, ég heiti DeepShawn. Fylgstu fyrst með og taktu síðan ákvörðun.",
+    "ar": "مرحباً، أنا DeepShawn. راقب أولاً، ثم اتخذ قرارك."
+  },
+  "voiceReady": {
+    "zh-CN": "声线可用",
+    "zh-TW": "聲線可用",
+    "en": "Voice available",
+    "ja": "音声あり",
+    "fr": "Voix disponible",
+    "ru": "Голос доступен",
+    "is": "Rödd tiltæk",
+    "ar": "الصوت متاح"
+  },
+  "voiceMissing": {
+    "zh-CN": "没有匹配声线，请安装系统语音包",
+    "zh-TW": "沒有匹配聲線，請安裝系統語音包",
+    "en": "No matching voice. Install a system voice pack.",
+    "ja": "対応音声がありません。端末の音声パックを導入してください。",
+    "fr": "Aucune voix correspondante. Installez un pack vocal système.",
+    "ru": "Подходящего голоса нет. Установите языковой голосовой пакет.",
+    "is": "Engin samsvarandi rödd. Settu upp talpakka í stýrikerfinu.",
+    "ar": "لا يوجد صوت مطابق. ثبّت حزمة صوت في النظام."
+  },
+  "voiceWait": {
+    "zh-CN": "正在等待声线加载",
+    "zh-TW": "正在等待聲線加載",
+    "en": "Waiting for voices to load",
+    "ja": "音声の読み込み待ち",
+    "fr": "Chargement des voix en cours",
+    "ru": "Ожидание загрузки голосов",
+    "is": "Bíð eftir að raddir hlaðist",
+    "ar": "جارٍ انتظار تحميل الأصوات"
+  },
+  "voicePlaying": {
+    "zh-CN": "正在朗读",
+    "zh-TW": "正在朗讀",
+    "en": "Speaking",
+    "ja": "読み上げ中",
+    "fr": "Lecture en cours",
+    "ru": "Воспроизведение",
+    "is": "Les upp",
+    "ar": "جارٍ القراءة"
+  },
+  "voiceStopped": {
+    "zh-CN": "播报已停止",
+    "zh-TW": "播報已停止",
+    "en": "Narration stopped",
+    "ja": "読み上げ停止",
+    "fr": "Lecture arrêtée",
+    "ru": "Озвучка остановлена",
+    "is": "Upplestur stöðvaður",
+    "ar": "توقفت القراءة"
+  },
+  "voiceBlocked": {
+    "zh-CN": "播放被阻止，请点击“重试语音”",
+    "zh-TW": "播放被阻止，請點擊“重試語音”",
+    "en": "Playback blocked. Click Retry voice.",
+    "ja": "再生がブロックされました。「音声を再試行」を押してください。",
+    "fr": "Lecture bloquée. Cliquez sur Réessayer la voix.",
+    "ru": "Воспроизведение заблокировано. Нажмите «Повторить голос».",
+    "is": "Spilun stöðvuð. Smelltu á Prófa rödd aftur.",
+    "ar": "تم حظر التشغيل. انقر على إعادة محاولة الصوت."
+  },
+  "voiceUnavailable": {
+    "zh-CN": "浏览器未提供语音功能，文字不受影响",
+    "zh-TW": "瀏覽器未提供語音功能，文字不受影響",
+    "en": "Speech is unavailable; text still works.",
+    "ja": "音声未対応。テキストは利用できます。",
+    "fr": "Synthèse vocale indisponible ; le texte reste accessible.",
+    "ru": "Синтез речи недоступен; текст работает.",
+    "is": "Tal er ekki tiltækt; texti virkar áfram.",
+    "ar": "الكلام غير متاح؛ النص يعمل دون تأثر."
+  },
+  "retryVoice": {
+    "zh-CN": "重试语音",
+    "zh-TW": "重試語音",
+    "en": "Retry voice",
+    "ja": "音声を再試行",
+    "fr": "Réessayer la voix",
+    "ru": "Повторить голос",
+    "is": "Prófa rödd aftur",
+    "ar": "إعادة محاولة الصوت"
+  },
+  "stopVoice": {
+    "zh-CN": "停止朗读",
+    "zh-TW": "停止朗讀",
+    "en": "Stop narration",
+    "ja": "読み上げ停止",
+    "fr": "Arrêter la lecture",
+    "ru": "Остановить речь",
+    "is": "Stöðva upplestur",
+    "ar": "إيقاف القراءة"
+  },
+  "muted": {
+    "zh-CN": "已静音，请调高音量",
+    "zh-TW": "已靜音，請調高音量",
+    "en": "Muted. Increase volume.",
+    "ja": "消音中。音量を上げてください。",
+    "fr": "Son coupé. Augmentez le volume.",
+    "ru": "Звук выключен. Увеличьте громкость.",
+    "is": "Hljóðlaust. Hækkaðu hljóðstyrk.",
+    "ar": "الصوت مكتوم. ارفع مستوى الصوت."
+  },
+  "local": {
+    "zh-CN": "本地",
+    "zh-TW": "本地",
+    "en": "Local",
+    "ja": "端末内",
+    "fr": "Locale",
+    "ru": "Локальный",
+    "is": "Staðbundin",
+    "ar": "محلي"
+  },
+  "network": {
+    "zh-CN": "联网",
+    "zh-TW": "聯網",
+    "en": "Network",
+    "ja": "オンライン",
+    "fr": "En ligne",
+    "ru": "Сетевой",
+    "is": "Á netinu",
+    "ar": "شبكي"
+  },
+  "coverage": {
+    "zh-CN": "新语言覆盖说明",
+    "zh-TW": "新語言覆蓋說明",
+    "en": "New-language coverage",
+    "ja": "新言語の翻訳範囲",
+    "fr": "Couverture des nouvelles langues",
+    "ru": "Охват новых языков",
+    "is": "Umfang nýrra tungumála",
+    "ar": "نطاق اللغات الجديدة"
+  },
+  "fallback": {
+    "zh-CN": "部分旧剧情及旧题库保留英文，尚未完成四种新语言的全文翻译。新模式操作、说明与结局已翻译。",
+    "zh-TW": "部分舊劇情及舊題庫保留英文，尚未完成四種新語言的全文翻譯。新模式操作、說明與結局已翻譯。",
+    "en": "Some legacy stories and questions remain in English; full translation into the four new languages is not complete. New-mode controls, instructions and endings are translated.",
+    "ja": "一部の旧会話と問題は英語です。新4言語の全文訳は未完了です。新モードの操作・説明・結末は翻訳済みです。",
+    "fr": "Certains anciens récits et questions restent en anglais ; leur traduction intégrale n’est pas terminée. Les commandes, règles et fins des nouveaux modes sont traduites.",
+    "ru": "Часть старых диалогов и вопросов остаётся на английском; полный перевод на четыре новых языка не завершён. Управление, инструкции и концовки новых режимов переведены.",
+    "is": "Sum eldri samtöl og spurningar eru enn á ensku; fullri þýðingu á fjögur nýju málin er ekki lokið. Stýringar, leiðbeiningar og endar nýrra stillinga eru þýdd.",
+    "ar": "تبقى بعض القصص والأسئلة القديمة بالإنجليزية؛ الترجمة الكاملة إلى اللغات الأربع الجديدة لم تكتمل. تُرجمت عناصر التحكم والتعليمات والنهايات في الأوضاع الجديدة."
+  },
+  "englishFallback": {
+    "zh-CN": "旧文本 · 英文回退",
+    "zh-TW": "舊文本 · 英文回退",
+    "en": "Legacy text · English fallback",
+    "ja": "旧テキスト・英語表示",
+    "fr": "Ancien texte · repli en anglais",
+    "ru": "Старый текст · английский резерв",
+    "is": "Eldri texti · enska til vara",
+    "ar": "نص قديم · عرض إنجليزي بديل"
+  },
+  "horror": {
+    "zh-CN": "真实恐怖游戏",
+    "zh-TW": "真實恐怖游戲",
+    "en": "True Horror",
+    "ja": "本格ホラー",
+    "fr": "Horreur immersive",
+    "ru": "Настоящий хоррор",
+    "is": "Raunverulegur hryllingur",
+    "ar": "الرعب الحقيقي"
+  },
+  "horrorHelp": {
+    "zh-CN": "与真实模式、恐怖画面兼容。开启会关闭两条攻略并取消正在进行的恋爱互动；友情仍保留。关闭后不会自动恢复攻略。",
+    "zh-TW": "與真實模式、恐怖畫面兼容。開啓會關閉兩條攻略並取消正在進行的戀愛互動；友情仍保留。關閉後不會自動恢復攻略。",
+    "en": "Compatible with Realism and horror visuals. Enabling closes both romance routes and cancels active romance actions; friendship remains. Disabling does not reopen romance.",
+    "ja": "リアルモードとホラー演出に併用可能。恋愛2ルートと進行中の恋愛行動を停止。友情は維持。オフにしても恋愛は自動復帰しません。",
+    "fr": "Compatible avec Réalisme et les effets d’horreur. L’activation ferme les deux romances et annule l’action romantique en cours ; l’amitié reste. La désactivation ne les réactive pas.",
+    "ru": "Совместим с реализмом и визуальным хоррором. Включение отключает оба романа и текущие романтические действия; дружба остаётся. Выключение не возвращает романы автоматически.",
+    "is": "Virkar með raunsæi og hryllingsútliti. Slekkur á báðum ástarleiðum og hættir við virkar ástarathafnir; vinátta helst. Þær opnast ekki sjálfkrafa aftur.",
+    "ar": "متوافق مع الواقعية والمؤثرات المرعبة. يوقف مساري العلاقات والتفاعلات العاطفية الجارية؛ تبقى الصداقة. لا تعود العلاقات تلقائياً عند إيقافه."
+  },
+  "horrorRules": {
+    "zh-CN": "异象会积累心神压力。辨认脚步并收好手机，或看清讲台与后门。压力达到100结束本日。暂停时不计时。",
+    "zh-TW": "異象會積累心神壓力。辨認腳步並收好手機，或看清講台與後門。壓力達到100結束本日。暫停時不計時。",
+    "en": "Anomalies build strain. Put the phone away for footsteps, or inspect the podium and rear door. At 100 strain the day ends. Pausing stops its clock.",
+    "ja": "異変で心神圧力が増加。足音にはスマホをしまい、教壇や後ろ扉を確認。100で当日終了。ポーズ中は停止。",
+    "fr": "Les anomalies augmentent la tension. Rangez le téléphone face aux pas ou examinez l’estrade et la porte arrière. À 100, la journée s’arrête. La pause arrête le temps.",
+    "ru": "Аномалии повышают напряжение. При шагах уберите телефон либо осмотрите кафедру и заднюю дверь. При 100 день заканчивается. Пауза останавливает время.",
+    "is": "Frávik auka álag. Leggðu símann frá þér við fótatak eða skoðaðu kennarapúlt og afturdyr. Við 100 endar dagurinn. Tíminn stöðvast í pásu.",
+    "ar": "تزيد الظواهر الغريبة الضغط النفسي. أخفِ الهاتف عند سماع الخطوات أو افحص المنصة والباب الخلفي. ينتهي اليوم عند 100، وتتوقف الساعة أثناء الإيقاف المؤقت."
+  },
+  "strain": {
+    "zh-CN": "心神压力",
+    "zh-TW": "心神壓力",
+    "en": "Strain",
+    "ja": "心神圧力",
+    "fr": "Tension",
+    "ru": "Напряжение",
+    "is": "Álag",
+    "ar": "الضغط النفسي"
+  },
+  "blackout": {
+    "zh-CN": "灯灭了一盏。收好手机，听清三秒脚步。",
+    "zh-TW": "燈滅了一盞。收好手機，聽清三秒腳步。",
+    "en": "A light goes out. Put the phone away and listen for three seconds.",
+    "ja": "照明が一つ消えた。スマホをしまい、3秒足音を聞く。",
+    "fr": "Une lampe s’éteint. Rangez le téléphone et écoutez trois secondes.",
+    "ru": "Лампа погасла. Уберите телефон и слушайте шаги три секунды.",
+    "is": "Ljós slokknar. Leggðu símann frá þér og hlustaðu í þrjár sekúndur.",
+    "ar": "انطفأ مصباح. أخفِ الهاتف واستمع للخطوات ثلاث ثوانٍ."
+  },
+  "reflection": {
+    "zh-CN": "黑板上多了一道影子。观察讲台两秒，辨认它。",
+    "zh-TW": "黑板上多了一道影子。觀察講台兩秒，辨認它。",
+    "en": "A shadow appears on the board. Inspect the podium for two seconds.",
+    "ja": "黒板に影が増えた。教壇を2秒見て確かめる。",
+    "fr": "Une ombre apparaît au tableau. Observez l’estrade deux secondes.",
+    "ru": "На доске появилась тень. Осмотрите кафедру две секунды.",
+    "is": "Skuggi birtist á töflunni. Skoðaðu kennarapúltið í tvær sekúndur.",
+    "ar": "ظهر ظل على السبورة. راقب المنصة ثانيتين لتتعرف عليه."
+  },
+  "rearEcho": {
+    "zh-CN": "后窗的倒影慢了半拍。观察后门两秒。",
+    "zh-TW": "後窗的倒影慢了半拍。觀察後門兩秒。",
+    "en": "The rear window reflection lags. Watch the rear door for two seconds.",
+    "ja": "後ろ窓の反射が遅れる。後ろ扉を2秒確認。",
+    "fr": "Le reflet de la fenêtre arrière tarde. Observez la porte arrière deux secondes.",
+    "ru": "Отражение в заднем окне запаздывает. Наблюдайте за задней дверью две секунды.",
+    "is": "Spegilmynd afturrúðunnar er á eftir. Horfðu á afturdyrnar í tvær sekúndur.",
+    "ar": "تأخر انعكاس النافذة الخلفية. راقب الباب الخلفي ثانيتين."
+  },
+  "resolved": {
+    "zh-CN": "异象退去了",
+    "zh-TW": "異象退去了",
+    "en": "Anomaly resolved",
+    "ja": "異変が消えた",
+    "fr": "Anomalie dissipée",
+    "ru": "Аномалия исчезла",
+    "is": "Frávikið hvarf",
+    "ar": "زالت الظاهرة"
+  },
+  "missed": {
+    "zh-CN": "你没来得及分辨那道影子",
+    "zh-TW": "你沒來得及分辨那道影子",
+    "en": "You did not identify the shadow in time",
+    "ja": "影の確認が間に合わなかった",
+    "fr": "Vous n’avez pas identifié l’ombre à temps",
+    "ru": "Вы не успели распознать тень",
+    "is": "Þú greindir ekki skuggann í tæka tíð",
+    "ar": "لم تتعرف على الظل في الوقت المناسب"
+  },
+  "routeLocked": {
+    "zh-CN": "真实恐怖模式中，感情攻略关闭",
+    "zh-TW": "真實恐怖模式中，感情攻略關閉",
+    "en": "Romance is off in True Horror",
+    "ja": "本格ホラーでは恋愛ルート停止",
+    "fr": "Romances désactivées en Horreur immersive",
+    "ru": "Романы отключены в настоящем хорроре",
+    "is": "Ástarleiðir eru lokaðar í hryllingi",
+    "ar": "العلاقات العاطفية معطلة في الرعب الحقيقي"
+  },
+  "silentCamera": {
+    "zh-CN": "家长拍摄不再弹出系统预警。主动观察讲台才能辨认举机；普通难度举机1秒。清醒体委每次有10%概率提醒，睡眠时不提醒。",
+    "zh-TW": "家長拍攝不再彈出系統預警。主動觀察講台才能辨認舉機；普通難度舉機1秒。清醒體委每次有10%概率提醒，睡眠時不提醒。",
+    "en": "Parent filming has no system alert. Inspect the podium to spot the raised phone; Normal gives one second. An awake sports rep has a 10% chance per event to warn you; a sleeping one cannot.",
+    "ja": "保護者の撮影にシステム警告はありません。教壇の観察で挙動を確認。普通は1秒。起きた体育委員は各撮影10%で知らせ、睡眠中は知らせません。",
+    "fr": "Aucune alerte système lors des prises de vue. Regardez l’estrade pour repérer le téléphone ; une seconde en Normal. La déléguée éveillée prévient dans 10 % des cas, jamais en dormant.",
+    "ru": "Съёмка без системного предупреждения. Смотрите на кафедру, чтобы заметить телефон; на обычном уровне — одна секунда. Бодрствующая староста по спорту предупреждает с шансом 10%, спящая — нет.",
+    "is": "Engin kerfisviðvörun fylgir myndatöku. Skoðaðu púltið til að sjá símann; ein sekúnda á venjulegu stigi. Vakandi íþróttafulltrúi varar við með 10% líkum, sofandi aldrei.",
+    "ar": "لا يظهر تنبيه نظام عند التصوير. راقب المنصة لترى رفع الهاتف؛ المهلة ثانية في العادي. تنبهك ممثلة الرياضة المستيقظة باحتمال 10% لكل حدث، ولا تنبه أثناء النوم."
+  },
+  "lookPhone": {
+    "zh-CN": "讲台上的家长正抬起手机",
+    "zh-TW": "講台上的家長正抬起手機",
+    "en": "The parent at the podium is raising a phone",
+    "ja": "教壇の保護者がスマホを上げている",
+    "fr": "Le parent à l’estrade lève son téléphone",
+    "ru": "Родитель у кафедры поднимает телефон",
+    "is": "Foreldrið við púltið lyftir símanum",
+    "ar": "ولي الأمر على المنصة يرفع الهاتف"
+  },
+  "allyPhoto": {
+    "zh-CN": "王梓锐：看讲台，手机举起来了。",
+    "zh-TW": "王梓銳：看講台，手機舉起來了。",
+    "en": "Wang Zirui: Look at the podium. A phone is going up.",
+    "ja": "王梓鋭：教壇を見て。スマホを上げてる。",
+    "fr": "Wang Zirui : Regarde l’estrade, le téléphone se lève.",
+    "ru": "Ван Цзыжуй: Посмотри на кафедру, поднимают телефон.",
+    "is": "Wang Zirui: Sjáðu púltið. Sími er að fara á loft.",
+    "ar": "وانغ زيروي: انظر إلى المنصة، الهاتف يرتفع."
+  },
+  "nightToggle": {
+    "zh-CN": "五夜守夜模式",
+    "zh-TW": "五夜守夜模式",
+    "en": "Five-night watch mode",
+    "ja": "五夜警備モード",
+    "fr": "Mode veille de cinq nuits",
+    "ru": "Режим пяти ночных вахт",
+    "is": "Fimm nátta vakt",
+    "ar": "وضع حراسة خمس ليالٍ"
+  },
+  "nightToggleHelp": {
+    "zh-CN": "默认关闭。开启后在主菜单进入独立守夜，不改变校园进度。",
+    "zh-TW": "預設關閉。開啓後在主菜單進入獨立守夜，不改變校園進度。",
+    "en": "Off by default. Enable its separate menu entry; campus progress is unchanged.",
+    "ja": "初期設定オフ。専用入口から遊び、学校の進行は変わりません。",
+    "fr": "Désactivé par défaut. Active une entrée séparée ; la progression scolaire ne change pas.",
+    "ru": "По умолчанию выключен. Отдельный вход из меню; школьный прогресс не меняется.",
+    "is": "Sjálfgefið slökkt. Virkjaðu sérstakan valmyndarinngang; skólaframvinda breytist ekki.",
+    "ar": "معطل افتراضياً. يفتح مدخلاً مستقلاً في القائمة؛ لا تتغير سجلات المدرسة."
+  },
+  "nightTitle": {
+    "zh-CN": "旧楼五夜",
+    "zh-TW": "舊樓五夜",
+    "en": "Five Nights in the Old Wing",
+    "ja": "旧校舎の五夜",
+    "fr": "Cinq nuits dans l’ancienne aile",
+    "ru": "Пять ночей в старом корпусе",
+    "is": "Fimm nætur í gamla álmunni",
+    "ar": "خمس ليالٍ في الجناح القديم"
+  },
+  "nightLead": {
+    "zh-CN": "监控、门灯与有限电力。熬过00:00—06:00，连续守住五夜。",
+    "zh-TW": "監控、門燈與有限電力。熬過00:00—06:00，連續守住五夜。",
+    "en": "Cameras, door lights and limited power. Survive midnight to 06:00 for five nights.",
+    "ja": "監視カメラ、ドア灯、限られた電力。午前0時から6時まで5夜を守る。",
+    "fr": "Caméras, éclairages et énergie limitée. Survivez de minuit à 6 h pendant cinq nuits.",
+    "ru": "Камеры, фонари и ограниченная энергия. Продержитесь с полуночи до 06:00 пять ночей.",
+    "is": "Myndavélar, dyraljós og takmörkuð orka. Lifðu frá miðnætti til 06:00 í fimm nætur.",
+    "ar": "كاميرات وأضواء أبواب وطاقة محدودة. اصمد من منتصف الليل إلى السادسة لخمس ليالٍ."
+  },
+  "nightOriginal": {
+    "zh-CN": "以监控生存玩法为灵感；原创旧楼、机械海胆、星客与钟面人。不使用原作角色或素材。",
+    "zh-TW": "以監控生存玩法為靈感；原創舊樓、機械海膽、星客與鐘面人。不使用原作角色或素材。",
+    "en": "Surveillance-survival inspired; original wing, mechanical urchin, alien and Clockface. No original franchise characters or assets.",
+    "ja": "監視サバイバルに着想。旧校舎、機械ウニ、星の客、時計面はオリジナル。既存作品のキャラクターや素材は不使用。",
+    "fr": "Inspiré de la survie par surveillance : aile, oursin mécanique, visiteur stellaire et Cadran originaux. Aucun personnage ni élément de la franchise d’origine.",
+    "ru": "Вдохновлён выживанием с камерами. Корпус, механический ёж, пришелец и Циферблат оригинальны; персонажи и ресурсы чужой франшизы не используются.",
+    "is": "Innblástur frá lifun með eftirliti. Álman, vélræni ígulkerinn, geimveran og Klukkuskífan eru frumsköpun. Engar persónur eða eignir annarrar seríu.",
+    "ar": "مستوحى من البقاء بالمراقبة؛ الجناح والقنفذ الآلي والفضائي ووجه الساعة أصلية، بلا شخصيات أو أصول السلسلة الأصلية."
+  },
+  "nightRules": {
+    "zh-CN": "机械海胆从左门靠近，外星人从右门靠近；先用灯确认再关门。钟面人在监控室积蓄，查看它或用诱饵减缓。长时间关门会耗尽电力。",
+    "zh-TW": "機械海膽從左門靠近，外星人從右門靠近；先用燈確認再關門。鐘面人在監控室積蓄，查看它或用誘餌減緩。長時間關門會耗盡電力。",
+    "en": "The urchin approaches left, the alien right. Check with a light, then shut that door. Clockface builds pressure in the camera room; watch it or lure it back. Keeping doors shut drains power.",
+    "ja": "機械ウニは左、星の客は右。灯りで確認してから閉める。時計面は監視室で圧力をため、カメラか誘導音で抑える。閉め続けると電力が尽きる。",
+    "fr": "L’oursin approche à gauche, l’alien à droite. Vérifiez avec la lumière, puis fermez. Cadran monte en pression : surveillez-le ou attirez-le en arrière. Des portes toujours fermées épuisent l’énergie.",
+    "ru": "Ёж идёт слева, пришелец справа. Сначала проверьте фонарём, затем закройте дверь. Циферблат набирает силу в камере: наблюдайте или отвлекайте. Постоянно закрытые двери истощают заряд.",
+    "is": "Ígulkerinn kemur að vinstri, geimveran að hægri. Athugaðu með ljósi og lokaðu svo. Klukkuskífan safnar þrýstingi; fylgstu með henni eða lokkaðu hana frá. Lokaðar dyr tæma orkuna.",
+    "ar": "يقترب القنفذ من اليسار والفضائي من اليمين. تحقق بالضوء ثم أغلق الباب. يتصاعد ضغط وجه الساعة؛ راقبه أو استخدم الطعم. إغلاق الأبواب طويلاً يستنزف الطاقة."
+  },
+  "nightTime": {
+    "zh-CN": "每夜150秒有效时间。每夜入口为检查点，暂停和离线不推进。",
+    "zh-TW": "每夜150秒有效時間。每夜入口為檢查點，暫停和離線不推進。",
+    "en": "Each night is 150 active seconds. Each entrance is a checkpoint; pausing and offline time do not advance it.",
+    "ja": "各夜は有効時間150秒。夜の入口で記録。ポーズ・オフライン時間は進みません。",
+    "fr": "Chaque nuit dure 150 secondes actives. Point de reprise au début ; pause et absence ne font pas avancer le temps.",
+    "ru": "Ночь длится 150 активных секунд. Начало — контрольная точка; пауза и офлайн не продвигают время.",
+    "is": "Hver nótt varir 150 virkar sekúndur. Upphaf hennar er vistunarstaður; hlé og ótengdur tími telja ekki.",
+    "ar": "كل ليلة 150 ثانية فعلية. بدايتها نقطة حفظ؛ لا يتقدم الوقت أثناء الإيقاف أو انقطاع الصفحة."
+  },
+  "start": {
+    "zh-CN": "开始",
+    "zh-TW": "開始",
+    "en": "Start",
+    "ja": "開始",
+    "fr": "Commencer",
+    "ru": "Начать",
+    "is": "Byrja",
+    "ar": "ابدأ"
+  },
+  "continue": {
+    "zh-CN": "继续记录",
+    "zh-TW": "繼續記錄",
+    "en": "Continue save",
+    "ja": "記録を続ける",
+    "fr": "Reprendre",
+    "ru": "Продолжить",
+    "is": "Halda áfram",
+    "ar": "متابعة الحفظ"
+  },
+  "newRun": {
+    "zh-CN": "新开一局",
+    "zh-TW": "新開一局",
+    "en": "New run",
+    "ja": "新しく開始",
+    "fr": "Nouvelle partie",
+    "ru": "Новая игра",
+    "is": "Ný tilraun",
+    "ar": "جولة جديدة"
+  },
+  "resume": {
+    "zh-CN": "继续游戏",
+    "zh-TW": "繼續游戲",
+    "en": "Resume",
+    "ja": "再開",
+    "fr": "Reprendre la partie",
+    "ru": "Возобновить",
+    "is": "Halda áfram",
+    "ar": "استئناف"
+  },
+  "pause": {
+    "zh-CN": "暂停",
+    "zh-TW": "暫停",
+    "en": "Pause",
+    "ja": "一時停止",
+    "fr": "Pause",
+    "ru": "Пауза",
+    "is": "Hlé",
+    "ar": "إيقاف مؤقت"
+  },
+  "settings": {
+    "zh-CN": "设置",
+    "zh-TW": "設置",
+    "en": "Settings",
+    "ja": "設定",
+    "fr": "Paramètres",
+    "ru": "Настройки",
+    "is": "Stillingar",
+    "ar": "الإعدادات"
+  },
+  "close": {
+    "zh-CN": "关闭",
+    "zh-TW": "關閉",
+    "en": "Close",
+    "ja": "閉じる",
+    "fr": "Fermer",
+    "ru": "Закрыть",
+    "is": "Loka",
+    "ar": "إغلاق"
+  },
+  "menu": {
+    "zh-CN": "主菜单",
+    "zh-TW": "主菜單",
+    "en": "Main menu",
+    "ja": "メインメニュー",
+    "fr": "Menu principal",
+    "ru": "Главное меню",
+    "is": "Aðalvalmynd",
+    "ar": "القائمة الرئيسية"
+  },
+  "back": {
+    "zh-CN": "返回",
+    "zh-TW": "返回",
+    "en": "Back",
+    "ja": "戻る",
+    "fr": "Retour",
+    "ru": "Назад",
+    "is": "Til baka",
+    "ar": "رجوع"
+  },
+  "fullscreen": {
+    "zh-CN": "全屏",
+    "zh-TW": "全屏",
+    "en": "Full screen",
+    "ja": "全画面",
+    "fr": "Plein écran",
+    "ru": "Полный экран",
+    "is": "Allur skjár",
+    "ar": "ملء الشاشة"
+  },
+  "help": {
+    "zh-CN": "玩法说明",
+    "zh-TW": "玩法說明",
+    "en": "How to play",
+    "ja": "遊び方",
+    "fr": "Comment jouer",
+    "ru": "Как играть",
+    "is": "Leiðbeiningar",
+    "ar": "كيفية اللعب"
+  },
+  "archives": {
+    "zh-CN": "独立模式档案",
+    "zh-TW": "獨立模式檔案",
+    "en": "Independent-mode archives",
+    "ja": "独立モード記録",
+    "fr": "Archives des modes indépendants",
+    "ru": "Архивы отдельных режимов",
+    "is": "Skrár sjálfstæðra stillinga",
+    "ar": "أرشيف الأوضاع المستقلة"
+  },
+  "medals": {
+    "zh-CN": "勋章",
+    "zh-TW": "勳章",
+    "en": "Medals",
+    "ja": "勲章",
+    "fr": "Médailles",
+    "ru": "Медали",
+    "is": "Orður",
+    "ar": "الأوسمة"
+  },
+  "endings": {
+    "zh-CN": "结局",
+    "zh-TW": "結局",
+    "en": "Endings",
+    "ja": "結末",
+    "fr": "Fins",
+    "ru": "Концовки",
+    "is": "Endar",
+    "ar": "النهايات"
+  },
+  "campus": {
+    "zh-CN": "校园主线",
+    "zh-TW": "校園主線",
+    "en": "Campus story",
+    "ja": "学校の物語",
+    "fr": "Histoire scolaire",
+    "ru": "Школьная история",
+    "is": "Skólasagan",
+    "ar": "قصة المدرسة"
+  },
+  "nightArchive": {
+    "zh-CN": "五夜守夜档案",
+    "zh-TW": "五夜守夜檔案",
+    "en": "Night-watch archive",
+    "ja": "五夜警備記録",
+    "fr": "Archives de veille",
+    "ru": "Архив ночной вахты",
+    "is": "Næturvaktarskrá",
+    "ar": "أرشيف الحراسة الليلية"
+  },
+  "battleArchive": {
+    "zh-CN": "异星对战档案",
+    "zh-TW": "異星對戰檔案",
+    "en": "Starfall battle archive",
+    "ja": "星客対戦記録",
+    "fr": "Archives du combat stellaire",
+    "ru": "Архив звёздной битвы",
+    "is": "Stjörnubardagaskrá",
+    "ar": "أرشيف معركة النجوم"
+  },
+  "independent": {
+    "zh-CN": "进度、结局和勋章独立保存，不计入校园毕业或神级封存试炼。",
+    "zh-TW": "進度、結局和勳章獨立保存，不計入校園畢業或神級封存試煉。",
+    "en": "Progress, endings and medals are separate. They never count as campus graduation or sealed trials.",
+    "ja": "進行・結末・勲章は別記録。学校卒業や封印試練には数えません。",
+    "fr": "Progression, fins et médailles séparées. Ne comptent jamais pour la remise de diplôme ni les épreuves scellées.",
+    "ru": "Прогресс, концовки и медали отдельные. Они не засчитываются как школьный выпуск или запечатанные испытания.",
+    "is": "Framvinda, endar og orður vistast sér. Þau telja ekki sem skólaútskrift eða innsigluð próf.",
+    "ar": "تُحفظ التقدمات والنهايات والأوسمة منفصلة، ولا تُحسب تخرجاً مدرسياً أو تجارب مختومة."
+  },
+  "export": {
+    "zh-CN": "导出本模式备份",
+    "zh-TW": "導出本模式備份",
+    "en": "Export this mode",
+    "ja": "このモードを出力",
+    "fr": "Exporter ce mode",
+    "ru": "Экспорт режима",
+    "is": "Flytja út þessa stillingu",
+    "ar": "تصدير هذا الوضع"
+  },
+  "import": {
+    "zh-CN": "导入本模式备份",
+    "zh-TW": "導入本模式備份",
+    "en": "Import this mode",
+    "ja": "このモードを読込",
+    "fr": "Importer ce mode",
+    "ru": "Импорт режима",
+    "is": "Flytja inn þessa stillingu",
+    "ar": "استيراد هذا الوضع"
+  },
+  "saved": {
+    "zh-CN": "已自动保存",
+    "zh-TW": "已自動保存",
+    "en": "Autosaved",
+    "ja": "自動保存済み",
+    "fr": "Sauvegarde automatique",
+    "ru": "Автосохранение",
+    "is": "Sjálfvirkt vistað",
+    "ar": "حُفظ تلقائياً"
+  },
+  "saveError": {
+    "zh-CN": "无法保存，请导出备份",
+    "zh-TW": "無法保存，請導出備份",
+    "en": "Cannot save; export a backup",
+    "ja": "保存できません。出力してください",
+    "fr": "Échec de sauvegarde ; exportez une copie",
+    "ru": "Не удалось сохранить; экспортируйте копию",
+    "is": "Ekki tókst að vista; flyttu út afrit",
+    "ar": "تعذر الحفظ؛ صدّر نسخة احتياطية"
+  },
+  "invalidSave": {
+    "zh-CN": "备份无效或属于其他模式",
+    "zh-TW": "備份無效或屬於其他模式",
+    "en": "Invalid backup or different mode",
+    "ja": "無効な記録、または別モードです",
+    "fr": "Copie invalide ou autre mode",
+    "ru": "Неверная копия или другой режим",
+    "is": "Ógilt afrit eða önnur stilling",
+    "ar": "نسخة غير صالحة أو تخص وضعاً آخر"
+  },
+  "replace": {
+    "zh-CN": "将替换本模式的进度。继续？",
+    "zh-TW": "將替換本模式的進度。繼續？",
+    "en": "Replace this mode's progress? ",
+    "ja": "このモードの進行を置き換えますか？",
+    "fr": "Remplacer la progression de ce mode ?",
+    "ru": "Заменить прогресс этого режима?",
+    "is": "Skipta út framvindu þessarar stillingar?",
+    "ar": "هل تريد استبدال تقدم هذا الوضع؟"
+  },
+  "checkpoint": {
+    "zh-CN": "从检查点重试",
+    "zh-TW": "從檢查點重試",
+    "en": "Retry checkpoint",
+    "ja": "チェックポイントから再試行",
+    "fr": "Reprendre au point de contrôle",
+    "ru": "Повторить с контрольной точки",
+    "is": "Reyna aftur frá vistunarstað",
+    "ar": "إعادة المحاولة من نقطة الحفظ"
+  },
+  "nextNight": {
+    "zh-CN": "开始下一夜",
+    "zh-TW": "開始下一夜",
+    "en": "Begin next night",
+    "ja": "次の夜へ",
+    "fr": "Commencer la nuit suivante",
+    "ru": "Начать следующую ночь",
+    "is": "Hefja næstu nótt",
+    "ar": "بدء الليلة التالية"
+  },
+  "night": {
+    "zh-CN": "夜次",
+    "zh-TW": "夜次",
+    "en": "Night",
+    "ja": "夜",
+    "fr": "Nuit",
+    "ru": "Ночь",
+    "is": "Nótt",
+    "ar": "الليلة"
+  },
+  "power": {
+    "zh-CN": "电力",
+    "zh-TW": "電力",
+    "en": "Power",
+    "ja": "電力",
+    "fr": "Énergie",
+    "ru": "Энергия",
+    "is": "Orka",
+    "ar": "الطاقة"
+  },
+  "leftDoor": {
+    "zh-CN": "左门",
+    "zh-TW": "左門",
+    "en": "Left door",
+    "ja": "左ドア",
+    "fr": "Porte gauche",
+    "ru": "Левая дверь",
+    "is": "Vinstri dyr",
+    "ar": "الباب الأيسر"
+  },
+  "rightDoor": {
+    "zh-CN": "右门",
+    "zh-TW": "右門",
+    "en": "Right door",
+    "ja": "右ドア",
+    "fr": "Porte droite",
+    "ru": "Правая дверь",
+    "is": "Hægri dyr",
+    "ar": "الباب الأيمن"
+  },
+  "leftLight": {
+    "zh-CN": "左灯",
+    "zh-TW": "左燈",
+    "en": "Left light",
+    "ja": "左ライト",
+    "fr": "Lampe gauche",
+    "ru": "Левый фонарь",
+    "is": "Vinstra ljós",
+    "ar": "الضوء الأيسر"
+  },
+  "rightLight": {
+    "zh-CN": "右灯",
+    "zh-TW": "右燈",
+    "en": "Right light",
+    "ja": "右ライト",
+    "fr": "Lampe droite",
+    "ru": "Правый фонарь",
+    "is": "Hægra ljós",
+    "ar": "الضوء الأيمن"
+  },
+  "camera": {
+    "zh-CN": "监控",
+    "zh-TW": "監控",
+    "en": "Cameras",
+    "ja": "監視カメラ",
+    "fr": "Caméras",
+    "ru": "Камеры",
+    "is": "Myndavélar",
+    "ar": "الكاميرات"
+  },
+  "open": {
+    "zh-CN": "开启",
+    "zh-TW": "開啓",
+    "en": "Open",
+    "ja": "開く",
+    "fr": "Ouvrir",
+    "ru": "Открыть",
+    "is": "Opna",
+    "ar": "فتح"
+  },
+  "shut": {
+    "zh-CN": "关上",
+    "zh-TW": "關上",
+    "en": "Shut",
+    "ja": "閉める",
+    "fr": "Fermer",
+    "ru": "Закрыть",
+    "is": "Loka",
+    "ar": "إغلاق"
+  },
+  "on": {
+    "zh-CN": "开启",
+    "zh-TW": "開啓",
+    "en": "On",
+    "ja": "オン",
+    "fr": "Activé",
+    "ru": "Включено",
+    "is": "Virkt",
+    "ar": "مفعّل"
+  },
+  "off": {
+    "zh-CN": "关闭",
+    "zh-TW": "關閉",
+    "en": "Off",
+    "ja": "オフ",
+    "fr": "Désactivé",
+    "ru": "Выключено",
+    "is": "Óvirkt",
+    "ar": "معطّل"
+  },
+  "cam0": {
+    "zh-CN": "入口大厅",
+    "zh-TW": "入口大廳",
+    "en": "Entrance hall",
+    "ja": "玄関ホール",
+    "fr": "Hall d’entrée",
+    "ru": "Вестибюль",
+    "is": "Anddyri",
+    "ar": "بهو المدخل"
+  },
+  "cam1": {
+    "zh-CN": "左侧走廊",
+    "zh-TW": "左側走廊",
+    "en": "Left corridor",
+    "ja": "左廊下",
+    "fr": "Couloir gauche",
+    "ru": "Левый коридор",
+    "is": "Vinstri gangur",
+    "ar": "الممر الأيسر"
+  },
+  "cam2": {
+    "zh-CN": "右侧走廊",
+    "zh-TW": "右側走廊",
+    "en": "Right corridor",
+    "ja": "右廊下",
+    "fr": "Couloir droit",
+    "ru": "Правый коридор",
+    "is": "Hægri gangur",
+    "ar": "الممر الأيمن"
+  },
+  "cam3": {
+    "zh-CN": "废弃广播室",
+    "zh-TW": "廢棄廣播室",
+    "en": "Abandoned radio room",
+    "ja": "廃放送室",
+    "fr": "Ancienne salle radio",
+    "ru": "Заброшенная радиорубка",
+    "is": "Yfirgefið útvarpsherbergi",
+    "ar": "غرفة البث المهجورة"
+  },
+  "lure": {
+    "zh-CN": "声音诱饵",
+    "zh-TW": "聲音誘餌",
+    "en": "Audio lure",
+    "ja": "音声誘導",
+    "fr": "Leurre sonore",
+    "ru": "Звуковая приманка",
+    "is": "Hljóðtálbeita",
+    "ar": "طعم صوتي"
+  },
+  "reboot": {
+    "zh-CN": "重启监控",
+    "zh-TW": "重啓監控",
+    "en": "Reboot cameras",
+    "ja": "監視を再起動",
+    "fr": "Relancer les caméras",
+    "ru": "Перезапуск камер",
+    "is": "Endurræsa myndavélar",
+    "ar": "إعادة تشغيل الكاميرات"
+  },
+  "rebooting": {
+    "zh-CN": "监控正在重启",
+    "zh-TW": "監控正在重啓",
+    "en": "Cameras rebooting",
+    "ja": "監視再起動中",
+    "fr": "Redémarrage des caméras",
+    "ru": "Камеры перезапускаются",
+    "is": "Myndavélar endurræsast",
+    "ar": "جارٍ إعادة تشغيل الكاميرات"
+  },
+  "signal": {
+    "zh-CN": "信号",
+    "zh-TW": "信號",
+    "en": "Signal",
+    "ja": "信号",
+    "fr": "Signal",
+    "ru": "Сигнал",
+    "is": "Merki",
+    "ar": "الإشارة"
+  },
+  "safe": {
+    "zh-CN": "暂时没有动静",
+    "zh-TW": "暫時沒有動靜",
+    "en": "No movement for now",
+    "ja": "今は動きなし",
+    "fr": "Aucun mouvement pour l’instant",
+    "ru": "Пока движения нет",
+    "is": "Engin hreyfing sem stendur",
+    "ar": "لا حركة حالياً"
+  },
+  "atDoor": {
+    "zh-CN": "门边有东西",
+    "zh-TW": "門邊有東西",
+    "en": "Something is at the door",
+    "ja": "ドアに何かいる",
+    "fr": "Quelque chose est à la porte",
+    "ru": "Кто-то у двери",
+    "is": "Eitthvað er við dyrnar",
+    "ar": "شيء ما عند الباب"
+  },
+  "powerOut": {
+    "zh-CN": "停电了。门已打开。",
+    "zh-TW": "停電了。門已打開。",
+    "en": "Blackout. Doors have opened.",
+    "ja": "停電。ドアが開いた。",
+    "fr": "Panne de courant. Les portes se sont ouvertes.",
+    "ru": "Электричество кончилось. Двери открылись.",
+    "is": "Rafmagnið fór. Dyrnar opnuðust.",
+    "ar": "انقطعت الكهرباء. فُتحت الأبواب."
+  },
+  "clockface": {
+    "zh-CN": "钟面人",
+    "zh-TW": "鐘面人",
+    "en": "Clockface",
+    "ja": "時計面",
+    "fr": "Cadran",
+    "ru": "Циферблат",
+    "is": "Klukkuskífan",
+    "ar": "وجه الساعة"
+  },
+  "mechanical": {
+    "zh-CN": "机械海胆",
+    "zh-TW": "機械海膽",
+    "en": "Mechanical urchin",
+    "ja": "機械ウニ",
+    "fr": "Oursin mécanique",
+    "ru": "Механический ёж",
+    "is": "Vélrænn ígulker",
+    "ar": "قنفذ آلي"
+  },
+  "alien": {
+    "zh-CN": "外星人",
+    "zh-TW": "外星人",
+    "en": "Alien",
+    "ja": "星の客",
+    "fr": "Alien",
+    "ru": "Пришелец",
+    "is": "Geimvera",
+    "ar": "الفضائي"
+  },
+  "urchin": {
+    "zh-CN": "海胆苹果",
+    "zh-TW": "海膽蘋果",
+    "en": "Urchin Apple",
+    "ja": "ウニリンゴ",
+    "fr": "Pomme-oursin",
+    "ru": "Яблоко-ёж",
+    "is": "Ígulkersepli",
+    "ar": "تفاحة القنفذ"
+  },
+  "nightWin": {
+    "zh-CN": "06:00 · 这一夜结束了",
+    "zh-TW": "06:00 · 這一夜結束了",
+    "en": "06:00 · Night survived",
+    "ja": "06:00・今夜を越えた",
+    "fr": "06:00 · Nuit survivante",
+    "ru": "06:00 · Ночь пережита",
+    "is": "06:00 · Nóttin lifð af",
+    "ar": "06:00 · نجوت من الليلة"
+  },
+  "nightLost": {
+    "zh-CN": "值班室失守",
+    "zh-TW": "值班室失守",
+    "en": "Office breached",
+    "ja": "警備室陥落",
+    "fr": "Poste envahi",
+    "ru": "Пост прорван",
+    "is": "Vaktstofan féll",
+    "ar": "اختُرقت غرفة الحراسة"
+  },
+  "nightHint": {
+    "zh-CN": "左门A，右门D；左灯Q，右灯E；空格监控，1—4切镜头，L诱饵，R重启。按键只控制游戏，不需要声音也能玩。",
+    "zh-TW": "左門A，右門D；左燈Q，右燈E；空格監控，1—4切鏡頭，L誘餌，R重啓。按鍵只控制游戲，不需要聲音也能玩。",
+    "en": "A/D doors; Q/E lights; Space cameras; 1–4 feeds; L lure; R reboot. Visual cues make sound optional.",
+    "ja": "A/Dドア、Q/E灯り、Space監視、1–4映像、L誘導、R再起動。視覚手掛かりで音声なしでも可。",
+    "fr": "A/D portes ; Q/E lumières ; Espace caméras ; 1–4 vues ; L leurre ; R redémarrage. Les indices visuels permettent de jouer sans son.",
+    "ru": "A/D двери; Q/E фонари; Пробел камеры; 1–4 каналы; L приманка; R перезапуск. Визуальные подсказки позволяют играть без звука.",
+    "is": "A/D dyr; Q/E ljós; bil myndavélar; 1–4 myndir; L tálbeita; R endurræsing. Hægt er að spila án hljóðs.",
+    "ar": "A/D للأبواب؛ Q/E للأضواء؛ المسافة للكاميرات؛ 1–4 للمشاهد؛ L للطعم؛ R لإعادة التشغيل. الإشارات البصرية تكفي للعب بلا صوت."
+  },
+  "battleTitle": {
+    "zh-CN": "海胆苹果与外星人 · 战术对战",
+    "zh-TW": "海膽蘋果與外星人 · 戰術對戰",
+    "en": "Urchin Apple & Alien · Tactical Battle",
+    "ja": "ウニリンゴと星の客・戦術対戦",
+    "fr": "Pomme-oursin et Alien · Combat tactique",
+    "ru": "Яблоко-ёж и пришелец · Тактический бой",
+    "is": "Ígulkersepli og geimvera · Taktískur bardagi",
+    "ar": "تفاحة القنفذ والفضائي · معركة تكتيكية"
+  },
+  "battleLead": {
+    "zh-CN": "六种技能、六类敌人、三路防线。每波升级，组合减速、破盾和贯穿。",
+    "zh-TW": "六種技能、六類敵人、三路防線。每波升級，組合減速、破盾和貫穿。",
+    "en": "Six skills, six enemy classes and three lanes. Upgrade each wave; combine slow, shield break and piercing.",
+    "ja": "6技能・6敵種・3レーン。毎波強化し、減速・盾破壊・貫通を組み合わせる。",
+    "fr": "Six compétences, six ennemis, trois voies. Améliorez-vous à chaque vague et combinez ralentissement, brise-bouclier et perforation.",
+    "ru": "Шесть навыков, шесть типов врагов и три линии. Улучшайтесь после волн; сочетайте замедление, пробитие щитов и сквозной удар.",
+    "is": "Sex hæfileikar, sex óvinaflokkar og þrjár brautir. Uppfærðu hverja bylgju; sameinaðu hægingu, skjaldbrot og gegnumskot.",
+    "ar": "ست مهارات وست فئات أعداء وثلاثة مسارات. طوّر بعد كل موجة واجمع الإبطاء وكسر الدروع والاختراق."
+  },
+  "campaign": {
+    "zh-CN": "十波远征",
+    "zh-TW": "十波遠徵",
+    "en": "Ten-wave expedition",
+    "ja": "10ウェーブ遠征",
+    "fr": "Expédition en dix vagues",
+    "ru": "Поход из десяти волн",
+    "is": "Tíu bylgna leiðangur",
+    "ar": "حملة عشر موجات"
+  },
+  "endless": {
+    "zh-CN": "无尽生存",
+    "zh-TW": "無盡生存",
+    "en": "Endless survival",
+    "ja": "無限サバイバル",
+    "fr": "Survie sans fin",
+    "ru": "Бесконечное выживание",
+    "is": "Endalaus lifun",
+    "ar": "بقاء لا نهائي"
+  },
+  "escort": {
+    "zh-CN": "护送信标",
+    "zh-TW": "護送信標",
+    "en": "Beacon escort",
+    "ja": "ビーコン護衛",
+    "fr": "Escorte de balise",
+    "ru": "Сопровождение маяка",
+    "is": "Fylgd leiðarljóss",
+    "ar": "مرافقة المنارة"
+  },
+  "bossrush": {
+    "zh-CN": "首领连战",
+    "zh-TW": "首領連戰",
+    "en": "Boss rush",
+    "ja": "ボス連戦",
+    "fr": "Suite de boss",
+    "ru": "Череда боссов",
+    "is": "Samfelldir stjórabardagar",
+    "ar": "تتابع الزعماء"
+  },
+  "study": {
+    "zh-CN": "学习模式 · 答题后发射",
+    "zh-TW": "學習模式 · 答題後發射",
+    "en": "Study · answer before firing",
+    "ja": "学習・回答後に発射",
+    "fr": "Étude · répondre avant de tirer",
+    "ru": "Учёба · ответ перед выстрелом",
+    "is": "Nám · svara fyrir skot",
+    "ar": "تعلم · أجب قبل إطلاق النار"
+  },
+  "studyHelp": {
+    "zh-CN": "所有攻击与主动技能都需要答对一题。答题和解析时战场冻结；答错不消耗能量但不发射。",
+    "zh-TW": "所有攻擊與主動技能都需要答對一題。答題和解析時戰場凍結；答錯不消耗能量但不發射。",
+    "en": "Every active skill needs a correct answer. Battle freezes during questions and feedback. Wrong answers spend no energy and do not fire.",
+    "ja": "全技能は正解後に発動。問題・解説中は戦場停止。不正解はエネルギーを使わず発動もしません。",
+    "fr": "Toute compétence active exige une bonne réponse. Le combat s’arrête pendant question et correction. Une erreur ne consomme rien et ne tire pas.",
+    "ru": "Каждый активный навык требует верного ответа. Бой заморожен во время вопроса и разбора. Ошибка не тратит энергию и не запускает навык.",
+    "is": "Hver virk færni krefst rétts svars. Bardagi frýs við spurningar og skýringar. Rangt svar eyðir engri orku og skýtur ekki.",
+    "ar": "كل مهارة فعالة تحتاج جواباً صحيحاً. تتجمد المعركة أثناء السؤال والشرح. الخطأ لا يستهلك طاقة ولا يطلق المهارة."
+  },
+  "classic": {
+    "zh-CN": "经典五波对战与旧记录",
+    "zh-TW": "經典五波對戰與舊記錄",
+    "en": "Classic five waves & old saves",
+    "ja": "従来の5波と旧記録",
+    "fr": "Cinq vagues classiques et anciennes sauvegardes",
+    "ru": "Классические пять волн и старые записи",
+    "is": "Klassískar fimm bylgjur og eldri vistanir",
+    "ar": "خمس موجات كلاسيكية وسجلات قديمة"
+  },
+  "wave": {
+    "zh-CN": "波次",
+    "zh-TW": "波次",
+    "en": "Wave",
+    "ja": "ウェーブ",
+    "fr": "Vague",
+    "ru": "Волна",
+    "is": "Bylgja",
+    "ar": "الموجة"
+  },
+  "energy": {
+    "zh-CN": "能量",
+    "zh-TW": "能量",
+    "en": "Energy",
+    "ja": "エネルギー",
+    "fr": "Énergie",
+    "ru": "Энергия",
+    "is": "Orka",
+    "ar": "الطاقة"
+  },
+  "shield": {
+    "zh-CN": "防线",
+    "zh-TW": "防線",
+    "en": "Defence",
+    "ja": "防衛線",
+    "fr": "Défense",
+    "ru": "Оборона",
+    "is": "Vörn",
+    "ar": "الدفاع"
+  },
+  "score": {
+    "zh-CN": "得分",
+    "zh-TW": "得分",
+    "en": "Score",
+    "ja": "スコア",
+    "fr": "Score",
+    "ru": "Очки",
+    "is": "Stig",
+    "ar": "النقاط"
+  },
+  "combo": {
+    "zh-CN": "连击",
+    "zh-TW": "連擊",
+    "en": "Combo",
+    "ja": "コンボ",
+    "fr": "Combo",
+    "ru": "Комбо",
+    "is": "Samfella",
+    "ar": "التتابع"
+  },
+  "left": {
+    "zh-CN": "左路",
+    "zh-TW": "左路",
+    "en": "Left lane",
+    "ja": "左レーン",
+    "fr": "Voie gauche",
+    "ru": "Левая линия",
+    "is": "Vinstri braut",
+    "ar": "المسار الأيسر"
+  },
+  "middle": {
+    "zh-CN": "中路",
+    "zh-TW": "中路",
+    "en": "Middle lane",
+    "ja": "中央レーン",
+    "fr": "Voie centrale",
+    "ru": "Средняя линия",
+    "is": "Miðbraut",
+    "ar": "المسار الأوسط"
+  },
+  "right": {
+    "zh-CN": "右路",
+    "zh-TW": "右路",
+    "en": "Right lane",
+    "ja": "右レーン",
+    "fr": "Voie droite",
+    "ru": "Правая линия",
+    "is": "Hægri braut",
+    "ar": "المسار الأيمن"
+  },
+  "scanShot": {
+    "zh-CN": "海胆监测弹",
+    "zh-TW": "海膽監測彈",
+    "en": "Urchin scan shot",
+    "ja": "ウニ索敵弾",
+    "fr": "Tir de repérage",
+    "ru": "Сканирующий выстрел",
+    "is": "Leitarskot ígulkers",
+    "ar": "قذيفة رصد القنفذ"
+  },
+  "pierce": {
+    "zh-CN": "外星贯穿",
+    "zh-TW": "外星貫穿",
+    "en": "Alien pierce",
+    "ja": "星の貫通",
+    "fr": "Perforation alien",
+    "ru": "Сквозной луч",
+    "is": "Gegnumskot geimveru",
+    "ar": "اختراق الفضائي"
+  },
+  "freeze": {
+    "zh-CN": "冰封力场",
+    "zh-TW": "冰封力場",
+    "en": "Stasis field",
+    "ja": "停止フィールド",
+    "fr": "Champ de stase",
+    "ru": "Поле стазиса",
+    "is": "Stöðvunarsvið",
+    "ar": "حقل التجميد"
+  },
+  "beacon": {
+    "zh-CN": "扫描信标",
+    "zh-TW": "掃描信標",
+    "en": "Scan beacon",
+    "ja": "索敵ビーコン",
+    "fr": "Balise de scan",
+    "ru": "Сканирующий маяк",
+    "is": "Leitarviti",
+    "ar": "منارة المسح"
+  },
+  "barrier": {
+    "zh-CN": "修复屏障",
+    "zh-TW": "修復屏障",
+    "en": "Repair barrier",
+    "ja": "障壁修復",
+    "fr": "Barrière réparatrice",
+    "ru": "Ремонт барьера",
+    "is": "Viðgerðarvörn",
+    "ar": "إصلاح الحاجز"
+  },
+  "overload": {
+    "zh-CN": "异星超载",
+    "zh-TW": "異星超載",
+    "en": "Starfall overload",
+    "ja": "星の過負荷",
+    "fr": "Surcharge stellaire",
+    "ru": "Звёздная перегрузка",
+    "is": "Stjörnuofhleðsla",
+    "ar": "الحمل النجمي الزائد"
+  },
+  "upgrade": {
+    "zh-CN": "波间升级 · 选择一项",
+    "zh-TW": "波間升級 · 選擇一項",
+    "en": "Between waves · choose an upgrade",
+    "ja": "波間強化・1つ選択",
+    "fr": "Entre les vagues · choisissez une amélioration",
+    "ru": "Между волнами · выберите улучшение",
+    "is": "Milli bylgna · veldu uppfærslu",
+    "ar": "بين الموجات · اختر تطويراً"
+  },
+  "damageUp": {
+    "zh-CN": "伤害提高20%",
+    "zh-TW": "傷害提高20%",
+    "en": "Damage +20%",
+    "ja": "ダメージ+20%",
+    "fr": "Dégâts +20 %",
+    "ru": "Урон +20%",
+    "is": "Skaði +20%",
+    "ar": "الضرر +20%"
+  },
+  "regenUp": {
+    "zh-CN": "能量恢复提高20%",
+    "zh-TW": "能量恢復提高20%",
+    "en": "Energy regeneration +20%",
+    "ja": "回復速度+20%",
+    "fr": "Régénération +20 %",
+    "ru": "Восстановление энергии +20%",
+    "is": "Orkuhleðsla +20%",
+    "ar": "استعادة الطاقة +20%"
+  },
+  "slowUp": {
+    "zh-CN": "减速持续时间提高25%",
+    "zh-TW": "減速持續時間提高25%",
+    "en": "Slow duration +25%",
+    "ja": "減速時間+25%",
+    "fr": "Durée de ralentissement +25 %",
+    "ru": "Длительность замедления +25%",
+    "is": "Hægingarlengd +25%",
+    "ar": "مدة الإبطاء +25%"
+  },
+  "repairUp": {
+    "zh-CN": "立即修复3点防线",
+    "zh-TW": "立即修復3點防線",
+    "en": "Repair 3 defence now",
+    "ja": "防衛を即時3回復",
+    "fr": "Réparer 3 points de défense",
+    "ru": "Восстановить 3 защиты",
+    "is": "Gera við 3 varnarstig",
+    "ar": "إصلاح 3 نقاط دفاع الآن"
+  },
+  "ready": {
+    "zh-CN": "就绪",
+    "zh-TW": "就緒",
+    "en": "Ready",
+    "ja": "準備完了",
+    "fr": "Prêt",
+    "ru": "Готово",
+    "is": "Tilbúið",
+    "ar": "جاهز"
+  },
+  "noTarget": {
+    "zh-CN": "这条路没有目标",
+    "zh-TW": "這條路沒有目標",
+    "en": "No target in this lane",
+    "ja": "このレーンに標的なし",
+    "fr": "Aucune cible sur cette voie",
+    "ru": "На линии нет цели",
+    "is": "Ekkert skotmark á þessari braut",
+    "ar": "لا هدف في هذا المسار"
+  },
+  "needEnergy": {
+    "zh-CN": "能量不足或技能冷却中",
+    "zh-TW": "能量不足或技能冷卻中",
+    "en": "Insufficient energy or cooldown",
+    "ja": "エネルギー不足、または待機中",
+    "fr": "Énergie insuffisante ou recharge",
+    "ru": "Недостаточно энергии или перезарядка",
+    "is": "Ónóg orka eða færni í bið",
+    "ar": "طاقة غير كافية أو المهارة قيد التبريد"
+  },
+  "answer": {
+    "zh-CN": "选择答案",
+    "zh-TW": "選擇答案",
+    "en": "Choose an answer",
+    "ja": "答えを選択",
+    "fr": "Choisir une réponse",
+    "ru": "Выберите ответ",
+    "is": "Veldu svar",
+    "ar": "اختر إجابة"
+  },
+  "correct": {
+    "zh-CN": "回答正确",
+    "zh-TW": "回答正確",
+    "en": "Correct answer",
+    "ja": "正解",
+    "fr": "Bonne réponse",
+    "ru": "Верный ответ",
+    "is": "Rétt svar",
+    "ar": "إجابة صحيحة"
+  },
+  "wrong": {
+    "zh-CN": "未答对，不发射",
+    "zh-TW": "未答對，不發射",
+    "en": "Incorrect; no shot",
+    "ja": "不正解・発射なし",
+    "fr": "Incorrect ; aucun tir",
+    "ru": "Неверно; выстрела нет",
+    "is": "Rangt; ekkert skot",
+    "ar": "إجابة خاطئة؛ لا إطلاق"
+  },
+  "fire": {
+    "zh-CN": "确认发射",
+    "zh-TW": "確認發射",
+    "en": "Confirm fire",
+    "ja": "発射確認",
+    "fr": "Confirmer le tir",
+    "ru": "Подтвердить выстрел",
+    "is": "Staðfesta skot",
+    "ar": "تأكيد الإطلاق"
+  },
+  "cancel": {
+    "zh-CN": "取消",
+    "zh-TW": "取消",
+    "en": "Cancel",
+    "ja": "キャンセル",
+    "fr": "Annuler",
+    "ru": "Отмена",
+    "is": "Hætta við",
+    "ar": "إلغاء"
+  },
+  "retire": {
+    "zh-CN": "结束无尽挑战并结算",
+    "zh-TW": "結束無盡挑戰並結算",
+    "en": "Retire and record survival",
+    "ja": "無限挑戦を終了して記録",
+    "fr": "Terminer et enregistrer la survie",
+    "ru": "Завершить и записать выживание",
+    "is": "Hætta og skrá lifun",
+    "ar": "إنهاء تحدي البقاء وتسجيل النتيجة"
+  },
+  "victory": {
+    "zh-CN": "防守成功",
+    "zh-TW": "防守成功",
+    "en": "Defence successful",
+    "ja": "防衛成功",
+    "fr": "Défense réussie",
+    "ru": "Оборона успешна",
+    "is": "Vörn tókst",
+    "ar": "نجاح الدفاع"
+  },
+  "defeat": {
+    "zh-CN": "防线失守",
+    "zh-TW": "防線失守",
+    "en": "Defence breached",
+    "ja": "防衛線突破",
+    "fr": "Défense percée",
+    "ru": "Оборона прорвана",
+    "is": "Vörnin féll",
+    "ar": "اختُرقت الدفاعات"
+  },
+  "battleHint": {
+    "zh-CN": "A/S/D选路；J海胆、K贯穿、L冰封、U信标、I屏障、O超载。先减速再贯穿可触发连锁。",
+    "zh-TW": "A/S/D選路；J海膽、K貫穿、L冰封、U信標、I屏障、O超載。先減速再貫穿可觸發連鎖。",
+    "en": "A/S/D lanes; J scan, K pierce, L stasis, U beacon, I repair, O overload. Slowing then piercing triggers a chain.",
+    "ja": "A/S/Dレーン、J索敵、K貫通、L停止、U索敵塔、I修復、O過負荷。減速後の貫通で連鎖。",
+    "fr": "A/S/D voies ; J scan, K perforation, L stase, U balise, I réparation, O surcharge. Ralentir puis percer crée une chaîne.",
+    "ru": "A/S/D линии; J скан, K луч, L стазис, U маяк, I ремонт, O перегрузка. Замедление перед лучом даёт цепную реакцию.",
+    "is": "A/S/D brautir; J leit, K gegnumskot, L stöðvun, U viti, I viðgerð, O ofhleðsla. Hæging og svo gegnumskot mynda keðju.",
+    "ar": "A/S/D للمسارات؛ J للرصد، K للاختراق، L للتجميد، U للمنارة، I للإصلاح، O للحمل الزائد. الإبطاء ثم الاختراق يصنع سلسلة."
+  },
+  "armored": {
+    "zh-CN": "护盾型",
+    "zh-TW": "護盾型",
+    "en": "Armoured",
+    "ja": "装甲型",
+    "fr": "Blindé",
+    "ru": "Бронированный",
+    "is": "Brynvarinn",
+    "ar": "مدرع"
+  },
+  "sprinter": {
+    "zh-CN": "疾走型",
+    "zh-TW": "疾走型",
+    "en": "Sprinter",
+    "ja": "疾走型",
+    "fr": "Sprinteur",
+    "ru": "Спринтер",
+    "is": "Spretthlaupari",
+    "ar": "عدّاء"
+  },
+  "splitter": {
+    "zh-CN": "分裂型",
+    "zh-TW": "分裂型",
+    "en": "Splitter",
+    "ja": "分裂型",
+    "fr": "Scission",
+    "ru": "Делящийся",
+    "is": "Kljúfari",
+    "ar": "منقسم"
+  },
+  "healer": {
+    "zh-CN": "修复型",
+    "zh-TW": "修復型",
+    "en": "Healer",
+    "ja": "修復型",
+    "fr": "Soigneur",
+    "ru": "Целитель",
+    "is": "Græðari",
+    "ar": "معالج"
+  },
+  "jammer": {
+    "zh-CN": "干扰型",
+    "zh-TW": "乾擾型",
+    "en": "Jammer",
+    "ja": "妨害型",
+    "fr": "Brouilleur",
+    "ru": "Глушитель",
+    "is": "Truflari",
+    "ar": "مشوش"
+  },
+  "phantom": {
+    "zh-CN": "隐形型",
+    "zh-TW": "隱形型",
+    "en": "Phantom",
+    "ja": "隠密型",
+    "fr": "Fantôme",
+    "ru": "Фантом",
+    "is": "Draugur",
+    "ar": "شبح"
+  },
+  "boss": {
+    "zh-CN": "首领投影",
+    "zh-TW": "首領投影",
+    "en": "Boss projection",
+    "ja": "ボス投影",
+    "fr": "Projection de boss",
+    "ru": "Проекция босса",
+    "is": "Stjóravörpun",
+    "ar": "إسقاط الزعيم"
+  },
+  "nightEnding1": {
+    "zh-CN": "第一缕荧光",
+    "zh-TW": "第一縷熒光",
+    "en": "The first fluorescent dawn",
+    "ja": "最初の蛍光の夜明け",
+    "fr": "La première aube fluorescente",
+    "ru": "Первый люминесцентный рассвет",
+    "is": "Fyrsta flúrljósa dögunin",
+    "ar": "الفجر الفلوري الأول"
+  },
+  "nightEnding2": {
+    "zh-CN": "五次六点钟",
+    "zh-TW": "五次六點鐘",
+    "en": "Five six-o'clocks",
+    "ja": "5回の6時",
+    "fr": "Cinq fois six heures",
+    "ru": "Пять раз в шесть",
+    "is": "Fimm sinnum klukkan sex",
+    "ar": "السادسة خمس مرات"
+  },
+  "nightEnding3": {
+    "zh-CN": "电量仍有余温",
+    "zh-TW": "電量仍有余溫",
+    "en": "Power left at dawn",
+    "ja": "朝にも残る電力",
+    "fr": "Du courant à l’aube",
+    "ru": "Заряд к рассвету",
+    "is": "Orka eftir við dögun",
+    "ar": "طاقة متبقية عند الفجر"
+  },
+  "nightEnding4": {
+    "zh-CN": "没有呼吸的值班室",
+    "zh-TW": "沒有呼吸的值班室",
+    "en": "The breathless office",
+    "ja": "息のない警備室",
+    "fr": "Le poste sans souffle",
+    "ru": "Пост без дыхания",
+    "is": "Vaktstofan án andardráttar",
+    "ar": "غرفة الحراسة بلا أنفاس"
+  },
+  "nightEnding5": {
+    "zh-CN": "最后一格电",
+    "zh-TW": "最後一格電",
+    "en": "The last bar of power",
+    "ja": "最後の電力目盛り",
+    "fr": "La dernière barre d’énergie",
+    "ru": "Последнее деление заряда",
+    "is": "Síðasta orkustrikið",
+    "ar": "آخر شريط طاقة"
+  },
+  "nightProse1": {
+    "zh-CN": "你没有逃跑。第一夜的值班表上，留下了一个清楚的签名。",
+    "zh-TW": "你沒有逃跑。第一夜的值班表上，留下了一個清楚的簽名。",
+    "en": "You did not flee. The first night's log bears a steady signature.",
+    "ja": "逃げなかった。初夜の記録に確かな署名が残った。",
+    "fr": "Vous n’avez pas fui. Le registre de la première nuit porte une signature assurée.",
+    "ru": "Вы не убежали. В журнале первой ночи стоит уверенная подпись.",
+    "is": "Þú flúðir ekki. Í fyrstu næturfærslunni stendur örugg undirskrift.",
+    "ar": "لم تهرب. يحمل سجل الليلة الأولى توقيعاً ثابتاً."
+  },
+  "nightProse2": {
+    "zh-CN": "五夜过去，旧楼第一次在六点准时安静下来。",
+    "zh-TW": "五夜過去，舊樓第一次在六點准時安靜下來。",
+    "en": "Five nights later, the old wing finally falls quiet at six.",
+    "ja": "5夜を越え、旧校舎は初めて6時に静まった。",
+    "fr": "Après cinq nuits, l’ancienne aile se tait enfin à six heures.",
+    "ru": "Через пять ночей старый корпус наконец затихает ровно в шесть.",
+    "is": "Eftir fimm nætur þagnar gamla álman loks klukkan sex.",
+    "ar": "بعد خمس ليالٍ، يصمت الجناح القديم أخيراً عند السادسة."
+  },
+  "nightProse3": {
+    "zh-CN": "你没有把每一道门都锁死。观察和克制让最后一夜保住了电力。",
+    "zh-TW": "你沒有把每一道門都鎖死。觀察和克制讓最後一夜保住了電力。",
+    "en": "You did not lock every door forever. Observation and restraint saved the final night's power.",
+    "ja": "すべての扉を閉め続けなかった。観察と節制で最終夜の電力が残った。",
+    "fr": "Vous n’avez pas condamné chaque porte. Observation et retenue ont préservé l’énergie finale.",
+    "ru": "Вы не запирали все двери постоянно. Наблюдение и сдержанность сохранили заряд в последнюю ночь.",
+    "is": "Þú læstir ekki öllum dyrum að eilífu. Athygli og aðhald vörðu orku síðustu nætur.",
+    "ar": "لم تغلق كل الأبواب إلى الأبد. حفظت المراقبة وضبط النفس طاقة الليلة الأخيرة."
+  },
+  "nightProse4": {
+    "zh-CN": "门边的影子先走了进来。重试仍从这一夜的入口开始。",
+    "zh-TW": "門邊的影子先走了進來。重試仍從這一夜的入口開始。",
+    "en": "The shadow entered first. Retry from the beginning of this night.",
+    "ja": "扉の影が先に入ってきた。この夜の入口から再試行できる。",
+    "fr": "L’ombre est entrée la première. Reprenez au début de cette nuit.",
+    "ru": "Тень вошла первой. Повтор начнётся с начала этой ночи.",
+    "is": "Skugginn kom fyrstur inn. Reyndu aftur frá upphafi þessarar nætur.",
+    "ar": "دخل الظل أولاً. أعد المحاولة من بداية هذه الليلة."
+  },
+  "nightProse5": {
+    "zh-CN": "电力耗尽后，门不再听从开关。不是每一个黑暗都能靠关闭解决。",
+    "zh-TW": "電力耗盡後，門不再聽從開關。不是每一個黑暗都能靠關閉解決。",
+    "en": "When power ran out, the doors stopped obeying. Not every darkness can be solved by shutting it out.",
+    "ja": "電力が尽きると扉は従わない。閉めるだけでは消せない暗闇もある。",
+    "fr": "Sans énergie, les portes n’obéissent plus. Toute obscurité ne se résout pas en la fermant dehors.",
+    "ru": "Когда заряд кончился, двери перестали слушаться. Не всякую тьму можно просто запереть снаружи.",
+    "is": "Þegar orkan þraut hlýddu dyrnar ekki lengur. Ekki er hægt að loka allt myrkur úti.",
+    "ar": "حين نفدت الطاقة لم تعد الأبواب تطيع. ليس كل ظلام يُحل بإغلاقه خارجاً."
+  },
+  "battleEnding1": {
+    "zh-CN": "十道防线之后",
+    "zh-TW": "十道防線之後",
+    "en": "Beyond ten lines",
+    "ja": "10本の防衛線の先",
+    "fr": "Au-delà des dix lignes",
+    "ru": "За десятью рубежами",
+    "is": "Handan tíu varnarlína",
+    "ar": "وراء عشرة خطوط"
+  },
+  "battleEnding2": {
+    "zh-CN": "信标到站",
+    "zh-TW": "信標到站",
+    "en": "Beacon delivered",
+    "ja": "ビーコン到着",
+    "fr": "Balise livrée",
+    "ru": "Маяк доставлен",
+    "is": "Leiðarljósið komst á leiðarenda",
+    "ar": "وصلت المنارة"
+  },
+  "battleEnding3": {
+    "zh-CN": "星客的答案",
+    "zh-TW": "星客的答案",
+    "en": "The alien's answer",
+    "ja": "星の客の答え",
+    "fr": "La réponse de l’alien",
+    "ru": "Ответ пришельца",
+    "is": "Svar geimverunnar",
+    "ar": "إجابة الفضائي"
+  },
+  "battleEnding4": {
+    "zh-CN": "还未结束的波次",
+    "zh-TW": "還未結束的波次",
+    "en": "Waves without end",
+    "ja": "終わらないウェーブ",
+    "fr": "Des vagues sans fin",
+    "ru": "Волны без конца",
+    "is": "Bylgjur án enda",
+    "ar": "موجات بلا نهاية"
+  },
+  "battleEnding5": {
+    "zh-CN": "最后一颗海胆",
+    "zh-TW": "最後一顆海膽",
+    "en": "The last urchin",
+    "ja": "最後のウニ",
+    "fr": "Le dernier oursin",
+    "ru": "Последний ёж",
+    "is": "Síðasti ígulkerinn",
+    "ar": "القنفذ الأخير"
+  },
+  "battleProse1": {
+    "zh-CN": "十波投影消散了。海胆苹果收起尖刺，星客合上了发光的地图。",
+    "zh-TW": "十波投影消散了。海膽蘋果收起尖刺，星客合上了發光的地圖。",
+    "en": "Ten waves dissolve. Urchin Apple folds its spines; the alien closes the glowing map.",
+    "ja": "10波の投影が消え、ウニリンゴはトゲを収め、星の客は地図を閉じた。",
+    "fr": "Dix vagues se dissipent. Pomme-oursin replie ses piquants ; l’alien referme la carte lumineuse.",
+    "ru": "Десять волн рассеялись. Яблоко-ёж сложил иглы, пришелец закрыл светящуюся карту.",
+    "is": "Tíu bylgjur hverfa. Ígulkersepli fellir niður broddana og geimveran lokar lýsandi kortinu.",
+    "ar": "تلاشت عشر موجات. طوت تفاحة القنفذ أشواكها وأغلق الفضائي الخريطة المضيئة."
+  },
+  "battleProse2": {
+    "zh-CN": "信标没有停在半路。你给同伴留住了一条可以通过的路线。",
+    "zh-TW": "信標沒有停在半路。你給同伴留住了一條可以通過的路線。",
+    "en": "The beacon did not stop halfway. You kept a path open for your companion.",
+    "ja": "ビーコンは途中で止まらなかった。仲間が通れる道を守った。",
+    "fr": "La balise n’est pas restée à mi-chemin. Vous avez gardé un passage pour votre compagnon.",
+    "ru": "Маяк не остановился на полпути. Вы сохранили путь для спутника.",
+    "is": "Leiðarljósið stöðvaðist ekki á miðri leið. Þú héltst leið opinni fyrir félaga þinn.",
+    "ar": "لم تتوقف المنارة في منتصف الطريق. أبقيت مساراً مفتوحاً لرفيقك."
+  },
+  "battleProse3": {
+    "zh-CN": "最后的首领投影破碎了。扫描、破盾和贯穿，终于组成了完整的回答。",
+    "zh-TW": "最後的首領投影破碎了。掃描、破盾和貫穿，終於組成了完整的回答。",
+    "en": "The last boss projection breaks. Scan, shield break and pierce form a complete answer.",
+    "ja": "最後のボス投影が砕けた。索敵、盾破壊、貫通が一つの答えになった。",
+    "fr": "Le dernier boss se brise. Repérage, brise-bouclier et perforation composent la réponse.",
+    "ru": "Последняя проекция босса разбита. Сканирование, снятие щита и луч стали полным ответом.",
+    "is": "Síðasta stjóravörpunin brotnar. Leit, skjaldbrot og gegnumskot mynda heilt svar.",
+    "ar": "تحطم إسقاط الزعيم الأخير. شكّل الرصد وكسر الدرع والاختراق إجابة متكاملة."
+  },
+  "battleProse4": {
+    "zh-CN": "你主动记录了这段生存。无尽不是必须一直留下，而是还能决定何时结束。",
+    "zh-TW": "你主動記錄了這段生存。無盡不是必須一直留下，而是還能決定何時結束。",
+    "en": "You chose to record this survival. Endless means you can still decide when to stop.",
+    "ja": "生き延びた記録を自分で残した。無限でも、終える時は自分で決められる。",
+    "fr": "Vous avez choisi d’enregistrer cette survie. Sans fin ne signifie pas sans choix d’arrêter.",
+    "ru": "Вы сами записали этот результат. Бесконечность не лишает права решить, когда остановиться.",
+    "is": "Þú valdir að skrá þessa lifun. Endalaust þýðir að þú mátt samt ákveða hvenær nóg er komið.",
+    "ar": "اخترت تسجيل هذا البقاء. اللانهاية لا تسلبك اختيار وقت التوقف."
+  },
+  "battleProse5": {
+    "zh-CN": "最后一道防线失去了颜色。升级和重试都还在，校园进度没有被改写。",
+    "zh-TW": "最後一道防線失去了顏色。升級和重試都還在，校園進度沒有被改寫。",
+    "en": "The last defence loses its colour. Upgrades and retries remain; campus progress is untouched.",
+    "ja": "最後の防衛線が色を失った。強化も再試行も残り、学校の記録は変わらない。",
+    "fr": "La dernière ligne perd sa couleur. Améliorations et reprises restent possibles ; l’école est intacte.",
+    "ru": "Последний рубеж поблёк. Улучшения и повторы остаются; школьный прогресс не изменён.",
+    "is": "Síðasta vörnin missir litinn. Uppfærslur og endurtilraunir bíða; skólaframvinda er óbreytt.",
+    "ar": "فقد آخر خط دفاع لونه. تبقى التطويرات والمحاولات، ولا يتغير تقدم المدرسة."
+  },
+  "unlocked": {
+    "zh-CN": "已解锁",
+    "zh-TW": "已解鎖",
+    "en": "Unlocked",
+    "ja": "解除済み",
+    "fr": "Débloqué",
+    "ru": "Открыто",
+    "is": "Opnað",
+    "ar": "مفتوح"
+  },
+  "locked": {
+    "zh-CN": "尚未解锁",
+    "zh-TW": "尚未解鎖",
+    "en": "Locked",
+    "ja": "未解除",
+    "fr": "Verrouillé",
+    "ru": "Закрыто",
+    "is": "Læst",
+    "ar": "مغلق"
+  },
+  "empty": {
+    "zh-CN": "暂无记录",
+    "zh-TW": "暫無記錄",
+    "en": "No records yet",
+    "ja": "記録なし",
+    "fr": "Aucun enregistrement",
+    "ru": "Записей пока нет",
+    "is": "Engar skrár enn",
+    "ar": "لا توجد سجلات بعد"
+  },
+  "recordsNote": {
+    "zh-CN": "各板块互不累计，重复读档不会重复解锁同一个勋章。",
+    "zh-TW": "各板塊互不累計，重復讀檔不會重復解鎖同一個勳章。",
+    "en": "Sections do not share progress. Reloading never duplicates a medal.",
+    "ja": "各部門の進捗は独立。ロードで同じ勲章を重複獲得しません。",
+    "fr": "Les sections ne partagent pas la progression. Recharger ne duplique jamais une médaille.",
+    "ru": "Разделы не делят прогресс. Загрузка не дублирует медаль.",
+    "is": "Framvinda flokkanna er aðskilin. Endurhleðsla tvöfaldar aldrei orðu.",
+    "ar": "لا تتشارك الأقسام التقدم. إعادة التحميل لا تكرر الوسام."
+  },
+  "nightFirstMedal": {
+    "zh-CN": "夜班新人",
+    "zh-TW": "夜班新人",
+    "en": "First night on duty",
+    "ja": "初めての夜勤",
+    "fr": "Première garde",
+    "ru": "Первая ночная смена",
+    "is": "Fyrsta næturvakt",
+    "ar": "أول مناوبة ليلية"
+  },
+  "nightFiveMedal": {
+    "zh-CN": "五夜守望",
+    "zh-TW": "五夜守望",
+    "en": "Five-night keeper",
+    "ja": "五夜の守り手",
+    "fr": "Gardien de cinq nuits",
+    "ru": "Хранитель пяти ночей",
+    "is": "Vörður fimm nátta",
+    "ar": "حارس خمس ليالٍ"
+  },
+  "powerMedal": {
+    "zh-CN": "节电值班员",
+    "zh-TW": "節電值班員",
+    "en": "Power keeper",
+    "ja": "節電警備員",
+    "fr": "Gardien économe",
+    "ru": "Экономный дежурный",
+    "is": "Orkuvörður",
+    "ar": "حارس الطاقة"
+  },
+  "camMedal": {
+    "zh-CN": "四路监控",
+    "zh-TW": "四路監控",
+    "en": "Four-camera watch",
+    "ja": "4映像の監視",
+    "fr": "Quatre caméras",
+    "ru": "Четыре камеры",
+    "is": "Fjórar myndavélar",
+    "ar": "مراقبة أربع كاميرات"
+  },
+  "repelMedal": {
+    "zh-CN": "关门有时",
+    "zh-TW": "關門有時",
+    "en": "Doors at the right time",
+    "ja": "閉める時を知る",
+    "fr": "Fermer au bon moment",
+    "ru": "Закрыть вовремя",
+    "is": "Loka á réttum tíma",
+    "ar": "إغلاق في الوقت المناسب"
+  },
+  "lureMedal": {
+    "zh-CN": "回声引路",
+    "zh-TW": "回聲引路",
+    "en": "Echo guide",
+    "ja": "反響の導き",
+    "fr": "Guide par l’écho",
+    "ru": "Проводник эха",
+    "is": "Bergmálsleiðsögn",
+    "ar": "دليل الصدى"
+  },
+  "rebootMedal": {
+    "zh-CN": "信号重连",
+    "zh-TW": "信號重連",
+    "en": "Signal restored",
+    "ja": "信号復旧",
+    "fr": "Signal retrouvé",
+    "ru": "Сигнал восстановлен",
+    "is": "Merki endurheimt",
+    "ar": "استعادة الإشارة"
+  },
+  "noLureMedal": {
+    "zh-CN": "只凭眼睛",
+    "zh-TW": "只憑眼睛",
+    "en": "Eyes alone",
+    "ja": "目だけを頼りに",
+    "fr": "Les yeux seuls",
+    "ru": "Только глазами",
+    "is": "Aðeins augun",
+    "ar": "بالعينين فقط"
+  },
+  "hardNightMedal": {
+    "zh-CN": "更深的夜",
+    "zh-TW": "更深的夜",
+    "en": "A deeper night",
+    "ja": "さらに深い夜",
+    "fr": "Une nuit plus profonde",
+    "ru": "Более глубокая ночь",
+    "is": "Dýpri nótt",
+    "ar": "ليلة أعمق"
+  },
+  "lastPowerMedal": {
+    "zh-CN": "最后一点电",
+    "zh-TW": "最後一點電",
+    "en": "One last spark",
+    "ja": "最後の電力",
+    "fr": "Une dernière étincelle",
+    "ru": "Последняя искра",
+    "is": "Síðasti neisti",
+    "ar": "الشرارة الأخيرة"
+  },
+  "battleFirstMedal": {
+    "zh-CN": "第一道防线",
+    "zh-TW": "第一道防線",
+    "en": "First defence",
+    "ja": "最初の防衛",
+    "fr": "Première défense",
+    "ru": "Первый рубеж",
+    "is": "Fyrsta vörnin",
+    "ar": "الدفاع الأول"
+  },
+  "battleTenMedal": {
+    "zh-CN": "十波守卫",
+    "zh-TW": "十波守衛",
+    "en": "Ten-wave guardian",
+    "ja": "10波の守護者",
+    "fr": "Gardien de dix vagues",
+    "ru": "Страж десяти волн",
+    "is": "Vörður tíu bylgna",
+    "ar": "حارس عشر موجات"
+  },
+  "studyMedal": {
+    "zh-CN": "知识装填",
+    "zh-TW": "知識裝填",
+    "en": "Knowledge loaded",
+    "ja": "知識装填",
+    "fr": "Savoir chargé",
+    "ru": "Заряжено знанием",
+    "is": "Þekking hlaðin",
+    "ar": "تحميل المعرفة"
+  },
+  "perfectMedal": {
+    "zh-CN": "一处也不漏",
+    "zh-TW": "一處也不漏",
+    "en": "No breaches",
+    "ja": "突破ゼロ",
+    "fr": "Aucune brèche",
+    "ru": "Ни одного прорыва",
+    "is": "Engin göt",
+    "ar": "بلا اختراق"
+  },
+  "synergyMedal": {
+    "zh-CN": "异星连锁",
+    "zh-TW": "異星連鎖",
+    "en": "Starfall chain",
+    "ja": "星の連鎖",
+    "fr": "Chaîne stellaire",
+    "ru": "Звёздная цепь",
+    "is": "Stjörnukeðja",
+    "ar": "سلسلة نجمية"
+  },
+  "splitMedal": {
+    "zh-CN": "一分为二",
+    "zh-TW": "一分為二",
+    "en": "Split in two",
+    "ja": "二つに分裂",
+    "fr": "Scindé en deux",
+    "ru": "Надвое",
+    "is": "Klofnað í tvennt",
+    "ar": "انقسام إلى اثنين"
+  },
+  "jamMedal": {
+    "zh-CN": "打破干扰",
+    "zh-TW": "打破乾擾",
+    "en": "Break the jam",
+    "ja": "妨害を破る",
+    "fr": "Briser le brouillage",
+    "ru": "Снять помехи",
+    "is": "Rjúfa truflun",
+    "ar": "كسر التشويش"
+  },
+  "armorMedal": {
+    "zh-CN": "破盾专家",
+    "zh-TW": "破盾專家",
+    "en": "Shield breaker",
+    "ja": "盾破壊の達人",
+    "fr": "Brise-bouclier",
+    "ru": "Разрушитель щитов",
+    "is": "Skjaldbrjótur",
+    "ar": "خبير كسر الدروع"
+  },
+  "escortMedal": {
+    "zh-CN": "护送完成",
+    "zh-TW": "護送完成",
+    "en": "Escort complete",
+    "ja": "護衛完了",
+    "fr": "Escorte terminée",
+    "ru": "Сопровождение завершено",
+    "is": "Fylgd lokið",
+    "ar": "اكتملت المرافقة"
+  },
+  "bossMedal": {
+    "zh-CN": "首领终结者",
+    "zh-TW": "首領終結者",
+    "en": "Boss finisher",
+    "ja": "ボスを終わらせる者",
+    "fr": "Finisseur de boss",
+    "ru": "Победитель боссов",
+    "is": "Bana stjóranna",
+    "ar": "منهي الزعماء"
+  },
+  "endlessMedal": {
+    "zh-CN": "二十波以后",
+    "zh-TW": "二十波以後",
+    "en": "Beyond twenty waves",
+    "ja": "20波の先",
+    "fr": "Au-delà de vingt vagues",
+    "ru": "После двадцати волн",
+    "is": "Handan tuttugu bylgna",
+    "ar": "بعد عشرين موجة"
+  },
+  "sixSkillsMedal": {
+    "zh-CN": "六种回答",
+    "zh-TW": "六種回答",
+    "en": "Six answers",
+    "ja": "6つの答え",
+    "fr": "Six réponses",
+    "ru": "Шесть ответов",
+    "is": "Sex svör",
+    "ar": "ست إجابات"
+  },
+  "repairMedal": {
+    "zh-CN": "重筑屏障",
+    "zh-TW": "重築屏障",
+    "en": "Rebuild the barrier",
+    "ja": "障壁再建",
+    "fr": "Rebâtir la barrière",
+    "ru": "Восстановить барьер",
+    "is": "Endurbyggja vörnina",
+    "ar": "إعادة بناء الحاجز"
+  },
+  "freezeMedal": {
+    "zh-CN": "冻结一条路",
+    "zh-TW": "凍結一條路",
+    "en": "Freeze a lane",
+    "ja": "レーンを凍らせる",
+    "fr": "Geler une voie",
+    "ru": "Заморозить линию",
+    "is": "Frysta braut",
+    "ar": "تجميد مسار"
+  },
+  "beaconMedal": {
+    "zh-CN": "看见隐形者",
+    "zh-TW": "看見隱形者",
+    "en": "See the unseen",
+    "ja": "見えない敵を見る",
+    "fr": "Voir l’invisible",
+    "ru": "Увидеть невидимых",
+    "is": "Sjá ósýnilegt",
+    "ar": "رؤية الخفي"
+  },
+  "comboMedal": {
+    "zh-CN": "十连击",
+    "zh-TW": "十連擊",
+    "en": "Ten-hit streak",
+    "ja": "10連撃",
+    "fr": "Série de dix",
+    "ru": "Серия из десяти",
+    "is": "Tíu í röð",
+    "ar": "عشر ضربات متتالية"
+  },
+  "upgradeMedal": {
+    "zh-CN": "全面改装",
+    "zh-TW": "全面改裝",
+    "en": "Full refit",
+    "ja": "全面改造",
+    "fr": "Refonte complète",
+    "ru": "Полная модернизация",
+    "is": "Heildaruppfærsla",
+    "ar": "تعديل شامل"
+  },
+  "studyTwentyMedal": {
+    "zh-CN": "二十次独立作答",
+    "zh-TW": "二十次獨立作答",
+    "en": "Twenty independent answers",
+    "ja": "20回の回答",
+    "fr": "Vingt réponses autonomes",
+    "ru": "Двадцать самостоятельных ответов",
+    "is": "Tuttugu sjálfstæð svör",
+    "ar": "عشرون إجابة مستقلة"
+  },
+  "hardBattleMedal": {
+    "zh-CN": "高压防线",
+    "zh-TW": "高壓防線",
+    "en": "High-pressure defence",
+    "ja": "高圧の防衛",
+    "fr": "Défense sous pression",
+    "ru": "Оборона под давлением",
+    "is": "Vörn undir álagi",
+    "ar": "دفاع تحت الضغط"
+  },
+  "hundredMedal": {
+    "zh-CN": "百次投影消散",
+    "zh-TW": "百次投影消散",
+    "en": "A hundred projections gone",
+    "ja": "100体の投影消滅",
+    "fr": "Cent projections dissipées",
+    "ru": "Сто исчезнувших проекций",
+    "is": "Hundrað varpanir horfnar",
+    "ar": "تلاشي مئة إسقاط"
+  },
+  "nightDisabled": {
+    "zh-CN": "先在主菜单或设置开启五夜守夜模式",
+    "zh-TW": "先在主菜單或設置開啓五夜守夜模式",
+    "en": "Enable Night Watch in the menu or settings first",
+    "ja": "まずメニューか設定で五夜警備をオンに",
+    "fr": "Activez d’abord la veille dans le menu ou les paramètres",
+    "ru": "Сначала включите ночную вахту в меню или настройках",
+    "is": "Virkjaðu fyrst næturvakt í valmynd eða stillingum",
+    "ar": "فعّل الحراسة الليلية في القائمة أو الإعدادات أولاً"
+  },
+  "archiveTab": {
+    "zh-CN": "分类记录",
+    "zh-TW": "分類記錄",
+    "en": "Separate records",
+    "ja": "分類記録",
+    "fr": "Registres séparés",
+    "ru": "Отдельные записи",
+    "is": "Aðskildar skrár",
+    "ar": "سجلات منفصلة"
+  },
+  "observeBoard": {
+    "zh-CN": "观察讲台",
+    "zh-TW": "觀察講台",
+    "en": "Inspect podium",
+    "ja": "教壇を観察",
+    "fr": "Observer l’estrade",
+    "ru": "Осмотреть кафедру",
+    "is": "Skoða púltið",
+    "ar": "مراقبة المنصة"
+  },
+  "newTutorial": {
+    "zh-CN": "夜巡、战术与无声镜头",
+    "zh-TW": "夜巡、戰術與無聲鏡頭",
+    "en": "Night watch, tactics and silent cameras",
+    "ja": "夜警・戦術・無言の撮影",
+    "fr": "Veille, tactique et caméras silencieuses",
+    "ru": "Ночная вахта, тактика и тихие камеры",
+    "is": "Næturvakt, taktík og hljóðlausar myndavélar",
+    "ar": "الحراسة والتكتيك والكاميرات الصامتة"
+  },
+  "nightArchiveMedal": {
+    "zh-CN": "旧楼全记录",
+    "zh-TW": "舊樓全記錄",
+    "en": "Every old-wing record",
+    "ja": "旧校舎の全記録",
+    "fr": "Toutes les archives de l’aile",
+    "ru": "Все записи старого корпуса",
+    "is": "Allar skrár gamla álmunnar",
+    "ar": "كل سجلات الجناح القديم"
+  },
+  "noRetryMedal": {
+    "zh-CN": "不借第二次机会",
+    "zh-TW": "不借第二次機會",
+    "en": "No second chance needed",
+    "ja": "やり直しなし",
+    "fr": "Sans seconde chance",
+    "ru": "Без второй попытки",
+    "is": "Án annars tækifæris",
+    "ar": "دون فرصة ثانية"
+  },
+  "streakTwentyMedal": {
+    "zh-CN": "二十题连对",
+    "zh-TW": "二十題連對",
+    "en": "Twenty correct in a row",
+    "ja": "20問連続正解",
+    "fr": "Vingt bonnes réponses de suite",
+    "ru": "Двадцать верных подряд",
+    "is": "Tuttugu rétt í röð",
+    "ar": "عشرون إجابة صحيحة متتالية"
+  },
+  "fiveBossMedal": {
+    "zh-CN": "五位首领",
+    "zh-TW": "五位首領",
+    "en": "Five bosses defeated",
+    "ja": "ボス5体撃破",
+    "fr": "Cinq boss vaincus",
+    "ru": "Пять поверженных боссов",
+    "is": "Fimm stjórar sigraðir",
+    "ar": "هزيمة خمسة زعماء"
+  },
+  "threeModesMedal": {
+    "zh-CN": "三路战术结业",
+    "zh-TW": "三路戰術結業",
+    "en": "Three tactical campaigns",
+    "ja": "3作戦修了",
+    "fr": "Trois campagnes tactiques",
+    "ru": "Три тактические кампании",
+    "is": "Þrjár herferðir í taktík",
+    "ar": "ثلاث حملات تكتيكية"
+  },
+  "reqNights": {
+    "zh-CN": "同一轮完成{n}晚守夜。",
+    "zh-TW": "同一輪完成{n}晚守夜。",
+    "en": "Complete {n} nights in one run.",
+    "ja": "1プレイで{n}夜を終える。",
+    "fr": "Terminer {n} nuits dans une partie.",
+    "ru": "Завершить {n} ночей за один заход.",
+    "is": "Ljúktu {n} nóttum í sömu umferð.",
+    "ar": "أكمل {n} ليالٍ في جولة واحدة."
+  },
+  "reqNightPower": {
+    "zh-CN": "一晚结束时保留至少25%电力。",
+    "zh-TW": "一晚結束時保留至少25%電力。",
+    "en": "Finish a night with at least 25% power.",
+    "ja": "電力25%以上で一夜を終える。",
+    "fr": "Finir une nuit avec au moins 25 % d’énergie.",
+    "ru": "Закончить ночь с зарядом не ниже 25%.",
+    "is": "Ljúktu nótt með að minnsta kosti 25% orku.",
+    "ar": "أنهِ ليلة بطاقة لا تقل عن 25%."
+  },
+  "reqFeeds": {
+    "zh-CN": "同一轮查看全部4路监控。",
+    "zh-TW": "同一輪查看全部4路監控。",
+    "en": "View all four camera feeds in one run.",
+    "ja": "1プレイで4映像すべてを見る。",
+    "fr": "Consulter les quatre caméras dans une partie.",
+    "ru": "Посмотреть все четыре камеры за один заход.",
+    "is": "Skoðaðu allar fjórar myndavélarnar í sömu umferð.",
+    "ar": "شاهد الكاميرات الأربع في جولة واحدة."
+  },
+  "reqRepel": {
+    "zh-CN": "同一轮用门挡回{n}次来访者。",
+    "zh-TW": "同一輪用門擋回{n}次來訪者。",
+    "en": "Repel {n} intrusions with doors in one run.",
+    "ja": "1プレイで扉を使い{n}回撃退する。",
+    "fr": "Repousser {n} intrusions avec les portes dans une partie.",
+    "ru": "Отразить дверями {n} вторжений за один заход.",
+    "is": "Stöðvaðu {n} innrásir með hurðum í sömu umferð.",
+    "ar": "صدّ {n} اقتحامات بالأبواب في جولة واحدة."
+  },
+  "reqLure": {
+    "zh-CN": "同一轮使用{n}次声音诱饵。",
+    "zh-TW": "同一輪使用{n}次聲音誘餌。",
+    "en": "Use the sound lure {n} times in one run.",
+    "ja": "1プレイで音の囮を{n}回使う。",
+    "fr": "Utiliser le leurre sonore {n} fois dans une partie.",
+    "ru": "Использовать звуковую приманку {n} раз за один заход.",
+    "is": "Notaðu hljóðtálbeitu {n} sinnum í sömu umferð.",
+    "ar": "استخدم الطُعم الصوتي {n} مرات في جولة واحدة."
+  },
+  "reqReboot": {
+    "zh-CN": "同一轮启动{n}次监控重启。",
+    "zh-TW": "同一輪啓動{n}次監控重啓。",
+    "en": "Start {n} camera reboots in one run.",
+    "ja": "1プレイで監視を{n}回再起動する。",
+    "fr": "Lancer {n} redémarrages de caméras dans une partie.",
+    "ru": "Запустить {n} перезагрузок камер за один заход.",
+    "is": "Ræstu myndavélarnar aftur {n} sinnum í sömu umferð.",
+    "ar": "ابدأ إعادة تشغيل الكاميرات {n} مرات في جولة واحدة."
+  },
+  "reqNoLure": {
+    "zh-CN": "尚未使用声音诱饵时完成一晚。",
+    "zh-TW": "尚未使用聲音誘餌時完成一晚。",
+    "en": "Complete a night before using any sound lure.",
+    "ja": "音の囮をまだ使わずに一夜を終える。",
+    "fr": "Finir une nuit sans avoir utilisé le leurre sonore.",
+    "ru": "Завершить ночь, ни разу не использовав приманку.",
+    "is": "Ljúktu nótt án þess að hafa notað hljóðtálbeitu.",
+    "ar": "أكمل ليلة قبل استخدام أي طُعم صوتي."
+  },
+  "reqNightHard": {
+    "zh-CN": "困难或更高难度完成全部五晚。",
+    "zh-TW": "困難或更高難度完成全部五晚。",
+    "en": "Complete all five nights on Hard or above.",
+    "ja": "困難以上で5夜すべて終える。",
+    "fr": "Terminer les cinq nuits en Difficile ou plus.",
+    "ru": "Завершить все пять ночей на сложном уровне или выше.",
+    "is": "Ljúktu öllum fimm nóttum á erfiðu stigi eða hærra.",
+    "ar": "أكمل الليالي الخمس على الصعب أو أعلى."
+  },
+  "reqLowPower": {
+    "zh-CN": "一晚成功结束时电力大于0且不超过5%。",
+    "zh-TW": "一晚成功結束時電力大於0且不超過5%。",
+    "en": "Win a night with power above 0% and at most 5%.",
+    "ja": "電力0%超・5%以下で一夜を終える。",
+    "fr": "Réussir une nuit avec plus de 0 % et au plus 5 % d’énergie.",
+    "ru": "Выиграть ночь с зарядом выше 0%, но не больше 5%.",
+    "is": "Ljúktu nótt með meira en 0% en í mesta lagi 5% orku.",
+    "ar": "اربح ليلة بطاقة أعلى من 0% ولا تتجاوز 5%."
+  },
+  "reqUnbroken": {
+    "zh-CN": "不使用检查点重试，完成同轮五晚。",
+    "zh-TW": "不使用檢查點重試，完成同輪五晚。",
+    "en": "Complete five nights without checkpoint retries.",
+    "ja": "チェックポイント再挑戦なしで5夜を終える。",
+    "fr": "Finir cinq nuits sans reprise au point de contrôle.",
+    "ru": "Пройти пять ночей без повторов с контрольной точки.",
+    "is": "Ljúktu fimm nóttum án þess að endurreyna frá vistunarpunkti.",
+    "ar": "أكمل خمس ليالٍ دون إعادة المحاولة من نقطة الحفظ."
+  },
+  "reqNightEnds": {
+    "zh-CN": "解锁本板块全部5条结局。",
+    "zh-TW": "解鎖本板塊全部5條結局。",
+    "en": "Unlock all five endings in this section.",
+    "ja": "この部門の全5結末を解放する。",
+    "fr": "Débloquer les cinq fins de cette section.",
+    "ru": "Открыть все пять концовок этого раздела.",
+    "is": "Opnaðu alla fimm enda þessa flokks.",
+    "ar": "افتح النهايات الخمس في هذا القسم."
+  },
+  "reqWaves": {
+    "zh-CN": "同一轮守住{n}波。",
+    "zh-TW": "同一輪守住{n}波。",
+    "en": "Clear {n} waves in one run.",
+    "ja": "1プレイで{n}波を防ぐ。",
+    "fr": "Repousser {n} vagues dans une partie.",
+    "ru": "Отразить {n} волн за один заход.",
+    "is": "Stöðvaðu {n} bylgjur í sömu umferð.",
+    "ar": "صدّ {n} موجات في جولة واحدة."
+  },
+  "reqCampaign": {
+    "zh-CN": "完成十波战役。",
+    "zh-TW": "完成十波戰役。",
+    "en": "Complete the ten-wave campaign.",
+    "ja": "10波の作戦を完了する。",
+    "fr": "Terminer la campagne de dix vagues.",
+    "ru": "Завершить кампанию из десяти волн.",
+    "is": "Ljúktu tíu bylgna herferðinni.",
+    "ar": "أكمل حملة الموجات العشر."
+  },
+  "reqStudyClear": {
+    "zh-CN": "学习模式下赢得一场有终点的对战。",
+    "zh-TW": "學習模式下贏得一場有終點的對戰。",
+    "en": "Win a finite battle mode with study enabled.",
+    "ja": "学習オンで終点のある対戦に勝つ。",
+    "fr": "Gagner un mode fini avec l’étude activée.",
+    "ru": "Победить в режиме с концом, включив учёбу.",
+    "is": "Vinnðu bardagaham með endapunkti og virku námi.",
+    "ar": "اربح وضع قتال محدد النهاية مع تفعيل الدراسة."
+  },
+  "reqPerfect": {
+    "zh-CN": "没有敌人突破防线，赢得对战。",
+    "zh-TW": "沒有敵人突破防線，贏得對戰。",
+    "en": "Win without any enemy breaching the line.",
+    "ja": "敵の突破ゼロで対戦に勝つ。",
+    "fr": "Gagner sans aucune percée ennemie.",
+    "ru": "Победить без единого прорыва противника.",
+    "is": "Vinnðu án þess að nokkur óvinur rjúfi varnarlínuna.",
+    "ar": "اربح دون أن يخترق أي عدو خط الدفاع."
+  },
+  "reqSynergy": {
+    "zh-CN": "同一轮触发{n}次扫描减速与贯穿连携命中。",
+    "zh-TW": "同一輪觸發{n}次掃描減速與貫穿連攜命中。",
+    "en": "Land {n} scan-slow and piercing combinations in one run.",
+    "ja": "1プレイで探知・減速と貫通の連携を{n}回当てる。",
+    "fr": "Réussir {n} combinaisons ralentissement-perforation dans une partie.",
+    "ru": "Выполнить {n} связок сканирования, замедления и пробития за заход.",
+    "is": "Hittu með {n} samspilum skönnunar, hægingar og gegnumskots í sömu umferð.",
+    "ar": "حقق {n} إصابات بتوليفة المسح والإبطاء والاختراق في جولة واحدة."
+  },
+  "reqSplit": {
+    "zh-CN": "同一轮击败{n}个分裂者。",
+    "zh-TW": "同一輪擊敗{n}個分裂者。",
+    "en": "Defeat {n} splitters in one run.",
+    "ja": "1プレイで分裂体を{n}体倒す。",
+    "fr": "Vaincre {n} diviseurs dans une partie.",
+    "ru": "Победить {n} делителей за один заход.",
+    "is": "Sigraðu {n} klofnara í sömu umferð.",
+    "ar": "اهزم {n} من المنقسمين في جولة واحدة."
+  },
+  "reqJam": {
+    "zh-CN": "同一轮击败{n}个干扰者。",
+    "zh-TW": "同一輪擊敗{n}個乾擾者。",
+    "en": "Defeat {n} jammers in one run.",
+    "ja": "1プレイで妨害体を{n}体倒す。",
+    "fr": "Vaincre {n} brouilleurs dans une partie.",
+    "ru": "Победить {n} подавителей за один заход.",
+    "is": "Sigraðu {n} truflara í sömu umferð.",
+    "ar": "اهزم {n} من المشوشين في جولة واحدة."
+  },
+  "reqArmor": {
+    "zh-CN": "同一轮用攻击击穿{n}面护甲。",
+    "zh-TW": "同一輪用攻擊擊穿{n}面護甲。",
+    "en": "Break {n} armour shields with attacks in one run.",
+    "ja": "1プレイで攻撃により装甲を{n}枚破る。",
+    "fr": "Briser {n} armures par attaque dans une partie.",
+    "ru": "Разбить атаками {n} щитов за один заход.",
+    "is": "Brjóttu {n} brynvarnir með árásum í sömu umferð.",
+    "ar": "اكسر {n} دروع بالهجمات في جولة واحدة."
+  },
+  "reqEscort": {
+    "zh-CN": "保住信标，完成八波护送。",
+    "zh-TW": "保住信標，完成八波護送。",
+    "en": "Keep the beacon intact through eight escort waves.",
+    "ja": "8波を越えて信標を守り抜く。",
+    "fr": "Protéger la balise pendant huit vagues d’escorte.",
+    "ru": "Защитить маяк в восьми волнах сопровождения.",
+    "is": "Verndaðu vitann í átta fylgdarbylgjum.",
+    "ar": "احمِ المنارة عبر ثماني موجات مرافقة."
+  },
+  "reqBossRush": {
+    "zh-CN": "完成五波首领挑战。",
+    "zh-TW": "完成五波首領挑戰。",
+    "en": "Complete the five-wave boss rush.",
+    "ja": "5波のボス連戦を終える。",
+    "fr": "Terminer les cinq vagues de boss.",
+    "ru": "Пройти пять волн боссов.",
+    "is": "Ljúktu fimm bylgjum af stjórum.",
+    "ar": "أكمل تحدي الزعماء ذي الموجات الخمس."
+  },
+  "reqSkills": {
+    "zh-CN": "同一轮实际发射全部6种技能。",
+    "zh-TW": "同一輪實際發射全部6種技能。",
+    "en": "Actually use all six skills in one run.",
+    "ja": "1プレイで6技能すべてを実行する。",
+    "fr": "Utiliser les six compétences dans une partie.",
+    "ru": "Применить все шесть навыков за один заход.",
+    "is": "Notaðu allar sex aðgerðirnar í sömu umferð.",
+    "ar": "استخدم المهارات الست فعلياً في جولة واحدة."
+  },
+  "reqRepair": {
+    "zh-CN": "同一轮完成{n}次屏障修复。",
+    "zh-TW": "同一輪完成{n}次屏障修復。",
+    "en": "Complete {n} barrier repairs in one run.",
+    "ja": "1プレイで障壁を{n}回修復する。",
+    "fr": "Réparer la barrière {n} fois dans une partie.",
+    "ru": "Восстановить барьер {n} раз за один заход.",
+    "is": "Lagaðu varnarlínuna {n} sinnum í sömu umferð.",
+    "ar": "أكمل {n} إصلاحات للحاجز في جولة واحدة."
+  },
+  "reqFreeze": {
+    "zh-CN": "同一轮累计冻结命中{n}个敌人，可为重复目标。",
+    "zh-TW": "同一輪累計凍結命中{n}個敵人，可為重復目標。",
+    "en": "Land {n} freeze hits in one run; repeated targets count.",
+    "ja": "1プレイで凍結を{n}回当てる。同じ敵も可。",
+    "fr": "Atteindre {n} fois des ennemis par gel; une même cible compte.",
+    "ru": "Нанести {n} замораживающих попаданий; повторные цели учитываются.",
+    "is": "Hittu {n} sinnum með frystingu í sömu umferð; endurtekin skot á sama óvin telja.",
+    "ar": "حقق {n} إصابات تجميد في جولة واحدة؛ تُحسب الأهداف المتكررة."
+  },
+  "reqReveal": {
+    "zh-CN": "同一轮揭示{n}次处于隐形状态的敌人。",
+    "zh-TW": "同一輪揭示{n}次處於隱形狀態的敵人。",
+    "en": "Reveal hidden enemies {n} times in one run.",
+    "ja": "1プレイで不可視の敵を{n}回見つける。",
+    "fr": "Révéler {n} fois des ennemis cachés dans une partie.",
+    "ru": "Раскрыть невидимых врагов {n} раз за один заход.",
+    "is": "Afhjúpaðu ósýnilega óvini {n} sinnum í sömu umferð.",
+    "ar": "اكشف الأعداء المختفين {n} مرات في جولة واحدة."
+  },
+  "reqCombo": {
+    "zh-CN": "达到{n}连击；相邻击败间隔不超过4秒。",
+    "zh-TW": "達到{n}連擊；相鄰擊敗間隔不超過4秒。",
+    "en": "Reach a {n}-kill combo with no gap longer than four seconds.",
+    "ja": "撃破間隔4秒以内で{n}連撃に達する。",
+    "fr": "Atteindre {n} éliminations en chaîne, espacées d’au plus quatre secondes.",
+    "ru": "Достичь серии из {n} убийств с интервалом не более четырёх секунд.",
+    "is": "Náðu {n} sigra röð með í mesta lagi fjórum sekúndum á milli.",
+    "ar": "حقق سلسلة من {n} هزائم بفاصل لا يتجاوز أربع ثوانٍ."
+  },
+  "reqUpgrade": {
+    "zh-CN": "同一轮选择至少3种不同的波间升级。",
+    "zh-TW": "同一輪選擇至少3種不同的波間升級。",
+    "en": "Choose at least three different inter-wave upgrades in one run.",
+    "ja": "1プレイで波間強化を3種類以上選ぶ。",
+    "fr": "Choisir trois améliorations différentes dans une partie.",
+    "ru": "Выбрать не менее трёх разных улучшений за заход.",
+    "is": "Veldu minnst þrjár ólíkar uppfærslur í sömu umferð.",
+    "ar": "اختر ثلاثة أنواع مختلفة على الأقل من ترقيات ما بين الموجات في جولة واحدة."
+  },
+  "reqAnswers": {
+    "zh-CN": "同一轮正确回答{n}道学习题。",
+    "zh-TW": "同一輪正確回答{n}道學習題。",
+    "en": "Answer {n} study questions correctly in one run.",
+    "ja": "1プレイで学習問題{n}問に正解する。",
+    "fr": "Répondre correctement à {n} questions dans une partie.",
+    "ru": "Правильно ответить на {n} учебных вопросов за один заход.",
+    "is": "Svaraðu {n} náms­spurningum rétt í sömu umferð.",
+    "ar": "أجب عن {n} أسئلة دراسية بشكل صحيح في جولة واحدة."
+  },
+  "reqBattleHard": {
+    "zh-CN": "困难或更高难度赢得对战。",
+    "zh-TW": "困難或更高難度贏得對戰。",
+    "en": "Win a battle on Hard or above.",
+    "ja": "困難以上で対戦に勝つ。",
+    "fr": "Gagner en Difficile ou plus.",
+    "ru": "Победить на сложном уровне или выше.",
+    "is": "Vinnðu á erfiðu stigi eða hærra.",
+    "ar": "اربح قتالاً على الصعب أو أعلى."
+  },
+  "reqKills": {
+    "zh-CN": "同一轮击败{n}个投影。",
+    "zh-TW": "同一輪擊敗{n}個投影。",
+    "en": "Defeat {n} projections in one run.",
+    "ja": "1プレイで投影を{n}体倒す。",
+    "fr": "Vaincre {n} projections dans une partie.",
+    "ru": "Победить {n} проекций за один заход.",
+    "is": "Sigraðu {n} varpanir í sömu umferð.",
+    "ar": "اهزم {n} إسقاطات في جولة واحدة."
+  },
+  "reqNoRetry": {
+    "zh-CN": "未使用检查点重试，赢得对战。",
+    "zh-TW": "未使用檢查點重試，贏得對戰。",
+    "en": "Win without using checkpoint retries.",
+    "ja": "チェックポイント再挑戦なしで勝つ。",
+    "fr": "Gagner sans reprise au point de contrôle.",
+    "ru": "Победить без повторов с контрольной точки.",
+    "is": "Vinnðu án þess að endurreyna frá vistunarpunkti.",
+    "ar": "اربح دون إعادة المحاولة من نقطة الحفظ."
+  },
+  "reqStreak": {
+    "zh-CN": "同一轮连续答对20题。",
+    "zh-TW": "同一輪連續答對20題。",
+    "en": "Answer twenty questions correctly in a row in one run.",
+    "ja": "1プレイで20問連続正解する。",
+    "fr": "Réussir vingt réponses consécutives dans une partie.",
+    "ru": "Дать двадцать верных ответов подряд за один заход.",
+    "is": "Svaraðu tuttugu spurningum rétt í röð í sömu umferð.",
+    "ar": "أجب عن عشرين سؤالاً بشكل صحيح متتالٍ في جولة واحدة."
+  },
+  "reqBossKills": {
+    "zh-CN": "同一轮击败5个首领。",
+    "zh-TW": "同一輪擊敗5個首領。",
+    "en": "Defeat five bosses in one run.",
+    "ja": "1プレイでボスを5体倒す。",
+    "fr": "Vaincre cinq boss dans une partie.",
+    "ru": "Победить пять боссов за один заход.",
+    "is": "Sigraðu fimm stjóra í sömu umferð.",
+    "ar": "اهزم خمسة زعماء في جولة واحدة."
+  },
+  "reqModes": {
+    "zh-CN": "分别完成战役、护送与首领挑战，可跨周目。",
+    "zh-TW": "分別完成戰役、護送與首領挑戰，可跨周目。",
+    "en": "Complete campaign, escort and boss rush; separate runs count.",
+    "ja": "作戦・護衛・ボス連戦を各完了。別プレイ可。",
+    "fr": "Terminer campagne, escorte et boss, même dans des parties séparées.",
+    "ru": "Завершить кампанию, сопровождение и боссов; можно за разные заходы.",
+    "is": "Ljúktu herferð, fylgd og stjórabardögum; má vera í ólíkum umferðum.",
+    "ar": "أكمل الحملة والمرافقة وتحدي الزعماء؛ يمكن إكمالها في جولات مختلفة."
+  },
+  "settingTitle": {
+    "zh-CN": "设置",
+    "zh-TW": "設置",
+    "en": "Settings",
+    "ja": "設定",
+    "fr": "Paramètres",
+    "ru": "Настройки",
+    "is": "Stillingar",
+    "ar": "الإعدادات"
+  },
+  "studyToggle": {
+    "zh-CN": "学习模式（默认关闭）",
+    "zh-TW": "學習模式（預設關閉）",
+    "en": "Study mode (off by default)",
+    "ja": "学習モード（初期はオフ）",
+    "fr": "Mode étude (désactivé par défaut)",
+    "ru": "Учебный режим (выключен по умолчанию)",
+    "is": "Námshamur (sjálfgefið óvirkur)",
+    "ar": "وضع الدراسة (معطّل افتراضياً)"
+  },
+  "casualMenu": {
+    "zh-CN": "少题 · 基础优先 · 固定短时限 · 56选一3题",
+    "zh-TW": "少題 · 基礎優先 · 固定短時限 · 56選一3題",
+    "en": "Fewer questions · basics · short timers · three number grids",
+    "ja": "少ない問題・基礎優先・短い制限時間・数字盤3問",
+    "fr": "Moins de questions · bases · temps courts · trois grilles",
+    "ru": "Меньше вопросов · основы · короткое время · три сетки",
+    "is": "Færri spurningar · undirstöður · stuttur tími · þrjár talnatöflur",
+    "ar": "أسئلة أقل · أساسيات · وقت قصير · ثلاث شبكات أرقام"
+  },
+  "studyMenu": {
+    "zh-CN": "多题 · 分级延时 · 课堂时钟×0.65 · 56选一5题",
+    "zh-TW": "多題 · 分級延時 · 課堂時鐘×0.65 · 56選一5題",
+    "en": "More questions · graded timers · lesson clock ×0.65 · five grids",
+    "ja": "多い問題・難度別時間・授業時計×0.65・数字盤5問",
+    "fr": "Plus de questions · temps gradués · horloge ×0,65 · cinq grilles",
+    "ru": "Больше вопросов · время по уровню · часы ×0,65 · пять сеток",
+    "is": "Fleiri spurningar · tími eftir stigi · klukka ×0,65 · fimm töflur",
+    "ar": "أسئلة أكثر · وقت بحسب المستوى · ساعة ×0.65 · خمس شبكات"
+  },
+  "menuStart": {
+    "zh-CN": "开始新的一天",
+    "zh-TW": "開始新的一天",
+    "en": "Start a new day",
+    "ja": "新しい一日を開始",
+    "fr": "Commencer une journée",
+    "ru": "Начать новый день",
+    "is": "Hefja nýjan dag",
+    "ar": "ابدأ يوماً جديداً"
+  },
+  "menuQuick": {
+    "zh-CN": "快速模式",
+    "zh-TW": "快速模式",
+    "en": "Quick lessons",
+    "ja": "短時間モード",
+    "fr": "Cours rapides",
+    "ru": "Быстрые уроки",
+    "is": "Flýtikennsla",
+    "ar": "حصص سريعة"
+  },
+  "menuWeek": {
+    "zh-CN": "一周挑战",
+    "zh-TW": "一周挑戰",
+    "en": "Seven-day challenge",
+    "ja": "7日間チャレンジ",
+    "fr": "Défi de sept jours",
+    "ru": "Семидневное испытание",
+    "is": "Sjö daga áskorun",
+    "ar": "تحدي سبعة أيام"
+  },
+  "menuHome": {
+    "zh-CN": "归家",
+    "zh-TW": "歸家",
+    "en": "Homecoming",
+    "ja": "帰宅",
+    "fr": "Retour à la maison",
+    "ru": "Возвращение домой",
+    "is": "Heimkoma",
+    "ar": "العودة إلى المنزل"
+  },
+  "menuTut": {
+    "zh-CN": "新手教程",
+    "zh-TW": "新手教程",
+    "en": "Beginner tutorial",
+    "ja": "初心者ガイド",
+    "fr": "Tutoriel débutant",
+    "ru": "Обучение для новичков",
+    "is": "Kennsla fyrir byrjendur",
+    "ar": "شرح للمبتدئين"
+  },
+  "howTo": {
+    "zh-CN": "游戏说明",
+    "zh-TW": "游戲說明",
+    "en": "How to play",
+    "ja": "遊び方",
+    "fr": "Comment jouer",
+    "ru": "Как играть",
+    "is": "Leiðbeiningar",
+    "ar": "طريقة اللعب"
+  },
+  "endingArchive": {
+    "zh-CN": "结局档案",
+    "zh-TW": "結局檔案",
+    "en": "Ending archive",
+    "ja": "結末の記録",
+    "fr": "Archives des fins",
+    "ru": "Архив концовок",
+    "is": "Endasafn",
+    "ar": "أرشيف النهايات"
+  },
+  "characters": {
+    "zh-CN": "人物",
+    "zh-TW": "人物",
+    "en": "Characters",
+    "ja": "登場人物",
+    "fr": "Personnages",
+    "ru": "Персонажи",
+    "is": "Persónur",
+    "ar": "الشخصيات"
+  },
+  "teacher": {
+    "zh-CN": "老师",
+    "zh-TW": "老師",
+    "en": "Teacher",
+    "ja": "先生",
+    "fr": "Professeur",
+    "ru": "Учитель",
+    "is": "Kennari",
+    "ar": "المعلّم"
+  },
+  "student": {
+    "zh-CN": "同学",
+    "zh-TW": "同學",
+    "en": "Classmates",
+    "ja": "クラスメイト",
+    "fr": "Camarades",
+    "ru": "Одноклассники",
+    "is": "Bekkjarfélagar",
+    "ar": "زملاء الصف"
+  },
+  "saves": {
+    "zh-CN": "存档",
+    "zh-TW": "存檔",
+    "en": "Saves",
+    "ja": "セーブ",
+    "fr": "Sauvegardes",
+    "ru": "Сохранения",
+    "is": "Vistanir",
+    "ar": "ملفات الحفظ"
+  },
+  "timetable": {
+    "zh-CN": "课表",
+    "zh-TW": "課表",
+    "en": "Timetable",
+    "ja": "時間割",
+    "fr": "Emploi du temps",
+    "ru": "Расписание",
+    "is": "Stundaskrá",
+    "ar": "الجدول"
+  },
+  "journal": {
+    "zh-CN": "手记",
+    "zh-TW": "手記",
+    "en": "Journal",
+    "ja": "手帳",
+    "fr": "Journal",
+    "ru": "Записки",
+    "is": "Dagbók",
+    "ar": "المذكرات"
+  },
+  "listen": {
+    "zh-CN": "听课",
+    "zh-TW": "聽課",
+    "en": "Listen",
+    "ja": "授業を聞く",
+    "fr": "Écouter",
+    "ru": "Слушать",
+    "is": "Hlusta",
+    "ar": "الاستماع"
+  },
+  "homework": {
+    "zh-CN": "作业",
+    "zh-TW": "作業",
+    "en": "Homework",
+    "ja": "宿題",
+    "fr": "Devoirs",
+    "ru": "Домашняя работа",
+    "is": "Heimanám",
+    "ar": "الواجبات"
+  },
+  "cube": {
+    "zh-CN": "魔方",
+    "zh-TW": "魔方",
+    "en": "Cube",
+    "ja": "キューブ",
+    "fr": "Cube",
+    "ru": "Кубик",
+    "is": "Kubbur",
+    "ar": "المكعب"
+  },
+  "phone": {
+    "zh-CN": "手机",
+    "zh-TW": "手機",
+    "en": "Phone",
+    "ja": "スマホ",
+    "fr": "Téléphone",
+    "ru": "Телефон",
+    "is": "Sími",
+    "ar": "الهاتف"
+  },
+  "observe": {
+    "zh-CN": "观察",
+    "zh-TW": "觀察",
+    "en": "Observe",
+    "ja": "観察",
+    "fr": "Observer",
+    "ru": "Наблюдать",
+    "is": "Fylgjast með",
+    "ar": "المراقبة"
+  },
+  "notes": {
+    "zh-CN": "传纸条",
+    "zh-TW": "傳紙條",
+    "en": "Pass a note",
+    "ja": "メモを渡す",
+    "fr": "Passer un mot",
+    "ru": "Передать записку",
+    "is": "Rétta miða",
+    "ar": "تمرير ورقة"
+  },
+  "sleep": {
+    "zh-CN": "睡觉",
+    "zh-TW": "睡覺",
+    "en": "Sleep",
+    "ja": "眠る",
+    "fr": "Dormir",
+    "ru": "Спать",
+    "is": "Sofa",
+    "ar": "النوم"
+  },
+  "chess": {
+    "zh-CN": "下棋",
+    "zh-TW": "下棋",
+    "en": "Play chess",
+    "ja": "チェス",
+    "fr": "Jouer aux échecs",
+    "ru": "Играть в шахматы",
+    "is": "Tefla",
+    "ar": "لعب الشطرنج"
+  },
+  "speaking": {
+    "zh-CN": "讲话",
+    "zh-TW": "講話",
+    "en": "Talk",
+    "ja": "話す",
+    "fr": "Parler",
+    "ru": "Разговаривать",
+    "is": "Tala",
+    "ar": "الكلام"
+  },
+  "putAway": {
+    "zh-CN": "收好",
+    "zh-TW": "收好",
+    "en": "Put away",
+    "ja": "しまう",
+    "fr": "Ranger",
+    "ru": "Убрать",
+    "is": "Ganga frá",
+    "ar": "إخفاء الأغراض"
+  },
+  "wake": {
+    "zh-CN": "醒来",
+    "zh-TW": "醒來",
+    "en": "Wake up",
+    "ja": "起きる",
+    "fr": "Se réveiller",
+    "ru": "Проснуться",
+    "is": "Vakna",
+    "ar": "الاستيقاظ"
+  },
+  "suspicion": {
+    "zh-CN": "怀疑",
+    "zh-TW": "懷疑",
+    "en": "Suspicion",
+    "ja": "疑い",
+    "fr": "Soupçon",
+    "ru": "Подозрение",
+    "is": "Grunur",
+    "ar": "الاشتباه"
+  },
+  "focus": {
+    "zh-CN": "专注",
+    "zh-TW": "專注",
+    "en": "Focus",
+    "ja": "集中",
+    "fr": "Concentration",
+    "ru": "Сосредоточенность",
+    "is": "Einbeiting",
+    "ar": "التركيز"
+  },
+  "boredom": {
+    "zh-CN": "无聊",
+    "zh-TW": "無聊",
+    "en": "Boredom",
+    "ja": "退屈",
+    "fr": "Ennui",
+    "ru": "Скука",
+    "is": "Leiði",
+    "ar": "الملل"
+  },
+  "fullness": {
+    "zh-CN": "饱食度",
+    "zh-TW": "飽食度",
+    "en": "Fullness",
+    "ja": "満腹度",
+    "fr": "Satiété",
+    "ru": "Сытость",
+    "is": "Sedda",
+    "ar": "الشبع"
+  },
+  "lunch": {
+    "zh-CN": "午餐",
+    "zh-TW": "午餐",
+    "en": "Lunch",
+    "ja": "昼食",
+    "fr": "Déjeuner",
+    "ru": "Обед",
+    "is": "Hádegismatur",
+    "ar": "الغداء"
+  },
+  "dinner": {
+    "zh-CN": "晚餐",
+    "zh-TW": "晚餐",
+    "en": "Dinner",
+    "ja": "夕食",
+    "fr": "Dîner",
+    "ru": "Ужин",
+    "is": "Kvöldmatur",
+    "ar": "العشاء"
+  },
+  "arrival": {
+    "zh-CN": "到校",
+    "zh-TW": "到校",
+    "en": "Arrival",
+    "ja": "登校",
+    "fr": "Arrivée",
+    "ru": "Прибытие",
+    "is": "Koma",
+    "ar": "الوصول"
+  },
+  "break": {
+    "zh-CN": "课间",
+    "zh-TW": "課間",
+    "en": "Break",
+    "ja": "休み時間",
+    "fr": "Récréation",
+    "ru": "Перемена",
+    "is": "Frímínútur",
+    "ar": "الاستراحة"
+  },
+  "pe": {
+    "zh-CN": "体育",
+    "zh-TW": "體育",
+    "en": "PE",
+    "ja": "体育",
+    "fr": "EPS",
+    "ru": "Физкультура",
+    "is": "Íþróttir",
+    "ar": "التربية البدنية"
+  },
+  "chinese": {
+    "zh-CN": "语文",
+    "zh-TW": "語文",
+    "en": "Chinese",
+    "ja": "国語",
+    "fr": "Chinois",
+    "ru": "Китайский язык",
+    "is": "Kínverska",
+    "ar": "اللغة الصينية"
+  },
+  "chemistry": {
+    "zh-CN": "化学",
+    "zh-TW": "化學",
+    "en": "Chemistry",
+    "ja": "化学",
+    "fr": "Chimie",
+    "ru": "Химия",
+    "is": "Efnafræði",
+    "ar": "الكيمياء"
+  },
+  "biology": {
+    "zh-CN": "生物",
+    "zh-TW": "生物",
+    "en": "Biology",
+    "ja": "生物",
+    "fr": "Biologie",
+    "ru": "Биология",
+    "is": "Líffræði",
+    "ar": "الأحياء"
+  },
+  "physics": {
+    "zh-CN": "物理",
+    "zh-TW": "物理",
+    "en": "Physics",
+    "ja": "物理",
+    "fr": "Physique",
+    "ru": "Физика",
+    "is": "Eðlisfræði",
+    "ar": "الفيزياء"
+  },
+  "english": {
+    "zh-CN": "英语",
+    "zh-TW": "英語",
+    "en": "English",
+    "ja": "英語",
+    "fr": "Anglais",
+    "ru": "Английский язык",
+    "is": "Enska",
+    "ar": "اللغة الإنجليزية"
+  },
+  "mathematics": {
+    "zh-CN": "数学",
+    "zh-TW": "數學",
+    "en": "Mathematics",
+    "ja": "数学",
+    "fr": "Mathématiques",
+    "ru": "Математика",
+    "is": "Stærðfræði",
+    "ar": "الرياضيات"
+  },
+  "studyOne": {
+    "zh-CN": "第一节晚自习",
+    "zh-TW": "第一節晚自習",
+    "en": "Evening study I",
+    "ja": "夜間自習1",
+    "fr": "Étude du soir I",
+    "ru": "Вечерняя самоподготовка I",
+    "is": "Kvöldnám I",
+    "ar": "المذاكرة المسائية الأولى"
+  },
+  "studyTwo": {
+    "zh-CN": "第二节晚自习",
+    "zh-TW": "第二節晚自習",
+    "en": "Evening study II",
+    "ja": "夜間自習2",
+    "fr": "Étude du soir II",
+    "ru": "Вечерняя самоподготовка II",
+    "is": "Kvöldnám II",
+    "ar": "المذاكرة المسائية الثانية"
+  },
+  "realMode": {
+    "zh-CN": "真实模式",
+    "zh-TW": "真實模式",
+    "en": "Realistic mode",
+    "ja": "リアルモード",
+    "fr": "Mode réaliste",
+    "ru": "Реалистичный режим",
+    "is": "Raunveruleikahamur",
+    "ar": "الوضع الواقعي"
+  },
+  "oldHorror": {
+    "zh-CN": "恐怖模式 · 校园与归家",
+    "zh-TW": "恐怖模式 · 校園與歸家",
+    "en": "Horror mode · campus and home",
+    "ja": "恐怖モード・学校と家",
+    "fr": "Horreur · campus et maison",
+    "ru": "Ужасы · школа и дом",
+    "is": "Hryllingur · skóli og heimili",
+    "ar": "الرعب · المدرسة والمنزل"
+  },
+  "mobile": {
+    "zh-CN": "手机端模式",
+    "zh-TW": "手機端模式",
+    "en": "Phone layout",
+    "ja": "スマホ用配置",
+    "fr": "Interface mobile",
+    "ru": "Мобильный интерфейс",
+    "is": "Símaviðmót",
+    "ar": "واجهة الهاتف"
+  },
+  "volume": {
+    "zh-CN": "音量",
+    "zh-TW": "音量",
+    "en": "Volume",
+    "ja": "音量",
+    "fr": "Volume",
+    "ru": "Громкость",
+    "is": "Hljóðstyrkur",
+    "ar": "مستوى الصوت"
+  },
+  "textSpeed": {
+    "zh-CN": "文字速度",
+    "zh-TW": "文字速度",
+    "en": "Text speed",
+    "ja": "文字速度",
+    "fr": "Vitesse du texte",
+    "ru": "Скорость текста",
+    "is": "Textahraði",
+    "ar": "سرعة النص"
+  },
+  "autoText": {
+    "zh-CN": "剧情自动继续",
+    "zh-TW": "劇情自動繼續",
+    "en": "Auto-advance dialogue",
+    "ja": "台詞を自動送り",
+    "fr": "Dialogue automatique",
+    "ru": "Автопереход диалога",
+    "is": "Sjálfvirk framvinda samtals",
+    "ar": "تقدم الحوار تلقائياً"
+  },
+  "flicker": {
+    "zh-CN": "恐怖闪烁",
+    "zh-TW": "恐怖閃爍",
+    "en": "Horror flicker",
+    "ja": "恐怖の点滅",
+    "fr": "Scintillements",
+    "ru": "Мерцание",
+    "is": "Flökt",
+    "ar": "الوميض المرعب"
+  },
+  "shake": {
+    "zh-CN": "屏幕震动",
+    "zh-TW": "螢幕震動",
+    "en": "Screen shake",
+    "ja": "画面の揺れ",
+    "fr": "Secousses de l’écran",
+    "ru": "Тряска экрана",
+    "is": "Skjálfti á skjá",
+    "ar": "اهتزاز الشاشة"
+  },
+  "settingsLead": {
+    "zh-CN": "按自己的节奏上课",
+    "zh-TW": "按自己的節奏上課",
+    "en": "Set your own pace",
+    "ja": "自分のペースで",
+    "fr": "À votre rythme",
+    "ru": "В своём темпе",
+    "is": "Á þínum hraða",
+    "ar": "اضبط إيقاعك"
+  },
+  "settingsIntro": {
+    "zh-CN": "课时、显示与声音在此调整。攻略入口已收进下方折叠区。",
+    "zh-TW": "課時、顯示與聲音在此調整。攻略入口已收進下方折疊區。",
+    "en": "Adjust lesson pace, display and sound. Relationships are in the collapsed section below.",
+    "ja": "授業の速さ・表示・音を調整。交流は下の折りたたみ内。",
+    "fr": "Réglez le rythme, l’affichage et le son. Les relations sont repliées ci-dessous.",
+    "ru": "Настройте темп уроков, экран и звук. Отношения — в свёрнутом разделе ниже.",
+    "is": "Stilltu kennsluhraða, skjá og hljóð. Samskipti eru í samanbrotnum kafla neðar.",
+    "ar": "اضبط زمن الحصص والعرض والصوت. توجد العلاقات في القسم المطوي أدناه."
+  },
+  "rulesHeading": {
+    "zh-CN": "课时与规则",
+    "zh-TW": "課時與規則",
+    "en": "Lesson time and rules",
+    "ja": "授業時間とルール",
+    "fr": "Durée et règles",
+    "ru": "Время уроков и правила",
+    "is": "Kennslutími og reglur",
+    "ar": "زمن الحصص والقواعد"
+  },
+  "romanceHeading": {
+    "zh-CN": "攻略与同学互动",
+    "zh-TW": "攻略與同學互動",
+    "en": "Relationships and classmates",
+    "ja": "交流と恋愛",
+    "fr": "Relations et camarades",
+    "ru": "Отношения и одноклассники",
+    "is": "Samskipti við bekkjarfélaga",
+    "ar": "العلاقات والزملاء"
+  },
+  "layoutHeading": {
+    "zh-CN": "画面与手机布局",
+    "zh-TW": "畫面與手機布局",
+    "en": "Display and phone layout",
+    "ja": "画面とスマホ配置",
+    "fr": "Affichage et mobile",
+    "ru": "Экран и мобильный вид",
+    "is": "Skjár og símaviðmót",
+    "ar": "العرض وواجهة الهاتف"
+  },
+  "readingHeading": {
+    "zh-CN": "声音与阅读",
+    "zh-TW": "聲音與閱讀",
+    "en": "Sound and reading",
+    "ja": "音と読書",
+    "fr": "Son et lecture",
+    "ru": "Звук и чтение",
+    "is": "Hljóð og lestur",
+    "ar": "الصوت والقراءة"
+  },
+  "materialsHeading": {
+    "zh-CN": "存档与资料",
+    "zh-TW": "存檔與資料",
+    "en": "Saves and references",
+    "ja": "セーブと資料",
+    "fr": "Sauvegardes et documents",
+    "ru": "Сохранения и материалы",
+    "is": "Vistanir og gögn",
+    "ar": "الحفظ والمراجع"
+  },
+  "classSpeed": {
+    "zh-CN": "课堂时间流速",
+    "zh-TW": "課堂時間流速",
+    "en": "Classroom clock speed",
+    "ja": "授業時計の速度",
+    "fr": "Vitesse de l’horloge",
+    "ru": "Скорость часов урока",
+    "is": "Hraði kennsluklukku",
+    "ar": "سرعة ساعة الحصة"
+  },
+  "classSpeedHint": {
+    "zh-CN": "0.25～4；默认1，数值越大，下课越快。",
+    "zh-TW": "0.25～4；預設1，數值越大，下課越快。",
+    "en": "0.25–4; default 1. Higher means lessons finish sooner.",
+    "ja": "0.25～4、初期1。大きいほど早く下校。",
+    "fr": "0,25–4 ; 1 par défaut. Plus la valeur est haute, plus le cours finit vite.",
+    "ru": "0,25–4; по умолчанию 1. Выше — урок заканчивается быстрее.",
+    "is": "0,25–4; sjálfgefið 1. Hærra gildi styttir kennslustund.",
+    "ar": "من 0.25 إلى 4؛ الافتراضي 1. القيمة الأعلى تنهي الحصة أسرع."
+  },
+  "classFour": {
+    "zh-CN": "所有课堂课时已延长四倍。",
+    "zh-TW": "所有課堂課時已延長四倍。",
+    "en": "All lesson durations are four times longer.",
+    "ja": "全授業の長さは4倍です。",
+    "fr": "Tous les cours durent quatre fois plus longtemps.",
+    "ru": "Все уроки продлены в четыре раза.",
+    "is": "Allar kennslustundir eru fjórfalt lengri.",
+    "ar": "مُدّدت جميع الحصص إلى أربعة أمثال مدتها."
+  },
+  "all": {
+    "zh-CN": "全部",
+    "zh-TW": "全部",
+    "en": "All",
+    "ja": "すべて",
+    "fr": "Tout",
+    "ru": "Все",
+    "is": "Allt",
+    "ar": "الكل"
+  },
+  "clearSaves": {
+    "zh-CN": "清除本地存档",
+    "zh-TW": "清除本地存檔",
+    "en": "Clear local saves",
+    "ja": "ローカルセーブを削除",
+    "fr": "Effacer les sauvegardes locales",
+    "ru": "Удалить локальные сохранения",
+    "is": "Eyða staðbundnum vistunum",
+    "ar": "حذف الحفظ المحلي"
+  },
+  "mirror": {
+    "zh-CN": "反光镜",
+    "zh-TW": "反光鏡",
+    "en": "Reflection mirror",
+    "ja": "反射鏡",
+    "fr": "Miroir",
+    "ru": "Зеркало",
+    "is": "Spegill",
+    "ar": "مرآة الانعكاس"
+  },
+  "board": {
+    "zh-CN": "讲台",
+    "zh-TW": "講台",
+    "en": "Podium",
+    "ja": "教壇",
+    "fr": "Estrade",
+    "ru": "Кафедра",
+    "is": "Kennarapúlt",
+    "ar": "المنصة"
+  },
+  "rear": {
+    "zh-CN": "后门",
+    "zh-TW": "後門",
+    "en": "Rear door",
+    "ja": "後ろの扉",
+    "fr": "Porte arrière",
+    "ru": "Задняя дверь",
+    "is": "Bakdyr",
+    "ar": "الباب الخلفي"
+  },
+  "window": {
+    "zh-CN": "窗外",
+    "zh-TW": "窗外",
+    "en": "Outside the window",
+    "ja": "窓の外",
+    "fr": "Par la fenêtre",
+    "ru": "За окном",
+    "is": "Utan gluggans",
+    "ar": "خارج النافذة"
+  },
+  "space": {
+    "zh-CN": "空格",
+    "zh-TW": "空格",
+    "en": "Space",
+    "ja": "スペース",
+    "fr": "Espace",
+    "ru": "Пробел",
+    "is": "Bilslá",
+    "ar": "المسافة"
+  },
+  "realLock": {
+    "zh-CN": "开启后自动关闭两位同学的攻略；普通友情保留。",
+    "zh-TW": "開啓後自動關閉兩位同學的攻略；普通友情保留。",
+    "en": "Enabling this disables both romance routes; ordinary friendship remains.",
+    "ja": "オンにすると恋愛2ルートが無効。友情は残ります。",
+    "fr": "Désactive les deux romances ; l’amitié reste disponible.",
+    "ru": "Отключает обе романтические линии; дружба остаётся.",
+    "is": "Slekkur á báðum rómantískum leiðum; vinátta helst.",
+    "ar": "يُعطّل مساري الرومانسية؛ تبقى الصداقة العادية."
+  },
+  "voiceNetworkOnly": {
+    "zh-CN": "此语言只有网络声线；请自行选择是否允许网络语音。",
+    "zh-TW": "此語言只有網絡聲線；請自行選擇是否允許網絡語音。",
+    "en": "Only a network voice is available. Choose whether to allow network speech.",
+    "ja": "この言語はネット音声のみ。許可するか選んでください。",
+    "fr": "Seule une voix réseau est disponible. Choisissez de l’autoriser ou non.",
+    "ru": "Доступен только сетевой голос. Выберите, разрешать ли его.",
+    "is": "Aðeins netrödd er tiltæk. Veldu hvort leyfa eigi hana.",
+    "ar": "يتوفر صوت شبكي فقط. اختر ما إذا كنت تسمح بالنطق عبر الشبكة."
+  },
+  "campusHorrorTitle": {
+    "zh-CN": "灯灭以后仍是清晨",
+    "zh-TW": "燈滅以後仍是清晨",
+    "en": "Dawn Beyond the Blackout",
+    "ja": "消灯の先の朝",
+    "fr": "L’aube après l’extinction",
+    "ru": "Рассвет после темноты",
+    "is": "Dögun eftir myrkur",
+    "ar": "فجر بعد انطفاء الأنوار"
+  },
+  "campusHorrorProse": {
+    "zh-CN": "真实恐怖模式的一天结束了。你辨清三次走廊异象，没有把每一声呼吸都当成自己的。关上教室的门，钟终于朝同一个方向走。",
+    "zh-TW": "真實恐怖模式的一天結束了。你辨清三次走廊異象，沒有把每一聲呼吸都當成自己的。關上教室的門，鐘終於朝同一個方向走。",
+    "en": "The day in True Horror is over. You identified three corridor anomalies without mistaking every breath for your own. Close the classroom door. The clocks finally move in one direction.",
+    "ja": "本格ホラーの一日が終わった。廊下の異変を三度見分け、すべての息を自分のものとは思わなかった。教室の扉を閉める。時計はようやく同じ方向へ進む。",
+    "fr": "La journée d’Horreur immersive s’achève. Vous avez reconnu trois anomalies sans prendre chaque souffle pour le vôtre. Fermez la porte de la classe : les horloges avancent enfin dans le même sens.",
+    "ru": "День настоящего хоррора окончен. Вы распознали три аномалии, не принимая каждый вдох за свой. Закройте дверь класса. Часы наконец идут в одну сторону.",
+    "is": "Degi raunverulegs hryllings er lokið. Þú greindir þrjú frávik á ganginum án þess að halda að hvert andvarp væri þitt. Lokaðu stofudyrunum. Klukkurnar ganga loks í sömu átt.",
+    "ar": "انتهى يوم الرعب الحقيقي. ميّزت ثلاث ظواهر في الممر دون أن تحسب كل نفسٍ نفسَك. أغلق باب الصف؛ أخيراً تتحرك الساعات في اتجاه واحد."
+  },
+  "campusHorrorHint": {
+    "zh-CN": "全日保持真实恐怖模式，化解至少三次异象后成功离校。",
+    "zh-TW": "全日保持真實恐怖模式，化解至少三次異象後成功離校。",
+    "en": "Keep True Horror on for the entire day, resolve at least three anomalies, then leave school successfully.",
+    "ja": "一日中本格ホラーをオンにし、異変を3回以上解決して下校する。",
+    "fr": "Garder l’Horreur immersive toute la journée, dissiper trois anomalies et quitter l’école avec succès.",
+    "ru": "Провести весь день в настоящем хорроре, устранить три аномалии и успешно покинуть школу.",
+    "is": "Hafðu hryllingsham virkan allan daginn, leystu minnst þrjú frávik og komstu úr skólanum.",
+    "ar": "أبقِ الرعب الحقيقي مفعلاً طوال اليوم، وعالج ثلاث ظواهر على الأقل ثم غادر المدرسة بنجاح."
+  },
+  "campusCameraTitle": {
+    "zh-CN": "未响的快门",
+    "zh-TW": "未響的快門",
+    "en": "The Silent Shutter",
+    "ja": "鳴らなかったシャッター",
+    "fr": "L’obturateur silencieux",
+    "ru": "Тихий затвор",
+    "is": "Hljóðlaus lokari",
+    "ar": "الغالق الصامت"
+  },
+  "campusCameraProse": {
+    "zh-CN": "没有广播告诉你镜头什么时候朝向这边。你自己抬头，读懂了讲台上的动作。班级群留下的是课本，不是臆测。",
+    "zh-TW": "沒有廣播告訴你鏡頭什麼時候朝向這邊。你自己抬頭，讀懂了講台上的動作。班級群留下的是課本，不是臆測。",
+    "en": "No announcement told you when the lens turned your way. You looked up yourself and read the movement at the podium. The class group records textbooks, not assumptions.",
+    "ja": "レンズがこちらを向く放送はなかった。自分で顔を上げ、教壇の動きを読んだ。クラスの記録に残ったのは教科書で、憶測ではない。",
+    "fr": "Aucune annonce n’a indiqué que l’objectif vous visait. Vous avez levé les yeux et compris le geste à l’estrade. Le groupe de classe garde des manuels, pas des suppositions.",
+    "ru": "Никто не объявил, когда объектив повернулся к вам. Вы сами подняли глаза и заметили движение у кафедры. В чате остались учебники, а не домыслы.",
+    "is": "Engin tilkynning sagði hvenær linsan sneri að þér. Þú leitst sjálf upp og skildir hreyfinguna við púltið. Í bekkjarhópnum sjást bækur, ekki getgátur.",
+    "ar": "لم يخبرك إعلان بموعد توجّه العدسة نحوك. رفعت رأسك بنفسك وفهمت الحركة على المنصة. بقيت في مجموعة الصف كتبٌ لا تخمينات."
+  },
+  "campusCameraHint": {
+    "zh-CN": "同一天主动观察讲台识别至少两次拍摄，两次均未留下低头影像，再成功离校。",
+    "zh-TW": "同一天主動觀察講台識別至少兩次拍攝，兩次均未留下低頭影像，再成功離校。",
+    "en": "In one day, identify two captures yourself without a rep warning, leave no head-down frames in either, then leave school successfully.",
+    "ja": "同じ日に委員の警告なしで撮影を2回見つけ、うつむいた映像を残さず下校する。",
+    "fr": "Repérer soi-même deux prises de vue dans la journée, sans aide, ne laisser aucune image tête baissée et quitter l’école.",
+    "ru": "Самостоятельно заметить две съёмки за день без подсказки, не попасть в них с опущенной головой и успешно уйти.",
+    "is": "Taktu sjálf eftir tveimur myndatökum sama dag án viðvörunar, vertu ekki með höfuðið niðri og komstu úr skólanum.",
+    "ar": "لاحظ عمليتي تصوير بنفسك في يوم واحد دون تنبيه، ولا تظهر مطأطئ الرأس في أي منهما، ثم غادر بنجاح."
+  },
+  "campusLostTitle": {
+    "zh-CN": "呼吸占满了走廊",
+    "zh-TW": "呼吸佔滿了走廊",
+    "en": "A Corridor Full of Breathing",
+    "ja": "息に満ちた廊下",
+    "fr": "Un couloir plein de souffles",
+    "ru": "Коридор, полный дыхания",
+    "is": "Gangur fullur af andardrætti",
+    "ar": "ممر امتلأ بالأنفاس"
+  },
+  "campusLostProse": {
+    "zh-CN": "你把每一次异响都留到了最后。黑板上空白的名字逐个亮起，而你再也分不清哪一声呼吸属于自己。可以从最近的检查点重新开始。",
+    "zh-TW": "你把每一次異響都留到了最後。黑板上空白的名字逐個亮起，而你再也分不清哪一聲呼吸屬於自己。可以從最近的檢查點重新開始。",
+    "en": "You left every strange sound until too late. Blank names on the board begin to glow; you can no longer tell which breath is yours. You may retry from the latest checkpoint.",
+    "ja": "異音をすべて後回しにした。黒板の空白の名前が順に光り、どの息が自分のものかもう分からない。直前のチェックポイントから再挑戦できる。",
+    "fr": "Vous avez attendu trop longtemps face à chaque bruit. Les noms vides au tableau s’illuminent ; vous ne reconnaissez plus votre souffle. Reprenez au dernier point de contrôle.",
+    "ru": "Вы откладывали каждый странный звук. Пустые имена на доске загораются; вы больше не узнаёте свой вдох. Можно повторить с последней контрольной точки.",
+    "is": "Þú frestaðir því að bregðast við hverju undarlegu hljóði. Auð nöfn á töflunni glóa; þú þekkir ekki lengur eigin andardrátt. Þú getur reynt aftur frá síðasta vistunarpunkti.",
+    "ar": "أجّلت كل صوت غريب حتى فات الأوان. أضاءت الأسماء الفارغة على السبورة، ولم تعد تميّز نفسَك. يمكنك إعادة المحاولة من آخر نقطة حفظ."
+  },
+  "campusLostHint": {
+    "zh-CN": "真实恐怖模式中心神压力到达100。",
+    "zh-TW": "真實恐怖模式中心神壓力到達100。",
+    "en": "Reach 100 strain in True Horror.",
+    "ja": "本格ホラーで心神圧力100になる。",
+    "fr": "Atteindre 100 de tension en Horreur immersive.",
+    "ru": "Достичь 100 напряжения в настоящем хорроре.",
+    "is": "Náðu 100 álagi í hryllingsham.",
+    "ar": "بلوغ 100 من الضغط النفسي في الرعب الحقيقي."
+  },
+  "achHorrorRead": {
+    "zh-CN": "没有名字的脚步",
+    "zh-TW": "沒有名字的腳步",
+    "en": "Footsteps Without a Name",
+    "ja": "名のない足音",
+    "fr": "Des pas sans nom",
+    "ru": "Шаги без имени",
+    "is": "Nafnlaust fótatak",
+    "ar": "خطوات بلا اسم"
+  },
+  "achHorrorReadDesc": {
+    "zh-CN": "在真实恐怖模式中实际化解一次异象。",
+    "zh-TW": "在真實恐怖模式中實際化解一次異象。",
+    "en": "Resolve an anomaly in True Horror.",
+    "ja": "本格ホラーで異変を1回解決する。",
+    "fr": "Dissiper une anomalie en Horreur immersive.",
+    "ru": "Устранить аномалию в настоящем хорроре.",
+    "is": "Leystu eitt frávik í hryllingsham.",
+    "ar": "عالج ظاهرة غريبة في الرعب الحقيقي."
+  },
+  "achHorrorThree": {
+    "zh-CN": "辨认真正的声音",
+    "zh-TW": "辨認真正的聲音",
+    "en": "Identify the Real Sound",
+    "ja": "本物の音を見分けて",
+    "fr": "Reconnaître le vrai son",
+    "ru": "Распознать настоящий звук",
+    "is": "Greina rétta hljóðið",
+    "ar": "تمييز الصوت الحقيقي"
+  },
+  "achHorrorThreeDesc": {
+    "zh-CN": "同日化解三次异象。",
+    "zh-TW": "同日化解三次異象。",
+    "en": "Resolve three anomalies in one day.",
+    "ja": "同じ日に異変を3回解決する。",
+    "fr": "Dissiper trois anomalies dans la journée.",
+    "ru": "Устранить три аномалии за день.",
+    "is": "Leystu þrjú frávik sama dag.",
+    "ar": "عالج ثلاث ظواهر في يوم واحد."
+  },
+  "achHorrorClear": {
+    "zh-CN": "不借一封情书",
+    "zh-TW": "不借一封情書",
+    "en": "Without a Love Letter",
+    "ja": "恋文に頼らず",
+    "fr": "Sans lettre d’amour",
+    "ru": "Без любовного письма",
+    "is": "Án ástarbréfs",
+    "ar": "دون رسالة حب"
+  },
+  "achHorrorClearDesc": {
+    "zh-CN": "全日保持真实恐怖模式后成功离校。",
+    "zh-TW": "全日保持真實恐怖模式後成功離校。",
+    "en": "Leave school successfully after a full day of True Horror.",
+    "ja": "本格ホラーを一日中有効にして下校する。",
+    "fr": "Quitter l’école après une journée entière d’Horreur immersive.",
+    "ru": "Успешно покинуть школу после полного дня настоящего хоррора.",
+    "is": "Komstu úr skólanum eftir heilan dag í hryllingsham.",
+    "ar": "غادر المدرسة بنجاح بعد يوم كامل من الرعب الحقيقي."
+  },
+  "achOwn": {
+    "zh-CN": "抬头才看得到",
+    "zh-TW": "抬頭才看得到",
+    "en": "Only If You Look Up",
+    "ja": "顔を上げて初めて",
+    "fr": "Il faut lever les yeux",
+    "ru": "Только подняв глаза",
+    "is": "Aðeins ef þú lítur upp",
+    "ar": "لا تراه إلا برفع رأسك"
+  },
+  "achOwnDesc": {
+    "zh-CN": "没有体委提醒时，主动观察讲台识别一次家长举机。",
+    "zh-TW": "沒有體委提醒時，主動觀察講台識別一次家長舉機。",
+    "en": "Spot a parent raising a phone by inspecting the podium, without a rep warning.",
+    "ja": "委員の警告なしで、教壇を観察して保護者の挙動を見つける。",
+    "fr": "Repérer le téléphone levé à l’estrade sans avertissement de la déléguée.",
+    "ru": "Заметить поднятый телефон у кафедры без предупреждения старосты.",
+    "is": "Sjáðu foreldri lyfta síma við púltið án viðvörunar fulltrúa.",
+    "ar": "لاحظ ولي أمر يرفع الهاتف عند مراقبة المنصة دون تنبيه الممثلة."
+  },
+  "achTwo": {
+    "zh-CN": "不等提示音",
+    "zh-TW": "不等提示音",
+    "en": "No Alert Needed",
+    "ja": "合図を待たず",
+    "fr": "Sans attendre l’alerte",
+    "ru": "Не ждать сигнала",
+    "is": "Án viðvörunarhljóðs",
+    "ar": "دون انتظار التنبيه"
+  },
+  "achTwoDesc": {
+    "zh-CN": "同日两次主动识别拍摄并让最终影像没有低头。",
+    "zh-TW": "同日兩次主動識別拍攝並讓最終影像沒有低頭。",
+    "en": "Identify two captures yourself in one day and leave no head-down frame.",
+    "ja": "同日に撮影を2回自力で見つけ、うつむいた映像を残さない。",
+    "fr": "Repérer deux prises de vue et n’y laisser aucune image tête baissée.",
+    "ru": "Самостоятельно заметить две съёмки за день без кадров с опущенной головой.",
+    "is": "Taktu sjálf eftir tveimur myndatökum án þess að höfuðið sé niðri.",
+    "ar": "لاحظ عمليتي تصوير بنفسك في يوم واحد دون لقطات وأنت مطأطئ الرأس."
+  },
+  "achAlly": {
+    "zh-CN": "十之一的提醒",
+    "zh-TW": "十之一的提醒",
+    "en": "One Warning in Ten",
+    "ja": "10分の1の合図",
+    "fr": "Un avertissement sur dix",
+    "ru": "Одно предупреждение из десяти",
+    "is": "Ein viðvörun af tíu",
+    "ar": "تنبيه من كل عشرة"
+  },
+  "achAllyDesc": {
+    "zh-CN": "实际收到一次清醒体委给出的10%拍摄提醒。",
+    "zh-TW": "實際收到一次清醒體委給出的10%拍攝提醒。",
+    "en": "Receive the awake sports rep’s 10%-chance filming reminder.",
+    "ja": "起きている体育委員の確率10%の撮影警告を受ける。",
+    "fr": "Recevoir l’avertissement à 10 % de la déléguée éveillée.",
+    "ru": "Получить подсказку бодрствующей старосты с шансом 10%.",
+    "is": "Fáðu myndatökuviðvörun vakandi fulltrúa með 10% líkum.",
+    "ar": "تلقَّ تنبيه تصوير باحتمال 10% من ممثلة الرياضة المستيقظة."
+  },
+  "difficulty": {
+    "zh-CN": "难度",
+    "zh-TW": "難度",
+    "en": "Difficulty",
+    "ja": "難易度",
+    "fr": "Difficulté",
+    "ru": "Сложность",
+    "is": "Erfiðleikastig",
+    "ar": "الصعوبة"
+  },
+  "easy": {
+    "zh-CN": "简单",
+    "zh-TW": "簡單",
+    "en": "Easy",
+    "ja": "簡単",
+    "fr": "Facile",
+    "ru": "Легко",
+    "is": "Auðvelt",
+    "ar": "سهل"
+  },
+  "normal": {
+    "zh-CN": "普通",
+    "zh-TW": "普通",
+    "en": "Normal",
+    "ja": "普通",
+    "fr": "Normal",
+    "ru": "Обычный",
+    "is": "Venjulegt",
+    "ar": "عادي"
+  },
+  "hard": {
+    "zh-CN": "困难",
+    "zh-TW": "困難",
+    "en": "Hard",
+    "ja": "困難",
+    "fr": "Difficile",
+    "ru": "Сложный",
+    "is": "Erfitt",
+    "ar": "صعب"
+  },
+  "hell": {
+    "zh-CN": "地狱",
+    "zh-TW": "地獄",
+    "en": "Hell",
+    "ja": "地獄",
+    "fr": "Infernal",
+    "ru": "Ад",
+    "is": "Helvíti",
+    "ar": "جحيم"
+  },
+  "extreme": {
+    "zh-CN": "极限",
+    "zh-TW": "極限",
+    "en": "Extreme",
+    "ja": "極限",
+    "fr": "Extrême",
+    "ru": "Экстрим",
+    "is": "Öfgakennt",
+    "ar": "متطرف"
+  },
+  "demigod": {
+    "zh-CN": "半神",
+    "zh-TW": "半神",
+    "en": "Demigod",
+    "ja": "半神",
+    "fr": "Demi-dieu",
+    "ru": "Полубог",
+    "is": "Hálfguð",
+    "ar": "نصف إله"
+  },
+  "god": {
+    "zh-CN": "神级",
+    "zh-TW": "神級",
+    "en": "God",
+    "ja": "神級",
+    "fr": "Divin",
+    "ru": "Божественный",
+    "is": "Guðlegt",
+    "ar": "إلهي"
+  },
+  "captureGuide": {
+    "zh-CN": "末节晚自习有三次不定时拍摄，不弹系统预警。普通举机1秒，需自己观察讲台；随后拍照或录像4秒并发到2025级二班。清醒体委每次仅有10%机会提醒，睡着不提醒。",
+    "zh-TW": "末節晚自習有三次不定時拍攝，不彈系統預警。普通舉機1秒，需自己觀察講台；隨後拍照或錄像4秒並發到2025級二班。清醒體委每次僅有10%機會提醒，睡著不提醒。",
+    "en": "The final evening study has three irregular captures with no automatic warning. The normal phone raise lasts 1 second; inspect the podium yourself. A photo or 4-second video is posted to the class group. An awake sports rep has a 10% chance to warn; a sleeping rep cannot.",
+    "ja": "最終自習では不定期に3回撮影され、自動警告はありません。普通では構える時間は1秒。自分で教壇を見ましょう。写真か4秒動画が投稿されます。起きている体育委員は10%で知らせ、睡眠中は知らせません。",
+    "fr": "Trois prises de vue irrégulières ont lieu pendant la dernière étude, sans alerte automatique. En normal, le téléphone se lève en 1 seconde : observez l’estrade. Une photo ou une vidéo de 4 secondes est publiée. La déléguée éveillée prévient avec 10 % de chance ; endormie, jamais.",
+    "ru": "На последней самоподготовке три нерегулярные съёмки без автоматического сигнала. В обычном режиме телефон поднимают за 1 секунду: следите за кафедрой. Затем публикуют фото или видео на 4 секунды. Бодрствующая староста предупреждает с шансом 10%, спящая — никогда.",
+    "is": "Á síðustu námsstund kvöldsins eru þrjár myndatökur án sjálfvirkrar viðvörunar. Í venjulegri stillingu er símanum lyft á einni sekúndu; fylgstu sjálf með púlltinu. Mynd eða fjögurra sekúndna myndskeið birtist í hópnum. Vakandi fulltrúi varar við með 10% líkum, en ekki sofandi.",
+    "ar": "تحدث ثلاث عمليات تصوير غير منتظمة في المذاكرة المسائية الأخيرة بلا تنبيه تلقائي. في العادي يستغرق رفع الهاتف ثانية واحدة؛ راقب المنصة بنفسك. تُنشر صورة أو فيديو مدته أربع ثوانٍ. الممثلة المستيقظة تنبه باحتمال 10%، والنائمة لا تنبه."
+  }
+}

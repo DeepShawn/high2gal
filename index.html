@@ -5,7 +5,7 @@
   <meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
   <meta content="#121c1b" name="theme-color"/>
   <meta content="高二（2）班：最后一节课。离线、单文件校园恐怖潜行游戏。" name="description"/>
-  <title>高二（2）班：最后一节课 · v3.17.1 立绘与渲染修复</title>
+  <title>高二（2）班：最后一节课 · v3.18 被收起的作业</title>
   <style>
    /* All artwork is drawn with HTML and CSS. No remote assets or libraries. */
 :root {
@@ -3557,7 +3557,62 @@ body.phone-mode39 #room,body.phone-mode39 #teacher{filter:none!important;will-ch
 body.phone-mode39 #phoneShell39>#phoneDock39{transform:none!important;max-width:none!important;min-width:0;}
 
 </style>
- </head>
+ <style id="homeworkStyle318">
+/* Uses the already repaired tool owner and existing modal scroll container. */
+#homeworkTool318{width:100%;min-height:42px;white-space:normal;text-align:start;line-height:1.45;border-color:#748c80}
+.hw-panel318{max-width:960px;margin:auto;line-height:1.7;color:inherit}
+.hw-counter318{display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;padding:13px 16px;background:#203b39;border:1px solid #536b60;border-radius:12px}
+.hw-counter318 span{font-size:.86em;color:#b8c9ba}
+.hw-books318{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:20px 0}
+.hw-book318{position:relative;min-width:0;padding:17px 14px 15px 22px;border-radius:9px 15px 15px 9px;background:linear-gradient(135deg,#244039,#132c2e);border:1px solid #53675d;overflow:hidden}
+.hw-book-spine318{position:absolute;inset:0 auto 0 0;width:7px;background:#9baf98;border-inline-end:2px solid #c0c5aa;pointer-events:none}
+.hw-book318.is-held318{background:linear-gradient(135deg,#493e32,#263230);border-color:#9a8766}
+.hw-book318.is-held318 .hw-book-spine318{background:#c19a69}
+.hw-book318 h3{margin:0 0 4px;font-size:1.1em;color:#f2e4c5}
+.hw-book318 p{margin:4px 0 10px;font-size:.88em;overflow-wrap:anywhere}
+.hw-book318 small{display:block;color:#c6d5bf;margin-bottom:12px}
+.hw-book318 button{display:block;width:100%;min-height:44px;margin-top:8px;padding:9px 8px;white-space:normal;line-height:1.45;color:#f2e8d4;border:1px solid #85927a;border-radius:7px;background:#38564b;touch-action:manipulation}
+.hw-book318 button.hw-secondary318{background:transparent;font-size:.78em;border-color:#67796a}
+.hw-book318 button:disabled{opacity:.45;cursor:not-allowed}
+.hw-slip318{padding:8px;background:#142826;border-left:2px solid #c6ac7e}
+.hw-office-art318{display:grid;grid-template-columns:112px minmax(0,1fr);gap:20px;padding:14px 20px;margin:14px 0;background:linear-gradient(120deg,#243d38,#172b2b);border:1px solid #546b62;border-radius:12px;overflow:hidden}
+.hw-art318{height:128px;overflow:hidden;border-radius:9px;background:#364840;position:relative;pointer-events:none}
+.hw-art318 svg{display:block;width:100%;height:155px;max-width:100%;transform:none!important}
+.hw-office-copy318{min-width:0;align-self:center;text-align:start}
+.hw-office-copy318 small{display:block;letter-spacing:.11em;font:10px ui-monospace,monospace;color:#a8b8a9}
+.hw-office-copy318 strong{display:block;font-size:1.1em;margin:7px 0;color:#e5d7b6}
+.hw-office-copy318 p{font-size:.83em;line-height:1.5;margin:5px 0;overflow-wrap:anywhere}
+.hw-office-copy318 span{font-size:.8em;color:#bdc8af}
+.hw-door318{position:absolute;inset:10px 12px 0;background:#233330;border:4px solid #998760;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px}
+.hw-door318 b{background:#a89774;color:#1c302c;padding:4px 10px;font:16px ui-monospace,monospace}
+.hw-door318 span{font:9px ui-monospace,monospace;color:#d0c5a7}
+.hw-leave318{display:block;width:100%;margin-top:14px;min-height:44px;white-space:normal}
+#stage.work-popup318 #challengeCard{top:50%!important;left:50%!important;transform:translate(-50%,-50%)!important;max-height:760px;overflow-y:auto;width:820px;max-width:calc(100% - 80px);padding:24px 32px;overscroll-behavior:contain}
+#stage.work-popup318 .challenge-title{font-size:27px;line-height:1.3;margin:8px 0}
+#stage.work-popup318 .challenge-description{font-size:16px;line-height:1.6;margin:10px 0;white-space:pre-line}
+#stage.work-popup318 .choice-btn{padding:10px 15px;min-height:49px;font-size:16px;white-space:normal;line-height:1.4}
+#stage.work-popup318 .challenge-footer{font-size:12px}
+#stage.work-office318 #campusScene .campus-prop{background:linear-gradient(90deg,#273c36 0 20%,#897b61 20% 22%,#354b43 22% 60%,#a48e6c 60% 62%,#29413c 62%);border:8px solid #746a55}
+body.mobile39 #stage.work-popup318 #challengeCard,body.phone-mode39 #stage.work-popup318 #challengeCard{position:relative!important;top:auto!important;left:auto!important;transform:none!important;width:100%!important;max-width:100%!important;max-height:none!important;padding:16px!important}
+@media(max-width:650px){.hw-books318{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.hw-panel318{font-size:14px}.hw-book318{padding:12px 10px 13px 17px}.hw-counter318{display:block}.hw-counter318 span{display:block;margin-top:6px}.hw-office-art318{grid-template-columns:72px minmax(0,1fr);gap:12px;padding:10px;margin:9px 0}.hw-art318{height:93px}.hw-art318 svg{height:114px}.hw-office-copy318 strong{font-size:16px}.hw-office-copy318 p{font-size:12px}.hw-office-copy318 small{font-size:8px}.hw-book318 button{font-size:13px}.hw-leave318{font-size:13px}.hw-panel318 h3{font-size:16px}}
+@media(max-width:360px){.hw-books318{grid-template-columns:1fr}.hw-office-art318{grid-template-columns:56px minmax(0,1fr)}}
+[dir=rtl] .hw-book318{padding-left:14px;padding-right:22px}[dir=rtl] .hw-book-spine318{inset:0 0 0 auto}
+
+/* Exclusive office view owns the middle of the screen, not the old recess banner. */
+#stage.work-office318 #campusScene::after{content:''!important;display:none!important}
+#stage.work-office318 #campusScene{background:linear-gradient(115deg,#18312c,#2a3f36 62%,#182928)!important}
+#stage.work-office318 #book,#stage.work-office318 .pen,#stage.work-office318 .desk-note{visibility:hidden!important}
+#stage.work-office318 #campusScene .campus-prop{background:repeating-linear-gradient(0deg,transparent 0 47px,#958061 48px 55px),repeating-linear-gradient(90deg,#3c5445 0 16px,#a19a72 16px 20px,#675d50 20px 35px,#809080 35px 41px)!important}
+/* Achievement records remain saved; short toast stacks never cover office choices. */
+#stage.work-popup318 #toastStack{visibility:hidden!important;pointer-events:none!important}
+
+#stage.work-popup318 #actionDock{visibility:hidden!important}
+
+/* Mobile rehomes toastStack outside stage; cover its actual owner as well. */
+body.work-popup318 #toastStack{visibility:hidden!important;pointer-events:none!important}
+
+</style>
+</head>
  <body>
   <div id="viewport">
    <main aria-label="高二（2）班：最后一节课" id="stage">
@@ -5235,7 +5290,24 @@ const CAMPUS_ACH317=[
  {id:'cameraAlly317',name:'十之一的提醒',desc:'实际收到一次清醒体委给出的10%拍摄提醒。',group:'课堂',target:1}
 ];
 
-    const ENDING_IDS = ['true','phone','math','loop','cfop','unseen','falsebell','homework','companion','truth','gatekeeper','mirror','chessMaster','officeTruth','parentHome','sports','bagPhone','officeLoop','doorRoster','lastStone','alliesTogether','calmExit','chessDraw','weekClear','homeSafe','homeCaught',...Object.keys(V34_ENDINGS),...Object.keys(V37_ENDINGS),...Object.keys(V39_ENDINGS),...Object.keys(FOOD_ENDINGS315),...Object.keys(MEDIA_END316),...Object.keys(CAMPUS_END317)];
+// v3.18 records belong to the campus archive, not the independent games.
+const HW_END318 = {
+ workReturned318:{type:'SIDE END · HOMEWORK',title:'作业回到原主',prose:'本子夹着一张转交单，从化学讲台来到任课老师的桌上。\n你核对封面，说明经过，签下自己的名字。\n走回教室时，进度没有凭空增加，未写完的题也还在。\n但这一次，你知道它属于哪门课，也知道什么时候再打开。',hint:'在化学课写作业被暂收后，找到该科任课老师，完成面谈、核对和实际领取。记录后继续校园，不算毕业。'},
+ workRightTime318:{type:'SIDE END · AFTER SCHOOL',title:'写在合适的时间',prose:'你把领回的本子留到了课间和自习。\n再次翻到那一页时，老师不再收走它。\n真正放学时，待领取的登记已经全部划去。\n今天写下的，不只是答案，还有你重新安排的时间。',hint:'本日实际领回至少一本；最后一次领回后，合法时段累计写作业20秒，没有再次被暂收，全部本子领齐，并真正成功离校。'},
+ workReceipts318:{type:'SIDE END · SUBJECT OFFICES',title:'六科之间的回执',prose:'不同老师的桌面上，有不同颜色的笔、尺和课本。\n你走对了至少三张桌子，也亲手领回了自己的本子。\n回执上的学科没有变，学科之间不该互相占去的时间却更清楚了。\n最后一次放学，书包里没有欠下的那一页。',hint:'同一周目从至少三门不同学科的任课老师处实际领回作业，全部本子领齐，并真正成功离校。'}
+};
+const HW_ACH318 = [
+ {id:'workWarn318',name:'收好这一页',desc:'看到化学老师盯向作业的预警后，及时停止并避免本次暂收。',group:'校园新章',target:1},
+ {id:'workHeld318',name:'写错了课堂',desc:'实际触发一次化学课堂作业暂收。',group:'校园新章',target:1,hidden:true},
+ {id:'workDesk318',name:'找对门牌',desc:'根据转交单找到该本作业的任课老师，开始面谈。',group:'校园新章',target:1},
+ {id:'workRedirect318',name:'原来在隔壁',desc:'先找错老师，再听取正确办公室的指引。',group:'校园新章',target:1,hidden:true},
+ {id:'workReturn318',name:'当面签收',desc:'完成面谈和3秒核对，亲手领回一本被暂收的作业。',group:'校园新章',target:1},
+ {id:'workThree318',name:'三张回执',desc:'同一周目从三个不同学科的任课老师处领回作业。',group:'校园新章',target:3},
+ {id:'workPlan318',name:'留给课间',desc:'本日最后一次领回之后，在合法时段累计实际写作业20秒。',group:'校园新章',target:20},
+ {id:'workAll318',name:'一本也不落',desc:'本日有领回记录，全部暂收作业已领齐，并真正成功离校。',group:'校园新章',target:1}
+];
+
+    const ENDING_IDS = ['true','phone','math','loop','cfop','unseen','falsebell','homework','companion','truth','gatekeeper','mirror','chessMaster','officeTruth','parentHome','sports','bagPhone','officeLoop','doorRoster','lastStone','alliesTogether','calmExit','chessDraw','weekClear','homeSafe','homeCaught',...Object.keys(V34_ENDINGS),...Object.keys(V37_ENDINGS),...Object.keys(V39_ENDINGS),...Object.keys(FOOD_ENDINGS315),...Object.keys(MEDIA_END316),...Object.keys(CAMPUS_END317),...Object.keys(HW_END318)];
     const ENDING_COUNT = ENDING_IDS.length;
     // Difficulty changes mechanics, never the lesson calendar. A run owns its
     // difficulty; changing the menu selection cannot alter an existing save.
@@ -5255,7 +5327,7 @@ const CAMPUS_ACH317=[
     const GOD_LIMIT = 180;
     const CLEAR_ENDINGS = ['true','cfop','unseen','homework','companion','truth','chessMaster','officeTruth','parentHome','sports','alliesTogether','calmExit','chessDraw','weekClear',...Object.keys(V34_ENDINGS),...Object.keys(V37_ENDINGS).filter(id=>id!=='realEmpty37'),...Object.keys(V39_ENDINGS).filter(id=>id!=='deepArchive39'),...Object.keys(FOOD_ENDINGS315).filter(id=>id!=='classShare315')];
     const ACHIEVEMENT_IDS = ['lesson1','lessons6','hide1','hide10','reflex','note1','note5','nap30','cube100','work100','clues6','answers10','cleanClear','quickClear','noPhone',
-        ...DIFFICULTY_IDS.filter(x=>x!=='god').map(x=>'clear_'+x),'god60','god120','god180','allEndings','chessFirst','chessWin','chessWin3','talkOnce','officeVisit','officeBoundary','rearSpot3','rearAvoid3','meals2','safeBag','pe3','evening1','parentWalk','parentDesk','wholeDay','allCampus','rapidClean','rapidTen','rapidSix','stillThree','bothReflex','wangNotice','liNotice','allyHelp3','allyBoth','chessMove','chessCastle','chessPromotion','chessEnPassant','chessDrawOnce','all31','standBack','randomEleven','doubleLesson','biologyExercise','weekFirst','weekThree','weekSeven','weekQuiet','eyesOpen','homeFirst','homeHide3','homePerfect','weekNights',...V34_ACHIEVEMENTS.map(x=>x.id),...V37_ACHIEVEMENTS.map(x=>x.id),...V39_ACHIEVEMENTS.map(x=>x.id),...ENDING_IDS.map(x=>'end_'+x),...FOOD_ACH315.map(a=>a.id),...MEDIA_ACH316.map(a=>a.id),...CAMPUS_ACH317.map(a=>a.id)];
+        ...DIFFICULTY_IDS.filter(x=>x!=='god').map(x=>'clear_'+x),'god60','god120','god180','allEndings','chessFirst','chessWin','chessWin3','talkOnce','officeVisit','officeBoundary','rearSpot3','rearAvoid3','meals2','safeBag','pe3','evening1','parentWalk','parentDesk','wholeDay','allCampus','rapidClean','rapidTen','rapidSix','stillThree','bothReflex','wangNotice','liNotice','allyHelp3','allyBoth','chessMove','chessCastle','chessPromotion','chessEnPassant','chessDrawOnce','all31','standBack','randomEleven','doubleLesson','biologyExercise','weekFirst','weekThree','weekSeven','weekQuiet','eyesOpen','homeFirst','homeHide3','homePerfect','weekNights',...V34_ACHIEVEMENTS.map(x=>x.id),...V37_ACHIEVEMENTS.map(x=>x.id),...V39_ACHIEVEMENTS.map(x=>x.id),...ENDING_IDS.map(x=>'end_'+x),...FOOD_ACH315.map(a=>a.id),...MEDIA_ACH316.map(a=>a.id),...CAMPUS_ACH317.map(a=>a.id),...HW_ACH318.map(a=>a.id)];
     function rules(st=S) { return DIFFICULTIES[st?.difficulty] || DIFFICULTIES.normal; }
     const testMode = new URLSearchParams(location.search).get('test') === '1';
     const persistenceEnabled = !testMode || new URLSearchParams(location.search).get('persist') === '1';
@@ -8078,8 +8150,8 @@ const CAMPUS_ACH317=[
     Object.assign(ENDINGS,V37_ENDINGS);
     Object.assign(ENDINGS,FOOD_ENDINGS315);
     Object.assign(ENDINGS,MEDIA_END316);
-    Object.assign(ENDINGS,CAMPUS_END317);
-    const ACHIEVEMENTS = [...CAMPUS_ACH317,...MEDIA_ACH316,...FOOD_ACH315,
+    Object.assign(ENDINGS,CAMPUS_END317,HW_END318);
+    const ACHIEVEMENTS = [...HW_ACH318,...CAMPUS_ACH317,...MEDIA_ACH316,...FOOD_ACH315,
         {id:'lesson1',name:'第一声真铃',desc:'在一个周目中完成第一节课。',group:'课堂',target:1},
         {id:'lessons6',name:'六科归档',desc:'在一个周目中完成原有六门学科；晚自习另有成就。',group:'课堂',target:6},
         {id:'hide1',name:'手比影子快',desc:'成功完成一次正式快速反应；教学演练不计。',group:'课堂',target:1},
@@ -12597,6 +12669,7 @@ const CAMPUS_ACH317=[
         {id:'exam',label:'提问与正式考试',title:'上方答题，下方才是冒险。',practice:'exam'},
         {id:'question38',label:'题目等级与用时',title:'先按题目留时间，再乘游戏难度。'},
         {id:'campus',label:'课表与校园事务',title:'先处理老师明确要求的事。'},
+        {id:'work318',label:'作业转交与领回',title:'先看科目，再找对老师。'},
         {id:'leisure',label:'魔方与国际象棋',title:'课间练手，上课要看风险。',practice:'cube'},
         {id:'friends',label:'同学与班长',title:'同学会帮忙，但不会替你通关。'},
         {id:'home',label:'归家：藏好装睡',title:'藏好以后，也不要急着亮屏。',practice:'home'},
@@ -13767,7 +13840,7 @@ function localizeAll310(){
  if(previousLocale310!==null&&previousLocale310!==lang){stopSpeech37();}
  previousLocale310=lang;
  localizeRoot310(document.body);
- document.title=translate310('高二（2）班：最后一节课',lang)+' · v3.17';
+ document.title=translate310('高二（2）班：最后一节课',lang)+' · v3.18';
  document.body.classList.toggle('english-lesson310',forcedEnglish310());
 }
 // Always translate a complete line before revealing it. Canonical script positions survive.
@@ -16819,7 +16892,7 @@ function flushLocale3171(force=false){
     rawLocalizeRoot3171(el);renderingStats3171.partialLocaleRoots++;
    }
   }
-  const title=translate310('高二（2）班：最后一节课',lang)+' · v3.17.1';
+  const title=translate310('高二（2）班：最后一节课',lang)+' · v3.18';
   if(document.title!==title)document.title=title;
  }finally{
   dirtyLocaleObserver3171.observe(document.body,localeObserverOptions3171);
@@ -16911,7 +16984,422 @@ function paintMotion3171(){
  }
 }
 const headerVersion3171=phoneShell39.querySelector('.phone-header39 small');
-if(headerVersion3171)headerVersion3171.textContent='v3.17.1';
+if(headerVersion3171)headerVersion3171.textContent='v3.18';
+
+// New feature text: Simplified / Traditional Chinese, English, Japanese,
+// French, Russian, Icelandic and Arabic. Existing legacy coverage is unchanged.
+const HW_WORDS318 = `
+name|作业转交与领回|Homework transfer and return|宿題の預かりと返却|Transfert et restitution des devoirs|Передача и возврат тетрадей|Afhending og skil verkefna|تسليم الواجبات واستعادتها
+button|作业本 / 领回|Notebooks / retrieve|宿題帳／受け取り|Cahiers / récupérer|Тетради / забрать|Verkefnabækur / sækja|الدفاتر / الاستعادة
+picker|选择要写的作业|Choose a notebook|書く宿題を選ぶ|Choisir un devoir|Выберите тетрадь|Veldu verkefnabók|اختر دفتر الواجب
+intro|选择科目后才开始写；化学课写课外作业可能被暂收。被收的是这一本，不会删除其他道具。|Writing starts after you select a subject. Off-task homework in Chemistry may be held. Only that notebook is affected, not other items.|科目を選ぶと書き始めます。化学で授業外の宿題を書くと、その1冊を預かられることがあります。他の道具は消えません。|L’écriture commence après le choix. Un devoir hors cours en chimie peut être retenu. Seul ce cahier est concerné.|Письмо начинается после выбора предмета. На химии постороннюю работу могут забрать. Только эту тетрадь, а не другие вещи.|Þú byrjar eftir að hafa valið fag. Óviðkomandi heimavinna í efnafræði getur verið tekin tímabundið. Aðrir hlutir haldast.|تبدأ الكتابة بعد اختيار المادة. قد يُحتجز دفتر العمل غير المتعلق بحصة الكيمياء مؤقتاً دون حذف أدوات أخرى.
+chinese|语文|Chinese|国語|Chinois|Китайский язык|Kínverska|اللغة الصينية
+chemistry|化学|Chemistry|化学|Chimie|Химия|Efnafræði|الكيمياء
+biology|生物|Biology|生物|Biologie|Биология|Líffræði|الأحياء
+physics|物理|Physics|物理|Physique|Физика|Eðlisfræði|الفيزياء
+english|英语|English|英語|Anglais|Английский язык|Enska|اللغة الإنجليزية
+math|数学|Mathematics|数学|Mathématiques|Математика|Stærðfræði|الرياضيات
+ready|在书包里|In your bag|かばんの中|Dans le sac|В рюкзаке|Í töskunni|في الحقيبة
+held|暂收 · 等待领回|Held · awaiting collection|預かり中・受取待ち|Retenu · à récupérer|Удержана · заберите|Geymd · bíður afhendingar|محتجز مؤقتاً · بانتظار الاستعادة
+write|写这科作业|Write this homework|この宿題を書く|Faire ce devoir|Писать эту работу|Skrifa þetta verkefni|اكتب واجب هذه المادة
+choose|选中这本，稍后再写|Select for later|選んで後で書く|Sélectionner pour plus tard|Выбрать на потом|Velja til síðar|اختره للكتابة لاحقاً
+pending|待领取 {n} 本|{n} notebooks to retrieve|受取待ち {n} 冊|{n} cahier(s) à récupérer|Забрать тетрадей: {n}|{n} bækur bíða|دفاتر بانتظار الاستعادة: {n}
+subjectHeld|这本{subject}作业在{teacher}处。请在课间去办公室领回。|Your {subject} notebook is with {teacher}. Retrieve it from the office during a break.|{subject}の宿題は{teacher}先生が預かっています。休み時間に職員室へ。|Votre cahier de {subject} est chez {teacher}. Allez le récupérer pendant une pause.|Тетрадь по предмету «{subject}» у учителя {teacher}. Заберите её на перемене.|Bókin í {subject} er hjá {teacher}. Sæktu hana í frímínútum.|دفتر {subject} لدى {teacher}. استعده من المكتب أثناء الاستراحة.
+visit|去办公室领回|Visit the subject office|職員室で受け取る|Aller au bureau du professeur|Пойти в учительскую|Fara á kennarastofu|اذهب إلى مكتب المعلم
+onlyBreak|只能在课间、午休或其他自由活动时段前往；上课、吃饭途中和罚站时不能离开。|Go during a break or free period, not during a lesson, meal in progress or standing penalty.|休み時間や自由時間に行けます。授業中、食事中、立たされている間は行けません。|Allez-y pendant une pause, pas en cours, en plein repas ou pendant une punition debout.|Идите на перемене или в свободное время, не на уроке, во время еды или наказания стоя.|Farðu í hléi, ekki í tíma, meðan þú borðar eða stendur í refsingu.|اذهب أثناء الاستراحة أو وقت الفراغ، لا أثناء الحصة أو الوجبة أو عقوبة الوقوف.
+legal|本节化学习题 · 合法|Assigned Chemistry exercise · allowed|今回の化学演習・許可|Exercice de chimie demandé · autorisé|Заданное упражнение по химии · разрешено|Æfing þessa efnafræðitíma · leyfð|تمرين الكيمياء المقرر · مسموح
+warning|李方琳停下板书，看向你的作业本。现在收好，还来得及。|Li Fanglin stops writing and looks at your notebook. You still have time to put it away.|李方琳先生が板書を止め、宿題帳を見た。今しまえば間に合う。|Li Fanglin arrête d’écrire et regarde votre cahier. Vous pouvez encore le ranger.|Ли Фанлинь перестаёт писать и смотрит на тетрадь. Ещё можно её убрать.|Li Fanglin hættir að skrifa og lítur á bókina. Þú hefur enn tíma til að ganga frá henni.|تتوقف لي فانغلين عن الكتابة وتنظر إلى دفترك. ما زال لديك وقت لإخفائه.
+safe|你合上了作业本。老师继续讲课，这一次没有收走。|You close the notebook. The teacher resumes; it is not taken this time.|宿題帳を閉じた。先生は授業を続け、今回は預からなかった。|Vous fermez le cahier. Le cours reprend ; cette fois, il n’est pas retenu.|Вы закрыли тетрадь. Учительница продолжила урок и не забрала её.|Þú lokar bókinni. Kennslan heldur áfram og hún er ekki tekin núna.|تغلق الدفتر وتستأنف المعلمة الدرس دون أخذه هذه المرة.
+catch|现在是化学课。你手里的{subject}作业先放我这里，我会转交给{teacher}。下课自己去说明。|This is Chemistry. I am holding your {subject} notebook and sending it to {teacher}. Speak to that teacher after class.|今は化学です。{subject}の宿題は預かって{teacher}先生に渡します。授業後に自分で説明しなさい。|C’est un cours de chimie. Je retiens votre devoir de {subject} et le transmets à {teacher}. Expliquez-vous après le cours.|Сейчас химия. Я забираю работу по предмету «{subject}» и передам её учителю {teacher}. Объяснитесь после урока.|Nú er efnafræði. Ég geymi bókina í {subject} og afhendi hana {teacher}. Talaðu við kennarann eftir tímann.|هذه حصة كيمياء. سأحتفظ بدفتر {subject} وأحيله إلى {teacher}. اشرح ما حدث بعد الحصة.
+slip|转交单写清了科目和任课老师。只有这一本被暂收；其他物品和已经完成的作业进度没有消失。|The slip lists the subject and teacher. Only this notebook is held. Other items and completed progress remain.|転送票には科目と担当がある。預けるのはこの1冊だけ。他の道具や進捗は消えない。|Le bordereau précise la matière et le professeur. Les autres objets et votre progression sont conservés.|В квитанции указаны предмет и учитель. Другие вещи и уже выполненная работа сохраняются.|Á miðanum eru fag og kennari. Aðrir hlutir og lokin vinna haldast.|توضح ورقة التسليم المادة والمعلم. تبقى الأدوات الأخرى والتقدم المنجز محفوظين.
+nextBreak|课间打开“作业本 / 领回”，按转交单找对应任课老师。|At break, open “Notebooks / retrieve” and follow the transfer slip.|休み時間に「宿題帳／受け取り」を開き、転送票の先生を探す。|À la pause, ouvrez « Cahiers / récupérer » et suivez le bordereau.|На перемене откройте «Тетради / забрать» и следуйте квитанции.|Opnaðu „Verkefnabækur / sækja“ í hléinu og fylgdu miðanum.|افتح «الدفاتر / الاستعادة» في الاستراحة واتبع ورقة التسليم.
+returnClass|先继续听课|Return to listening|授業に戻る|Reprendre le cours|Продолжить слушать|Halda áfram að hlusta|عد إلى الاستماع
+inspect|查看转交单|Read the transfer slip|転送票を読む|Lire le bordereau|Прочитать квитанцию|Lesa afhendingarmiðann|اقرأ ورقة التسليم
+receipt|第{day}天 · {subject} · 任课老师：{teacher}|Day {day} · {subject} · Teacher: {teacher}|{day}日目・{subject}・担当：{teacher}|Jour {day} · {subject} · Professeur : {teacher}|День {day} · {subject} · Учитель: {teacher}|Dagur {day} · {subject} · Kennari: {teacher}|اليوم {day} · {subject} · المعلم: {teacher}
+foyer|学科办公室 · 转交架|Subject offices · transfer shelf|職員室・預かり棚|Bureaux des matières · étagère de dépôt|Учительская · полка передачи|Kennarastofur · afhendingarhilla|مكاتب المواد · رف التسليم
+foyerLine|走廊尽头的办公室亮着灯。桌上分别放着课本、实验笔记和试卷。先按转交单找任课老师，不是找谁都能领回。|The office is lit. Textbooks, lab notes and papers mark the desks. Follow the slip: only the matching teacher can return your notebook.|職員室には教科書や実験ノートが並ぶ。転送票を確認しよう。返却できるのは担当の先生だけ。|Le bureau est éclairé, avec livres, notes et copies. Suivez le bordereau : seul le bon professeur peut rendre le cahier.|В учительской светло. На столах учебники и тетради. Вернуть работу может только указанный учитель.|Ljós er á kennarastofunni. Bækur og blöð merkja borðin. Aðeins réttur kennari getur skilað bókinni.|المكتب مضاء وعلى الطاولات كتب وأوراق. اتبع ورقة التسليم؛ المعلم المعني وحده يعيد الدفتر.
+findTeacher|你要找哪位任课老师？|Which subject teacher will you speak to?|どの担当の先生に話す？|À quel professeur voulez-vous parler ?|К какому учителю вы обратитесь?|Við hvaða kennara viltu tala?|إلى أي معلم ستتوجه؟
+nextPage|查看另一排老师|See the other desks|反対側の席を見る|Voir les autres bureaux|Посмотреть другие столы|Skoða hin borðin|اعرض الطاولات الأخرى
+leave|返回原来的课间 / 自由时段|Return to the previous free period|元の休み時間に戻る|Revenir à la pause|Вернуться в свободный период|Fara aftur í fyrra hlé|عد إلى وقت الاستراحة السابق
+wrongDesk|这不是我任教的科目，本子不在我这里。请找{teacher}，转交单不会因为问错人而作废。|That is not my subject and I do not have your notebook. Please see {teacher}. Asking me does not invalidate the slip.|それは私の担当科目ではありません。{teacher}先生に聞いてください。間違えても転送票は有効です。|Ce n’est pas ma matière et je n’ai pas ce cahier. Adressez-vous à {teacher}. Le bordereau reste valable.|Это не мой предмет, тетради у меня нет. Обратитесь к учителю {teacher}. Квитанция остаётся действительной.|Þetta er ekki mitt fag og bókin er ekki hjá mér. Talaðu við {teacher}. Miðinn gildir enn.|هذه ليست مادتي والدفتر ليس عندي. راجع {teacher}؛ ورقة التسليم ما زالت صالحة.
+wrongHint|你记下了正确的门牌；不会因为找错老师多受一次处罚。|You note the correct desk. No extra punishment for asking the wrong teacher.|正しい席をメモした。先生を間違えた追加の罰はない。|Vous notez le bon bureau, sans punition supplémentaire.|Вы записали нужный стол. Дополнительного наказания нет.|Þú skráir rétt borð. Engin aukarefsing fylgir.|تدوّن المكتب الصحيح دون عقوبة إضافية.
+talkTitle|先把经过说清楚|Explain what happened|経緯を説明する|Expliquer ce qui s’est passé|Объясните, что произошло|Útskýrðu hvað gerðist|اشرح ما حدث
+admit|说明时间安排不当，承认在化学课写了这本作业|Explain the scheduling mistake and acknowledge doing this homework in Chemistry|化学でこの宿題を書いたことと時間配分の失敗を認める|Reconnaître avoir fait ce devoir pendant la chimie|Признать, что делали эту работу на химии|Viðurkenna að hafa unnið þetta í efnafræði|اعترف بأنك كتبت هذا الواجب أثناء الكيمياء
+verify|请老师一起核对科目、封面和转交原因|Check the subject, cover and transfer reason together|科目・表紙・預かった理由を一緒に確認する|Vérifier ensemble la matière, la couverture et la raison|Вместе проверить предмет, обложку и причину|Yfirfara fag, forsíðu og ástæðu saman|راجع المادة والغلاف وسبب التسليم مع المعلم
+demand|先不说明，只要求立刻拿走|Decline to explain and ask for immediate return|説明せず今すぐ返してほしいと言う|Demander le retour immédiat sans explication|Попросить вернуть немедленно без объяснения|Biðja um bókina strax án skýringa|اطلب الاستعادة فوراً دون شرح
+patient|本子不会丢。我不是让你承认没做过的事，但领取前得把科目和经过核对清楚。你也可以下次课间再来。|It will not be lost. You need not admit something you did not do, but we must check the subject and events first. You may return next break.|本はなくしません。していないことを認める必要はないが、科目と経緯を確認しよう。次の休み時間でもいい。|Il ne sera pas perdu. Vous n’avez pas à avouer un acte inexistant, mais vérifions les faits. Vous pouvez revenir à la prochaine pause.|Тетрадь не потеряется. Не нужно признавать то, чего не делали, но проверим факты. Можно прийти на следующей перемене.|Bókin glatast ekki. Þú þarft ekki að viðurkenna eitthvað ósatt, en við verðum að fara yfir málið. Komdu í næsta hléi ef þú vilt.|لن يضيع الدفتر. لا يلزمك الاعتراف بما لم تفعله، لكن علينا مراجعة الوقائع. يمكنك العودة في الاستراحة القادمة.
+ack|事情核对清楚了。领回后，你准备什么时候继续写？|The record is clear. When will you work on it after collecting it?|記録は確認できた。受け取ったら、いつ続きを書く？|Les faits sont vérifiés. Quand reprendrez-vous ce devoir ?|Всё проверили. Когда продолжите работу после возврата?|Málið er skýrt. Hvenær ætlarðu að halda áfram eftir afhendingu?|اتضحت الوقائع. متى ستكمل الواجب بعد استعادته؟
+planTitle|给未完成的作业留出时间|Make time for the unfinished work|未完成の宿題の時間を決める|Prévoir un moment pour terminer|Выделите время для незаконченного|Gefðu óloknu verki tíma|حدد وقتاً لإكمال الواجب
+planBreak|课间或午休再写，不占用别科讲课|Work during a break, not another subject’s lesson|休み時間に書き、他の授業を使わない|Travailler à la pause, pas pendant un autre cours|Писать на перемене, не на другом уроке|Vinna í hléi, ekki í öðrum tíma|اكتب أثناء الاستراحة لا أثناء مادة أخرى
+planStudy|晚自习安排一段时间独立完成|Set aside self-study time and finish it myself|自習の時間を使って自分で終える|Terminer seul pendant l’étude surveillée|Закончить самостоятельно на самоподготовке|Ljúka sjálf/ur í sjálfsnámi|أكمله بنفسك أثناء المذاكرة المسائية
+planWrong|下次化学课再偷偷补完|Finish it secretly next Chemistry lesson|次の化学でこっそり終える|Le finir en cachette au prochain cours de chimie|Тайком закончить на следующей химии|Ljúka því laumulega í næsta efnafræðitíma|أكمله سراً في حصة الكيمياء القادمة
+planNo|换一节化学课并没有解决问题。请选择课间、自习等合适的时间，不需要抄别人的答案。|Another Chemistry lesson does not solve this. Choose a break or self-study; no copying is needed.|別の化学の時間でも同じです。休み時間や自習にしよう。写す必要はありません。|Un autre cours de chimie ne résout rien. Choisissez une pause ou l’étude, sans copier.|Другой урок химии ничего не решает. Выберите перемену или самоподготовку, без списывания.|Annar efnafræðitími leysir þetta ekki. Veldu hlé eða sjálfsnám; ekki þarf að afrita.|حصة كيمياء أخرى لا تحل المشكلة. اختر الاستراحة أو المذاكرة دون نسخ إجابات الآخرين.
+signTitle|核对封面与签收|Check the cover and sign|表紙確認と受取署名|Vérifier la couverture et signer|Проверьте обложку и распишитесь|Yfirfara forsíðu og kvitta|راجع الغلاف ووقّع بالاستلام
+signHint|确认科目和名字，核对3秒后还要点击“取回作业本”。只看完对话不算领回。|Verify the subject and name for three seconds, then click “Collect notebook”. Reading the dialogue alone does not return it.|科目と名前を3秒確認した後、「宿題帳を受け取る」を押す。対話だけでは返却されない。|Vérifiez pendant trois secondes, puis cliquez sur « Récupérer ». Le dialogue seul ne suffit pas.|Проверьте предмет и имя за три секунды, затем нажмите «Забрать». Одного разговора недостаточно.|Yfirfarðu fag og nafn í þrjár sekúndur og smelltu svo á „Sækja bók“. Samtalið eitt nægir ekki.|تحقق من المادة والاسم لثلاث ثوانٍ ثم اضغط «استعد الدفتر». الحوار وحده لا يعيده.
+sign|核对并签收（3秒）|Check and sign (3 seconds)|確認して署名（3秒）|Vérifier et signer (3 secondes)|Проверить и расписаться (3 секунды)|Yfirfara og kvitta (3 sek.)|راجع ووقّع (3 ثوانٍ)
+checking|正在核对 · 暂停不会自动完成|Checking · pausing will not finish it|確認中・ポーズ中は進まない|Vérification · la pause ne la termine pas|Проверка · на паузе не завершается|Yfirferð · lýkur ekki í pásu|جارٍ التحقق · لا يكتمل أثناء الإيقاف
+collect|取回作业本|Collect notebook|宿題帳を受け取る|Récupérer le cahier|Забрать тетрадь|Sækja bókina|استعد دفتر الواجب
+readySign|核对完成。点击领取，作业才会真正回到书包。|Checked. Click collect to put it back in your bag.|確認完了。受取を押すとかばんに戻る。|Vérification terminée. Cliquez pour remettre le cahier dans le sac.|Проверено. Нажмите, чтобы вернуть тетрадь в рюкзак.|Yfirferð lokið. Smelltu til að setja bókina aftur í töskuna.|اكتمل التحقق. اضغط للاستعادة الفعلية إلى الحقيبة.
+returned|{subject}作业已领回；原进度保留。|{subject} notebook returned; progress preserved.|{subject}の宿題を受け取った。進捗は維持。|Cahier de {subject} rendu ; progression conservée.|Тетрадь «{subject}» возвращена; прогресс сохранён.|Bók í {subject} skilað; framvinda varðveitt.|استُعيد دفتر {subject} مع حفظ التقدم.
+parting|拿好。别的老师讲课时，也请给那门课同样的尊重。|Here you go. Give other subjects the same attention during their lessons.|どうぞ。他の先生の授業にも同じように向き合おう。|Le voici. Accordez la même attention aux autres matières.|Держите. Уделяйте такое же внимание другим предметам на их уроках.|Gjörðu svo vel. Veittu öðrum fögum sömu athygli í þeirra tímum.|تفضل. امنح المواد الأخرى الاهتمام نفسه أثناء حصصها.
+resumeLine|你把本子装回书包，回到原来的自由时段。课堂、课间和吃饭流程没有被跳过。|You pack the notebook and return to the same free period. No lesson, break or meal has been skipped.|かばんにしまい、元の自由時間に戻る。授業・休み・食事は飛ばしていない。|Vous revenez à la même pause. Aucun cours ni repas n’a été sauté.|Вы вернулись в тот же свободный период. Уроки и питание не пропущены.|Þú snýrð aftur í sama hlé. Engum tíma eða máltíð var sleppt.|تعود إلى وقت الفراغ نفسه دون تجاوز حصة أو وجبة.
+empty|目前没有需要领回的本子。|No notebooks await collection.|受け取る本はありません。|Aucun cahier à récupérer.|Нет тетрадей к получению.|Engar bækur bíða afhendingar.|لا دفاتر بانتظار الاستعادة.
+permanent|真实模式的永久收缴不能通过此处撤销；原有化学订正扣本也仍在原办公室处理。|This does not undo permanent Real-mode confiscation. The original Chemistry-correction case still uses its own office.|リアルモードの永久没収は解除できません。従来の化学訂正の預かりも別処理です。|Ceci n’annule pas la confiscation permanente du mode Réalisme. Les corrections de chimie restent un dossier séparé.|Постоянное изъятие в реалистичном режиме не отменяется. Исправления по химии — отдельное дело.|Varanleg upptaka í raunsæisham helst. Eldra leiðréttingarmálið í efnafræði er áfram aðskilið.|لا يلغي هذا المصادرة الدائمة في الوضع الواقعي. وتبقى تصحيحات الكيمياء القديمة مساراً منفصلاً.
+noItems|本周目的其他作业本已被永久收缴，不能通过临时领回恢复。|Other-work notebooks were permanently confiscated this run; temporary returns cannot restore them.|この周回では作業帳が永久没収されており、一時返却で復活しません。|Les cahiers ont été confisqués définitivement pour cette partie.|Тетради изъяты до конца прохождения и не восстанавливаются временным возвратом.|Bækurnar voru teknar til loka þessarar umferðar og fást ekki þannig aftur.|صودرت الدفاتر حتى نهاية الجولة ولا تعيدها الاستعادة المؤقتة.
+progress|作业总进度 {n}% · 不因领回额外加分|Homework progress {n}% · no return bonus|宿題進捗 {n}%・返却による加点なし|Progression {n} % · aucun bonus de retour|Прогресс {n}% · без бонуса за возврат|Framvinda {n}% · enginn afhendingarbónus|التقدم {n}% · لا مكافأة إضافية للاستعادة
+later|稍后再来（保留面谈进度）|Return later (keep interview progress)|後で来る（面談の進行を保持）|Revenir plus tard (progression conservée)|Вернуться позже (ход беседы сохранится)|Koma síðar (samtal varðveitt)|عد لاحقاً (يُحفظ تقدم المقابلة)
+visitHint|先看转交单。找错老师只会得到指路，不会替你归还其他科作业。|Read the slip. A wrong teacher gives directions, not another subject’s notebook.|転送票を確認。違う先生は道案内だけで、他科の本は返せません。|Lisez le bordereau. Le mauvais professeur indique le chemin mais ne rend pas un autre cahier.|Читайте квитанцию. Другой учитель подскажет путь, но не вернёт чужую работу.|Lestu miðann. Rangur kennari vísar veginn en skilar ekki bók annars fags.|اقرأ ورقة التسليم. المعلم غير المعني يرشدك فقط ولا يعيد دفتر مادة أخرى.
+lockedAll|全部作业本都在暂收中，先去领回一本。|All notebooks are being held. Retrieve one first.|全冊預かり中です。先に1冊受け取ってください。|Tous les cahiers sont retenus. Récupérez-en un.|Все тетради удерживаются. Сначала заберите одну.|Allar bækur eru geymdar. Sæktu eina fyrst.|جميع الدفاتر محتجزة مؤقتاً. استعد واحداً أولاً.
+legalTime|合法时段补写：{s}/20秒|Allowed-period writing: {s}/20 seconds|適切な時間の学習：{s}/20秒|Travail au bon moment : {s}/20 s|Работа в подходящее время: {s}/20 с|Vinna á réttum tíma: {s}/20 sek.|كتابة في الوقت المسموح: {s}/20 ثانية
+`;
+for(const line of HW_WORDS318.trim().split('\n'))addText317('h318_'+line);
+for(const line of `
+office_chinese|何枫琳从书签后抬起头，把你的本子放到阅读札记旁。|He Fenglin looks up from a bookmark and puts your notebook beside her reading notes.|何枫琳先生がしおりから顔を上げ、読書ノートの隣に本を置いた。|He Fenglin lève les yeux et pose votre cahier près de ses notes de lecture.|Хэ Фэнлинь поднимает взгляд и кладёт тетрадь рядом с заметками о чтении.|He Fenglin lítur upp og leggur bókina við lestrarglósurnar.|ترفع هي فنغلين نظرها وتضع دفترك بجانب ملاحظات القراءة.
+talk_chinese|题目可以慢慢想，但不要用别人的课堂补我的作业。先说说这本作业为什么会转到这里。|Take time to think, but do not use another teacher’s lesson for my homework. Explain how it came here.|考える時間は必要。でも他の授業で私の宿題をしないで。なぜここへ来たか話そう。|Prenez le temps de réfléchir, sans utiliser un autre cours. Expliquez pourquoi ce cahier arrive ici.|Думать можно не спеша, но не делайте мою работу на чужом уроке. Расскажите, почему она здесь.|Gefðu þér tíma til að hugsa, en ekki í tíma annars kennara. Útskýrðu hvernig bókin kom hingað.|خذ وقتك في التفكير، لكن لا تنجز واجبي في حصة غيري. اشرح سبب وصول الدفتر إلى هنا.
+office_chemistry|李方琳把这本课外作业与原来的订正本分开放好。|Li Fanglin keeps this off-task notebook separate from the correction book.|李方琳先生が授業外の宿題を従来の訂正帳と分けて置いた。|Li Fanglin sépare ce cahier hors cours du cahier de corrections.|Ли Фанлинь отделяет эту тетрадь от тетради для исправлений.|Li Fanglin heldur þessari bók aðskildri frá leiðréttingabókinni.|تفصل لي فانغلين هذا الدفتر عن دفتر التصحيحات.
+talk_chemistry|是化学作业，也不等于什么时候都能写。讲授和练习各有时间。这次暂收，与检查订正是两件事。|Even Chemistry homework has its time. Lecture and practice are separate. This hold is not the correction-book check.|化学の宿題でも、いつ書いてもよいわけではありません。講義と演習は別。今回の預かりと訂正確認も別です。|Même les devoirs de chimie ont leur moment. Cette retenue est distincte du contrôle des corrections.|Даже работу по химии нужно делать вовремя. Это отдельная передача, не проверка исправлений.|Jafnvel efnafræðiverkefni eiga sinn tíma. Þessi varsla er ekki sama mál og yfirferð leiðréttinga.|حتى واجب الكيمياء له وقت محدد. هذا الاحتجاز منفصل عن فحص التصحيحات.
+office_biology|王莹移开一张细胞结构图，在桌边给你留出核对的位置。|Wang Ying moves a cell diagram aside and makes room to check your notebook.|王莹先生が細胞図をよけ、確認する場所を空けた。|Wang Ying écarte un schéma cellulaire pour vérifier votre cahier.|Ван Ин убирает схему клетки, освобождая место для проверки.|Wang Ying færir frumumynd til hliðar svo hægt sé að yfirfara bókina.|تزيح وانغ ينغ رسماً للخلية لتفسح مكاناً لمراجعة الدفتر.
+talk_biology|注意力不是可以同时分给每一页的。把事情说清楚，再安排一段真正属于这本作业的时间。|Attention cannot go to every page at once. Explain what happened and give this work its own time.|すべてのページへ同時に集中はできません。経緯を話し、この宿題の時間を決めましょう。|On ne peut pas se concentrer sur toutes les pages à la fois. Expliquez, puis réservez un moment à ce devoir.|Нельзя сосредоточиться на всех страницах сразу. Объясните и выделите работе своё время.|Athygli nær ekki öllum síðum í einu. Útskýrðu og gefðu þessu verki sinn tíma.|لا يمكن توزيع الانتباه على كل الصفحات في آن واحد. اشرح وحدد وقتاً لهذا الواجب.
+office_physics|戴蓓蓓把尺子压在试卷上，示意你看看转交单的科目一栏。|Dai Beibei lays a ruler on her papers and points to the subject on the slip.|戴蓓蓓先生が試験紙に定規を置き、転送票の科目を指した。|Dai Beibei pose sa règle et montre la matière sur le bordereau.|Дай Бэйбэй кладёт линейку и указывает на предмет в квитанции.|Dai Beibei leggur reglustiku niður og bendir á fagið á miðanum.|تضع داي بيبي المسطرة وتشير إلى خانة المادة في ورقة التسليم.
+talk_physics|先确认这确实是你的本子。想把进度赶上来，也不能把别科课堂当作空白时间。|First confirm it is yours. Catching up does not make another lesson spare time.|まず自分の本だと確認しよう。遅れを取り戻すためでも、他の授業は空き時間ではない。|Vérifiez d’abord que c’est le vôtre. Un autre cours n’est pas du temps libre pour rattraper un retard.|Убедимся, что тетрадь ваша. Другой урок не становится свободным временем из-за отставания.|Staðfestu fyrst að bókin sé þín. Annar tími er ekki frítími þótt þú sért á eftir.|تأكد أولاً أن الدفتر لك. التأخر لا يجعل حصة أخرى وقت فراغ.
+office_english|尹沙沙合上课本，翻到你作业本上写着名字的那一页。|Yin Shasha closes her textbook and opens your notebook to the name page.|尹沙沙先生が教科書を閉じ、宿題帳の名前のページを開いた。|Yin Shasha ferme son manuel et ouvre votre cahier à la page du nom.|Инь Шаша закрывает учебник и открывает страницу с вашим именем.|Yin Shasha lokar kennslubókinni og opnar bókina á nafninu þínu.|تغلق ين شاشا كتابها وتفتح دفترك عند صفحة الاسم.
+talk_english|先把时间安排好，再把句子写清楚。说明经过就行，不用为了领本子替自己编一个故事。|Plan your time, then make your sentences clear. Explain honestly; no invented story is needed.|時間を決めてから文を書こう。経緯を説明すればいい。作り話は必要ありません。|Organisez votre temps, puis vos phrases. Expliquez honnêtement, sans inventer d’histoire.|Распланируйте время, затем пишите ясно. Объясните честно, ничего выдумывать не нужно.|Skipuleggðu tímann og skrifaðu svo skýrt. Útskýrðu heiðarlega, án uppspuna.|نظّم وقتك ثم اكتب بوضوح. اشرح بصدق دون اختلاق قصة.
+office_math|郭梓晁看了眼转交单，把那摞习题本里的这一册抽出来。|Guo Zichao reads the slip and takes your notebook from the exercise-book stack.|郭梓晁先生が転送票を見て、積んだ問題集から1冊取り出した。|Guo Zichao lit le bordereau et sort votre cahier de la pile.|Го Цзычао читает квитанцию и достаёт вашу тетрадь из стопки.|Guo Zichao les miðann og tekur þína bók úr staflanum.|يقرأ غو زيتشاو الورقة ويسحب دفترك من الكومة.
+talk_math|So easy。把哪门课该做哪门事分清楚。不是题写得多，就说明安排得好。|So easy. Keep each subject in its time. More answers do not always mean better planning.|So easy。どの時間に何をするか分けなさい。たくさん解けば計画も良いとは限らない。|So easy. Chaque matière a son temps. Plus de réponses ne signifie pas toujours une meilleure organisation.|So easy. У каждого предмета своё время. Много ответов не всегда значит хороший план.|So easy. Hvert fag á sinn tíma. Fleiri svör merkja ekki alltaf betra skipulag.|So easy. لكل مادة وقتها. كثرة الإجابات لا تعني دائماً حسن التنظيم.
+rules|按2先选作业科目。化学课写课外作业会被留意；预警后收好可以避免暂收。明确安排的本节化学习题不处罚。被收的作业单独锁定，在课间找对应任课老师，说明经过、安排补写时间、核对3秒并点击领取。暂停、离线不推进；本子可跨日保留，旧订正本和真实模式永久收缴互不混淆。|Press 2 to choose a subject. Off-task homework in Chemistry can draw attention; put it away after the warning. Assigned Chemistry exercises are exempt. Each held notebook is locked separately. At break, find its teacher, explain, plan study time, check for three seconds, then collect. Pausing and offline time do not count. Holds carry across days; old correction books and permanent Real-mode seizures are separate.|2で科目を選択。化学で授業外の宿題をすると注目され、警告後にしまえば預かりを避けられる。指定の化学演習は対象外。預かった本だけロック。休み時間に担当へ行き、説明・時間計画・3秒確認後に受け取る。ポーズやオフラインでは進まない。翌日にも持ち越し、訂正帳や永久没収とは別管理。|Appuyez sur 2 pour choisir. En chimie, un devoir hors cours peut attirer l’attention ; rangez-le après l’avertissement. Les exercices demandés sont autorisés. Seul le cahier retenu est bloqué. À la pause, trouvez son professeur, expliquez, prévoyez un moment, vérifiez trois secondes et récupérez. Pause et absence ne comptent pas. La retenue persiste entre les jours, séparément des corrections et confiscations permanentes.|Нажмите 2 и выберите предмет. На химии посторонняя работа привлекает внимание; после предупреждения уберите её. Заданные упражнения разрешены. Блокируется только удержанная тетрадь. На перемене найдите учителя, объясните, выберите время, проверьте три секунды и заберите. Пауза и офлайн не считаются. Удержание переносится между днями и отдельно от исправлений и постоянного изъятия.|Ýttu á 2 og veldu fag. Óviðkomandi verkefni í efnafræði vekja athygli; gakktu frá eftir viðvörun. Leyfðar efnafræðiæfingar eru undanþegnar. Aðeins geymda bókin læsist. Finndu réttan kennara í hléi, útskýrðu, veldu tíma, yfirfarðu í þrjár sekúndur og sæktu. Hlé og ótengdur tími telja ekki. Varsla helst milli daga og er aðskilin frá leiðréttingum og varanlegri upptöku.|اضغط 2 لاختيار المادة. العمل غير المتعلق بالكيمياء قد يلفت الانتباه؛ أغلق الدفتر بعد التحذير. التمارين المقررة مسموحة. يُقفل الدفتر المحتجز وحده. في الاستراحة ابحث عن معلمه، اشرح وحدد وقتاً وراجع ثلاث ثوانٍ ثم استعده. لا يُحتسب الإيقاف أو الانقطاع. يستمر الاحتجاز بين الأيام منفصلاً عن التصحيحات والمصادرة الدائمة.
+`.trim().split('\n'))addText317('h318_'+line);
+
+// Every newly-added archive field has a localized counterpart. Existing legacy
+// translation coverage is deliberately not changed by this gameplay update.
+const HW_ARCHIVE_LOCALES318={
+workReturned318:{
+ title:['Back in Its Owner’s Hands','持ち主に戻った宿題','Le cahier rendu à son propriétaire','Тетрадь вернулась к владельцу','Bókin aftur hjá eigandanum','الدفتر يعود إلى صاحبه'],
+ prose:[
+ 'A transfer slip brought your notebook from the Chemistry podium to its subject teacher’s desk.\nYou checked the cover, explained what happened and signed your name.\nOn the way back, no progress had appeared out of nowhere: the unfinished questions were still there.\nThis time, you knew which lesson it belonged to—and when to open it again.',
+ '転送票を挟んだ宿題帳が、化学の教卓から担当の先生の机へ届いた。\n表紙を確認し、経緯を説明して、自分の名前を記した。\n教室に戻っても進捗は勝手に増えず、未完成の問題は残っている。\nでも今度は、どの科目の本か、いつ開くべきかが分かっていた。',
+ 'Un bordereau a conduit votre cahier du cours de chimie au bureau du bon professeur.\nVous avez vérifié la couverture, expliqué les faits et signé.\nEn revenant en classe, aucun progrès n’était apparu par magie : les questions inachevées attendaient toujours.\nMais vous saviez désormais à quel cours ce cahier appartenait et quand le rouvrir.',
+ 'Передаточная записка привела тетрадь с химии на стол учителя её предмета.\nВы проверили обложку, объяснились и подписались.\nПо дороге обратно ниоткуда не появились готовые ответы: незаконченные задания остались.\nНо теперь вы знали, к какому уроку относится тетрадь и когда её снова открыть.',
+ 'Afhendingarmiði fylgdi bókinni frá efnafræðikennaranum að borði fagkennarans.\nÞú skoðaðir kápuna, útskýrðir atvikið og skrifaðir undir.\nÁ leiðinni aftur hafði engin vinna klárast af sjálfu sér; ósvaraðar spurningar biðu enn.\nEn nú vissirðu hvaða tíma bókin tilheyrði og hvenær ætti að opna hana aftur.',
+ 'نقلت ورقة التسليم دفترك من منصة الكيمياء إلى مكتب معلم مادته.\nراجعت الغلاف وشرحت ما حدث ووقعت باسمك.\nوأنت تعود إلى الصف، لم يظهر تقدم من العدم؛ بقيت الأسئلة غير المنجزة.\nلكن هذه المرة عرفت المادة التي ينتمي إليها الدفتر والوقت المناسب لفتحه من جديد.'
+ ],
+ hint:['Have homework held in Chemistry, find its subject teacher, complete the conversation and check, then explicitly collect it. This side story continues school; it is not graduation.','化学で預けられた宿題を、担当の先生と話し、確認後に自分で受け取る。記録後も学校は続き、卒業にはならない。','Après la retenue en chimie, trouvez le professeur concerné, terminez l’entretien et la vérification, puis récupérez le cahier. L’école continue ; ce n’est pas une sortie réussie.','После изъятия на химии найдите нужного учителя, поговорите, проверьте и лично заберите тетрадь. Учёба продолжается; это не выпуск.','Finndu réttan kennara eftir vörslu í efnafræði, ljúktu samtali og yfirferð og sæktu bókina sjálf(ur). Skólinn heldur áfram; þetta telst ekki útskrift.','بعد احتجاز الواجب في الكيمياء، ابحث عن معلم مادته وأكمل الحديث والمراجعة ثم استعده بنفسك. تستمر المدرسة؛ هذه ليست نهاية تخرج.']
+},
+workRightTime318:{
+ title:['At the Right Time','ふさわしい時間に','Au bon moment','В подходящее время','Á réttum tíma','في الوقت المناسب'],
+ prose:['You saved the recovered notebook for breaks and study periods.\nWhen you opened that page again, no teacher took it away.\nAt the real dismissal, every pending entry had been crossed out.\nToday you wrote more than answers: you made a place for the work in your day.','返された本は休み時間と自習まで取っておいた。\n再びそのページを開いた時、先生はもう取り上げなかった。\n本当の下校時には、未受取の記録はすべて消えていた。\n今日書いたのは答えだけでなく、やり直した時間の使い方だった。','Vous avez gardé le cahier rendu pour les pauses et l’étude.\nEn rouvrant cette page, personne ne l’a retenu.\nÀ la vraie sortie, toutes les mentions en attente étaient rayées.\nAujourd’hui, vous avez écrit des réponses, mais aussi réorganisé votre temps.','Вы оставили возвращённую тетрадь до перемены и самостоятельной работы.\nКогда страница открылась снова, учитель её уже не забрал.\nК настоящему звонку все записи о выдаче были закрыты.\nСегодня вы не только писали ответы, но и заново распределяли время.','Þú geymdir endurheimtu bókina þar til kom að hléi og sjálfsnámi.\nÞegar þú opnaðir síðuna aftur tók enginn kennari hana.\nVið raunverulegan skólaslitahringing voru allar óafgreiddar færslur afmáðar.\nÞú skrifaðir ekki aðeins svör heldur skipulagðir tímann upp á nýtt.','احتفظت بالدفتر المستعاد للاستراحات وفترات الدراسة.\nحين فتحت الصفحة مجدداً لم يأخذه أي معلم.\nوعند الانصراف الحقيقي شُطبت جميع طلبات الاستعادة المعلقة.\nاليوم كتبت أكثر من إجابات؛ أعدت تنظيم وقتك.'],
+ hint:['Recover a notebook today. After the latest return, spend 20 seconds on homework during permitted periods, avoid another confiscation, recover every book, and successfully leave school.','本日1冊以上受け取り、最後の返却後に許可時間で20秒書く。その後再び預けられず、全冊受け取り、本当に下校する。','Récupérez un cahier aujourd’hui, travaillez 20 secondes dans les périodes autorisées après la dernière restitution, sans nouvelle retenue, récupérez tout et quittez l’école avec succès.','Получите тетрадь сегодня; после последней выдачи пишите 20 секунд в разрешённое время без нового изъятия, заберите всё и успешно уйдите из школы.','Sæktu bók í dag, skrifaðu í 20 sekúndur á leyfðum tíma eftir síðustu afhendingu án frekari vörslu, endurheimtu allar bækur og yfirgefðu skólann með góðum árangri.','استعد دفتراً اليوم، ثم اكتب 20 ثانية في وقت مسموح بعد آخر استعادة دون احتجاز جديد. استعد كل الدفاتر وغادر المدرسة بنجاح.']
+},
+workReceipts318:{
+ title:['Receipts Between Subjects','科目をつなぐ受取票','Les reçus entre les matières','Квитанции между предметами','Kvittanir milli námsgreina','إيصالات بين المواد'],
+ prose:['Different teachers kept different pens, rulers and textbooks on their desks.\nYou found at least three of those desks and collected your notebooks yourself.\nThe subjects on the receipts stayed the same; the time each one deserved became clearer.\nAt the last dismissal, no missing page remained in your schoolbag.','先生ごとに机のペンや定規、教科書は違った。\n少なくとも三つの机を正しく訪ね、自分で宿題を受け取った。\n受取票の科目は変わらない。でも、それぞれに必要な時間がはっきりした。\n最後の下校で、かばんに取り残した1ページはなかった。','Chaque professeur avait ses stylos, ses règles et ses manuels.\nVous avez trouvé au moins trois de ces bureaux et récupéré vos cahiers.\nLes matières sur les reçus n’ont pas changé ; le temps dû à chacune est devenu plus clair.\nÀ la dernière sortie, aucune page manquante ne pesait dans votre sac.','На столах разных учителей лежали разные ручки, линейки и учебники.\nВы нашли хотя бы три нужных стола и сами получили тетради.\nПредметы в квитанциях не изменились, но время для каждого стало понятнее.\nК последнему звонку в рюкзаке не осталось недостающей страницы.','Á borðum kennaranna voru ólíkir pennar, reglustikur og bækur.\nÞú fannst að minnsta kosti þrjú rétt borð og sóttir bækurnar sjálf(ur).\nFögin á kvittununum voru þau sömu, en tíminn sem hvert fag átti varð skýrari.\nVið síðustu skólaslitahringing vantaði enga síðu í töskuna.','اختلفت الأقلام والمساطر والكتب على طاولات المعلمين.\nوجدت ثلاث طاولات صحيحة على الأقل واستعدت دفاترك بنفسك.\nلم تتغير المواد في الإيصالات، لكن الوقت الذي تستحقه كل مادة أصبح أوضح.\nوعند الانصراف الأخير لم تبقَ صفحة مفقودة في حقيبتك.'],
+ hint:['In one run, retrieve homework from teachers of at least three different subjects, leave no book pending, and successfully leave school.','同じ周回で3科目以上の担当から宿題を受け取り、未受取を残さず、本当に下校する。','Dans une même partie, récupérez des devoirs auprès de trois professeurs de matières différentes, sans cahier restant, puis quittez l’école avec succès.','За одно прохождение получите тетради у учителей хотя бы трёх разных предметов, не оставьте ни одной и успешно уйдите из школы.','Í sömu umferð skaltu sækja bækur hjá kennurum að minnsta kosti þriggja faga, skilja enga eftir og yfirgefa skólann með góðum árangri.','في جولة واحدة، استعد الواجبات من معلمي ثلاث مواد مختلفة على الأقل، ولا تترك دفتراً معلقاً، ثم غادر المدرسة بنجاح.']
+}
+};
+for(const [id,fields]of Object.entries(HW_ARCHIVE_LOCALES318))for(const[field,row]of Object.entries(fields))addText317(['h318_archive_'+id+'_'+field,HW_END318[id][field],...row].join('|'));
+const HW_BADGE_LOCALES318=[
+['收好这一页','Put This Page Away','このページをしまおう','Rangez cette page','Уберите эту страницу','Gakktu frá þessari síðu','أغلق هذه الصفحة'],
+['写错了课堂','The Wrong Lesson','書く授業が違った','Le mauvais cours','Не тот урок','Rangur kennslutími','الحصة غير المناسبة'],
+['找对门牌','The Right Door','正しい表札','La bonne porte','Нужная дверь','Réttar dyr','الباب الصحيح'],
+['原来在隔壁','Next Door After All','隣だったんだ','C’était à côté','Оказалось, рядом','Það var í næsta herbergi','كان في المكتب المجاور'],
+['当面签收','Signed and Collected','対面で受け取り','Signé et récupéré','Получено под подпись','Undirritað og sótt','توقيع واستلام'],
+['三张回执','Three Receipts','三枚の受取票','Trois reçus','Три квитанции','Þrjár kvittanir','ثلاثة إيصالات'],
+['留给课间','Save It for the Break','休み時間に残そう','Pour la pause','Оставьте на перемену','Geymdu það fyrir hléið','اتركه للاستراحة'],
+['一本也不落','No Notebook Left Behind','一冊も忘れずに','Aucun cahier oublié','Ни одной забытой тетради','Engin bók skilin eftir','لا دفتر متروك'],
+['先看科目，再找对老师。','Read the Subject, Find the Teacher','科目を見て、担当を探そう','Vérifiez la matière, trouvez le professeur','Прочитайте предмет и найдите учителя','Skoðaðu fagið og finndu kennarann','تحقق من المادة ثم ابحث عن معلمها']
+];
+HW_BADGE_LOCALES318.forEach((row,i)=>addText317(['h318_badge_'+i,...row].join('|')));
+const HW_BADGE_DESC318=[
+['Put the notebook away after the Chemistry warning and avoid that confiscation.','化学の警告後にしまい、今回の預かりを避ける。','Rangez le cahier après l’avertissement de chimie pour éviter la retenue.','Уберите тетрадь после предупреждения на химии и избегите изъятия.','Gakktu frá bókinni eftir viðvörun í efnafræði og forðastu vörslu.','أغلق الدفتر بعد تحذير الكيمياء وتجنب احتجازه هذه المرة.'],
+['Actually have a homework notebook held during Chemistry.','化学で実際に1冊預かられる。','Faites réellement retenir un cahier en chimie.','Получите запись о реальном изъятии тетради на химии.','Láttu raunverulega taka verkefnabók til geymslu í efnafræði.','يُحتجز دفتر واجب فعلياً أثناء حصة الكيمياء.'],
+['Follow the slip to the correct subject teacher and begin the conversation.','転送票を見て正しい担当と話し始める。','Suivez le bordereau jusqu’au bon professeur et commencez l’entretien.','Найдите указанного учителя и начните разговор.','Fylgdu miðanum til rétta kennarans og byrjaðu samtalið.','اتبع ورقة التسليم إلى المعلم الصحيح وابدأ الحديث.'],
+['Ask the wrong teacher first, then listen to the directions to the right office.','別の先生に尋ねた後、正しい担当への案内を聞く。','Adressez-vous d’abord au mauvais professeur, puis écoutez ses indications.','Сначала обратитесь не к тому учителю, затем выслушайте направление к нужному.','Spyrðu fyrst rangan kennara og hlustaðu svo á leiðbeiningarnar.','اسأل معلماً غير معني أولاً، ثم استمع إلى إرشاده للمكتب الصحيح.'],
+['Complete the conversation and three-second check, then explicitly collect a held notebook.','面談と3秒確認を終え、預けた本を自分で受け取る。','Terminez l’entretien et la vérification de trois secondes, puis récupérez le cahier.','Завершите разговор и трёхсекундную проверку, затем лично заберите тетрадь.','Ljúktu samtali og þriggja sekúndna yfirferð og sæktu geymdu bókina.','أكمل الحديث والمراجعة لثلاث ثوانٍ، ثم استعد الدفتر بنفسك.'],
+['Retrieve notebooks from three different subject teachers in the same run.','同じ周回で異なる3科目の担当から宿題を受け取る。','Récupérez des cahiers auprès de trois professeurs de matières différentes dans la même partie.','За одно прохождение заберите тетради у учителей трёх разных предметов.','Sæktu bækur hjá þremur ólíkum fagkennurum í sömu umferð.','استعد الدفاتر من معلمي ثلاث مواد مختلفة في الجولة نفسها.'],
+['After today’s latest return, write homework for 20 seconds in permitted periods.','本日最後の返却後、許可された時間に計20秒書く。','Après la dernière restitution du jour, travaillez 20 secondes pendant les périodes autorisées.','После последней выдачи за день пишите 20 секунд в разрешённое время.','Eftir síðustu afhendingu í dag skaltu vinna í 20 sekúndur á leyfðum tíma.','بعد آخر استعادة اليوم، اكتب الواجب 20 ثانية في أوقات مسموحة.'],
+['Recover at least one notebook today, leave no holds pending, and successfully leave school.','本日1冊以上受け取り、未受取を残さず、本当に下校する。','Récupérez au moins un cahier aujourd’hui, n’en laissez aucun en attente et quittez l’école avec succès.','Получите хотя бы одну тетрадь сегодня, заберите остальные и успешно уйдите из школы.','Sæktu að minnsta kosti eina bók í dag, skildu enga eftir og yfirgefðu skólann með góðum árangri.','استعد دفتراً واحداً على الأقل اليوم، ولا تترك أي دفتر معلقاً، ثم غادر المدرسة بنجاح.']
+];
+HW_BADGE_DESC318.forEach((row,i)=>addText317(['h318_badgedesc_'+i,HW_ACH318[i].desc,...row].join('|')));
+
+/* v3.18 — temporary, subject-specific homework transfer.
+ * Kept separate from v34 Chemistry correction books and v37 permanent seizures.
+ * No intervals, network, extra animation loops or global keyboard listeners.
+ */
+const HW_SUBJECTS318=['chinese','chemistry','biology','physics','english','math'];
+const HW_RISK318=[.32,.48,.60,.70,.80,.88,.94];
+const HW_WARN318=[1.4,1.2,1.1,1,.9,.8,.7];
+const HW_CONFIRM318=[3.8,3.2,3,2.8,2.6,2.4,2.2];
+const HW_STAGES318=['find','talk','plan','sign','checking','ready'];
+const B318={makeState,validateSnapshot,captureSnapshot,restoreSnapshot,startNextWeekDay,
+ setAction,cancelDeskActivity,updateClass,update34,renderUI,renderChallenge,renderModal,
+ updateChallenge,choose,dispatchContinuation,campusName,campusJournal,renderCharacters,
+ tutorialCopy36,achievementMetrics,finishEnding,clearTransient,returnMenu};
+const hwFormatted318=new Map();
+function h318(id,values={}){
+ const key=id+'|'+JSON.stringify(values);if(hwFormatted318.has(key))return hwFormatted318.get(key);
+ const row=TEXT317['h318_'+id];if(!row)return id;
+ const filled={};
+ for(const lang of Object.keys(row))filled[lang]=row[lang].replace(/\{(\w+)\}/g,(_,k)=>{
+  const value=values[k]??'{'+k+'}';
+  return k==='subject'&&HW_SUBJECTS318.includes(value)?text317('h318_'+value,{},lang):String(value);
+ });
+ const zh=filled['zh-CN'];SOURCE317.set(norm310(zh),filled);
+ CATALOG310.exact[norm310(zh)]=[filled.en,filled.ja,filled['zh-TW']];
+ for(const lang of NEW_LANG317)EN_EXTRA317[lang][norm310(filled.en)]=filled[lang];
+ hwFormatted318.set(key,zh);return zh;
+}
+function ht318(id,values={}){return translate310(h318(id,values));}
+function teacher318(subject){return CLASSES[HW_SUBJECTS318.indexOf(subject)]?.teacher||'';}
+function params318(record){return {subject:record.subject,teacher:teacher318(record.subject),day:record.day+1};}
+function fresh318(st){return {version:1,selected:null,serial:0,rng:(parseInt(checksum(st.runId+':homework318'),16)>>>0)||7318,
+ records:[],attention:null,nextAt:0,office:null,avoided:[],day:st.calendar?.day||0,
+ recoveredToday:0,safeWork:0,lastReturnSerial:0,lastCaptureSerial:0};}
+const hwHydrated318=new WeakSet();
+function ensure318(st=S){if(!st)return null;if(!st.v318){st.v318=fresh318(st);if(st.action==='homework')st.v318.selected=st.classIndex===5?'chinese':'math';}
+ const v=st.v318;if(!hwHydrated318.has(v)){hwHydrated318.add(v);if(Array.isArray(v.records))for(const r of v.records){if(r&&HW_SUBJECTS318.includes(r.subject))for(const id of ['catch','receipt','subjectHeld','returned'])h318(id,params318(r));}}return v;}
+
+function random318(){const v=ensure318();v.rng=(Math.imul(v.rng,1664525)+1013904223)>>>0;return v.rng/4294967296;}
+function pending318(st=S){return ensure318(st)?.records.filter(r=>!r.returned)||[];}
+function held318(subject,st=S){return pending318(st).some(r=>r.subject===subject);}
+function currentRecord318(st=S){const v=ensure318(st);return v?.records.find(r=>r.id===v.office?.id)||null;}
+function bookAllowed318(subject,st=S){return HW_SUBJECTS318.includes(subject)&&!held318(subject,st)&&(!st.v37?.real||!st.v37.lost?.includes('homework'));}
+function ordinaryActions318(){return !!S&&S.screen==='game'&&['CLASS','CAMPUS'].includes(S.phase)&&!script&&!challenge&&!modal&&!tutorialActive36()&&!battleOpen313&&!arcadeOpen317;}
+function homeworkLegal318(){return S?.phase==='CLASS'&&S.classIndex===1&&isExercise()&&ensure318().selected==='chemistry';}
+function officeAllowed318(){return !!S&&canAct()&&campusFree()&&!S.discipline.standing&&!(S.v34?.stand>0)&&!S.v34?.task&&!S.v39?.social&&!S.campus?.activity&&!S.v34?.office&&!S.v34?.clean&&
+ !['work','collect','return'].includes(S.v34?.morning.phase)&&!['canteen','office'].includes(S.campus.location)&&campusSlot()?.kind!=='meal';}
+function recordEvent318(title,text){S.journal.push({title,text});if(S.journal.length>180)S.journal.shift();}
+function stopWatch318(reason){const v=S?.v318,a=v?.attention;if(!a)return;
+ if(a.warned&&['hide','switch','subject'].includes(reason)){
+  if(!v.avoided.includes(a.id)){v.avoided.push(a.id);if(v.avoided.length>100)v.avoided.shift();checkAchievements();caption(h318('safe'),3);}
+ }
+ v.attention=null;v.nextAt=Math.max(v.nextAt,S.t+5);
+}
+makeState=function(...args){const st=B318.makeState(...args);st.v318=fresh318(st);return st;};
+startNextWeekDay=function(...args){const old=S,prior=old?.v318?clone(old.v318):null;const out=B318.startNextWeekDay(...args);
+ if(S&&S!==old&&prior&&S.runId===old.runId){S.v318=prior;const v=S.v318;v.office=null;v.attention=null;v.nextAt=0;v.day=S.calendar.day;v.safeWork=0;v.recoveredToday=0;v.lastReturnSerial=0;autoSave('作业转交：跨日保留未领取的本子');}return out;};
+// Only migrate old records that have no v318 state. Never silently repair malformed new saves.
+function validate318(snap){const st=snap.state,v=ensure318(st);const finite=(n,max=1e8)=>typeof n==='number'&&Number.isFinite(n)&&n>=0&&n<=max;
+ assertValid(v.version===1&&[null,...HW_SUBJECTS318].includes(v.selected),'作业科目记录无效');
+ assertValid(Number.isInteger(v.rng)&&finite(v.rng,4294967295)&&Number.isInteger(v.serial)&&finite(v.serial,10000),'作业随机记录无效');
+ assertValid(Array.isArray(v.records)&&v.records.length<=96&&new Set(v.records.map(r=>r.id)).size===v.records.length,'作业转交记录重复或过多');
+ const held=[];
+ for(const r of v.records){assertValid(r&&typeof r.id==='string'&&r.id.length<160&&HW_SUBJECTS318.includes(r.subject)&&Number.isInteger(r.day)&&finite(r.day,6)&&finite(r.at)&&finite(r.progress,100),'作业转交条目无效');
+  for(const k of ['met','redirected','explained','planned','signed','returned'])assertValid(typeof r[k]==='boolean','作业领取标志无效');
+  assertValid(r.plan===null||['break','study'].includes(r.plan),'作业时间安排无效');
+  assertValid(!r.returned||(r.met&&r.explained&&r.planned&&r.signed&&Number.isInteger(r.returnDay)&&finite(r.returnDay,6)),'未完成面谈不得领取作业');
+  if(!r.returned)held.push(r.subject);
+ }
+ assertValid(new Set(held).size===held.length,'同一本作业不可重复暂收');
+ assertValid(Array.isArray(v.avoided)&&v.avoided.length<=100&&new Set(v.avoided).size===v.avoided.length&&v.avoided.every(x=>typeof x==='string'),'收好作业记录无效');
+ for(const k of ['nextAt','safeWork','recoveredToday','lastReturnSerial','lastCaptureSerial','day'])assertValid(finite(v[k]),'作业计时记录无效');
+ if(v.attention){const a=v.attention;assertValid(typeof a.id==='string'&&HW_SUBJECTS318.includes(a.subject)&&finite(a.elapsed,30)&&finite(a.roll,1)&&finite(a.chance,1)&&finite(a.warn,10)&&finite(a.confirm,10)&&a.warn<a.confirm&&typeof a.warned==='boolean'&&typeof a.slot==='string','作业观察计时无效');}
+ if(v.office){const o=v.office,r=currentRecord318(st);assertValid(r&&st.phase==='CAMPUS'&&st.campus.location==='office'&&['CAMPUS'].includes(o.returnPhase)&&['classroom','playground','corridor','gate'].includes(o.returnLocation)&&Number.isInteger(o.cursor)&&o.cursor===st.campus.cursor&&finite(o.elapsed)&&finite(o.duration)&&o.elapsed<=o.duration&&[0,1].includes(o.page)&&HW_STAGES318.includes(o.stage),'作业办公室返回点无效');
+  assertValid(o.teacher===null||HW_SUBJECTS318.includes(o.teacher),'任课老师记录无效');
+  if(!['find'].includes(o.stage))assertValid(o.teacher===r.subject,'任课老师不匹配');
+  assertValid(snap.script||snap.challenge?.type==='workOffice318','办公室缺少继续入口');
+ }
+ if(snap.challenge?.type==='workOffice318')assertValid(!!v.office,'办公室事件缺少状态');
+ if(snap.challenge?.type==='workNotice318')assertValid(v.records.some(r=>r.id===snap.challenge.workID318),'缺少作业转交单');
+ return snap;
+}
+CAMPUS_CHALLENGES.push('workNotice318','workOffice318');
+CONTINUATIONS.push('workNotice318','workFind318','workTalk318','workResume318');
+validateSnapshot=function(snap){if(snap?.state)ensure318(snap.state);B318.validateSnapshot(snap);return validate318(snap);};
+// Core action interception: picking a book is a paused menu; it does not grant homework progress.
+setAction=function(action){if(action==='homework'){
+ if(!canAct()||S?.discipline.standing||S?.v34?.stand>0||isExam35()||['work','collect','return'].includes(S?.v34?.morning.phase))return B318.setAction(action);
+ const v=ensure318();if(!hasItem37('homework')){toast(h318('noItems'),true);return false;}
+ if(!v.selected||held318(v.selected)){openModal('work318');return false;}
+ }return B318.setAction(action);};
+cancelDeskActivity=function(reason='switch'){stopWatch318(reason);return B318.cancelDeskActivity(reason);};
+function chooseBook318(subject,write=false){if(!S||S.screen!=='game'||!bookAllowed318(subject)||script||challenge||recoveryGrace>0)return false;
+ if(modal&&modal.kind!=='work318')return false;
+ if(S.discipline.standing||S.v34.stand>0||['work','collect','return'].includes(S.v34.morning.phase))return false;
+ stopWatch318('subject');const v=ensure318();v.selected=subject;
+ if(modal)closeModal();
+ // Closing system panels gives two seconds of grace. Set the user's requested
+ // action without advancing simulation, then retain that full safety buffer.
+ const grace=recoveryGrace;recoveryGrace=0;
+ try{if(write&&canAct())setAction('homework');else if(S.action==='homework'){S.action='listen';updateActionUI();}}
+ finally{recoveryGrace=grace;}
+
+ requestAutoSave();renderUI();return true;
+}
+function seizeWork318(){if(!ordinaryActions318()||S.phase!=='CLASS'||S.classIndex!==1||S.action!=='homework'||homeworkLegal318())return false;
+ const v=ensure318(),subject=v.selected;if(!bookAllowed318(subject))return false;
+ const id=S.runId+':hw:'+(++v.serial),record={id,subject,day:S.calendar.day,at:S.t,progress:S.homework,
+ met:false,redirected:false,explained:false,planned:false,plan:null,signed:false,returned:false,returnDay:null};
+ v.records.push(record);if(v.records.length>96)v.records.splice(v.records.findIndex(r=>r.returned),1);
+ v.lastCaptureSerial=v.serial;v.safeWork=0;v.attention=null;v.nextAt=S.t+12;
+ cancelDeskActivity('event');S.action='listen';S.phoneSeconds=0;S.v34.incidents++;
+ // Temporary homework custody is not a phone catch or a permanent Real-mode item seizure.
+ S.suspicion=Math.max(S.suspicion,Math.min(99,S.suspicion+10*rules().risk));S.maxSuspicion=Math.max(S.maxSuspicion,S.suspicion);S.classStats.max=Math.max(S.classStats.max,S.suspicion);
+ S.dangerCooldown=Math.max(S.dangerCooldown,S.t+5);S.teacher.hold=Math.max(S.teacher.hold,S.t+3);
+ recordEvent318(h318('name'),h318('receipt',params318(record)));checkAchievements();
+ playScript([['李方琳',h318('catch',params318(record))],['你',h318('slip')],['系统',h318('nextBreak')]],'workNotice318');
+ rememberCheckpoint('作业转交 · '+CLASSES[HW_SUBJECTS318.indexOf(subject)].subject,'event');autoSave('化学课堂暂收作业');renderUI();return true;
+}
+function advanceWork318(dt){if(!ordinaryActions318()||recoveryGrace>0||S.phase!=='CLASS')return false;const v=ensure318();
+ if(S.action==='homework'&&(!v.selected||!bookAllowed318(v.selected))){S.action='listen';v.attention=null;return false;}
+ if(S.action!=='homework'||S.classIndex!==1||homeworkLegal318())return false;
+ if(S.elapsed<6||S.t<v.nextAt||S.v34.task||S.v34.clean)return false;
+ const slot=String(S.calendar.day)+':'+campusSlot().id;
+ if(v.attention&&v.attention.slot!==slot)v.attention=null;
+ if(!v.attention){const rank=Math.min(6,Math.max(0,rules().rank));v.attention={id:S.runId+':watch:'+v.rng+':'+Math.round(S.t*1000),subject:v.selected,slot,elapsed:0,roll:random318(),chance:HW_RISK318[rank],warn:HW_WARN318[rank],confirm:HW_CONFIRM318[rank],warned:false};requestAutoSave();}
+ const a=v.attention;a.elapsed+=dt;
+ if(a.roll<a.chance){
+  if(!a.warned&&a.elapsed>=a.warn){a.warned=true;caption(h318('warning'),Math.max(2,a.confirm-a.elapsed));say('李方琳',h318('warning'));requestAutoSave();}
+  if(a.elapsed>=a.confirm){seizeWork318();return true;}
+ }else if(a.elapsed>=4){v.attention=null;v.nextAt=S.t+8;requestAutoSave();}
+ return false;
+}
+function safeWriting318(){return S?.action==='homework'&&bookAllowed318(ensure318().selected)&&
+ (campusFree()||S.phase==='CLASS'&&(S.classIndex>=6||isExercise()&&ensure318().selected===CLASSES[S.classIndex].id));}
+// Place this ahead of the legacy free-period early return so real break writing works.
+update34=function(dt){if(S&&S.screen==='game'&&!modal&&!script&&!challenge&&recoveryGrace<=0&&!tutorialActive36()&&!arcadeOpen317&&!battleOpen313){const v=ensure318();
+  if(S.action==='homework'&&(!v.selected||!bookAllowed318(v.selected))){S.action='listen';updateActionUI();}
+  if(v.recoveredToday>0&&safeWriting318()){v.safeWork=Math.min(3600,v.safeWork+dt);}
+  if(S.v34?.recess&&S.action==='homework'&&bookAllowed318(v.selected)){S.homework=clamp(S.homework+.25*(S.mode==='quick'?2:1)*rules().reward*dt);}
+ }return B318.update34(dt);};
+updateClass=function(dt){if(advanceWork318(dt))return;return B318.updateClass(dt);};
+function notice318(id){const r=ensure318().records.find(x=>x.id===id)||ensure318().records.at(-1);if(!r)return;
+ beginChallenge({type:'workNotice318',workID318:r.id,kicker:h318('name'),title:h318('held'),description:h318('receipt',params318(r))+'\n'+h318('nextBreak'),choices:[h318('returnClass'),h318('inspect')]});}
+function enterWorkOffice318(id){if(!officeAllowed318())return false;const v=ensure318(),r=v.records.find(x=>x.id===id&&!x.returned);if(!r)return false;
+ v.office={id,returnPhase:S.phase,returnLocation:S.campus.location,cursor:S.campus.cursor,elapsed:S.elapsed,duration:S.duration,page:0,stage:'find',teacher:null};
+ cancelDeskActivity('event');S.action='listen';S.campus.location='office';S.phase='CAMPUS';S.door=null;S.v34.menu=false;S.v34.panelClosed=true;
+ playScript([['你',h318('foyerLine')],['你',h318('receipt',params318(r))]],'workFind318');
+ rememberCheckpoint('学科办公室 · '+CLASSES[HW_SUBJECTS318.indexOf(r.subject)].subject,'event');autoSave('到任课老师办公室');renderUI();return true;
+}
+function officeTitle318(){const v=ensure318(),o=v.office;return o?.teacher?CLASSES[HW_SUBJECTS318.indexOf(o.teacher)].subject+' · '+teacher318(o.teacher):h318('foyer');}
+function officeStage318(stage){const v=ensure318(),o=v.office,r=currentRecord318();if(!o||!r)return;if(challenge)closeChallenge();o.stage=stage;
+ const common={type:'workOffice318',kicker:h318('name'),title:officeTitle318(),description:h318('receipt',params318(r))};
+ if(stage==='find'){common.title=h318('findTeacher');common.description+='\n'+h318('visitHint');common.choices=HW_SUBJECTS318.slice(o.page*3,o.page*3+3).map(x=>CLASSES[HW_SUBJECTS318.indexOf(x)].subject+' · '+teacher318(x)).concat(h318('nextPage'));}
+ if(stage==='talk'){common.title=h318('talkTitle');common.description+='\n'+h318('talk_'+r.subject);common.choices=[h318('admit'),h318('verify'),h318('demand')];}
+ if(stage==='plan'){common.title=h318('planTitle');common.description+='\n'+h318('ack');common.choices=[h318('planBreak'),h318('planStudy'),h318('planWrong')];}
+ if(stage==='sign'){common.title=h318('signTitle');common.description+='\n'+h318('signHint');common.choices=[h318('sign'),h318('later')];}
+ if(stage==='checking'){common.title=h318('checking');common.description+='\n'+h318('signHint');common.remaining=3;common.choices=[h318('checking')];common.locks=[h318('checking')];}
+ if(stage==='ready'){common.title=h318('signTitle');common.description+='\n'+h318('readySign');common.choices=[h318('collect'),h318('later')];}
+ beginChallenge(common);requestAutoSave();renderUI();
+}
+function leaveWorkOffice318(){const v=ensure318(),o=v.office;if(!o||script)return false;closeChallenge();
+ const r=currentRecord318();v.office=null;S.phase=o.returnPhase;S.campus.location=o.returnLocation;S.campus.cursor=o.cursor;S.elapsed=o.elapsed;S.duration=o.duration;S.action='listen';S.door=null;
+ S.dangerCooldown=Math.max(S.dangerCooldown,S.t+3);S.teacher.hold=Math.max(S.teacher.hold,S.t+2);
+ v.nextAt=S.t+5;if(r?.returned)caption(h318('returned',params318(r)),3);else say('你',h318('later'));
+ renderUI();autoSave('返回原自由时段');return true;
+}
+function collectWork318(){const v=ensure318(),o=v.office,r=currentRecord318();if(!o||!r||r.returned||o.teacher!==r.subject||!r.met||!r.explained||!r.planned||!r.signed||o.stage!=='ready')return false;
+ closeChallenge();r.returned=true;r.returnDay=S.calendar.day;v.selected=r.subject;v.recoveredToday++;v.lastReturnSerial=v.serial;v.safeWork=0;
+ recordEvent318(h318('signTitle'),h318('returned',params318(r)));recordEnd318('workReturned318');checkAchievements();
+ playScript([[teacher318(r.subject),h318('parting')],['你',h318('resumeLine')]],'workResume318');requestAutoSave();renderUI();return true;
+}
+function chooseWork318(i){const c=challenge;if(!c||!['workNotice318','workOffice318'].includes(c.type))return false;
+ if(modal||script||recoveryGrace>0||!Number.isInteger(i)||i<0||i>=c.choices.length||c.locks?.[i])return true;
+ if(c.type==='workNotice318'){if(i===0){closeChallenge();S.action='listen';renderUI();requestAutoSave();}else{const r=ensure318().records.find(x=>x.id===c.workID318);c.description=h318('receipt',params318(r))+'\n'+h318('slip')+'\n'+h318('nextBreak');renderChallenge();}return true;}
+ const v=ensure318(),o=v.office,r=currentRecord318();if(!o||!r)return true;
+ if(o.stage==='find'){
+  if(i===3){o.page=1-o.page;officeStage318('find');return true;}
+  const who=HW_SUBJECTS318[o.page*3+i];o.teacher=who;closeChallenge();
+  if(who!==r.subject){r.redirected=true;checkAchievements();o.teacher=null;playScript([[teacher318(who),h318('wrongDesk',params318(r))],['你',h318('wrongHint')]],'workFind318');}
+  else{r.met=true;checkAchievements();o.stage='talk';playScript([[teacher318(who),h318('office_'+who)],['你',h318('receipt',params318(r))],[teacher318(who),h318('talk_'+who)]],'workTalk318');}
+ }else if(o.stage==='talk'){
+  if(i===2){c.description=h318('patient');renderChallenge();}else{r.explained=true;officeStage318(r.planned?(r.signed?'ready':'sign'):'plan');}
+ }else if(o.stage==='plan'){
+  if(i===2){c.description=h318('planNo');renderChallenge();}else{r.planned=true;r.plan=i===0?'break':'study';officeStage318('sign');}
+ }else if(o.stage==='sign'){if(i===0)officeStage318('checking');else leaveWorkOffice318();}
+ else if(o.stage==='ready'){if(i===0)collectWork318();else leaveWorkOffice318();}
+ requestAutoSave();return true;
+}
+choose=function(index){if(chooseWork318(index))return;return B318.choose(index);};
+dispatchContinuation=function(id,...args){
+ if(id==='workNotice318'){notice318();return;}
+ if(id==='workFind318'){officeStage318('find');return;}
+ if(id==='workTalk318'){const r=currentRecord318();officeStage318(r?.explained?(r.planned?(r.signed?'ready':'sign'):'plan'):'talk');return;}
+ if(id==='workResume318'){leaveWorkOffice318();return;}
+ return B318.dispatchContinuation(id,...args);
+};
+updateChallenge=function(dt){if(challenge?.type==='workOffice318'){
+ const o=ensure318().office,r=currentRecord318();if(o?.stage==='checking'&&r){challenge.elapsed+=dt;challenge.remaining=Math.max(0,challenge.remaining-dt);
+  const bar=$('challengeTimer');if(bar)bar.style.width=(challenge.remaining/challenge.total*100)+'%';textPaint3171($('challengeSeconds'),challenge.remaining.toFixed(1)+'s');
+  if(challenge.remaining<=0){r.signed=true;officeStage318('ready');}
+ }return;}
+ return B318.updateChallenge(dt);
+};
+// Auxiliary story endings: never invoke the primary finishEnding or count graduation.
+function recordEnd318(id){if(!S||!HW_END318[id])return false;const v=ensure318();
+ if(id==='workReturned318'&&!v.records.some(r=>r.returned))return false;
+ if(!save.endings.includes(id)){save.endings.push(id);checkAchievements(id);persist();caption('《'+translate310(HW_END318[id].title)+'》',4);requestAutoSave();}return true;
+}
+achievementMetrics=function(id=null){const m=B318.achievementMetrics(id),v=S?ensure318():null;if(!v)return m;
+ const clear=!!S&&S.difficulty!=='god'&&CLEAR_ENDINGS.includes(id)&&S.phase!=='HOME';
+ return {...m,workWarn318:v.avoided.length,workHeld318:v.records.length,workDesk318:v.records.filter(r=>r.met).length,
+ workRedirect318:v.records.filter(r=>r.redirected).length,workReturn318:v.records.filter(r=>r.returned).length,
+ workThree318:new Set(v.records.filter(r=>r.returned).map(r=>r.subject)).size,workPlan318:v.safeWork,
+ workAll318:clear&&v.recoveredToday>0&&pending318().length===0?1:0};};
+finishEnding=function(id){if(HW_END318[id])return false;
+ const v=S?ensure318():null,clear=!!v&&S.screen==='game'&&S.difficulty!=='god'&&CLEAR_ENDINGS.includes(id)&&['COMPLETE','ESCAPE'].includes(S.phase);
+ const ready=clear&&!pending318().length,day=v?.recoveredToday>0;
+ const safe=ready&&day&&v.safeWork>=20&&v.lastCaptureSerial<=v.lastReturnSerial;
+ const three=ready&&new Set(v.records.filter(r=>r.returned).map(r=>r.subject)).size>=3;
+ if(clear)checkAchievements(id);const out=B318.finishEnding(id);
+ if(clear&&(S.screen==='ending'||S.phase==='HOME'||S.calendar?.results.some(r=>r.ending===id))){if(safe)recordEnd318('workRightTime318');if(three)recordEnd318('workReceipts318');}
+ return out;
+};
+// One small reusable tool entry; no competing action dock or extra rendering loop.
+const hwTool318=document.createElement('button');hwTool318.id='homeworkTool318';hwTool318.type='button';hwTool318.className='outline-btn';hwTool318.dataset.work318='open';hwTool318.dataset.noTranslate310='';$('lifeDock34').appendChild(hwTool318);
+let hwUIKey318='';
+function renderWork318(){const st=S,v=st?.screen==='game'?ensure318():null;
+ const visible=!!v&&!battleOpen313&&!arcadeOpen317&&!tutorialActive36()&&['CLASS','CAMPUS'].includes(st.phase)&&!script&&!challenge&&!modal&&!['work','collect','return'].includes(st.v34.morning.phase);
+ boolPaint3171(hwTool318,'hidden',!visible);if(visible){textPaint3171(hwTool318,ht318('button')+(pending318().length?' · '+pending318().length:''));boolPaint3171(hwTool318,'disabled',!!st.discipline.standing||st.v34.stand>0);}
+ $('stage').classList.toggle('work-office318',!!v?.office&&st.screen==='game');
+ $('stage').classList.toggle('work-popup318',!!challenge&&['workOffice318','workNotice318'].includes(challenge.type));
+ document.body.classList.toggle('work-popup318',!!challenge&&['workOffice318','workNotice318'].includes(challenge.type));
+ if(v?.office){textPaint3171($('campusSceneTitle'),translate310(officeTitle318()));textPaint3171($('campusSceneSub'),ht318('name'));boolPaint3171($('teacher'),'hidden',true);}
+ if(visible&&st.action==='homework'&&v.selected){const str=homeworkLegal318()?ht318('legal'):ht318(v.selected)+' · '+text317('homework');textPaint3171($('bookTitle'),str);
+  const base=ht318('button'),hint=held318(v.selected)?ht318('subjectHeld',{subject:v.selected,teacher:teacher318(v.selected)}):ht318('nextBreak');if(hwTool318.title!==hint)hwTool318.title=hint;
+ }
+}
+function workPanel318(){const v=ensure318(),offered=officeAllowed318();
+ return `<div class="hw-panel318" data-no-translate310 dir="${effectiveLocale310()==='ar'?'rtl':'ltr'}"><p>${esc(ht318('intro'))}</p><div class="hw-counter318"><b>${esc(ht318('pending',{n:pending318().length}))}</b><span>${esc(ht318('progress',{n:Math.floor(S.homework)}))}</span></div><div class="hw-books318">${HW_SUBJECTS318.map(subject=>{
+ const r=pending318().find(x=>x.subject===subject),allowed=bookAllowed318(subject);
+ return `<article class="hw-book318 ${r?'is-held318':''}"><div class="hw-book-spine318" aria-hidden="true"></div><h3>${esc(ht318(subject))}</h3><p>${esc(translate310(teacher318(subject)))}</p><small>${esc(r?ht318('held'):ht318('ready'))}</small>${r?`<p class="hw-slip318">${esc(ht318('receipt',params318(r)))}</p><button type="button" data-work318="visit" data-work-id318="${esc(r.id)}" ${offered?'':'disabled'}>${esc(ht318('visit'))}</button>`:`<button type="button" data-work318="write" data-work-subject318="${subject}" ${allowed?'':'disabled'}>${esc(ht318('write'))}</button><button type="button" class="hw-secondary318" data-work318="select" data-work-subject318="${subject}" ${allowed?'':'disabled'}>${esc(ht318('choose'))}</button>`}</article>`;
+ }).join('')}</div><p class="small">${esc(ht318('onlyBreak'))}</p><p class="small">${esc(ht318('permanent'))}</p></div>`;
+}
+// The legacy officeAllowed checks modal: probe without releasing the paused modal or changing time.
+function canVisitFromPanel318(){const old=modal;try{modal=null;return officeAllowed318();}finally{modal=old;}}
+const rawPanel318=workPanel318;
+workPanel318=function(){const old=modal;try{modal=null;return rawPanel318();}finally{modal=old;}};
+renderModal=function(...args){if(modal?.kind==='work318'){
+ textPaint3171($('modalTitle'),ht318('picker'));$('modalBody').innerHTML=workPanel318();return;
+ }return B318.renderModal(...args);};
+const openBefore318=openModal;
+openModal=function(kind,...args){if(kind==='work318'&&(!ordinaryActions318()&&modal?.kind!=='work318'))return false;return openBefore318(kind,...args);};
+function paintOfficeCard318(){const c=challenge;if(!c||!['workOffice318','workNotice318'].includes(c.type))return;
+ const v=ensure318(),r=c.type==='workOffice318'?currentRecord318():v.records.find(x=>x.id===c.workID318);if(!r)return;
+ const who=c.type==='workOffice318'?v.office.teacher:null;
+ const header=document.createElement('div');header.className='hw-office-art318';header.dataset.noTranslate310='';
+ header.innerHTML=`<div class="hw-art318">${who?portrait316(teacher318(who)):'<div class="hw-door318"><i></i><b>2F</b><span>OFFICE</span></div>'}</div><div class="hw-office-copy318"><small>SUBJECT OFFICE / ${String((v.office?.page??0)+1).padStart(2,'0')}</small><strong>${esc(c.type==='workNotice318'?ht318('name'):who?translate310(teacher318(who)):ht318('foyer'))}</strong><p>${esc(ht318('receipt',params318(r)))}</p><span>${esc(r.returned?ht318('returned',params318(r)):ht318('held'))}</span></div>`;
+ $('challengeCard').querySelector('.challenge-title')?.after(header);
+ if(c.type==='workOffice318'){
+  const exit=document.createElement('button');exit.type='button';exit.className='outline-btn hw-leave318';exit.dataset.work318='leave';exit.dataset.noTranslate310='';textPaint3171(exit,ht318('leave'));$('challengeCard').appendChild(exit);
+ }
+}
+renderChallenge=function(...args){const out=B318.renderChallenge(...args);paintOfficeCard318();renderWork318();return out;};
+renderUI=function(...args){const out=B318.renderUI(...args);renderWork318();return out;};
+campusName=function(st=S){if(st?.v318?.office)return h318('foyer');return B318.campusName(st);};
+campusJournal=function(...args){const html=B318.campusJournal(...args),v=S?ensure318():null;if(!v)return html;
+ return `<section class="journal-entry hw-journal318" data-no-translate310><h3>${esc(ht318('name'))}</h3><p>${esc(ht318('pending',{n:pending318().length}))} · ${esc(ht318('legalTime',{s:Math.min(20,v.safeWork).toFixed(1)}))}</p>${v.records.slice(-12).reverse().map(r=>`<p>${esc(ht318('receipt',params318(r)))} — ${esc(r.returned?ht318('returned',params318(r)):ht318('held'))}</p>`).join('')||'<p>'+esc(ht318('empty'))+'</p>'}</section>`+html;
+};
+renderCharacters=function(...args){return B318.renderCharacters(...args)+'<section data-no-translate310><h3>'+esc(ht318('name'))+'</h3><p>'+esc(ht318('rules'))+'</p></section>';};
+// Chapter entry is added to the frozen lesson declaration by the build script.
+tutorialCopy36=function(id,...args){if(id==='work318')return '<section data-no-translate310 class="hw-tutorial318"><h3>'+esc(ht318('name'))+'</h3><p>'+esc(ht318('rules'))+'</p><p>'+esc(ht318('onlyBreak'))+'</p><p>'+esc(ht318('signHint'))+'</p><p>'+esc(ht318('permanent'))+'</p></section>';return B318.tutorialCopy36(id,...args);};
+clearTransient=function(...args){const out=B318.clearTransient(...args);boolPaint3171(hwTool318,'hidden',true);$('stage').classList.remove('work-office318','work-popup318');document.body.classList.remove('work-popup318');return out;};
+restoreSnapshot=function(...args){const out=B318.restoreSnapshot(...args);if(out){ensure318();renderWork318();}return out;};
+document.addEventListener('click',e=>{
+ const b=e.target.closest('[data-work318]');if(!b||b.disabled)return;const cmd=b.dataset.work318;
+ if(cmd==='open'){if(ordinaryActions318())openModal('work318');}
+ if(cmd==='write'||cmd==='select')chooseBook318(b.dataset.workSubject318,cmd==='write');
+ if(cmd==='visit'&&modal?.kind==='work318'){if(!canVisitFromPanel318())return;closeModal();const grace=recoveryGrace;recoveryGrace=0;try{enterWorkOffice318(b.dataset.workId318);}finally{recoveryGrace=grace;}}
+ if(cmd==='leave'&&!modal&&!script&&recoveryGrace<=0)leaveWorkOffice318();
+});
 
     // The classroom is a layered DOM illustration rather than a raster image.
     const seats = [{ x: 436, y: 403, s: .68 }, { x: 669, y: 420, s: .70 }, { x: 1044, y: 413, s: .74 }, { x: 1210, y: 428, s: .80 }, { x: 363, y: 468, s: .94 }, { x: 619, y: 487, s: 1.06 }, { x: 955, y: 479, s: 1.02 }, { x: 1195, y: 488, s: 1.11 }];
@@ -17021,6 +17509,17 @@ if(testMode)Object.defineProperties(window.__LAST_CLASS_TEST__,{
 if(testMode)Object.assign(window.__LAST_CLASS_TEST__,{returnMenu,questionCatalog38:QUESTION_CATALOG38,questionIndex38:QUESTION_INDEX38,pauseArcade317,renderModal,preferredLocale310,effectiveLocale310});
 
 if(testMode)Object.assign(window.__LAST_CLASS_TEST__,{renderStats3171:renderingStats3171,flushLocale3171,mountPortrait316,paintMotion3171});
+if(testMode)Object.assign(window.__LAST_CLASS_TEST__,{
+ ensure318,validate318,chooseBook318,bookAllowed318,seizeWork318,advanceWork318,stopWatch318,
+ pending318,officeAllowed318,enterWorkOffice318,officeStage318,leaveWorkOffice318,collectWork318,
+ currentRecord318,recordEnd318,renderWork318,chooseWork318,safeWriting318,ht318,h318,
+ get hwRisk318(){return HW_RISK318;},get hwEnds318(){return HW_END318;},get hwAchievements318(){return HW_ACH318;},
+ get work318(){return S?.v318;},get hwLocales318(){return Object.fromEntries(Object.entries(TEXT317).filter(([k])=>k.startsWith('h318_')));},
+ openModal,closeModal,settingChange,updateActionUI,checkAchievements,finishEnding,makeState,updateClass,update34,renderModal,
+ tick318:tick,startNextWeekDay
+});
+if(testMode)Object.defineProperty(window.__LAST_CLASS_TEST__,'work318',{configurable:true,get:()=>S?.v318});
+
 })();
   </script>
  </body>

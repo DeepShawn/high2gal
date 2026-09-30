@@ -5,7 +5,7 @@
   <meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
   <meta content="#121c1b" name="theme-color"/>
   <meta content="高二（2）班：最后一节课。离线、单文件校园恐怖潜行游戏。" name="description"/>
-  <title>高二（2）班：最后一节课 · v3.19 课后捉迷藏</title>
+  <title>高二（2）班：最后一节课 · v3.21 旧楼异相</title>
   <style>
    /* All artwork is drawn with HTML and CSS. No remote assets or libraries. */
 :root {
@@ -3655,6 +3655,242 @@ body.hide-open319>:not(#hideSeek319):not(script):not(style){visibility:hidden!im
 @media(max-width:700px){#hideSeek319 .hs-canvas319{width:100%;}}
 @media(max-height:540px) and (min-width:650px){#hideSeek319 .hs-canvas319{width:min(100%,calc((100dvh - 175px)*1.461538));}}
 
+/* Independent mode only. Removing the hidden campus from layout also stops
+   its hundreds of legacy effects participating in paint/hit testing. */
+body.hide-open319>:not(#hideSeek319):not(script):not(style){display:none!important;}
+body.hide-open319{overflow:hidden!important;}
+#hideSeek319{background:#111f28;font-size:14px;}
+#hideSeek319 *{animation:none!important;transition:none!important;box-sizing:border-box;}
+#hideSeek319 .hs-head319{background:#152731;border-bottom-color:#395159;padding:12px 20px;}
+#hideSeek319 .hs-head319 h1{font-size:22px;}
+#hideSeek319 .hs-setup320{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(300px,.85fr);gap:26px;max-width:1260px;margin:auto;align-content:start;}
+#hideSeek319 .hs-intro320{min-width:0;}
+#hideSeek319 .hs-intro320 h2{font-size:clamp(26px,3vw,38px);font-weight:600;letter-spacing:.06em;margin:10px 0;}
+#hideSeek319 .hs-intro320>p{color:#b5c8c7;max-width:60ch;margin:12px 0;}
+#hideSeek319 .hs-config320{display:grid;grid-template-columns:1fr 1fr;gap:16px 12px;}
+#hideSeek319 .hs-config320 label{min-width:0;}
+#hideSeek319 .hs-mosaic320{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:22px 0;}
+#hideSeek319 button.hs-mapcard320{display:grid;grid-template-columns:1fr auto;gap:6px;padding:7px;text-align:start;min-width:0;border-radius:10px;background:#172e38;border-color:#334d55;}
+#hideSeek319 button.hs-mapcard320.selected{border-color:#a6cbb7;background:#1f3f42;}
+#hideSeek319 .hs-mapcard320 b{font-size:12px;font-weight:500;line-height:1.3;}
+#hideSeek319 .hs-mapcard320 small{font-size:10px;color:#d9c292;}
+#hideSeek319 .hs-map-art320{display:block;grid-column:1/-1;aspect-ratio:19/13;border-radius:5px;overflow:hidden;border:1px solid #45616a;}
+#hideSeek319 .hs-map-art320 canvas{width:100%;height:100%;display:block;}
+#hideSeek319 .hs-rule320{font-size:13px;line-height:1.65;color:#ccd9d0;padding:10px 0;border-top:1px solid #47616455;}
+#hideSeek319 .hs-play319{max-width:1450px;gap:18px;grid-template-columns:minmax(0,1fr) 306px;padding:16px;}
+#hideSeek319 .hs-routebar320{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:12px;color:#a9c7bd;min-height:46px;margin:0 0 7px;}
+#hideSeek319 .hs-routebar320>span{min-width:0;}
+#hideSeek319 .hs-routebar320 label{display:flex;align-items:center;gap:8px;white-space:nowrap;}
+#hideSeek319 .hs-routebar320 select{display:inline-block;width:74px;min-height:40px;padding:5px;margin:0;}
+#hideSeek319 .hs-mapscroll320{overflow:auto;overscroll-behavior:contain;max-width:100%;height:auto;max-height:calc(100dvh - 390px);background:#10242b;border:1px solid #4b6a72;border-radius:11px;scrollbar-width:thin;direction:ltr;touch-action:pan-x pan-y;contain:layout paint;}
+#hideSeek319 .hs-canvas319{border:0;border-radius:0;aspect-ratio:19/13;width:calc(100% * var(--map-zoom,1));max-width:none;min-width:100%;height:auto;max-height:none;margin:0;}
+#hideSeek319 #hsBoard319{width:100%;height:auto;aspect-ratio:19/13;touch-action:pan-x pan-y;cursor:crosshair;user-select:none;-webkit-user-select:none;}
+#hideSeek319 .hs-route-state320{display:flex;gap:8px;justify-content:space-between;align-items:center;font-size:12px;color:#addacb;margin:6px 0 8px;}
+#hideSeek319 #hsStop320{min-height:40px;flex:0 0 auto;padding:6px 10px;font-size:12px;}
+#hideSeek319 .hs-controls319>.hs-eyebrow319{display:block;font-size:11px;letter-spacing:.04em;color:#d6c5a2;margin-bottom:12px;}
+#hideSeek319 .hs-controls319 .hs-options320{margin:8px 0 16px;border-top:1px solid #47616455;padding-top:10px;}
+#hideSeek319 .hs-options320 summary{min-height:36px;cursor:pointer;font-size:13px;color:#bbd0c8;}
+#hideSeek319 .hs-options320 .hs-check320{display:flex;align-items:center;gap:8px;margin:8px 0 12px;}
+#hideSeek319 .hs-check320 input{width:20px;height:20px;accent-color:#9ed4be;flex-shrink:0;}
+#hideSeek319 .hs-grace319{font-size:clamp(16px,3vw,24px);}
+#hideSeek319 .hs-foot319{min-height:28px;line-height:1.4;}
+#hideSeek319 progress{transition:none!important;}
+@media(min-width:701px) and (min-height:541px){
+ #hideSeek319 .hs-mapscroll320{max-width:min(100%,calc((100dvh - 395px)*1.461538));margin:auto;}
+}
+@media(max-width:700px){
+ #hideSeek319 .hs-head319{flex-direction:column;align-items:stretch;gap:7px;padding:8px 12px;}
+ #hideSeek319 .hs-head319 h1{font-size:18px;}
+ #hideSeek319 .hs-head319 small{font-size:8px;letter-spacing:.09em;}
+ #hideSeek319 .hs-head319 nav{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:5px;}
+ #hideSeek319 .hs-head319 button{font-size:11px;min-height:42px;padding:7px 4px;}
+ #hideSeek319 .hs-setup320{display:flex;flex-direction:column;gap:18px;padding:12px;}
+ #hideSeek319 .hs-intro320 h2{font-size:27px;}
+ #hideSeek319 .hs-intro320>p{font-size:13px;}
+ #hideSeek319 .hs-mosaic320{gap:6px;margin:14px 0;}
+ #hideSeek319 button.hs-mapcard320{padding:4px;gap:5px;}
+ #hideSeek319 .hs-mapcard320 b{font-size:11px;}
+ #hideSeek319 .hs-mapcard320 small{font-size:9px;}
+ #hideSeek319 .hs-config320{gap:12px;}
+ #hideSeek319 .hs-config320 select{font-size:12px;padding:8px;}
+ #hideSeek319 .hs-setup320>.hs-card319{width:100%;}
+ #hideSeek319 .hs-play319{display:flex;flex-direction:column;gap:10px;padding:9px;}
+ #hideSeek319 .hs-stage319,#hideSeek319 .hs-controls319{width:100%;}
+ #hideSeek319 .hs-mapscroll320{max-height:53dvh;}
+ #hideSeek319 .hs-routebar320{font-size:11px;}
+ #hideSeek319 .hs-routebar320 label{font-size:10px;gap:3px;}
+ #hideSeek319 .hs-routebar320 select{width:65px;}
+ #hideSeek319 .hs-message319{min-height:44px;}
+ #hideSeek319 .hs-controls319 .hs-meters319{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 14px;}
+ #hideSeek319 .hs-inputs319{grid-template-columns:minmax(130px,.9fr) minmax(0,1.1fr);gap:10px;}
+ #hideSeek319 .hs-dpad319{grid-template-columns:repeat(3,42px);grid-template-rows:repeat(2,46px);gap:4px;}
+ #hideSeek319 .hs-skill319 button{font-size:11px;min-height:44px;}
+ #hideSeek319 .hs-rule320{font-size:12px;padding:6px 0;}
+}
+@media(max-height:540px) and (min-width:650px){
+ #hideSeek319 .hs-head319{padding:6px 12px;gap:8px;}
+ #hideSeek319 .hs-head319 h1{font-size:15px;}
+ #hideSeek319 .hs-head319 small{font-size:8px;}
+ #hideSeek319 .hs-head319 button{font-size:11px;min-height:36px;padding:6px 8px;}
+ #hideSeek319 .hs-play319{grid-template-columns:minmax(0,1fr) 245px;gap:12px;padding:8px;}
+ #hideSeek319 .hs-mapscroll320{max-height:none;max-width:100%;}
+ #hideSeek319 .hs-canvas319{max-height:none;width:calc(100% * var(--map-zoom,1));}
+ #hideSeek319 .hs-routebar320{min-height:40px;font-size:10px;}
+ #hideSeek319 .hs-controls319{padding:10px;}
+ #hideSeek319 .hs-rule320{font-size:11px;}
+ #hideSeek319 .hs-setup320{gap:14px;grid-template-columns:minmax(0,1fr) 300px;padding:12px;}
+ #hideSeek319 .hs-config320{grid-template-columns:1fr;gap:8px;}
+}
+
+</style>
+<style id="nightStyle321">
+/* Scoped to Night Watch only. No global filters, repeated animations or shifted hitboxes. */
+#arcade317.night321{--nw-bg:#0a151b;--nw-panel:#12232a;--nw-line:#638a814a;--nw-text:#d8e5dc;--nw-muted:#8ca79f;--nw-accent:#a6c6b5;--nw-warm:#c7b18a;--nw-ink:#08131a;background:radial-gradient(ellipse at 48% 5%,#1e3439 0,#0a151b 68%);color:var(--nw-text);display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto auto minmax(0,1fr) auto;padding:env(safe-area-inset-top) max(18px,env(safe-area-inset-right)) env(safe-area-inset-bottom) max(18px,env(safe-area-inset-left));font:14px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:.015em;contain:layout paint;isolation:isolate;overflow:hidden}
+#arcade317.night321.nw-eerie321{--nw-bg:#111914;--nw-panel:#202a21;--nw-line:#b3a4765c;--nw-text:#e0d7b7;--nw-muted:#b4b598;--nw-accent:#c5b780;--nw-warm:#c09976;--nw-ink:#10160f;background:radial-gradient(ellipse at 45% 0,#394131 0,#121a16 64%)}
+#arcade317.night321 :is(button,input,select){font:inherit}
+#arcade317.night321 button{border:1px solid var(--nw-line);border-radius:8px;background:linear-gradient(150deg,#ffffff07,#ffffff00),var(--nw-panel);color:var(--nw-text);padding:10px 14px;min-height:44px;min-width:0;display:inline-flex;align-items:center;justify-content:center;gap:9px;line-height:1.4;overflow-wrap:anywhere;white-space:normal;touch-action:manipulation;box-shadow:0 2px 0 #00000022;transition:background-color .12s,border-color .12s;position:relative}
+#arcade317.night321 button:hover:not(:disabled){background:#344b45;border-color:var(--nw-accent)}
+#arcade317.night321.nw-eerie321 button:hover:not(:disabled){background:#464738}
+#arcade317.night321 button[aria-pressed=true]{border-color:var(--nw-accent);background:#354e46;color:#f2f4dc}
+#arcade317.night321.nw-eerie321 button[aria-pressed=true]{background:#504f37;color:#fff0c6}
+#arcade317.night321 .nw-primary321{color:var(--nw-ink);background:var(--nw-accent);font-weight:750;border-color:var(--nw-accent)}
+#arcade317.night321 .nw-primary321:hover:not(:disabled){background:#d9ddbc;color:#0b1819}
+#arcade317.night321 button:disabled{opacity:.42;cursor:not-allowed;box-shadow:none}
+#arcade317.night321 :is(button,input,select):focus-visible{outline:2px solid var(--nw-warm);outline-offset:3px}
+#arcade317.night321 :is(p,h1,h2,h3){margin:0 0 12px}
+#arcade317.night321 h1{font-size:clamp(30px,3.9vw,54px);font-weight:650;line-height:1.12;letter-spacing:.03em}
+#arcade317.night321 h2{font-size:clamp(17px,1.8vw,24px);line-height:1.45;color:var(--nw-warm)}
+#arcade317.night321 h3{font-size:16px;line-height:1.5}
+#arcade317.night321 .nw-icon321{width:20px;height:20px;flex:0 0 20px;opacity:.85}
+#arcade317.night321 kbd{font:10px ui-monospace,monospace;line-height:1.2;color:var(--nw-muted);background:#00000029;border:1px solid var(--nw-line);border-radius:3px;padding:2px 4px;direction:ltr;unicode-bidi:isolate}
+#arcade317.night321 .nw-header321{grid-column:1;grid-row:1;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 2px;border-bottom:1px solid var(--nw-line);min-width:0;z-index:2}
+#arcade317.night321 .nw-brand321{display:flex;align-items:center;gap:13px;min-width:0}
+#arcade317.night321 .nw-emblem321{width:42px;height:44px;display:grid;place-items:center;border:1px solid var(--nw-line);color:var(--nw-warm);font:30px Georgia,serif;flex:0 0 42px;border-radius:3px 10px 3px 10px}
+#arcade317.night321 .nw-brand321 small{display:block;font:9px/1.5 ui-monospace,monospace;letter-spacing:2.4px;color:var(--nw-muted)}
+#arcade317.night321 .nw-brand321 strong{font-size:19px;font-weight:620;display:flex;align-items:baseline;gap:10px;line-height:1.5;flex-wrap:wrap}
+#arcade317.night321 .nw-brand321 em{font:10px ui-monospace,monospace;font-style:normal;color:var(--nw-muted)}
+#arcade317.night321 .nw-header321 nav{display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-end;min-width:0}
+#arcade317.night321 .nw-header321 nav button{font-size:12px;padding:8px 11px;min-height:44px}
+#arcade317.night321 .nw-header321 nav span{max-width:165px}
+#arcade317.night321 .nw-scroll321{grid-row:3;grid-column:1;overflow:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:#6f8d76 #11201d;min-height:0;min-width:0;padding:24px max(0px,calc((100vw - 1460px)/2));position:relative}
+#arcade317.night321 .nw-footer321{grid-row:4;grid-column:1;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding:6px 0;font:10px/1.3 ui-monospace,monospace;color:var(--nw-muted);border-top:1px solid var(--nw-line);min-width:0}
+#arcade317.night321 .nw-eyebrow321{font:10px/1.6 ui-monospace,monospace;letter-spacing:2.5px;color:var(--nw-warm);margin-bottom:17px;word-break:break-word}
+#arcade317.night321 .nw-setup321{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(300px,.8fr);gap:clamp(20px,4vw,70px);max-width:1340px;min-width:0;margin:0 auto;align-items:start;padding:5px clamp(0px,2vw,28px)}
+#arcade317.night321 .nw-hero321{min-width:0;padding-top:14px;position:relative}
+#arcade317.night321 .nw-hero321>p{max-width:630px;color:var(--nw-muted);line-height:1.85}
+#arcade317.night321 .nw-hero321>h1{font-size:clamp(34px,4.8vw,66px);margin-bottom:14px}
+#arcade317.night321 .nw-hero321>h2{font-size:20px;letter-spacing:.15em;margin-bottom:19px}
+#arcade317.night321 .nw-visitors321{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:18px 0;min-width:0}
+#arcade317.night321 .nw-visitors321 article{position:relative;min-width:0;text-align:center;background:linear-gradient(160deg,#718d7730,#040e1605 70%);border:1px solid var(--nw-line);border-radius:6px 6px 18px 6px;padding:8px 8px 12px;overflow:hidden}
+#arcade317.night321 .nw-visitors321 article:after{content:"";pointer-events:none;position:absolute;inset:auto 8px 4px;height:1px;background:var(--nw-line)}
+#arcade317.night321 .nw-id321{position:absolute;top:9px;left:11px;color:var(--nw-muted);font:10px ui-monospace,monospace}
+#arcade317.night321 .nw-art321{display:block;width:100%;height:auto;max-height:280px;object-fit:contain;pointer-events:none;user-select:none;aspect-ratio:360/440}
+#arcade317.night321 .nw-visitors321 h3{font-size:14px;margin:3px 0 0;color:var(--nw-warm)}
+#arcade317.night321 .nw-visitors321 p{font-size:13px;color:var(--nw-muted);margin:12px 0 0;text-align:start}
+#arcade317.night321 .nw-seal321{display:flex;justify-content:space-between;gap:14px;padding:12px 0 18px;border-bottom:1px solid var(--nw-line);margin-bottom:12px}
+#arcade317.night321 .nw-seal321>span{font:25px ui-monospace,monospace;color:var(--nw-warm);min-width:0}
+#arcade317.night321 .nw-seal321 small{display:block;font:11px/1.5 system-ui,sans-serif;color:var(--nw-muted);max-width:150px}
+#arcade317.night321 .nw-config321{border:1px solid var(--nw-line);background:linear-gradient(145deg,#afc8aa08,#0a171c20),var(--nw-panel);padding:22px;border-radius:12px;min-width:0;box-shadow:0 12px 35px #00000020}
+#arcade317.night321 .nw-field321{display:flex;flex-direction:column;gap:7px;margin-bottom:16px;min-width:0}
+#arcade317.night321 .nw-field321 b{font-size:13px;font-weight:600}
+#arcade317.night321 select{background:var(--nw-bg);color:var(--nw-text);border:1px solid var(--nw-line);padding:10px 12px;width:100%;max-width:100%;min-width:0;min-height:44px;border-radius:7px}
+#arcade317.night321 .nw-option321{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0;border-block-end:1px solid var(--nw-line);cursor:pointer;min-width:0}
+#arcade317.night321 .nw-option321>div{min-width:0;flex:1}
+#arcade317.night321 .nw-option321 b{font-size:14px;display:block;margin-bottom:5px}
+#arcade317.night321 :is(.nw-option321 small,.nw-field321 small){display:block;font-size:12px;line-height:1.6;color:var(--nw-muted)}
+#arcade317.night321 .nw-option321 input{width:23px;height:23px;flex:0 0 23px;accent-color:var(--nw-accent);margin:8px;cursor:pointer}
+#arcade317.night321 .nw-options321{margin-bottom:16px}
+#arcade317.night321 .nw-notice321{padding:12px 14px;background:#a8914a0d;border:1px solid #bba16e48;border-inline-start:3px solid var(--nw-warm);border-radius:4px;font-size:12px;line-height:1.65;color:var(--nw-warm);margin:16px 0}
+#arcade317.night321 .nw-buttons321{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:18px 0;min-width:0}
+#arcade317.night321 .nw-buttons321 button{min-height:46px}
+#arcade317.night321 .nw-muted321{font-size:12px;line-height:1.75;color:var(--nw-muted)}
+#arcade317.night321 .nw-settings321{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:35px;max-width:1190px;margin:0 auto;align-items:start;padding:4px 12px}
+#arcade317.night321 .nw-settings321>div:first-child>p{color:var(--nw-muted);line-height:1.8}
+#arcade317.night321 #nwPrefStatus321{font-size:11px;color:var(--nw-muted)}
+#arcade317.night321 .nw-help321{max-width:1140px;margin:0 auto;padding:4px 15px}
+#arcade317.night321 .nw-helpgrid321{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:20px 0}
+#arcade317.night321 .nw-helpgrid321 article{background:var(--nw-panel);padding:18px;border:1px solid var(--nw-line);border-radius:8px}
+#arcade317.night321 .nw-helpgrid321 p{font-size:13px;color:var(--nw-muted)}
+/* The header, HUD, scrolling play area and footer occupy separate grid tracks. */
+#arcade317.night321 .nw-hud321{grid-row:2;grid-column:1;display:grid;grid-template-columns:minmax(170px,1fr) 1fr 1fr minmax(120px,.7fr);align-items:center;gap:clamp(18px,3vw,42px);padding:12px 4px;border-bottom:1px solid var(--nw-line);min-width:0}
+#arcade317.night321 .nw-hud321>div{min-width:0}
+#arcade317.night321 .nw-clock321{display:flex;align-items:center;gap:17px}
+#arcade317.night321 .nw-clock321 small{font-size:12px;color:var(--nw-muted)}
+#arcade317.night321 .nw-clock321>b{font:35px/1.1 ui-monospace,monospace;color:var(--nw-text);direction:ltr;unicode-bidi:isolate}
+#arcade317.night321 .nw-hud321 label{font-size:11px;display:flex;justify-content:space-between;align-items:baseline;gap:12px;color:var(--nw-muted)}
+#arcade317.night321 .nw-hud321 label>b{font:21px ui-monospace,monospace;color:var(--nw-text)}
+#arcade317.night321 progress{appearance:none;width:100%;height:4px;display:block;margin-top:6px;background:#35493f;border:0;border-radius:2px}
+#arcade317.night321 progress::-webkit-progress-bar{background:#34473e;border-radius:2px}#arcade317.night321 progress::-webkit-progress-value{background:var(--nw-accent);border-radius:2px}#arcade317.night321 progress::-moz-progress-bar{background:var(--nw-accent)}
+#arcade317.night321 .nw-load321 small{display:block;font-size:10px;color:var(--nw-muted)}
+#arcade317.night321 .nw-load321 b{font:19px ui-monospace,monospace;color:var(--nw-warm);white-space:pre;direction:ltr}
+#arcade317.night321 .nw-play321{grid-row:3;grid-column:1;display:grid;grid-template-columns:minmax(0,1fr) minmax(278px,322px);gap:18px;min-height:0;min-width:0;overflow:auto;padding:16px 0;align-items:start;overscroll-behavior:contain;scrollbar-width:thin}
+#arcade317.night321 .nw-viewport321{min-width:0;border:1px solid var(--nw-line);background:var(--nw-ink);border-radius:11px;overflow:hidden}
+#arcade317.night321 .nw-camtitle321{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 15px;background:#a8b99b08;min-width:0}
+#arcade317.night321 .nw-camtitle321>span{display:flex;align-items:center;gap:8px;font-size:12px;min-width:0}
+#arcade317.night321 .nw-camtitle321 i{display:inline-block;width:6px;height:6px;flex-shrink:0;border-radius:100%;background:#cf9f80}
+#arcade317.night321 .nw-camtitle321 small{font-size:10px;color:var(--nw-muted);text-align:end;min-width:0}
+#arcade317.night321 .nw-screen321{position:relative;width:100%;aspect-ratio:16/9;background:#071219;overflow:hidden;direction:ltr}
+#arcade317.night321 #arcCanvas317{display:block;width:100%!important;height:100%!important;max-width:none!important;max-height:none!important;aspect-ratio:16/9;object-fit:contain;border-radius:0;touch-action:auto}
+#arcade317.night321 .nw-frame321{position:absolute;inset:12px;border:1px solid #b7c9a22a;pointer-events:none;border-radius:3px}
+#arcade317.night321 .nw-frame321:before,#arcade317.night321 .nw-frame321:after{content:"";position:absolute;width:25px;height:19px;border:solid #b8cbb466;pointer-events:none}
+#arcade317.night321 .nw-frame321:before{inset:-1px auto auto -1px;border-width:1px 0 0 1px}
+#arcade317.night321 .nw-frame321:after{inset:auto -1px -1px auto;border-width:0 1px 1px 0}
+#arcade317.night321 .nw-grace321{position:absolute;inset:0;margin:0;background:#07121ab8;color:var(--nw-warm);display:grid;place-items:center;font-size:20px;pointer-events:none}
+#arcade317.night321 .nw-grace321[hidden]{display:none}
+#arcade317.night321 .nw-caption321{border-top:1px solid var(--nw-line);padding:10px 14px;margin:0;min-height:41px;font-size:13px;color:var(--nw-text)}
+#arcade317.night321 .nw-bottomline321{display:flex;justify-content:space-between;gap:10px;padding:6px 14px;font:9px ui-monospace,monospace;color:var(--nw-muted);background:#637b6422}
+#arcade317.night321 .nw-console321{display:flex;flex-direction:column;gap:11px;min-width:0;background:linear-gradient(170deg,#8fa88906,transparent);border:1px solid var(--nw-line);border-radius:10px;padding:15px}
+#arcade317.night321 .nw-sectiontitle321{display:flex;align-items:center;justify-content:space-between;gap:6px;border-bottom:1px solid var(--nw-line);padding-bottom:10px;font-size:13px;color:var(--nw-warm)}
+#arcade317.night321 .nw-sectiontitle321 small{font:9px ui-monospace,monospace;color:var(--nw-muted)}
+#arcade317.night321 .nw-doors321{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;direction:ltr}
+#arcade317.night321 .nw-doors321>div{display:flex;flex-direction:column;gap:6px;min-width:0}
+#arcade317.night321 .nw-console321 button{padding:10px 8px;justify-content:flex-start;gap:7px;font-size:12px}
+#arcade317.night321 .nw-console321 button>span{display:block;flex:1;min-width:0;line-height:1.4}
+#arcade317.night321 .nw-console321 b{font-size:12px;display:block;line-height:1.4;font-weight:600;overflow-wrap:anywhere}
+#arcade317.night321 .nw-console321 button small{display:block;font-size:9px;line-height:1.5;color:var(--nw-muted);margin-top:3px;padding-inline-end:13px}
+#arcade317.night321 .nw-console321 button kbd{position:absolute;inset:5px 5px auto auto;opacity:.7;font-size:8px;padding:1px 2px}
+#arcade317.night321 .nw-console321 .nw-icon321{width:17px;height:17px;flex:0 0 17px}
+#arcade317.night321 .nw-monitorbtn321{border-color:#a5b69188;min-height:48px}
+#arcade317.night321 .nw-feedmap321{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px 10px;direction:ltr;padding:12px 6px;position:relative;border-block:1px solid var(--nw-line)}
+#arcade317.night321 .nw-maplines321{position:absolute;inset:32px 36px;border:1px solid var(--nw-line);pointer-events:none}
+#arcade317.night321 .nw-maplines321:before{content:"";position:absolute;top:50%;height:1px;left:0;right:0;background:var(--nw-line)}
+#arcade317.night321 .nw-feedmap321 button{border-radius:3px;background:var(--nw-bg);min-height:52px;text-align:start}
+#arcade317.night321 .nw-feedmap321 button b{font:11px ui-monospace,monospace}
+#arcade317.night321 .nw-feedmap321 button small{font-size:10px}
+#arcade317.night321 .nw-systems321{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;min-width:0}
+#arcade317.night321 .nw-controlsHint321{font-size:10px;line-height:1.8;color:var(--nw-muted);margin:0}
+#arcade317.night321 .nw-pause321{max-width:680px;margin:7vh auto;padding:35px;border:1px solid var(--nw-line);border-radius:12px;background:var(--nw-panel)}
+#arcade317.night321 .nw-result321{max-width:1040px;margin:18px auto;display:grid;grid-template-columns:minmax(210px,.7fr) minmax(0,1fr);gap:40px;align-items:center;padding:16px}
+#arcade317.night321 .nw-resultPortrait321{border:1px solid var(--nw-line);background:radial-gradient(ellipse at 50% 40%,#87947727,#07121b00 80%);border-radius:50% 50% 6px 6px;padding:18px}
+#arcade317.night321 .nw-resultPortrait321 .nw-art321{max-height:470px}
+#arcade317.night321 .nw-result321 h1{font-size:clamp(27px,3.5vw,47px)}
+#arcade317.night321 .nw-result321 p{line-height:1.8;color:var(--nw-muted)}
+#arcade317.night321 .nw-archive321>.arc-main317{display:block;padding:0 8px;overflow:visible;max-width:1240px;margin:auto}
+#arcade317.night321 .arc-record317,#arcade317.night321 .arc-medal317{background:var(--nw-panel);border-color:var(--nw-line);border-radius:7px}
+#arcade317.night321 .arc-record317 p,#arcade317.night321 .arc-medal317 small{color:var(--nw-muted)}
+#arcade317.night321.nw-eerie321 .nw-visitors321 article{border-radius:2px 13px 3px 0;background:repeating-linear-gradient(0deg,#b1a58205 0,#b1a58205 2px,transparent 2px,transparent 7px),#263025}
+#arcade317.night321.nw-eerie321 :is(.nw-config321,.nw-console321,.nw-viewport321,.nw-pause321){border-radius:2px 10px 2px 2px;background-color:#1b241d;border-color:#9d9d7269}
+#arcade317.night321.nw-eerie321 .nw-eyebrow321{letter-spacing:3px;color:#baac82}
+#arcade317.night321.nw-eerie321 h1{font-family:Georgia,"Noto Serif CJK SC","Songti SC",serif;font-weight:550}
+#arcade317.night321.nw-eerie321 .nw-frame321{border-color:#b3aa6555;border-radius:0}
+/* Effects cover only this independent mode. No high-frequency strobe. */
+#arcade317.night321 .nw-scare321{position:absolute;inset:0;z-index:50;display:flex;align-items:center;justify-content:center;flex-direction:column;background:#040c11;overflow:hidden;isolation:isolate}
+#arcade317.night321 .nw-scare321 canvas{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
+#arcade317.night321 .nw-scare321>div{position:relative;margin:auto 16px max(22px,env(safe-area-inset-bottom));width:min(570px,calc(100% - 32px));background:#071016ed;border:1px solid var(--nw-line);padding:13px;display:flex;justify-content:space-between;align-items:center;gap:14px;border-radius:8px}
+#arcade317.night321 .nw-scare321 b{font-size:13px;font-weight:500;color:var(--nw-text)}
+#arcade317.night321 .nw-scare321 button{flex-shrink:0;min-height:46px;background:#22322c}
+.rtl317 #arcade317.night321 .nw-console321 button{direction:rtl;text-align:right}.rtl317 #arcade317.night321 .nw-console321 kbd{inset:5px auto auto 5px}.rtl317 #arcade317.night321 .nw-visitors321 p{text-align:right}
+@media(min-width:1700px){#arcade317.night321{padding-left:max(26px,calc((100vw - 1650px)/2));padding-right:max(26px,calc((100vw - 1650px)/2))}#arcade317.night321 .nw-play321{grid-template-columns:minmax(0,1fr) 345px}#arcade317.night321 .nw-console321 button{min-height:64px}#arcade317.night321 .nw-config321{padding:29px}}
+@media(max-width:1020px){#arcade317.night321 .nw-header321{flex-wrap:wrap}#arcade317.night321 .nw-header321 nav{flex:1}#arcade317.night321 .nw-header321 nav button{font-size:11px;padding:8px}#arcade317.night321 .nw-play321{gap:10px;grid-template-columns:minmax(0,1fr) 285px}#arcade317.night321 .nw-console321{padding:10px;gap:8px}#arcade317.night321 .nw-setup321{gap:20px;grid-template-columns:minmax(0,1fr) minmax(280px,1fr)}}
+@media(max-width:760px){#arcade317.night321{padding-left:max(9px,env(safe-area-inset-left));padding-right:max(9px,env(safe-area-inset-right));font-size:13px}#arcade317.night321 .nw-header321{gap:8px;padding:9px 1px;flex-direction:column;align-items:stretch}#arcade317.night321 .nw-brand321{gap:9px}#arcade317.night321 .nw-emblem321{width:31px;flex-basis:31px;height:31px;font-size:24px}#arcade317.night321 .nw-brand321 strong{font-size:16px;line-height:1.25}#arcade317.night321 .nw-brand321 small{font-size:8px;letter-spacing:1.6px}#arcade317.night321 .nw-header321 nav{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);gap:5px;flex:none;width:100%}#arcade317.night321 .nw-header321 nav button{font-size:10px;min-height:44px;padding:6px 4px;gap:4px;flex-direction:column}#arcade317.night321 .nw-header321 nav .nw-icon321{width:16px;height:16px;flex-basis:16px}#arcade317.night321 .nw-header321 nav span{line-height:1.25}#arcade317.night321 .nw-header321 nav button[data-nw321="settings"] span{font-size:9px}#arcade317.night321 .nw-scroll321{padding:16px 0}#arcade317.night321 .nw-setup321,#arcade317.night321 .nw-settings321{grid-template-columns:minmax(0,1fr);padding:0 4px;gap:18px}#arcade317.night321 .nw-hero321{padding-top:0}#arcade317.night321 .nw-hero321>h1{font-size:34px}#arcade317.night321 .nw-hero321>h2{font-size:17px;margin-bottom:12px}#arcade317.night321 .nw-eyebrow321{font-size:9px;margin-bottom:12px}#arcade317.night321 .nw-art321{max-height:210px}#arcade317.night321 .nw-visitors321{gap:6px;margin:14px 0}#arcade317.night321 .nw-visitors321 article{padding:7px 5px 12px}#arcade317.night321 .nw-visitors321 h3{font-size:12px}#arcade317.night321 .nw-config321{padding:17px}#arcade317.night321 .nw-seal321>span{font-size:20px}#arcade317.night321 .nw-hud321{grid-template-columns:minmax(120px,1.25fr) 1fr 1fr;gap:10px;padding:10px 0}#arcade317.night321 .nw-clock321{display:block}#arcade317.night321 .nw-clock321 small{display:block;font-size:10px}#arcade317.night321 .nw-clock321>b{font-size:28px}#arcade317.night321 .nw-hud321 label{font-size:9px;flex-direction:column;gap:3px}#arcade317.night321 .nw-hud321 label>b{font-size:19px}#arcade317.night321 .nw-load321{display:none}#arcade317.night321 .nw-play321{grid-template-columns:minmax(0,1fr);gap:10px;padding:10px 0;align-content:start}#arcade317.night321 .nw-console321{padding:11px;gap:10px}#arcade317.night321 .nw-screen321{width:100%;aspect-ratio:16/9}#arcade317.night321 .nw-camtitle321{padding:9px 10px;gap:7px}#arcade317.night321 .nw-camtitle321 span{font-size:11px}#arcade317.night321 .nw-caption321{font-size:11px;min-height:34px;padding:8px 10px}#arcade317.night321 .nw-bottomline321{font-size:8px;padding:5px 10px}#arcade317.night321 .nw-console321 button{min-height:50px;padding:9px 11px}#arcade317.night321 .nw-console321 button b{font-size:12px}#arcade317.night321 .nw-console321 button small{font-size:10px}#arcade317.night321 .nw-controlsHint321{display:none}#arcade317.night321 .nw-feedmap321{padding:10px 5px}#arcade317.night321 .nw-pause321{padding:23px 18px;margin:12px auto}#arcade317.night321 .nw-result321{grid-template-columns:minmax(0,1fr);padding:0 6px;gap:19px;margin:0 auto}#arcade317.night321 .nw-resultPortrait321{max-width:210px;width:100%;margin:0 auto;padding:5px}#arcade317.night321 .nw-resultPortrait321 .nw-art321{max-height:210px}#arcade317.night321 .nw-help321{padding:0 4px}#arcade317.night321 .nw-helpgrid321{grid-template-columns:1fr}#arcade317.night321 .nw-help321 .nw-visitors321{grid-template-columns:1fr}#arcade317.night321 .nw-help321 .nw-visitors321 article{display:grid;grid-template-columns:105px minmax(0,1fr);gap:0 12px;align-items:center;text-align:start;padding:12px}#arcade317.night321 .nw-help321 .nw-visitors321 img{grid-row:1/3}#arcade317.night321 .nw-help321 .nw-visitors321 h3{font-size:15px}#arcade317.night321 .nw-help321 .nw-visitors321 p{font-size:12px;margin:4px 0}#arcade317.night321 .nw-help321 .nw-id321{display:none}#arcade317.night321 .nw-footer321{font-size:8px;gap:5px}#arcade317.night321 .nw-notice321{font-size:11px;padding:10px}}
+@media(max-width:380px){#arcade317.night321 .nw-header321 nav button{padding:6px 2px}#arcade317.night321 .nw-header321 nav span{font-size:9px}#arcade317.night321 .nw-hud321{grid-template-columns:106px 1fr 1fr}#arcade317.night321 .nw-buttons321{gap:7px}#arcade317.night321 .nw-buttons321 button{font-size:12px;padding:8px}#arcade317.night321 .nw-settings321 .nw-visitors321 h3{font-size:10px}}
+@media(max-height:540px) and (min-width:640px){#arcade317.night321{padding-left:10px;padding-right:10px}#arcade317.night321 .nw-header321{flex-direction:row;flex-wrap:nowrap;padding:5px 0;gap:10px}#arcade317.night321 .nw-brand321 small{display:none}#arcade317.night321 .nw-brand321 strong{font-size:14px}#arcade317.night321 .nw-brand321 em{display:none}#arcade317.night321 .nw-emblem321{width:29px;flex-basis:29px;height:31px;font-size:24px}#arcade317.night321 .nw-header321 nav{display:flex;flex-direction:row;width:auto;flex:1;flex-wrap:nowrap}#arcade317.night321 .nw-header321 nav button{flex-direction:row;min-height:40px;font-size:10px;padding:6px}#arcade317.night321 .nw-header321 nav span{max-width:95px;font-size:10px}#arcade317.night321 .nw-hud321{grid-template-columns:140px 1fr 1fr 105px;padding:5px 0;gap:15px}#arcade317.night321 .nw-load321{display:block}#arcade317.night321 .nw-clock321{display:flex;gap:12px}#arcade317.night321 .nw-clock321>b{font-size:23px}#arcade317.night321 .nw-hud321 label{flex-direction:row}#arcade317.night321 .nw-hud321 label>b{font-size:17px}#arcade317.night321 .nw-play321{grid-template-columns:minmax(0,1fr) 275px;padding:8px 0;gap:10px;overflow:auto}#arcade317.night321 .nw-console321{padding:8px;gap:7px}#arcade317.night321 .nw-console321 button{min-height:44px;padding:8px 5px}#arcade317.night321 .nw-console321 .nw-icon321{width:15px;height:15px;flex-basis:15px}#arcade317.night321 .nw-sectiontitle321{padding-bottom:5px;font-size:11px}#arcade317.night321 .nw-console321 button b{font-size:11px}#arcade317.night321 .nw-console321 button small{font-size:9px}#arcade317.night321 .nw-controlsHint321{display:none}#arcade317.night321 .nw-setup321,#arcade317.night321 .nw-settings321{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}#arcade317.night321 .nw-hero321>h1{font-size:29px}#arcade317.night321 .nw-camtitle321{padding:7px 8px}#arcade317.night321 .nw-caption321{font-size:10px}#arcade317.night321 .nw-footer321{padding:3px 0}}
+@media(prefers-reduced-motion:reduce){#arcade317.night321 *{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+/* Fit the entire desktop monitor (including its status caption) without covering controls. */
+@media(min-width:1021px) and (min-height:541px){#arcade317.night321 .nw-screen321{height:min(calc((100vw - 396px)*.5625),calc(100dvh - 270px));aspect-ratio:auto}#arcade317.night321 #arcCanvas317{object-fit:contain;background:#061018}}
+/* Intrinsic rows must not shrink below the monitor's aspect-ratio height. */
+#arcade317.night321 .nw-play321{grid-auto-rows:max-content;grid-template-rows:none}
+
 </style>
 </head>
  <body>
@@ -3937,7 +4173,7 @@ body.hide-open319>:not(#hideSeek319):not(script):not(style){visibility:hidden!im
        建议佩戴耳机　/　不含贴脸跳吓，可关闭闪烁与震动
       </span>
       <span>
-       单文件离线版　3.19
+       单文件离线版　3.21
        <br/>
        HTML / CSS / JAVASCRIPT
       </span>
@@ -4361,6 +4597,8 @@ body.hide-open319>:not(#hideSeek319):not(script):not(style){visibility:hidden!im
   </noscript>
   <script>
    'use strict';
+let nightGuard321=null;window.addEventListener('keydown',e=>{if(nightGuard321)nightGuard321(e);},true);
+
 let hideGuard319=null;for(const type of ['keydown','keyup'])window.addEventListener(type,e=>{if(hideGuard319)hideGuard319(e);},true);
 
 /*
@@ -13886,7 +14124,7 @@ function localizeAll310(){
  if(previousLocale310!==null&&previousLocale310!==lang){stopSpeech37();}
  previousLocale310=lang;
  localizeRoot310(document.body);
- document.title=translate310('高二（2）班：最后一节课',lang)+' · v3.19';
+ document.title=translate310('高二（2）班：最后一节课',lang)+' · v3.21';
  document.body.classList.toggle('english-lesson310',forcedEnglish310());
 }
 // Always translate a complete line before revealing it. Canonical script positions survive.
@@ -16938,7 +17176,7 @@ function flushLocale3171(force=false){
     rawLocalizeRoot3171(el);renderingStats3171.partialLocaleRoots++;
    }
   }
-  const title=translate310('高二（2）班：最后一节课',lang)+' · v3.19';
+  const title=translate310('高二（2）班：最后一节课',lang)+' · v3.21';
   if(document.title!==title)document.title=title;
  }finally{
   dirtyLocaleObserver3171.observe(document.body,localeObserverOptions3171);
@@ -17030,7 +17268,7 @@ function paintMotion3171(){
  }
 }
 const headerVersion3171=phoneShell39.querySelector('.phone-header39 small');
-if(headerVersion3171)headerVersion3171.textContent='v3.19';
+if(headerVersion3171)headerVersion3171.textContent='v3.21';
 
 // New feature text: Simplified / Traditional Chinese, English, Japanese,
 // French, Russian, Icelandic and Arabic. Existing legacy coverage is unchanged.
@@ -17766,6 +18004,772 @@ paintMotion3171=function(){if(hsOpen319)return;return motionBefore319();};
 const renderClassicBefore319=renderUI;renderUI=function(...a){if(battleOpen313){renderBattle313();return;}if(arcadeOpen317){renderArcade317();return;}return renderClassicBefore319(...a);};
 syncHub319();
 
+/* v3.20 additions; legacy text remains in locales319.js. */
+hsWords319("lead320","九张地图，五套规则。点击目标格，规划路线，在搜查之前换一个藏身处。","Nine maps, five rulesets. Click a tile to plan your route, and move before a hiding spot is searched.","9つのマップと5つのルール。マスを選んで移動し、捜索される前に隠れ場所を変えよう。","Neuf cartes, cinq règles. Cliquez sur une case pour tracer un trajet et changez de cachette avant la fouille.","Девять карт и пять режимов. Нажмите на клетку, чтобы проложить путь, и смените укрытие до обыска.","Níu kort og fimm leikgerðir. Smelltu á reit til að finna leið og færðu þig áður en felustaðurinn er kannaður.","تسع خرائط وخمسة أنماط. انقر على مربع لتحديد المسار، وغيّر مخبأك قبل تفتيشه.");
+hsWords319("mapClick","点地图卡片可单图练习；右侧可改为三图、六图或九图连玩。","Click a map to practise it, or choose a three-, six- or nine-map journey.","マップを選ぶと単独練習。3・6・9マップの連戦も選べます。","Choisissez une carte seule ou un parcours de trois, six ou neuf cartes.","Выберите одну карту либо серию из трёх, шести или девяти карт.","Veldu eitt kort eða leiðangur um þrjú, sex eða níu kort.","اختر خريطة واحدة أو رحلة من ثلاث أو ست أو تسع خرائط.");
+hsWords319("map3","玻璃中庭","Glass Atrium","ガラスの中庭","Atrium de verre","Стеклянный атриум","Glergarður","البهو الزجاجي");
+hsWords319("map4","雨后庭院","Courtyard After Rain","雨上がりの庭","Cour après la pluie","Двор после дождя","Garður eftir regn","فناء ما بعد المطر");
+hsWords319("map5","体育馆看台","Gym Bleachers","体育館の観覧席","Gradins du gymnase","Трибуны спортзала","Íþróttastúkur","مدرجات الصالة");
+hsWords319("map6","晚餐食堂","Evening Cafeteria","夕食の食堂","Réfectoire du soir","Вечерняя столовая","Kvöldmatsalur","مطعم المساء");
+hsWords319("map7","琴房回廊","Music Wing","音楽室の回廊","Aile de musique","Музыкальное крыло","Tónlistarálma","رواق الموسيقى");
+hsWords319("map8","天台水箱","Rooftop Tanks","屋上の水槽","Réservoirs du toit","Баки на крыше","Vatnstankar á þaki","خزانات السطح");
+hsWords319("tense","困难（原紧张）","Hard (formerly Tense)","難しい（旧・緊張）","Difficile (ancien Tendu)","Сложно (ранее «Напряжённо»)","Erfitt (áður Spennt)","صعب (المتوتر سابقاً)");
+hsWords319("hell","地狱","Hell","地獄","Enfer","Ад","Víti","الجحيم");
+hsWords319("extreme","极限","Extreme","極限","Extrême","Экстрим","Öfgakennt","أقصى");
+hsWords319("demigod","半神","Demigod","半神","Demi-dieu","Полубог","Hálfguð","نصف إله");
+hsWords319("god","神级","Godlike","神級","Divin","Божественно","Guðlegt","إلهي");
+hsWords319("ruleset","玩法","Ruleset","ルール","Mode","Режим","Leikgerð","النمط");
+hsWords319("journey","地图路线","Map journey","マップ経路","Parcours","Маршрут карт","Kortaleið","رحلة الخرائط");
+hsWords319("mode_classic","集徽逃脱","Token escape","印を集めて脱出","Fuite aux jetons","Побег с жетонами","Flótti með merki","الهروب بالرموز");
+hsWords319("mode_survival","铃前生存","Survive the clock","鐘まで生存","Survie jusqu’à la sonnerie","Дожить до звонка","Lifðu af þar til hringt er","البقاء حتى الجرس");
+hsWords319("mode_relay","信号接力","Signal relay","信号リレー","Relais de signal","Сигнальная эстафета","Merkjaboðhlaup","تتابع الإشارات");
+hsWords319("mode_blackout","停电搜寻","Blackout search","停電探索","Recherche dans le noir","Поиск в темноте","Leit í myrkri","البحث في الظلام");
+hsWords319("mode_rescue","结伴撤离","Buddy evacuation","仲間と避難","Évacuation en duo","Эвакуация с другом","Rýming með félaga","الإجلاء مع الرفيق");
+hsWords319("plan_classic","经典三图","Classic three maps","従来の3マップ","Trois cartes classiques","Три классические карты","Þrjú klassísk kort","الخرائط الثلاث الأصلية");
+hsWords319("plan_expedition","新图六连","Six new maps","新マップ6連戦","Six nouvelles cartes","Шесть новых карт","Sex ný kort","ست خرائط جديدة");
+hsWords319("plan_tour","九图巡游","Nine-map tour","9マップ巡回","Circuit de neuf cartes","Тур по девяти картам","Níu korta ferð","جولة الخرائط التسع");
+hsWords319("plan_single","单图练习","Single-map practice","単独マップ練習","Entraînement sur une carte","Тренировка на одной карте","Æfing á einu korti","تدريب خريطة واحدة");
+hsWords319("quality","画面刷新","Rendering","描画設定","Affichage","Отрисовка","Mynduppfærsla","الرسم");
+hsWords319("quality_battery","省电 · 20帧上限","Power saver · up to 20 FPS","省電力・上限20fps","Économie · 20 i/s max.","Экономия · до 20 кадров/с","Sparnaður · allt að 20 r/s","توفير الطاقة · حتى 20 إطاراً/ث");
+hsWords319("quality_balanced","均衡 · 30帧上限","Balanced · up to 30 FPS","バランス・上限30fps","Équilibré · 30 i/s max.","Баланс · до 30 кадров/с","Jafnvægi · allt að 30 r/s","متوازن · حتى 30 إطاراً/ث");
+hsWords319("quality_smooth","流畅 · 60帧上限","Smooth · up to 60 FPS","滑らか・上限60fps","Fluide · 60 i/s max.","Плавно · до 60 кадров/с","Mýkt · allt að 60 r/s","سلس · حتى 60 إطاراً/ث");
+hsWords319("start320","开始所选挑战","Start selected challenge","選んだ挑戦を開始","Lancer le défi choisi","Начать выбранное испытание","Hefja valda áskorun","بدء التحدي المحدد");
+hsWords319("independent320","独立存档，不影响校园与其他模式。神级没有强制失败；单图不冒充三轮通关。","Separate saves; school and other modes are unaffected. Godlike has no forced defeat. One map is not a three-round clear.","セーブは独立。神級にも強制敗北はありません。単独マップは3連戦クリア扱いになりません。","Sauvegarde distincte. Pas de défaite forcée en Divin. Une carte ne compte pas comme trois manches.","Сохранения отдельные. Принудительного поражения нет. Одна карта не считается тремя раундами.","Aðskildar vistanir. Ekkert þvingað tap. Eitt kort telst ekki þrjár lotur.","حفظ مستقل. لا خسارة إجبارية في الإلهي. خريطة واحدة لا تُحتسب ثلاث جولات.");
+hsWords319("rule_classic","集齐三个金色徽记，再到绿色出口。紫色信笺是可选目标。","Collect three gold tokens, then reach the green exit. The purple letter is optional.","金色の印を3個集め、緑の出口へ。紫の手紙は任意です。","Ramassez trois jetons dorés puis rejoignez la sortie verte. La lettre violette est facultative.","Соберите три золотых жетона и дойдите до зелёного выхода. Фиолетовое письмо необязательно.","Safnaðu þremur gullmerkjum og farðu að græna útganginum. Fjólubláa bréfið er valfrjálst.","اجمع ثلاثة رموز ذهبية ثم اذهب إلى المخرج الأخضر. الرسالة البنفسجية اختيارية.");
+hsWords319("rule_survival","坚持到倒计时归零即过关，不必找徽记。柜子仍会消耗屏息，不能永久躲藏。","Survive until the timer reaches zero. Tokens are optional. Cabinets still consume breath; you cannot hide forever.","時間がゼロになるまで生存。印は任意。隠れている間も息は減ります。","Survivez jusqu’à zéro. Les jetons sont facultatifs. La respiration limite toujours les cachettes.","Доживите до нуля. Жетоны необязательны. Запас дыхания не позволяет прятаться вечно.","Lifðu af þar til tíminn rennur út. Merki eru valfrjáls. Ekki er hægt að fela sig endalaust.","اصمد حتى ينتهي الوقت. الرموز اختيارية، والنفَس المحدود يمنع الاختباء الدائم.");
+hsWords319("rule_relay","按1→2→3顺序走到终端，按R或交互键持续启动2.5秒，再去出口。启动声会吸引搜索者。","Visit terminals 1→2→3. Press R or Interact and remain there for 2.5 seconds each, then exit. Activation makes noise.","端末1→2→3でRまたは操作を押し、各2.5秒待って出口へ。起動音に注意。","Activez les bornes 1→2→3 avec R ou Interagir, 2,5 s chacune, puis sortez. Elles font du bruit.","Активируйте терминалы 1→2→3 клавишей R по 2,5 с, затем выходите. Шум привлекает водящих.","Virkjaðu stöðvar 1→2→3 með R, 2,5 sekúndur hverja, og farðu út. Virkjun gefur frá sér hljóð.","فعّل المحطات 1←2←3 بالترتيب العددي بمفتاح R، وانتظر 2.5 ثانية عند كل منها ثم اخرج. التفعيل يصدر صوتاً.");
+hsWords319("rule_blackout","停电时只看清附近两格。提灯扩大到五格，每秒耗4点电；倾听可揭示全图4秒。集徽后离开。","In darkness you see two nearby tiles. The lantern extends sight to five and uses 4 power/s. Listening reveals the map for 4 s. Collect tokens and exit.","暗闇では周囲2マス。ランタンで5マス、毎秒電力4消費。聞き耳で4秒全体を確認。印を集めて出口へ。","Vision de deux cases, cinq avec la lampe (4 énergie/s). Écouter révèle la carte 4 s. Prenez les jetons puis sortez.","Видно на две клетки; фонарь расширяет обзор до пяти и тратит 4 энергии/с. Слух открывает карту на 4 с. Соберите жетоны.","Þú sérð tvo reiti, fimm með luktinni sem notar 4 orku/s. Hlustun sýnir kortið í 4 s. Safnaðu merkjum og farðu út.","الرؤية مربعان، وخمسة بالمصباح مقابل 4 طاقة/ث. الإصغاء يكشف الخريطة 4 ثوانٍ. اجمع الرموز واخرج.");
+hsWords319("rule_rescue","找到紫色P同伴，按R或交互键等待1秒；带她一起收集两份物资，同行到出口。","Find the purple P companion. Press R or Interact and wait 1 s. Collect two supplies and escort her to the exit.","紫のPの仲間に会い、Rで1秒待つ。物資を2個集め、一緒に出口へ。","Trouvez la camarade P violette, appuyez sur R et attendez 1 s. Prenez deux provisions et escortez-la à la sortie.","Найдите фиолетовую напарницу P, нажмите R и подождите 1 с. Соберите две припасы и проводите её к выходу.","Finndu fjólubláa félagann P, ýttu á R og bíddu 1 s. Safnaðu tveimur birgðum og fylgdu henni út.","اعثر على الرفيقة P البنفسجية واضغط R وانتظر ثانية. اجمع مؤونتين ورافقها إلى المخرج.");
+hsWords319("controls320","点击格子自动走；WASD/方向键手动移动，Shift奔跑，E藏身，Q诱饵，空格倾听，R交互，L提灯，X停步。","Click a tile to walk. WASD/arrows move; Shift runs; E hides; Q decoys; Space listens; R interacts; L toggles lantern; X stops.","マスをクリックで移動。WASD/矢印で手動、Shiftで走る、Eで隠れる、Qでおとり、空白で聞き耳、Rで操作、Lで灯り、Xで停止。","Cliquez pour marcher. WASD/flèches : déplacer ; Maj : courir ; E : cacher ; Q : leurre ; Espace : écouter ; R : agir ; L : lampe ; X : arrêt.","Клик — маршрут; WASD/стрелки — ходьба; Shift — бег; E — укрытие; Q — приманка; пробел — слух; R — действие; L — фонарь; X — стоп.","Smelltu til að ganga. WASD/örvar færa; Shift hleypur; E felur; Q tálbeitir; bil hlustar; R virkjar; L lýsir; X stöðvar.","انقر للمشي. WASD/الأسهم للحركة، Shift للجري، E للاختباء، Q للطُعم، المسافة للإصغاء، R للتفاعل، L للمصباح، X للتوقف.");
+hsWords319("routeHelp","自动路线只绕墙，不会保证避开敌人。默认被发现进度达到50%时停步。手动方向键会取消路线；点击柜子只走过去，不自动藏身。","Routes avoid walls, not enemies. By default they stop at 50% detection. Direction keys cancel a route. Clicking a cabinet walks there but does not hide.","自動経路は壁だけを避けます。初期設定では発見50%で停止。手動入力で解除。棚を押しても自動で隠れません。","Le trajet évite les murs, pas les ennemis. Arrêt par défaut à 50 % de détection. Les directions annulent le trajet. Une armoire ne cache pas automatiquement.","Путь обходит стены, но не врагов. По умолчанию остановка при 50% обнаружения. Ручное движение отменяет путь. Клик по шкафу не прячет автоматически.","Leiðir forðast veggi, ekki óvini. Sjálfgefið stöðvast þú við 50% uppgötvun. Handstýring hættir við leið. Skápur felur þig ekki sjálfkrafa.","المسار يتجنب الجدران لا الأعداء. يتوقف افتراضياً عند كشف 50%. الحركة اليدوية تلغيه. النقر على الخزانة لا يُخفيك تلقائياً.");
+hsWords319("terrainHelp","新图浅绿色地毯减轻奔跑声音；黄色裂纹地砖会响。补给箱每轮只能拿一次：诱饵+1、体力+35、提灯+40。","On new maps, green carpet muffles running; yellow cracked tiles make noise. Each supply box gives +1 decoy, +35 stamina and +40 lantern power once per round.","新マップの緑の絨毯は走音を抑え、黄いろの床は音がします。補給箱は1回だけ：おとり+1、体力+35、灯り+40。","Le tapis vert étouffe la course ; les dalles jaunes font du bruit. Une caisse donne une seule fois +1 leurre, +35 endurance et +40 lumière par manche.","Зелёный ковёр глушит бег, жёлтые плитки шумят. Ящик один раз за раунд даёт +1 приманку, +35 выносливости и +40 света.","Grænt teppi deyfir hlaup, gular flísar braka. Kassi gefur einu sinni í lotu +1 tálbeitu, +35 þol og +40 ljósorku.","السجاد الأخضر يخفف صوت الجري والبلاط الأصفر يصدر ضجيجاً. الصندوق يمنح مرة كل جولة طُعماً و35 تحملاً و40 طاقة مصباح.");
+hsWords319("darkHelp","小屏可放大地图至1.5×或2×，拖动浏览；拖动不会误触寻路。画面档位只影响绘制帧率，不改变游戏时间和敌人速度。","Zoom the map to 1.5× or 2× and drag to pan. Dragging never sets a route. Rendering settings do not change timers or enemy speed.","1.5倍・2倍に拡大してドラッグできます。ドラッグは経路を設定しません。描画設定はゲーム速度を変えません。","Zoomez à 1,5× ou 2× puis faites glisser. Cela ne crée pas de trajet. La qualité ne change ni le temps ni les ennemis.","Масштаб 1,5× или 2× поддерживает перетаскивание без выбора пути. Частота отрисовки не меняет время и скорость врагов.","Stækkaðu í 1,5× eða 2× og dragðu kortið. Það velur ekki leið. Myndgæði breyta ekki leikhraða.","كبّر إلى 1.5× أو 2× واسحب الخريطة. السحب لا يحدد مساراً، وإعداد الرسم لا يغيّر الوقت أو سرعة الأعداء.");
+hsWords319("saveHelp320","每轮建立检查点，暂停和离线不推进。自动路线也会存档，读档先暂停，继续后有2秒缓冲。旧三轮存档保留原地图与数值。","Each round has a checkpoint. Pause and offline time do not advance play. Routes are saved; loading pauses, then gives 2 s of grace. Old runs keep their maps and tuning.","各ラウンドにチェックポイント。中断中は進みません。経路も保存し、再開時2秒の猶予。旧セーブは元の設定を維持します。","Point de reprise à chaque manche. Temps hors ligne ignoré. Trajets sauvegardés, pause au chargement puis 2 s de grâce. Anciens réglages conservés.","Контрольная точка в каждом раунде. Офлайн-время не учитывается. Путь сохраняется, после загрузки пауза и 2 с подготовки. Старые правила сохраняются.","Varðstöð í hverri lotu. Hlé og lokun telja ekki. Leiðir vistast; endurhleðsla gefur hlé og 2 s undirbúning. Eldri reglur haldast.","نقطة حفظ كل جولة. لا تقدم أثناء الإيقاف أو الإغلاق. يُحفظ المسار وتبدأ الاستعادة متوقفة مع مهلة ثانيتين. تُحفظ قواعد السجلات القديمة.");
+hsWords319("tapHint","点击格子规划路线 · 转移前留意视野","Click a tile to route · check sightlines first","マスを選んで経路作成・視線に注意","Cliquez une case · vérifiez les regards","Нажмите клетку · учитывайте обзор","Smelltu á reit · athugaðu sjónlínur","انقر مربعاً · راقب مجال الرؤية");
+hsWords319("zoom","地图缩放","Map zoom","マップ倍率","Zoom","Масштаб","Stækkun","تكبير الخريطة");
+hsWords319("stopRoute","停止寻路 · X","Stop route · X","経路停止・X","Arrêter · X","Стоп · X","Stöðva · X","إيقاف المسار · X");
+hsWords319("routeRemaining","自动行走 · 剩余{n}格","Auto-walk · {n} tiles left","自動移動・残り{n}マス","Marche auto · {n} cases","Автоход · осталось {n} клеток","Sjálfganga · {n} reitir eftir","مشي تلقائي · بقي {n} مربعات");
+hsWords319("manualRoute","手动移动 / 点击选点","Manual move / click a destination","手動移動／行き先を選択","Manuel / choisir une destination","Вручную / выберите цель","Handstýring / veldu áfangastað","حركة يدوية / اختر وجهة");
+hsWords319("routeSet","路线已规划，共{n}格。不是安全路线保证。","Route planned: {n} tiles. Safety is not guaranteed.","{n}マスの経路。安全とは限りません。","Trajet de {n} cases. Sécurité non garantie.","Путь: {n} клеток. Безопасность не гарантирована.","Leið: {n} reitir. Öryggi er ekki tryggt.","المسار {n} مربعات. السلامة غير مضمونة.");
+hsWords319("routeStopped","已停止自动行走。","Auto-walk stopped.","自動移動を停止しました。","Marche auto arrêtée.","Автоход остановлен.","Sjálfganga stöðvuð.","توقف المشي التلقائي.");
+hsWords319("routeArrived","已到达。藏身或启动终端需要主动操作。","Arrived. Hide or activate a terminal manually.","到着。隠れる・端末起動は手動です。","Arrivé. Cachette et borne nécessitent une action.","Вы на месте. Укрытие и терминал включаются вручную.","Komið á staðinn. Feldu þig eða virkjaðu handvirkt.","وصلت. الاختباء وتفعيل المحطة يحتاجان أمراً يدوياً.");
+hsWords319("routeDanger","被发现进度达到50%，自动停步！请手动躲避。","50% detection: auto-walk stopped! Evade manually.","発見50%で自動停止！手動で逃げてください。","Détection à 50 % : arrêt automatique ! Évitez manuellement.","Обнаружение 50%: автоход остановлен! Уклоняйтесь вручную.","50% uppgötvun: sjálfganga stöðvuð! Forðastu handvirkt.","الكشف 50%: توقف تلقائي! تفادَ الباحث يدوياً.");
+hsWords319("wallRoute","这里是墙或无法到达的区域，请重新点选。","Wall or unreachable tile. Choose another destination.","壁または到達不能。別のマスを選んでください。","Mur ou case inaccessible. Choisissez ailleurs.","Стена или недоступная клетка. Выберите другую.","Veggur eða ófær reitur. Veldu annan.","جدار أو مربع غير متاح. اختر غيره.");
+hsWords319("leaveFirst","你还藏着。先按E或“出来”，再规划路线。","You are hidden. Press E or Leave before routing.","隠れています。Eまたは出るを押してから移動。","Vous êtes caché. E ou Sortir avant de bouger.","Вы в укрытии. Нажмите E или «Выйти».","Þú ert falin(n). Ýttu á E eða Farðu út fyrst.","أنت مختبئ. اضغط E أو اخرج أولاً.");
+hsWords319("noisyFloor","裂纹地砖发出了声音。附近搜索者可能听见。","The cracked tile creaked. Nearby seekers may hear it.","床がきしみました。近くの鬼が聞くかもしれません。","La dalle a craqué. Un chercheur peut l’entendre.","Плитка скрипнула. Ближайшие водящие могут услышать.","Flísin brakaði. Leitendur í nágrenninu geta heyrt.","صرّ البلاط. قد يسمعك الباحث القريب.");
+hsWords319("supplyFound","补给已领取：诱饵、体力和提灯电量恢复。","Supplies collected: decoy, stamina and lantern restored.","補給獲得。おとり、体力、電力を回復。","Provisions : leurre, endurance et lampe restaurés.","Получены приманка, выносливость и энергия фонаря.","Birgðir fengnar: tálbeita, þol og ljósorka.","تم استلام الطُعم والتحمل وطاقة المصباح.");
+hsWords319("goalIncomplete","本轮目标尚未完成，暂时不能离开。","The round objective is unfinished; you cannot exit yet.","目標未達成。まだ出られません。","Objectif inachevé, sortie indisponible.","Цель раунда не выполнена. Выход пока закрыт.","Markmiðinu er ólokið. Ekki hægt að fara út strax.","هدف الجولة لم يكتمل. لا يمكنك الخروج بعد.");
+hsWords319("relayCount","终端 {n}/3","Terminals {n}/3","端末 {n}/3","Bornes {n}/3","Терминалы {n}/3","Stöðvar {n}/3","محطات {n}/3");
+hsWords319("rescueCount","寻找P · 物资 {n}/2","Find P · supplies {n}/2","Pを探す・物資 {n}/2","Trouver P · provisions {n}/2","Найти P · припасы {n}/2","Finndu P · birgðir {n}/2","اعثر على P · مؤونة {n}/2");
+hsWords319("escortCount","同伴跟随 · 物资 {n}/2","Buddy follows · supplies {n}/2","仲間同行・物資 {n}/2","Duo formé · provisions {n}/2","Друг следует · припасы {n}/2","Félagi fylgir · birgðir {n}/2","الرفيقة تتبعك · مؤونة {n}/2");
+hsWords319("surviveGoal","坚持到铃响","Survive until the bell","鐘まで生き残る","Tenir jusqu’à la sonnerie","Дожить до звонка","Lifðu þar til bjallan hringir","اصمد حتى الجرس");
+hsWords319("relayWorking","保持原地，正在启动终端。","Stay here. Activating terminal.","動かず端末を起動中。","Restez ici. Activation en cours.","Стойте здесь. Терминал включается.","Bíddu hér. Virkja stöð.","ابقَ هنا. جارٍ تفعيل المحطة.");
+hsWords319("relayOrder","请走到下一台编号终端，再按交互。","Stand on the next numbered terminal, then interact.","次の番号の端末上で操作してください。","Placez-vous sur la prochaine borne puis interagissez.","Встаньте на следующий терминал и нажмите действие.","Stattu á næstu tölusettri stöð og virkjaðu.","قف عند المحطة التالية ثم تفاعل.");
+hsWords319("relayDone","终端已启动，声音可能引来搜索者。","Terminal active. Its sound may attract seekers.","端末起動。音で鬼が来るかもしれません。","Borne activée. Le bruit attire les chercheurs.","Терминал включён. Шум может привлечь водящих.","Stöð virk. Hljóðið gæti laðað að leitendur.","المحطة فعّالة. صوتها قد يجذب الباحثين.");
+hsWords319("friendWorking","正在确认同行，保持原地1秒。","Confirming the escort. Stay for one second.","1秒待って同行を確認。","Confirmez l’escorte en restant une seconde.","Подтверждение сопровождения. Подождите секунду.","Staðfesti fylgd. Bíddu eina sekúndu.","تأكيد المرافقة. انتظر ثانية.");
+hsWords319("friendJoined","同伴会沿你的脚步跟随。一起到达出口。","Your buddy follows your steps. Reach the exit together.","仲間がついてきます。一緒に出口へ。","Votre camarade vous suit. Rejoignez la sortie ensemble.","Друг идёт по вашим следам. Дойдите до выхода вместе.","Félaginn fylgir þér. Farið saman að útganginum.","رفيقتك تتبع خطواتك. اذهبا إلى المخرج معاً.");
+hsWords319("working","保持原地 · 剩余{s}秒","Stay here · {s}s left","そのまま・残り{s}秒","Restez · encore {s}s","Стойте · осталось {s}с","Bíddu · {s}s eftir","ابقَ · بقي {s}ث");
+hsWords319("lantern","提灯电量","Lantern power","ランタン電力","Énergie de lampe","Заряд фонаря","Ljósorka","طاقة المصباح");
+hsWords319("lamp","提灯 · L","Lantern · L","ランタン・L","Lampe · L","Фонарь · L","Lukt · L","مصباح · L");
+hsWords319("lampEmpty","提灯电量耗尽。可倾听或寻找补给箱。","Lantern empty. Listen or find a supply box.","電力切れ。聞き耳か補給箱を利用。","Lampe vide. Écoutez ou cherchez une caisse.","Фонарь разряжен. Слушайте или ищите ящик.","Lukt tóm. Hlustaðu eða finndu birgðakassa.","نفدت الطاقة. أصغِ أو ابحث عن صندوق.");
+hsWords319("interact","交互 / 启动 · R","Interact / activate · R","操作／起動・R","Interagir / activer · R","Действие / запуск · R","Virkja · R","تفاعل / تفعيل · R");
+hsWords319("controlsOptions","操作与画面选项","Controls and display","操作・表示設定","Commandes et affichage","Управление и экран","Stýring og skjár","التحكم والعرض");
+hsWords319("safetyStop","自动行走在被发现50%时停步","Stop auto-walk at 50% detection","発見50%で自動停止","Arrêt automatique à 50 % de détection","Остановка автохода при 50% обнаружения","Stöðva sjálfgöngu við 50% uppgötvun","إيقاف تلقائي عند كشف 50%");
+hsWords319("resultMode","本次玩法：{mode}。单图练习不计三轮毕业勋章。","Ruleset: {mode}. Single-map practice does not award three-round medals.","ルール：{mode}。単独練習は3連戦実績の対象外です。","Mode : {mode}. Une carte seule ne donne pas les médailles de trois manches.","Режим: {mode}. Одна карта не даёт медалей за три раунда.","Leikgerð: {mode}. Eitt kort gefur ekki þriggja lota merki.","النمط: {mode}. التدريب الفردي لا يمنح ميداليات ثلاث جولات.");
+hsWords319("mapRecords","已完成地图","Completed maps","クリアしたマップ","Cartes terminées","Пройденные карты","Lokið kort","الخرائط المكتملة");
+hsWords319("m_route","点到即走","Point and walk","指して歩く","Pointer et marcher","Указать и идти","Benda og ganga","حدد وامش");
+hsWords319("m_explorer","九处转角","Nine corners","9つの角","Neuf recoins","Девять углов","Níu horn","تسع زوايا");
+hsWords319("m_survivor","铃前一息","Until the bell","鐘まで","Jusqu’à la sonnerie","До звонка","Til bjöllunnar","حتى الجرس");
+hsWords319("m_relay","信号接通","Signal connected","信号接続","Signal connecté","Сигнал подключён","Merki tengt","اتصال الإشارة");
+hsWords319("m_dark","在黑暗中认路","A way through darkness","暗闇の道","Chemin dans le noir","Путь в темноте","Leið í myrkri","طريق في الظلام");
+hsWords319("m_rescuer","带上同伴","Bring a friend","仲間を連れて","Avec un ami","Вместе с другом","Með félaga","مع رفيقة");
+hsWords319("m_supplies","路上的补给","Supplies on the way","道中の補給","Provisions en chemin","Припасы в пути","Birgðir á leiðinni","مؤونة الطريق");
+hsWords319("m_quiet","地毯上的脚步","Steps on carpet","絨毯の足音","Pas sur le tapis","Шаги по ковру","Skref á teppi","خطوات على السجاد");
+hsWords319("m_six","六个新地方","Six new places","新しい6か所","Six nouveaux lieux","Шесть новых мест","Sex nýir staðir","ستة أماكن جديدة");
+hsWords319("m_nine","最后一张地图","The final map","最後のマップ","La dernière carte","Последняя карта","Síðasta kortið","الخريطة الأخيرة");
+hsWords319("m_extreme","极限转身","Extreme turn","極限の転回","Virage extrême","Экстремальный поворот","Öfgabeygja","منعطف أقصى");
+hsWords319("m_god","没有必败的夜晚","No predetermined defeat","敗北は決まっていない","Aucune défaite prédestinée","Нет неизбежного поражения","Ekkert fyrirfram ákveðið tap","لا خسارة مقدرة");
+hsWords319("m_allmodes","五种放学以后","Five ways after class","放課後の5通り","Cinq façons après les cours","Пять игр после уроков","Fimm leiðir eftir skóla","خمس طرق بعد الدروس");
+hsWords319("e_survival","最后一秒的铃声","The last-second bell","最後の一秒の鐘","La cloche à la dernière seconde","Звонок в последнюю секунду","Bjalla á síðustu sekúndu","جرس الثانية الأخيرة");
+hsWords319("e_relay","三盏灯都亮了","Three lights on","三つの灯り","Trois lumières allumées","Три огня горят","Þrjú ljós kveikt","ثلاثة أضواء مضاءة");
+hsWords319("e_blackout","停电之后的方向","Direction after blackout","停電後の道","Direction après la panne","Ориентир после отключения","Stefna eftir rafmagnsleysi","الوجهة بعد انقطاع الكهرباء");
+hsWords319("e_rescue","一起到集合点","Together at the exit","一緒に集合場所へ","Ensemble à la sortie","Вместе к выходу","Saman að útganginum","معاً إلى المخرج");
+hsWords319("e_tour","九张地图的一天","A day of nine maps","9マップの一日","Une journée de neuf cartes","День девяти карт","Dagur níu korta","يوم الخرائط التسع");
+hsWords319("require_m_route","自动走完30格。","Walk 30 tiles automatically.","自動移動で30マス。","Parcourir 30 cases automatiquement.","Пройти автоматически 30 клеток.","Ganga sjálfvirkt 30 reiti.","امشِ تلقائياً 30 مربعاً.");
+hsWords319("require_m_explorer","实际完成全部九张地图，可跨局。","Complete all nine maps across runs.","全9マップをクリア。別の挑戦でも可。","Terminer les neuf cartes, même sur plusieurs parties.","Пройти все девять карт в любых попытках.","Ljúka öllum níu kortunum í mismunandi leikjum.","أكمل الخرائط التسع عبر الجولات المختلفة.");
+hsWords319("require_m_supplies","实际拿到一次地图补给。","Collect a supply box.","補給箱を取る。","Ramasser une caisse.","Забрать ящик припасов.","Taka birgðakassa.","احصل على صندوق مؤونة.");
+hsWords319("require_m_six","同一局连续通过六轮。","Clear six rounds in one run.","一度の挑戦で6ラウンドクリア。","Réussir six manches dans une partie.","Пройти шесть раундов за одну игру.","Ljúka sex lotum í einum leik.","اجتز ست جولات في محاولة واحدة.");
+hsWords319("require_m_nine","完成九图巡游。","Finish the nine-map tour.","9マップ巡回を完了。","Terminer le circuit des neuf cartes.","Завершить тур по девяти картам.","Ljúka níu korta ferðinni.","أكمل جولة الخرائط التسع.");
+hsWords319("require_m_quiet","至少三轮通关，全程未制造移动噪声。","Clear at least three rounds without movement noise.","移動音を立てず3ラウンド以上クリア。","Réussir au moins trois manches sans bruit de déplacement.","Пройти минимум три раунда без шума движения.","Ljúka minnst þremur lotum án fótahljóðs.","اجتز ثلاث جولات على الأقل دون ضجيج حركة.");
+hsWords319("require_m_extreme","极限或以上完成至少三轮。","Clear at least three rounds on Extreme or higher.","極限以上で3ラウンド以上クリア。","Réussir trois manches en Extrême ou plus.","Пройти три раунда на Экстриме или выше.","Ljúka þremur lotum á Öfgakenndu eða erfiðara.","اجتز ثلاث جولات على الأقصى أو أعلى.");
+hsWords319("require_m_god","神级完成至少三轮。","Clear at least three rounds on Godlike.","神級で3ラウンド以上クリア。","Réussir trois manches en Divin.","Пройти три раунда на Божественном.","Ljúka þremur lotum á Guðlegu.","اجتز ثلاث جولات على الإلهي.");
+hsWords319("require_m_allmodes","五种玩法各自成功完成一局。","Win a run in each of the five rulesets.","5ルールすべてで成功。","Gagner dans chacun des cinq modes.","Выиграть в каждом из пяти режимов.","Vinna í öllum fimm leikgerðum.","فز في كل نمط من الأنماط الخمسة.");
+hsWords319("require_m_survivor","完成所选路线的铃前生存。","Complete the selected Survive the clock journey.","鐘まで生存で選択した経路を完了。","Terminer le parcours : Survie jusqu’à la sonnerie.","Завершить маршрут «Дожить до звонка».","Ljúka valinni leið í Lifðu af þar til hringt er.","أكمل الرحلة المحددة في البقاء حتى الجرس.");
+hsWords319("require_m_relay","完成所选路线的信号接力。","Complete the selected Signal relay journey.","信号リレーで選択した経路を完了。","Terminer le parcours : Relais de signal.","Завершить маршрут «Сигнальная эстафета».","Ljúka valinni leið í Merkjaboðhlaup.","أكمل الرحلة المحددة في تتابع الإشارات.");
+hsWords319("require_m_dark","完成所选路线的停电搜寻。","Complete the selected Blackout search journey.","停電探索で選択した経路を完了。","Terminer le parcours : Recherche dans le noir.","Завершить маршрут «Поиск в темноте».","Ljúka valinni leið í Leit í myrkri.","أكمل الرحلة المحددة في البحث في الظلام.");
+hsWords319("require_m_rescuer","完成所选路线的结伴撤离。","Complete the selected Buddy evacuation journey.","仲間と避難で選択した経路を完了。","Terminer le parcours : Évacuation en duo.","Завершить маршрут «Эвакуация с другом».","Ljúka valinni leið í Rýming með félaga.","أكمل الرحلة المحددة في الإجلاء مع الرفيق.");
+hsWords319("require_e_survival","完成所选路线的铃前生存。","Complete the selected Survive the clock journey.","鐘まで生存で選択した経路を完了。","Terminer le parcours : Survie jusqu’à la sonnerie.","Завершить маршрут «Дожить до звонка».","Ljúka valinni leið í Lifðu af þar til hringt er.","أكمل الرحلة المحددة في البقاء حتى الجرس.");
+hsWords319("require_e_relay","完成所选路线的信号接力。","Complete the selected Signal relay journey.","信号リレーで選択した経路を完了。","Terminer le parcours : Relais de signal.","Завершить маршрут «Сигнальная эстафета».","Ljúka valinni leið í Merkjaboðhlaup.","أكمل الرحلة المحددة في تتابع الإشارات.");
+hsWords319("require_e_blackout","完成所选路线的停电搜寻。","Complete the selected Blackout search journey.","停電探索で選択した経路を完了。","Terminer le parcours : Recherche dans le noir.","Завершить маршрут «Поиск в темноте».","Ljúka valinni leið í Leit í myrkri.","أكمل الرحلة المحددة في البحث في الظلام.");
+hsWords319("require_e_rescue","完成所选路线的结伴撤离。","Complete the selected Buddy evacuation journey.","仲間と避難で選択した経路を完了。","Terminer le parcours : Évacuation en duo.","Завершить маршрут «Эвакуация с другом».","Ljúka valinni leið í Rýming með félaga.","أكمل الرحلة المحددة في الإجلاء مع الرفيق.");
+hsWords319("require_e_tour","完成九图巡游。","Finish the nine-map tour.","9マップ巡回を完了。","Terminer le circuit des neuf cartes.","Завершить тур по девяти картам.","Ljúka níu korta ferðinni.","أكمل جولة الخرائط التسع.");
+hsWords319("require_m_enter","开始一局。","Start a run.","条件：Start a run.","Condition : Start a run.","Условие: Start a run.","Skilyrði: Start a run.","الشرط: Start a run.");
+hsWords319("require_m_hide","在柜子里藏身一次。","Hide in a cabinet once.","条件：Hide in a cabinet once.","Condition : Hide in a cabinet once.","Условие: Hide in a cabinet once.","Skilyrði: Hide in a cabinet once.","الشرط: Hide in a cabinet once.");
+hsWords319("require_m_round","完成一轮。","Clear one round.","条件：Clear one round.","Condition : Clear one round.","Условие: Clear one round.","Skilyrði: Clear one round.","الشرط: Clear one round.");
+hsWords319("require_m_win","完成至少三轮的一局。","Win a run of at least three rounds.","条件：Win a run of at least three rounds.","Condition : Win a run of at least three rounds.","Условие: Win a run of at least three rounds.","Skilyrði: Win a run of at least three rounds.","الشرط: Win a run of at least three rounds.");
+hsWords319("require_m_decoy","累计三次成功引开搜索者。","Successfully lure seekers three times.","条件：Successfully lure seekers three times.","Condition : Successfully lure seekers three times.","Условие: Successfully lure seekers three times.","Skilyrði: Successfully lure seekers three times.","الشرط: Successfully lure seekers three times.");
+hsWords319("require_m_letters","同局取得至少三封信并通关。","Collect at least three letters and win.","条件：Collect at least three letters and win.","Condition : Collect at least three letters and win.","Условие: Collect at least three letters and win.","Skilyrði: Collect at least three letters and win.","الشرط: Collect at least three letters and win.");
+hsWords319("require_m_clean","至少三轮通关，未重试。","Win at least three rounds without retrying.","条件：Win at least three rounds without retrying.","Condition : Win at least three rounds without retrying.","Условие: Win at least three rounds without retrying.","Skilyrði: Win at least three rounds without retrying.","الشرط: Win at least three rounds without retrying.");
+hsWords319("require_m_breath","累计藏身30秒。","Spend 30 seconds hidden.","条件：Spend 30 seconds hidden.","Condition : Spend 30 seconds hidden.","Условие: Spend 30 seconds hidden.","Skilyrði: Spend 30 seconds hidden.","الشرط: Spend 30 seconds hidden.");
+hsWords319("require_m_tense","困难或以上完成至少三轮。","Win at least three rounds on Hard or higher.","条件：Win at least three rounds on Hard or higher.","Condition : Win at least three rounds on Hard or higher.","Условие: Win at least three rounds on Hard or higher.","Skilyrði: Win at least three rounds on Hard or higher.","الشرط: Win at least three rounds on Hard or higher.");
+hsWords319("require_e_clear","集徽逃脱成功。","Win Token escape.","条件：Win Token escape.","Condition : Win Token escape.","Условие: Win Token escape.","Skilyrði: Win Token escape.","الشرط: Win Token escape.");
+hsWords319("require_e_perfect","至少三轮通关，未重试。","Win at least three rounds without retrying.","条件：Win at least three rounds without retrying.","Condition : Win at least three rounds without retrying.","Условие: Win at least three rounds without retrying.","Skilyrði: Win at least three rounds without retrying.","الشرط: Win at least three rounds without retrying.");
+hsWords319("require_e_letters","同局拿到至少三封信并通关。","Win with at least three letters.","条件：Win with at least three letters.","Condition : Win with at least three letters.","Условие: Win with at least three letters.","Skilyrði: Win with at least three letters.","الشرط: Win with at least three letters.");
+hsWords319("require_e_caught","被发现进度达到100%。","Reach 100% detection.","条件：Reach 100% detection.","Condition : Reach 100% detection.","Условие: Reach 100% detection.","Skilyrði: Reach 100% detection.","الشرط: Reach 100% detection.");
+hsWords319("require_e_timeout","非生存模式限时耗尽。","Run out of time outside Survival.","条件：Run out of time outside Survival.","Condition : Run out of time outside Survival.","Условие: Run out of time outside Survival.","Skilyrði: Run out of time outside Survival.","الشرط: Run out of time outside Survival.");
+hsWords319("round320","第{n}/{total}轮","Round {n}/{total}","第{n}/{total}ラウンド","Manche {n}/{total}","Раунд {n}/{total}","Lota {n}/{total}","الجولة {n}/{total}");
+hsWords319("normal","普通","Normal","普通","Normal","Обычный","Venjulegt","عادي");
+hsWords319("won","本次路线完成","Journey complete","今回の経路をクリア","Parcours terminé","Маршрут завершён","Leiðinni lokið","اكتملت الرحلة");
+hsWords319("stats","累计{s}秒 · 信笺{n}封 · 重试{r}次","Total {s}s · {n} letters · {r} retries","合計{s}秒・手紙{n}通・再挑戦{r}回","Total {s}s · {n} lettres · {r} reprises","Всего {s}с · писем {n} · повторов {r}","Samtals {s}s · {n} bréf · {r} tilraunir","الإجمالي {s}ث · الرسائل {n} · الإعادات {r}");
+hsWords319("end_clear","本轮任务完成。大家在集合点见面，下一条路线由你决定。","Round objective complete. Meet at the exit and choose what comes next.","今回の目標を達成。集合場所に戻り、次の経路を選びましょう。","Objectif accompli. Retrouvez-vous à la sortie et choisissez la suite.","Цель выполнена. Встречайтесь у выхода и выбирайте следующий путь.","Markmiðinu lokið. Hittist við útganginn og veljið næstu leið.","اكتمل الهدف. التقوا عند المخرج واختاروا الخطوة التالية.");
+
+/* v3.20 — route-based hide and seek.
+ * Keeps the v3.19 namespace and save key so existing runs remain loadable.
+ * Paths/visibility are cached per immutable map. One host RAF, no timers/loops
+ * are created here. Simulation (30 Hz), canvas (20/30/60 Hz) and HUD (10 Hz)
+ * have separate budgets. All rules and goals are locked into the saved run.
+ */
+const HS_OLD_CFG320=JSON.parse(JSON.stringify(HS_CFG319));
+Object.assign(HS_CFG319,{
+ calm:{time:240,seekers:1,step:.92,range:3,gain:24,breath:20,decoys:5,inspection:2.8},
+ normal:{time:210,seekers:2,step:.84,range:4,gain:28,breath:16,decoys:4,inspection:2.6},
+ tense:{time:195,seekers:3,step:.76,range:4,gain:32,breath:13,decoys:3,inspection:2.4},
+ hell:{time:180,seekers:3,step:.69,range:5,gain:36,breath:11,decoys:3,inspection:2.2},
+ extreme:{time:165,seekers:4,step:.62,range:5,gain:40,breath:9,decoys:2,inspection:2},
+ demigod:{time:155,seekers:4,step:.56,range:5,gain:44,breath:8,decoys:2,inspection:1.8},
+ god:{time:145,seekers:4,step:.50,range:5,gain:46,breath:7,decoys:1,inspection:1.6}
+});
+const HS_MODES320=['classic','survival','relay','blackout','rescue'];
+const HS_PLAYLISTS320={classic:[0,1,2],expedition:[3,4,5,6,7,8],tour:[0,1,2,3,4,5,6,7,8]};
+const HS_THEME320=[['#142b35','#354f59','#86b7ca'],['#1e2c27','#415844','#b0c09a'],['#29243a','#554363','#c9afd6'],['#1c3232','#365d57','#8ed3c2'],['#263125','#536746','#bed0a5'],['#202d39','#405b70','#91bbdd'],['#352d22','#6d5740','#dfbf8d'],['#332431','#603d56','#d5a0c4'],['#192a3b','#35495e','#aac3e6']];
+const HS_NEW_MEDALS320=['route','explorer','survivor','relay','dark','rescuer','supplies','quiet','six','nine','extreme','god','allmodes'];
+const HS_NEW_ENDS320=['survival','relay','blackout','rescue','tour'];
+HS_MEDALS319.push(...HS_NEW_MEDALS320);HS_ENDS319.push(...HS_NEW_ENDS320);
+let hsPrefs320={difficulty:'normal',mode:'classic',playlist:'classic',map:0,quality:'balanced',zoom:1,safety:true};
+try{const p=JSON.parse(localStorage.getItem('last-class-hide-preferences-v320')||'null');if(p){for(const k of Object.keys(hsPrefs320))if(p[k]!==undefined)hsPrefs320[k]=p[k];}}catch(_){}
+function hsCleanPrefs320(){if(!HS_CFG319[hsPrefs320.difficulty])hsPrefs320.difficulty='normal';if(!HS_MODES320.includes(hsPrefs320.mode))hsPrefs320.mode='classic';if(!['classic','expedition','tour','single'].includes(hsPrefs320.playlist))hsPrefs320.playlist='classic';hsPrefs320.map=Math.max(0,Math.min(8,Math.floor(Number(hsPrefs320.map)||0)));if(!['battery','balanced','smooth'].includes(hsPrefs320.quality))hsPrefs320.quality='balanced';if(![1,1.5,2].includes(hsPrefs320.zoom))hsPrefs320.zoom=1;hsPrefs320.safety=hsPrefs320.safety!==false;}
+hsCleanPrefs320();hsSetup319=hsPrefs320.difficulty;
+function hsPrefsSave320(){hsCleanPrefs320();try{localStorage.setItem('last-class-hide-preferences-v320',JSON.stringify(hsPrefs320));}catch(_){hsError319='memoryOnly';}}
+const hsOldMap320=hsMap319,hsMapCache320=new Map(),hsGraphCache320=new Map(),hsMapArrayCache320=new WeakMap();
+function hsMakeMap320(id){
+ if(id<3)return hsOldMap320(id);
+ const m=Array.from({length:13},(_,y)=>Array.from({length:19},(_,x)=>x===0||x===18||y===0||y===12?'#':'.'));
+ const rect=(x,y,w,h)=>{for(let j=y;j<y+h;j++)for(let i=x;i<x+w;i++)m[j][i]='#';};
+ const v=(x,doors)=>{for(let y=1;y<12;y++)if(!doors.includes(y))m[y][x]='#';};
+ const h=(y,doors)=>{for(let x=1;x<18;x++)if(!doors.includes(x))m[y][x]='#';};
+ if(id===3){ // Glass atrium: central laboratories, two long flanking galleries.
+  rect(4,3,3,2);rect(11,3,3,2);rect(4,8,3,2);rect(11,8,3,2);rect(8,5,2,3);
+ }else if(id===4){ // Courtyard: solid planters, quieter grass along the sides.
+  for(const [x,y]of [[3,3],[8,3],[13,3],[3,8],[8,8],[13,8]])rect(x,y,3,2);
+ }else if(id===5){ // Gym: staggered bleachers, clear center court.
+  rect(2,3,5,1);rect(12,3,5,1);rect(2,8,5,1);rect(12,8,5,1);rect(8,5,3,2);
+ }else if(id===6){ // Cafeteria: many tables and alternating cross aisles.
+  for(const x of [3,7,11,15])for(const y of [3,7])rect(x,y,2,3);
+ }else if(id===7){ // Music building: rooms with distinct east/west doors.
+  v(6,[2,9]);v(12,[4,10]);for(let x=1;x<6;x++)if(x!==3)m[6][x]='#';for(let x=7;x<12;x++)if(x!==9)m[7][x]='#';for(let x=13;x<18;x++)if(x!==15)m[6][x]='#';
+ }else if(id===8){ // Rooftop: water tanks and two staggered barriers.
+  rect(3,3,3,3);rect(13,7,3,3);for(let x=7;x<16;x++)if(x!==11)m[4][x]='#';for(let x=2;x<12;x++)if(x!==7)m[8][x]='#';
+ }
+ const put=(p,t)=>{if(m[p[1]][p[0]]==='.'){m[p[1]][p[0]]=t;return true;}return false;};
+ // Each map has cabinets, quiet carpet and noisy tile; positions are fixed.
+ for(const p of [[2,2],[9,2],[16,2],[2,10],[9,10],[16,10]]){if(!put(p,'H'))put([p[0],p[1]===2?1:11],'H');}
+ for(const p of [[3,1],[4,1],[8,11],[9,11],[10,11]])put(p,'~');
+ for(const p of [[9,6],[10,6],[11,6],[16,5],[16,6],[16,7]])put(p,'!');
+ for(const p of [[5,5],[13,5],[5,10]]){if(put(p,'+'))break;}
+ m[1][1]='.';m[11][1]='X';return m.map(r=>r.join(''));
+}
+hsMap319=function(id){if(!Number.isInteger(id)||id<0||id>8)throw Error('Invalid map id');if(!hsMapCache320.has(id))hsMapCache320.set(id,hsMakeMap320(id));return hsMapCache320.get(id).slice();};
+function hsGraph320(map){
+ const hit=hsMapArrayCache320.get(map);if(hit)return hit;const signature=map.join('');if(hsGraphCache320.has(signature)){const g=hsGraphCache320.get(signature);hsMapArrayCache320.set(map,g);return g;}
+ const size=247,walk=[],neighbors=Array.from({length:size},()=>[]),hide=[];
+ for(let k=0;k<size;k++){const x=k%19,y=Math.floor(k/19);if(!hsWalk319(map,x,y))continue;walk.push(k);if(map[y][x]==='H')hide.push(k);for(const [dx,dy]of HS_DIR319)if(hsWalk319(map,x+dx,y+dy))neighbors[k].push((y+dy)*19+x+dx);}
+ // O(V*(V+E)) once per map, then O(1) next-step lookups for all seekers.
+ const next=new Int16Array(size*size).fill(-1),dist=new Int16Array(size*size).fill(-1),queue=new Int16Array(size);
+ for(const target of walk){let head=0,tail=0;queue[tail++]=target;dist[target*size+target]=0;next[target*size+target]=target;while(head<tail){const k=queue[head++];for(const n of neighbors[k])if(dist[n*size+target]<0){dist[n*size+target]=dist[k*size+target]+1;next[n*size+target]=k;queue[tail++]=n;}}}
+ const g={id:hsGraphCache320.size,signature,walk,hide,neighbors,next,dist};hsGraphCache320.set(signature,g);hsMapArrayCache320.set(map,g);return g;
+}
+hsPath319=function(map,from,to){if(!hsPoint319(from,map)||!hsPoint319(to,map))return [];const g=hsGraph320(map),dest=to.y*19+to.x,out=[];let at=from.y*19+from.x;for(let i=0;at!==dest&&i<247;i++){at=g.next[at*247+dest];if(at<0)return [];out.push({x:at%19,y:Math.floor(at/19)});}return out;};
+function hsCfg320(s=hs319){return s?.rules320?.legacy?{...HS_OLD_CFG320[s.difficulty],inspection:2.2}:HS_CFG319[s?.difficulty||hsSetup319];}
+function hsMode320(s=hs319){return s?.rules320?.mode||'classic';}
+function hsLimit320(d,mode){return mode==='survival'?{calm:65,normal:80,tense:90,hell:100,extreme:110,demigod:120,god:130}[d]:Math.round(HS_CFG319[d].time*(mode==='relay'?1.15:mode==='rescue'?1.2:1));}
+function hsSetStats320(stats){return Object.assign({steps:0,autoSteps:0,supplies:0,terminals:0,rescues:0,noises:0,spent:0,modeWins:{},maps:[]},stats||{},hsStats319(),stats||{});}
+function hsObjectives320(map){const graph=hsGraph320(map),start=20,choose=(tx,ty,used=[])=>{let best=-1,score=1e9;for(const k of graph.walk){if(used.includes(k)||['H','X','+'].includes(map[Math.floor(k/19)][k%19]))continue;const c=Math.abs(k%19-tx)+Math.abs(Math.floor(k/19)-ty);if(c<score){score=c;best=k;}}return {x:best%19,y:Math.floor(best/19)};};const a=choose(16,1),b=choose(9,9,[a.y*19+a.x]),c=choose(16,11,[a.y*19+a.x,b.y*19+b.x]);return {targets:[a,b,c],letter:choose(3,10),friend:choose(9,1),graph};}
+const hsOldFresh320=hsFresh319;
+hsFresh319=function(difficulty=hsSetup319,seed,round=0,old=null){
+ if(!HS_CFG319[difficulty])throw Error('Invalid difficulty');
+ const rules=old?.rules320?hsClone319(old.rules320):{mode:hsPrefs320.mode,playlist:hsPrefs320.playlist,plan:(hsPrefs320.playlist==='single'?[hsPrefs320.map]:HS_PLAYLISTS320[hsPrefs320.playlist]).slice(),legacy:false};
+ const mapId=rules.plan[round];if(mapId===undefined)throw Error('Invalid round');const map=hsMap319(mapId),cfg=hsCfg320({difficulty,rules320:rules}),o=hsObjectives320(map);
+ const legacy=rules.legacy?hsOldFresh320(difficulty,seed,round,old):null;
+ const s=legacy||{schema:2,kind:'hideSeek319',id:old?.id||Date.now().toString(36)+'-'+Math.random().toString(36).slice(2,9),difficulty,round,map,phase:'running',paused:false,grace:2,t:0,left:hsLimit320(difficulty,rules.mode),rng:(seed??Math.random()*4294967296)>>>0,alert:0,moveWait:0,breath:cfg.breath,stamina:100,hidden:false,inspect:0,listenAt:0,decoyAt:0,decoys:cfg.decoys,decoy:null,player:{x:1,y:1,dir:2},enemies:[],tokens:o.targets.map(p=>({...p,taken:false})),letter:{...o.letter,taken:false},stats:old?hsClone319(old.stats):hsStats319(),message:'safe',messageArgs:{},messageUntil:0,nearExit:false};
+ s.schema=2;s.rules320=rules;s.mapId320=mapId;s.limit320=rules.legacy?cfg.time:hsLimit320(difficulty,rules.mode);if(rules.legacy){s.left=cfg.time;s.breath=cfg.breath;s.decoys=cfg.decoys;}
+ s.stats=hsSetStats320(s.stats);s.nav320=null;s.reveal320=0;s.lantern320=100;s.lamp320=false;s.interact320=null;s.terminals320=rules.legacy?[]:o.targets.map(p=>({...p,done:false}));s.friend320={...o.friend,joined:false,motion320:null};s.spent320=[];s.motion320=null;s.lastNoise320=-100;
+ if(!legacy){const spots=o.graph.walk.filter(k=>o.graph.dist[k*247+20]>=12&&map[Math.floor(k/19)][k%19]!=='+');
+ for(let i=0;i<cfg.seekers;i++){const k=spots[Math.floor((i+.25)*spots.length/cfg.seekers)%spots.length],target=o.graph.walk[Math.floor(hsRng319(s)*o.graph.walk.length)];s.enemies.push({x:k%19,y:Math.floor(k/19),dir:i%4,wait:1+i*.22,target:{x:target%19,y:Math.floor(target/19)},interest:0,seen:false,inspect:0,motion320:null});}}
+ if(rules.mode==='rescue')s.tokens=s.tokens.slice(0,2);
+ return s;
+};
+const hsLegacyValidate320=hsValidate319;
+hsValidate319=function(raw){
+ if(!raw||raw.kind!=='hideSeek319'||![1,2].includes(raw.schema))throw Error('Wrong state format');
+ if(raw.schema===1){ // Preserve old active-round limits, map and statistics.
+  if(!HS_OLD_CFG320[raw.difficulty]||!Number.isInteger(raw.round)||raw.round<0||raw.round>2)throw Error('Invalid legacy state');
+  const s=hsClone319(raw);s.schema=2;s.rules320={legacy:true,mode:'classic',playlist:'classic',plan:[0,1,2]};s.mapId320=s.round;s.limit320=HS_OLD_CFG320[s.difficulty].time;
+  s.stats=hsSetStats320(s.stats);s.nav320=null;s.reveal320=0;s.lantern320=100;s.lamp320=false;s.interact320=null;s.terminals320=[];s.friend320={x:1,y:1,joined:false};s.spent320=[];s.motion320=null;s.lastNoise320=-100;
+  return hsValidate319(s);
+ }
+ const s=hsClone319(raw),r=s.rules320;
+ if(!HS_CFG319[s.difficulty]||typeof s.id!=='string'||s.id.length>100||!r||!HS_MODES320.includes(r.mode)||!Array.isArray(r.plan)||r.plan.length<1||r.plan.length>9||r.plan.some(i=>!Number.isInteger(i)||i<0||i>8)||new Set(r.plan).size!==r.plan.length||!Number.isInteger(s.round)||s.round<0||s.round>=r.plan.length)throw Error('Invalid rules');
+ if(typeof r.legacy!=='boolean'||r.legacy&&(!HS_OLD_CFG320[s.difficulty]||r.mode!=='classic'||JSON.stringify(r.plan)!=='[0,1,2]'))throw Error('Invalid legacy rules');
+ const cfg=hsCfg320(s),map=hsMap319(r.plan[s.round]),limit=r.legacy?cfg.time:hsLimit320(s.difficulty,r.mode);
+ if(s.mapId320!==r.plan[s.round]||JSON.stringify(s.map)!==JSON.stringify(map)||s.limit320!==limit||!['running','roundClear','won','caught','timeout'].includes(s.phase)||typeof s.paused!=='boolean'||typeof s.hidden!=='boolean')throw Error('Invalid map/phase');
+ for(const [key,min,max]of [['t',0,900],['left',0,limit],['rng',0,4294967295],['alert',0,100],['grace',0,2],['moveWait',0,1],['stamina',0,100],['breath',0,cfg.breath],['inspect',0,5],['listenAt',0,2000],['decoyAt',0,2000],['decoys',0,cfg.decoys+1],['messageUntil',0,2000],['reveal320',0,2000],['lantern320',0,100],['lastNoise320',-100,2000]])if(!hsFinite319(s[key],min,max))throw Error('Invalid number '+key);
+ if(!hsPoint319(s.player,map)||!Number.isInteger(s.player.dir)||s.player.dir<0||s.player.dir>3||!Array.isArray(s.enemies)||s.enemies.length!==cfg.seekers||!Number.isInteger(s.decoys))throw Error('Invalid actors');
+ for(const e of s.enemies)if(!hsPoint319(e,map)||!hsPoint319(e.target,map)||!Number.isInteger(e.dir)||e.dir<0||e.dir>3||!hsFinite319(e.wait,0,5)||!hsFinite319(e.interest,0,30)||!hsFinite319(e.inspect,0,5))throw Error('Invalid seeker');
+ const expected=r.legacy?hsOldFresh320(s.difficulty,1,s.round):hsFresh319(s.difficulty,1,s.round,s);
+ for(const k of ['tokens','terminals320']){const arr=s[k],ref=expected[k]||[];if(!Array.isArray(arr)||arr.length!==ref.length)throw Error('Invalid objectives');for(let i=0;i<arr.length;i++)if(arr[i].x!==ref[i].x||arr[i].y!==ref[i].y||typeof arr[i][k==='tokens'?'taken':'done']!=='boolean')throw Error('Altered objective');}
+ if(!s.letter||s.letter.x!==expected.letter.x||s.letter.y!==expected.letter.y||typeof s.letter.taken!=='boolean')throw Error('Invalid letter');
+ if(!hsPoint319(s.friend320,map)||typeof s.friend320.joined!=='boolean'||typeof s.lamp320!=='boolean')throw Error('Invalid companion');
+ if(s.hidden&&map[s.player.y][s.player.x]!=='H')throw Error('Invalid hiding place');
+ if(s.decoy&&(!hsPoint319(s.decoy,map)||!hsFinite319(s.decoy.until,0,2000)))throw Error('Invalid decoy');
+ if(!Array.isArray(s.spent320)||new Set(s.spent320).size!==s.spent320.length||s.spent320.some(k=>!Number.isInteger(k)||k<0||k>246||map[Math.floor(k/19)][k%19]!=='+'))throw Error('Invalid supplies');
+ if(!s.stats||Object.keys(hsStats319()).some(k=>!hsFinite319(s.stats[k],0,1e7))||s.stats.letters>9||s.stats.clears>9||s.stats.maxAlert>100)throw Error('Invalid statistics');
+ for(const k of ['steps','autoSteps','supplies','terminals','rescues','noises','spent'])if(!hsFinite319(s.stats[k],0,1e7))throw Error('Invalid stats '+k);
+ if(!Array.isArray(s.stats.maps)||s.stats.maps.some(i=>!Number.isInteger(i)||i<0||i>8))throw Error('Invalid map record');
+ if(s.nav320){const n=s.nav320;if(!hsPoint319(n.goal,map)||!Array.isArray(n.path)||n.path.length>247)throw Error('Invalid path');let p=s.player;for(const q of n.path){if(!hsPoint319(q,map)||hsDistance319(p,q)!==1)throw Error('Invalid step');p=q;}if(hsDistance319(p,n.goal)!==0)throw Error('Invalid goal');}
+ if(s.interact320){const a=s.interact320;if(!['relay','friend'].includes(a.type)||!hsFinite319(a.left,0,3)||!hsPoint319(a,map)||hsDistance319(a,s.player)!==0||s.hidden)throw Error('Invalid interaction');}
+ if(!HS_WORD319[s.message])s.message='safe';s.messageArgs=s.messageArgs&&typeof s.messageArgs==='object'?s.messageArgs:{};
+ for(const k of Object.keys(s.messageArgs))if(!['n','dir','s','map'].includes(k)||!['string','number'].includes(typeof s.messageArgs[k]))delete s.messageArgs[k];
+ s.motion320=null;for(const e of s.enemies)e.motion320=null;s.friend320.motion320=null;return s;
+};
+hsStoreValidate319=function(raw){if(!raw||![1,2].includes(raw.schema))throw Error('Invalid store');const result={schema:2,latest:raw.latest?hsValidate319(raw.latest):null,checkpoint:raw.checkpoint?hsValidate319(raw.checkpoint):null,medals:{},endings:{},wins320:{},maps320:{}};
+ if(result.checkpoint&&(result.checkpoint.phase!=='running'||result.checkpoint.t!==0))throw Error('Invalid checkpoint');
+ if(result.latest&&result.checkpoint&&(result.latest.id!==result.checkpoint.id||result.latest.round!==result.checkpoint.round||JSON.stringify(result.latest.rules320)!==JSON.stringify(result.checkpoint.rules320)))throw Error('Mismatched checkpoint');
+ for(const [field,keys]of [['medals',HS_MEDALS319],['endings',HS_ENDS319],['wins320',HS_MODES320],['maps320',Array.from({length:9},(_,i)=>String(i))]])for(const id of keys){const date=raw[field]?.[id];if(typeof date==='string'&&date.length<40&&Number.isFinite(Date.parse(date)))result[field][id]=date;}
+ return result;};
+try{const raw=localStorage.getItem(HS_KEY319);hsStore319=hsStoreValidate319(raw?JSON.parse(raw):{schema:2});hsError319='';}catch(_){hsStore319=hsStoreValidate319({schema:2});hsError319='invalid';}
+hsExport319=function(download=true){hsSave319();const pack={format:'last-class-hide-seek',version:2,data:hsClone319(hsStore319)};if(download){const url=URL.createObjectURL(new Blob([JSON.stringify(pack,null,2)],{type:'application/json'})),a=document.createElement('a');a.href=url;a.download='last-class-hide-seek-v3.20.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}return pack;};
+hsImport319=function(pack){if(!pack||pack.format!=='last-class-hide-seek'||![1,2].includes(pack.version))throw Error('Wrong mode');const checked=hsStoreValidate319(pack.data);for(const k of ['medals','endings','wins320','maps320'])for(const [id,date]of Object.entries(hsStore319[k]||{}))if(!checked[k][id]||date<checked[k][id])checked[k][id]=date;hsStore319=checked;hs319=checked.latest?hsClone319(checked.latest):null;if(hs319){hs319.paused=true;hs319.grace=2;}hsPage319='setup';hsInvalidate320();hsSave319();hsNotice319='imported';return true;};
+// Sight depends only on map, coordinates, facing and range, not elapsed time.
+const hsSightCache320=new Map();
+hsSight319=function(s,e,p=s.player){const range=hsCfg320(s).range,graph=hsGraph320(s.map),key=graph.id+'|'+(e.y*19+e.x)+'|'+e.dir+'|'+range;
+ let visible=hsSightCache320.get(key);if(!visible){visible=new Uint8Array(247);const [fx,fy]=HS_DIR319[e.dir];for(let y=Math.max(1,e.y-range);y<=Math.min(11,e.y+range);y++)for(let x=Math.max(1,e.x-range);x<=Math.min(17,e.x+range);x++){if(!hsWalk319(s.map,x,y))continue;const dx=x-e.x,dy=y-e.y,d=Math.hypot(dx,dy);if(d>range+.3||d>1.45&&(dx*fx+dy*fy)/d<.20)continue;let blocked=false;for(let i=1,n=Math.ceil(d*3);i<n;i++)if(!hsWalk319(s.map,Math.round(e.x+dx*i/n),Math.round(e.y+dy*i/n))){blocked=true;break;}if(!blocked)visible[y*19+x]=1;}
+ if(hsSightCache320.size>=1600)hsSightCache320.clear();hsSightCache320.set(key,visible);hsPerf320.visionMisses++;}
+ return !!visible[p.y*19+p.x];};
+const hsPerf320={frames:0,simulation:0,drawMs:0,hudMs:0,simMs:0,hudWrites:0,pathRequests:0,visionMisses:0,navSteps:0};
+let hsSimClock320=0,hsHudClock320=0,hsDirty320=true,hsUi320={},hsFrameClock320=0,hsDrawAt320=0,hsCapturedTap320=null;
+function hsInvalidate320(){hsSceneKey320='';hsVisualKey320='';hsRenderKey319='';hsBackgroundKey319='';hsDirty320=true;hsHudClock320=1;hsSimClock320=0;hsDrawAt320=0;hsUi320={};}
+function hsStopRoute320(message=false){if(!hs319)return;hs319.nav320=null;if(message)hsMessage319('routeStopped');hsDirty320=true;}
+function hsRoute320(x,y){const s=hs319;if(!hsCanAct319())return false;if(s.hidden){hsMessage319('leaveFirst');return false;}if(!hsWalk319(s.map,x,y)){hsMessage319('wallRoute');return false;}if(x===s.player.x&&y===s.player.y){hsStopRoute320(true);return true;}const path=hsPath319(s.map,s.player,{x,y});hsPerf320.pathRequests++;if(!path.length){hsMessage319('wallRoute');return false;}
+ const sprint=hsSprint319,shift=hsShift319;hsClearInput319();hsSprint319=sprint;hsShift319=shift;s.interact320=null;s.nav320={goal:{x,y},path};hsMessage319('routeSet',{n:path.length});hsDirty320=true;hsSave319();return true;}
+function hsMoveActor320(p,to,s,duration){p.motion320={x:p.x,y:p.y,at:s.t,duration};p.x=to.x;p.y=to.y;}
+hsMove319=function(dir,automated=false){if(!Number.isInteger(dir)||dir<0||dir>3)return false;const s=hs319;if(!s||s.phase!=='running'||s.paused||s.grace>0||s.hidden)return false;if(!automated)hsStopRoute320();if(s.moveWait>0)return false;s.interact320=null;s.player.dir=dir;const [dx,dy]=HS_DIR319[dir],x=s.player.x+dx,y=s.player.y+dy;if(!hsWalk319(s.map,x,y)){s.moveWait=.06;return false;}
+ const running=(hsSprint319||hsShift319)&&s.stamina>=6,old={x:s.player.x,y:s.player.y};s.moveWait=running?.14:.25;hsMoveActor320(s.player,{x,y},s,s.moveWait);s.stats.steps++;if(automated){s.stats.autoSteps++;hsPerf320.navSteps++;}
+ const tile=s.map[y][x];if(running){s.stamina-=6;if(tile!=='~'){hsNoise319(s.player);s.stats.noises++;}}else if(tile==='!'&&s.t-s.lastNoise320>1){hsNoise319(s.player);s.stats.noises++;s.lastNoise320=s.t;hsMessage319('noisyFloor');}
+ if(hsMode320()==='rescue'&&s.friend320.joined&&hsDistance319(s.friend320,old)<=3)hsMoveActor320(s.friend320,old,s,s.moveWait*1.1);
+ hsCollect319();hsDirty320=true;return true;};
+hsHide319=function(){if(!hsCanAct319())return;const s=hs319;hsStopRoute320();s.interact320=null;if(s.hidden){s.hidden=false;s.inspect=0;for(const e of s.enemies)e.inspect=0;hsMessage319('safe');}else if(s.map[s.player.y][s.player.x]==='H'&&s.breath>1){s.hidden=true;hsClearInput319();hsUnlock319('medal','hide');hsMessage319('hidden');}else hsMessage319('nearHide');hsDirty320=true;hsSave319();};
+function hsObjectiveReady320(s){const mode=hsMode320(s);return mode==='survival'?false:mode==='relay'?s.terminals320.every(p=>p.done):mode==='rescue'?s.friend320.joined&&s.tokens.every(p=>p.taken)&&hsDistance319(s.friend320,s.player)<=1:s.tokens.every(p=>p.taken);}
+hsCollect319=function(){const s=hs319,mode=hsMode320(s);let changed=false;
+ if(mode!=='relay')for(const t of s.tokens)if(!t.taken&&hsDistance319(t,s.player)===0){t.taken=true;hsMessage319('tokenFound');changed=true;}
+ if(!s.letter.taken&&hsDistance319(s.letter,s.player)===0){s.letter.taken=true;s.stats.letters++;hsMessage319('letterFound');changed=true;}
+ const k=s.player.y*19+s.player.x;if(s.map[s.player.y][s.player.x]==='+'&&!s.spent320.includes(k)){s.spent320.push(k);s.decoys=Math.min(hsCfg320(s).decoys+1,s.decoys+1);s.stamina=Math.min(100,s.stamina+35);s.lantern320=Math.min(100,s.lantern320+40);s.stats.supplies++;hsUnlock319('medal','supplies');hsMessage319('supplyFound');changed=true;}
+ const onExit=s.map[s.player.y][s.player.x]==='X';if(onExit&&hsObjectiveReady320(s)){hsFinish319('clear');return;}if(onExit&&!s.nearExit)hsMessage319('goalIncomplete');s.nearExit=onExit;if(changed)hsSave319();};
+function hsInteract320(){const s=hs319;if(!hsCanAct319()||s.hidden)return;hsStopRoute320();if(s.interact320){s.interact320=null;return;}
+ if(hsMode320()==='relay'){const target=s.terminals320.find(p=>!p.done);if(target&&hsDistance319(target,s.player)===0){s.interact320={type:'relay',x:s.player.x,y:s.player.y,left:2.5};hsMessage319('relayWorking');}else hsMessage319('relayOrder');}
+ else if(hsMode320()==='rescue'&&!s.friend320.joined&&hsDistance319(s.friend320,s.player)===0){s.interact320={type:'friend',x:s.player.x,y:s.player.y,left:1};hsMessage319('friendWorking');}else if(s.map[s.player.y][s.player.x]==='X')hsCollect319();else hsHide319();hsDirty320=true;hsSave319();}
+const hsOldListen320=hsListen319;hsListen319=function(){if(!hsCanAct319()||hs319.listenAt>hs319.t)return;hsOldListen320();hs319.reveal320=hs319.t+4;hsDirty320=true;};
+const hsOldDecoy320=hsDecoy319;hsDecoy319=function(){hsStopRoute320();hsOldDecoy320();hsDirty320=true;};
+hsAwards319=function(){const s=hs319;if(!s)return;if(s.stats.hidden>=30)hsUnlock319('medal','breath');if(s.stats.decoys>=3)hsUnlock319('medal','decoy');if(s.stats.autoSteps>=30)hsUnlock319('medal','route');if(s.stats.clears>=1)hsUnlock319('medal','round');if(s.stats.clears>=6)hsUnlock319('medal','six');if(s.stats.clears>=9)hsUnlock319('medal','nine');
+ if(s.phase==='won'){const mode=hsMode320(s),count=s.rules320.plan.length;hsStore319.wins320[mode]??=new Date().toISOString();if(mode==='classic'){if(count>=3)hsUnlock319('end','clear');}else{hsUnlock319('end',mode);hsUnlock319('medal',{survival:'survivor',relay:'relay',blackout:'dark',rescue:'rescuer'}[mode]);}
+ if(count>=3){hsUnlock319('medal','win');if(!s.stats.retries){hsUnlock319('medal','clean');hsUnlock319('end','perfect');}if(s.stats.letters>=3){hsUnlock319('medal','letters');hsUnlock319('end','letters');}if(['tense','hell','extreme','demigod','god'].includes(s.difficulty))hsUnlock319('medal','tense');if(['extreme','demigod','god'].includes(s.difficulty))hsUnlock319('medal','extreme');if(s.difficulty==='god')hsUnlock319('medal','god');if(s.stats.noises===0)hsUnlock319('medal','quiet');}
+ if(count===9){hsUnlock319('end','tour');hsUnlock319('medal','nine');}if(Object.keys(hsStore319.wins320).length===5)hsUnlock319('medal','allmodes');}
+ if(Object.keys(hsStore319.maps320).length===9)hsUnlock319('medal','explorer');};
+hsFinish319=function(reason){const s=hs319;if(!s||s.phase!=='running'||!['clear','caught','timeout'].includes(reason))return;hsClearInput319();hsStopRoute320();s.interact320=null;if(reason==='clear'){s.stats.clears++;s.stats.maps.push(s.mapId320);hsStore319.maps320[String(s.mapId320)]??=new Date().toISOString();s.phase=s.round===s.rules320.plan.length-1?'won':'roundClear';}else{s.phase=reason;hsUnlock319('end',reason);}hsAwards319();hsSave319();hsRenderKey319='';hsDirty320=true;};
+function hsSim320(d){const s=hs319;if(s.grace>0){s.grace=Math.max(0,s.grace-d);return;}const cfg=hsCfg320(s);s.t+=d;s.stats.seconds+=d;s.left=Math.max(0,s.left-d);s.moveWait=Math.max(0,s.moveWait-d);s.stamina=Math.min(100,s.stamina+d*12);
+ if(hsDirection319!==null)hsMove319(hsDirection319);else if(s.nav320&&!s.hidden&&s.moveWait<=0){if(hsPrefs320.safety&&s.alert>=50){hsStopRoute320();hsMessage319('routeDanger');}else{const next=s.nav320.path[0];if(next){const dx=next.x-s.player.x,dy=next.y-s.player.y;if(Math.abs(dx)+Math.abs(dy)!==1){hsStopRoute320();}else{const nav=s.nav320;if(hsMove319(dx===1?1:dx===-1?3:dy===1?2:0,true)){nav.path.shift();if(!nav.path.length&&s.nav320){hsStopRoute320();hsMessage319('routeArrived');}}}}}}
+ if(s.phase!=='running')return;
+ if(s.interact320){const a=s.interact320;a.left=Math.max(0,a.left-d);if(a.left===0){if(a.type==='relay'){const p=s.terminals320.find(p=>!p.done);if(p&&hsDistance319(s.player,p)===0){p.done=true;s.stats.terminals++;hsNoise319(s.player);hsMessage319('relayDone');}}else{s.friend320.joined=true;s.stats.rescues++;hsMessage319('friendJoined');}s.interact320=null;hsSave319();}}
+ if(s.hidden){s.breath=Math.max(0,s.breath-d);s.stats.hidden+=d;if(s.breath===0){s.hidden=false;s.inspect=0;hsNoise319(s.player);hsMessage319('cough');}}else s.breath=Math.min(cfg.breath,s.breath+d*1.8);
+ if(hsMode320()==='blackout'&&s.lamp320){s.lantern320=Math.max(0,s.lantern320-d*4);if(s.lantern320===0){s.lamp320=false;hsMessage319('lampEmpty');}}
+ let seen=false,inspect=0;const g=hsGraph320(s.map),playerKey=s.player.y*19+s.player.x;
+ for(const e of s.enemies){e.wait=Math.max(0,e.wait-d);e.interest=Math.max(0,e.interest-d);e.seen=!s.hidden&&hsSight319(s,e);if(e.seen){seen=true;e.target.x=s.player.x;e.target.y=s.player.y;e.interest=6;}
+ if(s.hidden&&hsDistance319(e,s.player)<=1){e.inspect+=d;inspect=Math.max(inspect,e.inspect);if(e.inspect>=cfg.inspection){s.hidden=false;s.alert=Math.min(100,s.alert+45);e.inspect=0;e.target={x:s.player.x,y:s.player.y};e.interest=6;hsMessage319('seen');}continue;}else e.inspect=0;
+ if(e.wait>0)continue;e.wait=Math.max(.38,cfg.step-s.round*.012);
+ if(hsDistance319(e,e.target)===0||e.interest<=0&&hsRng319(s)<.18){const k=g.walk[Math.floor(hsRng319(s)*g.walk.length)];e.target={x:k%19,y:Math.floor(k/19)};}
+ const k=g.next[(e.y*19+e.x)*247+e.target.y*19+e.target.x];if(k>=0){const x=k%19,y=Math.floor(k/19),dx=x-e.x,dy=y-e.y;if(dx||dy){e.dir=dx===1?1:dx===-1?3:dy===1?2:0;hsMoveActor320(e,{x,y},s,Math.min(.20,e.wait*.45));}}}
+ s.inspect=inspect;s.alert=Math.max(0,Math.min(100,s.alert+(seen?cfg.gain:-27)*d));s.stats.maxAlert=Math.max(s.stats.maxAlert,s.alert);if(s.decoy&&s.decoy.until<=s.t)s.decoy=null;
+ if(s.alert>=100){hsFinish319('caught');return;}if(s.left<=0)hsFinish319(hsMode320()==='survival'?'clear':'timeout');
+}
+hsStep319=function(dt){if(!hsOpen319||document.hidden||!hsFinite319(dt,0,30))return;hsFrameClock320+=dt;hsPerf320.frames++;
+ const s=hs319;if(hsPage319==='play'&&s&&!s.paused&&s.phase==='running'){
+ const start=performance.now();hsSimClock320+=Math.min(.2,dt);let steps=0;while(hsSimClock320>=1/30&&steps<6&&s.phase==='running'){hsSim320(1/30);hsSimClock320-=1/30;steps++;hsPerf320.simulation++;}hsPerf320.simMs+=performance.now()-start;hsSaveClock319+=Math.min(.2,dt);if(hsSaveClock319>=5){hsAwards319();hsSave319();}
+ const hz={battery:20,balanced:30,smooth:60}[hsPrefs320.quality];if(hsFrameClock320-hsDrawAt320>=1/hz-.001){hsDrawAt320=hsFrameClock320;hsDraw319();}
+ }else hsSimClock320=0;
+ hsHudClock320+=dt;if(hsDirty320||hsHudClock320>=.1){hsHudClock320=0;hsRender319();}
+};
+const hsStartBefore320=hsStart319,hsNextBefore320=hsNext319,hsRestoreBefore320=hsRestore319,hsCloseBefore320=hsClose319,hsOpenBefore320=hsOpenMode319;
+hsStart319=function(d=hsSetup319,seed){hsCleanPrefs320();hsInvalidate320();return hsStartBefore320(d,seed);};
+hsNext319=function(){hsInvalidate320();return hsNextBefore320();};
+hsRestore319=function(c=false){hsInvalidate320();return hsRestoreBefore320(c);};
+hsClose319=function(){hsCapturedTap320=null;hsInvalidate320();return hsCloseBefore320();};
+hsOpenMode319=function(page='setup'){hsInvalidate320();return hsOpenBefore320(page);};
+
+// UI: one root, one canvas; never duplicate directional controls on re-entry.
+function hsObjectiveText320(s){const mode=hsMode320(s);if(mode==='relay')return hsText319('relayCount',{n:s.terminals320.filter(p=>p.done).length});if(mode==='rescue')return hsText319(s.friend320.joined?'escortCount':'rescueCount',{n:s.tokens.filter(p=>p.taken).length});if(mode==='survival')return hsText319('surviveGoal');return hsText319('tokens',{n:s.tokens.filter(p=>p.taken).length});}
+hsHeader319=function(){return `<header class="hs-head319"><div><small>HIDE & SEEK / ROUTES & SHADOWS · 3.20</small><h1>${esc(hsText319('title'))}</h1></div><nav>${hsPage319==='play'&&hs319?.phase==='running'?hsBtn319('pause',hs319.paused?'resume':'pause'):''}${hsBtn319('help','help')}${hsBtn319('full','full')}${hsBtn319('exit','menu')}</nav></header>`;};
+function hsOption320(values,selected,label){return values.map(k=>`<option value="${k}" ${String(k)===String(selected)?'selected':''}>${esc(hsText319(label(k)))}</option>`).join('');}
+hsSetupMarkup319=function(){const c=HS_CFG319[hsSetup319],p=hsPrefs320,plan=p.playlist==='single'?[p.map]:HS_PLAYLISTS320[p.playlist];return `<main class="hs-scroll319 hs-setup320"><section class="hs-intro320"><span class="hs-eyebrow319">09 MAPS / 05 RULESETS / 07 LEVELS</span><h2>${esc(hsText319('title'))}</h2><p>${esc(hsText319('lead320'))}</p><div class="hs-mosaic320">${Array.from({length:9},(_,id)=>`<button data-hs319="map:${id}" class="hs-mapcard320 ${plan.includes(id)?'selected':''}" aria-pressed="${p.playlist==='single'&&p.map===id}"><span class="hs-map-art320" data-map-preview320="${id}"></span><b>${esc(hsText319('map'+id))}</b><small>0${id+1}</small></button>`).join('')}</div><p class="hs-sub319">${esc(hsText319('mapClick'))}</p></section><section class="hs-card319"><div class="hs-config320"><label>${esc(hsText319('level'))}<select id="hsDifficulty319">${hsOption320(Object.keys(HS_CFG319),hsSetup319,k=>k)}</select></label><label>${esc(hsText319('ruleset'))}<select id="hsMode320">${hsOption320(HS_MODES320,p.mode,k=>'mode_'+k)}</select></label><label>${esc(hsText319('journey'))}<select id="hsPlaylist320">${hsOption320(['classic','expedition','tour','single'],p.playlist,k=>'plan_'+k)}</select></label><label>${esc(hsText319('quality'))}<select id="hsQuality320">${hsOption320(['battery','balanced','smooth'],p.quality,k=>'quality_'+k)}</select></label></div><p id="hsTuning319">${esc(hsText319('tuning',{time:hsLimit320(hsSetup319,p.mode),seekers:c.seekers}))}</p><p class="hs-rule320">${esc(hsText319('rule_'+p.mode))}</p><p class="hs-sub319">${plan.map(id=>esc(hsText319('map'+id))).join(' → ')}</p><label>${esc(text317('language'))}<select id="hsLanguage319">${LOCALES310.map(l=>`<option value="${l}" ${l===preferredLocale310()?'selected':''}>${NATIVE310[l]}</option>`).join('')}</select></label><div class="hs-actions319">${hsBtn319('start','start320','class="hs-primary319"')}${hsStore319.latest?hsBtn319('continue','continue'):''}${hsBtn319('archive','archive')}</div><div class="hs-row319">${hsBtn319('export','export')}${hsBtn319('import','import')}</div><p class="hs-sub319">${esc(hsText319('independent320'))}</p></section></main>`;};
+hsHelpMarkup319=function(){return `<main class="hs-scroll319 hs-help319"><section class="hs-card319"><h2>${esc(hsText319('help'))}</h2>${['controls320','routeHelp','terrainHelp','darkHelp','saveHelp320',...HS_MODES320.map(k=>'rule_'+k)].map(k=>`<p>${esc(hsText319(k))}</p>`).join('')}<p>${esc(hsText319('hideRules'))}</p>${hsBtn319('back','back','class="hs-primary319"')}</section></main>`;};
+hsArchiveMarkup319=function(){return `<main class="hs-scroll319 hs-archive319"><h2>${esc(hsText319('archive'))}</h2><p>${esc(hsText319('records'))}</p><h3>${esc(hsText319('ends'))} · ${Object.keys(hsStore319.endings).length}/${HS_ENDS319.length}</h3><div class="hs-records319">${HS_ENDS319.map(id=>`<article class="${hsStore319.endings[id]?'unlocked':''}"><b>${esc(hsText319('e_'+id))}</b><small>${esc(hsText319('require_e_'+id))}</small><small>${hsStore319.endings[id]?esc(hsStore319.endings[id].slice(0,10)):esc(hsText319('locked'))}</small></article>`).join('')}</div><h3>${esc(hsText319('medals'))} · ${Object.keys(hsStore319.medals).length}/${HS_MEDALS319.length}</h3><div class="hs-records319">${HS_MEDALS319.map(id=>`<article class="${hsStore319.medals[id]?'unlocked':''}"><b>${esc(hsText319('m_'+id))}</b><small>${esc(hsText319('require_m_'+id))}</small><small>${hsStore319.medals[id]?esc(hsStore319.medals[id].slice(0,10)):esc(hsText319('locked'))}</small></article>`).join('')}</div><h3>${esc(hsText319('mapRecords'))} · ${Object.keys(hsStore319.maps320).length}/9</h3><div class="hs-records319">${Array.from({length:9},(_,id)=>`<article class="${hsStore319.maps320[id]?'unlocked':''}"><b>${esc(hsText319('map'+id))}</b></article>`).join('')}</div><div class="hs-row319">${hsBtn319('back','back')}${hsBtn319('export','export')}${hsBtn319('import','import')}</div></main>`;};
+hsPlayMarkup319=function(){const s=hs319,cfg=hsCfg320(s),mode=hsMode320(s),ended=s.phase!=='running';return `<main class="hs-scroll319 hs-play319"><section class="hs-stage319"><div class="hs-status319"><b>${esc(hsText319('round320',{n:s.round+1,total:s.rules320.plan.length}))} · ${esc(hsText319('map'+s.mapId320))}</b><span id="hsTokens319"></span><time id="hsTime319"></time></div><div class="hs-routebar320"><span>${esc(hsText319('tapHint'))}</span><label>${esc(hsText319('zoom'))}<select id="hsZoom320"><option value="1" ${hsPrefs320.zoom===1?'selected':''}>1×</option><option value="1.5" ${hsPrefs320.zoom===1.5?'selected':''}>1.5×</option><option value="2" ${hsPrefs320.zoom===2?'selected':''}>2×</option></select></label></div><div class="hs-mapscroll320"><div class="hs-canvas319" style="--map-zoom:${hsPrefs320.zoom}"><canvas id="hsBoard319" width="760" height="520" aria-label="${esc(hsText319('tapHint'))}"></canvas><div id="hsGrace319" class="hs-grace319"></div></div></div><p class="hs-legend319">${esc(hsText319('legend'))}</p><div class="hs-route-state320"><span id="hsRoute320"></span>${hsBtn319('stop','stopRoute','id="hsStop320"')}</div><div id="hsMessage319" class="hs-message319" role="status"></div></section><aside class="hs-card319 hs-controls319"><span class="hs-eyebrow319">${esc(hsText319(s.difficulty))} / ${esc(hsText319('mode_'+mode))}</span><div class="hs-meters319"><label>${esc(hsText319('detection'))}<b id="hsAlert319"></b><progress id="hsAlertBar319" max="100"></progress></label><label>${esc(hsText319('stamina'))}<b id="hsStamina319"></b><progress id="hsStaminaBar319" max="100"></progress></label><label>${esc(hsText319('breath'))}<b id="hsBreath319"></b><progress id="hsBreathBar319" max="${cfg.breath}"></progress></label>${mode==='blackout'?`<label>${esc(hsText319('lantern'))}<b id="hsLampValue320"></b><progress id="hsLampBar320" max="100"></progress></label>`:''}</div><div class="hs-inputs319" ${ended||s.paused?'inert':''}><div class="hs-dpad319" dir="ltr">${[0,3,2,1].map(d=>`<button data-hsdir319="${d}" aria-label="${esc(hsText319(['north','east','south','west'][d]))}">${['↑','→','↓','←'][d]}</button>`).join('')}</div><div class="hs-skill319">${hsBtn319('hide','hide','id="hsHide319"')}${hsBtn319('sprint','sprint','id="hsSprint319" aria-pressed="false"')}${hsBtn319('decoy','decoy','id="hsDecoy319"')}${hsBtn319('listen','listen','id="hsListen319"')}${['relay','rescue'].includes(mode)?hsBtn319('interact','interact','id="hsInteract320"'):''}${mode==='blackout'?hsBtn319('lamp','lamp','id="hsLamp320" aria-pressed="false"'):''}</div></div><p id="hsTask320" class="hs-rule320">${esc(hsText319('rule_'+mode))}</p><details class="hs-options320"><summary>${esc(hsText319('controlsOptions'))}</summary><label class="hs-check320"><input id="hsSafety320" type="checkbox" ${hsPrefs320.safety?'checked':''}>${esc(hsText319('safetyStop'))}</label><label>${esc(hsText319('quality'))}<select id="hsQuality320">${hsOption320(['battery','balanced','smooth'],hsPrefs320.quality,k=>'quality_'+k)}</select></label><p class="hs-sub319">${esc(hsText319('controls320'))}</p></details><div class="hs-row319">${hsBtn319('export','export')}${hsBtn319('archive','archive')}</div></aside></main>${s.paused&&!ended?`<div class="hs-shade319"><section class="hs-dialog319" role="dialog" aria-modal="true"><h2>${esc(hsText319('pause'))}</h2><p>${esc(hsText319('pauseText'))}</p><div class="hs-row319">${hsBtn319('pause','resume','class="hs-primary319"')}${hsBtn319('export','export')}${hsBtn319('exit','menu')}</div></section></div>`:''}${ended?hsResultMarkup319():''}`;};
+hsResultMarkup319=function(){const s=hs319,won=s.phase==='won',clear=s.phase==='roundClear',title=clear?'roundClear':won?'won':s.phase;return `<div class="hs-shade319"><section class="hs-dialog319" role="dialog" aria-modal="true"><small>HIDE & SEEK / ${s.round+1} OF ${s.rules320.plan.length}</small><h2>${esc(hsText319(title))}</h2><p>${esc(hsText319(clear||won?'end_clear':'end_'+s.phase))}</p><p>${esc(hsText319('stats',{s:Math.round(s.stats.seconds),n:s.stats.letters,r:s.stats.retries}))}</p><p class="hs-sub319">${esc(hsText319('resultMode',{mode:hsText319('mode_'+hsMode320(s))}))}</p><div class="hs-row319">${clear?hsBtn319('next','next','class="hs-primary319"'):!won?hsBtn319('retry','retry','class="hs-primary319"'):hsBtn319('archive','archive','class="hs-primary319"')}${hsBtn319('setup','back')}${hsBtn319('export','export')}${hsBtn319('exit','menu')}</div></section></div>`;};
+function hsUiWrite320(id,property,value){const el=hsUi320[id];if(!el)return;if(el[property]!==value){el[property]=value;hsPerf320.hudWrites++;}}
+hsRender319=function(force=false){if(!hsOpen319)return;const start=performance.now(),s=hs319,key=[hsPage319,preferredLocale310(),s?.phase,s?.round,s?.paused,s?.id].join('|');
+ if(force||key!==hsRenderKey319){hsRenderKey319=key;hsBuilds319++;hsRoot319.dir=preferredLocale310()==='ar'?'rtl':'ltr';hsRoot319.innerHTML=hsHeader319()+(hsPage319==='setup'?hsSetupMarkup319():hsPage319==='help'?hsHelpMarkup319():hsPage319==='archive'?hsArchiveMarkup319():hsPlayMarkup319())+'<footer class="hs-foot319" id="hsSave319"></footer>';hsCanvas319=$('hsBoard319');hsVisualKey320='';hsUi320={};for(const el of hsRoot319.querySelectorAll('[id]'))hsUi320[el.id]=el;if(hsRoot319.querySelector('.hs-shade319')){hsRoot319.querySelector('.hs-play319').inert=true;hsRoot319.querySelector('.hs-head319').inert=true;hsRoot319.querySelector('.hs-shade319 button')?.focus({preventScroll:true});}if(hsPage319==='setup')hsPreviews320();hsDraw319();}
+ if(hsPage319==='play'&&s){const cfg=hsCfg320(s);hsUiWrite320('hsTime319','textContent',hsText319('time')+' '+Math.ceil(s.left)+'s');hsUiWrite320('hsTokens319','textContent',hsObjectiveText320(s));hsUiWrite320('hsAlert319','textContent',Math.ceil(s.alert)+'%');hsUiWrite320('hsStamina319','textContent',Math.floor(s.stamina)+'%');hsUiWrite320('hsBreath319','textContent',s.breath.toFixed(1)+'s');hsUiWrite320('hsLampValue320','textContent',Math.ceil(s.lantern320)+'%');
+ for(const [id,val]of [['hsAlertBar319',s.alert],['hsStaminaBar319',s.stamina],['hsBreathBar319',s.breath],['hsLampBar320',s.lantern320]])hsUiWrite320(id,'value',Math.round(val*10)/10);
+ hsUiWrite320('hsHide319','textContent',hsText319(s.hidden?'leave':'hide'));hsUiWrite320('hsDecoy319','textContent',hsText319('decoy',{n:s.decoys}));
+ for(const [id,pressed]of [['hsSprint319',hsSprint319||hsShift319],['hsLamp320',s.lamp320]])if(hsUi320[id]?.getAttribute('aria-pressed')!==String(pressed))hsUi320[id]?.setAttribute('aria-pressed',String(pressed));
+ hsUiWrite320('hsHide319','disabled',s.grace>0);hsUiWrite320('hsDecoy319','disabled',s.grace>0||s.hidden||s.decoys<=0||s.decoyAt>s.t);hsUiWrite320('hsListen319','disabled',s.grace>0||s.listenAt>s.t);hsUiWrite320('hsStop320','disabled',!s.nav320);hsUiWrite320('hsInteract320','disabled',s.grace>0||s.hidden);hsUiWrite320('hsLamp320','disabled',s.lantern320<=0||s.grace>0);
+ hsUiWrite320('hsGrace319','textContent',s.grace>0&&!s.paused&&s.phase==='running'?hsText319('grace',{s:s.grace.toFixed(1)}):'');hsUiWrite320('hsRoute320','textContent',s.nav320?hsText319('routeRemaining',{n:s.nav320.path.length}):hsText319('manualRoute'));
+ const message=s.inspect>0?'inspection':s.enemies.some(e=>e.seen)&&!s.hidden?'seen':s.interact320?'working':s.messageUntil>s.t?s.message:s.hidden?'hidden':'safe';hsUiWrite320('hsMessage319','textContent',hsText319(message,message==='inspection'?{s:Math.max(0,cfg.inspection-s.inspect).toFixed(1)}:message==='working'?{s:s.interact320.left.toFixed(1)}:s.messageArgs));
+ }
+ hsUiWrite320('hsSave319','textContent',hsText319(hsNotice319||hsError319||'saved'));hsDirty320=false;hsPerf320.hudMs+=performance.now()-start;
+};
+const hsBackgrounds320=new Map();let hsSceneCanvas320=null,hsFogCanvas320=null,hsSceneKey320='',hsVisualKey320='';
+function hsBackground320(id,map){const key=id+'|'+map.join('');if(hsBackgrounds320.has(key))return hsBackgrounds320.get(key);const can=document.createElement('canvas');can.width=760;can.height=520;const c=can.getContext('2d'),theme=HS_THEME320[id];c.fillStyle=theme[0];c.fillRect(0,0,760,520);
+ for(let y=0;y<13;y++)for(let x=0;x<19;x++){const px=x*40,py=y*40,t=map[y][x];if(t==='#'){c.fillStyle=theme[1];c.fillRect(px+1,py+1,38,38);c.fillStyle='#ffffff10';c.fillRect(px+1,py+1,38,3);c.fillStyle='#00000025';c.fillRect(px+1,py+35,38,4);if(x>0&&y>0&&x<18&&y<12){c.strokeStyle='#dce6db18';c.strokeRect(px+7,py+8,24,24);}}
+ else{c.fillStyle=(x+y)%2?'#ffffff05':'#00000008';c.fillRect(px,py,40,40);c.strokeStyle='#ffffff05';c.strokeRect(px,py,40,40);if(t==='H'){c.fillStyle='#3c667d';c.fillRect(px+5,py+5,30,30);c.strokeStyle='#9ecad3';c.strokeRect(px+5,py+5,30,30);c.beginPath();c.moveTo(px+20,py+6);c.lineTo(px+20,py+34);c.stroke();c.fillStyle='#efda9d';c.fillRect(px+23,py+18,3,5);}else if(t==='X'){c.fillStyle='#377367';c.fillRect(px+2,py+2,36,36);c.fillStyle='#d1efdb';c.font='bold 24px sans-serif';c.textAlign='center';c.fillText('↙',px+20,py+29);}else if(t==='~'){c.fillStyle='#618f7235';c.fillRect(px+2,py+2,36,36);c.strokeStyle='#91b29c33';for(let dy=6;dy<36;dy+=6){c.beginPath();c.moveTo(px+3,py+dy);c.lineTo(px+37,py+dy);c.stroke();}}else if(t==='!'){c.strokeStyle='#d7b67688';c.lineWidth=1;c.beginPath();c.moveTo(px+8,py+31);c.lineTo(px+17,py+10);c.lineTo(px+23,py+30);c.lineTo(px+32,py+8);c.stroke();}}}
+ hsBackgrounds320.set(key,can);return can;}
+function hsPreviews320(){for(const el of hsRoot319.querySelectorAll('[data-map-preview320]')){const id=Number(el.dataset.mapPreview320),preview=document.createElement('canvas');preview.width=190;preview.height=130;preview.getContext('2d').drawImage(hsBackground320(id,hsMap319(id)),0,0,190,130);preview.setAttribute('aria-hidden','true');el.appendChild(preview);}}
+function hsPixel320(p,s){const m=p.motion320;if(!m)return {x:p.x*40+20,y:p.y*40+20};const f=Math.min(1,Math.max(0,(s.t-m.at)/Math.max(.01,m.duration)));return {x:(m.x+(p.x-m.x)*f)*40+20,y:(m.y+(p.y-m.y)*f)*40+20};}
+hsDraw319=function(){const s=hs319;if(!hsCanvas319||!s||hsPage319!=='play')return;const started=performance.now(),output=hsCanvas319.getContext('2d',{alpha:false});if(!output)return;
+ const signature=p=>{const v=hsPixel320(p,s);return [Math.round(v.x*2),Math.round(v.y*2),p.dir,p.seen?1:0].join(',');};
+ const sceneKey=[s.mapId320,hsMode320(s),s.enemies.map(e=>[e.x,e.y,e.dir].join(',')).join(';'),s.tokens.map(p=>p.taken?1:0).join(''),s.letter.taken,s.spent320.join(','),s.terminals320.map(p=>p.done?1:0).join(''),s.nav320?s.nav320.path.map(p=>p.y*19+p.x).join(','):'',hsMode320(s)==='blackout'?[s.player.x,s.player.y,s.lamp320,s.reveal320>s.t].join(','):'',s.rules320.legacy].join('|');
+ const visualKey=[sceneKey,signature(s.player),s.enemies.map(signature).join(';'),hsMode320(s)==='rescue'?signature(s.friend320):'',s.hidden,s.alert>65,s.inspect.toFixed(2),s.interact320?s.interact320.left.toFixed(2):'',s.decoy?Math.floor(s.t*25):''].join('|');
+ if(visualKey===hsVisualKey320)return;hsVisualKey320=visualKey;hsDraws319++;
+ if(!hsSceneCanvas320){hsSceneCanvas320=document.createElement('canvas');hsSceneCanvas320.width=760;hsSceneCanvas320.height=520;hsFogCanvas320=document.createElement('canvas');hsFogCanvas320.width=760;hsFogCanvas320.height=520;}
+ let ctx=output;
+ const cfg=hsCfg320(s),dark=hsMode320(s)==='blackout',radius=s.lamp320?5:2,revealed=s.reveal320>s.t,visible=p=>!dark||revealed||Math.hypot(p.x-s.player.x,p.y-s.player.y)<=radius+.5;
+ if(sceneKey!==hsSceneKey320){hsSceneKey320=sceneKey;ctx=hsSceneCanvas320.getContext('2d',{alpha:false});ctx.drawImage(hsBackground320(s.mapId320,s.map),0,0);
+ // Build terrain, cones, route and goal layer only when logical tiles change.
+ ctx.fillStyle='rgba(244,197,105,.10)';for(const e of s.enemies)if(visible(e))for(let y=Math.max(1,e.y-cfg.range);y<=Math.min(11,e.y+cfg.range);y++)for(let x=Math.max(1,e.x-cfg.range);x<=Math.min(17,e.x+cfg.range);x++)if(visible({x,y})&&hsSight319(s,e,{x,y}))ctx.fillRect(x*40+1,y*40+1,38,38);
+ if(s.nav320?.path.length){ctx.strokeStyle='#9be7d4';ctx.lineWidth=3;ctx.setLineDash([5,6]);ctx.beginPath();const p=hsPixel320(s.player,s);ctx.moveTo(p.x,p.y);for(const n of s.nav320.path)ctx.lineTo(n.x*40+20,n.y*40+20);ctx.stroke();ctx.setLineDash([]);const goal=s.nav320.goal;ctx.strokeRect(goal.x*40+3,goal.y*40+3,34,34);}
+ for(const p of s.tokens)if(!p.taken&&hsMode320(s)!=='relay'&&visible(p)){const x=p.x*40+20,y=p.y*40+20;ctx.fillStyle='#eed393';ctx.beginPath();ctx.moveTo(x,y-10);ctx.lineTo(x+8,y);ctx.lineTo(x,y+10);ctx.lineTo(x-8,y);ctx.closePath();ctx.fill();}
+ if(!s.letter.taken&&visible(s.letter)){const x=s.letter.x*40+8,y=s.letter.y*40+11;ctx.fillStyle='#c7a5e4';ctx.fillRect(x,y,24,18);ctx.strokeStyle='#584469';ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x+12,y+10);ctx.lineTo(x+24,y);ctx.stroke();}
+ for(let y=1;y<12;y++)for(let x=1;x<18;x++)if(s.map[y][x]==='+'&&!s.spent320.includes(y*19+x)&&visible({x,y})){ctx.fillStyle='#739d9c';ctx.fillRect(x*40+7,y*40+9,26,22);ctx.fillStyle='#eff3df';ctx.fillRect(x*40+17,y*40+12,6,16);ctx.fillRect(x*40+12,y*40+17,16,6);}
+ if(hsMode320(s)==='relay')s.terminals320.forEach((p,i)=>{const x=p.x*40,y=p.y*40;ctx.fillStyle=p.done?'#4a8b70':'#977342';ctx.fillRect(x+5,y+5,30,30);ctx.fillStyle='#f4edc9';ctx.font='bold 19px system-ui';ctx.textAlign='center';ctx.fillText(p.done?'✓':String(i+1),x+20,y+27);});
+
+ const fog=hsFogCanvas320.getContext('2d');fog.clearRect(0,0,760,520);if(dark&&!revealed){fog.fillStyle='#07131adb';for(let y=1;y<12;y++)for(let x=1;x<18;x++)if(!visible({x,y}))fog.fillRect(x*40,y*40,40,40);}
+ }
+ ctx=output;ctx.drawImage(hsSceneCanvas320,0,0);
+ if(s.decoy&&visible(s.decoy)){ctx.strokeStyle='#cbabeb';ctx.lineWidth=2;ctx.beginPath();ctx.arc(s.decoy.x*40+20,s.decoy.y*40+20,12+Math.sin(s.t*6)*3,0,Math.PI*2);ctx.stroke();}
+ function actor(p,color,hidden,letter){const pos=hsPixel320(p,s),x=pos.x,y=pos.y;ctx.save();ctx.globalAlpha=hidden?.45:1;ctx.fillStyle='#0a151a';ctx.beginPath();ctx.ellipse(x,y+12,14,5,0,0,Math.PI*2);ctx.fill();ctx.fillStyle=color;ctx.beginPath();ctx.arc(x,y-3,11,0,Math.PI*2);ctx.fill();ctx.fillRect(x-9,y+4,18,9);ctx.fillStyle='#1b3035';const dir=HS_DIR319[p.dir??2];ctx.beginPath();ctx.arc(x+dir[0]*5-2,y+dir[1]*5-3,2,0,Math.PI*2);ctx.arc(x+dir[0]*5+2,y+dir[1]*5-3,2,0,Math.PI*2);ctx.fill();if(letter){ctx.fillStyle='#fff2d2';ctx.font='bold 12px system-ui';ctx.textAlign='center';ctx.fillText(letter,x,y-17);}ctx.restore();}
+ for(const e of s.enemies)if(visible(e))actor(e,e.seen?'#ed9083':'#deb274',false);
+ if(hsMode320(s)==='rescue'&&visible(s.friend320))actor(s.friend320,'#beb0e4',s.hidden&&s.friend320.joined,'P');actor(s.player,'#95d9c2',s.hidden);
+ if(dark&&!revealed)ctx.drawImage(hsFogCanvas320,0,0);
+ const pos=hsPixel320(s.player,s);ctx.strokeStyle=s.alert>65?'#ed8e77':'#b4e8d6';ctx.lineWidth=2;ctx.beginPath();ctx.arc(pos.x,pos.y,17,0,Math.PI*2);ctx.stroke();if(s.inspect>0||s.interact320){const f=s.inspect>0?s.inspect/cfg.inspection:1-s.interact320.left/(s.interact320.type==='relay'?2.5:1);ctx.strokeStyle=s.inspect>0?'#ed8e77':'#e8d69e';ctx.lineWidth=4;ctx.beginPath();ctx.arc(pos.x,pos.y,20,-Math.PI/2,-Math.PI/2+Math.PI*2*f);ctx.stroke();}
+ hsPerf320.drawMs+=performance.now()-started;
+};
+const hsCommandBefore320=hsCommand319;
+hsCommand319=function(action){if(action.startsWith('map:')){const id=Number(action.slice(4));if(Number.isInteger(id)&&id>=0&&id<9){hsPrefs320.map=id;hsPrefs320.playlist='single';hsPrefsSave320();hsRender319(true);}return;}
+ if(action==='stop'){hsStopRoute320(true);hsSave319();hsRender319();return;}
+ if(action==='interact'){hsInteract320();hsRender319();return;}
+ if(action==='lamp'){if(hsCanAct319()&&hsMode320()==='blackout'&&hs319.lantern320>0){hs319.lamp320=!hs319.lamp320;hsSave319();hsDirty320=true;hsRender319();}return;}
+ return hsCommandBefore320(action);};
+hsRoot319.addEventListener('change',e=>{const id=e.target.id,field={hsDifficulty319:'difficulty',hsMode320:'mode',hsPlaylist320:'playlist',hsQuality320:'quality',hsZoom320:'zoom',hsSafety320:'safety'}[id];if(!field)return;e.stopImmediatePropagation();let value=e.target.value;if(field==='zoom')value=Number(value);if(field==='safety')value=e.target.checked;hsPrefs320[field]=value;hsCleanPrefs320();hsSetup319=hsPrefs320.difficulty;hsPrefsSave320();
+ if(id==='hsZoom320'){const el=hsRoot319.querySelector('.hs-canvas319');if(el)el.style.setProperty('--map-zoom',hsPrefs320.zoom);}else if(hsPage319==='setup')hsRender319(true);hsDirty320=true;
+},true);
+// The map remains pannable when zoomed; a drag/scroll is never a destination tap.
+hsRoot319.addEventListener('pointerdown',e=>{if(e.target!==hsCanvas319||e.button>0)return;hsCapturedTap320={id:e.pointerId,x:e.clientX,y:e.clientY,scrollX:hsCanvas319.closest('.hs-mapscroll320').scrollLeft,scrollY:hsCanvas319.closest('.hs-mapscroll320').scrollTop};});
+hsRoot319.addEventListener('pointerup',e=>{const tap=hsCapturedTap320;hsCapturedTap320=null;if(!tap||tap.id!==e.pointerId||!hsCanvas319||e.target!==hsCanvas319||Math.hypot(e.clientX-tap.x,e.clientY-tap.y)>10)return;const sc=hsCanvas319.closest('.hs-mapscroll320');if(Math.abs(sc.scrollLeft-tap.scrollX)+Math.abs(sc.scrollTop-tap.scrollY)>4)return;const r=hsCanvas319.getBoundingClientRect();const x=Math.floor((e.clientX-r.left)/r.width*19),y=Math.floor((e.clientY-r.top)/r.height*13);hsRoute320(x,y);hsRender319();hsDraw319();});
+hsRoot319.addEventListener('pointercancel',()=>{hsCapturedTap320=null;});
+const hsGuardBefore320=hideGuard319;
+hideGuard319=e=>{if(hsOpen319&&e.type==='keydown'&&!e.repeat&&!e.ctrlKey&&!e.metaKey&&!e.altKey&&!e.isComposing&&!['INPUT','SELECT','TEXTAREA'].includes(e.target.tagName)){
+ const cmd={KeyR:'interact',KeyL:'lamp',KeyX:'stop'}[e.code];if(cmd&&hsCanAct319()){e.preventDefault();e.stopImmediatePropagation();hsCommand319(cmd);return;}if(e.code in HS_KEYS319)hsStopRoute320();}
+ hsGuardBefore320(e);};
+// While the self-localized mode owns the screen, keep the legacy body observer
+// detached. Its previous per-mutation flush touched the 4 MB hidden campus DOM.
+const hsFlushBefore320=flushLocale3171;
+flushLocale3171=function(...args){if(hsOpen319){dirtyLocaleObserver3171.disconnect();dirtyRoots3171.clear();return;}return hsFlushBefore320(...args);};
+const hsOpenObservers320=hsOpenMode319,hsCloseObservers320=hsClose319;
+hsOpenMode319=function(...args){const result=hsOpenObservers320(...args);if(result){dirtyLocaleObserver3171.disconnect();dirtyRoots3171.clear();hsRoot319.dataset.quality320=hsPrefs320.quality;}return result;};
+hsClose319=function(...args){const r=hsCloseObservers320(...args);hsFlushBefore320(true);return r;};
+const hsHostRender320=renderUI;
+renderUI=function(...args){if(hsOpen319){if(hsDirty320||!hsRenderKey319)hsRender319();return;}return hsHostRender320(...args);};
+
+
+/* All newly added Night Watch UI is translated locally; prior coverage is unchanged. */
+const NW321_ROWS=`
+subtitle|旧楼异相|The building remembers|旧校舎の異相|Le bâtiment se souvient|Здание помнит|Húsið man|المبنى يتذكر
+lead|守住两扇门，记住第四路监控。天亮之前，不要把安静当成安全。|Two doors. Four cameras. Until dawn, silence is not safety.|二つの扉、四つのカメラ。夜明けまで、静けさを安全と思わないこと。|Deux portes, quatre caméras. Jusqu’à l’aube, le silence n’est pas la sécurité.|Две двери, четыре камеры. До рассвета тишина не означает безопасность.|Tvær dyr, fjórar myndavélar. Þögn merkir ekki öryggi fyrr en dagur rís.|بابان وأربع كاميرات. حتى الفجر، الصمت لا يعني الأمان.
+look|五夜画面与惊吓|Night visuals & scares|五夜の映像と恐怖演出|Image et frayeurs de nuit|Изображение и испуг|Útlit og hræðsla|المظهر والمفاجآت الليلية
+eerie|诡异画风|Uncanny art style|不気味な画風|Style inquiétant|Жуткий стиль|Óhugnanlegur stíll|أسلوب بصري غريب
+eerieDesc|仅旧楼五夜生效。切换全部来客立绘、监控、菜单与界面；不改变难度。默认关闭。|Night Watch only. Restyles every visitor, camera, menu and panel without changing difficulty. Off by default.|五夜のみ。来客・監視映像・全メニューの画風を変更。難易度は変化なし。初期はオフ。|Seulement ici : transforme visiteurs, caméras et menus, sans changer la difficulté. Désactivé par défaut.|Только для пяти ночей: меняет гостей, камеры и меню, но не сложность. По умолчанию выключен.|Aðeins næturvakt: breytir gestum, myndavélum og valmyndum, ekki erfiðleika. Sjálfgefið slökkt.|لهذا الوضع فقط: يغيّر الزوار والكاميرات والقوائم دون تغيير الصعوبة. مغلق افتراضياً.
+scare|失守突脸|Capture jumpscares|侵入時の接近演出|Sursaut lors d’une capture|Испуг при проигрыше|Snögg hræðsla við tap|مفاجأة عند الإمساك بك
+scareDesc|只在本次失守时出现一次，可立即跳过。关闭后直接显示失败原因。|Plays once when caught. Skip at any time; when off, show the result directly.|今回の失敗時に一度だけ表示。いつでもスキップ可能。オフなら結果へ。|Une fois à la capture, toujours passable. Désactivé : résultat direct.|Один раз при поражении, можно пропустить. При отключении сразу показан итог.|Birtist einu sinni við tap og má sleppa. Annars birtist niðurstaðan beint.|تظهر مرة واحدة عند الخسارة ويمكن تخطيها. عند الإغلاق تظهر النتيجة مباشرة.
+flash|单次闪屏|Single flash pulse|単発フラッシュ|Éclair unique|Одиночная вспышка|Ein ljósblossa|ومضة واحدة
+flashDesc|突脸时的一次低亮度灰红闪光，无连续频闪。遵守全局闪烁与减少动态设置。|One dim grey-red pulse on capture, never a strobe. Respects global flash and reduced-motion settings.|侵入時に低輝度の灰赤色を一度だけ表示。連続点滅なし。全体設定を尊重。|Une impulsion gris-rouge tamisée, jamais de stroboscope. Respecte les réglages globaux.|Один тусклый серо-красный импульс, без стробоскопа. Учитывает общие настройки.|Einn daufur grárauður blossi, aldrei strob. Virðir almennar stillingar.|نبضة رمادية حمراء خافتة واحدة، بلا وميض متكرر. تحترم الإعدادات العامة.
+atmos|环境音与细节|Ambient sound & detail|環境音と細部|Ambiance sonore et détails|Атмосфера и звуки|Umhverfishljóð og smáatriði|الأصوات والتفاصيل المحيطة
+atmosDesc|低声电流、脚步和静态扫描纹理。静音不影响提示；不播放循环音轨。|Soft electrical hum, footsteps and static scan texture. Muting keeps all warnings; no looping audio track.|小さな電気音・足音・静的な走査線。消音でも警告は残り、常時音源なし。|Bourdonnement discret, pas et lignes statiques. Les alertes restent sans son, aucune piste en boucle.|Тихий гул, шаги и статичные полосы. Подсказки доступны без звука; нет зацикленного трека.|Dauf suðhljóð, fótatak og kyrrar línur. Viðvaranir haldast án hljóðs; engin hljóðlykkja.|طنين خافت وخطوات وخطوط ثابتة. التنبيهات باقية عند الكتم، بلا مسار صوتي متكرر.
+quality|绘制帧率上限|Render frame-rate cap|描画フレーム上限|Plafond d’images par seconde|Предел частоты кадров|Hámark rammatíðni|حد معدل الإطارات
+eco|省电 · 20|Eco · 20|省電力・20|Éco · 20|Экономия · 20|Sparnaður · 20|توفير · 20
+balanced|均衡 · 30|Balanced · 30|バランス・30|Équilibré · 30|Баланс · 30|Jafnvægi · 30|متوازن · 30
+smooth|流畅 · 60|Smooth · 60|なめらか・60|Fluide · 60|Плавность · 60|Mjúkt · 60|سلس · 60
+qualityDesc|仅改变画面刷新，不改变时间、敌人、电力或信号速度。|Only affects rendering, never clocks, enemies, power or signal.|描画のみ変更。時間・敵・電力・信号は変わりません。|Change seulement le rendu, pas le temps, les ennemis ni les ressources.|Меняет только отрисовку, не время, врагов и ресурсы.|Breytir aðeins teikningu, ekki tíma, óvinum eða orku.|يغيّر الرسم فقط، لا الزمن أو الأعداء أو الطاقة.
+notice|惊吓提示：失守时会有近距离人影和短促音效，可在此关闭突脸或闪屏。|Scare notice: capture can show a close-up and a short sound. You may disable either effect here.|注意：失敗時に接近映像と短い音。ここで接近演出・閃光をオフにできます。|Attention : la capture peut afficher un visage proche et un son bref. Réglages ci-dessous.|При проигрыше возможны крупный план и короткий звук. Эффекты можно отключить.|Við tap gæti birst nærmynd og stutt hljóð. Slökkva má á áhrifunum hér.|تنبيه: قد يظهر وجه قريب وصوت قصير عند الخسارة. يمكنك تعطيلهما هنا.
+local|这些设置仅属于旧楼五夜；校园、对战和捉迷藏保持原样。|These settings belong only to Night Watch. School, battles and hide-and-seek are unchanged.|この設定は五夜専用。学校・対戦・かくれんぼには影響しません。|Réglages propres aux cinq nuits : école, combats et cache-cache inchangés.|Настройки относятся только к пяти ночам. Остальные режимы не меняются.|Aðeins næturvaktin notar þessar stillingar. Aðrir leikir breytast ekki.|هذه الإعدادات تخص الليالي الخمس فقط. الأوضاع الأخرى لا تتغير.
+returnPaused|返回暂停画面|Return to pause|一時停止に戻る|Retour à la pause|Назад к паузе|Til baka í hlé|العودة للإيقاف
+skip|跳过演出|Skip effect|演出をスキップ|Passer l’effet|Пропустить эффект|Sleppa áhrifum|تخطي المشهد
+preview|预览突脸 · 不计失败|Preview scare · no penalty|演出プレビュー・罰則なし|Aperçu · sans pénalité|Предпросмотр без штрафа|Forskoða án refsingar|معاينة بلا عقوبة
+previewConfirm|下一步将播放约1.2秒突脸，按Esc或点击跳过可立即结束。|Next: a 1.2-second close-up. Press Esc or Skip to end it immediately.|次に約1.2秒の接近演出。Escかスキップで即終了。|Suit un gros plan de 1,2 s. Échap ou Passer l’arrête immédiatement.|Будет крупный план на 1,2 секунды. Esc или «Пропустить» остановят его.|Næst kemur 1,2 sek. nærmynd. Esc eða Sleppa stöðvar hana strax.|ستظهر لقطة قريبة لمدة 1.2 ثانية. Esc أو التخطي ينهيها فوراً.
+control|安保控制台|Security console|警備操作盤|Console de sécurité|Пульт охраны|Öryggisstjórnborð|لوحة الأمن
+monitor|监控画面|Surveillance feed|監視映像|Vue de surveillance|Камеры наблюдения|Vöktunarmynd|صورة المراقبة
+room|值守室|Security office|警備室|Poste de garde|Пост охраны|Vaktstofa|غرفة الحراسة
+usage|耗电负载|Power load|消費電力|Charge électrique|Расход энергии|Orkuálag|استهلاك الطاقة
+closed|已关闭|Closed|閉鎖中|Fermée|Закрыто|Lokað|مغلق
+open|已打开|Open|開放中|Ouverte|Открыто|Opið|مفتوح
+lit|照明中|Lit|点灯中|Éclairée|Освещено|Upplýst|مضاء
+idle|待机|Idle|待機|En veille|Ожидание|Biðstaða|استعداد
+online|信号接通|Signal online|信号正常|Signal connecté|Сигнал есть|Merki virkt|الإشارة متصلة
+offline|屏幕已收起|Monitor lowered|画面を下げた|Écran abaissé|Монитор опущен|Skjár niðri|الشاشة مطوية
+reset|系统重连中|Reconnecting|再接続中|Reconnexion|Переподключение|Endurtenging|جارٍ إعادة الاتصال
+visitor0|机械海胆|Mechanical Urchin|機械ウニ|Oursin mécanique|Механический ёж|Vélrænn ígull|قنفذ آلي
+visitor1|走廊星客|Corridor Visitor|廊下の星客|Visiteur du couloir|Гость коридора|Gangagestur|زائر الرواق
+visitor2|钟面回声|Clock Echo|時計の残響|Écho du cadran|Эхо циферблата|Klukkuómun|صدى الساعة
+who|来客档案|Visitor files|来客資料|Dossiers des visiteurs|Досье гостей|Gestaskrár|ملفات الزوار
+who0|从左侧接近。门灯用于确认位置；来客抵达门边时关门，等它退去后再打开。|Approaches from the left. Check with the lamp; close the door at the threshold, then reopen after it retreats.|左から接近。ライトで確認し、戸口では扉を閉じ、退いたら開ける。|Approche à gauche. Vérifiez avec la lampe, fermez au seuil puis rouvrez après son retrait.|Приходит слева. Проверьте лампой, закройте у порога и откройте после отступления.|Kemur frá vinstri. Athugaðu með ljósinu, lokaðu við þröskuld og opnaðu eftir hörfun.|يقترب من اليسار. افحص بالمصباح وأغلق عند العتبة وافتح بعد تراجعه.
+who1|从右侧接近。持续监看可以拖慢它，但监控与门都需要电力。|Approaches from the right. Watching can slow it, but both cameras and doors consume power.|右から接近。監視で遅らせられるが、カメラと扉は電力を使う。|Approche à droite. La surveillance peut le ralentir, mais caméras et portes consomment.|Приходит справа. Наблюдение замедляет, но камеры и двери расходуют энергию.|Kemur frá hægri. Vöktun hægir á honum, en vélar og dyr nota orku.|يقترب من اليمين. المراقبة قد تبطئه، لكن الكاميرات والأبواب تستهلك الطاقة.
+who2|第四路监控中的异常会不断累积。观察它可压低异常；声音诱饵也有帮助。|An anomaly accumulates on camera 04. Watch it to reduce pressure; the sound lure also helps.|CAM04の異常は蓄積する。監視で抑えられ、音のおとりも有効。|L’anomalie monte sur CAM04. L’observer réduit la pression ; le leurre aide aussi.|Аномалия на CAM04 нарастает. Наблюдение и звуковая приманка снижают давление.|Frávik safnast á CAM04. Fylgstu með því til að lækka þrýsting; hljóðtálbeita hjálpar.|يتراكم الخلل في CAM04. راقبه لتخفيف الضغط؛ الطُعم الصوتي يساعد أيضاً.
+near|门边有轮廓，确认门的状态。|A shape at the door. Check the door state.|戸口に輪郭。扉の状態を確認。|Une silhouette au seuil. Vérifiez la porte.|У двери силуэт. Проверьте дверь.|Útlínur við dyr. Athugaðu dyrnar.|ظل عند الباب. تحقق من حالة الباب.
+quiet|走廊安静。继续轮换检查，不要长期封门。|The corridor is quiet. Keep checking; do not seal both doors for long.|廊下は静か。交互に確認し、長時間閉め続けない。|Couloir calme. Continuez les rondes visuelles, sans fermer trop longtemps.|Коридор тих. Продолжайте проверять, не закрывайте двери надолго.|Gangurinn er hljóður. Haltu áfram að athuga og forðastu langa lokun.|الرواق هادئ. استمر بالفحص ولا تغلق البابين طويلاً.
+leftLost|左侧来客越过了门槛。下次先确认门灯，再及时关闭左门。|The left visitor crossed the threshold. Check the lamp and close the left door in time.|左の来客が侵入。次はライトを確認し、左扉を閉じよう。|Le visiteur gauche a franchi le seuil. Vérifiez puis fermez à temps.|Гость слева вошёл. В следующий раз проверьте свет и закройте левую дверь.|Vinstri gestur komst inn. Athugaðu ljósið og lokaðu í tíma.|دخل الزائر من اليسار. افحص المصباح وأغلق الباب في الوقت المناسب.
+rightLost|右侧来客进入了值守室。两扇门需要分别检查。|The right visitor entered. Check both doors independently.|右の来客が侵入。両扉を別々に確認しよう。|Le visiteur droit est entré. Vérifiez chaque porte séparément.|Гость справа вошёл. Проверяйте обе двери отдельно.|Hægri gestur komst inn. Athugaðu báðar dyr sérstaklega.|دخل الزائر من اليمين. افحص كل باب على حدة.
+clockLost|第四路异常失控。下次不要忘记广播室的钟面。|Camera 04's anomaly overwhelmed you. Remember the clock in the broadcast room.|CAM04の異常が限界に。放送室の時計を忘れずに。|L’anomalie CAM04 a débordé. N’oubliez pas l’horloge de la radio.|Аномалия CAM04 вышла из-под контроля. Не забывайте часы.|Frávik CAM04 náði yfirhöndinni. Mundu eftir klukkunni.|خرج خلل CAM04 عن السيطرة. لا تنس ساعة غرفة البث.
+blackoutLost|备用照明也熄灭了。减少长时间关门与持续开监控的耗电。|The backup light went out. Avoid keeping doors and cameras on for too long.|非常灯も消灯。扉と監視のつけっぱなしに注意。|L’éclairage de secours s’est éteint. Réduisez les usages prolongés.|Резервный свет погас. Не держите двери и камеры включёнными подолгу.|Varaljósið slokknaði. Sparaðu notkun dyra og myndavéla.|انطفأ الضوء الاحتياطي. قلّل إبقاء الأبواب والكاميرات قيد التشغيل.
+dawn|天亮了，暂时安全。|Dawn. Safe for now.|夜明け。今は安全。|L’aube. En sécurité pour l’instant.|Рассвет. Пока безопасно.|Dögun. Öruggt í bili.|حلّ الفجر. أنت آمن الآن.
+calmNote|外观选项不影响敌人、耗电、成就与结局条件。|Appearance never changes enemies, power, achievements or endings.|外観は敵・電力・実績・結末条件を変えません。|L’apparence ne modifie ni ennemis ni énergie ni conditions de succès.|Внешний вид не меняет врагов, энергию и условия наград.|Útlit breytir ekki óvinum, orku, afrekum eða endum.|المظهر لا يغيّر الأعداء أو الطاقة أو شروط الإنجازات والنهايات.
+pausedNote|时间、电力和来客均已暂停。退出设置后仍需主动继续。|Time, power and visitors are paused. Resume manually after settings.|時間・電力・来客は停止。設定後も手動で再開。|Temps, énergie et visiteurs en pause. Reprenez manuellement.|Время, энергия и гости на паузе. Продолжите вручную.|Tími, orka og gestir eru í hléi. Haltu áfram handvirkt.|الوقت والطاقة والزوار متوقفون. استأنف يدوياً بعد الإعدادات.
+savedLocal|外观已保存到此浏览器|Appearance saved in this browser|外観をこのブラウザーに保存|Apparence enregistrée ici|Вид сохранён в браузере|Útlit vistað í vafranum|تم حفظ المظهر في هذا المتصفح
+saveFail|无法写入外观设置；本次会话仍可使用。|Appearance storage failed; it still works this session.|外観の保存に失敗。このセッションでは有効。|Échec de l’enregistrement ; actif pour cette session.|Не удалось сохранить вид; в этой сессии он работает.|Ekki tókst að vista útlit; það virkar í þessari lotu.|تعذر حفظ المظهر؛ سيظل فعالاً في هذه الجلسة.
+ready|准备值守|Ready for watch|当直準備|Prêt pour la garde|Готовность к смене|Tilbúinn á vakt|استعداد للحراسة
+costLamp|点亮1.6秒 · 0.6电力|1.6s light · 0.6 power|1.6秒点灯・電力0.6|Lampe 1,6 s · énergie 0,6|Свет 1,6 с · 0,6 энергии|Ljós 1,6 sek. · 0,6 orka|ضوء 1.6ث · طاقة 0.6
+costLure|5电力 · 冷却14秒|5 power · 14s cooldown|電力5・14秒待ち|5 énergie · recharge 14 s|5 энергии · 14 с|5 orka · 14 sek. bið|5 طاقة · تبريد 14ث
+costReset|4电力 · 重连3秒|4 power · 3s reboot|電力4・再接続3秒|4 énergie · 3 s|4 энергии · 3 с|4 orka · 3 sek.|4 طاقة · إعادة 3ث
+controlsHint|A/D 门 · Q/E 门灯 · 空格 监控 · 1—4 切画面 · L 诱饵 · R 重连|A/D doors · Q/E lamps · Space camera · 1–4 feeds · L lure · R reboot|A/D 扉・Q/E ライト・Space 監視・1–4 画面・L 囮・R 再接続|A/D portes · Q/E lampes · Espace caméra · 1–4 vues · L leurre · R relancer|A/D двери · Q/E свет · пробел камера · 1–4 виды · L приманка · R перезапуск|A/D dyr · Q/E ljós · bil myndavél · 1–4 myndir · L tálbeita · R endurræsa|A/D الأبواب · Q/E المصابيح · مسافة الكاميرا · 1–4 الشاشات · L طُعم · R إعادة
+noSignal|信号丢失，请重新连接|Signal lost. Reconnect.|信号なし。再接続を。|Signal perdu. Reconnectez.|Сигнал потерян. Перезапустите.|Merki tapaðist. Endurtengdu.|فُقدت الإشارة. أعد الاتصال.
+scareDisabled|突脸已关闭，预览将显示静态来客。|Scares are off; the preview shows a still visitor.|接近演出オフ。静止画を表示します。|Effet désactivé : aperçu fixe.|Испуг выключен: статичный гость.|Hræðsla slökkt: kyrrmynd.|المفاجأة مغلقة؛ المعاينة ثابتة.
+profile|来客与设备均为虚构形象，无真人照片，无外部素材。|Fictional visitors and equipment; no real photos or external assets.|来客・設備は架空。実写写真・外部素材なし。|Visiteurs fictifs, sans photos réelles ni ressources externes.|Гости вымышлены, реальных фото и внешних материалов нет.|Gestir eru skáldaðir; engar raunljósmyndir eða ytri gögn.|الزوار خياليون؛ لا صور حقيقية ولا مواد خارجية.
+`;
+for(const line of NW321_ROWS.trim().split('\n')){const [id,...v]=line.split('|');if(v.length!==7)throw Error('Bad night locale '+id);hsWords319('n321_'+id,...v);}
+function nt321(id,args={}){return hsText319('n321_'+id,args);}
+
+/* v3.21 — isolated Night Watch presentation. Game logic, RNG and save format stay intact.
+ * Reuses the existing arcade root, delegated actions and animation loop.
+ * Static rooms and character paintings are cached; controls update only on change.
+ */
+const NW321_KEY='last-class-night-visuals-v321';
+const NW321_DEFAULT=Object.freeze({eerie:false,scare:true,flash:true,ambience:true,quality:'balanced'});
+function cleanNightPrefs321(v={}){const r={...NW321_DEFAULT};for(const k of ['eerie','scare','flash','ambience'])if(typeof v?.[k]==='boolean')r[k]=v[k];if(['eco','balanced','smooth'].includes(v?.quality))r.quality=v.quality;return r;}
+let nightPrefs321={...NW321_DEFAULT},nightPrefError321=false;
+try{nightPrefs321=cleanNightPrefs321(JSON.parse(localStorage.getItem(NW321_KEY)||'{}'));}catch(_){nightPrefError321=true;}
+const N321={render:renderArcade317,draw:drawArcade317,command:arcadeCommand317,finish:finishNight317,action:nightAction317,
+ step:stepArcade317,pause:pauseArcade317,close:closeArcade317,open:openArcade317,start:startArcade317,restore:restoreMode317,next:nextNight317};
+const nightStats321={builds:0,draws:0,drawMs:0,hudUpdates:0,roomBuilds:0,spriteBuilds:0,scares:0,audioCues:0};
+const nightRooms321=new Map(),nightSprites321=new Map(),nightURLs321=new Map();
+const nightMotion321=window.matchMedia('(prefers-reduced-motion: reduce)');
+let nightPage321='',nightKey321='',nightDOM321={},nightPrev321=null,nightFX321=null,nightTime321=0,nightDrawAt321=-1,nightHudAt321=-1,nightAudioAt321=0,nightCut321=0,nightReturn321='setup',nightFocus321=null,nightLoss321='left',nightScareCanvas321=null;
+const NW_W321=1200,NW_H321=675;
+function nr321(c,x,y,w,h,r=0,fill=null,stroke=null){c.beginPath();c.roundRect(x,y,w,h,r);if(fill){c.fillStyle=fill;c.fill();}if(stroke){c.strokeStyle=stroke;c.stroke();}}
+function np321(c,points,fill,stroke){c.beginPath();points.forEach(([x,y],i)=>i?c.lineTo(x,y):c.moveTo(x,y));c.closePath();if(fill){c.fillStyle=fill;c.fill();}if(stroke){c.strokeStyle=stroke;c.stroke();}}
+function nl321(c,x,y,ex,ey,color,width=1){c.strokeStyle=color;c.lineWidth=width;c.beginPath();c.moveTo(x,y);c.lineTo(ex,ey);c.stroke();}
+function ne321(c,x,y,rx,ry,fill,stroke){c.beginPath();c.ellipse(x,y,rx,ry,0,0,Math.PI*2);if(fill){c.fillStyle=fill;c.fill();}if(stroke){c.strokeStyle=stroke;c.stroke();}}
+function gradient321(c,x,y,r0,xx,yy,r1,a,b){const g=c.createRadialGradient(x,y,r0,xx,yy,r1);g.addColorStop(0,a);g.addColorStop(1,b);return g;}
+function paintVisitor321(c,type,eerie){
+ c.clearRect(0,0,360,440);c.save();c.translate(180,215);c.lineCap='round';c.lineJoin='round';
+ ne321(c,0,178,97,15,'#00000065');
+ if(type==='urchin'){
+  for(const side of [-1,1]){nl321(c,side*44,38,side*(eerie?100:83),115,'#343b3b',eerie?15:21);ne321(c,side*77,88,12,12,'#797365','#282e2e');nl321(c,side*84,105,side*(eerie?123:105),145,'#655f57',12);
+   for(let j=0;j<3;j++)nl321(c,side*101,135,side*(111+j*6),151+j*5,'#bcb59a',4);
+   nl321(c,side*30,70,side*38,150,'#454a43',21);ne321(c,side*38,156,28,14,'#726f5f','#a0a089');}
+  np321(c,[[-62,8],[-44,90],[45,92],[62,9]],'#545646','#90937c');nr321(c,-27,43,54,35,5,'#c3b993');for(let j=0;j<3;j++)nl321(c,-16,53+j*7,16,53+j*7,'#666e61',2);
+  const points=[];for(let i=0;i<50;i++){const a=i*Math.PI/25;const r=i%2?(eerie?80:79):(eerie?110+(i%8)*3:102);points.push([Math.sin(a)*r,Math.cos(a)*r*(eerie?1.12:1)-37]);}
+  np321(c,points,eerie?'#736f61':'#936c55','#b8a582');
+  const g=c.createRadialGradient(-22,-68,3,0,-37,79);g.addColorStop(0,eerie?'#d0c4a2':'#b99a76');g.addColorStop(1,eerie?'#676356':'#675046');ne321(c,0,-38,77,75,g,'#c2ae8888');
+  if(eerie){ne321(c,-28,-58,24,32,'#111a1b','#b29c7e');ne321(c,29,-55,20,22,'#101819','#cfba88');ne321(c,-25,-50,4,8,'#edcf8d');ne321(c,34,-58,3,5,'#99c6c0');
+   np321(c,[[-45,-8],[-18,0],[8,-10],[43,-19],[32,22],[-19,31]],'#121819','#92826b');for(let i=0;i<7;i++){nl321(c,-33+i*10,-4,-27+i*8,17,'#d0bc98',3);}
+   nl321(c,-10,-111,-17,-76,'#352e2c',3);nl321(c,-17,-76,4,-51,'#352e2c',3);nl321(c,4,-51,-2,-27,'#352e2c',3);
+  }else{nr321(c,-56,-68,112,28,8,'#222f2d','#c7b28c');ne321(c,-28,-54,9,8,'#c8dbbc');ne321(c,28,-54,9,8,'#cfddb9');ne321(c,-26,-54,4,6,'#283b38');ne321(c,29,-54,4,6,'#263b39');
+   c.strokeStyle='#392f2a';c.lineWidth=5;c.beginPath();c.ellipse(0,-23,32,23,0,.12,Math.PI-.12);c.stroke();nl321(c,-17,-1,-14,7,'#d6c2a4',3);nl321(c,16,-1,12,7,'#d6c2a4',3);}
+  ne321(c,-57,-3,8,7,'#ae77614d');ne321(c,56,-3,8,7,'#a9665b44');
+ }else if(type==='alien'){
+  for(const side of [-1,1]){c.strokeStyle='#6d8686';c.lineWidth=eerie?5:8;c.beginPath();c.moveTo(side*40,-67);c.bezierCurveTo(side*50,-119,side*95,-169,side*(eerie?93:78),-186);c.stroke();ne321(c,side*(eerie?93:78),-186,6,9,eerie?'#c1b297':'#95b5a5');
+   c.strokeStyle='#72888a';c.lineWidth=eerie?13:19;c.beginPath();c.moveTo(side*36,36);c.bezierCurveTo(side*102,54,side*47,110,side*(eerie?118:91),140);c.stroke();ne321(c,side*92,122,11,9,'#a0b4aa');
+   for(let j=0;j<3;j++)nl321(c,side*92,132,side*(97+j*8),155-j*6,'#839d96',4);}
+  const g=c.createLinearGradient(-60,-80,62,99);g.addColorStop(0,eerie?'#8c9e8b':'#819fa3');g.addColorStop(.6,eerie?'#53655f':'#58737b');g.addColorStop(1,'#253b42');
+  np321(c,[[-40,-5],[-65,58],[-48,147],[-26,123],[0,158],[25,123],[49,147],[64,52],[36,-5]],g,'#abc1ad88');
+  ne321(c,0,eerie?-58:-48,eerie?62:73,eerie?92:68,g,'#adbd9c');
+  if(eerie){ne321(c,-25,-69,18,34,'#071819','#667e6d');ne321(c,28,-55,24,29,'#0e171a','#768c7c');ne321(c,-26,-65,2.5,13,'#cecfac');ne321(c,30,-58,3,9,'#cecfac');
+   ne321(c,1,-3,12,21,'#0a191b','#8c9d86');for(let i=0;i<8;i++)nl321(c,-7+i*2,-11,-9+i*3,9,'#a5b8a166',1);
+   nl321(c,-2,-139,-8,-110,'#536958',2);nl321(c,-8,-110,2,-90,'#536958',2);
+  }else{ne321(c,-29,-56,23,29,'#bdd0b9','#3a5558');ne321(c,29,-56,23,29,'#bdd0b9','#3a5558');ne321(c,-25,-52,9,19,'#1a3843');ne321(c,25,-52,9,19,'#1a3843');ne321(c,-28,-63,4,6,'#e5e8cf');ne321(c,27,-63,4,6,'#e5e8cf');ne321(c,0,-11,12,4,'#2b4850');}
+  nr321(c,-17,34,34,22,3,'#bcc6a6','#46625f');ne321(c,0,44,5,5,'#618e85');
+ }else{
+  np321(c,[[-44,33],[-63,140],[-83,163],[-56,172],[0,153],[59,174],[79,162],[53,128],[42,29]],eerie?'#333a34':'#435351','#788473');
+  for(const side of [-1,1]){nl321(c,side*41,21,side*91,100,'#4e5b54',11);for(let j=0;j<4;j++)nl321(c,side*84,95,side*(94+j*6),125+j*5,'#b5b49a',3);}
+  ne321(c,0,-34,eerie?68:78,eerie?103:78,'#373f3a','#b4b79b');ne321(c,0,-34,eerie?59:67,eerie?93:67,eerie?'#d1c2a2':'#c4c9ae','#5a6c63');
+  c.save();c.translate(0,-34);for(let i=0;i<12;i++){c.save();c.rotate(i*Math.PI/6);nl321(c,0,-53,0,-62,'#4e5b51',i%3?2:4);c.restore();}
+  if(eerie){ne321(c,-24,-15,16,24,'#283329');ne321(c,23,-8,19,16,'#31332b');ne321(c,-25,-11,3,5,'#d5c095');ne321(c,27,-8,3,4,'#d5c095');
+   c.strokeStyle='#6d6250';c.lineWidth=3;c.beginPath();c.moveTo(-20,44);c.lineTo(-5,54);c.lineTo(12,39);c.lineTo(33,43);c.stroke();
+   c.strokeStyle='#8a3e3e';c.beginPath();c.moveTo(0,0);c.lineTo(-7,-51);c.moveTo(0,0);c.lineTo(51,36);c.stroke();
+  }else{nl321(c,0,0,-9,-39,'#31473f',5);nl321(c,0,0,35,17,'#31473f',4);nl321(c,0,0,-38,35,'#a46d50',2);}ne321(c,0,0,5,5,'#7b7058');c.restore();
+ }
+ // Scratches are a static layer; no animated filters or random per-pixel noise.
+ for(let i=0;i<(eerie?25:10);i++){const x=-70+(i*37%140),y=-115+(i*53%205);nl321(c,x,y,x+3+(i%5)*2,y+6,'#d8c9a423',1);}
+ c.restore();
+}
+function nightSprite321(type,eerie=nightPrefs321.eerie){const k=type+':'+eerie;if(nightSprites321.has(k))return nightSprites321.get(k);const cv=document.createElement('canvas');cv.width=360;cv.height=440;paintVisitor321(cv.getContext('2d'),type,eerie);nightSprites321.set(k,cv);nightStats321.spriteBuilds++;return cv;}
+function nightArt321(type,eerie=nightPrefs321.eerie){const k=type+':'+eerie;if(!nightURLs321.has(k))nightURLs321.set(k,nightSprite321(type,eerie).toDataURL('image/png'));return `<img class="nw-art321" src="${nightURLs321.get(k)}" alt="${esc(nt321('visitor'+(['urchin','alien','clock'].indexOf(type))))}" draggable="false" width="360" height="440">`;}
+function scenery321(view,eerie){const key=view+':'+eerie;if(nightRooms321.has(key))return nightRooms321.get(key);
+ const cv=document.createElement('canvas');cv.width=1200;cv.height=675;const c=cv.getContext('2d',{alpha:false});
+ const bg=c.createLinearGradient(0,0,0,675);bg.addColorStop(0,eerie?'#101718':'#11242a');bg.addColorStop(.5,eerie?'#26332d':'#29403f');bg.addColorStop(1,'#050c12');c.fillStyle=bg;c.fillRect(0,0,1200,675);
+ const rust=eerie?'#a38965':'#668c81',light=eerie?'#c9ba8a':'#bed4b6',wall=eerie?'#202a24':'#1f3236';
+ if(view==='office'){
+  np321(c,[[0,0],[270,150],[930,150],[1200,0]],'#101e23','#354940');
+  for(let i=0;i<6;i++){nl321(c,i*240,0,270+i*132,150,'#314344',2);}
+  c.fillStyle=gradient321(c,600,130,20,600,260,570,eerie?'#bbae632c':'#d2e9b52d','#00000000');c.fillRect(0,0,1200,675);
+  nr321(c,388,94,424,18,3,'#172c2c','#405a50');nr321(c,405,99,390,8,2,light);nr321(c,367,0,468,37,5,'#0b181d','#48594c');
+  nr321(c,257,154,686,255,0,wall,'#496057');for(let i=0;i<10;i++)nl321(c,263,185+i*21,934,185+i*21,'#69706222');
+  for(let i=0;i<9;i++){const x=300+i*74;nl321(c,x,155,x,407,'#090f1244');}
+  np321(c,[[0,470],[297,388],[903,388],[1200,470],[1200,675],[0,675]],'#172326','#46534b');
+  for(let x=-600;x<=1800;x+=150)nl321(c,600+(x-600)*.12,389,x,675,'#68736527');for(const y of [420,462,522,600])nl321(c,0,y,1200,y,'#72827620');
+  for(const [side,x]of [['left',36],['right',976]]){
+   nr321(c,x-18,129,211,358,4,'#112020','#66715c');nr321(c,x-8,140,191,330,0,'#34443c','#8d8d6833');nr321(c,x,151,175,310,1,'#071117');
+   for(let y=174;y<460;y+=35){nr321(c,x-18,y,8,18,0,'#8e8467');nr321(c,x+186,y,8,18,0,'#8e8467');}
+   nr321(c,x+33,118,111,16,1,'#857d5e');nr321(c,x+57,121,64,9,1,light);
+   for(let i=0;i<8;i++)np321(c,[[x-8+i*25,468],[x+3+i*25,468],[x-5+i*25,482],[x-16+i*25,482]],'#a49a674d');
+  }
+  nr321(c,408,194,385,221,14,'#101b21','#6b8072');nr321(c,421,206,359,190,6,'#060f14','#496358');
+  nr321(c,548,410,106,17,0,'#141f22','#57615c');nr321(c,532,426,138,9,2,'#0e1b20');
+  // Cork notices, worn paint, conduit and wall clock.
+  nr321(c,822,181,107,144,2,'#4a4b35','#78775b');nr321(c,832,192,74,86,0,'#adab8c');c.fillStyle='#3e4c40';for(let i=0;i<5;i++)c.fillRect(841,212+i*10,48-i*4,2);ne321(c,869,198,3,3,'#8f6453');
+  nl321(c,285,174,285,350,'#657468',7);nl321(c,285,350,365,350,'#657468',7);nl321(c,916,336,916,400,'#716f50',6);
+  ne321(c,344,240,40,40,'#1f2e2b','#70816a');ne321(c,344,240,33,33,'#a6b199');nl321(c,344,240,331,221,'#1e312a',3);nl321(c,344,240,364,234,'#1e312a',3);
+  // Desk: two-point silhouette and hardware, static and cached.
+  np321(c,[[238,473],[963,473],[1170,675],[20,675]],'#253a3b','#637465');np321(c,[[265,493],[939,493],[1066,641],[130,641]],eerie?'#3e4436':'#40524a','#7b877044');
+  nr321(c,449,508,309,94,9,'#1c2c30','#84957c');for(let r=0;r<4;r++)for(let k=0;k<12;k++)nr321(c,460+k*23,518+r*17,17,11,2,'#586457','#74816a');
+  np321(c,[[265,515],[375,507],[412,590],[294,603]],'#cac4a0','#918765');for(let i=0;i<6;i++)nl321(c,288,530+i*9,364+i*4,523+i*9,'#697668',1.5);
+  nr321(c,807,525,73,50,7,'#566862','#9aa584');ne321(c,843,525,37,9,'#8f9d84','#313f39');ne321(c,843,525,27,6,'#17282b');
+  ne321(c,864,481,45,5,'#00000077');nl321(c,864,431,864,480,'#30484b',10);ne321(c,864,386,54,54,'#1d30362b','#7e9187');for(let i=0;i<4;i++)ne321(c,864,386,54-i*10,54-i*10,null,'#72837955');for(let i=0;i<8;i++){const a=i*Math.PI/4;nl321(c,864,386,864+Math.cos(a)*54,386+Math.sin(a)*54,'#6c807977');}
+ }else{
+  const central=view==='cam0',clock=view==='cam3',shift=view==='cam2'?100:-70,vx=600+shift;
+  np321(c,[[0,0],[vx-155,175],[vx+155,175],[1200,0]],'#112024','#66745c');np321(c,[[0,0],[vx-155,175],[vx-155,443],[0,675]],wall,'#516553');np321(c,[[1200,0],[vx+155,175],[vx+155,443],[1200,675]],eerie?'#252823':'#263b3c','#647464');
+  np321(c,[[0,675],[vx-155,443],[vx+155,443],[1200,675]],'#182b2d','#48594c');nr321(c,vx-155,175,310,268,0,'#142429','#51694f');
+  for(let i=0;i<7;i++){nl321(c,vx-155,443+(i*i*5),vx+155,443+(i*i*5),'#83937422');nl321(c,0,i*95,vx-155,175+i*38,'#566b612c');nl321(c,1200,i*95,vx+155,175+i*38,'#6273613c');}
+  for(let x=-400;x<=1600;x+=120)nl321(c,vx+(x-vx)*.08,443,x,675,'#7f8d7144');
+  for(let i=0;i<3;i++){const z=i*.23,xx=70+i*120,yy=101+i*49;np321(c,[[xx,yy],[xx+85-i*15,yy+20],[xx+85-i*15,545-i*53],[xx,579-i*62]],'#0b181e','#70816a');np321(c,[[1130-i*119,yy],[1040-i*104,yy+24],[1040-i*104,535-i*51],[1130-i*119,579-i*62]],'#111e22','#7b8361');}
+  for(let i=0;i<3;i++){const x=vx,y=55+i*66;nr321(c,x-110+i*28,y,220-i*56,10-i*2,1,i===1&&eerie?'#534b32':'#b0be94');c.fillStyle=gradient321(c,x,y,3,x,y+120,250-i*30,'#cadbab18','#00000000');c.fillRect(x-300,y,600,500);}
+  nr321(c,vx-67,260,134,182,3,'#081419','#426052');nr321(c,vx-54,274,108,102,0,'#173233','#78927233');ne321(c,vx+39,379,3,3,light);
+  if(central){for(const [x,y]of [[173,354],[251,407],[982,413]]){nr321(c,x-55,y,104,102,2,'#4e5140','#879370');nl321(c,x-50,y+10,x+43,y+90,'#273934',3);nl321(c,x+41,y+8,x-44,y+95,'#273934',3);}}
+  if(clock){nr321(c,200,384,770,190,4,'#313a33','#899076');for(let i=0;i<7;i++)nr321(c,221+i*107,414,96,111,4,'#162522','#596955');nr321(c,792,233,193,108,3,'#243732','#899b7c');for(let i=0;i<9;i++)nl321(c,810,250+i*8,960-(i%3)*14,250+i*8,'#83ad8a44',2);}
+  c.fillStyle='#0a151875';c.fillRect(0,0,1200,675);
+ }
+ // Static water streaks and scratched edges, not a high-frequency full-screen filter.
+ for(let i=0;i<(eerie?62:25);i++){const x=(i*193+31)%1200,y=(i*83+12)%460;nl321(c,x,y,x+(i%7)-3,y+8+(i*29%76),eerie?'#8c8a6b1e':'#82908b0d',1);}
+ if(eerie){for(let i=0;i<13;i++){const x=(i*121+19)%1200;c.fillStyle='#12130e66';c.beginPath();c.moveTo(x,0);c.quadraticCurveTo(x-15,57,x+4,90+i%4*18);c.quadraticCurveTo(x+26,62,x+22,0);c.fill();}}
+ const vignette=gradient321(c,600,310,160,600,340,700,'#00000000','#00060dbf');c.fillStyle=vignette;c.fillRect(0,0,1200,675);
+ if(nightRooms321.size>=6)nightRooms321.delete(nightRooms321.keys().next().value);nightRooms321.set(key,cv);nightStats321.roomBuilds++;return cv;
+}
+function nightIcon321(type){const p={settings:'<path d="M12 3v3m0 12v3M3 12h3m12 0h3M5.6 5.6l2 2m8.8 8.8l2 2m0-12.8l-2 2m-8.8 8.8l-2 2"/><circle cx="12" cy="12" r="5"/>',door:'<path d="M5 21V3h14v18M9 21V5l7 2v14M13 13h.1"/>',lamp:'<path d="M8 3h8l3 10H5zM12 13v8m-5 0h10M3 16l-1 2m19-2l1 2"/>',cam:'<rect x="3" y="5" width="18" height="12" rx="2"/><path d="M8 21h8m-4-4v4"/>',pulse:'<path d="M2 12h4l3-7 5 15 3-8h5"/>',help:'<circle cx="12" cy="12" r="9"/><path d="M9 8a3 3 0 1 1 4 3v3m0 3h.1"/>',pause:'<path d="M8 5v14m8-14v14"/>',full:'<path d="M8 3H3v5m13-5h5v5M3 16v5h5m8 0h5v-5"/>',exit:'<path d="M9 3H4v18h5m-1-9h13m-5-5l5 5-5 5"/>',reset:'<path d="M3 10a9 9 0 1 1 2 9M3 4v6h6"/>'}[type]||'<circle cx="12" cy="12" r="8"/>';
+ return `<svg class="nw-icon321" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">${p}</svg>`;}
+function nbtn321(cmd,label,icon=null,attrs=''){return `<button type="button" ${cmd.startsWith('!')?`data-nw321="${cmd.slice(1)}"`:`data-arc317="${cmd}"`} ${attrs}>${icon?nightIcon321(icon):''}<span>${label}</span></button>`;}
+function nightHeader321(){return `<header class="nw-header321"><div class="nw-brand321"><span class="nw-emblem321">V</span><div><small>OLD WING / 00:00—06:00</small><strong>${esc(text317('nightTitle'))}<em>v3.21</em></strong></div></div><nav aria-label="${esc(nt321('control'))}">${arcadePage317==='play'&&!nightPage321?nbtn321('pause',esc(text317(arcade317?.paused?'resume':'pause')),'pause'):''}${nbtn321('help',esc(text317('help')),'help')}${nbtn321('!settings',esc(nt321('look')),'settings')}${nbtn321('full',esc(text317('fullscreen')),'full')}${nbtn321('exit',esc(text317('menu')),'exit')}</nav></header>`;}
+function nightOption321(k,label,desc){return `<label class="nw-option321"><div><b>${esc(nt321(label))}</b><small>${esc(nt321(desc))}</small></div><input type="checkbox" data-nwpref321="${k}" ${nightPrefs321[k]?'checked':''}></label>`;}
+function nightOptions321(full=true){return `<div class="nw-options321">${nightOption321('eerie','eerie','eerieDesc')}${full?nightOption321('scare','scare','scareDesc')+nightOption321('flash','flash','flashDesc')+nightOption321('ambience','atmos','atmosDesc'):''}${full?`<label class="nw-field321"><b>${esc(nt321('quality'))}</b><select data-nwpref321="quality">${['eco','balanced','smooth'].map(k=>`<option value="${k}" ${nightPrefs321.quality===k?'selected':''}>${esc(nt321(k))}</option>`).join('')}</select><small>${esc(nt321('qualityDesc'))}</small></label>`:''}</div>`;}
+function nightCards321(help=false){return `<div class="nw-visitors321">${['urchin','alien','clock'].map((type,i)=>`<article><span class="nw-id321">0${i+1}</span>${nightArt321(type)}<h3>${esc(nt321('visitor'+i))}</h3>${help?`<p>${esc(nt321('who'+i))}</p>`:''}</article>`).join('')}</div>`;}
+function nightSetup321(){const store=MODE_STORES317.night;return `<main class="nw-scroll321"><div class="nw-setup321"><section class="nw-hero321"><div class="nw-eyebrow321">NIGHT WATCH / REIMAGINED</div><h1>${esc(text317('nightTitle'))}</h1><h2>${esc(nt321('subtitle'))}</h2><p>${esc(nt321('lead'))}</p>${nightCards321()}<div class="nw-seal321"><span>05 <small>${esc(text317('night'))}</small></span><span>04 <small>${esc(nt321('monitor'))}</small></span><span>02 <small>${esc(text317('leftDoor'))} / ${esc(text317('rightDoor'))}</small></span></div><p class="nw-muted321">${esc(nt321('profile'))}</p></section><section class="nw-config321"><div class="nw-eyebrow321">01 / ${esc(nt321('ready'))}</div><label class="nw-field321"><b>${esc(t313('难度'))}</b><select data-arcsetting317="difficulty">${DIFFICULTY_IDS.map(k=>`<option value="${k}" ${setup317.difficulty===k?'selected':''}>${esc(t313(DIFFICULTIES[k].label))}</option>`).join('')}</select></label><label class="nw-field321"><b>${esc(text317('language'))}</b><select data-arcsetting317="language">${LOCALES310.map(l=>`<option value="${l}" ${preferredLocale310()===l?'selected':''}>${NATIVE310[l]}</option>`).join('')}</select></label>${nightOptions321(false)}<p class="nw-notice321">${esc(nt321('notice'))}</p><div class="nw-buttons321">${nbtn321('start',esc(text317('newRun')),null,'class="nw-primary321"')}${nbtn321('continue',esc(text317('continue')),null,store.latest?'':'disabled')}${nbtn321('archives',esc(text317('archives')))}${nbtn321('!settings',esc(nt321('look')),'settings')}${nbtn321('export',esc(text317('export')))}${nbtn321('import',esc(text317('import')))}</div><p class="nw-muted321">${esc(text317('nightTime'))}</p><p class="nw-muted321">${esc(nt321('local'))}</p></section></div></main>`;}
+function nightSettings321(){return `<main class="nw-scroll321"><section class="nw-settings321"><div><span class="nw-eyebrow321">NIGHT WATCH / PRESENTATION</span><h1>${esc(nt321('look'))}</h1><p>${esc(nt321('local'))}</p>${nightCards321()}<p class="nw-muted321">${esc(nt321('calmNote'))}</p></div><div class="nw-config321">${nightOptions321()}<p class="nw-notice321">${esc(nt321('notice'))}</p><div class="nw-buttons321">${nbtn321('!preview',esc(nt321('preview')))}${nbtn321('!settingsBack',esc(nt321(arcade317?.kind==='night'&&arcade317?.phase==='running'?'returnPaused':'ready')),null,'class="nw-primary321"')}</div><small id="nwPrefStatus321">${esc(nt321(nightPrefError321?'saveFail':'savedLocal'))}</small></div></section></main>`;}
+function nightHelp321(){return `<main class="nw-scroll321"><section class="nw-help321"><span class="nw-eyebrow321">NIGHT WATCH / FIELD GUIDE</span><h1>${esc(text317('help'))}</h1><p>${esc(text317('nightRules'))}</p><p class="nw-notice321">${esc(nt321('controlsHint'))}</p>${nightCards321(true)}<div class="nw-helpgrid321"><article><h3>${esc(text317('power'))}</h3><p>${esc(nt321('quiet'))}</p><p>${esc(nt321('costLamp'))}</p><p>${esc(nt321('costLure'))}</p></article><article><h3>${esc(text317('signal'))}</h3><p>${esc(nt321('who2'))}</p><p>${esc(nt321('costReset'))}</p></article><article><h3>${esc(nt321('look'))}</h3><p>${esc(nt321('scareDesc'))}</p><p>${esc(nt321('flashDesc'))}</p></article></div><div class="nw-buttons321">${nbtn321('back',esc(text317('back')),null,'class="nw-primary321"')}${nbtn321('!settings',esc(nt321('look')),'settings')}</div></section></main>`;}
+function nightHud321(s){return `<section class="nw-hud321"><div class="nw-clock321"><small>${esc(text317('night'))} ${s.night} / 5</small><b id="arcTime317">00:00</b></div><div><label>${esc(text317('power'))}<b id="arcPower317">100%</b></label><progress id="nwPower321" max="100" value="${s.power}"></progress></div><div><label>${esc(text317('signal'))}<b id="arcSignal317">100%</b></label><progress id="nwSignal321" max="100" value="${s.signal}"></progress></div><div class="nw-load321"><small>${esc(nt321('usage'))}</small><b id="nwLoad321">▰ ▱ ▱ ▱</b></div></section>`;}
+function nightControls321(){const door=(side,key)=>`${nbtn321('door:'+side,`<b>${esc(text317(side==='left'?'leftDoor':'rightDoor'))}</b><small id="nwDoor_${side}"></small><kbd>${key}</kbd>`,'door',`id="arc${side==='left'?'Left':'Right'}Door317" class="nw-tile321" aria-pressed="false"`)}${nbtn321('light:'+side,`<b>${esc(text317(side==='left'?'leftLight':'rightLight'))}</b><small>${esc(nt321('costLamp'))}</small><kbd>${side==='left'?'Q':'E'}</kbd>`,'lamp',`id="nwLight_${side}" class="nw-tile321"`)}`;
+ return `<aside class="nw-console321"><div class="nw-sectiontitle321"><span>${esc(nt321('control'))}</span><small>LOCAL / 01</small></div><div class="nw-doors321"><div>${door('left','A')}</div><div>${door('right','D')}</div></div>${nbtn321('camera',`<b>${esc(text317('camera'))}</b><small id="nwCamState321">${esc(nt321('idle'))}</small><kbd>SPACE</kbd>`,'cam','class="nw-monitorbtn321" id="arcCamera317"')}
+ <div class="nw-feedmap321"><div class="nw-maplines321" aria-hidden="true"></div>${[0,1,2,3].map(i=>nbtn321('feed:'+i,`<b>CAM 0${i+1}</b><small>${esc(text317('cam'+i))}</small><kbd>${i+1}</kbd>`,null,`id="arcFeed${i}_317"`)).join('')}</div>
+ <div class="nw-systems321">${nbtn321('lure',`<b>${esc(text317('lure'))}</b><small id="nwLureState321">${esc(nt321('costLure'))}</small><kbd>L</kbd>`,'pulse','id="arcLure317"')}${nbtn321('reboot',`<b>${esc(text317('reboot'))}</b><small id="nwRebootState321">${esc(nt321('costReset'))}</small><kbd>R</kbd>`,'reset','id="arcReboot317"')}</div><p class="nw-controlsHint321">${esc(nt321('controlsHint'))}</p></aside>`;}
+function nightPlay321(){const s=arcade317;if(!s||s.kind!=='night')return nightSetup321();
+ const hud=nightHud321(s);if(s.paused)return hud+`<main class="nw-scroll321"><div class="nw-pause321"><div class="nw-eyebrow321">SESSION HELD / SAVED</div><h1>${esc(text317('pause'))}</h1><p>${esc(nt321('pausedNote'))}</p><div class="nw-buttons321">${nbtn321('pause',esc(text317('resume')),null,'class="nw-primary321"')}${nbtn321('!settings',esc(nt321('look')),'settings')}${nbtn321('export',esc(text317('export')))}${nbtn321('retry',esc(text317('checkpoint')))}${nbtn321('exit',esc(text317('menu')))}</div></div></main>`;
+ if(s.phase!=='running'){const entry=NIGHT_ENDS317[s.lastEnd],lost=s.phase==='lost';return hud+`<main class="nw-scroll321"><div class="nw-result321 ${lost?'is-lost321':''}"><div class="nw-resultPortrait321">${nightArt321(lost?(nightLoss321==='clock'?'clock':nightLoss321==='right'?'alien':'urchin'):'clock')}</div><section><span class="nw-eyebrow321">${lost?'SIGNAL ENDED':'06:00 / SHIFT COMPLETE'}</span><h1>${esc(text317(lost?'nightLost':'nightWin'))}</h1>${entry?`<h2>${esc(text317(entry[0]))}</h2><p>${esc(text317(entry[1]))}</p>`:''}<p class="nw-notice321">${esc(lost?nt321((s.lastEnd==='blackout'?'blackout':['left','right','clock'].includes(s.presentation321?.lossCause)?s.presentation321.lossCause:nightLoss321)+'Lost'):nt321('dawn'))}</p><div class="nw-buttons321">${s.phase==='nightWon'?nbtn321('nextNight',esc(text317('nextNight')),null,'class="nw-primary321"'):''}${lost?nbtn321('retry',esc(text317('checkpoint')),null,'class="nw-primary321"'):''}${nbtn321('archives',esc(text317('archives')))}${nbtn321('back',esc(text317('menu')))}${nbtn321('export',esc(text317('export')))}</div></section></div></main>`;}
+ return hud+`<main class="nw-play321"><section class="nw-viewport321"><div class="nw-camtitle321"><span><i></i><b id="nwViewName321">${esc(nt321('room'))}</b></span><small id="nwSignalText321">${esc(nt321('online'))}</small></div><div class="nw-screen321"><canvas id="arcCanvas317" width="1200" height="675" aria-label="${esc(nt321('monitor'))}"></canvas><div class="nw-frame321" aria-hidden="true"></div><p id="arcGrace317" class="nw-grace321" hidden></p></div><p id="arcSceneCaption317" class="nw-caption321" role="status" aria-live="polite">${esc(nt321('quiet'))}</p><div class="nw-bottomline321"><span>OLD WING SECURITY</span><span id="nwStatus321">00:00 / 06:00</span></div></section>${nightControls321()}</main>`;
+}
+function paintNight321(force=false){const cv=arcadeCanvas317,s=arcade317;if(!cv||!s||s.kind!=='night'||arcadePage317!=='play'||s.paused||s.phase!=='running'||nightPage321)return;
+ const now=performance.now(),rate={eco:20,balanced:30,smooth:60}[nightPrefs321.quality];if(!force&&now-nightDrawAt321<1000/rate-.5)return;nightDrawAt321=now;
+ const started=performance.now(),small=innerWidth<800,scale=nightPrefs321.quality==='eco'?.64:small?.8:1;
+ const w=Math.round(NW_W321*scale),h=Math.round(NW_H321*scale);if(cv.width!==w||cv.height!==h){cv.width=w;cv.height=h;}
+ const c=cv.getContext('2d',{alpha:false});if(!c)return;c.setTransform(w/1200,0,0,h/675,0,0);c.imageSmoothingEnabled=true;
+ const eerie=nightPrefs321.eerie,view=s.cameras&&s.power>0&&s.reboot<=0?'cam'+s.feed:'office';c.drawImage(scenery321(view,eerie),0,0);
+ const sprite=(type,x,y,size,alpha=1)=>{c.save();c.globalAlpha=alpha;c.drawImage(nightSprite321(type,eerie),x-180*size,y-215*size,360*size,440*size);c.restore();};
+ if(view==='office'){
+  for(const [side,x]of [['left',36],['right',976]]){
+   if(s.doors[side]){const g=c.createLinearGradient(x,0,x+175,0);g.addColorStop(0,'#334345');g.addColorStop(.5,eerie?'#616a51':'#526561');g.addColorStop(1,'#233339');nr321(c,x,151,175,310,0,g);for(let y=165;y<460;y+=24){nl321(c,x,y,x+175,y,'#a3ae8766',2);nl321(c,x,y+3,x+175,y+3,'#0c182165',2);}nr321(c,x+62,291,54,8,2,'#bbc09e');}
+   else if(s.lights[side]>s.t&&s.power>0){c.fillStyle=gradient321(c,x+87,230,10,x+87,300,205,eerie?'#cbbb6633':'#bfd8a737','#00000000');c.fillRect(x,151,175,310);const e=s.foes.find(f=>f.side===side);if(e?.pos===4)sprite(side==='left'?'urchin':'alien',x+87,310,.71);}
+   nr321(c,x+154,171,8,8,2,s.power<=0?'#383634':s.doors[side]?'#b9bd91':'#916a59');
+  }
+  c.textAlign='center';c.textBaseline='middle';c.font='12px ui-monospace, monospace';c.fillStyle=eerie?'#b4b991':'#8eaeb0';c.fillText('LOCAL TERMINAL / 01',600,238);
+  if(s.power<=0){c.fillStyle='#d09f80';c.font='20px system-ui';c.fillText(text317('powerOut'),600,286,320);}
+  else if(s.reboot>0){c.font='18px system-ui';c.fillText(nt321('reset'),600,285,310);c.fillRect(446,331,308*(1-s.reboot/3),4);}
+  else{c.font='56px ui-monospace, monospace';c.fillStyle=eerie?'#d7ccaa':'#c6ddd0';c.fillText(String(Math.min(6,Math.floor(s.elapsed/25))).padStart(2,'0')+':'+String(Math.floor(s.elapsed%25/25*60)).padStart(2,'0'),600,301);c.font='12px ui-monospace, monospace';c.fillStyle='#85a28c';c.fillText('NIGHT '+s.night+' / 5   •   POWER '+Math.ceil(s.power)+'%',600,361);}
+  if(s.power<=0){c.fillStyle='rgba(1,7,12,.70)';c.fillRect(0,0,1200,675);c.fillStyle='#975f3a44';c.fillRect(508,97,184,6);}
+ }else{
+  for(const e of s.foes)if((s.feed===0&&e.pos===0)||(s.feed===(e.side==='left'?1:2)&&e.pos>0)){
+   const size=s.feed===0?.52:.40+e.pos*.23;const x=s.feed===0?(e.side==='left'?405:793):e.side==='left'?502:719;
+   sprite(e.side==='left'?'urchin':'alien',x,s.feed===0?365:370,size,eerie?.91:.84);
+  }
+  if(s.feed===3){sprite('clock',610,312,.94+Math.min(.1,s.clockPressure/1000));nr321(c,315,568,570,8,1,'#1c272b');nr321(c,315,568,570*Math.min(1,s.clockPressure/100),8,1,s.clockPressure>70?'#b39770':'#708d7c');}
+  // Low-cost monitor scan lines. Static lines do not strobe.
+  if(nightPrefs321.ambience){c.fillStyle='#000a111c';for(let y=0;y<675;y+=6)c.fillRect(0,y,1200,1);}
+ }
+ if(nightPrefs321.ambience&&!nightMotion321.matches){
+  const a=.012+.008*Math.sin(s.t*.6);c.fillStyle=`rgba(0,5,9,${a})`;c.fillRect(0,0,1200,675);
+  for(let i=0;i<11;i++){const x=(i*137+s.t*3)%1200,y=(i*67+Math.sin(s.t*.2+i)*12)%675;ne321(c,x,y,1,1,eerie?'#c4bfa42a':'#b7cecc20');}
+ }
+ // One subdued signal dip after switching a feed; it never conceals controls.
+ if(nightCut321>0&&nightPrefs321.ambience&&!nightMotion321.matches){c.fillStyle=`rgba(20,30,32,${Math.min(.27,nightCut321)})`;c.fillRect(0,0,1200,675);}
+ c.setTransform(1,0,0,1,0,0);nightStats321.draws++;nightStats321.drawMs+=performance.now()-started;
+}
+function nightSound321(kind){if(!nightPrefs321.ambience||!save.settings.volume||!audio||audio.ctx?.state!=='running'||document.hidden)return;
+ const ctx=audio.ctx,master=audio.master;if(!master)return;
+ // Short, bounded envelopes. Every node is stopped and disconnected.
+ const tone=(freq,to,dur,level,type='sine')=>{try{const o=ctx.createOscillator(),g=ctx.createGain(),t=ctx.currentTime;o.type=type;o.frequency.setValueAtTime(freq,t);o.frequency.exponentialRampToValueAtTime(to,t+dur);g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(level,t+.012);g.gain.exponentialRampToValueAtTime(.0001,t+dur);o.connect(g);g.connect(master);nightAudioNodes321.add(o);o.onended=()=>{o.disconnect();g.disconnect();nightAudioNodes321.delete(o);};o.start(t);o.stop(t+dur+.02);}catch(_){}};
+ if(kind==='scare'){tone(105,39,.34,.055,'triangle');tone(435,110,.24,.02,'triangle');}
+ else if(kind==='door'){tone(125,47,.14,.025,'triangle');}
+ else if(kind==='switch'){tone(440,300,.04,.01,'sine');}
+ else if(kind==='step'){tone(84,46,.13,.018,'triangle');}
+ else tone(56,52,.48,.009,'sine');nightStats321.audioCues++;
+}
+const nightAudioNodes321=new Set();
+function stopNightSound321(){for(const o of nightAudioNodes321){try{o.stop();}catch(_){}}nightAudioNodes321.clear();}
+function clearNightFX321(){nightFX321=null;nightScareCanvas321=null;$('nwScare321')?.remove();if(nightFocus321?.isConnected)nightFocus321.focus({preventScroll:true});nightFocus321=null;}
+function showNightScare321(type='urchin',preview=false){
+ if(!arcadeOpen317||arcadeKind317!=='night'||!preview&&!nightPrefs321.scare)return;
+ clearNightFX321();nightFX321={type:['urchin','alien','clock'].includes(type)?type:'urchin',preview,t:0,duration:1.2,still:!nightPrefs321.scare||nightMotion321.matches};nightFocus321=document.activeElement;
+ const layer=document.createElement('div');layer.id='nwScare321';layer.className='nw-scare321';layer.setAttribute('role','dialog');layer.setAttribute('aria-modal','true');layer.setAttribute('aria-label',nt321('scare'));layer.innerHTML=`<canvas width="900" height="600" aria-hidden="true"></canvas><div><b>${esc(preview?nt321('preview'):text317('nightLost'))}</b>${nbtn321('!skip',esc(nt321('skip')))}</div>`;arcadeRoot317.appendChild(layer);nightScareCanvas321=layer.querySelector('canvas');layer.querySelector('button').focus({preventScroll:true});paintScare321();if(!nightFX321.still)nightSound321('scare');if(!preview)nightStats321.scares++;
+}
+function paintScare321(){const f=nightFX321,cv=nightScareCanvas321;if(!f||!cv)return;const stamp=performance.now();if(f.paintAt!==undefined&&stamp-f.paintAt<1000/30-.5)return;f.paintAt=stamp;const c=cv.getContext('2d',{alpha:false});const w=900,h=600;c.fillStyle=nightPrefs321.eerie?'#101612':'#09151a';c.fillRect(0,0,w,h);
+ const sprite=nightSprite321(f.type,nightPrefs321.eerie),k=f.still?2.9:2.6+Math.min(.35,f.t*4);c.save();c.translate(w/2,h*.58);c.rotate(f.still?0:Math.sin(f.t*13)*.007);c.drawImage(sprite,-180*k,-205*k,360*k,440*k);c.restore();
+ // Exactly one low-brightness pulse, no oscillation and no full-white frame.
+ if(nightPrefs321.flash&&save.settings.flicker&&!nightMotion321.matches&&!f.still&&f.t<.16){const alpha=.20*Math.sin(Math.PI*f.t/.16);c.fillStyle=`rgba(138,107,100,${Math.max(0,alpha)})`;c.fillRect(0,0,w,h);}
+ if(f.t>.84){c.fillStyle=`rgba(3,8,12,${Math.min(.7,(f.t-.84)*1.8)})`;c.fillRect(0,0,w,h);}
+}
+function nightPreference321(k,v){if(!Object.hasOwn(NW321_DEFAULT,k))return false;const old=nightPrefs321;nightPrefs321=cleanNightPrefs321({...old,[k]:v});nightPrefError321=false;try{localStorage.setItem(NW321_KEY,JSON.stringify(nightPrefs321));}catch(_){nightPrefError321=true;}
+ if(!nightPrefs321.ambience)stopNightSound321();if(!nightPrefs321.scare&&nightFX321&&!nightFX321.preview)clearNightFX321();
+ nightKey321='';nightDrawAt321=-1;renderArcade317(true);return true;
+}
+function nightPatchHUD321(){const s=arcade317;if(!s||s.kind!=='night')return;nightStats321.hudUpdates++;
+ const set=(id,v)=>{const e=nightDOM321[id];if(e&&e.textContent!==String(v))e.textContent=String(v);};
+ const pressed=(id,on)=>{const e=nightDOM321[id],v=String(on);if(e&&e.getAttribute('aria-pressed')!==v)e.setAttribute('aria-pressed',v);};
+ const disable=(id,v)=>{const e=nightDOM321[id];if(e&&e.disabled!==!!v)e.disabled=!!v;};
+ const ready=s.phase==='running'&&!s.paused&&s.grace<=0;
+ const clock=String(Math.min(6,Math.floor(s.elapsed/25))).padStart(2,'0')+':'+String(Math.floor(s.elapsed%25/25*60)).padStart(2,'0');
+ set('arcTime317',clock);set('arcPower317',Math.ceil(s.power)+'%');set('arcSignal317',Math.ceil(s.signal)+'%');
+ for(const [k,v]of [['nwPower321',s.power],['nwSignal321',s.signal]]){const e=nightDOM321[k];if(e&&e.value!==Math.floor(v))e.value=Math.floor(v);}
+ const load=1+(s.cameras?1:0)+(s.doors.left?1:0)+(s.doors.right?1:0);set('nwLoad321','▰ '.repeat(load)+'▱ '.repeat(4-load));
+ for(const side of ['left','right']){const id='arc'+(side==='left'?'Left':'Right')+'Door317';pressed(id,s.doors[side]);disable(id,!ready||s.power<=0);set('nwDoor_'+side,nt321(s.doors[side]?'closed':'open'));pressed('nwLight_'+side,s.lights[side]>s.t);disable('nwLight_'+side,!ready||s.power<.6);}
+ pressed('arcCamera317',s.cameras);disable('arcCamera317',!ready||s.power<=0||s.reboot>0||s.signal<=0);
+ for(let i=0;i<4;i++){disable('arcFeed'+i+'_317',!ready||!s.cameras);pressed('arcFeed'+i+'_317',s.cameras&&s.feed===i);}
+ disable('arcLure317',!ready||s.power<5||s.lureAt>s.t||!s.cameras);disable('arcReboot317',!ready||s.power<4||s.reboot>0);
+ set('nwCamState321',nt321(s.power<=0?'idle':s.reboot>0?'reset':s.cameras?'online':'offline'));
+ set('nwLureState321',s.lureAt>s.t?(s.lureAt-s.t).toFixed(1)+'s':nt321('costLure'));set('nwRebootState321',s.reboot>0?s.reboot.toFixed(1)+'s':nt321('costReset'));
+ set('nwViewName321',s.cameras?'CAM 0'+(s.feed+1)+' · '+text317('cam'+s.feed):nt321('room'));
+ set('nwSignalText321',s.power<=0?text317('powerOut'):s.reboot>0?nt321('reset'):s.signal<=0?nt321('noSignal'):nt321('online'));
+ set('nwStatus321',clock+' / 06:00');
+ const g=nightDOM321.arcGrace317;if(g){g.hidden=s.grace<=0;set('arcGrace317',s.grace>0?nt321('ready')+' · '+s.grace.toFixed(1)+'s':'');}
+ const visible=s.foes.some(e=>e.pos===4&&s.lights[e.side]>s.t&&!s.doors[e.side]);set('arcSceneCaption317',s.power<=0?text317('powerOut'):visible?nt321('near'):s.cameras?text317('cam'+s.feed):nt321('quiet'));
+}
+renderArcade317=function(force=false){if(!arcadeOpen317||arcadeKind317!=='night'){arcadeRoot317.classList.remove('night321','nw-eerie321','nw-atmos321');return N321.render(force);}
+ arcadeRoot317.classList.add('night321');arcadeRoot317.classList.toggle('nw-eerie321',nightPrefs321.eerie);arcadeRoot317.classList.toggle('nw-atmos321',nightPrefs321.ambience);
+ const s=arcade317,key=[arcadePage317,nightPage321,preferredLocale310(),s?.id,s?.phase,s?.paused,s?.night,nightPrefs321.eerie,nightPrefs321.scare,nightPrefs321.flash,nightPrefs321.ambience,nightPrefs321.quality].join('|');
+ if(force||key!==nightKey321){
+  const scroll=$('nwScrollCapture321')?.scrollTop||arcadeRoot317.querySelector('.nw-scroll321')?.scrollTop||0;
+  const active=document.activeElement,focusKey=active?.dataset.nwpref321||null;
+  const fxLayer=$('nwScare321');if(fxLayer)fxLayer.remove();
+  let body=nightPage321==='settings'?nightSettings321():arcadePage317==='setup'?nightSetup321():arcadePage317==='help'?nightHelp321():arcadePage317==='archive'?`<div class="nw-scroll321 nw-archive321">${archiveMarkup317()}</div>`:nightPlay321();
+  arcadeRoot317.innerHTML=nightHeader321()+body+`<footer class="nw-footer321"><span>OLD WING / v3.21</span><span id="arcSave317"></span></footer>`;
+  if(fxLayer)arcadeRoot317.appendChild(fxLayer);
+  nightKey321=key;nightStats321.builds++;arcadeRenderKey317='nw321:'+key;arcadeCanvas317=$('arcCanvas317');nightDOM321={};for(const e of arcadeRoot317.querySelectorAll('[id]'))nightDOM321[e.id]=e;
+  const scrollEl=arcadeRoot317.querySelector('.nw-scroll321');if(scrollEl)scrollEl.scrollTop=scroll;
+  if(focusKey)arcadeRoot317.querySelector('[data-nwpref321="'+focusKey+'"]')?.focus({preventScroll:true});
+  nightDrawAt321=-1;nightHudAt321=-1;
+ }
+ const now=performance.now();if(force||now-nightHudAt321>=80){nightHudAt321=now;nightPatchHUD321();const e=nightDOM321.arcSave317;if(e){const text=arcadeError317?text317(arcadeError317):text317('saved');if(e.textContent!==text)e.textContent=text;}}
+ paintNight321(force);if(nightFX321)paintScare321();
+};
+drawArcade317=function(){if(arcadeKind317==='night'){paintNight321();return;}return N321.draw();};
+function nightSetSettings321(){if(arcade317?.kind==='night')pauseArcade317(true);nightReturn321=arcadePage317;nightPage321='settings';clearNightFX321();renderArcade317(true);}
+function nightCmd321(cmd){if(!arcadeOpen317||arcadeKind317!=='night')return;
+ if(cmd==='settings')nightSetSettings321();else if(cmd==='settingsBack'){nightPage321='';arcadePage317=nightReturn321;renderArcade317(true);}else if(cmd==='skip')clearNightFX321();
+ else if(cmd==='preview'){if(!confirm(nt321('previewConfirm')))return;showNightScare321('alien',true);}
+}
+arcadeRoot317.addEventListener('click',e=>{const b=e.target.closest('[data-nw321]');if(!b||b.disabled||b.closest('[inert]'))return;e.preventDefault();nightCmd321(b.dataset.nw321);});
+arcadeRoot317.addEventListener('change',e=>{const key=e.target.dataset.nwpref321;if(key)nightPreference321(key,e.target.type==='checkbox'?e.target.checked:e.target.value);});
+arcadeCommand317=function(cmd){const night=arcadeKind317==='night';if(night&&nightFX321){if(cmd==='full')return N321.command(cmd);clearNightFX321();}
+ if(night&&['exit','back','help','archives','start','continue','retry','nextNight'].includes(cmd.split(':')[0])){nightPage321='';nightKey321='';}
+ if(cmd.startsWith('tab:')){nightPage321='';nightKey321='';arcadeRoot317.classList.remove('night321','nw-eerie321','nw-atmos321');}
+ const r=N321.command(cmd);return r;
+};
+nightAction317=function(cmd,arg){const ok=N321.action(cmd,arg);if(ok&&arcadeOpen317&&arcadeKind317==='night'){
+  if(cmd==='door')nightSound321('door');else if(['camera','feed','reboot'].includes(cmd)){nightCut321=.15;nightSound321('switch');}
+  nightHudAt321=-1;nightDrawAt321=-1;
+ }return ok;
+};
+finishNight317=function(win,reason='caught'){
+ const s=arcade317,valid=s?.kind==='night'&&s.phase==='running';let cause='left';if(valid&&!win){cause=reason==='blackout'?'blackout':s.clockPressure>=100?'clock':s.foes.find(e=>e.pos===4&&!s.doors[e.side])?.side||'left';s.presentation321={lossCause:cause};nightLoss321=cause;}
+ const r=N321.finish(win,reason);
+ if(valid&&!win&&arcadeOpen317&&arcadeKind317==='night'&&nightPrefs321.scare){renderArcade317(true);showNightScare321(cause==='clock'||cause==='blackout'?'clock':cause==='right'?'alien':'urchin');}
+ return r;
+};
+stepArcade317=function(dt){if(arcadeOpen317&&arcadeKind317==='night'&&!document.hidden){
+  const d=Number.isFinite(dt)?Math.max(0,Math.min(.25,dt)):0;
+  if(nightFX321){nightFX321.t+=d;if(nightFX321.t>=nightFX321.duration)clearNightFX321();}
+  const s=arcade317;if(s?.kind==='night'&&s.phase==='running'&&!s.paused&&!nightPage321){nightTime321+=d;nightCut321=Math.max(0,nightCut321-d);
+   if(nightPrefs321.ambience&&nightTime321-nightAudioAt321>9){nightAudioAt321=nightTime321;nightSound321('hum');}
+   const signature=s.foes.map(e=>e.pos).join(':');if(nightPrev321!==null&&signature!==nightPrev321)nightSound321('step');nightPrev321=signature;
+  }
+ }
+ // Rendering shares the original frame tick. Each painter limits its own frequency;
+ // the legacy 30Hz draw gate must not suppress the selected 60Hz ceiling.
+ const night=arcadeOpen317&&arcadeKind317==='night';
+ const result=night&&nightPage321==='settings'?undefined:N321.step(dt);
+ if(night&&!document.hidden){if(nightFX321)paintScare321();else paintNight321();}
+ return result;
+};
+pauseArcade317=function(force){if(arcadeKind317==='night'&&nightPage321==='settings')force=true;if(arcade317?.kind==='night'){clearNightFX321();stopNightSound321();nightKey321='';}return N321.pause(force);};
+openArcade317=function(...args){nightPage321='';nightKey321='';nightPrev321=null;return N321.open(...args);};
+closeArcade317=function(){clearNightFX321();stopNightSound321();nightPage321='';nightKey321='';nightDOM321={};nightPrev321=null;arcadeRoot317.classList.remove('night321','nw-eerie321','nw-atmos321');return N321.close();};
+startArcade317=function(...args){clearNightFX321();nightPage321='';nightKey321='';nightPrev321=null;return N321.start(...args);};
+restoreMode317=function(...args){clearNightFX321();nightPage321='';nightKey321='';const r=N321.restore(...args);if(r&&arcade317?.kind==='night'){const c=arcade317.presentation321?.lossCause;nightLoss321=['left','right','clock','blackout'].includes(c)?c:'left';}return r;};
+nextNight317=function(...args){clearNightFX321();nightPage321='';nightKey321='';nightPrev321=null;return N321.next(...args);};
+nightGuard321=e=>{if(!arcadeOpen317||arcadeKind317!=='night'||e.ctrlKey||e.metaKey)return;
+ if(nightFX321){if(e.altKey&&e.code==='Enter'){e.preventDefault();e.stopImmediatePropagation();toggleFullscreen();return;}
+  e.stopImmediatePropagation();if(['Escape','Enter','Space'].includes(e.code)){e.preventDefault();clearNightFX321();}else if(e.code==='Tab'){e.preventDefault();$('nwScare321')?.querySelector('button')?.focus();}return;}
+ if(nightPage321==='settings'){
+  if(e.code==='Escape'){e.preventDefault();e.stopImmediatePropagation();nightCmd321('settingsBack');return;}
+  if(!(e.altKey&&e.code==='Enter')){e.stopImmediatePropagation();return;}
+ }
+ if(e.code==='F1'){e.preventDefault();e.stopImmediatePropagation();arcadeCommand317('help');return;}
+};
+window.addEventListener('resize',()=>{if(arcadeOpen317&&arcadeKind317==='night'){nightDrawAt321=-1;renderArcade317();}});
+nightMotion321.addEventListener?.('change',()=>{nightDrawAt321=-1;if(nightFX321)nightFX321.still=true;});
+/* No independent RAF, interval, remote assets, save-key replacement or game RNG consumption. */
+
     // The classroom is a layered DOM illustration rather than a raster image.
     const seats = [{ x: 436, y: 403, s: .68 }, { x: 669, y: 420, s: .70 }, { x: 1044, y: 413, s: .74 }, { x: 1210, y: 428, s: .80 }, { x: 363, y: 468, s: .94 }, { x: 619, y: 487, s: 1.06 }, { x: 955, y: 479, s: 1.02 }, { x: 1195, y: 488, s: 1.11 }];
     $('students').innerHTML = seats.map(p => `<div class="student" style="left:${p.x}px;top:${p.y}px;transform:scale(${p.s})"><div class="student-head"></div><div class="student-body"></div><div class="student-desk"></div><div class="student-chair"></div></div>`).join('');
@@ -17889,6 +18893,18 @@ if(testMode)Object.assign(window.__LAST_CLASS_TEST__,{
  get hsState319(){return hs319;},get hsStore319(){return hsStore319;},get hsOpen319(){return hsOpen319;},get hsPage319(){return hsPage319;},get hsConfig319(){return HS_CFG319;},get hsWords319(){return HS_WORD319;},get hsRenderStats319(){return {builds:hsBuilds319,draws:hsDraws319};},get hsDirection319(){return hsDirection319;},openClassic319(){return B317.openBattle313();}
 });
 if(testMode)Object.defineProperties(window.__LAST_CLASS_TEST__,{hsState319:{configurable:true,get:()=>hs319},hsStore319:{configurable:true,get:()=>hsStore319},hsOpen319:{configurable:true,get:()=>hsOpen319},hsPage319:{configurable:true,get:()=>hsPage319},hsRenderStats319:{configurable:true,get:()=>({builds:hsBuilds319,draws:hsDraws319})},hsDirection319:{configurable:true,get:()=>hsDirection319}});
+
+if(testMode)Object.defineProperties(window.__LAST_CLASS_TEST__,{
+ hsConfig320:{configurable:true,get:()=>HS_CFG319},hsPrefs320:{configurable:true,get:()=>hsPrefs320},hsPerf320:{configurable:true,get:()=>({...hsPerf320,builds:hsBuilds319,draws:hsDraws319})},
+ hsState319:{configurable:true,get:()=>hs319},hsStore319:{configurable:true,get:()=>hsStore319}
+});
+if(testMode)Object.assign(window.__LAST_CLASS_TEST__,{hsRoute320,hsStopRoute320,hsInteract320,hsGraph320,hsMode320,hsCfg320,hsLimit320,hsObjectives320,hsPrefsSave320,hsCleanPrefs320,
+ hsOpenMode319,hsClose319,hsStart319,hsNext319,hsStep319,hsMove319,hsHide319,hsDecoy319,hsListen319,hsPause319,hsRestore319,hsExport319,hsImport319,hsValidate319,hsStoreValidate319,hsFresh319,hsMap319,hsPath319,hsWalk319,hsSight319,hsNoise319,hsFinish319,hsRender319,hsDraw319,hsSave319,hsCommand319,hsCollect319,hsText319});
+
+if(testMode)Object.assign(window.__LAST_CLASS_TEST__,{nightPreference321,nightCmd321,showNightScare321,clearNightFX321,paintNight321,paintScare321,nightSprite321,scenery321,cleanNightPrefs321,nt321,
+ renderArcade317,drawArcade317,arcadeCommand317,finishNight317,nightAction317,stepArcade317,pauseArcade317,closeArcade317,openArcade317,startArcade317,restoreMode317,nextNight317,
+ getNightBase321(){return N321;},nightPrefsKey321:NW321_KEY});
+if(testMode)Object.defineProperties(window.__LAST_CLASS_TEST__,{nightPrefs321:{get:()=>({...nightPrefs321})},nightFX321:{get:()=>nightFX321},nightStats321:{get:()=>({...nightStats321,roomCache:nightRooms321.size,spriteCache:nightSprites321.size})},nightPage321:{get:()=>nightPage321}});
 
 
 })();
